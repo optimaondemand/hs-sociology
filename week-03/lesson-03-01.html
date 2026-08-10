@@ -1,0 +1,401 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Q1 · Week 3 · Lesson 3.01 — "Tocqueville: Democracy, Equality, and Voluntary Associations"
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS (confirmed 2026-08-06). Democracy in America cited by volume,
+    part, and chapter throughout. The argument is presented as a causal chain with
+    a named weak link, not as four defined terms.
+
+      Standard: SS.912.S.5.2, SS.912.S.4.9, SS.912.S.2.10
+      Objective: Students will reconstruct Tocqueville's argument from equality of
+                conditions to soft despotism, and explain why he treats voluntary
+                association as the remedy rather than a nicety.
+      Source: Sociology_Course_Master.html, Lesson 3.01. Prose preserved except
+              where noted below.
+      Revisions: R5 (opening section not labelled "Hook"), R7 (no em dashes),
+                standards codes kept out of student-facing text.
+
+      DASH-AS-COLON REPAIR (plan.md defect 6): the master's Week 3 prose carries 33
+      colons standing in for em dashes from an earlier blanket substitution.
+      Repaired here by recasting, not by re-punctuating. Affected sentences in this
+      lesson included the "to lord, to vassal, to guild, to church" list and the
+      "not selfishness, but a kind of civic withdrawal" construction.
+
+      WIDGET ROTATION: 2.01 reflect+select, 2.02 commit-then-reveal+scale.
+      3.01 therefore uses reflect + single-select with a NEW framing (telling
+      Tocqueville's technical sense of individualism apart from ordinary
+      selfishness, which is the distinction students most reliably collapse).
+      Select-row correct indices in order: 1, 3, 0, 2, 1. Not ascending.
+      Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Lesson 3.01</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS — byte-consistent with references/widgets.md ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+
+    /* ===== Core visual: Tocqueville's causal chain ===== */
+    .ch { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
+    .ch-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .ch-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
+    .ch-row { display: flex; align-items: center; gap: 10px; }
+    .ch-box { flex: 1; background: rgba(255,255,255,0.07); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 13px 14px; }
+    .ch-box.bad { border-top-color: #C0392B; background: rgba(192,57,43,0.16); }
+    .ch-n { font-size: 10px; letter-spacing: 0.5px; color: rgba(255,255,255,0.45); margin-bottom: 5px; }
+    .ch-h { font-size: 15px; color: #ffffff; margin-bottom: 5px; }
+    .ch-b { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.5; }
+    .ch-cite { font-size: 10px; color: rgba(85,200,232,0.75); margin-top: 6px; letter-spacing: 0.3px; }
+    .ch-arrow { color: rgba(255,255,255,0.35); font-size: 20px; flex-shrink: 0; }
+    .ch-fix { margin-top: 18px; background: rgba(199,146,44,0.18); border: 1px solid rgba(199,146,44,0.45); border-radius: 8px; padding: 14px 18px; }
+    .ch-fix-l { font-size: 11px; color: #E0B562; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .ch-fix-t { font-size: 15px; color: #ffffff; line-height: 1.55; }
+    .ch-up { text-align: center; color: rgba(199,146,44,0.8); font-size: 20px; margin-top: 10px; }
+
+    .two { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 15px; }
+    .two th { background: #0E1C42; color: #fff; text-align: left; padding: 10px 13px; font-size: 12px; letter-spacing: 0.4px; font-weight: normal; }
+    .two td { border: 1px solid #D0D9E8; padding: 10px 13px; color: #1a2340; line-height: 1.5; vertical-align: top; }
+    .two tr:nth-child(even) td { background: #F8FAFD; }
+    .two td:first-child { color: #0E1C42; width: 26%; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 3</div>
+        <div style="font-size: 12px; color: #666;">Tocqueville and Durkheim on Social Facts</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 3.01</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Democracy, Equality, and Voluntary Associations</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Tocqueville and Durkheim on Social Facts</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 3.01</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Tocqueville: Democracy, Equality, and Voluntary Associations</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Can a society be free, comfortable, and losing its liberty at the same time?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Tocqueville thought yes, and he thought it was democracy's characteristic danger rather than an accident. His argument runs in a chain from a condition almost everyone welcomes to an outcome almost nobody would choose. Your task today is to follow the chain and find the link you would cut.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> reconstruct Tocqueville's chain of reasoning from equality of conditions to soft despotism, in order, and name the step I find weakest.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish Tocqueville's technical sense of <em>individualism</em> from ordinary selfishness, and explain why collapsing the two ruins his argument.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why he treats voluntary association as a school of political virtue rather than a convenient way of getting things done.</div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 1 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE YOUNG FRENCHMAN IN AMERICA</div>
+
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">A French aristocrat arrives in America in 1831 to study its prisons. Predict: what does he end up writing eight hundred pages about? (No wrong answer.)</div>
+            <div class="widget-options">
+                <button data-response="A natural guess, and partly right. He does write about elections and courts. But the thing that astonished him was not in the constitution at all. It was a habit.">&#127963;&#65039; American political institutions</button>
+                <button data-response="Closer than you might think. He came to believe that democracy was less a form of government than a social condition working itself through everything, including manners, families, and religion.">&#128101; How ordinary Americans live</button>
+                <button data-response="He does compare the two constantly, and the comparison is the engine of the book. What he is really asking is whether France can survive becoming America.">&#127467;&#127479; A comparison with France</button>
+                <button data-response="He did in fact deliver the prison report, with Beaumont, and almost nobody has read it since. The other book made him famous.">&#128274; The prisons, presumably</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">In May 1831 a twenty-five-year-old French magistrate named Alexis de Tocqueville arrived in New York Harbor with his friend Gustave de Beaumont. They had official permission from the French government to study the American prison system, then considered a model of modern penology. Tocqueville had a larger purpose. He had come to examine the first great democratic republic in history, to find out what equality actually looked like once it was organised into institutions, and to ask whether the democratic future toward which Europe seemed to be moving should be welcomed or feared.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">What he found astonished him. Americans formed associations for everything. To build a road they formed an association. To found a school they formed an association. To reform a social evil they formed an association. This habit was not incidental to American democracy. Tocqueville came to see it as democracy's lifeblood, and as precisely the thing France, having destroyed its old intermediary institutions in the Revolution, most dangerously lacked.</p>
+    </div>
+
+    <!-- ============================ PART 2 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; THE ARGUMENT AS A CHAIN</div>
+
+        <!-- ===== CORE VISUAL ===== -->
+        <div class="ch">
+            <div class="ch-title">TOCQUEVILLE'S CHAIN</div>
+            <div class="ch-sub">Each step is meant to follow from the one before. Find the one you would refuse.</div>
+            <div class="ch-row">
+                <div class="ch-box">
+                    <div class="ch-n">STEP 1</div>
+                    <div class="ch-h">Equality of conditions</div>
+                    <div class="ch-b">Hereditary rank dissolves. No one is naturally above or below anyone. Tocqueville thinks this has been advancing for seven hundred years and cannot be stopped.</div>
+                    <div class="ch-cite">DiA I, Introduction</div>
+                </div>
+                <div class="ch-arrow">&#8594;</div>
+                <div class="ch-box">
+                    <div class="ch-n">STEP 2</div>
+                    <div class="ch-h">Vertical bonds dissolve too</div>
+                    <div class="ch-b">The old ties to lord, vassal, guild, and church were often oppressive. They were also genuinely social. They connected a person to a community wider than the family.</div>
+                    <div class="ch-cite">DiA II.2.2</div>
+                </div>
+                <div class="ch-arrow">&#8594;</div>
+                <div class="ch-box bad">
+                    <div class="ch-n">STEP 3</div>
+                    <div class="ch-h">Individualism</div>
+                    <div class="ch-b">Each person withdraws into a small circle of family and friends and leaves the larger affairs to someone else. Not a vice. A retreat.</div>
+                    <div class="ch-cite">DiA II.2.2</div>
+                </div>
+                <div class="ch-arrow">&#8594;</div>
+                <div class="ch-box bad">
+                    <div class="ch-n">STEP 4</div>
+                    <div class="ch-h">Soft despotism</div>
+                    <div class="ch-b">An immense, mild, orderly power takes charge of everything, keeps citizens comfortable, and relieves them of the trouble of governing themselves.</div>
+                    <div class="ch-cite">DiA II.4.6</div>
+                </div>
+            </div>
+
+            <div class="ch-up">&#8593;</div>
+            <div class="ch-fix">
+                <div class="ch-fix-l">WHERE THE CHAIN CAN BE BROKEN</div>
+                <div class="ch-fix-t"><strong>Voluntary associations.</strong> They cut the link between step 2 and step 3 by rebuilding horizontal bonds where the vertical ones used to be. This is why Tocqueville treats them as a remedy rather than a pleasant feature of American life.</div>
+            </div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Tocqueville's fundamental insight is that democracy is not primarily a set of political institutions but a social condition. It is the equalisation of ranks, the dissolution of hereditary hierarchy, the emergence of a society in which no person stands naturally above or below any other. This condition has been spreading through Western history for seven centuries, and in his view it is irresistible. The question is not whether equality will arrive but what kind of equality it brings with it.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The danger he identifies is one that equality itself generates. In a hierarchical society each person knows his place inside a network of vertical obligations, owed upward to a lord and downward to a vassal, sideways to a guild and outward to a church. Those obligations were frequently oppressive. They were also genuinely social, because each of them connected a person to a community larger than his own household. When hierarchy dissolves, the vertical bonds dissolve with it.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">What replaces them? If nothing does, then each person faces the world alone, attached only to the small circle of people he personally knows and loves. That is what Tocqueville means by <em>individualism</em>, and the word is doing technical work here that its ordinary use does not.</p>
+    </div>
+
+    <!-- ============================ PART 3 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; THE WORD THAT GETS MISREAD</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Tocqueville coined <em>individualism</em> for a condition he thought had no name yet. Modern readers almost always hear the wrong thing, and the mistake is not harmless: it makes his argument look like ordinary moralising about selfish people, which is not what it is.</p>
+
+        <table class="two">
+            <tr><th></th><th>Ordinary selfishness</th><th>Tocqueville's individualism</th></tr>
+            <tr><td>What it is</td><td>A vice. Loving yourself more than others.</td><td>A disposition. Withdrawing from public life into private life.</td></tr>
+            <tr><td>Who has it</td><td>Some people, in every society, always.</td><td>Anyone, and increasingly everyone, under conditions of equality.</td></tr>
+            <tr><td>Its origin</td><td>A defect of character.</td><td>A structural effect of a social condition.</td></tr>
+            <tr><td>Its remedy</td><td>Moral correction of the person.</td><td>Institutions that give people something public to do.</td></tr>
+        </table>
+
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; COMMON MISTAKE</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Reading individualism as selfishness turns Tocqueville into a scold and makes his remedy incoherent. If the problem were bad character, voluntary associations would be an odd cure. They work, on his account, precisely because the problem is <em>not</em> a defect in people. It is an absence of anything public for decent people to do.</div>
+        </div>
+
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; WHICH IS IT?</div>
+            <div class="widget-question">For each case, decide what Tocqueville would call it. Judge by his definition, not by whether you approve of the person.</div>
+
+            <div class="widget-row" data-correct="1" data-fb="Individualism. She is not selfish. She is doing something admirable inside a private circle while the public sphere goes untended, which is exactly the condition Tocqueville names at DiA II.2.2." data-hint="Is she taking from others, or simply not participating in anything public? Those are different diagnoses.">
+                <div class="widget-row-prompt">1. A woman devotes herself entirely to her family and her closest friends, gives generously to them, and has no involvement in anything beyond that circle.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Ordinary selfishness</button><button data-choice="1">Individualism</button><button data-choice="2">Neither</button><button data-choice="3">Soft despotism</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="3" data-fb="Soft despotism, in its characteristic form. The power is mild, orderly, and genuinely useful. Tocqueville's warning at DiA II.4.6 is that it does not feel like tyranny from inside, which is what makes it hard to resist." data-hint="Nobody here is withdrawing. Something is being taken over. Look at what the citizens have stopped having to do.">
+                <div class="widget-row-prompt">2. A central administration efficiently manages roads, schools, and welfare so well that citizens no longer meet to decide anything about them.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Ordinary selfishness</button><button data-choice="1">Individualism</button><button data-choice="2">Neither</button><button data-choice="3">Soft despotism</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Ordinary selfishness. He is taking from others for himself. Tocqueville would say this vice has existed in every society and tells us nothing in particular about democracy." data-hint="Is anyone being harmed here for someone else's gain? That is the older vice, not the new condition.">
+                <div class="widget-row-prompt">3. A man cheats his business partners to enrich himself.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Ordinary selfishness</button><button data-choice="1">Individualism</button><button data-choice="2">Neither</button><button data-choice="3">Soft despotism</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Neither, and this is the case that shows the remedy working. She is doing exactly what Tocqueville prescribes: practising self-government with people she did not choose, on a matter of common concern." data-hint="Tocqueville has a name for this activity, and it is not a diagnosis. It is his cure.">
+                <div class="widget-row-prompt">4. A woman spends her Saturdays on the committee of a local volunteer fire company alongside neighbours she barely knows.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Ordinary selfishness</button><button data-choice="1">Individualism</button><button data-choice="2">Neither</button><button data-choice="3">Soft despotism</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Individualism. Voting is real participation, but Tocqueville's concern is the ongoing habit of acting with others between elections. A citizen who only votes has, on his account, kept the form and lost the practice." data-hint="He does vote, so he has not withdrawn completely. Ask what he does during the four years in between.">
+                <div class="widget-row-prompt">5. A man votes in every election, follows the news closely, and belongs to nothing and attends nothing.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Ordinary selfishness</button><button data-choice="1">Individualism</button><button data-choice="2">Neither</button><button data-choice="3">Soft despotism</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ============================ PART 4 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; ASSOCIATIONS AS SCHOOLS</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Tocqueville's solution is characteristically American: civic association. A person who takes part in a voluntary association learns through experience that his interests are bound up with other people's. He practises deliberation, compromise, and collective action. He acquires a stake in public life. He picks up the habits of a citizen rather than the habits of a subject.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">He is explicit that associations are not merely instrumental. They are not just efficient ways of getting things done. He calls them schools, and he means it. The person who has organised a mutual aid society, served on a local school board, or helped run a volunteer fire company has exercised the exact capacities that democratic self-government requires. She has learned to govern herself in relation to others, which is the foundational civic skill.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">A society of people with those habits can resist the drift toward soft despotism. A society of people who have only their private lives cannot, because when the immense tutelary power offers to take the trouble of governing off their hands, they will have no reason and no practice to refuse.</p>
+
+        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0;">
+            <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; Decide in your notebook which link in the chain you would cut, and write one sentence defending it. Then open this.
+            </summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
+                There is no single right answer, but the links are not equally strong. Step 1 is close to a historical observation and hard to dispute. Step 4 is a prediction, and predictions can be tested against the two centuries since. The most contested link is step 2 to step 3: does the loss of hierarchical bonds actually produce withdrawal, or could new horizontal bonds have formed on their own without anyone designing them? If you think they form on their own, Tocqueville's alarm looks overdone and his remedy unnecessary. If you think they do not, then the health of associations becomes a genuine measure of a democracy's condition, and their decline becomes a real warning. That question is still live, and you will meet it again in Week 8.
+            </div>
+        </details>
+    </div>
+
+    <!-- ============================ PART 5 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; WHY HE KEEPS COMING BACK</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Tocqueville's account of association anticipates several thinkers this course examines in detail. Durkheim's account of the intermediate institutions that hold anomie at bay, Nisbet's argument for the necessity of community, and Putnam's analysis of social capital are all, in a sense, working out the implications of the same diagnosis. The question of what stands between the individual and the centralised state, and what happens when that middle ground is hollowed out, is one of the permanent questions of modern sociology. You will see it again in Weeks 7, 8, and 17, and it is the question the Community Flourishing Capstone finally asks you to answer for a real place.</p>
+    </div>
+
+    <!-- What You'll Do Next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 3A: Tocqueville</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your Tuesday reading is step 4 of the chain in his own words, from <em>Democracy in America</em> II.4.6. It is the most quoted page he ever wrote.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Reading Quiz 3</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Eight questions covering both lessons this week.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You have followed an argument in which nobody behaves badly and the outcome is still bad. That shape is worth noticing, because it is what distinguishes a sociological explanation from a moral one. Tocqueville is not saying democratic citizens are worse people than aristocratic subjects were. He is saying that a change in social structure changes what decent people find themselves doing, and that the change is invisible to the people it is happening to. On Wednesday Durkheim gives that idea a name and tries to make a science out of it.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 3.01 &middot; Democracy, Equality, and Voluntary Associations</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME — one delegated listener drives every engine ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite. Try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,366 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Q1 · Week 5 · Lesson 5.02 — "The Historical Development of Family and Kinship"
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS (confirmed 2026-08-06).
+
+      Standard: SS.912.S.4.2, SS.912.S.4.6, SS.912.S.2.10
+      Objective: Students will explain why the family is treated as a universal
+                institution despite wide historical variation in its form,
+                reconstruct Aristotle's account of the household as the first
+                school of the virtues, and distinguish structural persistence
+                from formal continuity when classifying a family arrangement.
+      Source: Sociology_Course_Master.html, Lesson 5.02. Prose preserved
+              verbatim across Parts 1, 3, and 4 (the Hook, Functions of the
+              Family, and Change and Continuity sections, and the Key Terms
+              block). Added: the core visual, both widgets, and the forward
+              bridge to Thursday's Aristotle reading.
+
+      No R1 substitution applies to this lesson; it was never built around an
+      in-copyright modern reading.
+
+      DASH-AS-COLON REPAIR (plan.md defect 6): checked programmatically
+      against the master's raw body_html for this lesson. Zero sentences with
+      two or more mid-sentence colons were found. No repairs were needed.
+
+      WIDGET ROTATION: 5.01 (this week) uses reflect + single-select rows.
+      5.02 uses scale placement (Part 3, nuclear-to-extended, four cases) +
+      flip cards (Part 2, two vocabulary reveals), so the two lessons in this
+      week do not repeat an engine pairing. Scale correct-index sequence, in
+      row order: 3, 0, 2, 1. Not ascending.
+      Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Lesson 5.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS — byte-consistent with references/widgets.md ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+
+    /* ===== Core visual: structural need, changing form ===== */
+    .fam { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
+    .fam-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .fam-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 20px; font-style: italic; }
+    .fam-need { background: rgba(199,146,44,0.18); border: 1px solid rgba(199,146,44,0.45); border-radius: 8px; padding: 13px 18px; text-align: center; margin-bottom: 16px; }
+    .fam-need-l { font-size: 10px; letter-spacing: 0.5px; color: #E0B562; margin-bottom: 4px; }
+    .fam-need-t { font-size: 15px; color: #ffffff; line-height: 1.5; }
+    .fam-down { text-align: center; color: rgba(199,146,44,0.8); font-size: 20px; margin-bottom: 12px; }
+    .fam-cols { display: flex; gap: 12px; }
+    .fam-c { flex: 1; background: rgba(85,200,232,0.10); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 14px 15px; }
+    .fam-c-era { font-size: 10px; letter-spacing: 0.5px; color: #55C8E8; margin-bottom: 5px; }
+    .fam-c-h { font-size: 15px; color: #ffffff; margin-bottom: 6px; }
+    .fam-c-b { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.5; }
+
+    .kt { background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 13px 17px; margin-bottom: 9px; }
+    .kt-t { font-size: 16px; color: #0E1C42; margin-bottom: 4px; }
+    .kt-d { font-size: 16px; color: #1a2340; line-height: 1.55; }
+
+    .flipgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 4px 0; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 5</div>
+        <div style="font-size: 12px; color: #666;">The Sociological Imagination and the Historical Family</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 5.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">The Historical Development of Family and Kinship</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">The Sociological Imagination and the Historical Family</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 5.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">The Historical Development of Family and Kinship</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Anthropologists agree on almost nothing across cultures. Why do they all agree on this one?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Every known human society has organized the bearing and raising of children inside some form of family. The forms differ enormously. The fact that some form always exists does not. Today's question is what that persistence tells you, and what it does not.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why sociologists call the family a universal institution despite its wide variation in form across history and culture.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> reconstruct Aristotle's argument for treating the household as the first school of the virtues, not merely a convenience.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> classify a family arrangement by its structural features rather than by whether it resembles a family you already know.</div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 1 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE ONE UNIVERSAL INSTITUTION</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Anthropologists studying human cultures have disagreed about almost everything. Whether religion is universal (yes, in some form). Whether government is universal (yes, in some form). Whether markets are universal (contested). Whether inequality is universal (yes, in some form). But on one institution, there is no serious disagreement: every known human society, in every historical period and every geographic region, has organized the bearing and raising of children within some form of family structure. This universality is not trivial. It tells us something important: that the family is not a cultural invention that some societies happen to have adopted, but a response to deep features of the human condition that no society has yet found a way to do without.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">What are those deep features? Several stand out. Human infants are born at an extreme degree of helplessness relative to other primates and require years of intensive care before achieving minimal self-sufficiency. This biological fact creates an imperative for stable care arrangements that is more pressing for humans than for most other species. Additionally, human reproduction is not seasonal; women can conceive throughout the year, which means that the management of sexual relationships, paternity, and inheritance is a persistent social problem, not a periodic one. The family, in its various forms, is the primary institution through which human societies have addressed both of these imperatives.</p>
+    </div>
+
+    <!-- ============================ PART 2: KEY TERMS + FLIP CARDS ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; THE TERMS</div>
+
+        <div class="kt"><div class="kt-t">Institution</div><div class="kt-d">From the Latin <em>institutum</em> (custom, practice, organization). A stable, recurring pattern of social behavior organized around a fundamental social need. Institutions are more durable than organizations; they shape the organizations that embody them.</div></div>
+        <div class="kt"><div class="kt-t">Nuclear Family</div><div class="kt-d">A household unit consisting of two parents and their dependent children. Common in modern Western societies and in some hunter-gatherer societies.</div></div>
+        <div class="kt"><div class="kt-t">Extended Family</div><div class="kt-d">A household or kinship network that includes three or more generations and/or collateral relatives living in proximity and sharing obligations. Historically more common globally than the nuclear form.</div></div>
+        <div class="kt"><div class="kt-t">Kinship</div><div class="kt-d">The network of social relationships derived from descent, marriage, or adoption. All known societies have kinship systems that govern who is related to whom, what obligations those relationships create, and how property and status are transmitted across generations.</div></div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 14px 0 10px 0;">Two more terms will matter for Thursday's reading and for next week. Tap each card.</p>
+
+        <div class="flipgrid">
+            <div class="optima-widget">
+                <div class="widget-kicker">&#9889; TAP TO REVEAL</div>
+                <div class="ow-flip" tabindex="0">
+                    <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;">Oikos</div>
+                    <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">Greek for household. The root of <em>oikonomia</em>, household management, from which English gets "economy." Aristotle's word for the unit more basic than the village, which is more basic than the city.</div>
+                </div>
+                <button class="widget-reset">Reset</button>
+            </div>
+            <div class="optima-widget">
+                <div class="widget-kicker">&#9889; TAP TO REVEAL</div>
+                <div class="ow-flip" tabindex="0">
+                    <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;">Patria Potestas</div>
+                    <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">Roman legal doctrine: a father's authority over his children and their descendants, lasting throughout his lifetime even after they married and had households of their own. An extreme, legally formalized version of the household authority you will read about Thursday, and the arrangement Week 6 compares against the modern family.</div>
+                </div>
+                <button class="widget-reset">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 3 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; THE FUNCTIONS OF THE FAMILY</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Sociologists identify several functions that the family performs in virtually all societies. The reproductive function is the most obvious: families provide a socially recognized context for biological reproduction and for establishing the parentage of children, which matters for inheritance, succession, and social identity. The socialization function follows directly: the family is the primary agent of socialization for young children, transmitting the language, values, norms, and basic cultural competencies that children need to function in their society. The economic function has varied historically but has typically involved pooling labor and resources among family members, managing property, and providing basic welfare to members who cannot support themselves. The emotional function, increasingly emphasized in modern societies, involves the family as a primary source of affection, intimacy, and psychological support.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">Aristotle, whose <em>Politics</em> this course examined in Week 1, identified the household (the Greek <em>oikos</em>, from which we derive "economy") as the most basic social unit: more basic than the village, which is more basic than the city. For Aristotle, the household is not merely a convenient arrangement for meeting biological needs; it is the first school of the virtues. It is within the household that human beings first learn to give and receive care, to exercise and submit to authority, to honor obligations, and to live for something beyond themselves. These lessons are the foundation of every higher form of social life.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Four cases, and the question is not which family is better. It is which structural pattern each one exhibits. Test your instinct against the definitions above.</p>
+
+        <div class="optima-widget ow-scale">
+            <div class="widget-kicker">&#9889; TRY IT &middot; NUCLEAR OR EXTENDED?</div>
+            <div class="widget-question">Place each household on the spectrum by its structure, not by how familiar or foreign it feels to you.</div>
+
+            <div class="widget-row" data-correct="3" data-fb="Clearly extended, and a legally reinforced version of it. Patria potestas bound multiple generations and their spouses under one authority, which is the defining feature of the extended form." data-hint="Count the generations under one authority, and ask whether marriage removed anyone from it. In Rome, it did not.">
+                <div class="widget-row-prompt">1. A Roman household in which a father held legal authority over his adult, married sons, their wives, and his grandchildren, all under one household authority.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Clearly Nuclear</button><button data-choice="1">Mostly Nuclear</button><button data-choice="2">Mostly Extended</button><button data-choice="3">Clearly Extended</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Clearly nuclear. Two parents and their dependent children form the entire household unit; the grandparents belong to a different household entirely." data-hint="How many generations actually live in the house, day to day?">
+                <div class="widget-row-prompt">2. A mid-twentieth-century American household: two parents and their two children living alone in a suburban house, with grandparents visiting on holidays.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Clearly Nuclear</button><button data-choice="1">Mostly Nuclear</button><button data-choice="2">Mostly Extended</button><button data-choice="3">Clearly Extended</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Mostly extended. A third generation shares the home and shares real authority over childcare and decisions, which is the extended pattern, even though it is only one additional relative rather than a large kin network." data-hint="One relative beyond the two parents and children is living there and sharing real authority. Which direction does that pull the household?">
+                <div class="widget-row-prompt">3. A household of two parents, their children, and a live-in grandmother who shares daily childcare and household decisions.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Clearly Nuclear</button><button data-choice="1">Mostly Nuclear</button><button data-choice="2">Mostly Extended</button><button data-choice="3">Clearly Extended</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Mostly nuclear. The household still consists of parents and children under one roof with no other generation present; blending two prior families changes its history, not its basic structure." data-hint="No grandparent or other generation lives here. What single structural feature is unchanged from the classic nuclear form?">
+                <div class="widget-row-prompt">4. A blended family: two parents and children from previous relationships living together, with little regular contact with either side's extended relatives.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Clearly Nuclear</button><button data-choice="1">Mostly Nuclear</button><button data-choice="2">Mostly Extended</button><button data-choice="3">Clearly Extended</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ============================ PART 4 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; CHANGE AND CONTINUITY</div>
+
+        <!-- ===== CORE VISUAL ===== -->
+        <div class="fam">
+            <div class="fam-title">A STRUCTURAL NEED, CHANGING FORMS</div>
+            <div class="fam-sub">The content changes across history. The structural need does not.</div>
+            <div class="fam-need">
+                <div class="fam-need-l">WHAT PERSISTS</div>
+                <div class="fam-need-t">A recognized partnership responsible for children · a way of establishing parentage · a system of inheritance and succession</div>
+            </div>
+            <div class="fam-down">&#8595;</div>
+            <div class="fam-cols">
+                <div class="fam-c">
+                    <div class="fam-c-era">ANCIENT ROME</div>
+                    <div class="fam-c-h">Patriarchal extended household</div>
+                    <div class="fam-c-b">One father's legal authority over married adult children and grandchildren.</div>
+                </div>
+                <div class="fam-c">
+                    <div class="fam-c-era">MID-20TH-CENTURY U.S.</div>
+                    <div class="fam-c-h">Nuclear family</div>
+                    <div class="fam-c-b">Two parents and dependent children, a self-contained household unit.</div>
+                </div>
+                <div class="fam-c">
+                    <div class="fam-c-era">21ST CENTURY</div>
+                    <div class="fam-c-h">Diverse forms</div>
+                    <div class="fam-c-b">Blended, single-parent, multigenerational, and other arrangements alongside the nuclear form.</div>
+                </div>
+            </div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The family has changed dramatically across history and across cultures. The patriarchal extended households of ancient Rome, in which a father held legal authority over his children well into their adult lives, look nothing like the nuclear families of mid-twentieth century America, and neither resembles the diverse family forms of the twenty-first century. Yet certain structural features recur: some socially recognized form of partnership between adults who are responsible for children; some mechanism for establishing paternity or maternity and its social significance; some system of inheritance and succession. The content changes; the structural need persists. This is what sociologists mean when they say the family is a universal institution: not that all families look the same, but that all known societies have developed some institution that performs the fundamental functions the family performs.</p>
+
+        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0;">
+            <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; In your notebook: is "universal institution" a claim that could be proven false by some society somewhere? What would that evidence look like? Then open this.
+            </summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
+                Yes, and stating what would count against it is what keeps the claim scientific rather than definitional. A society that raised children with no stable, socially recognized care arrangement at all, no mechanism for establishing who is responsible for whom, would count as evidence against it. What would not count against it is a society whose family looks unfamiliar: same-sex partnerships, communal child-rearing, or households organized by clan rather than nuclear couple, all still satisfy the functional definition even though they violate a narrower, culturally specific idea of what a family should look like. Notice the shape of this move. It is the same one Durkheim made with solidarity in Week 4: define the concept by the function it performs, not by the form it happens to take in your own society, and only then ask how widely it holds.
+            </div>
+        </details>
+    </div>
+
+    <!-- Wrap-up + next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 5B: Aristotle</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Thursday's reading is Aristotle's own account of the household's three relationships, from <em>Politics</em> I.3 to I.5, the text this lesson's Part 3 was built from.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Sociological Journal 5</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Due Thursday, with a peer reply this week. You will apply Berger's sociological consciousness to a routine in your own family.</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You can now tell apart two claims that sound similar and are not: that a family looks a certain way, and that a family does certain things. The first claim is culturally local and frequently wrong. The second is what makes the family a genuine sociological universal, and it is the reason this course keeps returning to it. Thursday you will meet Aristotle's own case for why the household matters beyond its practical functions, in the text where he first makes the argument.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 5.02 &middot; The Historical Development of Family and Kinship</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME — one delegated listener drives every engine ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite. Try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

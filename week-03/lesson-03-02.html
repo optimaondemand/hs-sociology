@@ -1,0 +1,396 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Q1 · Week 3 · Lesson 3.02 — "Social Facts: The Hidden Forces of Society"
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS (confirmed 2026-08-06). Rules of Sociological Method cited by
+    chapter, Suicide by year, Republic VII for the cave. The definition is quoted,
+    then taken apart clause by clause rather than summarised.
+
+      Standard: SS.912.S.1.2, SS.912.S.1.7, SS.912.S.4.1
+      Objective: Students will define the social fact by its three criteria, apply
+                the criteria to cases where a behaviour feels chosen, and explain
+                why social facts are hard to see from inside.
+      Source: Sociology_Course_Master.html, Lesson 3.02 (1,460 words, the longest
+              in the course). This is also the lesson the design-phase exemplar
+              "Sample Lesson -- Durkheim on Social Facts.docx" was written from.
+
+      TRANSLATION CONSISTENCY: the master quotes Durkheim's definition in wording
+      that differs from the course's own reading PDF. This page uses the wording
+      from Q1W3_Reading_2_What Is a Social Fact.pdf instead, so the definition a
+      student meets on Wednesday is the one they read on Thursday. Do not
+      reintroduce the master's variant.
+
+      DASH-AS-COLON REPAIR (plan.md defect 6): this lesson carried the heaviest
+      damage in the course. Eleven sentences recast, including "The old bonds:
+      parish, guild, village, estate: were dissolving", "treat them as things:
+      external objects of study: rather than", and "The philosopher's task: and
+      here, Durkheim would say, the sociologist's task: is to turn around".
+      Legitimate single colons were left alone.
+
+      WIDGET ROTATION: 3.01 used reflect + single-select. 3.02 therefore uses the
+      iframe sorting widget + commit-then-reveal. No engine repeats.
+      Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
+      The iframe src is relative and works locally and on GitHub Pages provided
+      _widgets/ stays a sibling of the week folders.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Lesson 3.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS — byte-consistent with references/widgets.md ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+
+    /* ===== Core visual: the three-gate test ===== */
+    .gate { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
+    .gate-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .gate-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
+    .gate-row { display: flex; align-items: stretch; gap: 10px; }
+    .gate-in { flex: 0 0 128px; background: rgba(255,255,255,0.06); border-radius: 7px; padding: 14px 13px; display: flex; flex-direction: column; justify-content: center; text-align: center; }
+    .gate-in-l { font-size: 10px; letter-spacing: 0.5px; color: rgba(255,255,255,0.45); margin-bottom: 5px; }
+    .gate-in-t { font-size: 14px; color: #ffffff; line-height: 1.4; }
+    .gate-g { flex: 1; background: rgba(85,200,232,0.10); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 13px 15px; }
+    .gate-n { font-size: 10px; letter-spacing: 0.5px; color: #55C8E8; margin-bottom: 5px; }
+    .gate-h { font-size: 16px; color: #ffffff; margin-bottom: 5px; }
+    .gate-q { font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.5; font-style: italic; margin-bottom: 6px; }
+    .gate-b { font-size: 13px; color: rgba(255,255,255,0.62); line-height: 1.45; }
+    .gate-arrow { display: flex; align-items: center; color: rgba(255,255,255,0.3); font-size: 18px; }
+    .gate-out { margin-top: 16px; text-align: center; }
+    .gate-out-box { display: inline-block; background: #ffffff; border-radius: 8px; padding: 12px 24px; font-size: 17px; color: #0E1C42; }
+    .gate-note { margin-top: 16px; padding-top: 13px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.6; text-align: center; font-style: italic; }
+
+    .defn { background: #FCFCF8; border: 1px solid #E3DFD2; border-left: 5px solid #C7922C; border-radius: 8px; padding: 20px 26px; margin: 16px 0; }
+    .defn p { font-family: Georgia, "Times New Roman", serif; font-size: 18px; color: #241f18; line-height: 1.75; margin: 0; }
+    .defn cite { display: block; font-family: "Segoe UI", sans-serif; font-size: 12px; color: #8a7a55; font-style: normal; margin-top: 10px; letter-spacing: 0.3px; }
+
+    .exg { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 11px; margin: 14px 0; }
+    .exc { background: #FFFFFF; border: 1px solid #D0D9E8; border-top: 3px solid #55C8E8; border-radius: 7px; padding: 14px 16px; }
+    .exc-h { font-size: 16px; color: #0E1C42; margin-bottom: 6px; }
+    .exc-b { font-size: 15px; color: #1a2340; line-height: 1.55; }
+
+    .wframe { width: 100%; border: 1px solid #C5DCE5; border-radius: 8px; background: #f4f6fa; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 3</div>
+        <div style="font-size: 12px; color: #666;">Tocqueville and Durkheim on Social Facts</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 3.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Social Facts: The Hidden Forces of Society</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Tocqueville and Durkheim on Social Facts</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 3.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Social Facts: The Hidden Forces of Society</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">If a force acts on everyone and nobody can see it, how would you prove it exists?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">This is the lesson the whole discipline rests on. Durkheim needed to show that there are real things which are not in anyone's head and not in anyone's body, and he chose the least promising possible test case to show it.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> apply Durkheim's three criteria to a behaviour that feels chosen, and reach a defensible verdict.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why Durkheim chose suicide as his demonstration case, and what would have counted as failure.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> say why social facts are hard to see from inside, and what intellectual effort seeing them requires.</div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 1 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE MAN WHO COUNTED SUICIDES</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">In the 1890s a French professor named Emile Durkheim did something that seemed absurd on its face. He sat down with government mortality records and tried to discover the sociology of suicide.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Suicide looks like the most private of all acts. It is the most interior, the most individual, the furthest removed from anything social. If any human behaviour could be explained purely by the psychology of the person who performed it, this seems to be the one. That is exactly why Durkheim chose it. A demonstration that works on the hardest case works everywhere.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">What he found in the records disturbed the assumption entirely. The rates were not random. They held steady year over year within the same country, and they varied systematically across countries, religions, and social conditions. Protestant nations showed higher rates than Catholic ones. Unmarried people died by suicide more often than married people. Soldiers more than civilians in some circumstances, civilians more than soldiers in others. When social conditions changed, the rates changed with them, predictably.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">Whatever was driving those numbers was not individual psychology alone. Something larger was at work, something that outlasted any particular person while acting on all of them. Durkheim called it a <em>social fact</em>, and sociology properly begins with the recognition of it. He published the full study as <em>Suicide</em> in 1897, two years after laying out the method in <em>The Rules of Sociological Method</em>.</p>
+
+        <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; WHAT THE ARGUMENT DOES NOT CLAIM</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Durkheim is not saying that society causes any particular person's death, or that individual circumstances do not matter. His claim is about <em>rates</em>, not about individuals. A rate is a property of a population and cannot be a property of a person. That distinction is the whole move, and readers who miss it think he is saying something both obvious and cruel, when he is saying something neither.</div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 2 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; DURKHEIM IN CONTEXT</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Emile Durkheim was born in 1858 in Epinal, in eastern France, the son of a rabbi. He was expected to follow his father into religious life and turned instead toward philosophy, and eventually toward the new discipline he would spend his career founding. He studied in Germany, where he encountered the early ambitions of the social sciences, and returned to France to teach at Bordeaux and later at the Sorbonne.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">The France he inhabited was in the middle of a crisis of coherence. The Revolution of 1789 had overturned the old religious and monarchical order. Industrialisation was drawing millions of people off the land and into cities. The old bonds of parish, guild, village, and estate were dissolving faster than new ones could form. Durkheim watched his society struggle to hold itself together and asked, as a scientist rather than a partisan, what holds societies together at all and what happens when those bonds fray. His answer begins with the social fact. Notice that this is the same disruption you met in Week 1 and the same anxiety you met in Tocqueville on Monday. Three thinkers, one problem.</p>
+    </div>
+
+    <!-- ============================ PART 3 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; THE DEFINITION, TAKEN APART</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">In the first chapter of <em>The Rules of Sociological Method</em> (1895), Durkheim offers a definition worth reading slowly. You will read the full chapter on Thursday.</p>
+
+        <div class="defn">
+            <p>&ldquo;A social fact is every way of acting, whether fixed or not, that is capable of exercising an external constraint upon the individual; or, again, every way of acting that is general throughout a given society while at the same time possessing an existence of its own, independent of its individual manifestations.&rdquo;</p>
+            <cite>Durkheim, <em>The Rules of Sociological Method</em>, ch. I</cite>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 12px 0 6px 0;">Three conditions are packed into that sentence, and a candidate has to satisfy all three.</p>
+
+        <!-- ===== CORE VISUAL ===== -->
+        <div class="gate">
+            <div class="gate-title">THE THREE-GATE TEST</div>
+            <div class="gate-sub">A behaviour is a social fact only if it passes all three. One failure and it is not one.</div>
+            <div class="gate-row">
+                <div class="gate-in">
+                    <div class="gate-in-l">CANDIDATE</div>
+                    <div class="gate-in-t">Any way of acting, thinking, or feeling</div>
+                </div>
+                <div class="gate-arrow">&#8594;</div>
+                <div class="gate-g">
+                    <div class="gate-n">GATE 1</div>
+                    <div class="gate-h">External</div>
+                    <div class="gate-q">Did it exist before me, and will it outlast me?</div>
+                    <div class="gate-b">It comes from outside. Not invented by you, not chosen, not derived from your psychology or biology.</div>
+                </div>
+                <div class="gate-arrow">&#8594;</div>
+                <div class="gate-g">
+                    <div class="gate-n">GATE 2</div>
+                    <div class="gate-h">General</div>
+                    <div class="gate-q">Does it hold across the group, not just for me?</div>
+                    <div class="gate-b">It characterises a collective. This generality is part of what makes it social in the first place.</div>
+                </div>
+                <div class="gate-arrow">&#8594;</div>
+                <div class="gate-g">
+                    <div class="gate-n">GATE 3</div>
+                    <div class="gate-h">Constraining</div>
+                    <div class="gate-q">Does it push back when I resist it?</div>
+                    <div class="gate-b">Not necessarily by force. Often by nothing more than the quiet pressure of shared expectation, which turns out to be enough.</div>
+                </div>
+            </div>
+            <div class="gate-out">
+                <div class="gate-out-box">Passes all three &nbsp;&#8594;&nbsp; <strong>social fact</strong></div>
+            </div>
+            <div class="gate-note">The third gate is the one to test with. Constraint is invisible until you push against it, which is why Durkheim keeps describing what happens when someone tries.</div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>External.</strong> A social fact reaches the individual from outside. The French language existed before any living speaker of French was born and will exist after they die. Nobody invented it and everybody inherits it. The same holds for legal systems, religious practices, economic institutions, table manners, and the academic calendar.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>General.</strong> A social fact is widespread. It characterises a group rather than a person. Everyone in a given society speaks the dominant language, participates in the legal system, observes certain holidays, uses money, and attends school. That generality is part of what makes it social, because it belongs to the collective rather than to anyone in it.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;"><strong>Constraining.</strong> Social facts press back when you resist them. Speak ungrammatically enough and people will fail to understand you, or will judge you for it. Break the law and the state responds. Ignore the conventions of polite behaviour at dinner and you will feel, and cause others to feel, a real social discomfort. The constraint is rarely violent and often invisible. Much of the time it works through nothing but the quiet pressure of shared expectation. Note what this means for someone who violates a norm. They do not merely risk a punishment. They encounter the weight of an entire social order arranged against the act.</p>
+    </div>
+
+    <!-- ============================ PART 4 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; SIX WORTH EXAMINING</div>
+
+        <div class="exg">
+            <div class="exc">
+                <div class="exc-h">Language</div>
+                <div class="exc-b">You did not choose its vocabulary, grammar, or rules of politeness, yet it structures nearly every thought you express. Try holding a complex idea without language and you will discover how thoroughly it has formed you. Moving between registers, speaking one way in class and another with friends and another in an interview, means navigating a structure you did not build.</div>
+            </div>
+            <div class="exc">
+                <div class="exc-h">Money</div>
+                <div class="exc-b">A twenty-dollar bill has no intrinsic value. It is paper and ink. It functions as money only because a whole society agrees, tacitly and continuously, to treat it as such. That agreement is nobody's decision. Withdraw the collective confidence and the bill becomes worthless overnight, which has happened more than once.</div>
+            </div>
+            <div class="exc">
+                <div class="exc-h">Law</div>
+                <div class="exc-b">Laws constrain before any violation occurs. You do not own your neighbour's car. The law does not have to act on you at this moment in order to be real. It structures what is possible for you, constantly and invisibly.</div>
+            </div>
+            <div class="exc">
+                <div class="exc-h">Manners</div>
+                <div class="exc-b">Nobody taught you to feel embarrassed when someone burps at a formal dinner, and yet you reliably do. The feeling belongs to you. The standard producing it does not. It was there before you arrived and will persist after you leave.</div>
+            </div>
+            <div class="exc">
+                <div class="exc-h">Holidays</div>
+                <div class="exc-b">You did not decide that Thanksgiving falls in November, that Christmas involves family, or that the Fourth of July involves fireworks. These were handed to you. They organise the year, create shared experience, and bind communities across time, and no individual invented any of it.</div>
+            </div>
+            <div class="exc">
+                <div class="exc-h">School</div>
+                <div class="exc-b">Compulsory education did not arise from the wishes of any child or parent. It emerged from economic needs, political decisions, and cultural assumptions about childhood, and it now shapes the daily life of every young person in the society.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 5 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; NOW SORT THEM YOURSELF</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Eight behaviours, and the three gates. Several of them will feel like choices. Run the test anyway and see what it says. The activity opens in its own frame.</p>
+
+        <iframe class="wframe" src="../_widgets/social-fact-or-choice/index.html" height="1180" title="Social Fact or Personal Choice activity" loading="lazy"></iframe>
+
+        <p style="font-size: 15px; color: #4a5a78; line-height: 1.6; margin: 10px 0 0 0;">Nothing here is recorded or graded. If the activity does not load, open it directly from the module page.</p>
+    </div>
+
+    <!-- ============================ PART 6 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 6 &middot; WHY THEY ARE SO HARD TO SEE</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Here is the paradox Durkheim insists on. Social facts are among the most powerful forces acting on human beings and among the hardest to notice. The reason is that they are internalised. Language does not feel external, because you spoke it before you had words to describe it. Norms of politeness do not feel like constraints, because you have followed them so long that they now feel like your own preferences. What begins outside becomes, through the long work of socialisation, part of what feels most naturally and most privately you.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">This is precisely why sociology takes deliberate intellectual effort. To study social facts scientifically, Durkheim argues, one has to learn to treat them as <em>things</em>, as external objects of study, rather than as the obvious background conditions of life. The sociologist has to make the familiar strange, examining language, money, law, and custom the way a naturalist examines a specimen, asking what it is, how it works, and what it produces. You practised exactly this move in Week 2 with Miner's Nacirema. Durkheim is telling you it is not a party trick but the method.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">Plato made a related point in a different idiom. The prisoners in the allegory of the cave (<em>Republic</em> VII) mistake shadows for reality because shadows are all they have ever seen. They do not know they are in a cave. The philosopher's task is to turn around, look at what casts the shadows, and report back, and Durkheim would say the sociologist's task is the same. The turning is painful and disorienting in both accounts. In both, it is where understanding starts.</p>
+
+        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0;">
+            <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; In your notebook, write down what evidence would have shown Durkheim was wrong about suicide. Then open this.
+            </summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
+                If rates had fluctuated randomly year to year, or had shown no systematic variation across countries, religions, and marital conditions, or had failed to shift when social conditions shifted, then there would have been nothing to explain above the level of individual psychology, and his case would have collapsed. This matters more than the finding does. A claim that no possible evidence could contradict is not a scientific claim, and Durkheim's whole project was to establish that sociology could make claims of the kind that evidence can bear on. When you meet a sociological argument in this course, that is the question worth asking of it: what would have counted as failure? Several arguments you meet later will not answer it well, and noticing that is part of the work.
+            </div>
+        </details>
+    </div>
+
+    <!-- What You'll Do Next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 3B: Durkheim</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your Thursday reading is the chapter this lesson is built on. Watch how he argues, not only what he concludes.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Sociological Journal 3</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Due Thursday, with a peer reply this week. You will name a social fact you had never noticed and run it through all three gates.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Social facts are real. They do not reduce to the psychology of individuals and cannot be explained by biology. They exist at the level of society, external and general and constraining, and they shape behaviour in ways individuals rarely notice, because the shaping is finished by the time anyone is capable of reflecting on it. This is the foundational claim of sociology as Durkheim conceived it. Before you can study institutions, inequality, religion, or political life sociologically, you have to accept that a society is not a collection of persons who happen to be standing near one another. It is a structure with its own reality, its own forces, and its own laws of motion.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 3.02 &middot; Social Facts: The Hidden Forces of Society</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME — one delegated listener drives every engine ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite. Try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

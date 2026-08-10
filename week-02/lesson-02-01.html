@@ -1,0 +1,393 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Q1 · Week 2 · Lesson 2.01 — "Culture, Tradition, and Social Norms"
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS (confirmed 2026-08-06). Objectives sit at analysis and
+    evaluation, works are cited inline by book and section, and terms already
+    taught are not re-glossed. Drafted to standard college-prep register and
+    revised up on 2026-08-06. See CLAUDE.md, "Register: honors".
+      Standard: SS.912.S.2.1, SS.912.S.2.2, SS.912.S.4.6
+      Objective: Students will define culture and its key components, distinguish
+                culture from society, and analyse how norms maintain social order.
+      Source: Sociology_Course_Master.html, Lesson 2.01. Prose preserved.
+      Revisions: R5 (opening section not labelled "Hook"), R7 (no em dashes),
+                standards codes kept out of student-facing text.
+
+      WIDGET ROTATION: 1.01 reflect+flip+select, 1.02 iframe-match+scale,
+      2.01 reflect+select (new framing: classify the norm), 2.02 will use
+      commit-then-reveal + scale. No engine repeats back-to-back with the same framing.
+      Select-row correct indices in order: 0, 2, 1, 3, 0, 1. Not ascending.
+
+      NOTE ON MINER: the lesson discusses Horace Miner's 1956 "Nacirema" paper.
+      It is discussed, never reproduced: the paper is still in copyright. Talking
+      about a modern work is fine; excerpting it is not. Keep it that way.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Lesson 2.01</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS — byte-consistent with references/widgets.md ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+
+    /* ===== Core visual: the ladder of norms ===== */
+    .lad { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
+    .lad-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .lad-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
+    .rung { display: flex; align-items: stretch; gap: 0; margin-bottom: 9px; border-radius: 7px; overflow: hidden; }
+    .rung-l { width: 128px; flex-shrink: 0; padding: 13px 14px; color: #0E1C42; }
+    .rung-r { flex: 1; padding: 13px 16px; background: rgba(255,255,255,0.07); }
+    .rung-name { font-size: 15px; margin-bottom: 2px; }
+    .rung-lat { font-size: 10px; letter-spacing: 0.3px; opacity: 0.75; }
+    .rung-def { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.5; margin-bottom: 5px; }
+    .rung-ex { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.45; }
+    .r1 .rung-l { background: #d9e6ef; }
+    .r2 .rung-l { background: #b9d3e3; }
+    .r3 .rung-l { background: #d8bd82; }
+    .r4 .rung-l { background: #c39a52; }
+    .lad-axis { display: flex; justify-content: space-between; margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 11px; color: rgba(255,255,255,0.5); letter-spacing: 0.4px; }
+
+    .two { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 15px; }
+    .two th { background: #0E1C42; color: #fff; text-align: left; padding: 10px 13px; font-size: 12px; letter-spacing: 0.4px; font-weight: normal; }
+    .two td { border: 1px solid #D0D9E8; padding: 10px 13px; color: #1a2340; line-height: 1.5; vertical-align: top; }
+    .two tr:nth-child(even) td { background: #F8FAFD; }
+    .two td:first-child { color: #0E1C42; width: 20%; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 2</div>
+        <div style="font-size: 12px; color: #666;">Culture, Tradition, and Socialization</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 2.01</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Culture, Tradition, and Social Norms</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Culture, Tradition, and Socialization</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 2.01</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Culture, Tradition, and Social Norms</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">What would your own life look like to a stranger who had never seen it?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Last week you learned that sociology began when familiar arrangements came apart. Today you learn the technique that lets you study arrangements that have not come apart: looking at your own culture as though you had just arrived in it.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> analyse an unfamiliar cultural practice into the five components, and judge which component is doing the most work to hold it in place.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> defend the distinction between a culture and a society by producing a case of each occurring without the other.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> classify a rule of behavior by the sanction that enforces it, and infer from the classification which value the rule protects.</div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 1 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE NACIREMA</div>
+
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Predict before you read: a researcher describes a tribe whose members keep a shrine room in every house and insert bundles of hog hair into their mouths twice a day. How far away do you think this tribe lives? (No wrong answer.)</div>
+            <div class="widget-options">
+                <button data-response="A reasonable guess, and the one the paper was written to provoke. Hold on to how confidently you placed them far away. That confidence is the thing being tested.">&#127757; Somewhere very far from me</button>
+                <button data-response="Good instinct. The description is written to sound remote, and noticing that it is written that way is already the sociological move.">&#129300; The description sounds staged</button>
+                <button data-response="Then you have either met this paper before or you read unusually carefully. Either way, watch for what makes the disguise work.">&#128071; Closer than the wording suggests</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">In 1956, the anthropologist Horace Miner published a paper in <em>American Anthropologist</em> (58:3) describing the ritual practices of a North American tribe called the Nacirema. The Nacirema, Miner reported, are obsessed with the body, which they consider fundamentally ugly and prone to decay. Each household maintains a shrine room devoted to bodily rituals. Twice daily, family members insert small hog-hair bundles into their mouths and perform highly ritualized movements while applying magical powders. They visit medicine men in grand ceremonial temples filled with vials of liquid. Specialists torture their patients to drive out the evil spirits inhabiting their teeth. Children are inducted into these rituals at an early age through formal instruction by elders.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">By the third paragraph, most readers work out that Nacirema is American spelled backward. The shrine room is a bathroom. The hog-hair bundles are toothbrushes. The ceremonial temple is a hospital. The specialists are dentists.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Miner's point is not to mock American culture. It is to show how familiar practices look strange when described with the detachment an anthropologist would use on a culture not their own. This is one of sociology's core techniques. What you have always taken for granted becomes an object you can actually examine, and you cannot examine what you cannot first see.</p>
+    </div>
+
+    <!-- ============================ PART 2 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; THE FIVE COMPONENTS OF CULTURE</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Culture is not a single thing but a system of interrelated parts. Five terms carry the rest of this course.</p>
+
+        <table class="two">
+            <tr><th>Component</th><th>What it covers</th></tr>
+            <tr><td>Culture</td><td>The whole of a group's shared knowledge, beliefs, values, norms, language, symbols, and material objects. Learned, never inherited genetically, and passed on through socialization.</td></tr>
+            <tr><td>Norms</td><td>From the Latin <em>norma</em>, a carpenter's square or rule. The shared expectations that govern behavior. They come in four grades of seriousness, below.</td></tr>
+            <tr><td>Values</td><td>The general principles a culture holds as desirable. More abstract than norms. Values are the goods that norms protect.</td></tr>
+            <tr><td>Symbol</td><td>Any object, word, gesture, or image carrying a meaning assigned by those who share the culture. Language is the most important symbol system, but flags, uniforms, and colors count too.</td></tr>
+            <tr><td>Material culture</td><td>The physical objects and technology a culture produces: tools, buildings, clothing, food, art. It both reflects and reinforces everything non-material.</td></tr>
+        </table>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 14px 0 10px 0;"><strong>Knowledge</strong> is the body of beliefs a culture treats as true: how crops grow, where the sun goes at night, what causes illness. Not all of it is accurate by scientific standards, but all of it is real in the sense that it shapes behavior. Beliefs shading toward the sacred are what anthropologists call religion; beliefs about how society should be organized are ideology.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Language</strong> is the component all the others depend on. Without it, culture cannot pass across generations and the accumulation of knowledge that separates human civilization from animal sociality cannot happen. The linguist Edward Sapir argued, in &ldquo;The Status of Linguistics as a Science&rdquo; (1929), that language does not merely describe a reality that was already there; it partly constitutes the reality of the speaker. A culture with one word for several distinct experiences has, in a meaningful sense, fewer distinctions available to it than a culture that separates them. Whether that view is entirely right is still debated. What is not debated is that language is the main vehicle by which culture is learned.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;"><strong>Norms</strong> are the behavioral specifications of a culture's values. A culture that values honesty develops norms against lying. A culture that values modesty develops norms about dress. A culture that values education develops norms about how students and teachers behave. Look at what a culture forbids most fiercely and you can read backward to what it holds most dear.</p>
+    </div>
+
+    <!-- ============================ PART 3 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; FOUR GRADES OF NORM</div>
+
+        <!-- ===== CORE VISUAL ===== -->
+        <div class="lad">
+            <div class="lad-title">THE LADDER OF NORMS</div>
+            <div class="lad-sub">Same idea, four degrees of seriousness. What happens when you break it tells you which rung you are on.</div>
+
+            <div class="rung r1">
+                <div class="rung-l"><div class="rung-name">Folkways</div><div class="rung-lat">mild disapproval</div></div>
+                <div class="rung-r">
+                    <div class="rung-def">Minor conventions. Breaking one makes you rude or odd, not wicked.</div>
+                    <div class="rung-ex">Eating with your mouth open. Interrupting a speaker. Standing too close in a queue.</div>
+                </div>
+            </div>
+            <div class="rung r2">
+                <div class="rung-l"><div class="rung-name">Mores</div><div class="rung-lat">moral censure</div></div>
+                <div class="rung-r">
+                    <div class="rung-def">Rules held with real moral weight. Breaking one makes you a bad person in others' eyes.</div>
+                    <div class="rung-ex">Dishonesty. Cruelty. Infidelity. Abandoning someone who depends on you.</div>
+                </div>
+            </div>
+            <div class="rung r3">
+                <div class="rung-l"><div class="rung-name">Laws</div><div class="rung-lat">formal penalty</div></div>
+                <div class="rung-r">
+                    <div class="rung-def">Norms a political authority has written down, with a stated punishment attached.</div>
+                    <div class="rung-ex">Speed limits. Theft. Contract obligations. Tax filing.</div>
+                </div>
+            </div>
+            <div class="rung r4">
+                <div class="rung-l"><div class="rung-name">Taboos</div><div class="rung-lat">near unthinkable</div></div>
+                <div class="rung-r">
+                    <div class="rung-def">The most severely held prohibitions, often tied to the sacred or the dangerous. Violation registers as horror rather than disapproval.</div>
+                    <div class="rung-ex">Eating human flesh. Desecrating the dead.</div>
+                </div>
+            </div>
+
+            <div class="lad-axis"><span>YOU ARE MERELY JUDGED</span><span>YOU ARE PUNISHED</span><span>YOU ARE UNTHINKABLE</span></div>
+        </div>
+
+        <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; WORTH NOTICING</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">The same behavior can sit on a different rung in a different culture, or in the same culture at a different time. That is not a flaw in the categories. It is the most useful thing about them. When a behavior moves from one rung to another, something has changed in what the culture values, and the movement is easier to see than the value.</div>
+        </div>
+
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; WHICH KIND OF NORM?</div>
+            <div class="widget-question">Sort each rule by what would actually happen to someone who broke it in the contemporary United States. Judge by the consequence, not by how much you personally disapprove.</div>
+
+            <div class="widget-row" data-correct="0" data-fb="A folkway. People would find it unpleasant and might think less of you, and that is the whole of the penalty." data-hint="Ask what the actual consequence is. Is anyone punished, or merely annoyed?">
+                <div class="widget-row-prompt">1. Chewing with your mouth open at a family dinner.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Folkway</button><button data-choice="1">More</button><button data-choice="2">Law</button><button data-choice="3">Taboo</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="A law. There is a written rule, a specified penalty, and an authority that enforces it, whatever bystanders happen to think." data-hint="Is there a written rule with a stated punishment behind this one?">
+                <div class="widget-row-prompt">2. Driving twenty miles per hour over the posted limit.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Folkway</button><button data-choice="1">More</button><button data-choice="2">Law</button><button data-choice="3">Taboo</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="A more. It carries serious moral censure and can end relationships, yet in most of the United States it is not itself a criminal offence." data-hint="This one draws heavy moral judgment. Does it also carry a formal legal penalty?">
+                <div class="widget-row-prompt">3. Being unfaithful to a spouse.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Folkway</button><button data-choice="1">More</button><button data-choice="2">Law</button><button data-choice="3">Taboo</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="3" data-fb="A taboo. Notice that the reaction is not disapproval or even outrage but something closer to horror, and that almost nobody needs the rule explained." data-hint="Some prohibitions are so deep that people struggle to discuss them calmly at all. Which rung is that?">
+                <div class="widget-row-prompt">4. Eating human flesh.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Folkway</button><button data-choice="1">More</button><button data-choice="2">Law</button><button data-choice="3">Taboo</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="A folkway. Irritating and a bit rude, with no penalty beyond how people then treat you." data-hint="Compare this with chewing loudly. Are the consequences really different in kind?">
+                <div class="widget-row-prompt">5. Cutting into a conversation before the other person finishes.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Folkway</button><button data-choice="1">More</button><button data-choice="2">Law</button><button data-choice="3">Taboo</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="A more. No court is involved, but the judgment is moral rather than merely social, and it attaches to your character." data-hint="Nobody is arrested for this. Is the reaction still only mild disapproval, though?">
+                <div class="widget-row-prompt">6. Lying to a friend to avoid an awkward conversation.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Folkway</button><button data-choice="1">More</button><button data-choice="2">Law</button><button data-choice="3">Taboo</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ============================ PART 4 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; CULTURE IS NOT SOCIETY</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Culture and society are related but they are not synonyms, and using them interchangeably will cost you precision for the rest of this course.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">A <strong>society</strong> is a group of people who share a territory and a set of interdependent relationships. A <strong>culture</strong> is the system of meaning, practice, and belief those people share. The same territory can hold many cultures at once, in the form of subcultures, countercultures, and immigrant communities. The same cultural tradition can persist across quite different political societies.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">Two examples make the distinction concrete. Medieval Europe was many political societies but, in important respects, a single Latin Christian culture. Modern America is one political society containing dozens of distinct subcultures with their own norms, vocabularies, and practices. To study a society sociologically you must study its culture. That does not make them the same object.</p>
+
+        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0;">
+            <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; In your notebook, name one subculture you belong to and two of its norms that would puzzle an outsider. Then open this.
+            </summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
+                The test of whether you have found a real subculture norm rather than just a preference is this: could you break it, and would other members notice and mind? A shared taste is not a norm. A rule about how you speak, dress, greet, or rank one another inside the group is. If both of your examples turned out to be tastes, try again with the question of what would get you gently corrected by someone senior in the group. That correction is the norm doing its work.
+            </div>
+        </details>
+    </div>
+
+    <!-- What You'll Do Next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Reading Quiz 2</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Eight questions on this lesson and Lesson 2.02. Take it in Canvas once you have read both.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 2A: Locke</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your Tuesday reading. Locke completes the set of four thinkers you met last week.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You have the vocabulary to describe a culture instead of merely living in one: five components, four grades of norm, and a working distinction between culture and society. You also have the technique that makes the vocabulary usable, which is to describe what you know best as though you had just encountered it. Next you will look at how a person comes to carry all of this without ever deciding to.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 2.01 &middot; Culture, Tradition, and Social Norms</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME — one delegated listener drives every engine ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite. Try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

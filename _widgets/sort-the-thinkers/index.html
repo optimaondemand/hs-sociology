@@ -1,0 +1,274 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Widget 1 of 4: "Sort the Thinkers"
+
+    SPEC SOURCE: Sociology_Course_Master.html, Week 1 widget-note —
+      "four quotations from Aristotle, Hobbes, Locke, and Rousseau on human
+       nature; students drag each quotation to the correct thinker.
+       Self-contained HTML, hosted on GitHub Pages, embedded via iframe
+       before Lesson 1.02."
+
+    QUOTATION PROVENANCE (all public domain; verify before any edit):
+      Aristotle, Politics I.2, trans. Benjamin Jowett (1885) — PD
+      Hobbes, Leviathan XIII (1651), spelling modernised — PD
+      Locke, Second Treatise of Government II.6 (1689) — PD
+      Rousseau, Discourse on Inequality, Part II, trans. G.D.H. Cole (1913) — PD
+    No quotation here is paraphrased or reconstructed. If a future edit cannot
+    source a line to one of the above, remove the line rather than approximate it.
+
+    INTERACTION: click-to-assign (tap a quotation, then tap a thinker), with
+    drag-and-drop as an enhancement. Click-first is the primary path so the
+    widget works on touch and by keyboard, not only with a mouse.
+
+    CORRECT MAPPING IS DELIBERATELY OUT OF ORDER: Hobbes, Aristotle, Rousseau,
+    Locke against bins ordered Aristotle, Hobbes, Locke, Rousseau. Do not sort
+    the cards into bin order.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Sort the Thinkers</title>
+<style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 16px; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; color: #0E1C42; }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 0 auto; max-width: 940px; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 6px; line-height: 1.55; }
+    .widget-help { font-size: 14px; color: #4a5a78; margin-bottom: 16px; line-height: 1.55; }
+
+    .stt-progress { font-size: 13px; color: #1B6A94; margin-bottom: 12px; }
+
+    /* Quotation cards */
+    .stt-quotes { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+    .stt-quote { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 13px 16px; cursor: pointer; transition: all 0.15s; }
+    .stt-quote:hover { border-color: #55C8E8; background: #FCFDFF; }
+    .stt-quote:focus { outline: 2px solid #2196D0; outline-offset: 2px; }
+    .stt-quote.selected { background: #0E1C42; border-color: #0E1C42; }
+    .stt-quote.selected .stt-quote-text, .stt-quote.selected .stt-quote-tag { color: #FFFFFF; }
+    .stt-quote.placed { opacity: 0.45; cursor: default; }
+    .stt-quote.locked { opacity: 0.4; cursor: default; border-left-color: #2A9D5C; }
+    .stt-quote-text { font-size: 16px; line-height: 1.55; color: #1a2340; font-style: italic; }
+    .stt-quote-tag { font-size: 11px; color: #6b7a99; margin-top: 6px; letter-spacing: 0.3px; }
+
+    /* Thinker bins */
+    .stt-bins { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+    .stt-bin { background: #FFFFFF; border: 1.5px dashed #D0D9E8; border-radius: 8px; padding: 14px 14px 12px 14px; min-height: 124px; cursor: pointer; transition: all 0.15s; }
+    .stt-bin:hover, .stt-bin.armed { border-color: #2196D0; background: #F7FCFE; }
+    .stt-bin.correct { border-style: solid; border-color: #2A9D5C; background: #F2FBF5; }
+    .stt-bin-name { font-size: 16px; color: #0E1C42; margin-bottom: 2px; }
+    .stt-bin-dates { font-size: 11px; color: #6b7a99; margin-bottom: 8px; }
+    .stt-bin-slot { font-size: 13px; color: #8a96ad; line-height: 1.45; }
+    .stt-bin-slot.filled { color: #1A6B3D; }
+
+    .stt-fb { border-radius: 4px; padding: 10px 14px; font-size: 14px; line-height: 1.55; margin-top: 14px; display: none; }
+    .stt-fb.show { display: block; }
+    .stt-fb.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .stt-fb.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .stt-fb.done { background: #FFFFFF; border-left: 3px solid #C7922C; color: #1a2340; }
+
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 14px; }
+    .widget-reset:hover { background: #FDF3E3; }
+</style>
+</head>
+<body>
+
+<div class="optima-widget" id="stt">
+    <div class="widget-kicker">&#9889; TRY IT &middot; SORT THE THINKERS</div>
+    <div class="widget-question">Four claims about human nature. Four thinkers. Match each claim to the person who made it.</div>
+    <div class="widget-help">Tap a claim to pick it up, then tap the thinker you think wrote it. You can also drag a claim onto a name. Wrong matches release the claim so you can try again.</div>
+
+    <div class="stt-progress" id="stt-progress">0 of 4 matched</div>
+
+    <div class="stt-quotes" id="stt-quotes">
+        <div class="stt-quote" draggable="true" tabindex="0" data-id="q1" data-answer="hobbes"
+             data-fb="Hobbes. Written in 1651 during the English Civil War, when the collapse of order was not a thought experiment for him but the news."
+             data-hint="This one is bleak. Ask which of the four thought life without government would be unbearable rather than innocent.">
+            <div class="stt-quote-text">&ldquo;No arts; no letters; no society; and which is worst of all, continual fear and danger of violent death; and the life of man, solitary, poor, nasty, brutish, and short.&rdquo;</div>
+            <div class="stt-quote-tag">ON LIFE WITHOUT GOVERNMENT</div>
+        </div>
+
+        <div class="stt-quote" draggable="true" tabindex="0" data-id="q2" data-answer="aristotle"
+             data-fb="Aristotle. He means it literally: the city is the form in which human nature reaches completion, so a person who needs no community is either a beast or a god."
+             data-hint="This claim says community completes us rather than restrains us. Which thinker treats the city as natural rather than invented?">
+            <div class="stt-quote-text">&ldquo;Man is by nature a political animal.&rdquo;</div>
+            <div class="stt-quote-tag">ON WHAT KIND OF CREATURE WE ARE</div>
+        </div>
+
+        <div class="stt-quote" draggable="true" tabindex="0" data-id="q3" data-answer="rousseau"
+             data-fb="Rousseau. For him the trouble starts with property and comparison, not with human nature. Society is the corruption, not the rescue."
+             data-hint="This one blames an invention for our troubles. Which thinker thought civilization spoiled something that had been fine?">
+            <div class="stt-quote-text">&ldquo;The first man who, having enclosed a piece of ground, bethought himself of saying This is mine, and found people simple enough to believe him, was the real founder of civil society.&rdquo;</div>
+            <div class="stt-quote-tag">ON WHERE INEQUALITY BEGINS</div>
+        </div>
+
+        <div class="stt-quote" draggable="true" tabindex="0" data-id="q4" data-answer="locke"
+             data-fb="Locke. He accepts that the state of nature comes before government, but insists reason already binds us there. That is his whole break with Hobbes."
+             data-hint="This thinker agrees there is a state of nature but denies it is lawless. Who thought reason obliges us even with no sovereign present?">
+            <div class="stt-quote-text">&ldquo;The state of nature has a law of nature to govern it, which obliges every one.&rdquo;</div>
+            <div class="stt-quote-tag">ON WHETHER NATURE HAS RULES</div>
+        </div>
+    </div>
+
+    <div class="stt-bins" id="stt-bins">
+        <div class="stt-bin" data-bin="aristotle">
+            <div class="stt-bin-name">Aristotle</div>
+            <div class="stt-bin-dates">384 to 322 BC &middot; Athens</div>
+            <div class="stt-bin-slot">Drop a claim here</div>
+        </div>
+        <div class="stt-bin" data-bin="hobbes">
+            <div class="stt-bin-name">Thomas Hobbes</div>
+            <div class="stt-bin-dates">1588 to 1679 &middot; England</div>
+            <div class="stt-bin-slot">Drop a claim here</div>
+        </div>
+        <div class="stt-bin" data-bin="locke">
+            <div class="stt-bin-name">John Locke</div>
+            <div class="stt-bin-dates">1632 to 1704 &middot; England</div>
+            <div class="stt-bin-slot">Drop a claim here</div>
+        </div>
+        <div class="stt-bin" data-bin="rousseau">
+            <div class="stt-bin-name">Jean-Jacques Rousseau</div>
+            <div class="stt-bin-dates">1712 to 1778 &middot; Geneva</div>
+            <div class="stt-bin-slot">Drop a claim here</div>
+        </div>
+    </div>
+
+    <div class="stt-fb" id="stt-fb"></div>
+    <button class="widget-reset" id="stt-reset">Reset</button>
+</div>
+
+<script>
+(function () {
+  var root     = document.getElementById('stt');
+  var quotesEl = document.getElementById('stt-quotes');
+  var binsEl   = document.getElementById('stt-bins');
+  var fbEl     = document.getElementById('stt-fb');
+  var progEl   = document.getElementById('stt-progress');
+  var selected = null;
+  var solved   = 0;
+
+  function quotes() { return Array.prototype.slice.call(quotesEl.querySelectorAll('.stt-quote')); }
+  function bins()   { return Array.prototype.slice.call(binsEl.querySelectorAll('.stt-bin')); }
+
+  function say(kind, msg) {
+    fbEl.className = 'stt-fb show ' + kind;
+    fbEl.textContent = msg;
+  }
+
+  function clearSelection() {
+    quotes().forEach(function (q) { q.classList.remove('selected'); });
+    bins().forEach(function (b) { b.classList.remove('armed'); });
+    selected = null;
+  }
+
+  function select(q) {
+    if (q.classList.contains('locked')) return;
+    if (selected === q) { clearSelection(); return; }
+    clearSelection();
+    selected = q;
+    q.classList.add('selected');
+    bins().forEach(function (b) {
+      if (!b.classList.contains('correct')) b.classList.add('armed');
+    });
+    say('done', 'Claim selected. Now tap the thinker you think wrote it.');
+  }
+
+  function attempt(quote, bin) {
+    if (!quote || !bin) return;
+    if (bin.classList.contains('correct')) {
+      say('incorrect', 'That thinker already has a claim. Try one of the others.');
+      return;
+    }
+    var right = quote.dataset.answer === bin.dataset.bin;
+    if (right) {
+      bin.classList.add('correct');
+      var slot = bin.querySelector('.stt-bin-slot');
+      slot.className = 'stt-bin-slot filled';
+      slot.textContent = quote.querySelector('.stt-quote-tag').textContent;
+      quote.classList.remove('selected');
+      quote.classList.add('locked');
+      quote.setAttribute('draggable', 'false');
+      solved++;
+      progEl.textContent = solved + ' of 4 matched';
+      clearSelection();
+      if (solved === 4) {
+        say('correct', 'All four matched. Notice the shape of the disagreement: Aristotle and Rousseau both call something natural, but they mean opposite things by it. Hobbes and Locke both start from a state of nature and end up in different places. That disagreement is the ground the rest of this course is built on.');
+      } else {
+        say('correct', quote.dataset.fb);
+      }
+    } else {
+      say('incorrect', quote.dataset.hint);
+      clearSelection();
+    }
+  }
+
+  quotesEl.addEventListener('click', function (e) {
+    var q = e.target.closest('.stt-quote');
+    if (q) select(q);
+  });
+
+  quotesEl.addEventListener('keydown', function (e) {
+    var q = e.target.closest('.stt-quote');
+    if (q && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); select(q); }
+  });
+
+  binsEl.addEventListener('click', function (e) {
+    var b = e.target.closest('.stt-bin');
+    if (!b) return;
+    if (!selected) {
+      say('done', 'Pick a claim first, then tap a thinker.');
+      return;
+    }
+    attempt(selected, b);
+  });
+
+  // Drag and drop as an enhancement over the click path
+  quotesEl.addEventListener('dragstart', function (e) {
+    var q = e.target.closest('.stt-quote');
+    if (!q || q.classList.contains('locked')) return;
+    selected = q;
+    e.dataTransfer.setData('text/plain', q.dataset.id);
+    e.dataTransfer.effectAllowed = 'move';
+  });
+  binsEl.addEventListener('dragover', function (e) {
+    var b = e.target.closest('.stt-bin');
+    if (!b || b.classList.contains('correct')) return;
+    e.preventDefault();
+    b.classList.add('armed');
+  });
+  binsEl.addEventListener('dragleave', function (e) {
+    var b = e.target.closest('.stt-bin');
+    if (b) b.classList.remove('armed');
+  });
+  binsEl.addEventListener('drop', function (e) {
+    var b = e.target.closest('.stt-bin');
+    if (!b) return;
+    e.preventDefault();
+    var id = e.dataTransfer.getData('text/plain');
+    var q = quotesEl.querySelector('.stt-quote[data-id="' + id + '"]');
+    attempt(q || selected, b);
+  });
+
+  document.getElementById('stt-reset').addEventListener('click', function () {
+    solved = 0;
+    progEl.textContent = '0 of 4 matched';
+    quotes().forEach(function (q) {
+      q.classList.remove('selected', 'locked', 'placed');
+      q.setAttribute('draggable', 'true');
+    });
+    bins().forEach(function (b) {
+      b.classList.remove('correct', 'armed');
+      var slot = b.querySelector('.stt-bin-slot');
+      slot.className = 'stt-bin-slot';
+      slot.textContent = 'Drop a claim here';
+    });
+    fbEl.className = 'stt-fb';
+    fbEl.textContent = '';
+    selected = null;
+  });
+})();
+</script>
+
+</body>
+</html>

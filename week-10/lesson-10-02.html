@@ -1,0 +1,386 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Q2 · Week 10 · Lesson 10.02 — "Weber: Three Types of Legitimate Authority"
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS (confirmed 2026-08-06). Economy and Society cited by part
+    and chapter. Weber's own caveat, that no real case is a pure type, is kept
+    in front rather than smoothed over, per the honors "engage the objections"
+    rule.
+
+      Standard: not supplied. manifest.json weeks[9].lessons[1].standard is an
+                empty string for this lesson; no SS.912.S code exists to strip.
+      Objective: Students will distinguish Weber's three pure types of
+                legitimate authority, classify a case that combines more than
+                one type, and evaluate what is gained and lost when authority
+                attaches to an office rather than to a person.
+      Source: manifest.json weeks[9].lessons[1] (= Sociology_Course_Master.html,
+              Lesson 10.02). Prose preserved verbatim from body_text/body_html
+              except for the changes noted below.
+      Revisions: R5 (the section titled "Hook: Why Does Anyone Follow the
+                President?" keeps only "Why Does Anyone Follow the
+                President?"), R7 (no em dashes introduced), standards codes
+                kept out of student-facing text (none existed to strip).
+
+      DASH-AS-COLON CHECK: scanned sentence by sentence for the plan.md defect
+      6 two-colon pattern. None found in this lesson's master prose either.
+      Every colon here is a single legitimate one. Reported honestly.
+
+      WIDGET ROTATION: 10.01 used reflect + scale placement. 10.02 uses flip
+      cards (non-evaluative, "Meet the Three Types") + single-select
+      classification with genuinely hard, blended cases, matching the build
+      brief's suggestion that Weber's typology is a natural fit for it. No
+      engine repeats within the week.
+      Select-row correct indices in order: 2, 0, 3, 1, 1. Not ascending.
+      Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
+
+      CONTINUITY: previews Week 11 (bureaucracy and rationalization) and the
+      Community Institution Study (Tier 3, due Week 11).
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Lesson 10.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS — byte-consistent with references/widgets.md ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+
+    /* ===== Core visual: the three types, side by side ===== */
+    .types { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
+    .types-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .types-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
+    .types-row { display: flex; align-items: stretch; gap: 12px; }
+    .types-box { flex: 1; background: rgba(255,255,255,0.07); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 14px 15px; }
+    .types-n { font-size: 10px; letter-spacing: 0.5px; color: rgba(255,255,255,0.45); margin-bottom: 6px; }
+    .types-h { font-size: 16px; color: #ffffff; margin-bottom: 8px; }
+    .types-q { font-size: 13px; color: #55C8E8; line-height: 1.5; font-style: italic; margin-bottom: 8px; }
+    .types-b { font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.5; }
+    .types-note { margin-top: 18px; padding-top: 13px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 15px; color: rgba(255,255,255,0.85); line-height: 1.6; text-align: center; font-style: italic; }
+
+    .flipgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 14px 0; }
+    .ow-flip .fcard-front { font-size: 17px; color: #0E1C42; }
+    .ow-flip .fcard-back { font-size: 14px; color: #1a2340; line-height: 1.55; }
+
+    .key-terms { background: #FCFCF8; border: 1px solid #E3DFD2; border-left: 5px solid #C7922C; border-radius: 8px; padding: 18px 22px; margin: 14px 0; }
+    .key-terms dt { font-size: 16px; color: #0E1C42; margin-top: 10px; }
+    .key-terms dt:first-child { margin-top: 0; }
+    .key-terms dd { font-size: 16px; color: #1a2340; line-height: 1.6; margin: 4px 0 0 0; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 10</div>
+        <div style="font-size: 12px; color: #666;">Origins of Government and Political Authority</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 10.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Weber: Three Types of Legitimate Authority</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Origins of Government and Political Authority</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 10.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Weber: Three Types of Legitimate Authority</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Why does anyone follow the president, when no soldier is standing behind them personally?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Max Weber asked a question that turns out to be difficult in a very specific way: not what compels obedience, which might be force or habit, but what kind of claim on obedience an authority is actually making, and what kind of belief validates that claim. His answer is a typology precise enough to classify any authority you can name, and honest enough to admit that almost none of them are pure examples of it.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish Weber's three pure types of legitimate authority and state, for each, exactly what claim the ruler is making on the ruled.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> classify a case of authority that blends more than one type, name which type dominates, and explain why the routinization of charisma matters for an authority's survival.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> evaluate what is gained and what is lost when authority attaches to an office rather than to a person.</div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 1 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; WHY DOES ANYONE FOLLOW THE PRESIDENT?</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Max Weber asked a simple question that turns out to be profoundly difficult: why do people obey? Not merely what compels them to obey, which might be force or habit, but what kind of claim on their obedience those in authority make and what kind of belief validates that claim. Weber's answer was his famous typology of legitimate authority, first presented in <em>Economy and Society</em>, published posthumously in 1922. He identified three pure types: traditional, charismatic, and rational-legal.</p>
+
+        <!-- ===== CORE VISUAL ===== -->
+        <div class="types">
+            <div class="types-title">THREE WAYS TO CLAIM THE RIGHT TO BE OBEYED</div>
+            <div class="types-sub">No real authority is purely any one of these. The typology is a tool for asking what basis a given authority actually rests on.</div>
+            <div class="types-row">
+                <div class="types-box">
+                    <div class="types-n">TYPE 1</div>
+                    <div class="types-h">Traditional</div>
+                    <div class="types-q">&ldquo;We obey because it has always been so.&rdquo;</div>
+                    <div class="types-b">Legitimacy from the sanctity of long-standing custom. Paradigm case: hereditary monarchy.</div>
+                </div>
+                <div class="types-box">
+                    <div class="types-n">TYPE 2</div>
+                    <div class="types-h">Charismatic</div>
+                    <div class="types-q">&ldquo;We obey because this person is extraordinary.&rdquo;</div>
+                    <div class="types-b">Legitimacy from devotion to a leader's exceptional qualities. Unstable; does not survive the leader unchanged.</div>
+                </div>
+                <div class="types-box">
+                    <div class="types-n">TYPE 3</div>
+                    <div class="types-h">Rational-Legal</div>
+                    <div class="types-q">&ldquo;We obey because the office was filled the right way.&rdquo;</div>
+                    <div class="types-b">Legitimacy from formally enacted rules. Attaches to the office, not the person holding it.</div>
+                </div>
+            </div>
+            <div class="types-note">The typology lets us ask, of any authority, what is the basis of its claim, and what would undermine it.</div>
+        </div>
+
+        <div class="key-terms">
+            <div style="font-size: 11px; color: #c7922c; margin-bottom: 10px;">KEY TERMS</div>
+            <dl>
+                <dt>Traditional Authority</dt>
+                <dd>Legitimacy derived from established custom, inherited status, and the sanctity of long-standing practice. The paradigm cases are hereditary monarchy and patriarchal household authority.</dd>
+                <dt>Charismatic Authority</dt>
+                <dd>From the Greek <em>charisma</em>, gift of grace. Legitimacy derived from the extraordinary personal qualities of an individual leader, whether heroism, prophetic power, or exceptional gift. Inherently unstable; it must be routinized to survive the charismatic leader's death.</dd>
+                <dt>Rational-Legal Authority</dt>
+                <dd>Legitimacy derived from adherence to formally enacted rules and procedures. The dominant form in modern bureaucratic states and organizations. Legitimacy attaches to the office, not the person who holds it.</dd>
+                <dt>Routinization of Charisma</dt>
+                <dd>The process by which the extraordinary authority of a charismatic leader is transformed into a stable, institutionalized form of authority, traditional or rational-legal, that can survive the leader's death.</dd>
+            </dl>
+        </div>
+    </div>
+
+    <!-- ============================ PART 2 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; TRADITIONAL AUTHORITY</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Traditional authority rests on the belief in the sanctity of age-old rules and the status of those exercising authority under them. The medieval king rules because kings have always ruled. His authority derives not from any particular quality he possesses but from the office he has inherited. The patriarch commands his household not because he has been elected or certified but because that is how households have always been organized. Traditional authority is inherently conservative, legitimating the present by appeal to the past. It is also personal: the traditional ruler exercises authority as a person, not merely as a function of a position.</p>
+    </div>
+
+    <!-- ============================ PART 3 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; CHARISMATIC AUTHORITY</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Charismatic authority rests on the extraordinary qualities of an individual: the prophet's revelations, the war hero's triumphs, the revolutionary's vision. It is inherently unstable because it is personal. If the charismatic leader dies, is discredited, or fails to deliver on her promises, the authority dissolves. Weber was therefore deeply interested in the routinization of charisma, the process by which the movement built around a charismatic leader is transformed into a stable institution, a church, a political party, a dynasty, that can survive without her.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Try matching each charismatic beginning to the institution its own movement typically became once the founder was gone.</p>
+
+        <div class="optima-widget ow-flip-group">
+            <div class="widget-kicker">&#9889; MEET THE PATTERN &middot; TAP EACH CARD</div>
+            <div class="widget-question">Each front names a charismatic movement at its founding. Tap to reveal the routinized institution it typically becomes, and notice what survives the transition and what does not.</div>
+            <div class="flipgrid">
+                <div class="ow-flip">
+                    <div class="ow-flip-front fcard-front">A prophet's small circle of followers</div>
+                    <div class="ow-flip-back fcard-back">A church. The prophet's personal authority becomes an office with a succession procedure. The teaching survives; the founder's unrepeatable presence does not.</div>
+                </div>
+                <div class="ow-flip">
+                    <div class="ow-flip-front fcard-front">A revolutionary's band of followers</div>
+                    <div class="ow-flip-back fcard-back">A political party. The revolutionary's personal vision becomes a platform and a membership structure that can outlast any one leader, win or lose an election, and choose a successor.</div>
+                </div>
+                <div class="ow-flip">
+                    <div class="ow-flip-front fcard-front">A war hero's personal following</div>
+                    <div class="ow-flip-back fcard-back">A dynasty. The hero's personal claim to command becomes a hereditary claim his descendants can hold without ever having done anything heroic themselves.</div>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ============================ PART 4 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; RATIONAL-LEGAL AUTHORITY</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Rational-legal authority rests on the belief in the validity of legally enacted norms and the right of those elevated to authority under such norms to issue commands. It is the dominant form of authority in modern bureaucratic states and organizations. The elected official governs not because of her ancestry or her personal charisma but because she was chosen through a legitimate process, the election. If she violates the rules of her office, she can be removed. If the process by which she was chosen was corrupted, her authority is delegitimized. The authority attaches to the office and its procedural legitimacy, not to the person who holds it.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Weber saw the rise of rational-legal authority as inseparable from the rise of bureaucracy, the mode of organization that rational-legal authority both produces and requires. That connection is the subject of next week's lessons.</p>
+    </div>
+
+    <!-- ============================ PART 5 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; TEST IT: WHICH TYPE IS IT?</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Weber's own warning is that pure types are rare. Some of the cases below genuinely combine more than one basis of legitimacy, on purpose, so judge each by what claim is actually being made rather than reaching for the first label that fits.</p>
+
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; CLASSIFY THE CASE</div>
+            <div class="widget-question">For each case, decide which of Weber's types is the basis of the authority's legitimacy claim. One case genuinely rests on more than one type at once.</div>
+
+            <div class="widget-row" data-correct="2" data-fb="Rational-legal. She holds office because a certified election under the town's charter put her there, and the charter itself specifies how she can be removed. Nothing about her ancestry or her personal qualities is doing the legitimating work." data-hint="What actually put her in office, and what would remove her from it?">
+                <div class="widget-row-prompt">1. A city council member takes office after winning a certified election under the town's charter, and can be removed only through the process the charter specifies.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Traditional</button><button data-choice="1">Charismatic</button><button data-choice="2">Rational-legal</button><button data-choice="3">More than one type at once</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Traditional. She rules because she is the eldest child of the last monarch, under a centuries-old succession rule. No election installed her and no personal quality is being invoked, only lineage under long-standing custom." data-hint="What gives her the throne: a vote, an extraordinary personal quality, or a rule about who comes next?">
+                <div class="widget-row-prompt">2. A newly crowned queen takes the throne because she is the eldest child of the last monarch, under centuries-old succession rules.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Traditional</button><button data-choice="1">Charismatic</button><button data-choice="2">Rational-legal</button><button data-choice="3">More than one type at once</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="3" data-fb="More than one type at once, and this is Weber's own point about real cases. The conclave follows centuries-old procedure, which is traditional legitimacy, while the faithful also regard the office as specially graced, which is a charismatic element layered onto a traditional one." data-hint="Look for two separate claims being made here, not one. What does the procedure supply, and what does the faithful's belief supply beyond it?">
+                <div class="widget-row-prompt">3. A pope is selected by a formal conclave following centuries-old procedure, and is also regarded by the faithful as specially graced for the office.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Traditional</button><button data-choice="1">Charismatic</button><button data-choice="2">Rational-legal</button><button data-choice="3">More than one type at once</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Charismatic. Nothing about her position or lineage is doing the work here, only an extraordinary personal quality that the group attributes to her. Weber's test is exactly this: does the claim rest on the person's own exceptional character, apart from any office or custom?" data-hint="Does she hold any office or title at all? If not, what is producing the obedience?">
+                <div class="widget-row-prompt">4. A small group follows a wilderness guide through a crisis because of her uncanny knack for finding water where none should be, not because of any title she holds.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Traditional</button><button data-choice="1">Charismatic</button><button data-choice="2">Rational-legal</button><button data-choice="3">More than one type at once</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Charismatic. He seized power by force, which is not itself a legitimacy claim at all, but the claim he makes for why people should keep following him afterward rests entirely on their enthusiasm for him personally, not on any office or any long-standing rule. Weber would call this a textbook case even though it began with violence." data-hint="Set the seizure of power aside for a moment. What reason does he give for why people should keep obeying him?">
+                <div class="widget-row-prompt">5. A self-declared revolutionary leader who seized power by force claims that the people's enthusiastic support, not any law or lineage, is what justifies his continued rule.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Traditional</button><button data-choice="1">Charismatic</button><button data-choice="2">Rational-legal</button><button data-choice="3">More than one type at once</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- What You'll Do Next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 10B: Weber</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your Thursday reading is the chapter this lesson is built from, in Weber's own words, from <em>Economy and Society</em> III.1&ndash;4.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Sociological Journal 10</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Due Thursday, no peer reply this week. You will apply the three types to an authority you accept as legitimate and one you contest.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Every claim to legitimate authority ultimately rests on one of three grounds: it has always been this way, this person is extraordinary, or the process that produced this office was the right one. Almost no real authority is a pure case of just one, which is not a flaw in Weber's typology but the reason it is useful. It gives you a way to ask precisely what is holding a given authority together, and what would have to fail for it to come apart. Next week takes rational-legal authority further, into the bureaucratic machinery it depends on and the costs Weber thought that machinery carries with it.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 10.02 &middot; Weber: Three Types of Legitimate Authority</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME — one delegated listener drives every engine ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite. Try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

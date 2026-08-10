@@ -1,0 +1,227 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Appendices · Appendix C: Virtual Reality Quick-Start Guide
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS. Tier 4 reference page, ungraded, GitHub-hosted. Shell (header /
+    metadata strip / footer / base CSS) copied byte-for-byte from
+    03_Development/week-03/module-map-03.html, per the appendix build brief.
+
+    THIS IS THE R6 REWRITE. The master's Appendix C is "ENGAGE VR Quick-Start Guide,"
+    saturated with one named platform's product vocabulary. Optima is moving off that
+    platform to one that has not been announced (see CLAUDE.md R6 and plan.md's VR
+    scrub list). Every product-bound noun below has been replaced with the neutral
+    vocabulary already established by the built VR activities (e.g.
+    week-03/vr-activity-03.md): "session link," "the VR platform" / "the desktop
+    version of the VR platform," "a setting you choose," "a 3D object," "a shared
+    whiteboard," "capture" for a still image, "recording" for a narrated sequence.
+
+    TERM COUNT REMOVED. Counted directly against the master's Appendix C text
+    (manifest.json appendices[3], 4,763 characters):
+      ENGAGE x23, IFX x9, Drawpad x3, Whiteboard IFX x2, Session ID x2,
+      Experience Editor x1, Host Controls x1  => 41 occurrences of the gate's
+      ENGAGE_TERMS list, all removed.
+    Also neutralized, not on the gate's list but equally platform-bound per R6:
+      Session x18, Location x4, Persistent x1, Temporary x2, Snapshot x4,
+      Spatial Recording x6 => 35 more instances rewritten.
+    Total: roughly 76 platform-bound instances rewritten across the page.
+    Zero ENGAGE-family terms remain in student-facing text below; verified by grep
+    before reporting this file complete (see build report).
+
+    PEDAGOGY PRESERVED, NOUNS CHANGED: every task the master's guide taught a student
+    to do (join a session from a link, choose an environment suited to the activity,
+    place and mark up a 3D object, use a shared whiteboard, capture a still image,
+    record a narrated walkthrough, use the desktop route if no headset is available,
+    troubleshoot common problems) is still here. Nothing pedagogical was cut.
+
+    "Solo VR defaults to student choice of setting" is stated explicitly per
+    feedback_optima_vr_student_location_choice, since named Locations are gone and a
+    student otherwise has no way to know a setting is theirs to pick.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Appendix C: Virtual Reality Quick-Start Guide</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    .wk { display: flex; gap: 10px; margin: 6px 0 4px 0; }
+    .day { flex: 1; border-radius: 8px; border: 1px solid #D0D9E8; overflow: hidden; }
+    .day-h { background: #0E1C42; color: #fff; font-size: 11px; letter-spacing: 0.6px; padding: 8px 10px; text-align: center; }
+    .day-b { padding: 12px 11px; min-height: 140px; }
+    .day-kind { font-size: 10px; letter-spacing: 0.5px; color: #1B6A94; margin-bottom: 5px; }
+    .day-t { font-size: 14px; color: #0E1C42; line-height: 1.45; margin-bottom: 8px; }
+    .day-due { font-size: 12px; color: #8a6a1d; background: #FDF3E3; border-radius: 4px; padding: 4px 7px; display: inline-block; line-height: 1.35; }
+    .day.rest .day-h { background: #6b7a99; }
+    .day.rest .day-b { color: #6b7a99; font-size: 13px; line-height: 1.5; }
+
+    .turn { width: 100%; border-collapse: collapse; font-size: 15px; margin: 6px 0; }
+    .turn th { background: #0E1C42; color: #fff; text-align: left; padding: 10px 13px; font-size: 12px; letter-spacing: 0.4px; font-weight: normal; }
+    .turn td { border: 1px solid #D0D9E8; padding: 10px 13px; color: #1a2340; line-height: 1.5; vertical-align: top; }
+    .turn tr:nth-child(even) td { background: #F8FAFD; }
+    .pill { display: inline-block; font-size: 11px; border-radius: 12px; padding: 3px 10px; letter-spacing: 0.3px; }
+    .p1 { background: #E8F6FB; color: #1B6A94; border: 1px solid #C5DCE5; }
+    .p2 { background: #FDF3E3; color: #8a6a1d; border: 1px solid #E8D6AE; }
+
+    .crit3 { display: flex; gap: 11px; margin: 12px 0 0 0; }
+    .crit3 div { flex: 1; background: rgba(255,255,255,0.08); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 12px 14px; }
+    .crit3 .c-n { font-size: 15px; color: #ffffff; margin-bottom: 4px; }
+    .crit3 .c-q { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.5; font-style: italic; }
+
+    .q-list { counter-reset: qq; list-style: none; padding: 0; margin: 0; }
+    .q-list li { counter-increment: qq; position: relative; padding-left: 40px; margin-bottom: 14px; font-size: 17px; color: #1a2340; line-height: 1.6; }
+    .q-list li::before { content: counter(qq); position: absolute; left: 0; top: 1px; width: 27px; height: 27px; border-radius: 50%; background: #0E1C42; color: #fff; font-family: "Segoe UI", sans-serif; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+
+    .term { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 14px 18px; margin-bottom: 12px; }
+    .term-n { font-size: 15px; color: #0E1C42; margin-bottom: 4px; }
+    .term-d { font-size: 15px; color: #4a5a78; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Section</div>
+        <div style="font-size: 17px; color: #0e1c42;">Appendices</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Reference</div>
+        <div style="font-size: 17px; color: #0e1c42;">Appendix C of 5</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Covers</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Virtual reality quick start</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Status</div>
+        <div style="font-size: 16px; color: #0e1c42;">Ungraded</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">APPENDIX C</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Virtual Reality Quick-Start Guide</div>
+        <div style="font-size: 16px; color: #666;">Everything a new student needs to complete a solo VR activity in this course. Come back to it whenever a VR term stops you.</div>
+    </div>
+
+    <!-- What the VR platform is -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#10067; WHAT IS THE VR PLATFORM?</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Optima Academy runs its VR-based learning through a single virtual reality platform, accessed through a VR headset if you have one, or through a desktop version if you do not. The desktop version costs nothing and runs on most computers made in the last five years.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Inside the platform, you join a session: a shared space where you and, depending on the activity, other students or your facilitator are present together. Every VR activity in this course tells you which session to join and gives you a link to it from the Canvas module.</p>
+    </div>
+
+    <!-- Getting started -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128640; GETTING STARTED</div>
+        <ol class="q-list">
+            <li><strong>Install the VR platform.</strong> Download it from your school's approved application portal, or from the platform's official site if your facilitator directs you there. Do not download it from any other source.</li>
+            <li><strong>Sign in with your school account.</strong> Use the email address your facilitator provides. This connects you to Optima Academy's organization inside the platform, which is what lets your facilitator see your completed work.</li>
+            <li><strong>Try the practice space first.</strong> Before your first graded activity, spend fifteen to twenty minutes in an open practice session to get comfortable with movement and with the tools described below. The first time you use any of them should not be during graded work.</li>
+        </ol>
+    </div>
+
+    <!-- Key terms -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128273; TERMS YOU WILL SEE IN EVERY VR ACTIVITY</div>
+        <p style="font-size: 16px; color: #4a5a78; line-height: 1.6; margin: 0 0 14px 0;">Every VR activity in this course is written using these six terms and no others, so you only need to learn them once.</p>
+
+        <div class="term">
+            <div class="term-n">Session</div>
+            <div class="term-d">The shared space you enter to do the activity. Your facilitator posts a session link in the Canvas module; opening that link is how you get in.</div>
+        </div>
+        <div class="term">
+            <div class="term-n">Setting</div>
+            <div class="term-d">The environment inside the session, for example a public square, a seminar room, or a gallery. For solo activities, choosing which setting to use is your decision, not something assigned to you. Pick whatever setting best fits what the activity asks you to do.</div>
+        </div>
+        <div class="term">
+            <div class="term-n">3D object</div>
+            <div class="term-d">Anything you can place in the setting and position, such as a marker, a shape, or an image, to stand for an idea. Activities that ask you to represent an argument spatially will ask you to place and arrange 3D objects.</div>
+        </div>
+        <div class="term">
+            <div class="term-n">Shared whiteboard</div>
+            <div class="term-d">A surface in the session that you or your group can write and draw on. Used for activities that ask you to record a short written answer inside the session itself.</div>
+        </div>
+        <div class="term">
+            <div class="term-n">Capture</div>
+            <div class="term-d">A still image of the setting, taken from inside the session. Used when an activity asks you to submit a picture of the space you built or annotated.</div>
+        </div>
+        <div class="term">
+            <div class="term-n">Recording</div>
+            <div class="term-d">A saved narration of your voice and movement inside the session, used when an activity asks you to present or explain something out loud rather than in writing.</div>
+        </div>
+    </div>
+
+    <!-- Step by step -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; COMPLETING A SOLO VR ACTIVITY, STEP BY STEP</div>
+        <ol class="q-list">
+            <li>Read the full activity instructions in Canvas before you put on the headset, or before you open the desktop version. Know what you are supposed to do before you enter the session.</li>
+            <li>Open the VR platform and select your session link from the Canvas module.</li>
+            <li>Join the session. If the activity asks you to choose a setting, choose one suited to the task, as described above.</li>
+            <li>Do the numbered steps listed in the assignment: placing and annotating 3D objects, writing on the shared whiteboard, or whatever that activity specifically asks for.</li>
+            <li>If the activity requires a capture, take one before you leave the session. It saves automatically to your account.</li>
+            <li>If the activity requires a recording, record it clearly and at a normal pace. It also saves automatically.</li>
+            <li>Leave the session when you are finished.</li>
+            <li>Open Canvas, go to the assignment's submission page, and upload your capture or recording, following that assignment's specific submission instructions.</li>
+        </ol>
+    </div>
+
+    <!-- No headset -->
+    <div style="background: #0E1C42; border-radius: 10px; padding: 22px 26px; margin-bottom: 20px;">
+        <div style="font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 8px;">DO NOT HAVE A HEADSET? THERE IS ALWAYS A DESKTOP ROUTE</div>
+        <div style="font-size: 16px; color: rgba(255,255,255,0.85); text-align: center; line-height: 1.7; max-width: 700px; margin: 0 auto;">Every solo VR activity in this course is fully doable on the desktop version of the platform. If a headset is unavailable to you for any reason, use the desktop version and tell your facilitator you are doing so. If you expect to use the desktop version regularly, say so early, so your facilitator can confirm the activities work well for you that way.</div>
+    </div>
+
+    <!-- Common problems -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128295; COMMON PROBLEMS AND FIXES</div>
+
+        <p style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 6px 0;"><strong>I cannot find my session.</strong></p>
+        <p style="font-size: 16px; color: #4a5a78; line-height: 1.6; margin: 0 0 14px 0;">Check the session link in your Canvas assignment again and confirm you are signed into your Optima Academy school account, not a personal one. If the link still does not work, contact your facilitator; the session may need to be reopened on their end.</p>
+
+        <p style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 6px 0;"><strong>My recording is not saving.</strong></p>
+        <p style="font-size: 16px; color: #4a5a78; line-height: 1.6; margin: 0 0 14px 0;">Confirm you have a stable internet connection; recordings need one throughout. Try a shorter recording, around thirty seconds, and see whether that one saves. If it still does not, report the problem to technical support rather than repeating the attempt several more times.</p>
+
+        <p style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 6px 0;"><strong>I cannot find a 3D object I need.</strong></p>
+        <p style="font-size: 16px; color: #4a5a78; line-height: 1.6; margin: 0 0 14px 0;">Search the object library inside the platform first. If the exact object named in the assignment is not available to you, place a similar one instead and note the substitution on the shared whiteboard or in your submission, so your facilitator knows it was a stand-in.</p>
+
+        <p style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 6px 0;"><strong>The headset is uncomfortable.</strong></p>
+        <p style="font-size: 16px; color: #4a5a78; line-height: 1.6; margin: 0 0 14px 0;">Adjust the head strap and the lens spacing for your face before you start. Take a short break every twenty-five to thirty minutes. If you feel nauseated or disoriented at any point, remove the headset immediately and resume later, or switch to the desktop version for that session.</p>
+
+        <p style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 6px 0;"><strong>I do not have a VR headset at all.</strong></p>
+        <p style="font-size: 16px; color: #4a5a78; line-height: 1.6; margin: 0;">Use the desktop version described above. Every solo VR activity in this course is built to work fully that way.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Appendices</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Appendix C of 5 &middot; Virtual Reality Quick-Start Guide</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+</body>
+</html>

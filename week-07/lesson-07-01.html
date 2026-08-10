@@ -1,0 +1,391 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Q1 · Week 7 · Lesson 7.01 — "Education: From Apprenticeship to Public Schools"
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS (confirmed 2026-08-06). Jackson's 1968 finding is presented
+    as a claim to evaluate, not received wisdom, and Part 4 states the standard
+    objection to a functionalist reading of schooling directly rather than only
+    in the guide questions.
+
+      Standard: SS.912.S.1.9, SS.912.S.2.4, SS.912.S.5.4
+      Objective: Students will explain the sociological functions of education
+                as an institution (manifest and hidden), trace its historical
+                development from diffuse and apprenticeship-based transmission
+                to compulsory public schooling, and evaluate whether an
+                education system organized around meritocratic selection can
+                also function as a mechanism of social reproduction.
+      Source: Sociology_Course_Master.html, Lesson 7.01 (644 words).
+      Revisions: R5 (opening section not labelled "Hook"), R7 (no em dashes),
+                standards codes kept out of student-facing text.
+
+      DASH-AS-COLON REPAIR (plan.md defect 6): checked sentence by sentence.
+      NONE found needing recast. This lesson carries 13 single colons in the
+      master's prose, each introducing one list, one appositive, or one
+      definition, and each was left exactly as written. plan.md's week-level
+      count of "W7 (21)" mid-sentence colons is the combined total across both
+      lessons in this module (13 here, 12 in 7.02); it is not a count of
+      broken sentences. Compare week 6, the first week with zero repairs.
+
+      HONORS ADDITION: Part 4 states the standard objection to a purely
+      functionalist reading of schooling (that explaining an institution by
+      its social function can look like an excuse for whatever inequality it
+      reproduces) and gives both sides room, rather than resolving it. This is
+      an addition under the R1 authoring rule; no preserved sentence was cut
+      or altered to make room for it.
+
+      CROSS-REFERENCE FORWARD: Part 5's closing reveal points ahead to
+      Tuesday's Durkheim reading, which argues that education itself is a
+      social fact in the Week 3 sense. This is deliberate scaffolding for
+      Primary Source Guide 7A.
+
+      WIDGET ROTATION: 6.01 used reflect + scale placement; 6.02 used
+      single-select rows alone with commit-then-reveal. 7.01 uses reflect
+      (quick check-in) + single-select rows, a combination not repeated from
+      either. 7.02 (this week's other lesson) uses flip cards + scale
+      placement, so no engine repeats within the week.
+      Select-row correct indices in order: 0, 2, 1, 3, 2. Not ascending.
+      Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Lesson 7.01</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS — byte-consistent with references/widgets.md ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+
+    /* ===== Core visual: manifest vs hidden curriculum ===== */
+    .mh { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
+    .mh-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .mh-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
+    .mh-cols { display: flex; gap: 14px; }
+    .mh-c { flex: 1; border-radius: 8px; padding: 16px 18px; }
+    .mh-m { background: rgba(85,200,232,0.13); border-top: 3px solid #55C8E8; }
+    .mh-h { background: rgba(199,146,44,0.16); border-top: 3px solid #C7922C; }
+    .mh-head { font-size: 17px; color: #ffffff; margin-bottom: 3px; }
+    .mh-tag { font-size: 11px; letter-spacing: 0.5px; margin-bottom: 12px; }
+    .mh-m .mh-tag { color: #55C8E8; }
+    .mh-h .mh-tag { color: #E0B562; }
+    .mh-r { margin-bottom: 10px; }
+    .mh-r:last-child { margin-bottom: 0; }
+    .mh-rl { font-size: 10px; letter-spacing: 0.5px; color: rgba(255,255,255,0.45); margin-bottom: 2px; }
+    .mh-rv { font-size: 14px; color: rgba(255,255,255,0.88); line-height: 1.5; }
+    .mh-warn { margin-top: 16px; background: rgba(192,57,43,0.18); border: 1px solid rgba(192,57,43,0.45); border-radius: 8px; padding: 14px 18px; }
+    .mh-warn-l { font-size: 11px; color: #f0a49a; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .mh-warn-t { font-size: 15px; color: rgba(255,255,255,0.9); line-height: 1.55; }
+
+    .kt { background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 13px 17px; margin-bottom: 9px; }
+    .kt-t { font-size: 16px; color: #0E1C42; margin-bottom: 4px; }
+    .kt-d { font-size: 16px; color: #1a2340; line-height: 1.55; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 7</div>
+        <div style="font-size: 12px; color: #666;">Education and T&ouml;nnies on Community</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 7.01</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">From Apprenticeship to Public Schools</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Education and T&ouml;nnies on Community</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 7.01</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Education: From Apprenticeship to Public Schools</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">If nobody ever assigned it, how did you learn to raise your hand before speaking?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Schools teach two curricula at once, and only one of them appears on a syllabus. Today's lesson asks what the second one is teaching, who benefits from it, and whether an institution that claims to reward merit can still quietly reproduce whatever inequality it started with.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish the manifest curriculum from the hidden curriculum in an unfamiliar case, and identify which of education's functions each one is serving.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> trace the historical shift from diffuse, apprenticeship-based transmission to compulsory public schooling, and explain what made the shift necessary rather than merely convenient.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> evaluate whether a school organized around meritocratic selection can still function as a mechanism of social reproduction, and defend a position on it.</div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 1 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; TWO CURRICULA AT ONCE</div>
+
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Before you read: name one thing school taught you that never appeared on a syllabus. (No wrong answer.)</div>
+            <div class="widget-options">
+                <button data-response="A very common answer, and it is the clearest case of what today's lesson calls the hidden curriculum: a lesson about institutional life, taught by the room's own rules rather than by any teacher.">&#9203; How to wait your turn</button>
+                <button data-response="Also hidden curriculum, and a subtler case. Nobody grades how well you tolerate an evaluator's judgment, but every graded assignment quietly trains you to do it.">&#128221; How to perform for someone judging you</button>
+                <button data-response="This one sits closer to the manifest curriculum's edge, since group projects are often officially assigned. But how you actually learned to negotiate with people you did not choose is the hidden part underneath the assignment.">&#129309; How to work with people you didn't pick</button>
+                <button data-response="Whatever you named, hold onto it. This lesson gives your example a name and a bigger argument, and you will need it again for the widget in Part 4.">&#9997;&#65039; Something else entirely</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">In 1968, Philip Jackson published a study of elementary school classrooms called <em>Life in Classrooms</em>. His central finding has been cited by sociologists ever since: that schools teach two curricula simultaneously. The manifest curriculum is what appears in lesson plans and textbooks, reading, writing, arithmetic, history. The hidden curriculum is everything else, how to wait in line, how to raise your hand before speaking, how to submit to impersonal authority, how to perform for an evaluator, how to compete and cooperate with peers in a setting one did not choose. The hidden curriculum is not officially announced and is rarely consciously taught, but it is systematically learned. And its lessons, Jackson argued, may be more consequential for adult social life than the official content.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Jackson's insight builds on a long tradition of sociological analysis that asks not just what schools teach but what schools do, what social functions they serve, whose interests they serve them for, and how they shape the persons who pass through them. These are not cynical questions. The answer is not simply that schools are instruments of social control, though they are partly that. It is that education, like all institutions, is complex, serving multiple functions, some visible and some not, some benevolent and some restrictive.</p>
+    </div>
+
+    <!-- ============================ PART 2: KEY TERMS + VISUAL ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; THE TERMS</div>
+
+        <div class="kt"><div class="kt-t">Manifest Curriculum</div><div class="kt-d">The official, stated content of schooling: the subjects, skills, and knowledge that schools openly declare they are teaching.</div></div>
+        <div class="kt"><div class="kt-t">Hidden Curriculum</div><div class="kt-d">The implicit social lessons embedded in the organization and daily practices of schooling: how to behave in bureaucratic settings, how to respond to impersonal authority, how to manage time and evaluation.</div></div>
+        <div class="kt"><div class="kt-t">Social Reproduction</div><div class="kt-d">The process by which existing social structures, including class hierarchies and cultural norms, are transmitted to the next generation through institutions like schools.</div></div>
+        <div class="kt"><div class="kt-t">Meritocracy</div><div class="kt-d">From the Latin <em>meritus</em> (deserved) and the Greek <em>kratos</em> (rule). A system in which rewards are allocated on the basis of demonstrated ability and achievement rather than hereditary privilege.</div></div>
+
+        <!-- ===== CORE VISUAL ===== -->
+        <div class="mh">
+            <div class="mh-title">TWO CURRICULA, ONE CLASSROOM</div>
+            <div class="mh-sub">Every school runs both at once. The second one is the one nobody grades.</div>
+            <div class="mh-cols">
+                <div class="mh-c mh-m">
+                    <div class="mh-head">Manifest</div>
+                    <div class="mh-tag">STATED, OFFICIAL</div>
+                    <div class="mh-r"><div class="mh-rl">DELIVERED THROUGH</div><div class="mh-rv">Lesson plans, textbooks, graded assignments.</div></div>
+                    <div class="mh-r"><div class="mh-rl">EXAMPLE</div><div class="mh-rv">Reading, arithmetic, the causes of a war.</div></div>
+                </div>
+                <div class="mh-c mh-h">
+                    <div class="mh-head">Hidden</div>
+                    <div class="mh-tag">UNSTATED, IMPLICIT</div>
+                    <div class="mh-r"><div class="mh-rl">DELIVERED THROUGH</div><div class="mh-rv">The room's daily organization: queues, bells, evaluation, impersonal authority.</div></div>
+                    <div class="mh-r"><div class="mh-rl">EXAMPLE</div><div class="mh-rv">Waiting your turn, performing for a grader, managing strangers you did not choose.</div></div>
+                </div>
+            </div>
+            <div class="mh-warn">
+                <div class="mh-warn-l">WHERE MERITOCRACY AND SOCIAL REPRODUCTION COLLIDE</div>
+                <div class="mh-warn-t">A school can declare itself meritocratic, rewarding only demonstrated ability, while still functioning as a channel of social reproduction, transmitting existing advantage, if the students arriving at the starting line were never equally prepared. The declared rule and the actual outcome can point in different directions at once.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 3 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; WHY EDUCATION BECAME ITS OWN INSTITUTION</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">For most of human history, education was not a separate institution from everyday social life. Children learned by participating in adult activities, apprenticed to craftsmen, working alongside parents in households and fields, initiated into adult roles through ritual and practice. The transmission of knowledge was embedded in social relationships rather than delegated to a specialized institution. Formal schooling, a dedicated space, a credentialed teacher, a defined curriculum, and compulsory attendance, is a modern invention, inseparable from the demands of an industrial economy that required literate workers, a modern nation-state that required literate citizens, and a scientific culture that required systematic training in abstract knowledge.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">The Prussian state was the pioneer of compulsory public education in the early nineteenth century, an education system explicitly designed to produce disciplined, loyal, literate citizens for an industrial and military state. The American common school movement, led by figures like Horace Mann in the 1830s and 1840s, drew directly on the Prussian model and established the template for public education that most Western societies still follow.</p>
+    </div>
+
+    <!-- ============================ PART 4 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; WHAT SCHOOLS DO, AND THE OBJECTION</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Sociologists identify several manifest functions of education: transmitting cultural knowledge and values, developing cognitive skills, preparing workers for the economy, selecting and sorting individuals for different social roles, and providing the institutional context for the development of citizenship. These functions are not in conflict, but they are in tension, an education system optimized for producing compliant workers is not identical to one optimized for producing critical citizens, and both differ from one optimized for personal flourishing.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The hidden curriculum is the mechanism by which schools socialize students into the behavioral norms of modern institutional life, punctuality, submission to impersonal authority, performance under evaluation, and the management of large-scale social settings with strangers. Whether they are appropriate to a fully human education is a question Plato raised in the <em>Republic</em> and that educators have not yet finished answering.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">Here is an objection worth taking seriously rather than routing around. If schools transmit and reproduce existing structures, are they primarily agents of a student's flourishing, or instruments preserving the position of families already advantaged before the child arrives? Tuesday's Durkheim, whom you meet directly, argues something close to the functionalist answer: education transmits what a healthy society genuinely needs its next generation to inherit, and that transmission is not a disguise for anything else. Critics reply that a system claiming to select purely on merit, while allocating vastly unequal starting points, is a mechanism of social reproduction wearing meritocracy's face. Neither position denies the other's facts. They disagree about what the facts add up to, and the widget below asks you to sort a few cases before you decide which side has the better of it.</p>
+
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; NAME THE MECHANISM</div>
+            <div class="widget-question">Each case below is best explained by one concept from this lesson. Choose the one doing the most explanatory work.</div>
+
+            <div class="widget-row" data-correct="0" data-fb="Manifest curriculum. Multiplication tables are stated, assigned, and graded content: the textbook says so directly." data-hint="Is this something the syllabus openly announces, or something the room teaches without saying so?">
+                <div class="widget-row-prompt">1. A student memorizes the multiplication tables assigned in the math curriculum.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Manifest curriculum</button><button data-choice="1">Hidden curriculum</button><button data-choice="2">Social reproduction</button><button data-choice="3">Meritocracy</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Social reproduction. No policy names social class, and yet the advantage of an already-fluent home vocabulary quietly compounds into a gifted-track placement years later. Nothing here was stated; everything here was transmitted." data-hint="Nobody announced a rule about family background. Ask what got passed along anyway.">
+                <div class="widget-row-prompt">2. Children from professional families arrive at kindergarten already fluent in the vocabulary teachers use, and disproportionately end up in gifted-and-talented tracks years later.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Manifest curriculum</button><button data-choice="1">Hidden curriculum</button><button data-choice="2">Social reproduction</button><button data-choice="3">Meritocracy</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Hidden curriculum. Nobody assigns a lesson called 'sit still for fifty minutes.' The room's schedule and layout teach it anyway, and every student learns it." data-hint="No textbook covers this. What is teaching it, if not a stated lesson?">
+                <div class="widget-row-prompt">3. Students learn, without ever being told directly, to sit still for fifty minutes and wait for permission to speak.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Manifest curriculum</button><button data-choice="1">Hidden curriculum</button><button data-choice="2">Social reproduction</button><button data-choice="3">Meritocracy</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="3" data-fb="Meritocracy, working as advertised. A blind-graded exam with no tutoring advantage on either side rewarded demonstrated ability alone, which is the definition, not a description of an unfair system." data-hint="Was there an unequal starting resource involved here, or did the test genuinely measure the same thing for everyone?">
+                <div class="widget-row-prompt">4. A rural student with no test-prep tutoring outscores wealthier peers on a rigorous, blind-graded entrance exam and is admitted to a selective school on that basis alone.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Manifest curriculum</button><button data-choice="1">Hidden curriculum</button><button data-choice="2">Social reproduction</button><button data-choice="3">Meritocracy</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Social reproduction, and the hardest of the five. The system's stated rule is meritocratic, and everyone is graded identically. But the outcome still tracks family wealth, because the starting resources were never equal. A meritocratic rule and a reproducing outcome can run at the same time." data-hint="Look past the rule the school states. Ask what actually predicted the outcome.">
+                <div class="widget-row-prompt">5. A school eliminates ability tracking and grades every student on one identical standardized test, but wealthier families still hire private tutors, so their children still enter the honors track at far higher rates.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Manifest curriculum</button><button data-choice="1">Hidden curriculum</button><button data-choice="2">Social reproduction</button><button data-choice="3">Meritocracy</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ============================ PART 5 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; WHERE THIS IS GOING</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Notice that this entire lesson has treated the hidden curriculum as something that exists whether or not anyone designed it, external to any single teacher's intention, general across nearly every classroom you have ever sat in, and constraining enough that resisting it has visible costs. Tuesday's reading takes that observation somewhere specific.</p>
+
+        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 16px 0 0 0;">
+            <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; In your notebook: name a hidden-curriculum lesson your own schooling taught you that nobody stated out loud. Then open this.
+            </summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
+                Whatever you named, ask yourself the same three questions you used in Week 3 on social facts. Did it exist before you arrived at school, and will it outlast you? Does it hold for essentially every student in that setting, not just you? And did you feel it push back the one time you tried to ignore it? If your example passes all three, you have just discovered that Durkheim's category applies to education directly, which is exactly the argument Tuesday's reading makes. He does not treat schooling as a collection of individual choices by teachers and students. He treats the entire educational system of a society, hidden curriculum included, as a social fact in the strict sense: external, general, and constraining. Watch, as you read, for whether he thinks the hidden curriculum's invisibility is a defect of education or evidence that it is functioning exactly as a social fact should.
+            </div>
+        </details>
+    </div>
+
+    <!-- What You'll Do Next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 7A: Durkheim</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your Tuesday reading, from <em>Education and Sociology</em>, chapter 2, argues that education is a social fact in exactly the sense you learned in Week 3.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Reading Quiz 7</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Eight questions covering both lessons this week.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Education is never only the transmission of a syllabus. It is also, unavoidably, a system that sorts, disciplines, and reproduces, whether or not any teacher in it intends that outcome. Holding both truths at once, that schools genuinely educate and that schools genuinely reproduce, is harder than picking a side, and it is the more honest description of the institution you have spent most of your life inside.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 7.01 &middot; Education: From Apprenticeship to Public Schools</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME — one delegated listener drives every engine ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite. Try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

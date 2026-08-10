@@ -1,0 +1,258 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Q2 · Week 11 · Module Map (week opener)
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS (confirmed 2026-08-06).
+      Tier 4 scaffolding, ungraded, GitHub-hosted. Not the intro wrapper:
+      that is a separate Canvas Quiz in survey mode (module-intro-11.md).
+      Week 11 virtue thread: responsibility (weeks 10 and 11, second week).
+      Journal 11 is Tier 2, a Discussion with required peer reply (ODD week;
+      see CLAUDE.md "Tier balance" and the build brief for this week).
+
+      PATTERN B WEEK. Tuesday's reading (Primary Source 11A, Weber on
+      bureaucracy) is in a book the student must obtain, per the Gerth and
+      Mills translation being still in copyright. The "get the book" alert
+      sits ABOVE the week rhythm on purpose, same position as
+      module-map-04.html, module-map-07.html, module-map-09.html,
+      module-map-13.html, and module-map-16.html: a student who learns
+      about it on Tuesday has already lost the week.
+      Thursday's reading (Primary Source 11B, Marx and Engels, Manifesto
+      Part I, trans. Samuel Moore) is Pattern A and lives on a course page
+      as usual, per plan.md 2b, so no book alert is needed for it.
+
+      Community Institution Study (Tier 3 project) spans Weeks 9-11 and is
+      DUE THIS WEEK; flagged under "Work that runs all semester" and given
+      its own line, not buried in the ongoing-work list.
+
+      Header, metadata strip, and footer copied byte-for-byte from
+      module-map-04.html per the build brief. Widget CSS n/a (no widgets on
+      a module map).
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Week 11 Module Map</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    .wk { display: flex; gap: 10px; margin: 6px 0 4px 0; }
+    .day { flex: 1; border-radius: 8px; border: 1px solid #D0D9E8; overflow: hidden; }
+    .day-h { background: #0E1C42; color: #fff; font-size: 11px; letter-spacing: 0.6px; padding: 8px 10px; text-align: center; }
+    .day-b { padding: 12px 11px; min-height: 148px; }
+    .day-kind { font-size: 10px; letter-spacing: 0.5px; color: #1B6A94; margin-bottom: 5px; }
+    .day-t { font-size: 14px; color: #0E1C42; line-height: 1.45; margin-bottom: 8px; }
+    .day-due { font-size: 12px; color: #8a6a1d; background: #FDF3E3; border-radius: 4px; padding: 4px 7px; display: inline-block; line-height: 1.35; }
+    .day-book { font-size: 12px; color: #8A1F16; background: #FDECEC; border-radius: 4px; padding: 4px 7px; display: inline-block; line-height: 1.35; }
+    .day.rest .day-h { background: #6b7a99; }
+    .day.rest .day-b { color: #6b7a99; font-size: 13px; line-height: 1.5; }
+
+    .alert { background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 8px; padding: 18px 22px; margin-bottom: 20px; }
+    .alert-l { font-size: 11px; color: #8A1F16; letter-spacing: 0.5px; margin-bottom: 9px; }
+    .alert-h { font-size: 19px; color: #0E1C42; margin-bottom: 8px; }
+    .alert-t { font-size: 17px; color: #1a2340; line-height: 1.6; }
+    .alert-t strong { color: #0E1C42; }
+
+    .turn { width: 100%; border-collapse: collapse; font-size: 15px; margin: 6px 0; }
+    .turn th { background: #0E1C42; color: #fff; text-align: left; padding: 10px 13px; font-size: 12px; letter-spacing: 0.4px; font-weight: normal; }
+    .turn td { border: 1px solid #D0D9E8; padding: 10px 13px; color: #1a2340; line-height: 1.5; vertical-align: top; }
+    .turn tr:nth-child(even) td { background: #F8FAFD; }
+    .pill { display: inline-block; font-size: 11px; border-radius: 12px; padding: 3px 10px; letter-spacing: 0.3px; }
+    .p1 { background: #E8F6FB; color: #1B6A94; border: 1px solid #C5DCE5; }
+    .p2 { background: #FDF3E3; color: #8a6a1d; border: 1px solid #E8D6AE; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 11</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">This Week</div>
+        <div style="font-size: 17px; color: #0e1c42;">Week 11 of 18</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Theme</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Weber on Bureaucracy and Marx on Industrial Society</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Virtue</div>
+        <div style="font-size: 16px; color: #0e1c42;">Responsibility</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">MODULE MAP</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Week 11: Weber on Bureaucracy and Marx on Industrial Society</div>
+        <div style="font-size: 16px; color: #666;">Start here. This page shows you everything the week contains.</div>
+    </div>
+
+    <!-- ===== BOOK ALERT: deliberately above everything else ===== -->
+    <div class="alert">
+        <div class="alert-l">&#9888;&#65039; DO THIS FIRST, TODAY</div>
+        <div class="alert-h">Tuesday's reading is in a book you need to get hold of.</div>
+        <div class="alert-t">
+            Most readings in this course are on the page in front of you. This one is not. Tuesday you
+            read <strong>Max Weber, the chapter on bureaucracy from <em>Economy and Society</em></strong>,
+            in the translation by <strong>H. H. Gerth and C. Wright Mills</strong>, from their anthology
+            <em>From Max Weber: Essays in Sociology</em>.
+            <br><br>
+            Your school library link is posted in this module. Check that you can reach a copy
+            <strong>today</strong>, not on Tuesday morning. If you cannot find one, tell your facilitator
+            straight away. That is a five-minute problem on Monday and an impossible one on Thursday.
+            The Primary Source 11A page tells you exactly which pages to read and how to find the right spot.
+            Thursday's reading, by contrast, is on a course page as usual and needs no book.
+        </div>
+        <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(192,57,43,0.3); font-size: 14px; color: #4a5a78; line-height: 1.6;">
+            Students must obtain lawful access to the assigned literary work separately. Optima course materials are original instructional materials designed to support analysis, discussion, and assessment of the work. Copyrighted text, images, illustrations, panels, audio, or other protected materials are not reproduced in Canvas, VR, videos, downloadable files, or teacher resources except where expressly licensed, in the public domain, or approved as a limited fair-use excerpt for instructional analysis.
+        </div>
+    </div>
+
+    <!-- Essential question -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#10067; THE QUESTION THIS WEEK IS ABOUT</div>
+        <div style="font-size: 21px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Two thinkers look at the same industrial world. One finds a process nobody chose. The other finds a structure with beneficiaries. Can both be right?</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.65;">Monday gives you Weber's account of bureaucracy, rationalization, and the iron cage: an argument with no villain in it. Wednesday gives you the Industrial Revolution and Marx's account of capitalism and alienation: an argument that does name winners and losers. The pairing is the point of the week. You are not being asked to decide which of them is correct.</div>
+    </div>
+
+    <!-- Week at a glance -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128197; THE WEEK AT A GLANCE</div>
+        <div class="wk">
+            <div class="day">
+                <div class="day-h">MONDAY</div>
+                <div class="day-b">
+                    <div class="day-kind">LESSON 11.01</div>
+                    <div class="day-t">Weber: Bureaucracy, Rationalization, and the Iron Cage</div>
+                    <div class="day-due">Reading Quiz 11 opens</div>
+                </div>
+            </div>
+            <div class="day">
+                <div class="day-h">TUESDAY</div>
+                <div class="day-b">
+                    <div class="day-kind">PRIMARY SOURCE 11A</div>
+                    <div class="day-t">Weber, the chapter on bureaucracy from <em>Economy and Society</em></div>
+                    <div class="day-book">In a book. Get it Monday.</div>
+                </div>
+            </div>
+            <div class="day">
+                <div class="day-h">WEDNESDAY</div>
+                <div class="day-b">
+                    <div class="day-kind">LESSON 11.02</div>
+                    <div class="day-t">The Industrial Revolution and Marx</div>
+                </div>
+            </div>
+            <div class="day">
+                <div class="day-h">THURSDAY</div>
+                <div class="day-b">
+                    <div class="day-kind">PRIMARY SOURCE 11B</div>
+                    <div class="day-t">Marx and Engels, <em>The Communist Manifesto</em>, Part I</div>
+                    <div class="day-due">Journal 11 due, peer reply due Week 12 Thursday</div>
+                </div>
+            </div>
+            <div class="day rest">
+                <div class="day-h">FRIDAY</div>
+                <div class="day-b">Catch up, finish your VR activities, or come to office hours.</div>
+            </div>
+        </div>
+        <p style="font-size: 15px; color: #4a5a78; line-height: 1.6; margin: 14px 0 0 0;">Read the two lessons and the two sources in order. Weber's diagnosis of a process nobody designed is easiest to hold onto if it is fresh in your mind when you meet Marx's diagnosis of a structure someone benefits from.</p>
+    </div>
+
+    <!-- What you turn in -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU TURN IN THIS WEEK</div>
+        <table class="turn">
+            <tr><th>Item</th><th>What it is</th><th>Counts as</th></tr>
+            <tr>
+                <td>Module 11 intro survey</td>
+                <td>A few questions before you start, including a check that you can reach Tuesday's book.</td>
+                <td><span class="pill p1">Completion</span></td>
+            </tr>
+            <tr>
+                <td>Reading Quiz 11</td>
+                <td>Eight multiple choice questions on both lessons.</td>
+                <td><span class="pill p1">Auto-graded</span></td>
+            </tr>
+            <tr>
+                <td>Sociological Journal 11</td>
+                <td>200 to 350 words applying one concept from Weber and one from Marx to the same situation you have observed. <strong>A discussion this week, with a required peer reply due Week 12 Thursday.</strong></td>
+                <td><span class="pill p2">Discussion + reply</span></td>
+            </tr>
+            <tr>
+                <td>VR Activity 11.1</td>
+                <td>Annotating an industrial setting with Marx's four dimensions of alienation and Weber's rationalization.</td>
+                <td><span class="pill p1">Completion</span></td>
+            </tr>
+            <tr>
+                <td>VR Activity 11.2</td>
+                <td>Diagramming a bureaucracy you know against Weber's ideal type.</td>
+                <td><span class="pill p1">Completion</span></td>
+            </tr>
+            <tr>
+                <td>Module 11 wrap-up survey</td>
+                <td>Your second answer to the essential question, a confidence check, and how the book went.</td>
+                <td><span class="pill p1">Completion</span></td>
+            </tr>
+        </table>
+        <p style="font-size: 15px; color: #4a5a78; line-height: 1.6; margin: 12px 0 0 0;">Journal 10 needed no peer reply and Journal 11 does: the cadence alternates, and this page will always tell you which kind of week it is.</p>
+    </div>
+
+    <!-- Ongoing work -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128260; WORK THAT RUNS ALL SEMESTER</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C0392B; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">!</div>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6;"><strong>Community Institution Study is due this week.</strong> This is the project you have been building since Week 9: an observation report on a real public setting, using at least four sociological concepts and at least two primary sources. Legitimacy and authority came from Week 10; bureaucracy is this week's addition, and it is a strong fourth concept if your setting has any formal administration in it at all, which most public settings do.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6;"><strong>Your Sociological Journal.</strong> Entry eleven goes in the same document as the rest. This is the first week the journal asks you to hold two frameworks over one example at once rather than choosing between them, which is a skill the Sociologist Case Study Reports in Weeks 12 to 15 will ask for again.</div>
+        </div>
+    </div>
+
+    <!-- Virtue -->
+    <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; THE VIRTUE THIS WEEK IS STILL RESPONSIBILITY</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Last week, responsibility meant asking what legitimate authority owes the people under it. This week sharpens the question: what do you owe when the system producing an outcome was not designed by anyone in particular? Weber's iron cage has no architect to blame, which makes it tempting to treat it as no one's problem at all. Marx's account insists that someone benefits and that responsibility can still be located even inside a structure. Holding both possibilities open, that an outcome can be nobody's fault and that an outcome can still have beneficiaries who owe something, is the harder and more honest version of the virtue.</div>
+    </div>
+
+    <!-- Start here -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#9654; WHERE TO START</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Sort out the book first. Then take the Module 11 intro survey, then open Lesson 11.01. Everything else follows in the order above.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Module Map</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Week 11 of 18 &middot; Weber on Bureaucracy and Marx on Industrial Society</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+</body>
+</html>

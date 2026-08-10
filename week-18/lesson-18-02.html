@@ -1,0 +1,360 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Q2 · Week 18 · Lesson 18.02 — "Final Examination Preparation and Capstone Workshop"
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS. Last Wednesday of the course.
+
+      Standard: none supplied in the master for this lesson (empty in
+                manifest.json weeks[17].lessons[1]).
+      Objective: Students will prepare for the final examination, distinguish
+                the concept-pairs the exam most often tests, and revise the
+                Community Flourishing Capstone against its rubric.
+      Source: Sociology_Course_Master.html, Lesson 18.02.
+
+      SUBSTANTIVE CONTENT CHANGE, FLAGGED FOR REVIEW (not a small edit):
+      The master's "Final Examination Overview" describes a hand-graded,
+      three-section written exam (definitions, comparative essays, a 700-1000
+      word extended essay; 100 points). That format is NOT what this build
+      constructs. Per CLAUDE.md ("Week 18 — final examination") and the
+      builder brief, the actual final exam is a Canvas Quiz auto-graded from
+      the pooled bank of the 17 existing reading quizzes, with no new
+      questions written — a 500:1-ratio requirement the master's essay format
+      cannot meet. I judged that presenting the master's essay-format
+      description to students here would be actively misleading (they would
+      study for a test that does not exist), so I rewrote this section to
+      describe the real exam, drawing all logistics from
+      03_Development/final-exam-spec.md. The master's "Study Guide for the
+      Final" (thinkers and concepts list) is PRESERVED near-verbatim, because
+      it is genuinely useful prep material regardless of exam format. The
+      master's body_html has no capstone-workshop content at all despite the
+      lesson's title promising one (checked against manifest.json directly);
+      the "Capstone Workshop" section below is therefore original authoring,
+      not a preserved/revised master passage, built from the Community
+      Flourishing Capstone brief in 02_Design/Sociology Major Assignments/.
+      Both judgment calls are reported per builder brief section 7.
+
+      Revisions: R5 (no "Hook" label; this lesson's master section list has
+      none to begin with), R7 (no em dashes), standards codes kept off-page.
+
+      WIDGET ROTATION: this lesson uses select + commit-then-reveal, a
+      combination not used by Lesson 18.01 (reflect + flip) or, per the
+      per-week build comments checked in weeks 1-4, by any other lesson in the
+      course so far. Correct-index sequence across the widget's five
+      evaluative rows, in document order: 0, 1, 3, 2, 2 — no ascending 0-1-2-3
+      run anywhere in that sequence.
+      Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Lesson 18.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS — byte-consistent with references/widgets.md ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+
+    /* ===== Core visual: what the final exam draws on ===== */
+    .ev { background: #0E1C42; border-radius: 10px; padding: 24px 26px 20px 26px; margin: 4px 0 18px 0; }
+    .ev-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .ev-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 18px; font-style: italic; }
+    .ev-bars { display: flex; align-items: flex-end; gap: 4px; height: 60px; margin-bottom: 8px; }
+    .ev-bar { flex: 1; background: linear-gradient(180deg, #55C8E8 0%, #2196D0 100%); border-radius: 3px 3px 0 0; height: 100%; }
+    .ev-bar.zero { background: rgba(255,255,255,0.12); border: 1px dashed rgba(255,255,255,0.35); height: 8%; }
+    .ev-labels { display: flex; gap: 4px; margin-bottom: 14px; }
+    .ev-labels span { flex: 1; font-size: 8px; color: rgba(255,255,255,0.45); text-align: center; }
+    .ev-note { background: rgba(199,146,44,0.18); border: 1px solid rgba(199,146,44,0.45); border-radius: 8px; padding: 12px 16px; font-size: 14px; color: #ffffff; line-height: 1.55; text-align: center; }
+
+    .two { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 15px; }
+    .two th { background: #0E1C42; color: #fff; text-align: left; padding: 10px 13px; font-size: 12px; letter-spacing: 0.4px; font-weight: normal; }
+    .two td { border: 1px solid #D0D9E8; padding: 10px 13px; color: #1a2340; line-height: 1.5; vertical-align: top; }
+    .two tr:nth-child(even) td { background: #F8FAFD; }
+    .two td:first-child { color: #0E1C42; width: 22%; }
+
+    .pit { background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 10px 0; }
+    .pit-h { font-size: 15px; color: #0E1C42; margin-bottom: 4px; }
+    .pit-b { font-size: 15px; color: #1a2340; line-height: 1.55; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 18</div>
+        <div style="font-size: 12px; color: #666;">Course Synthesis and Final Examination</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 18.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Final Examination Preparation and Capstone Workshop</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Course Synthesis and Final Examination</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 18.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Final Examination Preparation and Capstone Workshop</div>
+        <div style="font-size: 16px; color: #666;">Lesson &middot; Last Wednesday of the course</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Two tasks left: prove what you know, and finish the paper that shows you can use it.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">The Final Examination opens today. It is not a surprise in any sense: every question on it is a question you have already answered once, in a weekly quiz, months ago. Today is about sharpening recall on the pairs of concepts students most often blur together, and about giving your capstone draft the same critical read you have been trained to give a thinker's argument all term.</div>
+    </div>
+
+    <!-- ===== CORE VISUAL: what the exam draws on ===== -->
+    <div class="ev">
+        <div class="ev-title">WHAT THE FINAL EXAMINATION ACTUALLY IS</div>
+        <div class="ev-sub">Three questions pulled from each week's own reading quiz. Nothing written new for this exam.</div>
+        <div class="ev-bars">
+            <div class="ev-bar"></div><div class="ev-bar"></div><div class="ev-bar"></div><div class="ev-bar"></div><div class="ev-bar"></div>
+            <div class="ev-bar"></div><div class="ev-bar"></div><div class="ev-bar"></div><div class="ev-bar"></div><div class="ev-bar"></div>
+            <div class="ev-bar"></div><div class="ev-bar"></div><div class="ev-bar"></div><div class="ev-bar"></div><div class="ev-bar"></div>
+            <div class="ev-bar"></div><div class="ev-bar"></div><div class="ev-bar zero"></div>
+        </div>
+        <div class="ev-labels">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+            <span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span>
+        </div>
+        <div class="ev-note">51 questions total, 3 drawn at random from each of Weeks 1 through 17, worth 2 points each. Week 18 contributes zero new questions, because there is nothing new to test you on. Full logistics: 03_Development/final-exam-spec.md.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> correctly sort a case into one of two frequently confused concepts (anomie and alienation, or the three types of legitimate authority) and state the distinguishing feature, not just the label.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> check my Capstone draft against its own rubric and identify at least one section that currently summarizes a thinker rather than applying one.</div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 1: THE EXAM ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE FINAL EXAMINATION</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The exam is a single, auto-graded Canvas quiz, one attempt, drawn entirely from the reading quizzes you already took in Weeks 1 through 17. It is cumulative across the whole course, and it is weighted evenly across the two quarters rather than favoring whatever you read most recently. There is no essay section and no live proctoring beyond the quiz's own timer. What it tests is exactly what the weekly quizzes tested: whether you can identify a thinker's central claim, name the concept a description is illustrating, and tell two similar-sounding ideas apart.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">The most efficient way to prepare is not to reread everything. It is to find the handful of concept pairs you have consistently confused across the term and drill those specifically, because those are exactly the pairs a pooled, cumulative bank is most likely to test more than once.</p>
+    </div>
+
+    <!-- Study Guide -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; STUDY GUIDE FOR THE FINAL</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">For each thinker below: know the central claim, the key concepts attached to their name, the historical context they were writing in, and at least one critique or limitation of their framework. For each concept: know its definition, its theoretical source, and one example.</p>
+        <table class="two">
+            <tr><td>Thinkers</td><td>Aristotle, Durkheim, Weber, Marx, Simmel, T&ouml;nnies, Tocqueville, Comte, Putnam's ancestor argument (Tocqueville), Nisbet's substitute (Tocqueville's Conclusion), Bellah's substitute (Tocqueville on individualism), Hunter's substitute (Durkheim on moral education)</td></tr>
+            <tr><td>Concepts</td><td>social fact, collective conscience, mechanical solidarity, organic solidarity, anomie, alienation, rationalization, iron cage, disenchantment, division of labor, bureaucracy, legitimate authority (traditional, charismatic, rational-legal), Gemeinschaft, Gesellschaft, social capital (bonding and bridging), tyranny of the majority, mores, intermediary institutions, sociological imagination, personal trouble vs. public issue</td></tr>
+        </table>
+    </div>
+
+    <!-- ============================ PART 2: DISTINGUISHING THE PAIRS ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; THE PAIRS STUDENTS BLUR</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Try each case cold. The point is not the label; it is naming the specific feature that rules out the wrong answer.</p>
+
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; NAME THE CONCEPT</div>
+            <div class="widget-question">For each case, choose the concept it actually illustrates. More than one option will sound plausible; only one fits the definition precisely.</div>
+
+            <div class="widget-row" data-correct="0" data-fb="Right. Alienation describes estrangement from the product, process, or fellow workers of one's own labor under a specific economic arrangement, exactly this case." data-hint="Ask what specifically is being described: a mood with no clear structural cause, or a concrete relationship to a wage and a product?">
+                <div class="widget-row-prompt">1. A factory worker no longer recognizes anything of himself in the product he assembles for a wage he had no part in setting.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Alienation</button><button data-choice="1">Anomie</button><button data-choice="2">The blas&eacute; attitude</button><button data-choice="3">Rationalization</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right. Durkheim's point about anomie is precisely that it is not about deprivation; a sudden windfall deregulates expectations just as a sudden loss does, because the moral limits on desire go slack either way." data-hint="This person has not lost anything. What Durkheim concept concerns the loosening of limits on desire itself, independent of gain or loss?">
+                <div class="widget-row-prompt">2. A trader's sense of what would satisfy him keeps rising faster than his actual winnings, even during the best year of his career.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Alienation</button><button data-choice="1">Anomie</button><button data-choice="2">Class consciousness</button><button data-choice="3">Cultural capital</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="3" data-fb="Right. Rational-legal authority locates the right to command in the office and the rule that created it, not in the person's ancestry or personal magnetism, which is exactly what an election under agreed rules produces." data-hint="Ask what this official's power actually rests on: family line, personal charisma, or the office and the rules that put her there?">
+                <div class="widget-row-prompt">3. A newly elected official's authority rests entirely on having won under agreed rules, not on family line or personal magnetism.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Traditional authority</button><button data-choice="1">Charismatic authority</button><button data-choice="2">Soft despotism</button><button data-choice="3">Rational-legal authority</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Right. Gemeinschaft names a bond of long acquaintance and kinship rather than contract, exactly the case here; T&ouml;nnies contrasts it with Gesellschaft, the associational bond of a modern, contract-based society." data-hint="Ask whether these people are bound by long personal acquaintance or by an impersonal agreement they could just as easily exit.">
+                <div class="widget-row-prompt">4. A cluster of extended families who have lived on the same three streets for four generations, bound by long acquaintance rather than contract.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Gesellschaft</button><button data-choice="1">Bureaucracy</button><button data-choice="2">Gemeinschaft</button><button data-choice="3">Organic solidarity</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Right. Bonding social capital connects people who are already similar to one another; bridging social capital is the harder-won kind that connects across difference. This club is bonding, not bridging, because it does the first and not the second." data-hint="Ask whether this group connects people who are already alike to each other, or connects genuinely different groups to one another.">
+                <div class="widget-row-prompt">5. A civic club that strengthens ties among people who are already demographically similar to each other, without connecting to any other group in the city.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Rational-legal authority</button><button data-choice="1">Mechanical solidarity</button><button data-choice="2">Bonding social capital</button><button data-choice="3">Bridging social capital</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ============================ PART 3: THE CAPSTONE WORKSHOP ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; THE CAPSTONE WORKSHOP</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The Community Flourishing Capstone asks you to do, on a real community of your choosing, exactly what this course has been training you to do: describe an institution, apply a classical framework to it honestly (strengths and weaknesses both), and recommend something grounded in theory rather than in personal preference. It requires at least three institutions, at least three classical sociologists, and at least three primary sources from the course, in 1,200 to 1,800 words.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Read your own draft looking specifically for these three failure modes, in order of how often they cost points.</p>
+
+        <div class="pit">
+            <div class="pit-h">Summary standing in for application</div>
+            <div class="pit-b">"Durkheim believed societies are held together by solidarity" is a fact about Durkheim. It is not analysis of your community. Every paragraph that names a thinker should end by doing something to your specific institution that only that thinker's framework makes possible.</div>
+        </div>
+        <div class="pit">
+            <div class="pit-h">Recommendations grounded in opinion, not theory</div>
+            <div class="pit-b">"The community should communicate better" could follow from nothing you read this term. A recommendation earns its place only if you can name which thinker's diagnosis it is responding to and why that diagnosis, not just your preference, points there.</div>
+        </div>
+        <div class="pit">
+            <div class="pit-h">One strength, no weakness, or the reverse</div>
+            <div class="pit-b">The brief asks you to assess both the strengths and weaknesses of each institution. An evaluation that only praises or only criticizes has not actually evaluated anything; it has advocated.</div>
+        </div>
+
+        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 12px 0 0 0;">
+            <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; Before you open this, write one sentence in your notebook: where would Durkheim and Marx agree, and where would they disagree, about why modern work can feel hollow? Then open this.
+            </summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
+                They agree that modern economic life produces a real, structural discontent, not merely individual complaint. They disagree sharply about its source and its remedy. For Marx the problem is ownership: the worker is alienated because someone else owns what he makes and the surplus of his labor. The remedy is a change in who owns the means of production. For Durkheim the problem is regulation, not ownership: modern work can lack the moral norms that would tell a person what to expect and what counts as enough. The remedy is stronger intermediary institutions, particularly occupational associations, not a change in ownership at all. A capstone paragraph that notices this disagreement, rather than treating "alienation" and "anomie" as interchangeable words for "workers are unhappy," is doing exactly the kind of comparative work Section 2 of the study guide above is asking you to be ready for, and exactly the kind of application your capstone rubric rewards.
+            </div>
+        </details>
+    </div>
+
+    <!-- What You'll Do Next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Final Review 18B, Thursday</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">A one-page synthesis of every source this course assigned, built to help you choose your capstone's three primary sources and check your draft against a submission checklist.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Final Examination</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Open now. One attempt. Full details in the module's Final Examination item.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You now know exactly what the final examination is and is not: a cumulative check on material you have already mastered, weighted evenly across the term, with nothing sprung on you. And you know what separates a capstone that merely mentions Durkheim from one that actually uses him. Both of those are the same skill in two different formats: telling two similar-looking things apart by naming, precisely, what makes them different.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 18.02 &middot; Final Examination Preparation and Capstone Workshop</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME — one delegated listener drives every engine ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite. Try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

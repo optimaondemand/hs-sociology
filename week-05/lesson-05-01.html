@@ -1,0 +1,390 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Q1 · Week 5 · Lesson 5.01 — "Berger: An Invitation to Sociology"
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS (confirmed 2026-08-06).
+
+      Standard: SS.912.S.1.1, SS.912.S.1.4, SS.912.S.2.10
+      Objective: Students will reconstruct Berger's account of the sociological
+                consciousness, distinguish debunking from cynicism using cases,
+                and evaluate the tension between analytic detachment and his
+                stated obligation to honesty.
+      Source: Sociology_Course_Master.html, Lesson 5.01. Prose preserved
+              verbatim in Parts 1, 3, and 4 (the Hook, Sociology as Debunking,
+              and The Sociologist's Responsibility sections, and the Key Terms
+              block). Added: the biographical paragraph in Part 2, the Simmel
+              bridge in Part 3 and in What You'll Do Next, both widgets, and
+              the core visual. Nothing in the master's own sentences was
+              reworded.
+
+      *** R1 SUBSTITUTION (confirmed 2026-08-07, no approval gate) ***
+      The master built this lesson around Peter Berger's Invitation to
+      Sociology (1963), which is in copyright and cannot be assigned as a
+      reading (see CLAUDE.md, R1). Per the resolution table in plan.md
+      section 2 and the confirmed Pattern in plan.md section 2b:
+        - Berger's ideas STAY in this lesson's prose, unchanged, because the
+          point of R1 is to keep teaching who these thinkers were.
+        - The ASSIGNED READING for Tuesday changes to Georg Simmel, "The
+          Stranger" (1908), trans. Kurt H. Wolff, in The Sociology of Georg
+          Simmel (Free Press). Same move as Berger: the outsider's vantage
+          point as a tool for seeing one's own society freshly. Lesson 4.02
+          already previewed this essay (see its Part 5 and its flip card,
+          "You will read this essay next week"), so this lesson's closing
+          section bridges Berger's sociological consciousness to Simmel's
+          stranger rather than introducing Simmel cold.
+        - Primary Source 5A (source-05-a.html) is PATTERN B: no PD English
+          translation of "The Stranger" exists, so the reading is linked, not
+          reproduced. See that file's build comment for the sourcing gap this
+          created (no copy of the Wolff translation was available to draw
+          verified quotations from).
+
+      This lesson's own factual content (about Berger himself, not about the
+      assigned reading) is unaffected: R1 only changes what is assigned, not
+      what is taught about.
+
+      DASH-AS-COLON REPAIR (plan.md defect 6): checked programmatically
+      against the master's raw body_html for this lesson. Zero sentences with
+      two or more mid-sentence colons were found. No repairs were needed.
+
+      WIDGET ROTATION: 3.01 reflect+select. 3.02 iframe-sort+commit-reveal.
+      4.01 reflect+iframe-sort+commit-reveal. 4.02 flip+select (see its file).
+      5.01 uses reflect (Part 1) + single-select rows (Part 3, testing
+      debunking against cynicism on five cases). Correct-index sequence,
+      in row order: 1, 0, 2, 3, 1. Not ascending. 5.02 uses a different
+      combination (scale + flip), so the two lessons this week do not repeat
+      an engine pairing.
+      Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Lesson 5.01</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS — byte-consistent with references/widgets.md ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+
+    /* ===== Core visual: the debunking motif ===== */
+    .db { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
+    .db-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .db-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
+    .db-cols { display: flex; gap: 14px; }
+    .db-c { flex: 1; border-radius: 8px; padding: 16px 18px; background: rgba(255,255,255,0.06); }
+    .db-h { font-size: 17px; color: #ffffff; margin-bottom: 12px; }
+    .db-r { margin-bottom: 10px; }
+    .db-r:last-child { margin-bottom: 0; }
+    .db-rl { font-size: 10px; letter-spacing: 0.5px; margin-bottom: 3px; }
+    .db-rl.off { color: #55C8E8; }
+    .db-rl.beneath { color: #E0B562; }
+    .db-rv { font-size: 14px; color: rgba(255,255,255,0.88); line-height: 1.5; }
+    .db-note { margin-top: 16px; padding-top: 13px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.6; }
+
+    .kt { background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 13px 17px; margin-bottom: 9px; }
+    .kt-t { font-size: 16px; color: #0E1C42; margin-bottom: 4px; }
+    .kt-d { font-size: 16px; color: #1a2340; line-height: 1.55; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 5</div>
+        <div style="font-size: 12px; color: #666;">The Sociological Imagination and the Historical Family</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 5.01</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Berger: An Invitation to Sociology</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">The Sociological Imagination and the Historical Family</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 5.01</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Berger: An Invitation to Sociology</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">If a sociologist is not a gossip, a reformer, or a bureaucrat, what exactly is left?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Peter Berger's answer is a way of looking, not a job description. He calls it the sociological consciousness, and he thinks it changes what a person notices in a room for the rest of their life. Today you are learning to see the way he describes, before you spend Tuesday watching a different thinker practice a version of the same habit.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> reconstruct Berger's account of the sociological consciousness and explain what "double vision" adds to ordinary curiosity.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> apply the debunking motif to an institution I choose, and defend which unofficial function is doing the most work in it.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> evaluate whether Berger's claimed detachment is compatible with the obligation to honesty he says comes with it.</div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 1 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE SOCIOLOGIST AT THE PARTY</div>
+
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Picture the last crowded room you were in that you did not fully choose to be in. What would a person watching only for social patterns, not conversation, have noticed that you did not? (No wrong answer.)</div>
+            <div class="widget-options">
+                <button data-response="That is a real finding and Berger would take it seriously. Who is standing near whom, and who is not, is rarely random.">&#128101; Who stood near whom</button>
+                <button data-response="Berger would agree this is exactly the kind of thing that is happening constantly and almost never gets said out loud.">&#127908; What people avoided saying</button>
+                <button data-response="This is close to what Berger means by social control operating quietly, through approval and disapproval rather than rules.">&#128064; Who seemed to be in charge</button>
+                <button data-response="Honest, and it is the harder answer. Berger's whole argument is that most people, most of the time, are not watching for this at all. That is exactly the gap his book is trying to close.">&#129300; Nothing, I was not looking for that</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Peter Berger opens his 1963 book <em>Invitation to Sociology</em> with a memorable image. The sociologist, he says, is someone consumed by curiosity about other people. Not a professional gossip, not a bureaucrat collecting data, not a reformer out to improve the world, but someone who genuinely wants to know what is going on, what people are actually doing, what structures organize their lives beneath the surface of polite appearances. Berger suggests that a sociologist at a cocktail party is not attending to the witty conversation or the social posturing. She is watching the room, observing the patterns of movement, the implied hierarchies, the social choreography that everyone is performing without being asked. She is asking not just what people say but what they are doing by saying it.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">This image captures something essential about the sociological perspective: it is a way of seeing through surfaces. The sociologist treats every social situation as a text to be read, a set of patterns, structures, and meanings that are not immediately obvious but are nonetheless real and discoverable. This capacity for deliberate double vision, seeing the familiar as strange and the strange as familiar, is what Berger means by the sociological consciousness.</p>
+    </div>
+
+    <!-- ============================ PART 2: KEY TERMS + WHO WAS BERGER ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; THE TERMS, AND WHO WAS TALKING</div>
+
+        <div class="kt"><div class="kt-t">Sociological Consciousness</div><div class="kt-d">Berger's term for the distinctive intellectual posture of the sociologist: a capacity for seeing through the official versions of social reality to the structures and processes that actually organize social life. It requires cultivating detachment from one's own social assumptions.</div></div>
+        <div class="kt"><div class="kt-t">Debunking</div><div class="kt-d">One of the recurring motifs of sociology, as Berger describes it: the discovery that things are not what they seem, that official explanations conceal as much as they reveal, and that the real forces shaping social life are often different from the ones officially acknowledged.</div></div>
+        <div class="kt"><div class="kt-t">Social Control</div><div class="kt-d">The mechanisms by which societies ensure conformity to norms and role expectations. Social control is not always coercive; it includes the subtle pressures of approval and disapproval, belonging and exclusion, that operate in every social situation.</div></div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 14px 0 0 0;">Peter L. Berger (1929 to 2017) was born in Vienna and left Europe as a young man in the years after the Second World War. He built his career in the United States as a sociologist of religion and modern culture, spending much of it at Boston University, and remained a public voice on questions of secularization and modernity for the rest of his life. <em>Invitation to Sociology</em>, published in 1963, was written for readers outside the discipline and became one of the most widely read explanations of what sociology is actually for.</p>
+    </div>
+
+    <!-- ============================ PART 3 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; SOCIOLOGY AS DEBUNKING</div>
+
+        <!-- ===== CORE VISUAL ===== -->
+        <div class="db">
+            <div class="db-title">THE DEBUNKING MOTIF</div>
+            <div class="db-sub">Not cynicism. Both layers are real at once, and understanding an institution means examining both.</div>
+            <div class="db-cols">
+                <div class="db-c">
+                    <div class="db-h">A charitable organization</div>
+                    <div class="db-r"><div class="db-rl off">OFFICIAL FUNCTION</div><div class="db-rv">Relieving genuine need. This is real, not a cover story.</div></div>
+                    <div class="db-r"><div class="db-rl beneath">ALSO PRESENT</div><div class="db-rv">Prestige-seeking, social networking among donors, and the exercise of influence.</div></div>
+                </div>
+                <div class="db-c">
+                    <div class="db-h">A religious institution</div>
+                    <div class="db-r"><div class="db-rl off">OFFICIAL FUNCTION</div><div class="db-rv">Worship and genuine faith. This is real, not a cover story.</div></div>
+                    <div class="db-r"><div class="db-rl beneath">ALSO PRESENT</div><div class="db-rv">Social control, community enforcement, and the management of status.</div></div>
+                </div>
+            </div>
+            <div class="db-note">Debunking finds the second row without denying the first. Cynicism denies the first row exists at all. That difference is the whole distinction, and it is easy to lose in practice.</div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Berger argues that one of sociology's recurring discoveries is that things are not what they seem. This is what he calls the debunking motif. The sociologist who examines a charitable organization finds, alongside genuine benevolence, also prestige-seeking, social networking, and the exercise of influence. The sociologist who examines a religious institution finds, alongside genuine faith, also social control, community enforcement, and the management of status. This is not cynicism. It is not the claim that nothing is genuine or that all motives are selfish. It is the claim that every social institution serves multiple functions, not all of them announced, and that understanding an institution requires examining all of its functions, not just the ones it presents to the public.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">The debunking motif makes sociology uncomfortable for institutions. It tends to reveal what they would prefer not to display. But it is also, Berger insists, ultimately in the service of human dignity. A society that cannot examine itself honestly, that insists on the official story even when the evidence contradicts it, is a society in which real problems cannot be addressed because they cannot be named. The sociologist's discomfort-inducing habit of looking behind the scenes is a prerequisite for social self-knowledge.</p>
+
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; DEBUNKING, OR SOMETHING ELSE?</div>
+            <div class="widget-question">Sort each case using Berger's own distinctions, not by whether you approve of anyone in it.</div>
+
+            <div class="widget-row" data-correct="1" data-fb="Debunking. A genuine function (relief) and a second, unannounced function (status and networking) coexist. Naming both is exactly what Berger means by the motif." data-hint="Does this claim that hunger relief is fake, or that something real is happening alongside it?">
+                <div class="widget-row-prompt">1. A sociologist studying a food bank finds real hunger relief, and also finds a place where donors gain visibility and standing among their peers.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Cynicism</button><button data-choice="1">Debunking</button><button data-choice="2">An official claim taken at face value</button><button data-choice="3">A value judgment, not an observation</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Cynicism. This denies that any genuine motive exists at all, which is precisely the move Berger says debunking does not make." data-hint="Is this claim allowing for any genuine motive, or ruling every motive out at once?">
+                <div class="widget-row-prompt">2. A classmate says: "All charity work is secretly selfish. Nobody actually cares about the people they say they're helping."</div>
+                <div class="widget-options">
+                    <button data-choice="0">Cynicism</button><button data-choice="1">Debunking</button><button data-choice="2">An official claim taken at face value</button><button data-choice="3">A value judgment, not an observation</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="An official claim taken at face value. This is the position Berger's sociologist starts from and then moves past, not by disbelieving it but by asking what else is true alongside it." data-hint="Has anyone here looked past the organization's own description of itself?">
+                <div class="widget-row-prompt">3. A food bank's brochure says it exists purely to feed the hungry, and a reader accepts that as the complete explanation without asking anything further.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Cynicism</button><button data-choice="1">Debunking</button><button data-choice="2">An official claim taken at face value</button><button data-choice="3">A value judgment, not an observation</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="3" data-fb="A value judgment, not an observation. Berger's sociologist reports what she finds; this statement reports only a feeling, with no claim about what is actually happening inside the institution." data-hint="Does this sentence describe any actual function of the charity, or only how the speaker feels about charities in general?">
+                <div class="widget-row-prompt">4. A classmate says: "I just don't trust charities. Something about them creeps me out."</div>
+                <div class="widget-options">
+                    <button data-choice="0">Cynicism</button><button data-choice="1">Debunking</button><button data-choice="2">An official claim taken at face value</button><button data-choice="3">A value judgment, not an observation</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Debunking again, on a different institution. The honor code genuinely teaches integrity, and it also sorts students into those who enforce it and those it is enforced against. Both are true at once." data-hint="Is there a claim here that the honor code teaches nothing real, or that it does two things at once?">
+                <div class="widget-row-prompt">5. A sociologist studying a school's honor code finds that it does teach real integrity, and also that it sorts students into an in-group that enforces it against everyone else.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Cynicism</button><button data-choice="1">Debunking</button><button data-choice="2">An official claim taken at face value</button><button data-choice="3">A value judgment, not an observation</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ============================ PART 4 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; THE SOCIOLOGIST'S RESPONSIBILITY</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Berger also insists on the responsibility that comes with sociological knowledge. The sociologist who has learned to see through appearances has an obligation to honesty: to reporting what she finds even when it is inconvenient, and to distinguishing what she observes from what she believes ought to be. The capacity for sociological detachment does not require the sociologist to have no values. It requires her to keep her values and her observations analytically separate.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">This is a demanding standard. It is also, Berger argues, the basis of sociology's claim to be a science rather than a form of advocacy or propaganda. A discipline that sees only what its practitioners wish to see has abandoned the scientific enterprise. A discipline that honestly reports what it finds, even at the cost of cherished beliefs, has a genuine claim to knowledge.</p>
+
+        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0;">
+            <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; In your notebook: can a sociologist be genuinely detached and still be obligated to honesty, or does detachment quietly become indifference? Then open this.
+            </summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
+                Berger's answer depends on keeping two things apart that are easy to collapse: what a person values and what a person reports. Detachment, on his account, governs only the second. A sociologist can care intensely about the outcome of her research and still be bound to describe accurately what the evidence shows, the way a doctor can want a patient to recover and still be obligated to report an accurate diagnosis. The harder case is a finding that cuts against something the sociologist herself values. Berger's honesty obligation only means something if it survives exactly that case. If it only holds when the evidence is convenient, it was never really an obligation.
+            </div>
+        </details>
+    </div>
+
+    <!-- ============================ PART 5 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; A DIFFERENT OUTSIDER</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Berger's sociologist earns her double vision by an act of will: she chooses to stand back from her own society and look at it as a stranger would. Last week's lesson on Simmel introduced a figure who occupies that position without choosing it. Simmel calls this figure the stranger, meaning someone who is part of a group without being fully formed by it, close enough to belong and far enough to see what belonging has made invisible to everyone else.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Tuesday's reading is Simmel's short essay on exactly that figure. It is worth reading Berger and Simmel side by side, because they arrive at the same vantage point from opposite directions. Berger describes a method a trained observer adopts. Simmel describes a social position some people simply occupy, whether or not anyone ever trained them to see from it. Ask, as you read, which account better explains why outsiders so often notice what insiders cannot.</p>
+    </div>
+
+    <!-- Wrap-up + next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 5A: Simmel</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">This week's assigned reading is Simmel's "The Stranger" (1908), not Berger's own book. The Primary Source 5A page tells you exactly what edition to obtain and how.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Reading Quiz 5</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Eight questions covering both lessons this week.</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Sociology, on Berger's account, begins with a discipline of attention rather than a body of facts. You have practiced telling debunking apart from cynicism, and you have seen why Berger thinks the sociologist's detachment has to coexist with an obligation to report honestly, not replace it. Wednesday turns the same double vision on an institution older than sociology itself: the family, the one arrangement every known society has built, in some form, to raise its children and organize its adults.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 5.01 &middot; Berger: An Invitation to Sociology</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME — one delegated listener drives every engine ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite. Try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Q2 · Week 13 · Primary Source Guide 13A (Tuesday)
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS (confirmed 2026-08-06).
+
+      Text: Durkheim, The Rules of Sociological Method, Chapter III, "Rules for
+            the Distinction of the Normal from the Pathological" (1895).
+      Underlying work: PUBLIC DOMAIN (French, 1895).
+      Translation: W. D. Halls, 1982. STILL IN COPYRIGHT.
+      Therefore PATTERN B: linked, not reproduced. See CLAUDE.md, "Copyright:
+      two kinds of source guide," and the template at week-04/source-04-a.html.
+
+      WHY NOT A FRESH RENDERING: Chapter III is the chapter carrying Durkheim's
+      most quotable and most closely paraphrased lines (the "public health"
+      claim, the Socrates example). A fresh in-house translation risks landing
+      close enough to a well-known published rendering to create exactly the
+      derivative-work problem this pattern exists to avoid. Pattern B keeps the
+      teaching intact without that risk.
+      WHY NOT THE ORIGINAL: students do not read French. Never send them to it.
+
+      SOURCE FOR ANCHORS: 01_Analysis/Sociology Primary Source Readings/
+      Q2W13_Reading_1_The Normal and the Pathological.pdf, read with pypdf
+      2026-08-07. That file is itself a curated excerpt with three internal
+      cuts already marked "Omitted:" by whoever prepared it; those editorial
+      markers (not Durkheim's own words) are what "WHAT TO SKIP" below draws
+      on. The excerpt's own first and last words are used as the anchors,
+      verified directly against the extracted text, not invented.
+
+      QUOTATION BUDGET: 3 quotes, 84 words total, against a gate ceiling of
+      75 per quote and 200 per page. Those ceilings are a conservative
+      heuristic and NOT a safe harbour; the policy states there is no safe
+      word count. All three quotes were checked against the source PDF text
+      and against em dashes: none contain one, because a .qshort block is NOT
+      exempt from the no-em-dash gate rule the way a .src block is, and the
+      Halls excerpt's own em dashes (e.g. around the Socrates line) had to be
+      routed around rather than quoted.
+
+      ALL COPYRIGHT DATES ARE STATED TO THE BEST OF MY KNOWLEDGE AND ARE NOT
+      LEGAL ADVICE. Rights clearance must confirm before publication.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Primary Source 13A</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* Short analytical quotation. NOT .src: this page reproduces nothing. */
+    .qshort { background: #FCFCF8; border: 1px solid #E3DFD2; border-left: 5px solid #C7922C; border-radius: 7px; padding: 16px 22px; margin: 14px 0; }
+    .qshort p { font-family: Georgia, "Times New Roman", serif; font-size: 18px; color: #241f18; line-height: 1.7; margin: 0; }
+    .qshort cite { display: block; font-family: "Segoe UI", sans-serif; font-size: 12px; color: #8a7a55; font-style: normal; margin-top: 9px; letter-spacing: 0.3px; }
+
+    /* What to read */
+    .wtr { background: #0E1C42; border-radius: 10px; padding: 24px 28px; margin: 4px 0 18px 0; }
+    .wtr-t { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 4px; }
+    .wtr-s { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 20px; font-style: italic; }
+    .wtr-row { display: flex; gap: 12px; margin-bottom: 10px; }
+    .wtr-row:last-child { margin-bottom: 0; }
+    .wtr-k { flex: 0 0 132px; font-size: 11px; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); padding-top: 3px; }
+    .wtr-v { flex: 1; font-size: 15px; color: rgba(255,255,255,0.92); line-height: 1.6; }
+    .wtr-v em { color: #E0B562; font-style: italic; }
+    .wtr-note { margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 14px; color: rgba(255,255,255,0.78); line-height: 1.6; }
+
+    .rights { background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 18px 0; }
+    .rights-l { font-size: 11px; color: #8A1F16; margin-bottom: 8px; letter-spacing: 0.4px; }
+    .rights-t { font-size: 15px; color: #0E1C42; line-height: 1.6; }
+
+    .get { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 15px; }
+    .get th { background: #0E1C42; color: #fff; text-align: left; padding: 9px 13px; font-size: 12px; letter-spacing: 0.4px; font-weight: normal; }
+    .get td { border: 1px solid #D0D9E8; padding: 10px 13px; color: #1a2340; line-height: 1.5; vertical-align: top; }
+    .get tr:nth-child(even) td { background: #F8FAFD; }
+    .get td:first-child { color: #0E1C42; width: 22%; }
+
+    .q-list { counter-reset: qq; list-style: none; padding: 0; margin: 0; }
+    .q-list li { counter-increment: qq; position: relative; padding-left: 40px; margin-bottom: 14px; font-size: 17px; color: #1a2340; line-height: 1.6; }
+    .q-list li::before { content: counter(qq); position: absolute; left: 0; top: 1px; width: 27px; height: 27px; border-radius: 50%; background: #0E1C42; color: #fff; font-family: "Segoe UI", sans-serif; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+
+    .arg { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 6px 0; margin: 14px 0; }
+    .arg-s { display: flex; align-items: flex-start; gap: 13px; padding: 11px 18px; border-bottom: 1px solid #EEF1F8; }
+    .arg-s:last-child { border-bottom: none; }
+    .arg-n { min-width: 26px; height: 26px; border-radius: 50%; background: #EEF1F8; color: #0E1C42; font-size: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .arg-b { font-size: 16px; color: #1a2340; line-height: 1.55; }
+    .arg-b b { color: #0E1C42; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 13</div>
+        <div style="font-size: 12px; color: #666;">Crime, Deviance, and American Institutions</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Reading</div>
+        <div style="font-size: 17px; color: #0e1c42;">Primary Source 13A</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Author</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Emile Durkheim</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Published</div>
+        <div style="font-size: 16px; color: #0e1c42;">1895</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">PRIMARY SOURCE 13A</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 6px;">Crime as a Normal Social Fact</div>
+        <div style="font-size: 16px; color: #444;">Durkheim, <em>The Rules of Sociological Method</em>, Chapter III, "Rules for the Distinction of the Normal from the Pathological."</div>
+    </div>
+
+    <!-- ===== WHAT TO READ ===== -->
+    <div class="wtr">
+        <div class="wtr-t">WHAT TO READ</div>
+        <div class="wtr-s">This reading is in a book, not on this page. Here is exactly where to start and stop.</div>
+
+        <div class="wtr-row">
+            <div class="wtr-k">THE BOOK</div>
+            <div class="wtr-v">Emile Durkheim, <em>The Rules of Sociological Method</em>. Translated by W. D. Halls. Any printing of the Halls translation works. If your library holds a different translation, that is fine too, but the wording quoted below is the Halls wording.</div>
+        </div>
+        <div class="wtr-row">
+            <div class="wtr-k">START AT</div>
+            <div class="wtr-v"><strong>Chapter III</strong>, titled <em>Rules for the Distinction of the Normal from the Pathological</em>. The chapter opens: <em>&ldquo;Every sociological phenomenon, just as every biological phenomenon&hellip;&rdquo;</em></div>
+        </div>
+        <div class="wtr-row">
+            <div class="wtr-k">STOP AT</div>
+            <div class="wtr-v">The end of the chapter. It closes on Durkheim's own defense against a misreading he expects: the chapter's last words are <em>&ldquo;&hellip;to speak of them in language that is not commonly used.&rdquo;</em></div>
+        </div>
+        <div class="wtr-row">
+            <div class="wtr-k">HOW LONG</div>
+            <div class="wtr-v">Roughly fifteen to twenty pages depending on your printing. Budget thirty to forty minutes.</div>
+        </div>
+        <div class="wtr-row">
+            <div class="wtr-k">WHAT TO SKIP</div>
+            <div class="wtr-v">Nothing is required reading, but you may move quickly through two technical stretches: an early passage on how a fact's generality connects to what Durkheim calls "the conditions of existence of the species," and a long comparative survey of crime rates across different societies used to establish that crime is universal. Both support the argument. Neither is where the argument actually turns. Do not skip the discussion of Socrates or the closing pages defending the argument against the charge that it excuses crime; those are the sections the guide questions below depend on.</div>
+        </div>
+
+        <div class="wtr-note">Page numbers are useless here because they differ between printings, which is why the boundaries above are given by chapter and by the words themselves. If the first words you find do not match, you are in the wrong chapter.</div>
+    </div>
+
+    <!-- ===== HOW TO GET IT ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; HOW TO GET THE BOOK</div>
+        <table class="get">
+            <tr><th>Try this</th><th>What to do</th></tr>
+            <tr><td>Your school library</td><td>Start here. Your facilitator posts the direct access link for our library in this week's Canvas module. Check there first, because it is the fastest route and it costs you nothing.</td></tr>
+            <tr><td>Your public library</td><td>Most public library systems hold this title in print, and many offer it as a loanable ebook. A library card is usually all you need.</td></tr>
+            <tr><td>A bookshop or publisher</td><td>The Halls translation is widely in print in paperback if you would rather own a copy. You do not need to buy it to do this course.</td></tr>
+        </table>
+        <p style="font-size: 16px; color: #4a5a78; line-height: 1.6; margin: 12px 0 0 0;">If you cannot reach a copy by Tuesday, tell your facilitator early rather than late. There is a way to keep you moving, and it works much better before the reading is due than after.</p>
+    </div>
+
+    <!-- ===== REQUIRED LANGUAGE (verbatim, policy) ===== -->
+    <div class="rights">
+        <div class="rights-l">&#9888;&#65039; ABOUT THIS READING</div>
+        <div class="rights-t">Students must obtain lawful access to the assigned literary work separately. Optima course materials are original instructional materials designed to support analysis, discussion, and assessment of the work. Copyrighted text, images, illustrations, panels, audio, or other protected materials are not reproduced in Canvas, VR, videos, downloadable files, or teacher resources except where expressly licensed, in the public domain, or approved as a limited fair-use excerpt for instructional analysis.</div>
+    </div>
+
+    <!-- Bridge -->
+    <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; WHERE THIS FITS</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Monday's lesson gave you the conclusion: crime is normal, and Durkheim means the word technically rather than as praise. This chapter is where he earns that claim, and the order of his argument matters. He does not start from crime at all. He starts from a general question in the philosophy of science, what it means for anything to be "normal," and only then applies the answer to the hardest possible test case. Watch him build the general rule before he uses it.</div>
+    </div>
+
+    <!-- Why -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; WHY YOU ARE READING THIS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">This is the chapter where Durkheim's most provocative claim gets its actual defense rather than its headline. Read it as a methodological argument as much as a substantive one. He is not only saying something about crime. He is showing what it means, in his science, for anything at all to count as normal.</p>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">The chapter moves in five steps. Track them and the argument holds together.</p>
+
+        <div class="arg">
+            <div class="arg-s"><div class="arg-n">1</div><div class="arg-b"><b>Define normal in general, before touching crime.</b> A trait is normal for a species if it is the trait most commonly found, given that species' present stage of development. Normal is not a synonym for good.</div></div>
+            <div class="arg-s"><div class="arg-n">2</div><div class="arg-b"><b>Set the test: generality.</b> Whether a fact is normal is settled by how widespread it is across a society at its current stage, not by anyone's preference for how things ought to be.</div></div>
+            <div class="arg-s"><div class="arg-n">3</div><div class="arg-b"><b>Apply the test to the hardest case available.</b> Crime is found in every society that has ever been observed. By his own test, that alone makes it normal, whatever anyone feels about it.</div></div>
+            <div class="arg-s"><div class="arg-n">4</div><div class="arg-b"><b>Push the claim further: crime is not merely present but useful.</b> A society that somehow eliminated its worst offenses would not become crime-free. It would simply reclassify smaller faults as the new crimes, because moral sensitivity rises as serious wrongdoing becomes rare.</div></div>
+            <div class="arg-s"><div class="arg-n">5</div><div class="arg-b"><b>Head off the obvious objection.</b> Watch for the moment he insists that calling crime normal is not the same as excusing it. This is the point students most often skip past, and it is the point the guide questions below test directly.</div></div>
+        </div>
+    </div>
+
+    <!-- Read for these -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; READ FOR THESE FOUR QUESTIONS</div>
+        <ol class="q-list">
+            <li>What does Durkheim mean by "normal" in this context? Is he using the word in a statistical sense, a functional sense, or a normative sense?</li>
+            <li>Durkheim argues that if crime were eliminated, the community's moral sensitivity would increase and previously minor infractions would become crimes. Is this a convincing argument? Can you think of historical evidence for or against it?</li>
+            <li>Durkheim uses Socrates as his example of a moral deviant who was in fact ahead of his society's moral development. Is this a good example? Does it support his argument?</li>
+            <li>Does Durkheim's argument that crime is normal imply that we should not punish criminals? How do the two halves of his argument, crime is normal, and punishment serves social functions, fit together?</li>
+        </ol>
+    </div>
+
+    <!-- Three short quotations with analysis -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128269; THREE SENTENCES TO FIND AND MARK</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Three sentences carry the chapter's central move. Find each one in your copy and mark it, then read the note underneath.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 16px 0 0 0;"><strong>1. The minimal claim.</strong> Before he pushes further, Durkheim states the modest version of the argument, the part that is hardest to deny:</p>
+        <div class="qshort">
+            <p>&ldquo;In the first place, crime is normal because it is completely impossible for any society entirely free of it to exist.&rdquo;</p>
+            <cite>Rules of Sociological Method, Chapter III</cite>
+        </div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Notice what this sentence does and does not claim. It does not say crime is good. It says universality is itself a fact requiring explanation, and "no society has ever managed to eliminate it" is a claim about evidence, not about values. Ask yourself what kind of evidence could actually overturn it.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 16px 0 0 0;"><strong>2. The stronger claim.</strong> Having established universality, Durkheim pushes to the sentence that made the chapter famous:</p>
+        <div class="qshort">
+            <p>&ldquo;To classify crime among the phenomena of normal sociology is not merely to declare that it is an inevitable though regrettable phenomenon arising from the incorrigible wickedness of men; it is to assert that it is a factor in public health, an integrative element in any healthy society.&rdquo;</p>
+            <cite>Rules of Sociological Method, Chapter III</cite>
+        </div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The semicolon marks the exact place his claim jumps from modest to radical. Before it: crime is inevitable, an unhappy but tolerable fact. After it: crime is useful, actively contributing to a healthy society's functioning. Most objections to Durkheim attack the second half without noticing he has already conceded, and moved past, the first.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 16px 0 0 0;"><strong>3. The disclaimer.</strong> Late in the chapter, Durkheim addresses the misreading almost everyone reaches for:</p>
+        <div class="qshort">
+            <p>&ldquo;It would be a peculiar distortion to represent our thinking as an apologia for crime.&rdquo;</p>
+            <cite>Rules of Sociological Method, Chapter III</cite>
+        </div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">He follows this with an analogy to physical pain: detested by every organism that feels it, and still a normal, useful feature of a healthy nervous system. Decide for yourself whether the analogy actually rescues him. A critic could reply that pain has an obvious function (it protects the body from damage), while the function of any single crime is much harder to specify. Is that a fair objection, or does it miss that Durkheim's claim was always about crime as a category, not about any one criminal act?</p>
+    </div>
+
+    <!-- After you read -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9999;&#65039; AFTER YOU READ</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">Write short answers to the four questions in your Sociological Journal document.</p>
+
+        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0 0 12px 0;">
+            <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; Decide in your notebook whether Socrates is a fair example of Durkheim's point, then open this.
+            </summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
+                By Athenian law, Durkheim points out, Socrates really was a criminal, and his conviction was, by the standards of Athenian law, entirely just. His crime, an independence of thought that unsettled the city's traditional pieties, is exactly what Durkheim's social-change function describes: a violation that later ages judged as moral progress. The example is strong precisely because it does not soften the original verdict. Durkheim is not claiming Athens was wrong to convict Socrates by its own lights. He is claiming that the very existence of people willing to be convicted for their convictions is part of how a society's morality is able to move at all. A fair objection: Socrates is a single, famous case, chosen because history vindicated him. For every Socrates, are there a hundred deviants history simply forgot, whose "independence of thought" turned out to be nothing more than error? Durkheim's argument needs some deviance to be forward-looking on average, not every act of deviance to be admirable.
+            </div>
+        </details>
+
+        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0;">
+            <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; Answer question 4 in your notebook first, then open this.
+            </summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
+                They fit together because "normal" in Durkheim's sense describes a fact's place in the social order, not its moral standing or its treatment. A disease can be a normal part of an ecosystem's biology and still be worth curing in the individual patient; a species-level fact about deviance and an act-level fact about a specific offender are two different levels of description. Durkheim can consistently hold that crime as a category is inevitable and even functional for society while also holding that any particular criminal should be punished, because punishment is doing separate work: reaffirming the collective conscience the individual act violated, which you met in Monday's lesson as boundary maintenance. The chapter's own closing pages make this explicit when Durkheim insists he is not writing an apologia for crime.
+            </div>
+        </details>
+    </div>
+
+    <!-- Next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT COMES NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Lesson 13.02, Wednesday</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tocqueville, worried about a society that may tolerate too little dissent rather than too much crime.</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Primary Source Reading</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Durkheim, <em>The Rules of Sociological Method</em> III &middot; trans. W. D. Halls</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Q1 · Week 7 · Primary Source Guide 7B (Thursday)
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS (confirmed 2026-08-06). Cited by book and section. The
+    guide asks students to track where Tönnies's argument moves from the
+    body (birth, kinship) to psychology (the two wills) to sociology (the two
+    forms of association), because that movement is the transferable part.
+
+      PATTERN B. Text: Ferdinand Tönnies, Community and Society
+      (Gemeinschaft und Gesellschaft), Book One, Sections 1 through 5, and
+      Book Two, Section 1 (1887).
+      Underlying work: PUBLIC DOMAIN (German, 1887).
+      Translation: Charles P. Loomis, 1957. STILL IN COPYRIGHT. Therefore
+      PATTERN B: linked, not reproduced. Per the build instruction for this
+      file, no fresh in-house rendering was substituted; follow the assigned
+      reading and translation as directed.
+      WHY NOT THE ORIGINAL: students do not read German. Never send them to it.
+
+      WHAT THIS PAGE DOES INSTEAD:
+        - names the edition exactly, including translator
+        - gives structural locations and, where the supplied excerpt confirms
+          them, first/last-word anchors
+        - renders three SHORT analytical quotations in .qshort containers,
+          each with commentary analysing that specific wording (77 words
+          total, against a gate ceiling of 75 per quote and 200 per page)
+        - carries the Required Language notice verbatim
+        - reproduces nothing: no .src block anywhere on this page
+
+      KNOWN GAP — NEEDS THE BOOK IN HAND. The excerpt supplied for course
+      preparation (Q1W7_Reading_2, extracted with pypdf) confirms the opening
+      words of Book One, Section 1 ("Embryo or Emergent Forms") and the
+      opening words of Book Two, Section 1 ("The Forms of Human Will"), plus a
+      stretch of running text in each. It does NOT cover Book One, Sections 2
+      through 5 at all: the supplied file jumps from partway through Section 1
+      directly to Book Two. This build does not invent anchors for Sections 2
+      through 5. Those sections are located structurally only, below, exactly
+      as source-04-a.html handled Durkheim's Chapter III. Add anchors for them
+      when someone has the volume in hand.
+
+      HOW LONG note is deliberately unquantified in pages: this build has no
+      confirmed page count for the assigned span and will not invent one.
+
+      ALL COPYRIGHT DATES ARE STATED TO THE BEST OF MY KNOWLEDGE AND ARE NOT
+      LEGAL ADVICE. Rights clearance must confirm before publication.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Primary Source 7B</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* Short analytical quotation. NOT .src: this page reproduces nothing. */
+    .qshort { background: #FCFCF8; border: 1px solid #E3DFD2; border-left: 5px solid #C7922C; border-radius: 7px; padding: 16px 22px; margin: 14px 0; }
+    .qshort p { font-family: Georgia, "Times New Roman", serif; font-size: 18px; color: #241f18; line-height: 1.7; margin: 0; }
+    .qshort cite { display: block; font-family: "Segoe UI", sans-serif; font-size: 12px; color: #8a7a55; font-style: normal; margin-top: 9px; letter-spacing: 0.3px; }
+
+    /* What to read */
+    .wtr { background: #0E1C42; border-radius: 10px; padding: 24px 28px; margin: 4px 0 18px 0; }
+    .wtr-t { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 4px; }
+    .wtr-s { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 20px; font-style: italic; }
+    .wtr-row { display: flex; gap: 12px; margin-bottom: 10px; }
+    .wtr-row:last-child { margin-bottom: 0; }
+    .wtr-k { flex: 0 0 132px; font-size: 11px; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); padding-top: 3px; }
+    .wtr-v { flex: 1; font-size: 15px; color: rgba(255,255,255,0.92); line-height: 1.6; }
+    .wtr-v em { color: #E0B562; font-style: italic; }
+    .wtr-note { margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 14px; color: rgba(255,255,255,0.78); line-height: 1.6; }
+    .wtr-gap { background: rgba(192,57,43,0.16); border: 1px solid rgba(192,57,43,0.4); border-radius: 7px; padding: 12px 16px; margin-top: 4px; font-size: 14px; color: rgba(255,255,255,0.92); line-height: 1.6; }
+
+    .rights { background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 18px 0; }
+    .rights-l { font-size: 11px; color: #8A1F16; margin-bottom: 8px; letter-spacing: 0.4px; }
+    .rights-t { font-size: 15px; color: #0E1C42; line-height: 1.6; }
+
+    .get { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 15px; }
+    .get th { background: #0E1C42; color: #fff; text-align: left; padding: 9px 13px; font-size: 12px; letter-spacing: 0.4px; font-weight: normal; }
+    .get td { border: 1px solid #D0D9E8; padding: 10px 13px; color: #1a2340; line-height: 1.5; vertical-align: top; }
+    .get tr:nth-child(even) td { background: #F8FAFD; }
+    .get td:first-child { color: #0E1C42; width: 22%; }
+
+    .q-list { counter-reset: qq; list-style: none; padding: 0; margin: 0; }
+    .q-list li { counter-increment: qq; position: relative; padding-left: 40px; margin-bottom: 14px; font-size: 17px; color: #1a2340; line-height: 1.6; }
+    .q-list li::before { content: counter(qq); position: absolute; left: 0; top: 1px; width: 27px; height: 27px; border-radius: 50%; background: #0E1C42; color: #fff; font-family: "Segoe UI", sans-serif; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+
+    .arg { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 6px 0; margin: 14px 0; }
+    .arg-s { display: flex; align-items: flex-start; gap: 13px; padding: 11px 18px; border-bottom: 1px solid #EEF1F8; }
+    .arg-s:last-child { border-bottom: none; }
+    .arg-n { min-width: 26px; height: 26px; border-radius: 50%; background: #EEF1F8; color: #0E1C42; font-size: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .arg-b { font-size: 16px; color: #1a2340; line-height: 1.55; }
+    .arg-b b { color: #0E1C42; }
+    .arg-s.gap { background: #FCFCF8; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 7</div>
+        <div style="font-size: 12px; color: #666;">Education and T&ouml;nnies on Community</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Reading</div>
+        <div style="font-size: 17px; color: #0e1c42;">Primary Source 7B</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Author</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Ferdinand T&ouml;nnies</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Published</div>
+        <div style="font-size: 16px; color: #0e1c42;">1887</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">PRIMARY SOURCE 7B</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 6px;">Natural Will, Rational Will, and the Family</div>
+        <div style="font-size: 16px; color: #444;">T&ouml;nnies, <em>Community and Society</em> (<em>Gemeinschaft und Gesellschaft</em>), Book One, Sections 1&ndash;5, and Book Two, Section 1.</div>
+    </div>
+
+    <!-- OPTIMA-TEXT-PLACEHOLDER
+         Category: PARTIAL SOURCE
+         Inserted by _build/placeholders.py. Audit with: python _build/placeholders.py --audit
+         Remove this block only when the gap below is actually closed.
+    -->
+    <div style="background: #FFF8E7; border: 2px dashed #C7922C; border-radius: 8px; padding: 16px 20px; margin: 18px 0;">
+        <div style="font-size: 11px; color: #8a6a1d; letter-spacing: 0.5px; margin-bottom: 8px;">&#9888;&#65039; PLACEHOLDER &middot; PARTIAL SOURCE &middot; NOT FINISHED COPY</div>
+        <div style="font-size: 16px; color: #1a2340; line-height: 1.6; margin-bottom: 10px;"><strong>What is missing:</strong> The supplied Tonnies PDF covers only part of Book I section 1 and Book II section 1. Book I sections 2 to 5 are part of the assigned span and were never supplied.</div>
+        <div style="font-size: 16px; color: #1a2340; line-height: 1.6;"><strong>To close this gap:</strong> Open the Loomis translation at Book I sections 2 to 5, confirm the span, and add the anchors and a page estimate to the What to read card.</div>
+        <div style="font-size: 14px; color: #8a6a1d; line-height: 1.55; margin-top: 10px; padding-top: 9px; border-top: 1px solid #E8D6AE;">This block is an internal marker, not part of the lesson. It must be resolved or removed before the course is published. Everything else on this page is finished.</div>
+    </div>
+
+
+    <!-- ===== WHAT TO READ ===== -->
+    <div class="wtr">
+        <div class="wtr-t">WHAT TO READ</div>
+        <div class="wtr-s">This reading is in a book, not on this page. Here is exactly where to start, and where this build's information runs out.</div>
+
+        <div class="wtr-row">
+            <div class="wtr-k">THE BOOK</div>
+            <div class="wtr-v">Ferdinand T&ouml;nnies, <em>Community and Society</em> (<em>Gemeinschaft und Gesellschaft</em>). Translated by Charles P. Loomis. Any printing of the Loomis translation works. If your library holds a different English translation, use it, but section numbers below are the stable locator either way; Loomis's own section titles are given as a guide.</div>
+        </div>
+        <div class="wtr-row">
+            <div class="wtr-k">START AT</div>
+            <div class="wtr-v"><strong>Book One, Section 1</strong>, "Embryo or Emergent Forms." It opens: <em>&ldquo;In accordance with the preliminary explanations, the theory of Gemeinschaft starts from the assumption of perfect unity of human wills&hellip;&rdquo;</em> This section grounds Gemeinschaft in the body itself: birth, parental descent, and sex, working through the three primal relationships of mother and child, husband and wife, and brothers and sisters.</div>
+        </div>
+        <div class="wtr-row">
+            <div class="wtr-k">CONTINUE THROUGH</div>
+            <div class="wtr-v"><strong>Book One, Sections 2 through 5</strong>, which extend the argument through neighborhood, friendship, and the customs and religious life that bind a Gemeinschaft together. Read this stretch in full, using your edition's section headings as your guide.</div>
+        </div>
+        <div class="wtr-row">
+            <div class="wtr-k">THEN READ</div>
+            <div class="wtr-v"><strong>Book Two, Section 1</strong>, "The Forms of Human Will." It opens: <em>&ldquo;The concept of human will, the correct interpretation of which is essential to the subject of this treatise, implies a twofold meaning&hellip;&rdquo;</em> This is where natural will (<em>Wesenwille</em>) and rational will (<em>K&uuml;rwille</em>) are defined and tied back to Gemeinschaft and Gesellschaft.</div>
+        </div>
+        <div class="wtr-row">
+            <div class="wtr-k">STOP AT</div>
+            <div class="wtr-v">The end of Book Two, Section 1. This build can confirm the section runs at least through a passage ending <em>&ldquo;&hellip;they represent the existing bonds,&rdquo;</em> which closes the argument pairing the two wills with the two forms of association. If your edition's Section 1 continues past that sentence, keep reading to the section's actual end as marked in your table of contents.</div>
+        </div>
+        <div class="wtr-row">
+            <div class="wtr-k">HOW LONG</div>
+            <div class="wtr-v">Longer and denser than most weeks: most of Book One's foundational section plus the opening of Book Two. Budget more time than usual, and read it in two sittings if that helps.</div>
+        </div>
+        <div class="wtr-row">
+            <div class="wtr-k">WHAT TO SKIP</div>
+            <div class="wtr-v">Nothing formally assigned should be skipped.</div>
+        </div>
+
+        <div class="wtr-gap">
+            <strong>Known gap in this guide.</strong> The excerpt used to prepare this course jumps from partway through Book One, Section 1 directly to Book Two, Section 1. This build cannot give you confirmed first or last-word anchors for Book One, Sections 2 through 5, and has not invented any. Read those sections using the section headings in your own copy; do not use the absence of an anchor here as a reason to skip them, since the guide questions below assume you have.
+        </div>
+
+        <div class="wtr-note">Page numbers are useless here because they differ between printings, which is why the boundaries above are given by section and, where confirmed, by the words themselves. If the first words you find do not match, you are in the wrong section.</div>
+    </div>
+
+    <!-- ===== HOW TO GET IT ===== -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; HOW TO GET THE BOOK</div>
+        <table class="get">
+            <tr><th>Try this</th><th>What to do</th></tr>
+            <tr><td>Your school library</td><td>Start here. Your facilitator posts the direct access link for our library in this week's Canvas module. Check there first, because it is the fastest route and it costs you nothing.</td></tr>
+            <tr><td>Your public library</td><td>Most public library systems hold this title in print, and many offer it as a loanable ebook. A library card is usually all you need.</td></tr>
+            <tr><td>A bookshop or publisher</td><td>The Loomis translation has been kept in print for decades and is widely available in paperback if you would rather own a copy. You do not need to buy it to do this course.</td></tr>
+        </table>
+        <p style="font-size: 16px; color: #4a5a78; line-height: 1.6; margin: 12px 0 0 0;">If you cannot reach a copy by today, tell your facilitator early rather than late. This is a longer reading than most weeks, so the earlier you start, the more it matters.</p>
+    </div>
+
+    <!-- ===== REQUIRED LANGUAGE (verbatim, policy) ===== -->
+    <div class="rights">
+        <div class="rights-l">&#9888;&#65039; ABOUT THIS READING</div>
+        <div class="rights-t">Students must obtain lawful access to the assigned literary work separately. Optima course materials are original instructional materials designed to support analysis, discussion, and assessment of the work. Copyrighted text, images, illustrations, panels, audio, or other protected materials are not reproduced in Canvas, VR, videos, downloadable files, or teacher resources except where expressly licensed, in the public domain, or approved as a limited fair-use excerpt for instructional analysis.</div>
+    </div>
+
+    <!-- Bridge -->
+    <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; WHERE THIS FITS</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Wednesday's lesson gave you Gemeinschaft and Gesellschaft as a finished pair, and paired each with a Durkheim and a Tocqueville equivalent. This reading is where T&ouml;nnies actually builds Gemeinschaft, and he does not start from the village or the guild the way the lesson's examples did. He starts from something more primal: the body itself, birth, and the bond between mother and child, before working outward to neighborhood and friendship, and only then over to Book Two's psychology of the two wills. Watch the direction of the argument; it runs from biology to psychology to sociology, not the reverse.</div>
+    </div>
+
+    <!-- Why -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; WHY YOU ARE READING THIS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">You already met a structurally similar distinction in Durkheim's mechanical and organic solidarity in Week 4. Read here for the difference in tone, not only the similarity in shape. Durkheim treats the shift from one form of cohesion to the other as basically a successful transformation, purchased at the price of a manageable pathology he calls anomie. T&ouml;nnies is far less willing to call the shift from Gemeinschaft to Gesellschaft a successful trade. Watch for whether the text gives him good grounds for that harsher verdict, or whether it is closer to a preference dressed as an argument.</p>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">The reading moves in five steps. The gap noted above falls between steps two and three.</p>
+
+        <div class="arg">
+            <div class="arg-s"><div class="arg-n">1</div><div class="arg-b"><b>Ground Gemeinschaft in the body.</b> Birth, parental descent, and sex bind human wills together before either party has made any choice at all.</div></div>
+            <div class="arg-s"><div class="arg-n">2</div><div class="arg-b"><b>Rank the three primal relationships.</b> Mother and child, husband and wife, and siblings, each binding differently and each rooted more in instinct and habituation than in agreement.</div></div>
+            <div class="arg-s gap"><div class="arg-n">&#8943;</div><div class="arg-b"><b>Sections 2 through 5, not anchored here.</b> Neighborhood, friendship, and the customs and religion that extend Gemeinschaft beyond kinship. Read this stretch in full using your own edition.</div></div>
+            <div class="arg-s"><div class="arg-n">3</div><div class="arg-b"><b>Pivot to psychology.</b> Define two kinds of will, natural and rational, as two different relationships between will and thinking.</div></div>
+            <div class="arg-s"><div class="arg-n">4</div><div class="arg-b"><b>State the correspondence.</b> Natural will underlies Gemeinschaft; rational will underlies Gesellschaft. T&ouml;nnies insists this pairing is not a late addition to his theory but follows from the whole line of reasoning.</div></div>
+        </div>
+    </div>
+
+    <!-- Read for these -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; READ FOR THESE FOUR QUESTIONS</div>
+        <ol class="q-list">
+            <li>How does T&ouml;nnies distinguish "natural will" (<em>Wesenwille</em>) from "rational will" (<em>K&uuml;rwille</em>)? Give one example of each type of will operating in a social relationship.</li>
+            <li>T&ouml;nnies argues that the family is the paradigm case of Gemeinschaft. What features of family life make it the clearest example of community in his sense?</li>
+            <li>Is T&ouml;nnies's account of Gesellschaft purely negative, a description of loss, or does he see genuine goods in the contractual, impersonal forms of modern society? Support your answer with textual evidence.</li>
+            <li>Durkheim would say that the shift from mechanical to organic solidarity is not a loss but a transformation. Is this a convincing reply to T&ouml;nnies? What would T&ouml;nnies say in response?</li>
+        </ol>
+    </div>
+
+    <!-- Three short quotations with analysis -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128269; THREE SENTENCES TO FIND AND MARK</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Three sentences anchor this reading. Find each one in your copy and mark it, then read the note underneath.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 16px 0 0 0;"><strong>1. The definition.</strong> Book Two opens by naming the two wills directly:</p>
+        <div class="qshort">
+            <p>&ldquo;The will of the human being in the first form I call natural will (Wesenwille); in the second form, rational will (K&uuml;rwille).&rdquo;</p>
+            <cite>Book Two, Section 1</cite>
+        </div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><em>Wesenwille</em> draws on <em>Wesen</em>, meaning being or essence, so the term suggests a will continuous with what a person organically is. <em>K&uuml;rwille</em> draws on a root meaning to choose or select, suggesting a will that operates by picking among alternatives toward a separately conceived end. Notice T&ouml;nnies does not call the second will "rational" because it is smarter. He calls it rational because it calculates, and calculation is exactly what the first will does not do.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 16px 0 0 0;"><strong>2. The paradigm case.</strong> Before he reaches any theory of will at all, T&ouml;nnies grounds Gemeinschaft in the plainest relationship he can find:</p>
+        <div class="qshort">
+            <p>&ldquo;The relation between mother and child is most deeply rooted in liking or in pure instinct.&rdquo;</p>
+            <cite>Book One, Section 1</cite>
+        </div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">This is deliberately unsentimental. T&ouml;nnies is not describing chosen, romantic love; he is describing something closer to biology, continuous with the "coherence of vegetative life" he mentions in the surrounding text. That is his strongest possible case for Gemeinschaft, because nothing about it was agreed to by either party. Test guide question 2 against this sentence: is family the paradigm case of community because it is the strongest bond, or because it is the least chosen one?</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 16px 0 0 0;"><strong>3. The parallel structure.</strong> Late in Book Two, Section 1, T&ouml;nnies pairs the two wills with two matched lists of terms:</p>
+        <div class="qshort">
+            <p>&ldquo;Special emphasis must be laid on the fact that the forms of will such as liking, habit, and memory are as essential for and characteristic of Gemeinschaft-like associations as those of deliberation, decision, and concept are of Gesellschaft-like associations.&rdquo;</p>
+            <cite>Book Two, Section 1</cite>
+        </div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Read the two lists against each other. Liking, habit, and memory are all things that happen to a person; deliberation, decision, and concept are all things a person does. The sentence's structure is doing real argumentative work: it is claiming that an entire way of being related to other people, passive versus active, receiving versus choosing, tracks the Gemeinschaft/Gesellschaft line exactly. This is the same distinction Durkheim's mechanical and organic solidarity draws, but pinned to individual psychology rather than to the structure of a whole society. Where Durkheim asks what binds a society together, T&ouml;nnies asks what kind of will a person is exercising inside each kind of bond.</p>
+    </div>
+
+    <!-- After you read -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9999;&#65039; AFTER YOU READ</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">Write short answers to the four questions in your Sociological Journal document. Question 2 will feed directly into tonight's journal entry, so answer it with a real example from your own life.</p>
+
+        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0 0 12px 0;">
+            <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; Answer question 3 in your notebook first, then open this.
+            </summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
+                Sections 2 through 5, which you read directly from the book, are where the strongest evidence for either side of this question will actually live, so treat what follows as a starting frame rather than the full answer. From what the lesson and the anchored passages above establish, T&ouml;nnies is at minimum honest that Gesellschaft brings real goods: individuals gain freedom from inherited obligation, the ability to choose associations, occupations, and beliefs that Gemeinschaft's members never could. That is not nothing, and a fair reading credits him with it. But notice how he frames those goods: as compensations for a loss, not as an independent achievement worth wanting for its own sake. Whether your own reading of Sections 2 through 5 finds him being more generous to Gesellschaft than that, or less, is exactly the kind of textual evidence question 3 is asking you to settle for yourself.
+            </div>
+        </details>
+
+        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0;">
+            <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; Decide in your notebook how T&ouml;nnies would answer question 4. Then open this.
+            </summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
+                T&ouml;nnies's likely reply is that calling the shift a "transformation" rather than a "loss" is exactly the kind of redescription that hides what actually happened. On his account, natural will and rational will are not two settings on the same dial that a society can slide between without cost; they are different in kind, rooted in a different relationship between will and thought. A society that trades one for the other has not converted community into a new, equally valid form of community. It has replaced community with something that resembles it only from a distance, held together by contract rather than by shared life. Durkheim's confidence that organic solidarity is a genuine, workable form of cohesion is, from this angle, close to changing the subject: it answers "what still holds the society together," which is a real question, but not "what was lost," which is T&ouml;nnies's question. Whether that counts as T&ouml;nnies winning the exchange, or merely as the two of them asking different questions past each other, is worth deciding for yourself, and it is exactly the kind of judgment call the Community Institution Study will ask you to make about a real institution in Weeks 9 through 11.
+            </div>
+        </details>
+    </div>
+
+    <!-- Next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT COMES NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Sociological Journal 7</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Due today, with a peer reply this week. Sort three relationships from your own life using T&ouml;nnies's vocabulary.</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 1 &middot; Primary Source Reading</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">T&ouml;nnies, <em>Community and Society</em> I.1&ndash;5, II.1 &middot; trans. Charles P. Loomis</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+</body>
+</html>

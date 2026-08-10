@@ -1,0 +1,332 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Q1 · Week 9 · Lesson 9.02 — "The Sociological Method: What We Know and How We Know It"
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS. Closes Quarter 1 by turning from what the course has argued
+    to how sociology argues at all: the four major methods, and the distinction
+    between what data shows and what a sociologist claims it means. This lesson
+    is also the methodological foundation for the Community Institution Study,
+    which is an ethnographic observation report.
+
+      Standard: not specified in the master for this lesson.
+      Objective: Students will distinguish the major sociological research
+                methods, explain the difference between fact and interpretation
+                in sociological data, and evaluate evidence for sociological
+                claims.
+      Source: _build/manifest.json, weeks[8].lessons[1]. Prose preserved from the
+              master. No content invented; the "Four Ways of Knowing" visual and
+              the fact/interpretation scale widget both restate claims already
+              made in the master's own prose, in a different format, and add no
+              new factual claims.
+
+      DASH-AS-COLON REPAIR: none required. Checked sentence by sentence against
+      the two-colon test; every colon in this lesson's prose is a single,
+      legitimate one (a definition or a list), and none were touched.
+
+      COPYRIGHT NOTE: this lesson names Peter Berger and Robert Putnam in
+      ordinary narrative prose (what they argued and how they argued it), never
+      in a reading-attribution context and never quoting their words. That is
+      permitted under R1/R3: teaching about a modern thinker is always allowed;
+      reproducing their words is not, and nothing of theirs is reproduced here.
+
+      WIDGET ROTATION: 9.01 (this week's other lesson) used flip cards +
+      single-select rows. 9.02 therefore uses reflect (quick check-in) + scale
+      placement, so neither engine repeats within the week. Scale correct
+      indices in row order: 3, 0, 4, 2, 1. Not ascending.
+      Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Lesson 9.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS — byte-consistent with references/widgets.md ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; min-width: 110px; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+
+    /* ===== Core visual: the four methods ===== */
+    .mgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 11px; margin: 4px 0 18px 0; }
+    .mcard { background: #0E1C42; border-top: 3px solid #55C8E8; border-radius: 8px; padding: 15px 17px; }
+    .mcard-h { font-size: 16px; color: #ffffff; margin-bottom: 8px; }
+    .mcard-row { font-size: 13px; line-height: 1.5; margin-bottom: 6px; }
+    .mcard-row b { color: #55C8E8; font-size: 11px; letter-spacing: 0.3px; display: block; margin-bottom: 2px; }
+    .mcard-row span { color: rgba(255,255,255,0.85); }
+    .mcard-ex { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.15); font-style: italic; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 9</div>
+        <div style="font-size: 12px; color: #666;">Quarter 1 Review and Synthesis</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 9.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">The Sociological Method: What We Know and How We Know It</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Quarter 1 Review and Synthesis</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 9.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">The Sociological Method: What We Know and How We Know It</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">You have read what nine sociologists concluded. How did any of them know?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Every claim you have studied this quarter rests on a method: a way of gathering evidence and a way of arguing from it. Before you carry these tools into your own observation of a real institution, you need to know what each method can and cannot show, and, just as important, where a claim stops being a fact and starts being an interpretation.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish the major sociological research methods and state a genuine strength and a genuine limitation of each.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain the difference between what a body of data shows and what a sociologist claims it means.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> evaluate a sociological claim by identifying what evidence would count against it.</div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 1 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; HOW SOCIOLOGY KNOWS WHAT IT KNOWS</div>
+
+        <!-- ===== CORE VISUAL ===== -->
+        <div class="mgrid">
+            <div class="mcard">
+                <div class="mcard-h">Survey</div>
+                <div class="mcard-row"><b>STRENGTH</b><span>Generalizes across large populations from a representative sample.</span></div>
+                <div class="mcard-row"><b>LIMIT</b><span>Misses the texture of lived experience behind the numbers.</span></div>
+                <div class="mcard-ex">Durkheim, mortality records in Suicide</div>
+            </div>
+            <div class="mcard">
+                <div class="mcard-h">Ethnography</div>
+                <div class="mcard-row"><b>STRENGTH</b><span>Sustained observation captures rich, qualitative detail.</span></div>
+                <div class="mcard-row"><b>LIMIT</b><span>Cannot generalize beyond the group actually observed.</span></div>
+                <div class="mcard-ex">Berger's habit of seeing through appearances</div>
+            </div>
+            <div class="mcard">
+                <div class="mcard-h">Historical Comparative</div>
+                <div class="mcard-row"><b>STRENGTH</b><span>Identifies patterns across different periods or societies.</span></div>
+                <div class="mcard-row"><b>LIMIT</b><span>Depends on how comparable the chosen cases really are.</span></div>
+                <div class="mcard-ex">Tocqueville, Democracy in America</div>
+            </div>
+            <div class="mcard">
+                <div class="mcard-h">Experiment</div>
+                <div class="mcard-row"><b>STRENGTH</b><span>Can establish causation directly, by manipulating conditions.</span></div>
+                <div class="mcard-row"><b>LIMIT</b><span>Rare in sociology, and the artificial setting may not hold outside the lab.</span></div>
+                <div class="mcard-ex">Uncommon in the readings this quarter</div>
+            </div>
+        </div>
+
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">A sociologist wants to show that a decline in trust between neighbors is a real, patterned social phenomenon, not just a vivid impression drawn from a few loud examples. Predict: which approach would you reach for first? (No wrong answer.)</div>
+            <div class="widget-options">
+                <button data-response="A reasonable first instinct, and it gives you depth. But a dozen conversations cannot tell you whether what you are hearing is a general pattern or the particular experience of the twelve people you happened to talk to.">Interview a dozen people at length about their experience of trust</button>
+                <button data-response="This is the survey method, and it is the strongest choice for the specific claim being tested here: whether a pattern holds across a whole population. What it will not tell you is what the decline actually feels like to live through.">Find survey data tracking trust over decades across a representative sample</button>
+                <button data-response="This is the historical comparative method, and it is a strong second move once you already suspect a trend: comparing countries or eras can show whether the pattern is general or local to one place and time.">Compare trust levels across several different countries or historical periods</button>
+                <button data-response="Rare in sociology for exactly this kind of question, and for good reason: trust between neighbors is not easily created and measured inside a laboratory without losing the very thing you are trying to study.">Design an experiment manipulating conditions and measuring trust in a lab</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Sociology is a science, not in the sense that it achieves the mathematical certainty of physics, but in the sense that it subjects claims about social life to systematic empirical testing. This means that sociological knowledge is not merely opinion, not merely ideology, and not merely common sense. It means that sociological claims can be examined, challenged, and refined in the light of evidence. It means that a sociologist who wishes to claim that social capital is declining must produce evidence for the claim, not merely assert it.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The major methods of sociological research include surveys, structured questionnaires administered to representative samples, allowing generalization to populations; ethnography, sustained participant observation of a social group in its natural setting, producing rich qualitative description; historical comparative analysis, the systematic comparison of social patterns across different historical periods or societies; and experiment, rare in sociology, but used in laboratory and field settings to test causal claims. Each method has a characteristic strength and a characteristic limitation, as the cards above show.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Durkheim's study of suicide is the paradigmatic example of the survey method. Berger's ethnographic sensibility represents the qualitative tradition, learned through the readings substituted in his place this quarter. Tocqueville's <em>Democracy in America</em> is a masterpiece of historical comparative analysis. The best sociological work typically combines methods, using quantitative patterns to identify what needs to be explained, and qualitative depth to explain it.</p>
+    </div>
+
+    <!-- ============================ PART 2 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; FACT AND INTERPRETATION IN SOCIOLOGICAL DATA</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">One of the most important intellectual skills a sociology student can develop is the ability to distinguish between what the data shows and what a sociologist claims it means. Putnam's data on declining bowling league membership is a fact: the numbers come from documented records. His claim that this decline represents declining social capital is an interpretation, a theoretical framing that other sociologists have contested. His further claim that declining social capital threatens democratic health draws on Tocqueville and Nisbet and requires its own evidence. Reading sociology critically means tracking the movement from data to interpretation and asking, at each step, whether the inference is warranted, what alternative interpretations are possible, and what evidence would change your mind.</p>
+
+        <div class="optima-widget ow-scale">
+            <div class="widget-kicker">&#9889; PLACE IT ON THE SCALE</div>
+            <div class="widget-question">For each statement, decide how far it sits from documented fact toward interpretive claim. Some genuinely belong in the middle.</div>
+
+            <div class="widget-row" data-correct="3" data-fb="Mostly interpretation. The membership decline itself is documented, but the claim about the health of democracy pulls in a whole theory, drawn from Tocqueville and Nisbet, about what associations do for a political system. That theory could be wrong even if the membership numbers are exactly right." data-hint="Separate the two halves of the claim. One half is a number in a record book. The other half is a theory about what that number means for something much larger.">
+                <div class="widget-row-prompt">1. Putnam's claim that a decline in associational membership threatens the health of American democracy</div>
+                <div class="widget-options">
+                    <button data-choice="0">Definitely fact</button><button data-choice="1">Mostly fact</button><button data-choice="2">Mixed</button><button data-choice="3">Mostly interpretation</button><button data-choice="4">Definitely interpretation</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Definitely fact. This is a documented pattern in mortality and religious-affiliation records: measured, not argued for. What Durkheim does with the pattern afterward is a separate matter." data-hint="Ask whether this sentence describes a measured record or an explanation of why the record looks the way it does.">
+                <div class="widget-row-prompt">2. Durkheim's finding that recorded suicide rates were higher in Protestant regions of Europe than in Catholic regions during the period he studied</div>
+                <div class="widget-options">
+                    <button data-choice="0">Definitely fact</button><button data-choice="1">Mostly fact</button><button data-choice="2">Mixed</button><button data-choice="3">Mostly interpretation</button><button data-choice="4">Definitely interpretation</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="4" data-fb="Definitely interpretation, and a weak one. The word proves is doing far more work than the evidence supports: a rate difference across large populations cannot establish that any individual's isolation was psychologically caused by a specific religious belief. This is the fact/interpretation gap at its widest." data-hint="Watch the verb. What would it actually take to prove that a belief causes an individual psychological state, as opposed to showing that a rate correlates with a religion?">
+                <div class="widget-row-prompt">3. The claim that the higher Protestant rate proves that Protestant individualism causes psychological isolation</div>
+                <div class="widget-options">
+                    <button data-choice="0">Definitely fact</button><button data-choice="1">Mostly fact</button><button data-choice="2">Mixed</button><button data-choice="3">Mostly interpretation</button><button data-choice="4">Definitely interpretation</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Mixed, and defensibly so. The premise is real: Durkheim did find that pattern in the societies he studied. The problem is the word always. Extending a historical finding into a universal law is exactly the overreach a careful reader has to catch, even when the underlying data is solid." data-hint="The first half of this claim is grounded in real data. The second half makes that data do something a single study cannot do. Find the word that oversteps.">
+                <div class="widget-row-prompt">4. A student's conclusion that modern, less religious societies must always have higher suicide rates than traditional ones</div>
+                <div class="widget-options">
+                    <button data-choice="0">Definitely fact</button><button data-choice="1">Mostly fact</button><button data-choice="2">Mixed</button><button data-choice="3">Mostly interpretation</button><button data-choice="4">Definitely interpretation</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Mostly fact. Tocqueville really did travel, observe, and record dozens of specific associations. It counts as mostly rather than definitely factual because any traveler's selection of what to record and describe carries a small amount of interpretive judgment built in, even when the underlying observations are accurate." data-hint="This is close to a pure record of observation, but ask whether choosing which associations to describe, out of everything he saw, involves any judgment at all.">
+                <div class="widget-row-prompt">5. Tocqueville's observation that Americans in the 1830s formed voluntary associations for almost any purpose</div>
+                <div class="widget-options">
+                    <button data-choice="0">Definitely fact</button><button data-choice="1">Mostly fact</button><button data-choice="2">Mixed</button><button data-choice="3">Mostly interpretation</button><button data-choice="4">Definitely interpretation</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- What You'll Do Next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 9B: Weber</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Thursday's reading is in a book. Weber uses the historical comparative method on the biggest possible question: why modern capitalism arose in the West at all.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Sociological Journal 9</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Due Thursday, with a peer reply this week. A synthesis entry answering what it means to be a social being, using at least three thinkers from the quarter.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Every argument you have studied this quarter rests on a method, and every method has a place where fact ends and interpretation begins. Knowing where that seam runs is not a technicality. It is the difference between using a thinker's framework and simply repeating his conclusions. When you observe a real institution for the Community Institution Study, you will be doing what Berger and Tocqueville did before you: recording what you actually saw, and then arguing, carefully, for what it means.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 9.02 &middot; The Sociological Method: What We Know and How We Know It</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME — one delegated listener drives every engine ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite. Try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

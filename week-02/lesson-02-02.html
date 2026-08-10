@@ -1,0 +1,367 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Q1 · Week 2 · Lesson 2.02 — "Socialization: Family, Childhood, and Language"
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS (confirmed 2026-08-06). Objectives sit at analysis and
+    evaluation, works are cited inline by book and section, and terms already
+    taught are not re-glossed. Drafted to standard college-prep register and
+    revised up on 2026-08-06. See CLAUDE.md, "Register: honors".
+      Standard: SS.912.S.2.3, SS.912.S.4.8, SS.912.S.5.8
+      Objective: Students will define socialization, distinguish primary from
+                secondary socialization, and explain how family, language, and
+                peer groups function as agents of socialization.
+      Source: Sociology_Course_Master.html, Lesson 2.02. Prose preserved.
+      Revisions: R5 (opening section not labelled "Hook"), R7 (no em dashes),
+                standards codes kept out of student-facing text.
+
+      WIDGET ROTATION: 2.01 used reflect + single-select rows. 2.02 therefore uses
+      commit-then-reveal + scale placement. Neither engine repeats from 2.01.
+      Scale correct indices in row order: 4, 0, 4, 1, 3. Not ascending.
+
+      SENSITIVITY NOTE: Victor of Aveyron is a real child who was studied and
+      written about without his consent. He is presented as a person to whom
+      something was done, never as a specimen. The lesson does not speculate
+      beyond what Itard recorded. If a student asks what happened to him, he lived
+      under the care of Itard's housekeeper until his death around 1828.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Lesson 2.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS — byte-consistent with references/widgets.md ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; min-width: 120px; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+
+    /* ===== Core visual: the widening circles of socialization ===== */
+    .soc { background: #0E1C42; border-radius: 10px; padding: 26px 28px 20px 28px; margin: 4px 0 18px 0; }
+    .soc-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .soc-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 24px; font-style: italic; }
+    .soc-flow { display: flex; align-items: stretch; gap: 0; }
+    .soc-step { flex: 1; padding: 15px 15px; border-radius: 8px; margin-right: 8px; }
+    .soc-step:last-child { margin-right: 0; }
+    .s1 { background: rgba(199,146,44,0.20); border-top: 3px solid #C7922C; }
+    .s2 { background: rgba(199,146,44,0.11); border-top: 3px solid #b08a4a; }
+    .s3 { background: rgba(85,200,232,0.11); border-top: 3px solid #6f9fc0; }
+    .s4 { background: rgba(85,200,232,0.18); border-top: 3px solid #55C8E8; }
+    .soc-when { font-size: 10px; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); margin-bottom: 6px; }
+    .soc-who { font-size: 16px; color: #ffffff; margin-bottom: 6px; }
+    .soc-what { font-size: 13px; color: rgba(255,255,255,0.82); line-height: 1.5; }
+    .soc-band { display: flex; margin-top: 16px; border-radius: 6px; overflow: hidden; font-size: 11px; letter-spacing: 0.4px; text-align: center; }
+    .soc-band div { padding: 7px 4px; }
+    .soc-primary { flex: 1; background: rgba(199,146,44,0.35); color: #f3dfb8; }
+    .soc-secondary { flex: 3; background: rgba(85,200,232,0.25); color: #d5f1fb; }
+    .soc-note { margin-top: 16px; padding-top: 13px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.6; text-align: center; font-style: italic; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 2</div>
+        <div style="font-size: 12px; color: #666;">Culture, Tradition, and Socialization</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 2.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Socialization: Family, Childhood, and Language</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Culture, Tradition, and Socialization</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 2.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Socialization: Family, Childhood, and Language</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">How much of what feels most like you was handed to you?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Yesterday you learned that culture is learned rather than inherited. Today you find out how the learning happens, and why it is nearly invisible to the person it happens to.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why socialization must be lifelong rather than confined to childhood, and say what evidence would count against that claim.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> assign a given lesson-in-behavior to the agent that most plausibly taught it, and defend the assignment against a rival attribution.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> separate a biological capacity from its cultural content in an unfamiliar human behavior, and state why the distinction matters to a sociological claim.</div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 1 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE BOY FOUND IN THE FOREST</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">In January 1800, a boy of roughly eleven or twelve was found living alone in the forests of southern France, near the town of Saint-Sernin-sur-Rance. He had no language. He could not hold sustained eye contact. He could not play, could not be affectionate, and did not respond to human speech. He ate acorns and raw potatoes. He showed no modesty and no sense of shame, and he did not react to cold the way a boy of his apparent age would. The villagers who found him named him Victor. A physician named Jean Marc Gaspard Itard undertook to educate him, and published reports on the attempt in 1801 and 1806.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Itard failed in the narrow sense. Victor never learned more than a few words, and never acquired the range of behavior his contemporaries considered the marks of civilization. But the case showed starkly something that had been theorized and never so plainly illustrated: the human capacity for social life is not simply issued by nature. It has to be developed through sustained interaction with other people, and at certain points in development rather than at any point.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">Take that process away and what goes missing is not manners. It is the basic architecture of a social self. Victor had not been socialized, and the absence of socialization had left him, in the social sense of the word, not yet a person among persons.</p>
+
+        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0;">
+            <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; Before reading on, write in your notebook: what does Victor's case prove, and what does it fail to prove? Then open this.
+            </summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
+                It shows that some capacities we assume are automatic do not develop without social contact at the right time. That is a real and important finding. What it cannot show is how much of Victor's condition came from isolation and how much from something else. Nobody knows why he was in the forest, how long he was there, or whether he had a disability before he was abandoned. A single case with unknown starting conditions cannot separate those causes, and honest sociology says so. Itard's records are careful, and they are still one boy. Hold the finding and the limit together. That habit is more valuable than either one alone.
+            </div>
+        </details>
+    </div>
+
+    <!-- ============================ PART 2 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; HOW A PERSON GETS A CULTURE</div>
+
+        <!-- ===== CORE VISUAL ===== -->
+        <div class="soc">
+            <div class="soc-title">THE AGENTS OF SOCIALIZATION</div>
+            <div class="soc-sub">Each one teaches a different lesson, in a different way, at a different stage.</div>
+            <div class="soc-flow">
+                <div class="soc-step s1">
+                    <div class="soc-when">INFANCY ONWARD</div>
+                    <div class="soc-who">Family</div>
+                    <div class="soc-what">Language, the first norms, and the basic sense that the world is predictable or is not. Organised by love and by particular relationships.</div>
+                </div>
+                <div class="soc-step s2">
+                    <div class="soc-when">EARLY CHILDHOOD ONWARD</div>
+                    <div class="soc-who">School</div>
+                    <div class="soc-what">Authority that is not parental, impersonal rules, evaluation by a standard applied to everyone. How to wait, and how to take instruction from strangers.</div>
+                </div>
+                <div class="soc-step s3">
+                    <div class="soc-when">CHILDHOOD AND ADOLESCENCE</div>
+                    <div class="soc-who">Peer group</div>
+                    <div class="soc-what">Horizontal and informal. Status, loyalty, belonging, and identity worked out among equals rather than handed down.</div>
+                </div>
+                <div class="soc-step s4">
+                    <div class="soc-when">THROUGHOUT LIFE</div>
+                    <div class="soc-who">Media</div>
+                    <div class="soc-what">Models of how people speak, want, argue, and live, supplied at scale by strangers you will never meet.</div>
+                </div>
+            </div>
+            <div class="soc-band">
+                <div class="soc-primary">PRIMARY SOCIALIZATION</div>
+                <div class="soc-secondary">SECONDARY SOCIALIZATION</div>
+            </div>
+            <div class="soc-note">Primary socialization builds the self. Secondary socialization teaches that self how to operate inside particular institutions.</div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Socialization</strong> is the lifelong process by which people learn and internalize the norms, values, language, and roles of their culture. It is how culture moves from one generation to the next, and how an individual becomes a functioning member of a society.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;"><strong>Primary socialization</strong> is the first and most foundational phase, happening in early childhood inside the family. It covers the acquisition of language, the basic norms of behavior, and the fundamental sense of self. <strong>Secondary socialization</strong> is everything after: learning the norms and roles specific to particular institutions once the basic self is in place. An <strong>agent of socialization</strong> is any person, group, or institution that significantly shapes what someone values, believes, and takes themselves to be.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">One more term, and it is the one worth remembering longest. In <em>Human Nature and the Social Order</em> (1902), Charles Horton Cooley described what he called the <strong>looking-glass self</strong>: we build our self-concept by imagining how we appear to other people and then taking that imagined judgment inside. On this account the self is not a private thing that later goes out to meet society. It is social all the way down.</p>
+    </div>
+
+    <!-- ============================ PART 3 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; THE FAMILY AS THE FIRST SOCIETY</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The family is the primary agent of socialization for one simple reason: it is where most human beings first meet other human beings. Before school, before peers, before any formal institution, the infant meets a particular set of people who give or withhold warmth, speak a particular language, keep particular habits of eating and sleeping and greeting, and respond to behavior in particular ways.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">This is not mainly a matter of learning rules. It is the formation of the basic grammar of social life. Through repeated interaction the infant learns that other people have intentions, that their own behavior has effects on others, that certain responses can be anticipated, and that the world is either broadly predictable and trustworthy or is not.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Language is the central achievement of primary socialization and its main vehicle. Acquiring a language is not just acquiring labels for objects that were already there. It is acquiring the conceptual structure through which one particular culture organizes reality. To learn English first is to learn to divide time into past, present, and future in a way that is not universal across languages. To learn a language with elaborate grammatical markers of social status is to be trained to notice and answer to status in every sentence you speak.</p>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 18px 0 8px 0;">School and peer group</h3>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">When a child enters school she meets a social world running on different rules. The family is organised by love and by particular relationships. The school is organised by authority, achievement, and impersonal rules. She must learn to answer to adults who are not her parents, to compete and cooperate with peers she did not choose, and to submit to evaluation by a standard applied to every student alike. As the education researcher Philip Jackson observed in <em>Life in Classrooms</em> (1968), these lessons are often more consequential for adult life than the academic content: how to wait, how to follow instructions from strangers, and how to manage yourself in a crowd.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Peer groups do something different again. Family socialization flows downward from adults to children, and school socialization flows from authority figures to students, but peer socialization runs sideways, among equals. Peer groups build their own norms, status hierarchies, vocabulary, and practices. They are the main setting in which adolescents work out questions of identity, loyalty, and belonging, which is part of why they matter so much and feel so consuming at the time.</p>
+    </div>
+
+    <!-- ============================ PART 4 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; NATURE, CULTURE, AND AN ARGUMENT THAT IS NOT OVER</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Victor's story raises a question sociology cannot fully answer: how much of human social behavior is shaped by biology and how much by socialization? This is the nature and nurture controversy, and it has not been resolved. It probably cannot be resolved cleanly, because it is impossible to raise a human being outside of any social environment, and nobody should try.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">What sociology contributes is evidence that even capacities which look obviously natural, including emotional expression, cognitive development, and moral reasoning, depend on social experience in order to develop at all. The useful move is not to pick a side but to separate the capacity from its content. The capacity for language is biological; the particular language you speak is entirely cultural. The capacity for attachment is biological; whom you attach to, and how you show it, are shaped by socialization.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">That distinction is worth practising, because it is the difference between a sociological claim and a slogan.</p>
+
+        <div class="optima-widget ow-scale">
+            <div class="widget-kicker">&#9889; CAPACITY OR CONTENT?</div>
+            <div class="widget-question">Place each item on the spectrum. The question is not whether biology is involved at all, since it always is. The question is whether <em>this particular thing</em> is fixed by biology or filled in by the culture you grew up in.</div>
+
+            <div class="widget-row" data-correct="4" data-fb="Right. Nothing biological selects English over Mandarin. The specific language is pure content, supplied entirely by whoever raised you." data-hint="Would a baby raised in a different country have ended up with this same thing? If not, it is content rather than capacity.">
+                <div class="widget-row-prompt">Which language you speak fluently</div>
+                <div class="widget-options">
+                    <button data-choice="0">Almost entirely biological</button><button data-choice="1">Mostly biological</button><button data-choice="2">Both, about equally</button><button data-choice="3">Mostly cultural</button><button data-choice="4">Almost entirely cultural</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Right. Every healthy human infant can acquire any human language. That equipment is species-wide, and no culture has to install it." data-hint="Set aside which language. Is the underlying ability to pick up any language at all something a culture teaches?">
+                <div class="widget-row-prompt">The ability to acquire a language at all</div>
+                <div class="widget-options">
+                    <button data-choice="0">Almost entirely biological</button><button data-choice="1">Mostly biological</button><button data-choice="2">Both, about equally</button><button data-choice="3">Mostly cultural</button><button data-choice="4">Almost entirely cultural</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="4" data-fb="Right. Which hand, which utensils, which order, whether silence or talk is expected: all of it varies by culture and none of it is set by the body." data-hint="Compare table manners across two cultures you know something about. How much overlap is there really?">
+                <div class="widget-row-prompt">What counts as polite behavior at a shared meal</div>
+                <div class="widget-options">
+                    <button data-choice="0">Almost entirely biological</button><button data-choice="1">Mostly biological</button><button data-choice="2">Both, about equally</button><button data-choice="3">Mostly cultural</button><button data-choice="4">Almost entirely cultural</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right. Grief at the loss of someone close appears across every society we have records of, which points to something in our make-up rather than in one culture's training." data-hint="Is there a known human society in which people feel nothing when someone they love dies?">
+                <div class="widget-row-prompt">Feeling grief when someone close to you dies</div>
+                <div class="widget-options">
+                    <button data-choice="0">Almost entirely biological</button><button data-choice="1">Mostly biological</button><button data-choice="2">Both, about equally</button><button data-choice="3">Mostly cultural</button><button data-choice="4">Almost entirely cultural</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="3" data-fb="Right. The feeling is broadly human but the display rules are local: how loudly, how publicly, for how long, and in front of whom all differ sharply between cultures." data-hint="Separate the feeling from its display. Which of the two is being asked about here?">
+                <div class="widget-row-prompt">How openly you are expected to show grief in public</div>
+                <div class="widget-options">
+                    <button data-choice="0">Almost entirely biological</button><button data-choice="1">Mostly biological</button><button data-choice="2">Both, about equally</button><button data-choice="3">Mostly cultural</button><button data-choice="4">Almost entirely cultural</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 14px 0 0 0;">The conclusion is not a small one. What human beings are, in their fully developed form, is always and irreducibly a joint product of nature and culture. Neither term alone will finish the sentence.</p>
+    </div>
+
+    <!-- What You'll Do Next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 2B: Rousseau</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your Thursday reading. Rousseau tries to describe a human being with the socialization stripped away, which is exactly the thought experiment this lesson complicates.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Sociological Journal 2</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Due Thursday. One norm you keep at home but not at school, or the reverse, traced back to the agent that taught it.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You now have an answer to the question this week opened with. A great deal of what feels most like you was handed to you, by a family you did not choose, in a language you did not select, through a process you cannot remember. That is not a bleak conclusion. Cooley's point is that there was never a private self waiting underneath to be freed. The self was built in company. What you can now do is notice the building, which is more than most people ever do.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 2.02 &middot; Socialization: Family, Childhood, and Language</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME — one delegated listener drives every engine ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite. Try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

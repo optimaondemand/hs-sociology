@@ -1,0 +1,365 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Q2 · Week 12 · Lesson 12.01 — "Division of Labor: Durkheim and Adam Smith"
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS. Smith cited by book and chapter (Wealth of Nations I.1);
+    Durkheim's forced/anomic distinction used without re-glossing solidarity,
+    which the course already taught in Week 4.
+
+      Standard: SS.912.S.6.3, SS.912.S.4.10
+      Objective: Students will compare Durkheim's sociological account of the
+                division of labor with Adam Smith's economic account, and
+                evaluate their different assessments of specialization's
+                effects on individuals and communities.
+      Source: Sociology_Course_Master.html, Lesson 12.01. Prose preserved
+              verbatim except for the R5 label strip, minor connective framing
+              (TODAY'S FOCUS, objectives, ENGAGE THE OBJECTION box), and the
+              closing bridge to 12.02.
+      Revisions: R5 (opening section not labelled "Hook"), R7 (no em dashes),
+                standards codes kept out of student-facing text.
+
+      DASH-AS-COLON REPAIR: none required. The master's Week 12 lesson prose
+      for 12.01 contains no two-colon sentences; checked by hand against
+      plan.md defect 6's list of worst-affected weeks (W3, W4, W7, W9, W14),
+      which does not include Week 12, and confirmed by inspection.
+
+      WIDGET ROTATION: 12.01 uses single-select rows ("Whose Account?").
+      12.02 uses flip cards. No engine repeats within the week.
+      Select-row correct indices in order: 0, 1, 0, 2, 1. Not ascending.
+      Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Lesson 12.01</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS — byte-consistent with references/widgets.md ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+
+    /* ===== Core visual: the arithmetic of specialization ===== */
+    .pin { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
+    .pin-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .pin-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 20px; font-style: italic; }
+    .pin-row { display: flex; align-items: flex-end; gap: 22px; justify-content: center; }
+    .pin-box { flex: 0 0 200px; text-align: center; }
+    .pin-n { font-size: 11px; letter-spacing: 0.5px; color: rgba(255,255,255,0.55); margin-bottom: 8px; }
+    .pin-bar { background: rgba(85,200,232,0.35); border-top: 3px solid #55C8E8; border-radius: 4px 4px 0 0; margin: 0 auto; width: 70px; }
+    .pin-box.good .pin-bar { background: rgba(199,146,44,0.45); border-top-color: #C7922C; }
+    .pin-v { font-size: 18px; color: #ffffff; margin: 10px 0 6px 0; }
+    .pin-b { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.45; }
+    .pin-arrow { color: rgba(255,255,255,0.35); font-size: 22px; padding-bottom: 40px; }
+    .pin-note { margin-top: 18px; padding-top: 13px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.6; text-align: center; font-style: italic; }
+
+    .kt { background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 13px 17px; margin-bottom: 9px; }
+    .kt-t { font-size: 16px; color: #0E1C42; margin-bottom: 4px; }
+    .kt-d { font-size: 16px; color: #1a2340; line-height: 1.55; }
+
+    .two { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 15px; }
+    .two th { background: #0E1C42; color: #fff; text-align: left; padding: 10px 13px; font-size: 12px; letter-spacing: 0.4px; font-weight: normal; }
+    .two td { border: 1px solid #D0D9E8; padding: 10px 13px; color: #1a2340; line-height: 1.5; vertical-align: top; }
+    .two tr:nth-child(even) td { background: #F8FAFD; }
+    .two td:first-child { color: #0E1C42; width: 22%; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 12</div>
+        <div style="font-size: 12px; color: #666;">Division of Labor and Social Class</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 12.01</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Division of Labor: Durkheim and Adam Smith</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Division of Labor and Social Class</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 12.01</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Division of Labor: Durkheim and Adam Smith</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Can the very same process that makes a society rich also make it fall apart?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Adam Smith and Emile Durkheim both looked at the specialization of labor and saw something enormous. Smith saw the engine of a nation's wealth. Durkheim saw the structure holding, or failing to hold, a society together. They are not disagreeing about the facts. They are asking different questions of the same phenomenon, and this lesson asks you to hold both questions at once.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> compare Smith's economic account of the division of labor with Durkheim's sociological account, and state what each treats as the relevant unit of analysis.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish the forced from the anomic division of labor, and explain why Durkheim treats both as pathologies rather than as mere inefficiencies.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> evaluate whether Smith's own worry about the pin-maker's mind is closer to Durkheim's diagnosis than a purely economic account would predict.</div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 1 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE PIN FACTORY</div>
+
+        <div class="pin">
+            <div class="pin-title">THE ARITHMETIC OF SPECIALIZATION</div>
+            <div class="pin-sub">Smith's own numbers, Wealth of Nations I.1, 1776</div>
+            <div class="pin-row">
+                <div class="pin-box">
+                    <div class="pin-n">WORKING ALONE</div>
+                    <div class="pin-bar" style="height: 10px;"></div>
+                    <div class="pin-v">at most 20 / day</div>
+                    <div class="pin-b">One untrained worker performing all eighteen operations of pin-making by himself.</div>
+                </div>
+                <div class="pin-arrow">&#8594;</div>
+                <div class="pin-box good">
+                    <div class="pin-n">DIVIDED AMONG TEN</div>
+                    <div class="pin-bar" style="height: 130px;"></div>
+                    <div class="pin-v">48,000 / day</div>
+                    <div class="pin-b">Ten workers, each specializing in one or two of the eighteen operations.</div>
+                </div>
+            </div>
+            <div class="pin-note">Per worker, roughly 4,800 pins a day against at most 20 alone. This is the observation classical economics is built on.</div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">In the first chapter of <em>The Wealth of Nations</em> (1776), Adam Smith describes a pin factory. A single worker, working alone, might produce one pin per day, perhaps twenty. But with the division of labor, ten workers each specializing in one of the eighteen distinct operations required to produce a pin can produce 48,000 pins per day. Smith's arithmetic is famous: specialization produces an almost unimaginable increase in productive output. This observation forms the foundation of classical economics and, through it, of the modern industrial economy.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">But Smith himself was troubled by one implication of his observation. The worker who spends her entire working life performing one of eighteen pin operations becomes, he acknowledged elsewhere in the same book, "as stupid and ignorant as it is possible for a human creature to become." Her cognitive and moral faculties atrophy from disuse. The social benefit of specialization is bought at a real cost to the individual workers whose specialization makes it possible. This tension between social efficiency and individual flourishing runs through every serious treatment of the division of labor, from Smith and Durkheim to the present.</p>
+    </div>
+
+    <!-- ============================ PART 2: KEY TERMS ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; KEY TERMS</div>
+
+        <div class="kt"><div class="kt-t">Division of Labor</div><div class="kt-d">The specialization of economic and social tasks across a population. A feature of all complex societies, though its scope and organization vary enormously.</div></div>
+        <div class="kt"><div class="kt-t">Forced Division of Labor</div><div class="kt-d">Durkheim's term for a division of labor that is not genuinely organic, in which the specialization of roles does not reflect the actual talents and capacities of the individuals filling those roles but reflects inherited social position, class, or other non-meritocratic factors. Durkheim saw this as a source of social pathology.</div></div>
+        <div class="kt"><div class="kt-t">Anomic Division of Labor</div><div class="kt-d">Durkheim's term for a division of labor in which specialization has outrun the normative framework that should regulate it, a condition in which workers have no sense of the larger social function their work serves and no normative orientation toward it beyond immediate self-interest.</div></div>
+    </div>
+
+    <!-- ============================ PART 3 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; SMITH'S ECONOMIC ACCOUNT</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Smith's account of the division of labor is primarily economic. Specialization increases productivity because workers become more skilled at their narrow task through repetition, time is saved by not switching between tasks, and specialized workers more readily develop or adopt specialized tools for their particular task. The market mechanism coordinates the specialized activities of millions of individuals without any central planner, through the price system. The result is an unintended order, what Smith calls in a famous phrase the "invisible hand," that serves the general welfare even though each individual is pursuing only his own interest.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Smith is deeply aware, however, that this economic efficiency comes with social costs. The division of mental labor between those who plan and design and those who execute produces a class of workers whose intellectual capacities are systematically underdeveloped. Smith's remedy was public education, a proposal that struck the 1770s as radical and has since become universal policy. The state should counteract the intellectual effects of the division of labor by providing the general education that the market does not incentivize.</p>
+    </div>
+
+    <!-- ============================ PART 4 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; DURKHEIM'S SOCIOLOGICAL ACCOUNT</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Durkheim's account of the division of labor, as this course has already noted in connection with organic solidarity in Week 4, is primarily sociological. He is not primarily interested in its effects on productivity but in its effects on social cohesion. A well-functioning division of labor, in which each worker understands the social function her work serves and feels morally connected to the larger social whole of which it is a part, is a source of social solidarity. A pathological division of labor, either anomic or forced, is a source of social fragmentation and alienation. The goal of social policy, in Durkheim's view, is not simply to maximize economic output but to ensure that the division of labor produces genuine organic solidarity rather than mere mechanical interdependence without normative content.</p>
+
+        <table class="two">
+            <tr><th></th><th>Smith</th><th>Durkheim</th></tr>
+            <tr><td>Unit of analysis</td><td>The individual worker's output.</td><td>The structure of the whole society.</td></tr>
+            <tr><td>What can go wrong</td><td>Intellectual and moral atrophy in the worker.</td><td>Anomic or forced division of labor.</td></tr>
+            <tr><td>Proposed remedy</td><td>Public education, funded by the state.</td><td>Roles assigned by genuine talent, with each worker holding a normative sense of function.</td></tr>
+            <tr><td>What counts as success</td><td>Rising output per worker.</td><td>Genuine organic solidarity, not merely interdependence.</td></tr>
+        </table>
+
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 14px 0 0 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; A FAIR OBJECTION</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Notice that Smith's own worry about the pin-maker's stultified mind is not, on its face, a Durkheimian worry. Smith is concerned with what specialization does to a single mind. Durkheim is concerned with what it does to the bonds between minds. But a critic could press Smith here: if the division of labor produces workers "as stupid and ignorant as it is possible for a human creature to become," has it also severed those workers from any sense of the larger purpose their narrow task serves, which is exactly Durkheim's anomic condition? Smith may have glimpsed Durkheim's problem without having Durkheim's vocabulary for it. Decide for yourself whether that is a fair reading or an anachronistic one.</div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 5: WIDGET ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; WHOSE ACCOUNT?</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Read each claim and decide which account it belongs to: Smith's, Durkheim's, or both.</p>
+
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; WHOSE ACCOUNT?</div>
+            <div class="widget-question">Sort each claim by the framework it comes from. Judge by what the claim is actually measuring.</div>
+
+            <div class="widget-row" data-correct="0" data-fb="Smith. This is pure output arithmetic, the pin factory itself, and it says nothing about whether the workers feel connected to one another." data-hint="Is this claim about how much gets produced, or about whether the group holds together?">
+                <div class="widget-row-prompt">1. Ten specialized workers can produce forty-eight thousand pins a day; one working alone could not produce twenty.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Smith</button><button data-choice="1">Durkheim</button><button data-choice="2">Both</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Durkheim. This is exactly organic solidarity from Week 4: cohesion built from understood, felt interdependence rather than from likeness." data-hint="This claim is about a feeling of connection to a larger whole, not about output.">
+                <div class="widget-row-prompt">2. When workers understand the social function their specialized role serves and feel morally connected to the whole, the division of labor produces solidarity rather than isolation.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Smith</button><button data-choice="1">Durkheim</button><button data-choice="2">Both</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Smith. The diagnosis (intellectual atrophy) and the remedy (state-funded public education) are both his, from the same chapters that describe the pin factory." data-hint="Whose remedy is public education, funded by the state?">
+                <div class="widget-row-prompt">3. A worker who spends a lifetime on one repetitive task risks becoming intellectually and morally diminished, and the state should offset this with public education.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Smith</button><button data-choice="1">Durkheim</button><button data-choice="2">Both</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Both, in the sense that this is the whole lesson's synthesis: Smith supplies the productivity half, Durkheim the meaning half, and neither is complete alone." data-hint="Does this statement mention only output, or only cohesion, or does it require both thinkers to make sense of?">
+                <div class="widget-row-prompt">4. Whether specialization helps or harms a society depends not only on how much wealth it produces but on whether workers grasp the larger purpose their work serves.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Smith</button><button data-choice="1">Durkheim</button><button data-choice="2">Both</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Durkheim. This is the forced division of labor, a pathology of who gets assigned which role, which has no equivalent concept in Smith's economics." data-hint="This is about how roles get assigned, by talent or by inherited position, not about how much gets produced.">
+                <div class="widget-row-prompt">5. A division of labor assigned by inherited social position rather than by talent and capacity is a source of social pathology, whatever it does to output.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Smith</button><button data-choice="1">Durkheim</button><button data-choice="2">Both</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 14px 0 0 0;">
+            <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; In your notebook, name one thing a purely economic measure of a society's division of labor could never tell you. Then open this.
+            </summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
+                It could not tell you whether the people doing the work feel any tie to one another or to a shared purpose beyond their paycheck. Output per worker can rise while the collective conscience that Durkheim described in Week 4 thins out to nothing. That gap, between a society that is producing more and a society that is holding together, is the entire reason Durkheim thought economics needed a sociology standing next to it rather than instead of it.
+            </div>
+        </details>
+    </div>
+
+    <!-- What You'll Do Next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 12A: Adam Smith</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your Tuesday reading is the chapter this lesson is built on, in full, including the passage about the day-labourer's coat.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Reading Quiz 12</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Eight questions covering both lessons this week.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Specialization is not one story but two, told by two different disciplines about the same fact. Smith's story is about wealth: what a society can produce once individuals stop trying to do everything themselves. Durkheim's story is about solidarity: what holds a society of specialists together once nobody does the same work as anyone else. Neither story cancels the other. On Wednesday you will see why the same question, who is bound to whom and on what terms, is also the question that divides Marx from Weber on social class.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 12.01 &middot; Division of Labor: Durkheim and Adam Smith</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME — one delegated listener drives every engine ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite. Try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Q2 · Week 13 · Lesson 13.02 — "American Institutions through Tocqueville"
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS (confirmed 2026-08-06). Democracy in America cited by volume,
+    part, and chapter. Legal and social tyranny are presented as a technical
+    distinction to be applied, not as two synonyms for "oppression."
+
+      Standard: (withheld from student-facing text per Hard Rules)
+      Objective: Students will apply Tocqueville's framework to analyze the
+                strengths and vulnerabilities of American democratic
+                institutions, and evaluate the contemporary relevance of his
+                analysis.
+      Source: Sociology_Course_Master.html, Lesson 13.02 (593 words). Prose
+              preserved; "Hook:" label removed per R5.
+
+      DASH-AS-COLON CHECK (plan.md defect 6): checked against the two-colons-
+      in-one-sentence pattern. Zero instances in this lesson's master prose.
+      Single colons introducing a definition or a list were kept as written.
+
+      DIVERGENCE FLAG (recorded, not silently resolved): the master's own
+      paragraph below states this lesson "marks... the due date of the
+      Community Institution Study." CLAUDE.md's rebalanced project ledger
+      instead places that project at Weeks 9-11 and the Sociologist Case Study
+      Reports at Weeks 12-15, which would make the Community Institution Study
+      already submitted by Week 13. The master's paragraph is preserved
+      verbatim below per the instruction to preserve master prose; the
+      discrepancy is NOT corrected here because resolving a due-date conflict
+      is a scheduling decision, not a copy edit. See the matching flag in
+      module-map-13.html. Escalate before this goes live to students.
+
+      WIDGET ROTATION: 13.01 used reflect + select (Durkheim/Merton/labeling
+      classification). 13.02 uses reflect + a different select classification
+      (legal tyranny / social tyranny / voluntary association / not tyranny),
+      so no engine repeats its exact case type within the week.
+      Select-row correct indices in order: 2, 0, 3, 1, 1. Not ascending.
+      Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Lesson 13.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS — byte-consistent with references/widgets.md ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+
+    /* ===== Core visual: legal vs social tyranny ===== */
+    .tyr { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
+    .tyr-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .tyr-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
+    .tyr-cols { display: flex; gap: 14px; }
+    .tyr-c { flex: 1; border-radius: 8px; padding: 16px 18px; }
+    .tyr-l { background: rgba(199,146,44,0.16); border-top: 3px solid #C7922C; }
+    .tyr-s { background: rgba(192,57,43,0.16); border-top: 3px solid #C0392B; }
+    .tyr-h { font-size: 17px; color: #ffffff; margin-bottom: 3px; }
+    .tyr-tag { font-size: 11px; letter-spacing: 0.5px; margin-bottom: 12px; }
+    .tyr-l .tyr-tag { color: #E0B562; }
+    .tyr-s .tyr-tag { color: #f0a49a; }
+    .tyr-r { margin-bottom: 10px; }
+    .tyr-r:last-child { margin-bottom: 0; }
+    .tyr-rl { font-size: 10px; letter-spacing: 0.5px; color: rgba(255,255,255,0.45); margin-bottom: 2px; }
+    .tyr-rv { font-size: 14px; color: rgba(255,255,255,0.88); line-height: 1.5; }
+    .tyr-fix { margin-top: 16px; background: rgba(85,200,232,0.14); border: 1px solid rgba(85,200,232,0.4); border-radius: 8px; padding: 14px 18px; }
+    .tyr-fix-l { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .tyr-fix-t { font-size: 15px; color: #ffffff; line-height: 1.55; }
+
+    .kt { background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 13px 17px; margin-bottom: 9px; }
+    .kt-t { font-size: 16px; color: #0E1C42; margin-bottom: 4px; }
+    .kt-d { font-size: 16px; color: #1a2340; line-height: 1.55; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 13</div>
+        <div style="font-size: 12px; color: #666;">Crime, Deviance, and American Institutions</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 13.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">American Institutions through Tocqueville</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Crime, Deviance, and American Institutions</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 13.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">American Institutions through Tocqueville</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Can a free country punish disagreement without ever passing a law against it?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Tocqueville thought yes, and he thought America's own strengths were the mechanism. The same associational habits that make American democracy work are also, on his account, what gives majority opinion a kind of reach no European king ever had.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish legal tyranny of the majority from social tyranny of the majority, and say which one Tocqueville considers more dangerous and why.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> identify the three features Tocqueville credits for American democracy's success, and apply his framework to a real institution.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> evaluate whether Tocqueville's warning about conformity still applies to a contemporary case of your choosing.</div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 1 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE FOREIGNER WHO UNDERSTOOD AMERICA</div>
+
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Predict: of the threats below to honest disagreement in a democracy, which would Tocqueville consider the most dangerous? (No wrong answer.)</div>
+            <div class="widget-options">
+                <button data-response="A real danger, and the one most people name first. Tocqueville's twist is that he thinks America's law is unusually safe from this, which is exactly why he looks elsewhere.">&#9878;&#65039; A legislature passing an unjust law against a minority</button>
+                <button data-response="This is close to his actual answer, though he does not call it censorship, because no official is doing the silencing. Hold onto the distinction: nobody has to give an order for this to work.">&#128683; A government agency censoring unpopular speech</button>
+                <button data-response="This is Tocqueville's answer, and it is the harder one to see, because nobody in this scenario breaks any law. Today's lesson is largely about why he thought this mattered more than the other options.">&#128101; Ordinary neighbors quietly freezing out someone who says the wrong thing</button>
+                <button data-response="A fair worry in his own century, though he thought America's constitutional design specifically guarded against this one. See if the lesson changes your mind about which threat is hardest to guard against.">&#128081; A single powerful leader seizing control</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">In 1831, a 26-year-old French aristocrat named Alexis de Tocqueville arrived in New York harbor. He had been sent, officially, to study the American prison system. In fact, he was there to understand democracy, to see, on its own soil, whether the great democratic experiment could work and what it would produce if it did. He spent nine months traveling through the United States, talking to politicians, lawyers, clergy, ordinary citizens, and enslaved people. He returned to France and wrote the two volumes of <em>Democracy in America</em> (1835 and 1840), which remain, nearly two centuries later, the most penetrating analysis of American democratic society ever written.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Tocqueville was not a simple admirer of American democracy, nor a simple critic. He was a rigorous analyst who saw both the extraordinary achievements and the structural vulnerabilities of the American experiment. The achievements included voluntary associations, local self-government, a culture of civic participation, the Protestant ethic, the jury system, and religious vitality. The vulnerabilities included the tyranny of the majority, democratic individualism, and the tendency toward soft despotism that individualism tends to produce. He was right about the achievements. He was also right about the vulnerabilities, as the subsequent two centuries of American history have demonstrated.</p>
+    </div>
+
+    <!-- ============================ PART 2: KEY TERMS ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; THE TERMS</div>
+
+        <div class="kt"><div class="kt-t">Tyranny of the majority</div><div class="kt-d">Tocqueville's term for the danger in democratic societies that the majority's opinions become so powerful that minority dissent is suppressed, not primarily by legal coercion but by the overwhelming social pressure of majoritarian conformity.</div></div>
+        <div class="kt"><div class="kt-t">Democratic individualism</div><div class="kt-d">The tendency, produced by democratic conditions of equality, for individuals to withdraw from public life into private concerns, losing their connection to the civic institutions and voluntary associations that sustain democratic health. You met this term in Week 3.</div></div>
+        <div class="kt"><div class="kt-t">Mores (<em>moeurs</em>)</div><div class="kt-d">Tocqueville's term for the habits, customs, beliefs, and dispositions of a people that shape their political life. He argues that mores matter more than laws or physical circumstances in determining whether democracy succeeds.</div></div>
+    </div>
+
+    <!-- ============================ PART 3 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; TWO WAYS TO ENFORCE CONFORMITY</div>
+
+        <!-- ===== CORE VISUAL ===== -->
+        <div class="tyr">
+            <div class="tyr-title">LEGAL TYRANNY VERSUS SOCIAL TYRANNY</div>
+            <div class="tyr-sub">Tocqueville argues the second is harder to see and, in America, harder to escape.</div>
+            <div class="tyr-cols">
+                <div class="tyr-c tyr-l">
+                    <div class="tyr-h">Legal tyranny</div>
+                    <div class="tyr-tag">THE MAJORITY USES THE LAW</div>
+                    <div class="tyr-r"><div class="tyr-rl">MECHANISM</div><div class="tyr-rv">The majority controls the legislature, the executive, and often the jury, so an unjust law can be passed and enforced.</div></div>
+                    <div class="tyr-r"><div class="tyr-rl">WHAT IT ATTACKS</div><div class="tyr-rv">Your actions and your property.</div></div>
+                    <div class="tyr-r"><div class="tyr-rl">HOW YOU KNOW IT IS HAPPENING</div><div class="tyr-rv">There is a law, a ruling, or an official act you can point to.</div></div>
+                </div>
+                <div class="tyr-c tyr-s">
+                    <div class="tyr-h">Social tyranny</div>
+                    <div class="tyr-tag">THE MAJORITY USES OPINION</div>
+                    <div class="tyr-r"><div class="tyr-rl">MECHANISM</div><div class="tyr-rv">Public opinion withdraws esteem, custom, and career from anyone who steps outside it. No official has to act.</div></div>
+                    <div class="tyr-r"><div class="tyr-rl">WHAT IT ATTACKS</div><div class="tyr-rv">Tocqueville's own claim: the body is left free, and the soul is enslaved.</div></div>
+                    <div class="tyr-r"><div class="tyr-rl">HOW YOU KNOW IT IS HAPPENING</div><div class="tyr-rv">There is no law or ruling to point to at all, only silence, distance, and a career that quietly stalls.</div></div>
+                </div>
+            </div>
+            <div class="tyr-fix">
+                <div class="tyr-fix-l">WHY HE CONSIDERS THE SECOND WORSE</div>
+                <div class="tyr-fix-t">A legal tyranny can be challenged in court, repealed by a later legislature, or struck down by a judge. A social tyranny leaves no one to sue and no ruling to appeal. Tocqueville's counterweights (an independent judiciary, the legal profession, and voluntary associations) are aimed mainly at the second kind, precisely because it has no formal target to strike back at.</div>
+            </div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Tocqueville identifies several features of American society that make its democracy functional. The first is the habit of association. Americans, he observes, form voluntary associations for every purpose, from the political to the trivial, and through this associational life they develop the practical skills of self-governance, the experience of cooperative action, and the sense of civic responsibility that democratic institutions require. The second is local self-government. In the New England townships, Tocqueville sees the school of democratic citizenship, where ordinary citizens learn to manage their own affairs and develop the competencies needed for participation at higher levels of governance. The third is religious vitality. Tocqueville argues that religion, though legally separated from the state, is socially and politically essential in America. It provides the moral framework within which democratic freedom is exercised and the associational infrastructure that sustains civic life.</p>
+    </div>
+
+    <!-- ============================ PART 4: WIDGET ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; SORT THE CASE</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Five cases. Decide which category fits each one: legal tyranny, social tyranny, a voluntary association of the kind Tocqueville praises, or not a form of tyranny at all.</p>
+
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; LEGAL, SOCIAL, REMEDY, OR NEITHER?</div>
+            <div class="widget-question">Read each case and choose the category Tocqueville's framework assigns to it.</div>
+
+            <div class="widget-row" data-correct="2" data-fb="Voluntary association, and exactly the kind Tocqueville praises. A dozen people who disagree about most things cooperate on a shared civic project, which is precisely the habit he credits with keeping American democracy functional." data-hint="Is anyone being pressured or silenced here, or is something constructive being built by people acting together?">
+                <div class="widget-row-prompt">1. A dozen neighbors who disagree about almost everything else band together to petition the town council for a new school, meeting monthly to plan and divide the work.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Legal tyranny</button><button data-choice="1">Social tyranny</button><button data-choice="2">Voluntary association</button><button data-choice="3">Not tyranny</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Legal tyranny. A majority-controlled legislature has used the actual machinery of law to strip a minority of a right. This is the kind Tocqueville considers easier to fight, because there is a statute a court can eventually strike down." data-hint="Is there an actual law or official act here that a court could someday review?">
+                <div class="widget-row-prompt">2. A state legislature, controlled by the majority party, passes a law stripping a minority religious group of the right to build a house of worship.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Legal tyranny</button><button data-choice="1">Social tyranny</button><button data-choice="2">Voluntary association</button><button data-choice="3">Not tyranny</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="3" data-fb="Not tyranny. This is Tocqueville's counterweight working as designed: a judge insulated from electoral pressure by a lifetime term can rule against a popular measure precisely because the majority cannot touch her position." data-hint="Ask whether this person is protected from majority pressure or exposed to it. His whole point about the judiciary is that it is built to be the first kind.">
+                <div class="widget-row-prompt">3. A judge, appointed for a lifetime term specifically to insulate her from electoral pressure, rules against a popular measure she believes is unconstitutional.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Legal tyranny</button><button data-choice="1">Social tyranny</button><button data-choice="2">Voluntary association</button><button data-choice="3">Not tyranny</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Social tyranny. No law was broken and no official acted, yet the editor's livelihood and reputation are being dismantled by withdrawn esteem alone. This is exactly the mechanism Tocqueville describes: the body is left free, the soul is enslaved." data-hint="Look for an official act or a law. If there is none, and the pressure is coming from opinion itself, what category is left?">
+                <div class="widget-row-prompt">4. A newspaper editor who criticizes a popular policy finds his subscribers quietly cancelling, his advertisers pulling out, and his old friends crossing the street to avoid him, though he broke no law.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Legal tyranny</button><button data-choice="1">Social tyranny</button><button data-choice="2">Voluntary association</button><button data-choice="3">Not tyranny</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Social tyranny again, and worth noticing that it worked without a single person ever finding out what he actually believed. Tocqueville's point is that the mere anticipation of this pressure is often enough to produce the silence, which makes it harder to detect than the newspaper editor's case." data-hint="Has any government action occurred? If the pressure is purely anticipated rather than applied, which category still fits?">
+                <div class="widget-row-prompt">5. A citizen who privately disagrees with a popular policy says nothing in public for fear of being frozen out of local social life, though the government has taken no action against him at all.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Legal tyranny</button><button data-choice="1">Social tyranny</button><button data-choice="2">Voluntary association</button><button data-choice="3">Not tyranny</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ============================ PART 5 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; TOCQUEVILLE AND THIS COURSE</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">This lesson falls near the midpoint of Quarter 2, and it also falls, in the master version of this course, at the stated midpoint of the Sociologist Case Study Reports. That claim is under review and may not match your actual project calendar; check your course announcements rather than this sentence for the exact due date. What does not need review is the framework itself. Tocqueville's questions apply directly to any real institution you might observe: does it develop civic skills, habits of association, or moral formation in its participants? Does it represent the kind of voluntary association Tocqueville identified as essential to democratic health?</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">A student who visits a church, a school, a local government meeting, or a voluntary association and observes it through Tocqueville's eyes is asking a specific, answerable question rather than a vague one. Answering it seriously, with specific evidence from careful observation, is the skill both the Community Institution Study and the Sociologist Case Study Reports ask you to practice.</p>
+
+        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 16px 0 0 0;">
+            <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; In your notebook: is social media a force that fights the tyranny of the majority, or a new engine for it? Then open this.
+            </summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
+                A genuinely contested question, and honest sociologists disagree. The case for "fights it" is that a dissenter no longer needs the approval of everyone in physical reach; she can find a minority audience anywhere in the world instantly, which Tocqueville's isolated dissenter could not. The case for "new engine" is that public shaming can now travel further and faster than any small town's gossip network ever could, and it never fully fades the way local memory eventually does. Tocqueville could not have anticipated either technology, which is exactly why applying his framework to a case he never saw is a genuine test of whether you understand the framework or only the examples he happened to use.
+            </div>
+        </details>
+    </div>
+
+    <!-- Wrap-up + next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 13B: Tocqueville</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your Thursday reading is Tocqueville's own fullest treatment of the tyranny of the majority, from <em>Democracy in America</em>, Volume I, Part 2, Chapter VII. It is on its own course page as usual.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Sociological Journal 13</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Due Thursday, with a peer reply this week. You will apply Tocqueville's framework to an institution you have observed.</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">American democracy's own strengths, the habit of association, local self-government, and religious vitality, are on Tocqueville's account the same conditions that give majority opinion an unusually wide reach into private life. Legal tyranny is the kind you can point to and eventually challenge in court. Social tyranny is the kind that leaves no ruling to appeal, because nothing official ever happened. Holding both halves of that assessment, the achievement and the vulnerability together, is the harder and more honest reading of the book, and it is the reading this course asks of you.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 13.02 &middot; American Institutions through Tocqueville</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME — one delegated listener drives every engine ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite. Try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

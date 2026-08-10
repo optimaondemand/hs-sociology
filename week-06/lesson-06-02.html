@@ -1,0 +1,384 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Q1 · Week 6 · Lesson 6.02 — "Religion through History: Durkheim and Weber"
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS (confirmed 2026-08-06). Elementary Forms and Protestant
+    Ethic cited by year and, where the text gives one, by structure. Durkheim's
+    claim that the sacred is society itself is presented as a claim to be
+    evaluated, with Weber's objection given in full rather than summarised away,
+    and a functionalist reply given in return so neither side gets the last
+    word by default.
+
+      Standard: SS.912.S.3.9, SS.912.S.6.2, SS.912.S.1.10
+      Objective: Students will explain Durkheim's functional account of
+                religion and Weber's interpretive account, evaluate the
+                objection each raises against the other, and compare their
+                implications for understanding religion as a social
+                institution.
+      Source: Sociology_Course_Master.html, Lesson 6.02. Prose preserved
+              verbatim except the "Hook:" label (R5) and standards codes
+              (kept here in the comment only).
+      Revisions: R5 (opening section not labelled "Hook"), R7 (no em dashes).
+
+      DASH-AS-COLON REPAIR (plan.md defect 6): checked sentence by sentence.
+      NONE found in this lesson's prose. Every colon introduces a single
+      explanation, a definition, or a list, and was left alone.
+
+      HONORS ADDITION: Part 5 adds Durkheim's likely reply to Weber's
+      objection (already present in Primary Source Guide 6B's guide question 4)
+      so the exchange runs both directions inside the lesson itself, not only
+      in the guide questions. Addition under the R1 authoring rule; no
+      preserved sentence was altered to make room for it.
+
+      WIDGET ROTATION: 4.02 used flip cards + single-select rows; 6.01 (this
+      week) used reflect + scale placement. 6.02 uses single-select rows alone,
+      paired with the standard commit-then-reveal. No repeat of 4.02's exact
+      combination and no repeat within the week.
+      Select-row correct indices in order: 0, 1, 0, 1, 2. Not ascending.
+      Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Lesson 6.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS — byte-consistent with references/widgets.md ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+
+    /* ===== Core visual: two lenses on religion ===== */
+    .rel { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
+    .rel-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .rel-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
+    .rel-cols { display: flex; gap: 14px; }
+    .rel-col { flex: 1; border-radius: 8px; padding: 16px 18px; }
+    .rel-col.d { background: rgba(85,200,232,0.10); border-top: 3px solid #55C8E8; }
+    .rel-col.w { background: rgba(199,146,44,0.16); border-top: 3px solid #C7922C; }
+    .rel-name { font-size: 16px; color: #ffffff; margin-bottom: 10px; }
+    .rel-row { font-size: 13px; color: rgba(255,255,255,0.82); line-height: 1.55; margin-bottom: 9px; }
+    .rel-row b { color: #ffffff; }
+    .rel-note { margin-top: 16px; padding-top: 13px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.6; text-align: center; font-style: italic; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 6</div>
+        <div style="font-size: 12px; color: #666;">Marriage, Kinship, and Religion</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 6.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Religion through History: Durkheim and Weber</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Marriage, Kinship, and Religion</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 6.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Religion through History: Durkheim and Weber</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Is what a religion does socially the same question as what it means to believers?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Durkheim and Weber both took religion seriously as sociology's object rather than as a topic to explain away. They asked almost opposite questions about it, and holding their two answers side by side, rather than choosing a favorite, is the point of today's lesson.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain Durkheim's functional account of religion, including what he means by the totem being simultaneously god and clan.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain Weber's interpretive account of the Protestant ethic, and the mechanism by which a religious anxiety produced an economic ethic.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> evaluate the objection each thinker's approach raises against the other's, rather than treating either account as beyond challenge.</div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 1 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE SACRED AND THE PROFANE</div>
+
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Every known human society marks off some things as sacred, dangerous, or set apart, and treats the rest as ordinary. Before reading on: what is the sacred/profane line actually doing, in your best guess?</div>
+            <div class="widget-options">
+                <button data-response="A reasonable first thought, but Durkheim's argument this lesson runs somewhere else. He is less interested in what makes something feel awe-inspiring than in what the awe is doing for the group that shares it.">&#10024; Marking what feels mysterious or supernatural</button>
+                <button data-response="This is close to Durkheim's own claim, and it will feel strange the first time you meet it stated plainly. Keep it in mind as you read what follows.">&#127963;&#65039; Marking what belongs to the group and binds it together</button>
+                <button data-response="Reasonable, and true of some taboos. But Durkheim's test case, the totem, is not obviously dangerous at all, which is part of why his argument does not reduce to danger-avoidance.">&#9888;&#65039; Marking what is physically or socially risky to touch</button>
+                <button data-response="Partly right: rules of some kind are usually attached. But Durkheim wants to know why a society picks these particular objects to protect with rules in the first place, which a list of rules alone does not explain.">&#128220; Marking what has strict rules attached to it</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">In every known human society, there is a distinction between some things that are ordinary and some things that are set apart as special, dangerous, holy, or untouchable. The anthropologist W. Robertson Smith, writing in the 1880s, called this the distinction between the sacred and the profane, and Durkheim built his entire sociology of religion on it. The sacred is not necessarily supernatural; it is whatever a community treats as categorically different from the ordinary, whatever demands reverence rather than casual use, whatever is protected by taboo rather than merely by convention. The content varies; the distinction is universal.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">This universality is Durkheim's starting point. If every known society makes some version of the sacred/profane distinction, and if religion is organized around that distinction, then religion is not an error to be corrected by education or a temporary phase through which societies pass on the way to secular rationalism. It is a permanent feature of social life, performing social functions that cannot be eliminated simply by removing theological beliefs.</p>
+    </div>
+
+    <!-- ============================ PART 2: KEY TERMS ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; KEY TERMS</div>
+        <div class="key-terms">
+            <dl style="margin: 0;">
+                <dt style="font-size: 17px; color: #0E1C42; margin-bottom: 4px;">Sacred</dt>
+                <dd style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 14px 0;">Things set apart and treated with reverence, awe, or prohibition; categorically different from the ordinary. The category is universal across cultures even though its content varies.</dd>
+                <dt style="font-size: 17px; color: #0E1C42; margin-bottom: 4px;">Profane</dt>
+                <dd style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 14px 0;">From the Latin <em>pro</em> (before) and <em>fanum</em> (temple): literally, outside the temple. The ordinary, everyday domain of social life as opposed to the sacred.</dd>
+                <dt style="font-size: 17px; color: #0E1C42; margin-bottom: 4px;">Ritual</dt>
+                <dd style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 14px 0;">Prescribed behaviors performed in relation to sacred objects or occasions. Rituals create and reinforce social solidarity by enacting shared beliefs and integrating individuals into the collective.</dd>
+                <dt style="font-size: 17px; color: #0E1C42; margin-bottom: 4px;">Protestant Ethic</dt>
+                <dd style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0;">Weber's term for the set of values (hard work, asceticism, discipline, vocation) that Calvinist Protestantism cultivated and that, Weber argued, provided the psychological foundations of modern capitalism.</dd>
+            </dl>
+        </div>
+    </div>
+
+    <!-- ============================ PART 3 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; DURKHEIM: RELIGION AS SOCIAL CEMENT</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">In <em>The Elementary Forms of Religious Life</em> (1912), Durkheim argues that the fundamental function of religion is social solidarity. Religious rituals bring the community together, focus collective attention on shared symbols, and produce the heightened emotional states that Durkheim calls "collective effervescence": the sense of being part of something larger than oneself that religious gatherings characteristically generate. In these moments, the individual feels the force of the collective conscience most directly. This feeling is interpreted as contact with a sacred power; Durkheim argues that what is actually being experienced is the power of society itself.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">The sacred objects and beings of any religion, on this account, are symbols of the social group. The totem of an Australian clan is not literally divine; it is a symbol of the clan's collective identity, treated as sacred because the clan's existence and authority are the most important forces in the lives of its members. God is real in the sense that the social power he represents is real. When religion declines, that social power does not disappear; it attaches to other symbols: the nation, the flag, secular ideologies, political movements.</p>
+    </div>
+
+    <!-- ============================ PART 4 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; WEBER: RELIGION AND THE MEANING OF HISTORY</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Max Weber approaches religion from a different angle. Where Durkheim asks what functions religion performs, Weber asks what meanings religious beliefs carry for those who hold them and how those meanings shape economic and political behavior. His most famous thesis, developed in <em>The Protestant Ethic and the Spirit of Capitalism</em> (1905), argues that the distinctive values of Calvinist Protestantism (the doctrine of predestination, the concept of a vocation, the ethic of disciplined worldly asceticism) created the psychological conditions in which modern capitalism could flourish.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">The Calvinist, Weber argues, faced an acute spiritual problem: his eternal fate was predestined and unknowable. No priest could intercede, no ritual could secure salvation, no good works could alter the divine decree. Faced with this anxiety, Calvinists developed a characteristic response: interpreting worldly success as a sign of divine election. If God had chosen you, your work would prosper; therefore, disciplined, methodical work that produced visible success was evidence of grace. The result was a religious ethic that valued precisely the qualities (discipline, sobriety, deferred gratification, systematic accounting) that the accumulation of capital requires.</p>
+    </div>
+
+    <!-- ============================ PART 5 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; TWO APPROACHES, ONE INSTITUTION</div>
+
+        <!-- ===== CORE VISUAL ===== -->
+        <div class="rel">
+            <div class="rel-title">TWO LENSES ON RELIGION</div>
+            <div class="rel-sub">Neither lens is wrong. Each is built to answer a question the other one does not ask.</div>
+            <div class="rel-cols">
+                <div class="rel-col d">
+                    <div class="rel-name">DURKHEIM &middot; outside in</div>
+                    <div class="rel-row"><b>Asks:</b> what function does this practice perform for the group?</div>
+                    <div class="rel-row"><b>Method:</b> treat beliefs as social facts; look at rates, rituals, and occasions.</div>
+                    <div class="rel-row"><b>Key move:</b> the totem is the clan's symbol of itself.</div>
+                    <div class="rel-row"><b>Risk:</b> can seem to say belief content never matters.</div>
+                </div>
+                <div class="rel-col w">
+                    <div class="rel-name">WEBER &middot; inside out</div>
+                    <div class="rel-row"><b>Asks:</b> what does this belief mean to the person who holds it?</div>
+                    <div class="rel-row"><b>Method:</b> interpret doctrine, then trace its psychological and behavioral consequences.</div>
+                    <div class="rel-row"><b>Key move:</b> predestination anxiety produces disciplined worldly conduct.</div>
+                    <div class="rel-row"><b>Risk:</b> can seem to explain one case without a general theory of religion.</div>
+                </div>
+            </div>
+            <div class="rel-note">The most complete account of any religious institution needs both: what it does for the group, and what it means to the believer.</div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Durkheim and Weber represent two fundamental approaches to the sociology of religion that have never been entirely reconciled. Durkheim looks from the outside in: he treats religious beliefs as social facts and asks what functions they perform. Weber looks from the inside out: he takes religious meanings seriously as motivating forces and asks what practical consequences they have. The most complete account of any religious institution will require both perspectives.</p>
+
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; WHICH LENS EXPLAINS IT BEST?</div>
+            <div class="widget-question">Each case below is best explained by one of the two lenses, or genuinely needs both. Choose the one that does the most explanatory work.</div>
+
+            <div class="widget-row" data-correct="0" data-fb="Durkheim's lens. Correlating attendance with social integration, without asking what any individual believer thinks, is exactly the outside-in move: treat the practice as a social fact and look at what it does for the group." data-hint="Is anyone here being asked what the ritual personally means to them, or only how often it happens and where?">
+                <div class="widget-row-prompt">1. A sociologist studies rates of church attendance across regions and correlates them with measures of social integration, without asking what any individual worshipper believes.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Durkheim, outside in</button><button data-choice="1">Weber, inside out</button><button data-choice="2">Genuinely needs both</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Weber's lens. Asking what predestination means to the believer, and how that meaning shapes daily choices, is the inside-out move his method is built for." data-hint="This researcher is asking about a private, personal meaning and its behavioral consequence. Whose method starts there?">
+                <div class="widget-row-prompt">2. A sociologist interviews believers about what predestination means to them personally and how it shapes their daily choices at work.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Durkheim, outside in</button><button data-choice="1">Weber, inside out</button><button data-choice="2">Genuinely needs both</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Durkheim's lens. Claiming that a nationalist rally functions like a religious ritual, producing solidarity through shared symbols regardless of private belief, is precisely his functional argument transferred to a secular case." data-hint="The claim explicitly sets aside what any participant privately believes about the nation. Which thinker's whole method does that?">
+                <div class="widget-row-prompt">3. A sociologist argues that a nationalist rally functions exactly like a religious ritual, producing solidarity through shared symbols and collective emotion, regardless of what any participant privately believes about the nation.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Durkheim, outside in</button><button data-choice="1">Weber, inside out</button><button data-choice="2">Genuinely needs both</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Weber's lens. Tracing how a doctrine's psychological effect on believers reshaped their economic behavior is the same structure as the Protestant ethic argument, applied to a new case." data-hint="This traces a belief's meaning to the believer, then a behavioral consequence. That two-step is Weber's signature move." >
+                <div class="widget-row-prompt">4. A sociologist explains why a merchant class embraced a particular theology because it gave them psychological relief from religious anxiety, and traces how that relief reshaped their economic behavior.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Durkheim, outside in</button><button data-choice="1">Weber, inside out</button><button data-choice="2">Genuinely needs both</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Genuinely needs both. Explaining institutional survival across centuries is Durkheim's kind of question; explaining why individual adherents describe their faith as personally transformative is Weber's. A single lens answers only half of what is being asked." data-hint="Read the question again. Does it ask about the institution's persistence, the individual's experience, or both at once?">
+                <div class="widget-row-prompt">5. A sociologist wants to explain both why a religious institution has survived for centuries and why its individual adherents describe their faith as personally transformative.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Durkheim, outside in</button><button data-choice="1">Weber, inside out</button><button data-choice="2">Genuinely needs both</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ============================ PART 6 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 6 &middot; THE OBJECTION, BOTH WAYS</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Weber's objection to Durkheim is direct. If religion is really just society worshipping itself, the specific content of a creed becomes an accident of history, and it becomes hard to explain why Calvinist doctrine, rather than any other set of sacred symbols, produced a distinctive economic ethic. A theory that predicts solidarity from any shared ritual whatsoever has trouble explaining why this ritual produced capitalism and that one did not.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Durkheim's kind of reply is not to deny that content matters, but to relocate the question. The function religion performs, binding a group and constraining its members, is compatible with different creeds doing that binding through very different specific beliefs, and those differences can still have the further consequences Weber traces. A functional account of why religion persists across history is not competing with an interpretive account of why one creed produced one economic outcome; it is answering a different, prior question. Whether that reply fully satisfies Weber's objection, or only relocates it, is a fair question to keep asking as you read Thursday's excerpt from Durkheim in his own words.</p>
+
+        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 14px 0 0 0;">
+            <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; Decide in your notebook: does saying the totem is really the clan require Durkheim to say that God does not exist? Then open this.
+            </summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
+                Durkheim would say no, and the distinction he is drawing is worth taking seriously rather than dismissing as a dodge. His claim is that the sacred power worshippers genuinely experience is real, in the sense that the social force behind it is real and not imagined. What he denies is that the correct description of that power requires the supernatural content believers give it. A believer and Durkheim can agree that something powerful, external, and demanding of reverence is truly present in the ritual; they disagree about what that something is. That is a claim about the referent of religious experience, not a flat denial that anything is there. Whether a believer should find that account satisfying, or should regard it as changing the subject entirely, is a live question, and Thursday's reading gives you Durkheim's own words to judge it by.
+            </div>
+        </details>
+    </div>
+
+    <!-- What You'll Do Next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 6B: Durkheim</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your Thursday reading is Durkheim's own account of the totem and of collective effervescence, from <em>The Elementary Forms of the Religious Life</em>.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Sociological Journal 6</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Due Thursday as an assignment this week, no peer reply required. You will analyse a ritual you have observed or taken part in using Durkheim's framework.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Religion, like the marriage you studied Monday, turns out to be doing social work beneath what feels like the most private and personal thing a person can hold. Durkheim shows what that work is for the group; Weber shows what a belief means to the person holding it and what that meaning goes on to do in the world. Keeping both questions open, instead of settling for whichever one is more comfortable, is the discipline this lesson has been asking of you, and it is the same discipline the virtue of courtesy asks of you toward a conviction you do not share.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 6.02 &middot; Religion through History: Durkheim and Weber</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME — one delegated listener drives every engine ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite. Try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Q1 · Week 4 · Lesson 4.02 — "Simmel: Interaction, Money, and the Metropolitan Mind"
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS (confirmed 2026-08-06). "The Metropolis and Mental Life"
+    cited by year, Philosophy of Money by year, "The Stranger" by year.
+
+      Standard: SS.912.S.4.11, SS.912.S.6.4, SS.912.S.2.8
+      Objective: Students will explain how urban and monetary life reshape social
+                relationships and inner life, and hold Simmel's ambivalence
+                rather than resolving it into praise or complaint.
+      Source: Sociology_Course_Master.html, Lesson 4.02 (980 words).
+
+      DASH-AS-COLON REPAIR (plan.md defect 6): three broken sentences recast,
+      including "The things that cannot be priced: beauty, loyalty, love, sacred
+      obligation: are progressively displaced" and "assigned the stranger to
+      specific occupations: trading, money-lending, medicine: precisely because".
+      Legitimate definitional and list colons kept.
+
+      FORWARD LINK — IMPORTANT FOR WEEK 5. Simmel's "The Stranger" (1908) is the
+      approved R1 substitute reading for Lesson 5.01, replacing Berger's
+      Invitation to Sociology. This lesson introduces the concept, so 5.01 can
+      assign the text without cold-starting it. If the R1 choice for 5.01 ever
+      changes, revisit Part 5 here.
+
+      WIDGET ROTATION: 4.01 used reflect + iframe + commit-then-reveal.
+      4.02 therefore uses flip cards + single-select rows. Flip last appeared in
+      1.01, so the spacing is wide.
+      Select-row correct indices in order: 2, 0, 3, 1, 2. Not ascending.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Lesson 4.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS — byte-consistent with references/widgets.md ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+
+    /* ===== Core visual: the screening mechanism ===== */
+    .scr { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
+    .scr-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .scr-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
+    .scr-flow { display: flex; align-items: stretch; gap: 10px; }
+    .scr-b { flex: 1; border-radius: 8px; padding: 14px 15px; }
+    .scr-1 { background: rgba(255,255,255,0.07); border-top: 3px solid rgba(255,255,255,0.3); }
+    .scr-2 { background: rgba(85,200,232,0.12); border-top: 3px solid #55C8E8; }
+    .scr-3 { background: rgba(199,146,44,0.16); border-top: 3px solid #C7922C; }
+    .scr-n { font-size: 10px; letter-spacing: 0.5px; color: rgba(255,255,255,0.45); margin-bottom: 5px; }
+    .scr-h { font-size: 15px; color: #ffffff; margin-bottom: 5px; }
+    .scr-t { font-size: 13px; color: rgba(255,255,255,0.82); line-height: 1.5; }
+    .scr-ar { display: flex; align-items: center; color: rgba(255,255,255,0.3); font-size: 18px; }
+    .scr-led { display: flex; gap: 12px; margin-top: 16px; }
+    .scr-led div { flex: 1; border-radius: 7px; padding: 12px 15px; font-size: 13px; line-height: 1.55; }
+    .scr-good { background: rgba(42,157,92,0.16); border-left: 3px solid #2A9D5C; color: #cfe9d8; }
+    .scr-bad { background: rgba(192,57,43,0.16); border-left: 3px solid #C0392B; color: #f0cfc9; }
+    .scr-led b { color: #ffffff; }
+
+    .mt { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 15px; }
+    .mt th { background: #0E1C42; color: #fff; text-align: left; padding: 10px 13px; font-size: 12px; letter-spacing: 0.4px; font-weight: normal; }
+    .mt td { border: 1px solid #D0D9E8; padding: 10px 13px; color: #1a2340; line-height: 1.5; vertical-align: top; }
+    .mt tr:nth-child(even) td { background: #F8FAFD; }
+    .mt td:first-child { color: #0E1C42; width: 22%; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 4</div>
+        <div style="font-size: 12px; color: #666;">Durkheim on Solidarity and Simmel on Modern Life</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 4.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Interaction, Money, and the Metropolitan Mind</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Durkheim on Solidarity and Simmel on Modern Life</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 4.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Simmel: Interaction, Money, and the Metropolitan Mind</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">What does a city do to the mind of the person living in it?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Durkheim asked what holds a society together. Simmel, born the same year, asked something narrower and stranger: what is it actually like in there? His answers are unusually hard to summarise, because he refuses to say whether the modern city is good or bad for us. Resist the urge to make him choose.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain the mechanism producing the blasé attitude, and state both what it protects and what it costs.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> analyse how a money economy changes the character of a relationship, not merely its convenience.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish Simmel's questions from Durkheim's, and say why two contemporaries studying the same society produced such different disciplines.</div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 1 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; A CITY THAT GREW ELEVEN TIMES OVER</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Georg Simmel was born in Berlin in 1858, the same year as Durkheim, and spent most of his career in that city. Berlin in the late nineteenth century was expanding at a rate with no precedent in human history. In 1800 it held 170,000 people. By 1900 it held 1.9 million. Within a single lifetime the city had gone from a modest Prussian capital to one of the great industrial metropolises of the world. Simmel watched the transformation and asked what it was doing to the human beings living through it.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">His answer, published as "The Metropolis and Mental Life" in 1903, turns on what he calls the <em>blasé attitude</em>. A person in a modern city is met at every moment with more stimulation, impression, and demand for response than any nervous system was built to handle. To survive it, the urban person learns to screen. She becomes selective, detached, reserved. She does not respond to the face of every stranger she passes, because she cannot. The personality that results is shaped by the city itself: quick, guarded, competent, and cool.</p>
+
+        <!-- ===== CORE VISUAL ===== -->
+        <div class="scr">
+            <div class="scr-title">HOW THE CITY PRODUCES A PERSONALITY</div>
+            <div class="scr-sub">Simmel's argument is causal, not disapproving. The blasé attitude is an adaptation, and adaptations have costs.</div>
+            <div class="scr-flow">
+                <div class="scr-b scr-1">
+                    <div class="scr-n">THE CONDITION</div>
+                    <div class="scr-h">Stimulus beyond capacity</div>
+                    <div class="scr-t">Faces, signs, noise, traffic, transactions, demands for attention, arriving faster than any nervous system evolved to process them.</div>
+                </div>
+                <div class="scr-ar">&#8594;</div>
+                <div class="scr-b scr-2">
+                    <div class="scr-n">THE ADAPTATION</div>
+                    <div class="scr-h">Screening</div>
+                    <div class="scr-t">The mind learns to filter. Most of what arrives is not responded to at all. This is not rudeness. It is the only way to remain functional.</div>
+                </div>
+                <div class="scr-ar">&#8594;</div>
+                <div class="scr-b scr-3">
+                    <div class="scr-n">THE RESULT</div>
+                    <div class="scr-h">The blasé attitude</div>
+                    <div class="scr-t">A settled incapacity for strong response. Intellect takes over from feeling, because intellect is the faculty that can handle volume.</div>
+                </div>
+            </div>
+            <div class="scr-led">
+                <div class="scr-good"><b>What it protects.</b> Without it a person in a metropolis would be overwhelmed within an hour. It makes urban life survivable, and with it the freedom, anonymity, and possibility a city offers.</div>
+                <div class="scr-bad"><b>What it costs.</b> The filter does not discriminate perfectly. Things worth responding to are screened out alongside the noise, and the capacity for strong response, once dulled, is not easily recovered.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 2: FLIP CARDS ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; FOUR TERMS</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">Tap each to check yourself, then write all four into your notebook in your own words. You will need the fourth again next week.</p>
+
+        <div class="optima-widget">
+            <div class="widget-kicker">&#9889; TAP TO REVEAL</div>
+            <div class="ow-flip" tabindex="0">
+                <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;">Blasé attitude</div>
+                <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">The emotional detachment characteristic of urban life. An incapacity for strong emotional response to city stimuli, produced by the need to manage an overwhelming volume of impressions.</div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget">
+            <div class="widget-kicker">&#9889; TAP TO REVEAL</div>
+            <div class="ow-flip" tabindex="0">
+                <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;">Money economy</div>
+                <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">An economic system in which goods and services are exchanged through money rather than through direct barter or obligation. For Simmel it transforms social relationships by making them calculable, impersonal, and abstract.</div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget">
+            <div class="widget-kicker">&#9889; TAP TO REVEAL</div>
+            <div class="ow-flip" tabindex="0">
+                <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;">Formal sociology</div>
+                <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">Simmel's distinctive approach. Rather than studying particular societies or institutions, he studies the recurring <em>forms</em> of social interaction, such as competition, conflict, exchange, domination, and subordination, which appear across quite different historical contexts.</div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget">
+            <div class="widget-kicker">&#9889; TAP TO REVEAL</div>
+            <div class="ow-flip" tabindex="0">
+                <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;">The stranger</div>
+                <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">From Simmel's 1908 essay. A person simultaneously near and far, part of a group but not of it. The stranger sees clearly what insiders cannot, because she has not been absorbed into the group's unexamined assumptions. You will read this essay next week.</div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ============================ PART 3 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; TWO CONTEMPORARIES, TWO DISCIPLINES</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Simmel and Durkheim are exact contemporaries and in some ways rivals. Both ask what happens to individuals and communities in modern industrial society. They ask it differently, and the difference produced two distinct traditions.</p>
+
+        <table class="mt">
+            <tr><th></th><th>Durkheim</th><th>Simmel</th></tr>
+            <tr><td>Object of study</td><td>Society as a structural reality, and the forces that hold it together or let it dissolve.</td><td>The texture of interaction, and what it actually feels like to live inside modern society.</td></tr>
+            <tr><td>Method</td><td>Treat social facts as things. Count them where possible.</td><td>Isolate the recurring forms of interaction, wherever they appear.</td></tr>
+            <tr><td>Central problem</td><td>Anomie: the weakening of the norms that give life purpose and belonging.</td><td>The tragedy of culture, which is subtler and harder to measure.</td></tr>
+            <tr><td>Characteristic move</td><td>Find a rate and explain it socially.</td><td>Find a form and describe it precisely.</td></tr>
+        </table>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 14px 0 0 0;">The tragedy of culture is worth pausing on. Simmel means that the objective products of human culture, meaning cities, institutions, technologies, and art forms, grow so complex and so autonomous that they outrun any individual's capacity to absorb them or be genuinely animated by them. The modern person is surrounded by achievements she did not make and cannot fully understand. She is, in a real sense, a stranger inside her own civilisation.</p>
+    </div>
+
+    <!-- ============================ PART 4 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; WHAT MONEY DOES TO A RELATIONSHIP</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">One of Simmel's most important contributions is his analysis of the money economy in <em>The Philosophy of Money</em> (1900). Money is not merely a convenient medium of exchange. He argues that it is a force which transforms the character of social life itself.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">In a society organised by personal obligation and local relationship, exchanging goods is inseparable from the social bond between the parties. You give your neighbour a bushel of grain and she gives you a day of labour. The exchange is personal, qualitative, and embedded in an ongoing web of relationship. Money dissolves all of that. With money, every good and service becomes quantifiable and comparable, every transaction is between equivalents, and the parties need no relationship to each other beyond the transaction itself. Money is the great leveller and the great depersonaliser.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The consequence is psychological as well as economic. People living in a money economy come to think quantitatively, asking of everything what it is worth in money. That habit is extraordinarily useful for coordinating complex social life. Simmel also thinks it corrodes the qualitative dimensions of experience, because the things that cannot be priced are progressively displaced from the centre of social life by the things that can. Beauty, loyalty, love, and sacred obligation do not disappear. They simply stop being what the society is organised around.</p>
+
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; WHICH CONCEPT IS AT WORK?</div>
+            <div class="widget-question">Each situation below is best explained by one of Simmel's four ideas. Choose the one that does the most explanatory work, not merely one that could apply.</div>
+
+            <div class="widget-row" data-correct="2" data-fb="Money economy. The complaint is not about the amount. It is that putting a price on the thing changed what kind of thing it was, which is exactly Simmel's claim in The Philosophy of Money." data-hint="Nothing here is about crowds or outsiders. Ask what changed when a number got attached.">
+                <div class="widget-row-prompt">1. A neighbour who used to help with repairs for free begins charging an hourly rate, and both of them find the relationship has changed in a way neither likes.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Blasé attitude</button><button data-choice="1">Formal sociology</button><button data-choice="2">Money economy</button><button data-choice="3">The stranger</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Blasé attitude. Not indifference as a character flaw but screening as an adaptation. Simmel would say she could not function otherwise, and would still ask what the filter costs her." data-hint="Is this person unkind, or is she doing something a nervous system has to do in that environment?">
+                <div class="widget-row-prompt">2. Someone who has commuted through a crowded station for years no longer registers the faces around her and could not describe a single one.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Blasé attitude</button><button data-choice="1">Formal sociology</button><button data-choice="2">Money economy</button><button data-choice="3">The stranger</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="3" data-fb="The stranger. Near and far at once. Her usefulness and the suspicion she attracts come from the same source, which is that she belongs to the group without having been formed by it." data-hint="What is the structural position of someone who is inside a group and also not of it?">
+                <div class="widget-row-prompt">3. A newcomer to a small firm keeps noticing inefficiencies that everyone else stopped seeing years ago, and her colleagues find this both useful and slightly irritating.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Blasé attitude</button><button data-choice="1">Formal sociology</button><button data-choice="2">Money economy</button><button data-choice="3">The stranger</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Formal sociology. The claim is that the same form of interaction recurs in unrelated settings, which is precisely the kind of object Simmel built a method to study." data-hint="This is not about any one of the settings. It is about something they share. What kind of thing is that?">
+                <div class="widget-row-prompt">4. A researcher argues that the pattern of rivalry between two shopkeepers, two siblings, and two nations is recognisably the same pattern in three different settings.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Blasé attitude</button><button data-choice="1">Formal sociology</button><button data-choice="2">Money economy</button><button data-choice="3">The stranger</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Money economy again, in its psychological form. The habit of asking what something is worth has spread beyond the things that have prices. Simmel's worry is not that people are greedy. It is that a way of thinking has become the only available one." data-hint="Nobody is buying anything here. Ask where the habit of thinking in those terms came from.">
+                <div class="widget-row-prompt">5. Someone deciding whether to take up painting finds themselves calculating whether the hours could be better spent, and cannot stop framing the question that way.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Blasé attitude</button><button data-choice="1">Formal sociology</button><button data-choice="2">Money economy</button><button data-choice="3">The stranger</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ============================ PART 5 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; THE STRANGER, AND THE SOCIOLOGIST</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Simmel's essay "The Stranger" (1908) shows his method at its best. He is not analysing any particular historical stranger but the social form of strangeness itself, meaning the structural position of a person who is simultaneously inside and outside a group. The stranger brings goods from a distance the group cannot produce for itself. She sees what insiders cannot, because she has not been formed by the group's unexamined assumptions. For both reasons she is useful and threatening at once. Many historical groups assigned strangers to particular occupations, among them trading, money-lending, and medicine, precisely because outsider status gave useful access to what insiders could not see.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">The concept matters beyond the history of particular marginalised groups, because it describes the position of the sociologist. Like Simmel's stranger, the sociologist's task is to see what insiders take for granted and to make visible the social forms organising everyday life that participants never recognise as forms at all. In this respect Simmel, Durkheim, and Tocqueville are all describing one intellectual posture: the deliberate cultivation of distance from your own social world as the condition of understanding it.</p>
+
+        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0;">
+            <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; Decide in your notebook: is the modern city, on balance, liberating or imprisoning? Then open this.
+            </summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
+                Simmel ends the essay by raising this question and declining to settle it, and that is a position rather than an evasion. The city grants a freedom no village could: anonymity, the possibility of becoming someone other than who your neighbours expect, access to people and ideas a small community cannot supply. It exacts a price in the same motion, because the anonymity that frees you also means nobody is watching out for you, and the blasé attitude that makes the crowd bearable also dulls the responsiveness a full life needs. Simmel's discipline is to hold both without collapsing into either nostalgia or celebration. If your answer came out cleanly one way, check whether you reached it by ignoring half the evidence. That check is the skill this lesson is really teaching.
+            </div>
+        </details>
+    </div>
+
+    <!-- Next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 4B: Simmel</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your Thursday reading is "The Metropolis and Mental Life" itself. Read it as cultural diagnosis rather than historical description.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Sociological Journal 4</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Due Thursday as an assignment this week. You will describe a moment of deliberate screening and judge whether it was protection or loss.</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Durkheim gave you a structure and Simmel has given you a texture. Both were looking at the same Europe in the same decades and they built different disciplines out of it, which is worth remembering whenever a single framework starts to feel like the whole truth. Simmel's particular gift is his refusal to resolve. The city liberates and it costs, the blasé attitude protects and it dulls, money coordinates and it flattens. Holding two true things that pull against each other is harder than picking one, and it is closer to how social life actually works.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 4.02 &middot; Interaction, Money, and the Metropolitan Mind</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME — one delegated listener drives every engine ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite. Try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

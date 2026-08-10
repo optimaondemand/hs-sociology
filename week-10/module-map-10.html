@@ -1,0 +1,229 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Q2 · Week 10 · Module Map (week opener)
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS (confirmed 2026-08-06).
+      Tier 4 scaffolding, ungraded, GitHub-hosted. NOT the module intro wrapper:
+      that is a separate Canvas Quiz in survey mode (module-intro-10.md).
+      Week 10 opens QUARTER 2. The quarter-transition callout below is new
+      content, not a redesign of the shared chrome; header, metadata strip,
+      widget CSS (n/a on a module map), and footer are copied byte-for-byte
+      from module-map-03.html per the build brief.
+      Week 10 virtue thread: responsibility (weeks 10 and 11).
+      Journal 10 is Tier 1, completion-scored, NO peer reply this week (even
+      week; see CLAUDE.md "Tier balance"). The table says so explicitly, same
+      convention as module-map-02.html.
+      Community Institution Study (Tier 3 project) spans Weeks 9-11 and is
+      live this week; flagged under "Work that runs all semester."
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Week 10 Module Map</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    .wk { display: flex; gap: 10px; margin: 6px 0 4px 0; }
+    .day { flex: 1; border-radius: 8px; border: 1px solid #D0D9E8; overflow: hidden; }
+    .day-h { background: #0E1C42; color: #fff; font-size: 11px; letter-spacing: 0.6px; padding: 8px 10px; text-align: center; }
+    .day-b { padding: 12px 11px; min-height: 140px; }
+    .day-kind { font-size: 10px; letter-spacing: 0.5px; color: #1B6A94; margin-bottom: 5px; }
+    .day-t { font-size: 14px; color: #0E1C42; line-height: 1.45; margin-bottom: 8px; }
+    .day-due { font-size: 12px; color: #8a6a1d; background: #FDF3E3; border-radius: 4px; padding: 4px 7px; display: inline-block; line-height: 1.35; }
+    .day.rest .day-h { background: #6b7a99; }
+    .day.rest .day-b { color: #6b7a99; font-size: 13px; line-height: 1.5; }
+
+    .turn { width: 100%; border-collapse: collapse; font-size: 15px; margin: 6px 0; }
+    .turn th { background: #0E1C42; color: #fff; text-align: left; padding: 10px 13px; font-size: 12px; letter-spacing: 0.4px; font-weight: normal; }
+    .turn td { border: 1px solid #D0D9E8; padding: 10px 13px; color: #1a2340; line-height: 1.5; vertical-align: top; }
+    .turn tr:nth-child(even) td { background: #F8FAFD; }
+    .pill { display: inline-block; font-size: 11px; border-radius: 12px; padding: 3px 10px; letter-spacing: 0.3px; }
+    .p1 { background: #E8F6FB; color: #1B6A94; border: 1px solid #C5DCE5; }
+    .p2 { background: #FDF3E3; color: #8a6a1d; border: 1px solid #E8D6AE; }
+
+    /* the three criteria, previewed */
+    .crit3 { display: flex; gap: 11px; margin: 12px 0 0 0; }
+    .crit3 div { flex: 1; background: rgba(255,255,255,0.08); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 12px 14px; }
+    .crit3 .c-n { font-size: 15px; color: #ffffff; margin-bottom: 4px; }
+    .crit3 .c-q { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.5; font-style: italic; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 10</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">This Week</div>
+        <div style="font-size: 17px; color: #0e1c42;">Week 10 of 18</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Theme</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Origins of Government and Political Authority</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Virtue</div>
+        <div style="font-size: 16px; color: #0e1c42;">Responsibility</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">MODULE MAP</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Week 10: Origins of Government and Political Authority</div>
+        <div style="font-size: 16px; color: #666;">Start here. This page shows you everything the week contains.</div>
+    </div>
+
+    <!-- Quarter transition -->
+    <div style="background: #0E1C42; border-radius: 10px; padding: 20px 26px; margin-bottom: 20px;">
+        <div style="font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 8px;">QUARTER 2 BEGINS</div>
+        <div style="font-size: 17px; color: #ffffff; line-height: 1.6; text-align: center;">Quarter 1 asked how sociology came to exist and what holds a society together beneath the surface of individual choices. Quarter 2 turns to institutions: government, bureaucracy, economy, and the ordinary structures modern life runs on. It starts with the oldest institution of all, the one every other institution in this quarter depends on for its own authority to mean anything.</div>
+    </div>
+
+    <!-- Essential question -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#10067; THE QUESTION THIS WEEK IS ABOUT</div>
+        <div style="font-size: 21px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Why do people obey, and what makes some obedience legitimate rather than merely coerced?</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.65;">Every society that has ever existed has had some form of government. That much is close to a sociological universal. What is not universal is the reason people go along with it. Monday traces where governments and law come from and why force alone is a poor foundation for either. Wednesday gives you Max Weber's answer to the harder question: when people do obey willingly, what kind of claim on them is actually being made?</div>
+    </div>
+
+    <!-- Week at a glance -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128197; THE WEEK AT A GLANCE</div>
+        <div class="wk">
+            <div class="day">
+                <div class="day-h">MONDAY</div>
+                <div class="day-b">
+                    <div class="day-kind">LESSON 10.01</div>
+                    <div class="day-t">Origins of Government and Law</div>
+                    <div class="day-due">Reading Quiz 10 opens</div>
+                </div>
+            </div>
+            <div class="day">
+                <div class="day-h">TUESDAY</div>
+                <div class="day-b">
+                    <div class="day-kind">PRIMARY SOURCE 10A</div>
+                    <div class="day-t">Aristotle, <em>Politics</em> III.7, III.11</div>
+                </div>
+            </div>
+            <div class="day">
+                <div class="day-h">WEDNESDAY</div>
+                <div class="day-b">
+                    <div class="day-kind">LESSON 10.02</div>
+                    <div class="day-t">Weber: Three Types of Legitimate Authority</div>
+                </div>
+            </div>
+            <div class="day">
+                <div class="day-h">THURSDAY</div>
+                <div class="day-b">
+                    <div class="day-kind">PRIMARY SOURCE 10B</div>
+                    <div class="day-t">Weber, <em>Economy and Society</em> III.1&ndash;4</div>
+                    <div class="day-due">Journal 10 due, no peer reply this week</div>
+                </div>
+            </div>
+            <div class="day rest">
+                <div class="day-h">FRIDAY</div>
+                <div class="day-b">Catch up, finish your VR activities, or come to office hours.</div>
+            </div>
+        </div>
+        <p style="font-size: 15px; color: #4a5a78; line-height: 1.6; margin: 14px 0 0 0;">Tuesday's reading is the ground floor of Wednesday's argument. Aristotle already asks which constitutions are legitimate and which are perversions of the same form; Weber asks the same question in a completely different vocabulary. Reading them back to back is the point.</p>
+    </div>
+
+    <!-- What you turn in -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU TURN IN THIS WEEK</div>
+        <table class="turn">
+            <tr><th>Item</th><th>What it is</th><th>Counts as</th></tr>
+            <tr>
+                <td>Module 10 intro survey</td>
+                <td>A few questions before you start, including one prediction about why people obey.</td>
+                <td><span class="pill p1">Completion</span></td>
+            </tr>
+            <tr>
+                <td>Reading Quiz 10</td>
+                <td>Eight multiple choice questions on both lessons.</td>
+                <td><span class="pill p1">Auto-graded</span></td>
+            </tr>
+            <tr>
+                <td>Sociological Journal 10</td>
+                <td>200 to 350 words applying Weber's three types to an authority you accept and one you contest. <strong>Submitted as an assignment this week, not a discussion. No peer reply is required.</strong></td>
+                <td><span class="pill p1">Completion</span></td>
+            </tr>
+            <tr>
+                <td>VR Activity 10.1</td>
+                <td>Reading authority off a building's architecture. Upload your capture.</td>
+                <td><span class="pill p1">Completion</span></td>
+            </tr>
+            <tr>
+                <td>VR Activity 10.2</td>
+                <td>A four-way comparison of Aristotle, Hobbes, Locke, and Rousseau on the origin of government, plus a short recorded defense.</td>
+                <td><span class="pill p1">Completion</span></td>
+            </tr>
+            <tr>
+                <td>Module 10 wrap-up survey</td>
+                <td>Your second answer to the essential question, a confidence check, and what is still unclear.</td>
+                <td><span class="pill p1">Completion</span></td>
+            </tr>
+        </table>
+        <p style="font-size: 15px; color: #4a5a78; line-height: 1.6; margin: 12px 0 0 0;">Journal 9 needed no peer reply, and Journal 10 does not either. The cadence alternates and the module map will always tell you which kind of week it is.</p>
+    </div>
+
+    <!-- Ongoing work -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128260; WORK THAT RUNS ALL SEMESTER</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6;"><strong>Community Institution Study, due Week 11.</strong> This project asks you to observe a real public setting through at least four sociological concepts and at least two primary sources. Legitimacy and authority are concepts most students have not used yet in the study, and this week hands you both, along with a vocabulary precise enough to describe what you actually see.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6;"><strong>Your Sociological Journal.</strong> Add this week's entry to the same document as the rest. Weber's vocabulary is the kind of tool that keeps being useful long after the week it was introduced, and you will reach for it again in Week 12 when class and status come up.</div>
+        </div>
+    </div>
+
+    <!-- Virtue -->
+    <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; THE VIRTUE THIS WEEK IS RESPONSIBILITY</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Responsibility here means asking what legitimate power owes the people under it, not only what they owe it. Aristotle's whole classification of constitutions turns on whether a government rules for the common good or only for whoever holds office. Weber's typology adds a second question worth sitting with: authority that survives on nothing but personal charisma or naked force is authority that has not yet accepted the discipline of being answerable to a rule. The wrap-up survey will ask where you noticed that discipline, or its absence, this week.</div>
+    </div>
+
+    <!-- Start here -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#9654; WHERE TO START</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Take the Module 10 intro survey first. It asks you to name an authority you obey without ever having examined why, and Thursday's journal will be much easier to write if you have already found a real example rather than reaching for one at the last minute.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Module Map</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Week 10 of 18 &middot; Origins of Government and Political Authority</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Q2 · Week 14 · Lesson 14.01 — "Urbanization and Modern Society"
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS (confirmed 2026-08-06). Simmel, Wirth, Park, and Jacobs cited
+    by name and argument, not just as a list of terms. The critique-and-revision
+    structure (Wirth challenged by Jacobs) is preserved from the master because it
+    is exactly the honors move: presenting a thinker's strongest objection rather
+    than only the tidy version.
+
+      Standard: SS.912.S.6.1, SS.912.S.6.4, SS.912.S.2.3
+      Objective: Students will explain how urbanization transformed social life in
+                the modern period, apply Simmel's account of metropolitan life,
+                and evaluate the relationship between urban environments and
+                social solidarity.
+      Source: Sociology_Course_Master.html via _build/manifest.json, weeks[13],
+              lessons[0]. Prose preserved; section "Hook: The Stranger" retitled
+              per R5 (label dropped, descriptive title kept).
+      Revisions applied: R5 (no "Hook" label), R7 (no em dashes — none were
+                present in the master text for this lesson), standards codes kept
+                out of student-facing text (SS.912.S.x.x moved here only).
+
+      DASH-AS-COLON CHECK (plan.md defect 6): scanned this lesson's manifest
+      prose programmatically for sentences carrying two or more mid-sentence
+      colons. None found. No recasting was needed for this lesson.
+
+      VIRTUE THREAD: self-government (Weeks 14-15). Woven into the "Critique and
+      Revision" close: reading a theory's strongest counter-argument before
+      accepting it is itself a form of self-government applied to one's own mind.
+
+      WIDGET ROTATION: this week has no pre-built iframe widget assigned (Widget
+      4 belongs to Week 12). 14.01 uses TWO in-page engines: reflective check-in
+      (Part 1) and single-select rows (Part 3, after Critique and Revision).
+      14.02 uses scale placement + flip cards, so the two lessons this week do
+      not repeat an engine combination. Select-row correct indices, in order:
+      2, 0, 3, 1. Not ascending.
+      Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Lesson 14.01</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS — byte-consistent with references/widgets.md ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+
+    /* ===== Core visual: village vs. metropolis ===== */
+    .vm { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
+    .vm-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .vm-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
+    .vm-row { display: flex; align-items: stretch; gap: 14px; }
+    .vm-col { flex: 1; background: rgba(255,255,255,0.06); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 16px 18px; }
+    .vm-col.city { border-top-color: #C7922C; background: rgba(199,146,44,0.12); }
+    .vm-h { font-size: 15px; color: #ffffff; margin-bottom: 10px; text-align: center; }
+    .vm-b { font-size: 13px; color: rgba(255,255,255,0.82); line-height: 1.6; margin-bottom: 8px; }
+    .vm-vs { display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.35); font-size: 13px; letter-spacing: 0.4px; width: 30px; flex-shrink: 0; }
+    .vm-note { margin-top: 16px; padding-top: 13px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.6; text-align: center; font-style: italic; }
+
+    .exg { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 11px; margin: 14px 0; }
+    .exc { background: #FFFFFF; border: 1px solid #D0D9E8; border-top: 3px solid #55C8E8; border-radius: 7px; padding: 14px 16px; }
+    .exc-h { font-size: 16px; color: #0E1C42; margin-bottom: 6px; }
+    .exc-b { font-size: 15px; color: #1a2340; line-height: 1.55; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 14</div>
+        <div style="font-size: 12px; color: #666;">Urbanization, Technology, and Social Relationships</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 14.01</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Urbanization and Modern Society</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Urbanization, Technology, and Social Relationships</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 14.01</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Urbanization and Modern Society</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Does living among strangers change the kind of mind you have?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Simmel thought it must. A city asks something of its residents that a village never does: it asks them to be surrounded by people they will never know and to keep functioning anyway. Today's lesson follows that claim from Simmel through the Chicago School and into its sharpest challenge.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain Simmel's account of the metropolitan blas&eacute; attitude as an adaptation, not a character flaw, and apply it to an unfamiliar case.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> reconstruct Wirth's argument that urbanism weakens primary group ties, and state precisely what evidence would have counted against it.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> evaluate Jane Jacobs's objection to Wirth and decide, with reasons, whether density destroys community or produces a different form of it.</div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 1 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE STRANGER</div>
+
+        <!-- ===== CORE VISUAL ===== -->
+        <div class="vm">
+            <div class="vm-title">TWO WAYS OF KNOWING THE PEOPLE AROUND YOU</div>
+            <div class="vm-sub">Simmel's starting contrast. The city does not simply have more people in it; it changes what "knowing someone" means.</div>
+            <div class="vm-row">
+                <div class="vm-col">
+                    <div class="vm-h">THE VILLAGE</div>
+                    <div class="vm-b">You know nearly everyone you meet, often for your whole life.</div>
+                    <div class="vm-b">Your emotional attention is spent on a small, stable set of people.</div>
+                    <div class="vm-b">Behavior is predictable because it is personally known, not because it is regulated.</div>
+                </div>
+                <div class="vm-vs">VS</div>
+                <div class="vm-col city">
+                    <div class="vm-h">THE METROPOLIS</div>
+                    <div class="vm-b">You are surrounded by strangers whose behavior you cannot predict from personal knowledge.</div>
+                    <div class="vm-b">Stimulation arrives constantly, from every direction, all day.</div>
+                    <div class="vm-b">The mind adapts by cultivating a protective reserve: the blas&eacute; attitude.</div>
+                </div>
+            </div>
+            <div class="vm-note">Simmel's claim: the blas&eacute; attitude is not indifference to people. It is what a mind does so it does not have to feel the full weight of every stranger it passes.</div>
+        </div>
+
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Picture moving from a town of six hundred people to a city of six million. Predict: what would surprise you most in the first week? (No wrong answer.)</div>
+            <div class="widget-options">
+                <button data-response="A common first reaction, and Simmel would agree it is real. But he thinks the deeper adjustment is not to the noise itself but to how much of it you have to learn to ignore just to function.">&#128266; How loud and constant everything is</button>
+                <button data-response="This is close to Simmel's own diagnosis. He argues city dwellers develop a cultivated reserve specifically because greeting or attending to every person they pass would be impossible to sustain.">&#128101; How few strangers greet you or make eye contact</button>
+                <button data-response="A fair prediction, and true in Simmel's account, though he is careful to say the specialization is a byproduct of competition for customers, not simply a benefit of city size.">&#127970; How specialized every shop and service is</button>
+                <button data-response="Also true, and it connects directly to today's lesson: Simmel argues the money economy and the intellectualized, calculating metropolitan mind grow up together, each reinforcing the other.">&#128181; How much everything seems to run on money and price</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 10px 0 10px 0;">In 1903, the German sociologist Georg Simmel published a short essay titled &ldquo;The Metropolis and Mental Life.&rdquo; It is one of the most brilliant brief diagnoses of modernity ever written, and it begins with an observation that felt startling at the time and now seems obvious: city life requires a different kind of mind than village life. The village dweller knows everyone; her emotional and intellectual resources can be devoted to the full particulars of relationships with a small number of people she has known for years. The city dweller knows almost no one; she is surrounded by strangers whose behavior she cannot predict from personal knowledge. The city is stimulating beyond all prior human experience, and the mind's response to that over-stimulation is not breakdown but adaptation: the development of what Simmel calls a &ldquo;blas&eacute; attitude,&rdquo; a cultivated emotional reserve that protects the metropolitan individual from the overwhelming demands of urban life. He does not feel less; he protects himself from feeling too much.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">This is sociology as literary insight: a careful observation about a pattern of individual behavior that is actually a social fact in Durkheim's sense, produced by the social conditions of city life and distributed across all metropolitan individuals regardless of their personal psychology. Simmel's essay raises questions that are as live now as they were in 1903: what does the city do to community? What does it do to the self? And what do we lose, as well as gain, when we trade the village for the metropolis?</p>
+    </div>
+
+    <!-- ============================ KEY TERMS ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; KEY TERMS</div>
+        <div class="exg">
+            <div class="exc">
+                <div class="exc-h">Urbanization</div>
+                <div class="exc-b">The process by which an increasing share of a population comes to live in cities. Modern urbanization is tied to industrialization: the factory system drew rural populations into cities, transforming both the cities and the rural communities they drew from.</div>
+            </div>
+            <div class="exc">
+                <div class="exc-h">Metropolitan Blas&eacute; Attitude</div>
+                <div class="exc-b">Simmel's term for the cultivated emotional reserve city life produces: responding to unfamiliar stimuli with intellectualized detachment rather than emotional engagement. A protective adaptation to overstimulation, not a character flaw.</div>
+            </div>
+            <div class="exc">
+                <div class="exc-h">Urbanism as a Way of Life</div>
+                <div class="exc-b">Louis Wirth's concept (1938): the urban environment does not merely house social life but actively shapes it, producing anonymity, secondary relationships, heterogeneity, and loose social bonds as characteristic features of city life.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 2 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; THE SOCIOLOGY OF URBAN SPACE</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The Chicago School of Sociology, active in the early twentieth century, pioneered the systematic empirical study of urban social life. Its leading figures, Robert Park, Ernest Burgess, and Louis Wirth, argued that the city was not merely a larger version of the village but a qualitatively different social environment. Its scale and density produced a different kind of social organization: anonymous, specialized, functionally differentiated. Park argued that the city sorted its inhabitants into &ldquo;natural areas&rdquo; characterized by distinctive social types: the bohemian quarter, the slum, the business district, the suburb. This spatial organization was not accidental. It reflected the social forces produced by urban competition and differentiation.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Wirth's &ldquo;Urbanism as a Way of Life&rdquo; (1938) argued that the distinctive features of urban life, size, density, heterogeneity, systematically weakened the primary group ties (family, neighborhood, church) that had provided social solidarity in pre-urban communities. The city produced secondary relationships, shallow, functionally specific, easily dissolved, in place of primary ones: deep, multifaceted, enduring. The result was social disorganization: not chaos, but a weakening of the normative bonds that had regulated social life in smaller communities.</p>
+    </div>
+
+    <!-- ============================ PART 3 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; CRITIQUE AND REVISION</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Wirth's account was important but also somewhat overdrawn. Subsequent empirical research showed that urban communities do maintain primary group ties, that neighborhoods do develop genuine solidarity, and that the city is not simply a machine for dissolving community. Jane Jacobs, in <em>The Death and Life of Great American Cities</em> (1961), offered a powerful counter-argument: well-designed city streets, with their mixed uses and active sidewalks, produce their own distinctive form of social life, not less than rural community life but differently constituted. The city street, at its best, creates what Jacobs calls &ldquo;sidewalk ballet&rdquo;: a complex, spontaneous social choreography that generates safety, public trust, and genuine community among people who do not know each other as personal friends.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">Notice what just happened to the lesson's own argument. It did not end with Wirth's conclusion; it ended with Wirth's strongest critic. Holding a theory at arm's length long enough to test it against a real counter-example, rather than accepting the version you read first, is a small act of intellectual self-government, and it is exactly the skill this pair of weeks is built around.</p>
+
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; WHOSE ACCOUNT FITS?</div>
+            <div class="widget-question">For each observation, decide which theorist's framework it best supports. Judge by the mechanism each theorist proposes, not just the vocabulary.</div>
+
+            <div class="widget-row" data-correct="2" data-fb="Jacobs. A resident stepping outside to keep half an eye on the block, without any personal relationship to most of the people on it, is exactly her &ldquo;sidewalk ballet&rdquo;: informal, unplanned coordination that produces real safety and trust among strangers." data-hint="Nobody here withdraws, and nobody is a stranger being screened out. Something informal is being coordinated. Whose theory is built around that?">
+                <div class="widget-row-prompt">1. On a busy residential street, shopkeepers, stoop-sitters, and dog walkers keep an informal watch on the block all day without ever organizing to do so.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Simmel</button><button data-choice="1">Wirth</button><button data-choice="2">Jacobs</button><button data-choice="3">Park</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Simmel. Ignoring a strong emotional cue on purpose, in order to keep functioning amid constant stimulation, is precisely the cultivated reserve he calls the blas&eacute; attitude." data-hint="This is not about neighborhood ties at all. It is about one person managing their own emotional exposure to overstimulation. Whose concept is that?">
+                <div class="widget-row-prompt">2. A commuter steps around a loud argument on the platform without breaking stride or changing expression, having seen dozens like it that month.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Simmel</button><button data-choice="1">Wirth</button><button data-choice="2">Jacobs</button><button data-choice="3">Park</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="3" data-fb="Park. Sorting the city into zones with distinctive social types, an arts district here, a warehouse district there, is his &ldquo;natural areas&rdquo; argument: the city organizes itself spatially by function and social type." data-hint="Nobody's inner state is at issue here. This is about where in the city certain kinds of people and activity cluster. Whose framework is spatial sorting?">
+                <div class="widget-row-prompt">3. A city's arts scene, its immigrant groceries, and its finance firms each cluster in a different, recognizable district.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Simmel</button><button data-choice="1">Wirth</button><button data-choice="2">Jacobs</button><button data-choice="3">Park</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Wirth. Living beside the same family for a decade while knowing only their name is the &ldquo;secondary relationship&rdquo; he argues replaces deep primary ties in dense, heterogeneous cities." data-hint="This is a relationship, but a thin, functionally limited one that has lasted without deepening. Whose term is built for exactly that kind of tie?">
+                <div class="widget-row-prompt">4. A resident has lived beside the same family for ten years and knows only their names and that they keep to themselves.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Simmel</button><button data-choice="1">Wirth</button><button data-choice="2">Jacobs</button><button data-choice="3">Park</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- What You'll Do Next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 14A: Simmel</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your Tuesday reading finishes the essay you started in Week 4, this time on individual freedom and what the city does to it.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Reading Quiz 14</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Eight questions covering both lessons this week.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">A city changes the terms of social life rather than simply removing community from it. Simmel located the change in the individual mind, Wirth located it in the weakening of primary bonds, and Jacobs showed that dense, well-designed urban space can generate its own real form of solidarity among strangers. None of the three is simply wrong. Each is describing a genuine mechanism, and the honest position is to ask, of any particular street or city, which mechanism is doing the most work there. Wednesday turns from the physical city to a newer kind of density: the crowded, mediated space of communications technology.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 14.01 &middot; Urbanization and Modern Society</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME — one delegated listener drives every engine ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite. Try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

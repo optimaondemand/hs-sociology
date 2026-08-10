@@ -1,0 +1,389 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Q2 · Week 16 · Lesson 16.02 — "Christian Smith: Character, Moral Formation, and Religious Community"
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS.
+
+      Standard: SS.912.S.5.4, SS.912.S.1.9
+      Objective: Students will reconstruct Smith's empirical account of "moralistic
+                therapeutic deism," explain Aristotle's habituation account of virtue in
+                the terms he actually gives it, and evaluate whether Smith's diagnosis is
+                a prediction Aristotle's framework makes or a surprise to it.
+      Source: Sociology_Course_Master.html, Lesson 16.02. The "Formation Question" hook,
+              Key Terms, and "Smith, Aristotle, and Virtue Formation" section are the
+              master's own prose, lightly reformatted. Revisions: R5 (Hook label dropped),
+              R7 (no em dashes found), standards codes moved to this comment.
+      NOTE (per builder brief): this lesson needs NO reading substitution. It already
+              assigns Aristotle's Nicomachean Ethics, which is public domain (Ross, 1925).
+              Smith himself is a living author; nothing of his is reproduced anywhere in
+              this build. See source-16-b.html for the full Aristotle excerpt.
+
+      DASH-AS-COLON CHECK: scanned sentence by sentence. No sentence carries two
+      mid-sentence colons. Single colons ("what he calls moralistic therapeutic deism...",
+      "not malicious, but without the formed dispositions...") each introduce a
+      parenthetical or a list and are legitimate. Zero repairs made in this lesson.
+
+      WIDGET ROTATION: scale placement + flip cards, distinct from Lesson 16.01's
+      reflect + select. No engine combination repeats within the week.
+      Scale-row correct indices in order: 0, 3, 2, 0, 1. Not ascending, no 0-1-2-3 run.
+      Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Lesson 16.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS — byte-consistent with references/widgets.md ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; min-width: 110px; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+
+    /* ===== Core visual: the habituation loop ===== */
+    .hab { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
+    .hab-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .hab-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
+    .hab-row { display: flex; align-items: center; gap: 10px; }
+    .hab-box { flex: 1; background: rgba(255,255,255,0.07); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 13px 14px; }
+    .hab-n { font-size: 10px; letter-spacing: 0.5px; color: rgba(255,255,255,0.45); margin-bottom: 5px; }
+    .hab-h { font-size: 15px; color: #ffffff; margin-bottom: 5px; }
+    .hab-b { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.5; }
+    .hab-arrow { color: rgba(255,255,255,0.35); font-size: 20px; flex-shrink: 0; }
+    .hab-fork { display: flex; gap: 10px; margin-top: 10px; }
+    .hab-fork-box { flex: 1; border-radius: 7px; padding: 12px 14px; }
+    .hab-fork-box.good { background: rgba(85,200,232,0.14); border-top: 3px solid #55C8E8; }
+    .hab-fork-box.bad { background: rgba(192,57,43,0.16); border-top: 3px solid #C0392B; }
+    .hab-fork-h { font-size: 14px; color: #ffffff; margin-bottom: 4px; }
+    .hab-fork-b { font-size: 12px; color: rgba(255,255,255,0.78); line-height: 1.45; }
+    .hab-loop { text-align: center; color: rgba(199,146,44,0.85); font-size: 20px; margin: 8px 0; }
+    .hab-note { margin-top: 6px; padding-top: 13px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 14px; color: rgba(255,255,255,0.82); line-height: 1.6; }
+
+    .flipgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 14px 0; }
+    .ow-flip .fcard-front { font-size: 16px; color: #0E1C42; }
+    .ow-flip .fcard-back { font-size: 14px; color: #1a2340; line-height: 1.55; }
+
+    .key-terms { background: #FCFCF8; border: 1px solid #E3DFD2; border-left: 5px solid #C7922C; border-radius: 8px; padding: 18px 22px; margin: 14px 0; }
+    .key-terms dt { font-size: 16px; color: #0E1C42; margin-top: 10px; }
+    .key-terms dt:first-child { margin-top: 0; }
+    .key-terms dd { font-size: 16px; color: #1a2340; line-height: 1.6; margin: 4px 0 0 0; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 16</div>
+        <div style="font-size: 12px; color: #666;">Culture Wars, Character, and Moral Formation</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 16.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Character, Moral Formation, and Religious Community</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Culture Wars, Character, and Moral Formation</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 16.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Christian Smith: Character, Moral Formation, and Religious Community</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">If virtue is not innate, where does it actually come from, and what happens to it when the institutions that used to supply it weaken?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Yesterday's lesson asked what happens when a society disagrees about the source of moral authority. Today's asks a related but different question: however that disagreement gets settled, how does any single person come to have character at all?</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> reconstruct the empirical finding behind "moralistic therapeutic deism" and explain why it counts as a symptom of weak moral formation rather than a competing creed.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain Aristotle's claim that moral virtue is "formed by a slight variation" from habit, and say why he insists the virtues are neither natural nor contrary to nature.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> evaluate whether the account of moral formation is a finding Aristotle's framework predicts or one that would surprise it, with a reason.</div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 1 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE FORMATION QUESTION</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">One of the deepest questions in social theory is what we might call the formation question: how do human beings develop the character, values, and moral sensibilities that guide their social lives? Where do virtues come from? What produces, in actual flesh-and-blood human beings, the dispositions that Aristotle identified as the material of the good life and the good society? This question was central to ancient philosophy, where Plato and Aristotle's answer runs through habituation, practice, and a well-ordered community, and it has remained central ever since. A sociologist of religion, Christian Smith, spent much of his career asking this question about American adolescents in the early twenty-first century, and his answers are both empirically grounded and theoretically important.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Smith's work, particularly his 2009 book <em>Souls in Transition</em> and his 2011 book <em>Lost in Transition</em>, documents through extensive interview research the moral and spiritual lives of young Americans. What he finds is sobering: widespread moral confusion, the prevalence of what he calls moralistic therapeutic deism (a vague sense that a God exists who wants people to be nice and to feel good about themselves) rather than robust religious commitment or serious moral formation, and the disconnection of many young people from the communities, practices, and traditions that have historically provided the conditions for genuine moral development.</p>
+    </div>
+
+    <!-- ============================ PART 2 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; KEY TERMS</div>
+        <div class="key-terms">
+            <dl>
+                <dt>Moralistic Therapeutic Deism</dt>
+                <dd>A term for the dominant de facto religious worldview a sociologist of religion found among American teenagers in the 2000s: that a God exists who created the world, wants people to be nice and to be happy, that the central goal of life is to feel good about yourself, that God is not involved in daily life except when needed, and that good people go to heaven. A functional replacement for traditional religious commitment that lacks its demands and its formative power.</dd>
+                <dt>Moral Formation</dt>
+                <dd>The process by which a person's character, values, and moral dispositions are developed through practice, habituation, and participation in formative communities and traditions. The classical account (Aristotle, later Aquinas) is that virtues are formed through repeated virtuous action within a community that models and rewards those virtues.</dd>
+            </dl>
+        </div>
+    </div>
+
+    <!-- ============================ PART 3 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; HOW A CHARACTER GETS BUILT</div>
+
+        <!-- ===== CORE VISUAL ===== -->
+        <div class="hab">
+            <div class="hab-title">ARISTOTLE'S MECHANISM</div>
+            <div class="hab-sub">The same loop produces virtue or vice. Nothing about the mechanism decides which.</div>
+            <div class="hab-row">
+                <div class="hab-box">
+                    <div class="hab-n">STEP 1</div>
+                    <div class="hab-h">Repeated acts</div>
+                    <div class="hab-b">We become just by doing just acts, brave by doing brave acts. Not by being taught what justice is.</div>
+                </div>
+                <div class="hab-arrow">&#8594;</div>
+                <div class="hab-box">
+                    <div class="hab-n">STEP 2</div>
+                    <div class="hab-h">Habit</div>
+                    <div class="hab-b">The acts, repeated, become a settled disposition. This is what "ethike" (moral virtue) means: formed by a variation on "ethos," habit.</div>
+                </div>
+                <div class="hab-arrow">&#8594;</div>
+                <div class="hab-box">
+                    <div class="hab-n">STEP 3</div>
+                    <div class="hab-h">State of character</div>
+                    <div class="hab-b">A stable disposition that now governs future action, and is felt as pleasure or pain when tested.</div>
+                </div>
+            </div>
+            <div class="hab-loop">&#8635;</div>
+            <div class="hab-fork">
+                <div class="hab-fork-box good">
+                    <div class="hab-fork-h">Practice virtuous acts</div>
+                    <div class="hab-fork-b">Produces a virtuous state of character, which produces more virtuous acts.</div>
+                </div>
+                <div class="hab-fork-box bad">
+                    <div class="hab-fork-h">Practice vicious acts</div>
+                    <div class="hab-fork-b">Produces a vicious state of character, which produces more vicious acts. Same mechanism, opposite direction.</div>
+                </div>
+            </div>
+            <div class="hab-note">Aristotle's own line for this: "it is from the same causes and by the same means that every virtue is both produced and destroyed." A community that rewards vice will form vicious people. This is the empirical question a sociologist of religion went looking for.</div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Smith's account of moral formation is deeply consonant with Aristotle's. Aristotle argued, in the <em>Nicomachean Ethics</em> (Book II), that virtues are not innate: they are formed through habituation. We become just by doing just acts; we become courageous by practicing courage. The character of the community in which this habituation occurs matters enormously. Aristotle's account requires a particular kind of community: not merely an aggregation of individuals with compatible interests but a genuine polis with shared commitments to the good life, shared practices of civic and personal virtue, and shared institutions that transmit those commitments across generations.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Smith's empirical research suggests that the communities capable of providing this kind of formation are increasingly rare in contemporary American life. The institutions that historically performed this function, churches, families, schools, civic organizations, are under pressure from the same forces of rationalization, individualism, and consumerism that Weber, Durkheim, and Putnam each analyzed from a different angle. The result, on this account, is a generation of young people who are, by and large, morally adrift: not malicious, but without the formed dispositions, the shared vocabulary of virtue, or the communal supports that serious moral agency requires.</p>
+    </div>
+
+    <!-- ============================ PART 4 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; TEST IT: HOW FORMATIVE IS THIS COMMUNITY?</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Aristotle's own criteria: sustained practice, an explicit standard, and accountability to it over time. Place each community on that spectrum, and notice that the honest answer for the last one is genuinely contested.</p>
+
+        <div class="optima-widget ow-scale">
+            <div class="widget-kicker">&#9889; PLACE IT ON THE SPECTRUM</div>
+            <div class="widget-question">How much capacity does each community have to form virtue by Aristotle's own criteria: sustained practice, a shared standard, and real accountability to it?</div>
+
+            <div class="widget-row" data-correct="0" data-fb="Strong. Daily practice, an explicit standard of excellence, and years of accountability to teammates and coaches are exactly the three conditions Aristotle names." data-hint="Check it against the three conditions: practice, a shared standard, and accountability over time. All three are present here.">
+                <div class="widget-row-prompt">1. A team that practices together daily, shares an explicit standard of excellence, and holds members accountable to it for years.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Strong formative capacity</button><button data-choice="1">Moderate, mixed</button><button data-choice="2">Weak formative capacity</button><button data-choice="3">Not formative at all</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="3" data-fb="Not formative at all, on Aristotle's terms. There is no sustained relationship, no shared standard being enforced, and no accountability across time. A single interaction cannot habituate anyone to anything." data-hint="Ask whether there is any repetition here at all. Habituation requires doing the same kind of act more than once, with someone noticing.">
+                <div class="widget-row-prompt">2. An anonymous online forum where members interact once and never again.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Moderate, mixed</button><button data-choice="1">Strong formative capacity</button><button data-choice="2">Weak formative capacity</button><button data-choice="3">Not formative at all</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Weak. There is sustained contact, but no explicit shared standard beyond the legal minimum, and high turnover undercuts the accountability Aristotle's account requires. People pass through without anyone's habits being shaped by anyone else's example." data-hint="High turnover breaks one of the three conditions even where the other two are partly present. Which one?">
+                <div class="widget-row-prompt">3. A workplace with high turnover, no shared standard of conduct beyond legal compliance, and little continuity of relationships.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Strong formative capacity</button><button data-choice="1">Not formative at all</button><button data-choice="2">Weak formative capacity</button><button data-choice="3">Moderate, mixed</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Strong. Multigenerational continuity, explicit teaching on conduct, and shared practices sustained over decades satisfy all three of Aristotle's conditions about as fully as a modern institution can." data-hint="This one checks every box: practice, an explicit standard, and long-term mutual accountability across generations.">
+                <div class="widget-row-prompt">4. A multigenerational congregation with shared practices, explicit teaching on conduct, and long-term relationships of mutual accountability.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Strong formative capacity</button><button data-choice="1">Weak formative capacity</button><button data-choice="2">Not formative at all</button><button data-choice="3">Moderate, mixed</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Moderate, mixed, and this is the honest answer, not a hedge. Formal instruction supplies an explicit standard, which is one of Aristotle's three conditions. But without sustained relationship between a given adult and a given student, the habituation his account actually requires (practiced acts, noticed and corrected by someone over time) is thin. Scale can supply the teaching and still fail to supply the formation." data-hint="Two of the three conditions are present in some form here. Which one is hardest to deliver at this scale, and does that make the case clearly strong, clearly weak, or genuinely mixed?">
+                <div class="widget-row-prompt">5. A large public high school with thousands of students, formal character-education lessons, but little sustained relationship between any given adult and student.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Not formative at all</button><button data-choice="1">Moderate, mixed</button><button data-choice="2">Strong formative capacity</button><button data-choice="3">Weak formative capacity</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ============================ PART 5 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; MEET THE MECHANISM, ONE PIECE AT A TIME</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Four questions Aristotle's own text raises about itself. Predict an answer before you flip each card.</p>
+
+        <div class="optima-widget ow-flip-group">
+            <div class="widget-kicker">&#9889; TAP EACH CARD</div>
+            <div class="widget-question">Read the front, commit to a guess, then tap to check it against Aristotle's own resolution.</div>
+            <div class="flipgrid">
+                <div class="ow-flip">
+                    <div class="ow-flip-front fcard-front">Why doesn't Aristotle think virtue is natural, the way sight is?</div>
+                    <div class="ow-flip-back fcard-back">A thing that acts one way by nature cannot be trained to act another way. A stone thrown upward ten thousand times still falls. So if virtue could arise by nature alone, no amount of bad habituation could ever destroy it, and experience shows that it can. His answer: we are adapted by nature to receive virtue, but made perfect by habit.</div>
+                </div>
+                <div class="ow-flip">
+                    <div class="ow-flip-front fcard-front">How can you become just by doing just acts, if doing an act justly seems to already require being just?</div>
+                    <div class="ow-flip-back fcard-back">Aristotle grants the puzzle and answers with three conditions: the agent must have knowledge, must choose the act for its own sake, and must act from a firm and settled character. Early on, a person can do a just act without meeting all three (a child obeying a rule, say). Repetition under guidance is how the act comes to be done from the settled character that finally makes the person, and not just the act, just.</div>
+                </div>
+                <div class="ow-flip">
+                    <div class="ow-flip-front fcard-front">What does he mean by using pleasure and pain as a "sign" of character?</div>
+                    <div class="ow-flip-back fcard-back">Someone who abstains from excess and is annoyed by the abstinence is not yet temperate, only compliant. Someone who abstains and takes no pain in it, or even delights in it, has the settled disposition. The feeling that accompanies an act, not just the act, is the evidence of what has actually been formed.</div>
+                </div>
+                <div class="ow-flip">
+                    <div class="ow-flip-front fcard-front">If virtue is formed by habitual action inside a community, what should that predict about a generation raised largely outside such communities?</div>
+                    <div class="ow-flip-back fcard-back">Roughly what a sociologist of religion later reported finding: moral confusion rather than settled vice, since confusion is what an unformed disposition looks like from outside. That is a real point in favor of Aristotle's framework, though it is worth naming the objection: young people still form habits somewhere, in teams, jobs, and friend groups, so the finding may say less about whether formation happens and more about which institutions are doing it now.</div>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- What You'll Do Next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 16B: Aristotle</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your Thursday reading is <em>Nicomachean Ethics</em>, Book II, chapters 1 to 4, in full, on the page. It is the passage this lesson's core visual is built from.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Sociological Journal 16</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Due Thursday. An assignment this week; no peer reply required.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Character is not a possession a person is born with or without. On this account it is built, act by repeated act, inside communities that supply a standard and enforce it long enough for the standard to become a disposition. That mechanism does not depend on any one society's settling its disagreement about where moral authority ultimately comes from, which is the question yesterday's lesson raised. It only requires that some community, somewhere, keeps doing the patient work of habituation. Whether enough communities still do is an empirical question, and it is the one this week leaves you holding.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 16.02 &middot; Character, Moral Formation, and Religious Community</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME — one delegated listener drives every engine ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite. Try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

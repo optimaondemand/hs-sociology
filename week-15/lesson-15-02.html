@@ -1,0 +1,390 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Q2 · Week 15 · Lesson 15.02 — "Globalization and Cultural Change"
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS.
+
+      Standard: SS.912.S.6.4, SS.912.S.6.5, SS.912.S.3.7
+      Objective: Students will distinguish cultural homogenization from
+                hybridization from glocalization and correctly classify an
+                unfamiliar case; evaluate whether Ritzer's McDonaldization
+                thesis survives the hybridization critique; and apply Durkheim's
+                account of organic solidarity to say what globalization
+                threatens and what it does not.
+      Source: Sociology_Course_Master.html, Lesson 15.02. Prose preserved except
+              where noted below.
+      Revisions: R5 (opening section not labelled "Hook"), R7 (no em dashes),
+                standards codes kept out of student-facing text.
+
+      *** R1 SUBSTITUTION (Ritzer, lesson 15.02 / reading 15B) ***
+      Per CLAUDE.md R1 and plan.md section 2b: Ritzer's McDonaldization of
+      Society (1993) is in copyright and was never assigned in full; the
+      master's own primary-source guide for 15B already only assigned a single
+      chapter. Per the reviewer's instruction, RITZER STAYS IN THIS LESSON'S
+      PROSE UNCHANGED (master text preserved below almost verbatim). Only the
+      Thursday PRIMARY SOURCE changes, to Weber, whose concept of rationalization
+      Ritzer explicitly built McDonaldization from. See source-15-b.html for the
+      substituted reading and its full provenance note. The "What You'll Do
+      Next" block below was rewritten to point to Weber, since the master's
+      original pointer named Ritzer's own book as Thursday's reading, which is
+      no longer accurate.
+
+      DASH-AS-COLON CHECK (plan.md defect 6): checked sentence by sentence
+      against the two-colon pattern. No sentence in this lesson carries two
+      mid-sentence colons. Zero repairs were needed.
+
+      WIDGET ROTATION: 15.01 used reflect + flip cards. 15.02 uses scale +
+      single-select, a combination not yet used together elsewhere in the
+      course. No engine combination repeats within the week.
+      Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Lesson 15.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS — byte-consistent with references/widgets.md ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+
+    /* ===== Core visual: three lenses on cultural globalization ===== */
+    .lens { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
+    .lens-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .lens-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
+    .lens-row { display: flex; align-items: stretch; gap: 12px; }
+    .lens-box { flex: 1; background: rgba(255,255,255,0.07); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 14px 15px; }
+    .lens-n { font-size: 10px; letter-spacing: 0.5px; color: rgba(255,255,255,0.45); margin-bottom: 6px; }
+    .lens-h { font-size: 16px; color: #ffffff; margin-bottom: 8px; }
+    .lens-q { font-size: 13px; color: #55C8E8; line-height: 1.5; font-style: italic; margin-bottom: 8px; }
+    .lens-b { font-size: 13px; color: rgba(255,255,255,0.78); line-height: 1.5; }
+    .lens-note { margin-top: 18px; padding-top: 13px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 15px; color: rgba(255,255,255,0.85); line-height: 1.6; text-align: center; font-style: italic; }
+
+    .key-terms { background: #FCFCF8; border: 1px solid #E3DFD2; border-left: 5px solid #C7922C; border-radius: 8px; padding: 18px 22px; margin: 14px 0; }
+    .key-terms dt { font-size: 16px; color: #0E1C42; margin-top: 10px; }
+    .key-terms dt:first-child { margin-top: 0; }
+    .key-terms dd { font-size: 16px; color: #1a2340; line-height: 1.6; margin: 4px 0 0 0; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 15</div>
+        <div style="font-size: 12px; color: #666;">Media, Culture, Globalization, and Identity</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 15.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Globalization and Cultural Change</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Media, Culture, Globalization, and Identity</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 15.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Globalization and Cultural Change</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Is the world becoming one culture, or a great many new ones?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">The same brands and formats now appear on every inhabited continent. That observation supports two opposite-sounding theories at once, and today's lesson asks which one, if either, is doing the real explanatory work.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish cultural homogenization from hybridization from glocalization, and correctly classify a case I have not seen before.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> evaluate whether Ritzer's McDonaldization thesis survives the hybridization critique, and say what would settle the question.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> apply Durkheim's account of organic solidarity to explain what globalization genuinely threatens, and what it does not.</div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 1 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE SAME EVERYWHERE</div>
+
+        <!-- ===== CORE VISUAL ===== -->
+        <div class="lens">
+            <div class="lens-title">THREE LENSES ON GLOBAL CULTURAL CHANGE</div>
+            <div class="lens-sub">Three answers to what happens when a global form meets a local culture.</div>
+            <div class="lens-row">
+                <div class="lens-box">
+                    <div class="lens-n">LENS 1</div>
+                    <div class="lens-h">Homogenization</div>
+                    <div class="lens-q">Does the local form disappear?</div>
+                    <div class="lens-b">The global form replaces it. Distinct local cultures converge toward one dominant pattern, often associated with American cultural exports.</div>
+                </div>
+                <div class="lens-box">
+                    <div class="lens-n">LENS 2</div>
+                    <div class="lens-h">Hybridization</div>
+                    <div class="lens-q">Does something new appear?</div>
+                    <div class="lens-b">Global and local combine into a form that is neither. Bhabha and Garcia Canclini are the names most associated with this account.</div>
+                </div>
+                <div class="lens-box">
+                    <div class="lens-n">LENS 3</div>
+                    <div class="lens-h">Glocalization</div>
+                    <div class="lens-q">Is the global form deliberately adapted?</div>
+                    <div class="lens-b">Roland Robertson's term for a global form consciously reshaped to fit local conditions and expectations, neither pure export nor pure invention.</div>
+                </div>
+            </div>
+            <div class="lens-note">The same case can look like all three depending on which feature you examine. That is not a flaw in the framework. It is the reason the framework needs three lenses rather than one.</div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The sociologist George Ritzer, in a book published in 1993 and now in its ninth edition, used the term McDonaldization to describe the process by which the principles of the fast-food restaurant, efficiency, calculability, predictability, and control, have come to dominate ever more sectors of American and global social life. The title is deliberately provocative, and its provocation was successful. The term has entered the sociological vocabulary as a shorthand for the homogenizing effects of the global spread of American corporate culture. Whether or not Ritzer's analysis is fully persuasive, the phenomenon he describes is real. The same brands, the same entertainment, the same architectural forms, and increasingly the same social practices appear in cities on every inhabited continent. Whatever local color remains is often a tourist-facing performance of authenticity rather than the genuine article.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">But the picture is more complex than simple homogenization. Cultural globalization is not a one-way street. American culture influences global culture, but global cultures influence American culture, and all cultures change through their encounters with each other in ways that produce not simply homogenization but hybridization. The Chinese city that builds a McDonald's also produces a distinctive Chinese McDonald's culture that is not quite the same as the American original. The music that emerges from the encounter between American hip-hop and West African musical traditions is not simply American or African but something new that belongs to both.</p>
+    </div>
+
+    <!-- ============================ PART 2: KEY TERMS ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; KEY TERMS</div>
+        <div class="key-terms">
+            <dl style="margin: 0;">
+                <dt style="font-size: 17px; color: #0E1C42; margin-bottom: 4px;">Globalization</dt>
+                <dd style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 14px 0;">The process by which economic, political, and cultural activity increasingly operates at a global rather than a national or local scale. Contemporary globalization is driven by communications technology, international trade, and the mobility of capital and people.</dd>
+                <dt style="font-size: 17px; color: #0E1C42; margin-bottom: 4px;">Cultural Homogenization</dt>
+                <dd style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 14px 0;">The argument that globalization produces convergence of cultural forms, values, and practices across the world, reducing the diversity of distinct local cultures. Often associated with concerns about American cultural imperialism.</dd>
+                <dt style="font-size: 17px; color: #0E1C42; margin-bottom: 4px;">Cultural Hybridization</dt>
+                <dd style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 14px 0;">The argument that cultural contact between global and local does not simply displace local culture but produces new, hybrid cultural forms that combine elements of both. Associated with theorists such as Homi Bhabha and Nestor Garcia Canclini.</dd>
+                <dt style="font-size: 17px; color: #0E1C42; margin-bottom: 4px;">Glocalization</dt>
+                <dd style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0;">Sociologist Roland Robertson's term, blending "global" and "local," for the simultaneous globalization and localization of social life: global forms are adopted but adapted to local conditions, producing outcomes that are neither purely global nor purely local.</dd>
+            </dl>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 12px 0 6px 0;">Now sort six real cases along the spectrum, then classify four more by which term fits best.</p>
+
+        <div class="optima-widget ow-scale">
+            <div class="widget-kicker">&#9889; PLACE IT ON THE SPECTRUM</div>
+            <div class="widget-question">For each case, decide how far it sits from pure homogenization toward pure local persistence, before deciding in the next activity which term names it exactly.</div>
+
+            <div class="widget-row" data-correct="0" data-fb="Close to pure homogenization. A single global chain replacing local competitors with an identical product and format is the clearest case the lens was built to describe." data-hint="Ask whether anything distinctly local survives in the case, or whether one dominant form has simply replaced what was there before.">
+                <div class="widget-row-prompt">1. A single international coffee chain replaces dozens of independent local cafes across a city, offering the identical menu everywhere.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Near pure homogenization</button><button data-choice="1">Mostly homogenization</button><button data-choice="2">A genuine mix</button><button data-choice="3">Mostly local persistence</button><button data-choice="4">Near pure local persistence</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="A genuine mix. The global instrument and the local musical tradition each remain recognizable inside something that did not exist before either arrived. That is hybridization, not homogenization with local decoration." data-hint="Ask whether the result sounds like the global original with minor local flavoring, or like a third thing neither side would have produced alone.">
+                <div class="widget-row-prompt">2. Musicians combine an electric guitar, a global instrument, with a centuries-old regional scale and rhythm to create a new genre.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Near pure homogenization</button><button data-choice="1">Mostly homogenization</button><button data-choice="2">A genuine mix</button><button data-choice="3">Mostly local persistence</button><button data-choice="4">Near pure local persistence</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="4" data-fb="Near pure local persistence. A community that changes its practice not at all despite global contact is the limiting case at the far end of the spectrum, useful for showing what the other cases are cases of." data-hint="Ask what changed. If the answer is genuinely nothing, the case sits at the far end from homogenization.">
+                <div class="widget-row-prompt">3. An isolated community continues a centuries-old ritual completely unchanged, despite the arrival of satellite television in the region.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Near pure homogenization</button><button data-choice="1">Mostly homogenization</button><button data-choice="2">A genuine mix</button><button data-choice="3">Mostly local persistence</button><button data-choice="4">Near pure local persistence</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Mostly homogenization, with a thin local layer. Franchise adaptation of this kind is real, but it is a decoration on an otherwise standardized product and format, which is short of the genuine two-way mixing hybridization describes." data-hint="Ask how much of the underlying product actually changed. Menu items are not the same thing as the format, the branding, or the business model.">
+                <div class="widget-row-prompt">4. A global fast-food chain adds a handful of regionally popular menu items while keeping its format, branding, and business model identical worldwide.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Near pure homogenization</button><button data-choice="1">Mostly homogenization</button><button data-choice="2">A genuine mix</button><button data-choice="3">Mostly local persistence</button><button data-choice="4">Near pure local persistence</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="3" data-fb="Mostly local persistence, with global tools in service of it. The technology travels; the content and purpose stay local. That is closer to preservation than to any of the mixing categories." data-hint="Ask what the technology is actually doing here: replacing a local practice, or simply carrying it further than it used to reach.">
+                <div class="widget-row-prompt">5. A regional language, spoken by a shrinking population, gains new young speakers because a streaming platform lets elders record lessons for a global diaspora.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Near pure homogenization</button><button data-choice="1">Mostly homogenization</button><button data-choice="2">A genuine mix</button><button data-choice="3">Mostly local persistence</button><button data-choice="4">Near pure local persistence</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="A genuine mix, and specifically the glocalization case: a global company deliberately redesigning its product for a local market rather than exporting it unchanged or simply franchising it with garnish." data-hint="Ask whether the redesign was deliberate and structural, or a small addition on top of an otherwise unchanged product.">
+                <div class="widget-row-prompt">6. A global automaker redesigns an entire vehicle line specifically for a national market's roads, climate, and family size, selling that version nowhere else.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Near pure homogenization</button><button data-choice="1">Mostly homogenization</button><button data-choice="2">A genuine mix</button><button data-choice="3">Mostly local persistence</button><button data-choice="4">Near pure local persistence</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; NOW NAME THE EXACT TERM</div>
+            <div class="widget-question">Using the same three lenses, name the term that fits each case precisely. Cases 2 and 3 below are drawn from your own century, not the ones above.</div>
+
+            <div class="widget-row" data-correct="2" data-fb="Glocalization. Robertson's term names exactly this: a global company deliberately reshaping its offering to fit local expectations, which is neither straightforward export nor a spontaneous local invention." data-hint="Was the change deliberate and made by the global company itself, or did it emerge unplanned from ordinary contact between cultures?">
+                <div class="widget-row-prompt">1. A streaming service commissions entirely separate original series for different national markets rather than dubbing one global slate.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Cultural homogenization</button><button data-choice="1">Cultural hybridization</button><button data-choice="2">Glocalization</button><button data-choice="3">None of these; unrelated to globalization</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Cultural hybridization. Neither the imported cuisine nor the local one is simply replaced; a new dish results that belongs authentically to both traditions at once." data-hint="Did one cuisine simply replace the other, or did contact between them produce something that is genuinely both at once?">
+                <div class="widget-row-prompt">2. Immigrant home cooks adapt a traditional recipe using locally available ingredients, and the result becomes a distinct dish claimed by both the origin and the destination culture.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Cultural homogenization</button><button data-choice="1">Cultural hybridization</button><button data-choice="2">Glocalization</button><button data-choice="3">None of these; unrelated to globalization</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Cultural homogenization. A shrinking pool of independently owned local outlets, replaced by one recurring global pattern, is the paradigm case this term was built to name." data-hint="Ask what happened to the diversity that used to exist in this sector. Did it increase, stay the same, or shrink toward one dominant pattern?">
+                <div class="widget-row-prompt">3. Independent bookshops in a historic city district steadily close as a single international chain opens branch after branch with an identical layout and inventory.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Cultural homogenization</button><button data-choice="1">Cultural hybridization</button><button data-choice="2">Glocalization</button><button data-choice="3">None of these; unrelated to globalization</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="3" data-fb="None of these. A town's own architecture committee updating a decades-old local zoning rule is an entirely domestic administrative decision. Treating every change anywhere as a globalization case would make the concept explain everything, which means it would explain nothing." data-hint="Does this case involve any contact at all between a global form and a local one, or is it a purely internal, local decision?">
+                <div class="widget-row-prompt">4. A town council updates its historic-district building code after a local preservation debate that involved no outside country, company, or culture.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Cultural homogenization</button><button data-choice="1">Cultural hybridization</button><button data-choice="2">Glocalization</button><button data-choice="3">None of these; unrelated to globalization</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ============================ PART 3 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; GLOBALIZATION AND SOLIDARITY</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">From the perspective of Durkheim's sociology, cultural globalization raises a profound question about solidarity. Organic solidarity, Durkheim argued, depends on a shared normative framework: widely held values about what work is for, what people owe each other, and what the social whole is that individuals are part of. Globalization puts pressure on all three of these. It disrupts traditional normative frameworks without necessarily replacing them with equally robust alternatives, it extends economic interdependence to a global scale that outstrips any existing normative community, and it brings people into contact with alternative ways of life that challenge the taken-for-granted character of their own norms. This is not simply threatening. The encounter with genuine difference is one of the conditions of moral development. But it also creates genuine anomic risk, the normlessness that Durkheim identified as modernity's characteristic pathology.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">The contemporary relevance of this analysis is clear. Whether global capitalism can be regulated by global institutions with genuine normative authority, whether democratic governance can operate at a scale larger than the nation-state, whether a global culture can provide the moral framework that national and local cultures once provided: these are among the most pressing political and social questions of the contemporary world. Sociology does not answer them, but it provides the vocabulary for asking them clearly.</p>
+    </div>
+
+    <!-- What You'll Do Next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 15B: Weber</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Thursday's reading is not Ritzer's own book. It is the text Ritzer built McDonaldization from: Weber's own account of rationalization, closing with the image he called the iron cage. Read it and decide for yourself whether Ritzer's application of it holds up.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Sociological Journal 15</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Due Thursday, with a peer reply this week. You will connect this quarter's Sociologist Case Study Reports to your own social world.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Homogenization, hybridization, and glocalization are not three theories competing to win. They are three lenses that catch different features of the same set of events, and a mature answer usually names which lens fits which part of a given case rather than picking one lens for everything. Ritzer's McDonaldization is a homogenization argument built on a rationalization argument, Weber's, that is a full century older than the fast-food restaurant it eventually got applied to. Thursday you meet that argument at its source, not through Ritzer's application of it.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 15.02 &middot; Globalization and Cultural Change</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME — one delegated listener drives every engine ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite. Try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Q1 · Week 8 · Primary Source Guide 8A (Tuesday)
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS. Cited by volume, part, and chapter.
+
+      Text: Tocqueville, Democracy in America, Vol. II, Part II, Ch. VI-VII,
+            "Of the Relation Between Public Associations and Newspapers" and
+            "Connection of Civil and Political Associations" (1840).
+      Provenance: PUBLIC DOMAIN, text and translation. Henry Reeve, 1840.
+      Source file: 01_Analysis/.../Q1W8_Reading_2_Associations as Schools of
+            Democracy.pdf
+      Guide questions preserved from Sociology_Course_Master.html, Guide 8A.
+      Tier 4, ungraded. GitHub-hosted in-lesson content page.
+      No R1 substitution applies here. This was already the master's assigned
+      reading for Lesson 8.01 (Nisbet); the reviewer's note about a Putnam
+      substitution applies to Lesson 8.02 / Guide 8B, not this page.
+
+      OVERLAP CHECK (per build instruction, done before authoring): extracted
+      both Q1W8_Reading_2 (this file) and Reading_Civil Society and Association
+      (Guide 8B's file) with pypdf and diffed their content. NO material overlap
+      found. This excerpt is Chapters VI-VII (political associations, their
+      connection to civil ones, and the newspaper as the mechanism that lets
+      isolated democratic citizens find each other). Guide 8B's excerpt is
+      Chapter V, the chapter immediately BEFORE this one, on associations formed
+      for civil rather than political ends. Not a single paragraph is shared.
+      The "Where This Fits" card below states the boundary explicitly so a
+      student does not open Thursday's guide expecting a repeat.
+
+      EM DASHES ARE REEVE'S. They appear inside the .src block only, which
+      gate.py exempts from the R7 rule ("concern&mdash;either", "impulse&mdash;
+      things"). Do not normalise.
+
+      NO editorial omissions were made in preparing this excerpt. The supplied
+      PDF itself already contains FIVE paragraph-level ellipsis markers ([ ... ],
+      Unicode U+2026) inside Chapters VI and VII. All five are carried over and
+      marked in place with an .ed box, matching the source file as delivered.
+      Verified by extracting the PDF with pypdf and counting ellipsis markers
+      programmatically before drafting; an earlier draft of this file dropped
+      four of the five silently and was corrected before this page was finalized.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Primary Source 8A</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    .src { background: #FCFCF8; border: 1px solid #E3DFD2; border-left: 5px solid #C7922C; border-radius: 8px; padding: 26px 32px; margin: 18px 0; }
+    .src p { font-family: Georgia, "Times New Roman", serif; font-size: 18px; color: #241f18; line-height: 1.78; margin: 0 0 15px 0; }
+    .src p:last-child { margin-bottom: 0; }
+    .src .sect { font-family: "Segoe UI", sans-serif; font-size: 11px; letter-spacing: 1px; color: #8a7a55; margin: 24px 0 12px 0; padding-top: 16px; border-top: 1px solid #E3DFD2; }
+    .src .ed { font-family: "Segoe UI", sans-serif; font-size: 14px; color: #7a6a45; font-style: italic; background: #F5F2E8; border-radius: 5px; padding: 10px 14px; line-height: 1.55; margin-bottom: 15px; }
+
+    .q-list { counter-reset: qq; list-style: none; padding: 0; margin: 0; }
+    .q-list li { counter-increment: qq; position: relative; padding-left: 40px; margin-bottom: 14px; font-size: 17px; color: #1a2340; line-height: 1.6; }
+    .q-list li::before { content: counter(qq); position: absolute; left: 0; top: 1px; width: 27px; height: 27px; border-radius: 50%; background: #0E1C42; color: #fff; font-family: "Segoe UI", sans-serif; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 8</div>
+        <div style="font-size: 12px; color: #666;">Nisbet and Putnam on Institutions and Social Capital</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Reading</div>
+        <div style="font-size: 17px; color: #0e1c42;">Primary Source 8A</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Author</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Alexis de Tocqueville</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Published</div>
+        <div style="font-size: 16px; color: #0e1c42;">1840</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">PRIMARY SOURCE 8A</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 6px;">Associations as Schools of Democracy</div>
+        <div style="font-size: 16px; color: #444;">Tocqueville, <em>Democracy in America</em>, Volume II, Part II, Chapters VI and VII. Translated by Henry Reeve.</div>
+    </div>
+
+    <!-- Bridge -->
+    <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; WHERE THIS FITS</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">This is the chapter pair Monday's lesson had in mind when it discussed the schools that intermediate institutions run. Read it as Tocqueville's own account of what a political association actually teaches a citizen, which is exactly the kind of institution Nisbet says a healthy society cannot do without. One note on scope, since this week has two Tocqueville readings that sit close together in his book: this guide covers Chapters VI and VII, on <strong>political</strong> associations, forming parties, running campaigns, and the newspaper that connects scattered citizens who share an opinion. Thursday's Guide 8B covers Chapter V, the chapter immediately before this one, on <strong>civil</strong> associations, everything Americans organize for that has nothing to do with politics. The two chapters do not overlap, and neither will the two guides.</div>
+    </div>
+
+    <!-- Why you are reading this -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; WHY YOU ARE READING THIS</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Tocqueville is making two connected arguments here. First, that a free press and freedom of association are inseparable, because a newspaper is the only mechanism that lets thousands of isolated citizens who share an opinion find one another. Second, that political associations and civil associations reinforce each other: skill practiced in one transfers to the other, and destroying either weakens both.</p>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Read for the specific skills he claims an association teaches. He does not say associations are merely efficient. He calls them schools, and a school has to be teaching something in particular.</p>
+    </div>
+
+    <!-- Read for these -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; READ FOR THESE FOUR QUESTIONS</div>
+        <ol class="q-list">
+            <li>Tocqueville observes that Americans form associations for political purposes and for civil purposes. What is the difference between the two, in his own terms? Why does he think civil associations matter as much as political ones?</li>
+            <li>Tocqueville describes voluntary associations as schools of political skill. What specific skills does participation in an association teach, according to the text? How do these skills transfer to political life?</li>
+            <li>What is Tocqueville's argument about the relationship between freedom of association and freedom of the press? Why does he think the two cannot be separated?</li>
+            <li>Nisbet, writing a century after Tocqueville, argues that intermediate institutions had been systematically weakened in the intervening century. Based on Tocqueville's own analysis here, what would he predict the consequences of that weakening would be?</li>
+        </ol>
+    </div>
+
+    <!-- ===== THE EXCERPT ===== -->
+    <div class="src">
+        <div class="sect" style="border-top: none; padding-top: 0; margin-top: 0;">CHAPTER VI &middot; PUBLIC ASSOCIATIONS AND NEWSPAPERS</div>
+
+        <p>When men are no longer united amongst themselves by firm and lasting ties, it is impossible to obtain the cooperation of any great number of them, unless you can persuade every man whose concurrence you require that this private interest obliges him voluntarily to unite his exertions to the exertions of all the rest. This can only be habitually and conveniently effected by means of a newspaper; nothing but a newspaper can drop the same thought into a thousand minds at the same moment. A newspaper is an adviser who does not require to be sought, but who comes of his own accord, and talks to you briefly every day of the common weal, without distracting you from your private affairs.</p>
+
+        <div class="ed">[ &hellip; ] Omitted here, as in the source PDF supplied for this course.</div>
+
+        <p>The effect of a newspaper is not only to suggest the same purpose to a great number of persons, but also to furnish means for executing in common the designs which they may have singly conceived. The principal citizens who inhabit an aristocratic country discern each other from afar; and if they wish to unite their forces, they move towards each other, drawing a multitude of men after them. It frequently happens, on the contrary, in democratic countries, that a great number of men who wish or who want to combine cannot accomplish it, because as they are very insignificant and lost amidst the crowd, they cannot see, and know not where to find, one another. A newspaper then takes up the notion or the feeling which had occurred simultaneously, but singly, to each of them. All are then immediately guided towards this beacon; and these wandering minds, which had long sought each other in darkness, at length meet and unite.</p>
+
+        <div class="ed">[ &hellip; ] Omitted here, as in the source PDF supplied for this course.</div>
+
+        <div class="sect">CHAPTER VII &middot; CONNECTION OF CIVIL AND POLITICAL ASSOCIATIONS</div>
+
+        <p>There is only one country on the face of the earth where the citizens enjoy unlimited freedom of association for political purposes. This same country is the only one in the world where the continual exercise of the right of association has been introduced into civil life, and where all the advantages which civilization can confer are procured by means of it. In all the countries where political associations are prohibited, civil associations are rare. It is hardly probable that this is the result of accident; but the inference should rather be, that there is a natural, and perhaps a necessary, connection between these two kinds of associations. Certain men happen to have a common interest in some concern&mdash;either a commercial undertaking is to be managed, or some speculation in manufactures to be tried; they meet, they combine, and thus by degrees they become familiar with the principle of association. The greater is the multiplicity of small affairs, the more do men, even without knowing it, acquire facility in prosecuting great undertakings in common. Civil associations, therefore, facilitate political association: but, on the other hand, political association singularly strengthens and improves associations for civil purposes. In civil life every man may, strictly speaking, fancy that he can provide for his own wants; in politics, he can fancy no such thing. When a people, then, have any knowledge of public life, the notion of association, and the wish to coalesce, present themselves every day to the minds of the whole community: whatever natural repugnance may restrain men from acting in concert, they will always be ready to combine for the sake of a party. Thus political life makes the love and practice of association more general; it imparts a desire of union, and teaches the means of combination to numbers of men who would have always lived apart.</p>
+
+        <div class="ed">[ &hellip; ] Omitted here, as in the source PDF supplied for this course.</div>
+
+        <p>Men can embark in few civil partnerships without risking a portion of their possessions; this is the case with all manufacturing and trading companies. When men are as yet but little versed in the art of association, and are unacquainted with its principal rules, they are afraid, when first they combine in this manner, of buying their experience dear. They therefore prefer depriving themselves of a powerful instrument of success to running the risks which attend the use of it. They are, however, less reluctant to join political associations, which appear to them to be without danger, because they adventure no money in them. But they cannot belong to these associations for any length of time without finding out how order is maintained amongst a large number of men, and by what contrivance they are made to advance, harmoniously and methodically, to the same object. Thus they learn to surrender their own will to that of all the rest, and to make their own exertions subordinate to the common impulse&mdash;things which it is not less necessary to know in civil than in political associations. Political associations may therefore be considered as large free schools, where all the members of the community go to learn the general theory of association.</p>
+
+        <div class="ed">[ &hellip; ] Omitted here, as in the source PDF supplied for this course.</div>
+
+        <p>But even if political association did not directly contribute to the progress of civil association, to destroy the former would be to impair the latter. When citizens can only meet in public for certain purposes, they regard such meetings as a strange proceeding of rare occurrence, and they rarely think at all about it. When they are allowed to meet freely for all purposes, they ultimately look upon public association as the universal, or in a manner the sole means, which men can employ to accomplish the different purposes they may have in view. Every new want instantly revives the notion. The art of association then becomes, as I have said before, the mother of action, studied and applied by all.</p>
+
+        <div class="ed">[ &hellip; ] Omitted here, as in the source PDF supplied for this course.</div>
+
+        <p>Is it enough to observe these things separately, or should we not discover the hidden tie which connects them? In their political associations, the Americans of all conditions, minds, and ages, daily acquire a general taste for association, and grow accustomed to the use of it. There they meet together in large numbers, they converse, they listen to each other, and they are mutually stimulated to all sorts of undertakings. They afterwards transfer to civil life the notions they have thus acquired, and make them subservient to a thousand purposes. Thus it is by the enjoyment of a dangerous freedom that the Americans learn the art of rendering the dangers of freedom less formidable.</p>
+    </div>
+
+    <!-- After you read -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9999;&#65039; AFTER YOU READ</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">Write short answers to the four questions in your Sociological Journal document.</p>
+
+        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0;">
+            <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; Answer question 2 in your notebook first, then open this.
+            </summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
+                Tocqueville names the skill directly: a political association teaches a person to "surrender their own will to that of all the rest," which is not submission but coordination, learning to subordinate a private preference to a common project without being coerced into it. That skill transfers to civil life because the underlying problem is identical in both settings: getting a number of people who do not naturally see each other to act together on purpose. Notice he does not claim the two skills are similar. He claims they are the <em>same</em> skill, practiced in two different settings, which is why he thinks destroying political association would damage civil association too, even though civil association is not itself political.
+            </div>
+        </details>
+    </div>
+
+    <!-- Next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT COMES NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Lesson 8.02, Wednesday</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Robert Putnam asks whether the habit Tocqueville is describing here is still alive in American life, and finds evidence it is not.</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 1 &middot; Primary Source Reading</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Tocqueville, <em>Democracy in America</em> II.2.6&ndash;7 &middot; trans. Henry Reeve &middot; public domain</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+</body>
+</html>

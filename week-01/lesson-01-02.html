@@ -1,0 +1,429 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Q1 · Week 1 · Lesson 1.02 — "Human Nature Before Sociology"
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS (confirmed 2026-08-06). Objectives sit at analysis and
+    evaluation, works are cited inline by book and section, and terms already
+    taught are not re-glossed. Drafted to standard college-prep register and
+    revised up on 2026-08-06. See CLAUDE.md, "Register: honors".
+      Standard: SS.912.S.1.2 — Identify early leading theorists within social science.
+      Objective: Students will compare four accounts of human nature and explain
+                what each one implies about how society must be organised.
+      Source: Sociology_Course_Master.html, Lesson 1.02. Prose preserved.
+      Revisions applied: R5 (opening section no longer labelled "Hook"),
+                R7 (no em dashes in student-facing prose),
+                standards code kept out of the student-facing meta strip.
+
+      WIDGET ROTATION (see optima-lesson-format, "Varying interactivity"):
+        Lesson 1.01 used reflective check-in + flip cards + single-select rows.
+        Lesson 1.02 therefore uses the iframe match widget + scale placement.
+        No engine repeats back-to-back.
+
+      WIDGET PLACEMENT DEVIATION FROM THE MASTER: the master's widget-note asks
+      for "Sort the Thinkers" to sit *before* Lesson 1.02. It is placed *after*
+      the four thinkers are taught instead, because an evaluative widget belongs
+      after the teaching it tests. Moving it earlier would ask students to match
+      quotations to thinkers they have not met yet.
+
+      Scale-widget correct indices in row order: 4, 0, 3, 2. Deliberately not ascending.
+      Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
+      The iframe src is relative and works both locally and on GitHub Pages so
+      long as _widgets/ stays a sibling of the week folders.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Lesson 1.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS — byte-consistent with references/widgets.md ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; min-width: 118px; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+
+    /* ===== Core visual: the spectrum of human nature ===== */
+    .spec { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 20px 0; }
+    .spec-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 6px; }
+    .spec-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 24px; font-style: italic; }
+    .spec-ends { display: flex; justify-content: space-between; margin-bottom: 8px; }
+    .spec-end { font-size: 12px; letter-spacing: 0.4px; max-width: 34%; line-height: 1.45; }
+    .spec-end.l { color: #E0B562; }
+    .spec-end.r { color: #55C8E8; text-align: right; }
+    .spec-bar { height: 4px; border-radius: 2px; background: linear-gradient(90deg, #C7922C 0%, #6b7a99 50%, #55C8E8 100%); margin-bottom: 22px; }
+    .spec-cards { display: flex; gap: 12px; }
+    .spec-card { flex: 1; background: rgba(255,255,255,0.06); border-top: 3px solid; border-radius: 7px; padding: 13px 14px; }
+    .spec-card.c1 { border-color: #C7922C; }
+    .spec-card.c2 { border-color: #b08a4a; }
+    .spec-card.c3 { border-color: #6f9fc0; }
+    .spec-card.c4 { border-color: #55C8E8; }
+    .spec-name { font-size: 15px; color: #ffffff; margin-bottom: 3px; }
+    .spec-year { font-size: 10px; color: rgba(255,255,255,0.45); letter-spacing: 0.4px; margin-bottom: 8px; }
+    .spec-claim { font-size: 13px; color: rgba(255,255,255,0.82); line-height: 1.5; }
+
+    /* ===== Inheritance table ===== */
+    .inh { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 15px; }
+    .inh th { background: #0E1C42; color: #fff; text-align: left; padding: 10px 13px; font-size: 12px; letter-spacing: 0.4px; font-weight: normal; }
+    .inh td { border: 1px solid #D0D9E8; padding: 10px 13px; color: #1a2340; line-height: 1.5; vertical-align: top; }
+    .inh tr:nth-child(even) td { background: #F8FAFD; }
+    .inh td:first-child { color: #0E1C42; width: 26%; }
+
+    .wframe { width: 100%; border: 1px solid #C5DCE5; border-radius: 8px; background: #f4f6fa; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 1</div>
+        <div style="font-size: 12px; color: #666;">The Emergence of Sociology and Human Nature</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 1.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Human Nature Before Sociology</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">The Emergence of Sociology and Human Nature</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 1.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Human Nature Before Sociology: Aristotle, Hobbes, Locke, and Rousseau</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Is community what completes us, or what contains us?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Four thinkers, two thousand years apart, gave four different answers. What they decided about human nature determined everything they went on to say about law, government, and social order. Get their starting points clear and the rest of this course becomes an argument you can follow.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> reconstruct each of the four accounts of human nature as an argument rather than a slogan, and name the premise each one rests on.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> derive from each account what it commits its author to about how a society must then be organised.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> identify the single premise a critic would have to reject in order to defeat Aristotle's argument, and do the same for Hobbes's.</div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 1 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE QUESTION BEHIND ALL THE QUESTIONS</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Before there was sociology, there was philosophy. And before sociology asked what holds society together, philosophy asked a prior question: what kind of creature is the human being, and what does that nature imply about how humans should live together?</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The answer to the first question shapes every possible answer to the second. If humans are naturally social, then community is the fulfillment of human nature. If humans are naturally solitary and competitive, then community is an artificial construction imposed on an unsociable animal. These two starting points lead to entirely different theories of politics, law, and social order.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">The four thinkers in this lesson span two thousand years of Western thought and represent the major positions in the debate. Here is the whole argument on one line.</p>
+
+        <!-- ===== CORE VISUAL ===== -->
+        <div class="spec">
+            <div class="spec-title">FOUR ANSWERS TO ONE QUESTION</div>
+            <div class="spec-sub">What does society do to human nature?</div>
+            <div class="spec-ends">
+                <div class="spec-end l">SOCIETY SPOILS SOMETHING THAT WAS ALREADY FINE</div>
+                <div class="spec-end r">SOCIETY COMPLETES SOMETHING NATURE INTENDED</div>
+            </div>
+            <div class="spec-bar"></div>
+            <div class="spec-cards">
+                <div class="spec-card c1">
+                    <div class="spec-name">Rousseau</div>
+                    <div class="spec-year">1755 &middot; GENEVA</div>
+                    <div class="spec-claim">Natural man is solitary, self-sufficient, and content. Civilization introduced property, comparison, and envy. Society is the corruption.</div>
+                </div>
+                <div class="spec-card c2">
+                    <div class="spec-name">Hobbes</div>
+                    <div class="spec-year">1651 &middot; ENGLAND</div>
+                    <div class="spec-claim">Humans are naturally competitive and roughly equal, so no one is safe. Society is the cage that makes civilization possible.</div>
+                </div>
+                <div class="spec-card c3">
+                    <div class="spec-name">Locke</div>
+                    <div class="spec-year">1689 &middot; ENGLAND</div>
+                    <div class="spec-claim">Nature is not war but freedom under a law of reason. Rational people can consent to government without surrendering everything.</div>
+                </div>
+                <div class="spec-card c4">
+                    <div class="spec-name">Aristotle</div>
+                    <div class="spec-year">c. 350 BC &middot; ATHENS</div>
+                    <div class="spec-claim">Man is by nature a political animal. The city is the form in which human nature reaches completion. Outside it we are incomplete.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 2 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; THE WORDS THREE OF THEM SHARE</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Three of these four thinkers argue using the same two ideas. Get the terms straight before you meet the arguments.</p>
+
+        <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 14px 18px; margin-bottom: 10px; border-left: 4px solid #C7922C;">
+            <div style="font-size: 16px; color: #0E1C42; margin-bottom: 5px;">State of Nature</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">A thought experiment describing what human life would be like outside of organized society and law. Hobbes, Locke, and Rousseau all use it. They reach very different conclusions from it, which is what makes it worth arguing about.</div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 14px 18px; margin-bottom: 10px; border-left: 4px solid #C7922C;">
+            <div style="font-size: 16px; color: #0E1C42; margin-bottom: 5px;">Social Contract</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">The idea that legitimate political authority comes from an agreement, stated or implied, among individuals to form a society and submit to common rules.</div>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 14px 18px; border-left: 4px solid #55C8E8;">
+            <div style="font-size: 16px; color: #0E1C42; margin-bottom: 5px;">Political Animal (<em>zoon politikon</em>)</div>
+            <div style="font-size: 16px; color: #1a2340; line-height: 1.6;">Aristotle's term for the human being, from the Greek <em>zoion</em> (living creature) and <em>politikon</em> (of the city). For Aristotle humans are not merely capable of political life. They require it in order to flourish. Notice that Aristotle needs no state of nature and no contract. That is the measure of how differently he begins.</div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 3 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; THE FOUR ACCOUNTS</div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Aristotle: the social animal</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">Writing in Athens around 350 BC, Aristotle opens the <em>Politics</em> (I.2) with the most elegant statement of one side of this debate: man is by nature a political animal. He means it literally. The human being, unlike the bee or the ant, does not merely live in a community. A human is constituted for community in a way that makes solitary life either less than human or more than human. A person who can live alone, Aristotle says, must be either a beast or a god. This is not sentiment. It is a claim about human nature resting on a premise Aristotle states plainly at <em>Politics</em> I.2: the nature of any thing is what that thing is when fully developed. Grant him that premise and the conclusion follows, because the city is the condition in which human capacities reach their completion. Reject it and the argument loses its footing. That premise, not the famous phrase, is where the argument is actually vulnerable.</p>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Hobbes: the unsocial animal</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">Thomas Hobbes, writing in the chaos of the English Civil War in 1651, reached the opposite conclusion. In the state of nature, without law or government, human life is solitary, poor, nasty, brutish, and short (<em>Leviathan</em> XIII). Humans are not naturally social. They are naturally competitive. Each person pursues power as a means of securing survival, and because all are roughly equal in strength and cunning, no one is safe. The result is a condition of universal war, or at minimum universal suspicion. Society on this account is not the fulfillment of human nature but the cage that makes civilization possible. Hobbes's sovereign, the Leviathan, is the power strong enough to frighten individuals into cooperation. Remove that power and civilization dissolves.</p>
+
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; COMMON MISTAKE</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Hobbes's war of every one against every one does not mean people are constantly fighting. It means a permanent condition of mutual suspicion in which violence is always possible and nobody can safely assume otherwise. Long stretches of no actual combat are entirely compatible with it. Readers who miss this take Hobbes to be saying something obviously false, and then stop listening to him.</div>
+        </div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Locke: the rational bargainer</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">John Locke accepted Hobbes's starting point but rejected his conclusions. Writing forty years after Hobbes, Locke argued in the <em>Second Treatise</em> (&sect;6) that the state of nature is not a war of all against all but a condition of natural freedom governed by a law of reason that all persons can in principle recognize. People are not naturally peaceful, but they are naturally rational. They can perceive that their long-term interests are better served by cooperation than by conflict, and they can therefore consent to form a government without surrendering all their rights to a sovereign. For Locke, government is a trust. When it violates the terms of that trust by threatening the life, liberty, and property of its citizens, the people have the right to dissolve it.</p>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 4px 0 8px 0;">Rousseau: natural innocence and a corrupting society</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Jean-Jacques Rousseau, writing in 1755 in Part One of the <em>Discourse on Inequality</em>, introduced a radical inversion. Natural man, Rousseau argued, is not Hobbes's predator, Locke's bargainer, or Aristotle's political animal. Natural man is solitary, self-sufficient, and content. He has few desires and the means to satisfy them. He is not aggressive because he does not need what others have. He is not social because he does not yet have language, property, or the comparisons that create vanity and envy.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">It is civilization, not nature, that corrupts. The invention of agriculture, private property, and settled society introduced inequality, comparison, and the endless competition for status that makes human beings miserable. Where Hobbes saw the state of nature as hell and society as rescue, Rousseau saw it the other way around.</p>
+    </div>
+
+    <!-- ============================ PART 4 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; TEST YOURSELF ON THE FOUR</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Four real passages, one from each thinker. Match each to the person who wrote it. The activity below opens in its own frame.</p>
+
+        <iframe class="wframe" src="../_widgets/sort-the-thinkers/index.html" height="1080" title="Sort the Thinkers activity" loading="lazy"></iframe>
+
+        <p style="font-size: 15px; color: #4a5a78; line-height: 1.6; margin: 10px 0 0 0;">If the activity does not load, open it directly from the module page. Your answers there are not recorded or graded. It is a check for you.</p>
+    </div>
+
+    <!-- ============================ PART 5 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; PLACE EACH THINKER</div>
+
+        <div class="optima-widget ow-scale">
+            <div class="widget-kicker">&#9889; WHERE ON THE SPECTRUM?</div>
+            <div class="widget-question">For each thinker, choose the description that best captures what they think society <em>does</em> to human nature. Use the visual at the top of this lesson if you need it.</div>
+
+            <div class="widget-row" data-correct="4" data-fb="Right. For Aristotle the city is not a constraint on our nature but the condition in which it is finished." data-hint="Aristotle needs no state of nature and no contract. What does that tell you about whether he sees society as added on?">
+                <div class="widget-row-prompt">Aristotle</div>
+                <div class="widget-options">
+                    <button data-choice="0">Corrupts a good nature</button>
+                    <button data-choice="1">Mostly spoils it</button>
+                    <button data-choice="2">Restrains a dangerous nature</button>
+                    <button data-choice="3">Improves it by agreement</button>
+                    <button data-choice="4">Completes our nature</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Right. Rousseau inverts the others: what needed fixing was created by society in the first place." data-hint="Rousseau's natural man is content and has no envy. So what introduced the trouble?">
+                <div class="widget-row-prompt">Rousseau</div>
+                <div class="widget-options">
+                    <button data-choice="0">Corrupts a good nature</button>
+                    <button data-choice="1">Mostly spoils it</button>
+                    <button data-choice="2">Restrains a dangerous nature</button>
+                    <button data-choice="3">Improves it by agreement</button>
+                    <button data-choice="4">Completes our nature</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="3" data-fb="Right. Locke's people are rational before they are governed, so the contract improves an already workable situation rather than rescuing a desperate one." data-hint="Locke thinks reason already obliges us in the state of nature. Does he need society to save us, or to improve on us?">
+                <div class="widget-row-prompt">Locke</div>
+                <div class="widget-options">
+                    <button data-choice="0">Corrupts a good nature</button>
+                    <button data-choice="1">Mostly spoils it</button>
+                    <button data-choice="2">Restrains a dangerous nature</button>
+                    <button data-choice="3">Improves it by agreement</button>
+                    <button data-choice="4">Completes our nature</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Right. The Leviathan works by fear. For Hobbes society holds a dangerous nature in check rather than perfecting it." data-hint="Hobbes calls society a cage rather than a fulfillment. What does a cage do?">
+                <div class="widget-row-prompt">Hobbes</div>
+                <div class="widget-options">
+                    <button data-choice="0">Corrupts a good nature</button>
+                    <button data-choice="1">Mostly spoils it</button>
+                    <button data-choice="2">Restrains a dangerous nature</button>
+                    <button data-choice="3">Improves it by agreement</button>
+                    <button data-choice="4">Completes our nature</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ============================ PART 6 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 6 &middot; WHAT SOCIOLOGY INHERITS</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Each of these four accounts leaves a legacy in sociology. The names in the right column are the ones you will spend the rest of this course with.</p>
+
+        <table class="inh">
+            <tr><th>From this thinker</th><th>Sociology inherits</th></tr>
+            <tr><td>Aristotle</td><td><strong>Durkheim</strong> takes up the conviction that social bonds are real and constitutive, not merely useful arrangements people opt into.</td></tr>
+            <tr><td>Rousseau</td><td><strong>Marx</strong> takes up the idea that civilization introduces forms of inequality and alienation that simpler conditions did not have.</td></tr>
+            <tr><td>Hobbes</td><td><strong>Weber</strong> takes up the concern with power and domination, and with what makes obedience possible.</td></tr>
+            <tr><td>Locke</td><td>The social contract tradition shapes every later account of how institutions become legitimate and how individuals come to consent to norms.</td></tr>
+        </table>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 10px 0 0 0;">These four thinkers are not historical curiosities. They are the grammar of the debates that follow.</p>
+    </div>
+
+    <!-- What You'll Do Next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 1B: Hobbes</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your Thursday reading. Read <em>Leviathan</em> Chapter 13 as one sustained argument, not a collection of quotable lines.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Reading Quiz 1</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Eight questions covering both lessons this week. Take it in Canvas.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Sociological Journal 1</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Due Thursday. You will connect one unquestioned social rule from your own day to either Aristotle or Hobbes.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You now hold four incompatible answers to the same question, and you should not yet be sure which is right. That is the correct state to be in. Every thinker you meet from here on inherits one of these starting points, usually without saying so. When Durkheim insists that society is a reality in its own right, he is standing where Aristotle stood. When Marx describes what industrial life does to a worker, he is standing where Rousseau stood. Learn to hear the older argument underneath the newer one.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 1.02 &middot; Human Nature Before Sociology</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME — one delegated listener drives every engine ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite. Try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Q2 · Week 14 · Lesson 14.02 — "Technology and Social Relationships"
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS (confirmed 2026-08-06).
+
+      R1 SUBSTITUTION (see CLAUDE.md and plan.md section 2b, row 14): the master
+      built this lesson's ASSIGNED READING around Sherry Turkle, Alone Together
+      (2011), still in copyright. Per the reviewer's note, Turkle STAYS in this
+      lesson's own prose below, unchanged from the master: students should still
+      learn who she is and what she argues. Only the assigned reading changes,
+      to Simmel, "The Sociology of the Senses" (1907), on source-14-b.html
+      (PATTERN B). Nothing in this file quotes or reproduces Turkle's words; the
+      references below are biographical and argumentative summary only, which is
+      permitted (CLAUDE.md: "Teaching ABOUT a modern thinker is always
+      permitted; reproducing their words is not").
+
+      Standard: SS.912.S.6.5, SS.912.S.6.6, SS.912.S.2.7
+      Objective: Students will apply sociological frameworks to analyze the
+                effects of communications technology on social relationships,
+                evaluate competing claims about technology and community, and
+                draw on classical concepts to frame a contemporary question.
+      Source: Sociology_Course_Master.html via _build/manifest.json, weeks[13],
+              lessons[1]. Prose preserved; section "Hook: Connection and
+              Disconnection" retitled per R5 (label dropped, descriptive title
+              kept). "ENGAGE" does not appear in this file; not applicable here.
+
+      DASH-AS-COLON CHECK (plan.md defect 6): scanned this lesson's manifest
+      prose programmatically for sentences carrying two or more mid-sentence
+      colons. None found. No recasting was needed for this lesson.
+
+      VIRTUE THREAD: self-government (Weeks 14-15). The closing paragraph names
+      it directly: choosing how a technology is used, rather than only reacting
+      to what it makes easy, is the week's clearest application of the virtue.
+
+      WIDGET ROTATION: 14.01 used reflective check-in + single-select rows.
+      14.02 uses scale placement (Part "Technology and Tonnies") + flip cards
+      (Part "Technology and Putnam"), so the two lessons this week do not repeat
+      an engine combination. Scale-row correct indices, in order: 1, 0, 3, 2.
+      Not ascending. Flip cards carry no correct/incorrect state by design.
+      Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Lesson 14.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS — byte-consistent with references/widgets.md ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+    .flipgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 14px 0; }
+    .ow-flip .fcard-front { font-size: 16px; color: #0E1C42; }
+    .ow-flip .fcard-back { font-size: 14px; color: #1a2340; line-height: 1.55; }
+
+    /* ===== Core visual: the mediation gap ===== */
+    .med { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
+    .med-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .med-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
+    .med-row { display: flex; align-items: center; gap: 10px; }
+    .med-box { flex: 1; background: rgba(255,255,255,0.07); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 13px 14px; text-align: center; }
+    .med-n { font-size: 10px; letter-spacing: 0.5px; color: rgba(255,255,255,0.45); margin-bottom: 5px; }
+    .med-h { font-size: 15px; color: #ffffff; margin-bottom: 5px; }
+    .med-b { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.5; }
+    .med-arrow { color: rgba(255,255,255,0.35); font-size: 20px; flex-shrink: 0; }
+    .med-note { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.6; text-align: center; font-style: italic; }
+
+    .exg { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 11px; margin: 14px 0; }
+    .exc { background: #FFFFFF; border: 1px solid #D0D9E8; border-top: 3px solid #55C8E8; border-radius: 7px; padding: 14px 16px; }
+    .exc-h { font-size: 16px; color: #0E1C42; margin-bottom: 6px; }
+    .exc-b { font-size: 15px; color: #1a2340; line-height: 1.55; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 14</div>
+        <div style="font-size: 12px; color: #666;">Urbanization, Technology, and Social Relationships</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 14.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Technology and Social Relationships</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Urbanization, Technology, and Social Relationships</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 14.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Technology and Social Relationships</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Can a person be surrounded by connection and still be alone?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Sherry Turkle, a sociologist and psychologist at MIT who has studied technology and human identity for forty years, named that paradox directly in a 2011 book. Today's lesson is not really about any one device. It is about using the tools this course has already built to ask a much older question of a very new technology.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> apply T&ouml;nnies's Gemeinschaft/Gesellschaft distinction to a specific communications technology, and defend the classification against an obvious objection.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish bridging from bonding social capital in Putnam's sense, and evaluate whether a given technology builds one, the other, both, or neither.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why the sociologist's question about any new technology is not "is it good or bad" but what specific relationships it enables and discourages.</div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 1 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; CONNECTION AND DISCONNECTION</div>
+
+        <!-- ===== CORE VISUAL ===== -->
+        <div class="med">
+            <div class="med-title">WHAT A TECHNOLOGY DOES TO A RELATIONSHIP</div>
+            <div class="med-sub">Not "good or bad." A sociologist asks what a specific technology makes easy, and what it makes hard.</div>
+            <div class="med-row">
+                <div class="med-box">
+                    <div class="med-n">STEP 1</div>
+                    <div class="med-h">A technology arrives</div>
+                    <div class="med-b">The telephone, radio, television, the smartphone. Each one changes how contact happens.</div>
+                </div>
+                <div class="med-arrow">&#8594;</div>
+                <div class="med-box">
+                    <div class="med-n">STEP 2</div>
+                    <div class="med-h">It has affordances</div>
+                    <div class="med-b">What it makes easy (reaching many people at once) and what it makes hard (reading a face, waiting for a reply).</div>
+                </div>
+                <div class="med-arrow">&#8594;</div>
+                <div class="med-box">
+                    <div class="med-n">STEP 3</div>
+                    <div class="med-h">Relationships adapt</div>
+                    <div class="med-b">Some bonds grow easier to maintain across distance. Some habits of attention and patience atrophy from disuse.</div>
+                </div>
+            </div>
+            <div class="med-note">Every communications technology in history has triggered this same worry, and been partly right and partly wrong about it. The task is finding out which parts, for this technology.</div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 10px 0 10px 0;">Sherry Turkle, a sociologist and psychologist at MIT who has spent forty years studying the relationship between technology and human identity, published a book in 2011 with a title that captures one of the central paradoxes of contemporary social life: <em>Alone Together</em>. The title names a condition many people have experienced: being surrounded by other people while feeling, in some meaningful sense, alone; or, conversely, being technically connected to hundreds or thousands of people while being, in some equally meaningful sense, together with none of them. The smartphone, Turkle argues, has not destroyed human connection. It has transformed it, in ways not yet fully understood, and some of what has been transformed may have mattered more than we realized when we gave it up.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">This lesson is not primarily about smartphones. It is about using the theoretical tools this course has built to analyze a contemporary social phenomenon. The question is not new: every major communications technology in history, the printing press, the telegraph, the telephone, radio, television, has prompted anxiety about its effects on social life, and those anxieties have been both vindicated and refuted in various respects. The task for the sociologist is not to take a side but to ask the right questions: what kind of social relationships does this technology enable? What kind does it discourage? How does it change the conditions of social solidarity, social capital, and community?</p>
+    </div>
+
+    <!-- ============================ KEY TERMS ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; KEY TERMS</div>
+        <div class="exg">
+            <div class="exc">
+                <div class="exc-h">Social Technology</div>
+                <div class="exc-b">Any technology that mediates social relationships: the telephone, the printing press, the internet, the social media platform. Social technologies are not neutral; they encode affordances, what they make easy or difficult, that shape the relationships they mediate.</div>
+            </div>
+            <div class="exc">
+                <div class="exc-h">Disembedding</div>
+                <div class="exc-b">Anthony Giddens's term for the process by which modern institutions lift social relations out of local contexts of interaction and restructure them across indefinite spans of time and space. Communications technology is the primary mechanism of disembedding in the modern world.</div>
+            </div>
+            <div class="exc">
+                <div class="exc-h">Network Society</div>
+                <div class="exc-b">Manuel Castells's term for the social structure of the information age: a society organized around networks of information and communication rather than territorial communities or hierarchical institutions. The network is the organizational form; information is the raw material.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 2 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; TECHNOLOGY AND T&Ouml;NNIES</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Ferdinand T&ouml;nnies distinguished Gemeinschaft, the personal, warm, and direct bonds of community, from Gesellschaft, the impersonal, contractual, and mediated bonds of society. One way to analyze communications technology sociologically is to ask whether it enables Gemeinschaft-type relationships, Gesellschaft-type relationships, or something new that neither concept quite captures. The telephone enables direct, personal, voice-mediated communication across distance; it seems to support Gemeinschaft even while disembedding it from place. Social media platforms enable broad, thin, largely impersonal connection across large networks; they seem to extend Gesellschaft into social life. But neither description is fully adequate. People form genuine deep attachments online, and social media can support local communities as well as dissolve them.</p>
+
+        <div class="optima-widget ow-scale">
+            <div class="widget-kicker">&#9889; TRY IT &middot; PLACE IT ON THE SPECTRUM</div>
+            <div class="widget-question">For each use of technology, decide where it falls between T&ouml;nnies's two poles. Judge by what the relationship actually does, not by which device is involved.</div>
+
+            <div class="widget-row" data-correct="1" data-fb="Leans Gemeinschaft. The call is mediated by a screen, but the content, a grandmother and grandchildren, a recurring personal ritual, is exactly the kind of warm, particular, non-substitutable bond T&ouml;nnies calls Gemeinschaft. The technology disembeds it from place without converting it into something impersonal." data-hint="Ask what the call is actually carrying: a recurring personal bond between specific people who matter to each other individually, or an anonymous, replaceable transaction?">
+                <div class="widget-row-prompt">1. A grandmother video-calls her grandchildren at the same time every Sunday. They have never lived in the same city.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Strongly Gemeinschaft</button><button data-choice="1">Leans Gemeinschaft</button><button data-choice="2">Leans Gesellschaft</button><button data-choice="3">Strongly Gesellschaft</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Strongly Gemeinschaft. Six lifelong friends texting daily is about as close as a mediated relationship gets to T&ouml;nnies's community pole: durable, particular, and valued for its own sake rather than for any function it performs." data-hint="These are pre-existing, deep, personal bonds. The technology here is just the channel; it did not create the tie or make it impersonal.">
+                <div class="widget-row-prompt">2. Six lifelong friends from childhood keep a group chat going, texting almost every day.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Strongly Gemeinschaft</button><button data-choice="1">Leans Gemeinschaft</button><button data-choice="2">Leans Gesellschaft</button><button data-choice="3">Strongly Gesellschaft</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="3" data-fb="Strongly Gesellschaft. A loyalty app is a contractual, transactional relationship by design: the retailer does not know or care who the shopper is as a person, only what the purchase history predicts about future spending. This is T&ouml;nnies's Gesellschaft in close to pure form." data-hint="Ask whether either party in this exchange is treated as a particular, irreplaceable person, or purely as a source of predictable, calculable behavior.">
+                <div class="widget-row-prompt">3. A shopper joins a retailer's loyalty app, which sends personalized coupons based on purchase history.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Strongly Gemeinschaft</button><button data-choice="1">Leans Gemeinschaft</button><button data-choice="2">Leans Gesellschaft</button><button data-choice="3">Strongly Gesellschaft</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Leans Gesellschaft, at least at the start. An anonymous forum of strangers connected by a shared interest, not by personal history, is close to Gesellschaft's associational logic. This case is chosen because it is a genuine mixed case: T&ouml;nnies's categories describe where a relationship begins, not necessarily where it stays, and this one visibly migrated toward Gemeinschaft over years." data-hint="This one starts as strangers connected only by a shared interest, which is Gesellschaft's own logic of voluntary association among people who do not know one another personally, even though it changes later.">
+                <div class="widget-row-prompt">4. A student joins an online forum of strangers who share a rare hobby, and after years of posting, becomes real-life friends with two of them.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Strongly Gemeinschaft</button><button data-choice="1">Leans Gemeinschaft</button><button data-choice="2">Leans Gesellschaft</button><button data-choice="3">Strongly Gesellschaft</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ============================ PART 3 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; TECHNOLOGY AND PUTNAM</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Robert Putnam, in <em>Bowling Alone</em>, was writing in 2000, at the dawn of the social media era. He identified television as one of the major culprits in the decline of social capital: it privatized leisure time, replacing civic participation with passive consumption in the home. His analysis of television provides a template for analyzing subsequent technologies. The question for each one is not "is it good or bad?" but "does it build bridging and bonding social capital, or does it replace the activities that build them?" The smartphone and social media present a more complex picture than television: they can organize political action, maintain distant relationships, build communities of shared interest, and facilitate local coordination; they can also displace face-to-face interaction, substitute a parasocial relationship for a genuine community, and create the appearance of connection without its substance.</p>
+
+        <div class="optima-widget ow-flip-group">
+            <div class="widget-kicker">&#9889; FLIP EACH CARD</div>
+            <div class="widget-question">See how the same technology can be read through Putnam's two kinds of social capital. The two readings are not opposites competing for the right answer; often both are true of the same platform at once.</div>
+            <div class="flipgrid">
+                <div class="ow-flip">
+                    <div class="ow-flip-front fcard-front">A neighborhood social media group organizes an annual block party among people who otherwise only wave from their porches.</div>
+                    <div class="ow-flip-back fcard-back"><strong>Bridging capital.</strong> This connects people who share geography but not necessarily background, class, or existing friendship. Putnam values bridging capital precisely because it crosses lines that bonding capital does not, though it usually stays thinner than a bonded tie.</div>
+                </div>
+                <div class="ow-flip">
+                    <div class="ow-flip-front fcard-front">A tight friend group keeps a private streak of daily messages that visibly excludes anyone outside the group.</div>
+                    <div class="ow-flip-back fcard-back"><strong>Bonding capital.</strong> This reinforces an already-existing close tie and the trust that comes with it. Valuable for support in a crisis, but by design it does not connect anyone to people unlike their existing circle, which is exactly what bonding capital does and does not do.</div>
+                </div>
+                <div class="ow-flip">
+                    <div class="ow-flip-front fcard-front">An algorithm quietly shows a user more of what people who already agree with them post, and less of everything else.</div>
+                    <div class="ow-flip-back fcard-back"><strong>Neither, by design.</strong> This is Putnam's warning case. It can feel like bonding, since the user's existing circle looks affirmed, while quietly destroying the bridging capital that comes from unplanned contact with people unlike oneself. The two effects can happen in the same feed at the same time.</div>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- What You'll Do Next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 14B: Simmel</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Thursday's reading turns from Turkle's contemporary diagnosis to a century-old sociology of the senses themselves, asking what property of sight and hearing makes contact reciprocal in the first place. It lives in a book you will need to obtain.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Sociological Journal 14</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Due Thursday, as an assignment. You will apply at least three of the course's frameworks to one specific use of technology in your own life.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">No technology is simply good or bad for social life; each one has to be examined for what specific relationships it enables and what it discourages, using the frameworks this course has already built. That examination is itself an exercise in self-government. A person who only reacts to whatever a platform makes easiest is being governed by its design. A person who asks, of any given use of technology, whether it is building Gemeinschaft or Gesellschaft, bridging capital or bonding capital, or neither, has taken back some of the choosing.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 14.02 &middot; Technology and Social Relationships</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME — one delegated listener drives every engine ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite. Try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

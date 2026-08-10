@@ -1,0 +1,437 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Q1 · Week 1 · Lesson 1.01 — "What Is Sociology? The Birth of a Science"
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS (confirmed 2026-08-06). Objectives sit at analysis and
+    evaluation, works are cited inline by book and section, and terms already
+    taught are not re-glossed. Drafted to standard college-prep register and
+    revised up on 2026-08-06. See CLAUDE.md, "Register: honors".
+      Standard: SS.912.S.1.1 — Discuss the development of the field of sociology
+                as a social science.
+      Objective: Students will explain why sociology emerged in the late 18th and
+                early 19th centuries, and distinguish it from earlier
+                philosophical accounts of social life.
+      Source: Sociology_Course_Master.html, Lesson 1.01. Prose preserved.
+      Revisions applied: R5 (opening section no longer labelled "Hook"),
+                R7 (em dashes removed from student-facing prose),
+                standards code moved out of the student-facing meta strip.
+      Widgets: reflective check-in (Part 1) + single-select rows (Part 3).
+               Correct indices across the evaluative rows: 2, 0, 3, 1.
+      Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Lesson 1.01</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS — byte-consistent with references/widgets.md ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+
+    /* ===== Lesson visual: the double disruption timeline ===== */
+    .dd-wrap { background: #0E1C42; border-radius: 10px; padding: 26px 28px 20px 28px; margin: 4px 0 18px 0; }
+    .dd-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; margin-bottom: 20px; text-align: center; }
+    .dd-rail { position: relative; height: 3px; background: rgba(255,255,255,0.22); margin: 0 10px 0 10px; }
+    .dd-years { display: flex; justify-content: space-between; margin: 8px 10px 22px 10px; }
+    .dd-years span { font-size: 11px; color: rgba(255,255,255,0.55); }
+    .dd-tracks { display: flex; gap: 16px; margin-bottom: 18px; }
+    .dd-track { flex: 1; border-radius: 8px; padding: 14px 16px; }
+    .dd-a { background: rgba(85,200,232,0.13); border-left: 4px solid #55C8E8; }
+    .dd-b { background: rgba(199,146,44,0.15); border-left: 4px solid #C7922C; }
+    .dd-track-label { font-size: 11px; letter-spacing: 0.5px; margin-bottom: 7px; }
+    .dd-a .dd-track-label { color: #55C8E8; }
+    .dd-b .dd-track-label { color: #E0B562; }
+    .dd-track-head { font-size: 16px; color: #ffffff; margin-bottom: 6px; }
+    .dd-track-body { font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.55; }
+    .dd-converge { text-align: center; }
+    .dd-arrows { font-size: 20px; color: rgba(255,255,255,0.4); letter-spacing: 26px; margin-bottom: 6px; }
+    .dd-out { display: inline-block; background: #ffffff; border-radius: 8px; padding: 13px 22px; }
+    .dd-out-year { font-size: 11px; color: #6b7a99; letter-spacing: 0.5px; margin-bottom: 3px; }
+    .dd-out-name { font-size: 19px; color: #0E1C42; }
+    .dd-out-sub { font-size: 13px; color: #666; margin-top: 3px; }
+    .dd-q { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 14px; color: rgba(255,255,255,0.82); line-height: 1.6; text-align: center; font-style: italic; }
+
+    /* ===== Discipline comparison table ===== */
+    .disc { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 15px; }
+    .disc th { background: #0E1C42; color: #fff; text-align: left; padding: 10px 13px; font-size: 12px; letter-spacing: 0.4px; font-weight: normal; }
+    .disc td { border: 1px solid #D0D9E8; padding: 10px 13px; color: #1a2340; line-height: 1.5; vertical-align: top; }
+    .disc tr:nth-child(even) td { background: #F8FAFD; }
+    .disc td:first-child { color: #0E1C42; width: 22%; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 1</div>
+        <div style="font-size: 12px; color: #666;">The Emergence of Sociology and Human Nature</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 1.01</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">What Is Sociology? The Birth of a Science</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">The Emergence of Sociology and Human Nature</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <!-- Title strip -->
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 1.01</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">What Is Sociology? The Birth of a Science</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <!-- Today's Focus -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Why did anyone need to invent a science of society?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Human beings have lived in societies for as long as there have been human beings. Yet the systematic study of society is barely two centuries old. Something happened in Europe between 1750 and 1850 that made people start asking, for the first time and with real urgency, what holds a society together. Today you will find out what that something was, and why the answer still matters.</div>
+    </div>
+
+    <!-- Objectives -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why sociology emerged in the late eighteenth and early nineteenth centuries rather than at some earlier point in history.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> assign an unfamiliar research question to sociology, history, psychology, or economics, and defend the assignment by naming what each discipline attends to.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> trace sociology's founding questions to the specific institutional collapses that provoked them, and judge which of those questions remain open.</div>
+        </div>
+    </div>
+
+    <!-- Materials -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU NEED FOR THIS LESSON</div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">Your Sociological Journal document in OneDrive. You will add to it all semester.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">A notebook for the terms and dates in this lesson.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 10px; border-left: 3px solid #D0D9E8; padding-left: 14px;"><span style="color: #c7922c; font-size: 18px; flex-shrink: 0;">&#9654;</span>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.6;">About 45 minutes of quiet, uninterrupted attention.</div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 1 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE WORLD COMES APART</div>
+
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Before you read: when you hear the word <em>society</em>, what comes to mind first? (No wrong answer. Just notice where your mind goes.)</div>
+            <div class="widget-options">
+                <button data-response="A useful starting point. Most people picture a place, because societies are the water we swim in and we notice the container before we notice the current. Watch for the moment in this lesson when society stops being a place and becomes a set of forces.">&#127961;&#65039; A country or a place</button>
+                <button data-response="That instinct will serve you well. Sociology is largely the study of how people arrange themselves in relation to one another. Aristotle would agree with you, and you will meet him on Tuesday.">&#128101; People and how they relate</button>
+                <button data-response="You are already thinking structurally, which is the harder move. Laws, schools, and markets are exactly what sociologists call institutions, and they are the discipline's main subject.">&#127963;&#65039; Rules and institutions</button>
+                <button data-response="An honest answer, and a common one. The word is genuinely vague in ordinary speech. Part of what this course does is turn a fuzzy word into a precise instrument.">&#129300; Honestly, nothing specific</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <!-- ===== CORE VISUAL: the double disruption ===== -->
+        <div class="dd-wrap">
+            <div class="dd-title">THE DOUBLE DISRUPTION THAT MADE A SCIENCE NECESSARY</div>
+            <div class="dd-rail"></div>
+            <div class="dd-years"><span>1750</span><span>1789</span><span>1800</span><span>1838</span><span>1850</span></div>
+            <div class="dd-tracks">
+                <div class="dd-track dd-a">
+                    <div class="dd-track-label">POLITICAL &middot; FRANCE &middot; 1789</div>
+                    <div class="dd-track-head">The French Revolution</div>
+                    <div class="dd-track-body">The parish, the guild, the aristocratic estate, and the monarchy are dismantled in a few years. The authorities that had ordered French life for centuries lose their grip. What replaces them is not yet clear.</div>
+                </div>
+                <div class="dd-track dd-b">
+                    <div class="dd-track-label">ECONOMIC &middot; BRITAIN &middot; FROM c. 1760</div>
+                    <div class="dd-track-head">The Industrial Revolution</div>
+                    <div class="dd-track-body">Millions move off the land into factories in Manchester, Birmingham, and Leeds. Villages five hundred years old empty out. Cities swell past anything in prior experience.</div>
+                </div>
+            </div>
+            <div class="dd-converge">
+                <div class="dd-arrows">&#8595;&#8595;</div>
+                <div class="dd-out">
+                    <div class="dd-out-year">1838 &middot; AUGUSTE COMTE COINS THE WORD</div>
+                    <div class="dd-out-name">sociology</div>
+                    <div class="dd-out-sub">Latin <em>socius</em>, companion &middot; Greek <em>logos</em>, study</div>
+                </div>
+            </div>
+            <div class="dd-q">What holds human societies together, and what happens when the bonds that hold them begin to fray?</div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">In the summer of 1789, the French social order collapsed with a speed that no one had imagined possible. Within weeks, the Bastille had fallen, feudal obligations had been abolished by the National Assembly, and the king who had ruled by divine right was no longer sovereign in any meaningful sense. Within three years, he would be dead. The revolution that followed dismantled the parish, the guild, the aristocratic estate, and the monarchy that had organized French society for centuries. What replaced them was not yet clear.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Across the Channel, a different kind of revolution had been underway for decades. The Industrial Revolution was drawing millions of men, women, and children off the land and into factories in Manchester, Birmingham, and Leeds. Villages that had existed for five hundred years were emptying. Cities were swelling beyond any prior experience. The old patterns of work, family, neighborhood, and belief that had structured life for most of human history were dissolving into something new and not yet named.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">It was in this context of double disruption that the discipline of sociology was born. The word itself was coined by Auguste Comte in 1838, in the fourth volume of his <em>Cours de philosophie positive</em>, from the Latin <em>socius</em> (companion, associate) and the Greek <em>logos</em> (reason, study). Comte had first called the projected science <em>physique sociale</em>, social physics, and the substitution is worth noticing: he wanted a term that did not borrow its authority from another discipline. But the question sociology asks is older than its name, and older than Comte. What holds human societies together, and what happens when the bonds that hold them begin to fray?</p>
+    </div>
+
+    <!-- ============================ PART 2 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; THE WORDS YOU WILL NEED</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">Four terms carry this lesson. Tap each card to check yourself, then write all four into your notebook in your own words.</p>
+
+        <div class="optima-widget">
+            <div class="widget-kicker">&#9889; TAP TO REVEAL</div>
+            <div class="ow-flip" tabindex="0">
+                <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;">Sociology</div>
+                <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">From the Latin <em>socius</em> (companion) and the Greek <em>logos</em> (study, reason). The scientific study of human society, social institutions, and social relationships.</div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget">
+            <div class="widget-kicker">&#9889; TAP TO REVEAL</div>
+            <div class="ow-flip" tabindex="0">
+                <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;">Social Science</div>
+                <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">A field of inquiry that applies systematic, empirical methods to the study of human behavior and social organization. Sociology is distinguished from philosophy by its insistence on evidence.</div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget">
+            <div class="widget-kicker">&#9889; TAP TO REVEAL</div>
+            <div class="ow-flip" tabindex="0">
+                <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;">Industrial Revolution</div>
+                <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">The transformation of production from household and craft industries to factory-based manufacturing, beginning in Britain around 1760 and spreading through the nineteenth century. One of the two great disruptions that created sociology.</div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget">
+            <div class="widget-kicker">&#9889; TAP TO REVEAL</div>
+            <div class="ow-flip" tabindex="0">
+                <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;">French Revolution</div>
+                <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">The political and social upheaval in France from 1789 to 1799 that overthrew the monarchy and the old social order. The other great disruption. Together with industrialization it created the crisis of social coherence that sociology attempts to understand.</div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ============================ PART 3 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; SOCIOLOGY AMONG THE SCIENCES</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Sociology did not emerge in a vacuum. By the mid-nineteenth century, the natural sciences had achieved remarkable success by treating the natural world as a domain governed by discoverable laws. Physicists described the motion of planets; biologists described the development of organisms; chemists described the behavior of matter. The early sociologists asked whether the same approach could be applied to human society. Could the patterns of social life be studied with the same rigor that Newton had applied to the movement of planets?</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Sociology answers yes, but with an important qualification. The object of study is not atoms or organisms but social facts, shared meanings, institutions, and the relationships between persons. The subject matter is more complex and in some ways more resistant to simple measurement than the material world. But it is not therefore beyond understanding. The task of sociology, as Durkheim would insist in the preface to the second edition of <em>The Rules of Sociological Method</em> (1901), is to treat social phenomena as <em>things</em>: external objects of inquiry that can be described, compared, and explained. You will read the chapter that argument comes from in Week 3, and it is worth arriving at it already suspicious of how much work the word <em>things</em> is doing.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Sociology also distinguishes itself from its neighboring disciplines. Each of the four asks a different kind of question about the same human world.</p>
+
+        <table class="disc">
+            <tr><th>Discipline</th><th>What it fixes its attention on</th></tr>
+            <tr><td>History</td><td>Particular events in time. What happened, to whom, and in what order.</td></tr>
+            <tr><td>Psychology</td><td>The individual mind. What a person perceives, wants, remembers, and decides.</td></tr>
+            <tr><td>Economics</td><td>The behavior of rational actors in markets. How scarce goods get allocated.</td></tr>
+            <tr><td>Sociology</td><td>Patterns across societies and periods, and the social forces that shape individuals before and beyond any individual's awareness.</td></tr>
+        </table>
+
+        <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; CONNECTION</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Where the economist sees a buyer and a seller, the sociologist sees a social structure that made that transaction possible, and that made those persons the kinds of buyers and sellers they are. Sociology insists that markets, rationality, and even the definition of self-interest are themselves socially produced. Keep this move in mind. You will use it in every week of this course.</div>
+        </div>
+
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; WHOSE QUESTION IS IT?</div>
+            <div class="widget-question">Each question below is a real research question. Decide which discipline is most likely asking it. Work from the kind of thing each one attends to, not from the topic.</div>
+
+            <div class="widget-row" data-correct="2" data-fb="Right. The question is about a pattern that holds across many societies and periods, which is the sociological signature." data-hint="Look at the scope. One person, one event, or one market? Or a pattern running across whole societies?">
+                <div class="widget-row-prompt">1. Why do suicide rates stay stable year after year within a country, yet differ sharply between countries?</div>
+                <div class="widget-options">
+                    <button data-choice="0">History</button>
+                    <button data-choice="1">Psychology</button>
+                    <button data-choice="2">Sociology</button>
+                    <button data-choice="3">Economics</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Right. This asks what happened on particular days to particular people, which is the historian's work." data-hint="This question is anchored to one specific sequence of events in one specific summer.">
+                <div class="widget-row-prompt">2. In what order did the Bastille fall, feudal obligations end, and the monarchy lose its authority in 1789?</div>
+                <div class="widget-options">
+                    <button data-choice="0">History</button>
+                    <button data-choice="1">Psychology</button>
+                    <button data-choice="2">Sociology</button>
+                    <button data-choice="3">Economics</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="3" data-fb="Right. Allocation of a scarce good under competing demand is the economist's central problem." data-hint="Ask what is being distributed here, and under what constraint.">
+                <div class="widget-row-prompt">3. How did factory wages in Manchester respond when the supply of rural labor increased?</div>
+                <div class="widget-options">
+                    <button data-choice="0">History</button>
+                    <button data-choice="1">Psychology</button>
+                    <button data-choice="2">Sociology</button>
+                    <button data-choice="3">Economics</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Right. This stays inside one person's mind, which is where psychology works." data-hint="Whose experience is this question about? How many people are in it?">
+                <div class="widget-row-prompt">4. What does an individual worker feel and remember during the first week of a job in an unfamiliar city?</div>
+                <div class="widget-options">
+                    <button data-choice="0">History</button>
+                    <button data-choice="1">Psychology</button>
+                    <button data-choice="2">Sociology</button>
+                    <button data-choice="3">Economics</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ============================ PART 4 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; WHY THE TIMING MATTERS</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Sociology's birth in the nineteenth century is not incidental. The discipline's founding questions are the questions of a world in transition. What holds a society together when the old religious and political authorities lose their grip? How do individuals find meaning and belonging in a world of strangers? What makes institutions legitimate? Can social life be organized on rational principles, or does it depend on bonds that reason cannot fully explain?</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">These remain the questions of the twenty-first century. Sociology was born in a moment of disruption, and it continues to be the discipline most directly concerned with understanding disruption: what causes it, what it costs, and what might survive it.</p>
+
+        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 14px 0;">
+            <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; Try it in your notebook first: name one bond in your own community that is weaker now than it was a generation ago. Then open this.
+            </summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
+                There is no single correct answer here, and that is the point. What matters is whether you named something specific and observable rather than something abstract. A sociologist would push you one question further: is the bond you named actually weaker, or has it simply changed form? Comte and the thinkers who followed him spent their careers on that distinction. Hold your answer. You will return to it in Week 8 and again in your capstone.
+            </div>
+        </details>
+    </div>
+
+    <!-- What You'll Do Next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Reading Quiz 1</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Eight questions on this lesson and on Lesson 1.02. Take it in Canvas once you have finished both lessons this week.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 1A: Aristotle</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your Tuesday reading. Aristotle argues that human beings are political by nature. Read the guide questions before you read the excerpt.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Sociology is not a timeless subject that happened to get a name in 1838. It is a response to a specific crisis: two revolutions, political and economic, that pulled apart the arrangements holding European life together and left people asking what a society actually is. You now have the word, its roots, and the reason it was needed. Next you will meet four thinkers who disagreed profoundly about whether human beings are built for society at all.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 1.01 &middot; What Is Sociology? The Birth of a Science</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME — one delegated listener drives every engine ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite. Try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

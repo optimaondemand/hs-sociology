@@ -1,0 +1,232 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Widget 2 of 4: "Social Fact or Personal Choice?"
+
+    SPEC SOURCE: Sociology_Course_Master.html, Week 3 widget-note —
+      "students see a series of behaviors and drag each to 'Social Fact' or
+       'Personal Choice.' Include edge cases that require genuine reasoning
+       (e.g., speaking a second language, attending church). Self-contained HTML,
+       iframe-embedded before Lesson 3.02."
+
+    REGISTER: HONORS. The items are not label-matching. Four of the eight are
+    deliberate edge cases where the behaviour FEELS chosen, and the correct answer
+    is still "social fact" because it meets Durkheim's three criteria
+    (Rules of Sociological Method I: external, general, constraining). The
+    teaching happens in the feedback, which explains why a felt choice can still
+    be a social fact. Getting one of these "wrong" is the intended experience.
+
+    ARCHITECTURE: same click-to-assign engine as widget 1 (sort-the-thinkers),
+    which is already probe-verified. Two bins instead of four, and items return to
+    the pool on a wrong answer rather than locking.
+
+    ANSWER SPREAD: 5 social fact, 3 personal choice, deliberately interleaved so
+    the sequence is not sortable by position. Do not reorder into blocks.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Social Fact or Personal Choice?</title>
+<style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 16px; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; color: #0E1C42; }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 0 auto; max-width: 940px; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 6px; line-height: 1.55; }
+    .widget-help { font-size: 14px; color: #4a5a78; margin-bottom: 14px; line-height: 1.55; }
+
+    .crit { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 11px 15px; margin-bottom: 16px; font-size: 14px; color: #1a2340; line-height: 1.6; }
+    .crit b { color: #0E1C42; }
+
+    .sf-progress { font-size: 13px; color: #1B6A94; margin-bottom: 12px; }
+
+    .sf-items { display: flex; flex-direction: column; gap: 9px; margin-bottom: 18px; }
+    .sf-item { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 15px; cursor: pointer; transition: all 0.15s; font-size: 16px; line-height: 1.5; color: #1a2340; }
+    .sf-item:hover { border-color: #55C8E8; background: #FCFDFF; }
+    .sf-item:focus { outline: 2px solid #2196D0; outline-offset: 2px; }
+    .sf-item.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .sf-item.done { opacity: 0.4; cursor: default; border-left-color: #2A9D5C; }
+
+    .sf-bins { display: flex; gap: 12px; }
+    .sf-bin { flex: 1; background: #FFFFFF; border: 1.5px dashed #D0D9E8; border-radius: 8px; padding: 16px 16px 14px 16px; min-height: 96px; cursor: pointer; transition: all 0.15s; }
+    .sf-bin:hover, .sf-bin.armed { border-color: #2196D0; background: #F7FCFE; }
+    .sf-bin-name { font-size: 17px; color: #0E1C42; margin-bottom: 3px; }
+    .sf-bin-sub { font-size: 12px; color: #6b7a99; line-height: 1.45; margin-bottom: 8px; }
+    .sf-bin-count { font-size: 13px; color: #1A6B3D; }
+
+    .sf-fb { border-radius: 4px; padding: 11px 15px; font-size: 15px; line-height: 1.6; margin-top: 14px; display: none; }
+    .sf-fb.show { display: block; }
+    .sf-fb.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .sf-fb.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .sf-fb.done { background: #FFFFFF; border-left: 3px solid #C7922C; color: #1a2340; }
+
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 14px; }
+    .widget-reset:hover { background: #FDF3E3; }
+</style>
+</head>
+<body>
+
+<div class="optima-widget" id="sf">
+    <div class="widget-kicker">&#9889; TRY IT &middot; SOCIAL FACT OR PERSONAL CHOICE?</div>
+    <div class="widget-question">Eight behaviours. Decide which are social facts and which are genuinely personal choices.</div>
+    <div class="widget-help">Tap a behaviour to select it, then tap a bin. Some of these feel like choices and are not. Those are the ones worth getting wrong.</div>
+
+    <div class="crit">
+        Test each one against Durkheim's three criteria from <b>Rules of Sociological Method</b> I. A social fact is
+        <b>external</b> (it existed before you and you did not invent it), <b>general</b> (it holds across the group, not just for you),
+        and <b>constraining</b> (it pushes back when you act against it). All three must hold.
+    </div>
+
+    <div class="sf-progress" id="sf-progress">0 of 8 placed</div>
+
+    <div class="sf-items" id="sf-items">
+        <div class="sf-item" tabindex="0" data-id="i1" data-answer="fact"
+             data-fb="Social fact. English existed before you and will outlast you, it holds across the whole society, and it constrains you every time you try to say something it has no word for. You did not choose it in any sense."
+             data-hint="Ask the three questions. Did you invent it? Does it hold for everyone around you? Does it push back? All three have the same answer here.">
+            Speaking English as your first language
+        </div>
+
+        <div class="sf-item" tabindex="0" data-id="i2" data-answer="choice"
+             data-fb="Personal choice. Mealtimes and what counts as food are social facts, but which of two available dishes you want tonight is not general and nothing resists you if you pick the other one."
+             data-hint="This one really is yours. Nothing external holds across the group here, and nothing pushes back whichever you pick.">
+            Choosing pasta rather than pizza for dinner tonight
+        </div>
+
+        <div class="sf-item" tabindex="0" data-id="i3" data-answer="fact"
+             data-fb="Social fact, and this is the hardest one. The decision to attend may be entirely yours. The practice is not: the service has a form, a day, and a set of expectations that existed before you and would continue without you. Durkheim's point is that a freely chosen participation in a social fact is still participation in a social fact."
+             data-hint="Separate the decision from the thing decided about. You may choose whether to attend. Did you choose what happens when you get there, or when it happens?">
+            Attending a weekly religious service
+        </div>
+
+        <div class="sf-item" tabindex="0" data-id="i4" data-answer="choice"
+             data-fb="Personal choice. Taste in colour has no general force behind it and violating it costs nothing. Note that this is rarer than students expect: most preferences turn out to have social shape once you look."
+             data-hint="Does anyone notice or mind? Is there any group-wide expectation being violated?">
+            Preferring the colour blue to green
+        </div>
+
+        <div class="sf-item" tabindex="0" data-id="i5" data-answer="fact"
+             data-fb="Social fact. The feeling is genuinely yours, but the standard producing it is not. Durkheim would say you have internalised an external constraint so thoroughly that it now arrives as an emotion. That is exactly how social facts hide."
+             data-hint="Who taught you to feel this? You did not decide that burping at dinner is embarrassing, yet you reliably feel it. Where did the standard come from?">
+            Feeling embarrassed when you burp at a formal dinner
+        </div>
+
+        <div class="sf-item" tabindex="0" data-id="i6" data-answer="fact"
+             data-fb="Social fact. The requirement is external and general, and it constrains: you cannot opt out without consequence. Which language you were offered was also decided for you by people you never met."
+             data-hint="You may have enjoyed it, but did you set the requirement? Could you have declined without cost?">
+            Studying a second language because your school required it
+        </div>
+
+        <div class="sf-item" tabindex="0" data-id="i7" data-answer="choice"
+             data-fb="Personal choice. There is no general expectation about tonight specifically and nothing resists you. Compare it with the previous item: the difference is that no one else is involved in enforcing this."
+             data-hint="Is there a group-wide rule about tonight in particular? Does anything push back?">
+            Deciding to stay up an hour later than usual tonight
+        </div>
+
+        <div class="sf-item" tabindex="0" data-id="i8" data-answer="fact"
+             data-fb="Social fact. Try refusing an offered handshake and you will feel the constraint immediately, which is precisely Durkheim's test. The gesture is external, general, and enforced by nothing more than shared expectation, which turns out to be enough."
+             data-hint="Imagine refusing one, in front of the person offering. What happens? That reaction is the constraint.">
+            Shaking hands when you are introduced to someone
+        </div>
+    </div>
+
+    <div class="sf-bins" id="sf-bins">
+        <div class="sf-bin" data-bin="fact">
+            <div class="sf-bin-name">Social Fact</div>
+            <div class="sf-bin-sub">External, general, and constraining. All three.</div>
+            <div class="sf-bin-count" id="count-fact"></div>
+        </div>
+        <div class="sf-bin" data-bin="choice">
+            <div class="sf-bin-name">Personal Choice</div>
+            <div class="sf-bin-sub">Genuinely yours. Nothing general, nothing pushing back.</div>
+            <div class="sf-bin-count" id="count-choice"></div>
+        </div>
+    </div>
+
+    <div class="sf-fb" id="sf-fb"></div>
+    <button class="widget-reset" id="sf-reset">Reset</button>
+</div>
+
+<script>
+(function () {
+  var itemsEl = document.getElementById('sf-items');
+  var binsEl  = document.getElementById('sf-bins');
+  var fbEl    = document.getElementById('sf-fb');
+  var progEl  = document.getElementById('sf-progress');
+  var selected = null;
+  var placed = 0;
+  var tally = { fact: 0, choice: 0 };
+
+  function items() { return Array.prototype.slice.call(itemsEl.querySelectorAll('.sf-item')); }
+  function bins()  { return Array.prototype.slice.call(binsEl.querySelectorAll('.sf-bin')); }
+
+  function say(kind, msg) { fbEl.className = 'sf-fb show ' + kind; fbEl.textContent = msg; }
+
+  function clearSelection() {
+    items().forEach(function (i) { i.classList.remove('selected'); });
+    bins().forEach(function (b) { b.classList.remove('armed'); });
+    selected = null;
+  }
+
+  function select(el) {
+    if (el.classList.contains('done')) return;
+    if (selected === el) { clearSelection(); return; }
+    clearSelection();
+    selected = el;
+    el.classList.add('selected');
+    bins().forEach(function (b) { b.classList.add('armed'); });
+    say('done', 'Selected. Now choose a bin.');
+  }
+
+  function attempt(el, bin) {
+    if (!el || !bin) return;
+    var right = el.dataset.answer === bin.dataset.bin;
+    if (right) {
+      el.classList.remove('selected');
+      el.classList.add('done');
+      placed++;
+      tally[bin.dataset.bin]++;
+      document.getElementById('count-' + bin.dataset.bin).textContent = tally[bin.dataset.bin] + ' placed';
+      progEl.textContent = placed + ' of 8 placed';
+      clearSelection();
+      if (placed === 8) {
+        say('correct', 'All eight placed. Notice how few turned out to be genuinely personal. That is Durkheim’s claim in Rules of Sociological Method I: the things that feel most like private preference are usually social facts you have internalised so completely that they arrive as taste, or as feeling, rather than as rules.');
+      } else {
+        say('correct', el.dataset.fb);
+      }
+    } else {
+      say('incorrect', el.dataset.hint);
+      clearSelection();
+    }
+  }
+
+  itemsEl.addEventListener('click', function (e) {
+    var el = e.target.closest('.sf-item');
+    if (el) select(el);
+  });
+  itemsEl.addEventListener('keydown', function (e) {
+    var el = e.target.closest('.sf-item');
+    if (el && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); select(el); }
+  });
+  binsEl.addEventListener('click', function (e) {
+    var b = e.target.closest('.sf-bin');
+    if (!b) return;
+    if (!selected) { say('done', 'Select a behaviour first, then choose a bin.'); return; }
+    attempt(selected, b);
+  });
+
+  document.getElementById('sf-reset').addEventListener('click', function () {
+    placed = 0; tally = { fact: 0, choice: 0 };
+    progEl.textContent = '0 of 8 placed';
+    document.getElementById('count-fact').textContent = '';
+    document.getElementById('count-choice').textContent = '';
+    items().forEach(function (i) { i.classList.remove('selected', 'done'); });
+    bins().forEach(function (b) { b.classList.remove('armed'); });
+    fbEl.className = 'sf-fb'; fbEl.textContent = '';
+    selected = null;
+  });
+})();
+</script>
+
+</body>
+</html>

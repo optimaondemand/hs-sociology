@@ -1,0 +1,376 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Q2 · Week 12 · Lesson 12.02 — "Social Class: Marx and Weber Compared"
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS.
+
+      *** R2 REBUILD (reviewer instruction) ***
+      The reviewer's revision note reads: "Rewrite lesson 12.02 around Weber's
+      essay 'Class, Status, Party' instead of 'Status Groups and Classes.'"
+      This lesson and the paired Thursday source guide (source-12-b.html) were
+      both rewritten around "Class, Status, Party" accordingly. The master's
+      original prose already described class/status/party in general terms and
+      needed only an inline citation naming the actual assigned essay, not a
+      conceptual rewrite; Weber's three-dimensional argument is the same
+      argument whether cited to "Status Groups and Classes" (Economy and
+      Society II.IV) or to "Class, Status, Party" (From Max Weber, ch. VII).
+      See source-12-b.html's build comment for the full citation note.
+
+      Standard: SS.912.S.6.4, SS.912.S.6.5
+      Objective: Students will distinguish Marx's economic account of class
+                from Weber's multi-dimensional account, identify the
+                limitations of each, and apply both to contemporary social
+                stratification.
+      Source: Sociology_Course_Master.html, Lesson 12.02. Prose preserved
+              verbatim except for the R5 label strip, an inline citation to
+              "Class, Status, Party" where the master said "Weber" generically,
+              and the flip-card exercise replacing what would otherwise be a
+              bare list of examples.
+
+      DASH-AS-COLON REPAIR: none required. Checked by hand; no two-colon
+      sentences in the master's Week 12 lesson prose for 12.02.
+
+      *** NO WIDGET BUILT THIS WEEK, BY INSTRUCTION ***
+      The master specifies a fourth course widget for Week 12, the Weberian
+      stratification explorer (manifest.json weeks[11].widget_notes[0]): move
+      a hypothetical individual across class/status/party and observe life-
+      chance effects, with at least four pre-built scenarios. That widget is
+      being built separately and is NOT part of this pass. A marked HTML
+      comment below shows exactly where its iframe belongs. Until it exists,
+      a flip-card exercise below covers similar ground by hand so the lesson
+      is not left with a hole in it.
+
+      WIDGET ROTATION: 12.01 used single-select rows. 12.02 uses flip cards.
+      No engine repeats within the week. Flip cards are non-evaluative by
+      design (this engine has no data-correct), so the "vary correct-answer
+      indices" rule does not apply to it.
+      Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Lesson 12.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS — byte-consistent with references/widgets.md ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+
+    /* ===== Core visual: three independent dimensions ===== */
+    .dim { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
+    .dim-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .dim-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
+    .dim-row { display: flex; gap: 12px; }
+    .dim-col { flex: 1; background: rgba(255,255,255,0.07); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 15px 16px; }
+    .dim-n { font-size: 11px; letter-spacing: 0.5px; color: #55C8E8; margin-bottom: 6px; }
+    .dim-h { font-size: 16px; color: #ffffff; margin-bottom: 7px; }
+    .dim-b { font-size: 13px; color: rgba(255,255,255,0.78); line-height: 1.5; }
+    .dim-note { margin-top: 16px; padding-top: 13px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.6; text-align: center; font-style: italic; }
+
+    .kt { background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 13px 17px; margin-bottom: 9px; }
+    .kt-t { font-size: 16px; color: #0E1C42; margin-bottom: 4px; }
+    .kt-d { font-size: 16px; color: #1a2340; line-height: 1.55; }
+
+    .flipgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; margin-top: 4px; }
+    .ow-flip-front { font-size: 15px; color: #0E1C42; line-height: 1.5; }
+    .ow-flip-back { font-size: 14px; line-height: 1.55; text-align: left; }
+    .ow-flip-tag { font-size: 10px; letter-spacing: 0.4px; color: #8a7a55; margin-bottom: 6px; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 12</div>
+        <div style="font-size: 12px; color: #666;">Division of Labor and Social Class</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 12.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Social Class: Marx and Weber Compared</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Division of Labor and Social Class</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 12.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Social Class: Marx and Weber Compared</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Where Do You Fit?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Every known human society has been stratified, organized into layers or ranks that differ in their access to resources, prestige, and power. The sociological study of stratification asks how these hierarchies are organized, how they reproduce themselves across generations, how they shape individual experience, and whether and how they can be changed. Marx and Weber are the two towering figures in the sociology of stratification, and their differences are as instructive as their points of agreement.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish Marx's single-axis account of class from the three-dimensional account Weber sets out in "Class, Status, Party."</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> identify a case where class, status, and party diverge, and explain what a purely class-based account would miss about it.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> evaluate which account better explains a case of your own choosing, and defend the criterion you used to judge "better."</div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 1: KEY TERMS ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; KEY TERMS</div>
+
+        <div class="kt"><div class="kt-t">Class (Marx)</div><div class="kt-d">A group of people who share the same relationship to the means of production. Marx identifies two primary classes in capitalist society: the bourgeoisie, who own the means of production, and the proletariat, who own only their labor power. Class is an objective, economic category.</div></div>
+        <div class="kt"><div class="kt-t">Class (Weber)</div><div class="kt-d">A group of people who share the same "life chances" in the market, the same probability of obtaining desired goods and achieving desired life outcomes through economic exchange. Weber's class is a market category, not a production category.</div></div>
+        <div class="kt"><div class="kt-t">Status Group</div><div class="kt-d">Weber's term for a group defined by shared social honor or prestige rather than economic position. Status groups may or may not correspond to economic classes.</div></div>
+        <div class="kt"><div class="kt-t">Party</div><div class="kt-d">Weber's term for a group organized around the acquisition of power. Parties are distinct from both classes (economic) and status groups (prestige), oriented instead toward influence and decision-making in a community.</div></div>
+        <div class="kt"><div class="kt-t">Social Mobility</div><div class="kt-d">Movement between strata in a stratification system. Upward mobility means moving to a higher stratum, downward mobility means moving to a lower one. Open stratification systems permit relatively free mobility; closed systems, castes and estates, restrict it.</div></div>
+    </div>
+
+    <!-- ============================ PART 2 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; MARX: CLASS AS THE ENGINE OF HISTORY</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">For Marx, class is the fundamental social division and the engine of historical change. Every society organized around private ownership of the means of production will divide into those who own, the ruling class, and those who do not, the exploited class. The specific form this division takes varies across epochs: masters and slaves in the ancient world, lords and serfs in feudalism, bourgeoisie and proletariat in capitalism, the argument you read last week in the <em>Manifesto</em>, Part I. But the structural logic is always the same. Those who control the means of production extract surplus from those who do not, and the cultural, legal, and political institutions of each epoch serve primarily to legitimize and maintain this extraction.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">For Marx, class is not primarily about income or lifestyle but about structural position in the production process. A bourgeois who lost all her money would still be a member of the bourgeoisie if she owned productive property, and a proletarian who won the lottery would still be a proletarian if she then had to return to selling her labor. Class is about ownership, not wealth per se.</p>
+    </div>
+
+    <!-- ============================ PART 3 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; WEBER: THREE DIMENSIONS OF STRATIFICATION</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Weber accepts much of Marx's analysis but argues, in his essay "Class, Status, Party," that it is incomplete. Social stratification, he contends, has three distinct dimensions that do not always align: class, one's economic position in the market; status, one's social honor and prestige; and party, one's organized political power and influence. These dimensions can reinforce each other. A wealthy banker might have high status and political influence. But they can also diverge. A Catholic priest might have high status but no market-defined class. An ethnic minority might have wealth but low status.</p>
+
+        <div class="dim">
+            <div class="dim-title">THREE INDEPENDENT AXES</div>
+            <div class="dim-sub">Weber, "Class, Status, Party." A person's position can be high on one and low on another.</div>
+            <div class="dim-row">
+                <div class="dim-col">
+                    <div class="dim-n">DIMENSION 1</div>
+                    <div class="dim-h">Class</div>
+                    <div class="dim-b">Market situation. Your life chances in the economy: what you can obtain, and how reliably.</div>
+                </div>
+                <div class="dim-col">
+                    <div class="dim-n">DIMENSION 2</div>
+                    <div class="dim-h">Status</div>
+                    <div class="dim-b">Social honor. How you are esteemed or scorned by others, independent of what you own.</div>
+                </div>
+                <div class="dim-col">
+                    <div class="dim-n">DIMENSION 3</div>
+                    <div class="dim-h">Party</div>
+                    <div class="dim-b">Organized power. Your capacity to act with others toward a shared goal, a cause or a following.</div>
+                </div>
+            </div>
+            <div class="dim-note">Marx collapses all three into the first. Weber's claim is that the other two have lives of their own.</div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">This multi-dimensional account has important practical implications. A purely economic class analysis would predict that a wealthy immigrant who is socially discriminated against would join forces with poor workers of the dominant ethnicity, since they share the same economic interests as non-owners. But in practice, this rarely happens: status group solidarity, ethnic, religious, racial, often overrides class solidarity. Weber's three-dimensional analysis can explain this. Marx's cannot easily.</p>
+    </div>
+
+    <!-- ============================ PART 4: FUTURE WIDGET SLOT + INTERIM FLIP CARDS ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; MAP FIVE PEOPLE ACROSS THREE DIMENSIONS</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">For each person below, ask Weber's three questions: what is their market position, what is their social honor, and do they hold organized power? Click a card to see the analysis.</p>
+
+        <!--
+            WIDGET 4 ACTIVATED 2026-08-07 by the lead session. The placeholder that stood here
+            has been replaced by the live iframe below. Spec: manifest.json
+            weeks[11].widget_notes[0]. Built with six preset scenarios rather than the four the
+            brief asked for, covering aligned-top, aligned-bottom, aligned-middle, and three
+            distinct patterns of divergence.
+
+            The flip-card exercise that follows is KEPT deliberately. The builder wrote it as an
+            interim stand-in, but the two do different work and the order matters: the widget
+            lets a student build any combination and read what it means, and the cards then ask
+            them to predict alignment before checking. Explore first, commit second.
+        -->
+
+        <iframe class="wframe" src="../_widgets/weberian-stratification/index.html"
+                height="1120" title="Weberian stratification explorer" loading="lazy"></iframe>
+
+        <p style="font-size: 15px; color: #4a5a78; line-height: 1.6; margin: 10px 0 18px 0;">Nothing here is recorded or graded. Try to build a person the single-axis model cannot describe, then read what the panel says about why.</p>
+
+        <div class="optima-widget">
+            <div class="widget-kicker">&#9889; TRY IT &middot; ALIGNED OR DIVERGENT?</div>
+            <div class="widget-question">Click each card. Decide before you flip it whether you expect this person's three dimensions to line up or pull apart.</div>
+
+            <div class="flipgrid">
+                <div class="ow-flip">
+                    <div class="ow-flip-front"><div class="ow-flip-tag">CARD 1</div>A tenured professor, modest salary, widely respected, whose opinion pieces shape public debate.</div>
+                    <div class="ow-flip-back"><div class="ow-flip-tag">ANALYSIS</div><strong>Class:</strong> middling, salaried, not propertied. <strong>Status:</strong> high, honored as an expert. <strong>Party:</strong> real but indirect, through shaping opinion rather than organized following. Class and status diverge here, which income alone would miss.</div>
+                </div>
+                <div class="ow-flip">
+                    <div class="ow-flip-front"><div class="ow-flip-tag">CARD 2</div>A wealthy but widely distrusted moneylender, feared rather than respected, with no political organization behind him.</div>
+                    <div class="ow-flip-back"><div class="ow-flip-tag">ANALYSIS</div><strong>Class:</strong> high, strong market position. <strong>Status:</strong> low, wealth gained this way earns no honor and may cost it. <strong>Party:</strong> essentially none. A textbook case of class and status pulling in opposite directions.</div>
+                </div>
+                <div class="ow-flip">
+                    <div class="ow-flip-front"><div class="ow-flip-tag">CARD 3</div>A labor organizer, modest personal income, well liked in her neighborhood, elected to the city council.</div>
+                    <div class="ow-flip-back"><div class="ow-flip-tag">ANALYSIS</div><strong>Class:</strong> modest, similar to the workers she represents. <strong>Status:</strong> solidly respected locally. <strong>Party:</strong> high, organized political power that her income alone would never predict.</div>
+                </div>
+                <div class="ow-flip">
+                    <div class="ow-flip-front"><div class="ow-flip-tag">CARD 4</div>A recently arrived immigrant physician, high income, respected by colleagues, excluded from certain social clubs, without full political standing yet.</div>
+                    <div class="ow-flip-back"><div class="ow-flip-tag">ANALYSIS</div><strong>Class:</strong> high. <strong>Status:</strong> mixed, professional respect alongside social exclusion on other grounds. <strong>Party:</strong> low, no full political voice. This is close to Weber's own example of why one axis cannot capture what is happening to her.</div>
+                </div>
+                <div class="ow-flip">
+                    <div class="ow-flip-front"><div class="ow-flip-tag">CARD 5</div>A member of an old aristocratic family whose fortune was lost two generations ago.</div>
+                    <div class="ow-flip-back"><div class="ow-flip-tag">ANALYSIS</div><strong>Class:</strong> low by current market position. <strong>Status:</strong> still elevated, inherited honor can outlast the property that once justified it. <strong>Party:</strong> variable, sometimes retained through old networks. Status is lagging class here, a case Marx's single axis has trouble predicting.</div>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ============================ PART 5 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; WHICH ACCOUNT IS RIGHT?</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Neither, entirely. Marx captures the importance of ownership and structural position in shaping life chances; he is right that economic power is a major determinant of social position. But his reduction of all stratification to class obscures the independent influence of prestige and political power. Weber captures the multi-dimensionality of stratification and explains many phenomena that class analysis alone cannot, but his account is less powerful at explaining systematic, long-run patterns of exploitation and structural inequality. The most adequate account of stratification uses both frameworks: Marxian analysis to understand structural economic power, Weberian analysis to understand the full complexity of social position in all its dimensions.</p>
+
+        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0;">
+            <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; In your notebook, name a real case where you think class, status, and party diverge for someone you know of. Then open this.
+            </summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
+                There is no single right answer, but test your case against Marx's likely reply: he would say that an apparent divergence is usually temporary or superficial, and that status and party eventually realign with underlying economic position given enough time. Weber would say some divergences are stable for generations, as with the aristocratic family in Card 5 above. The genuinely hard question is not whether divergence exists momentarily, everyone agrees it does, but whether it can persist indefinitely without economic position eventually reshaping it. That is close to the actual disagreement between a Marxian and a Weberian sociologist, and it is not a question this lesson can settle for you.
+            </div>
+        </details>
+    </div>
+
+    <!-- What You'll Do Next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 12B: Weber</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your Thursday reading guide points you to the essay this lesson is built on: "Class, Status, Party." The guide names exactly where to find it and what to read, since the translation is not reproduced here.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Sociological Journal 12</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Due Thursday, scored on completion this week, no peer reply required. You will apply Weber's three dimensions to a group in contemporary American society.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wrap-up -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Marx gives you one axis and a theory of history to go with it. Weber gives you three axes and no single story about which one wins in the end. Neither choice is free. Marx buys explanatory power for large-scale historical change at the cost of flattening cases like the ones you just sorted. Weber buys accuracy about individual cases at the cost of a tidy master narrative. Facing inequality honestly, this week's virtue, means resisting the temptation to pick whichever account makes the world simpler rather than whichever account fits the case in front of you.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 12.02 &middot; Social Class: Marx and Weber Compared</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME — one delegated listener drives every engine ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite. Try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>

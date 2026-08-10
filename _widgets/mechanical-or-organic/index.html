@@ -1,0 +1,220 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Widget 3 of 4: "Mechanical or Organic?"
+
+    SPEC SOURCE: Sociology_Course_Master.html, Week 4 widget-note —
+      "present six brief descriptions of social situations and ask students to
+       identify which type of solidarity each exemplifies, with feedback.
+       iframe-embedded after the Key Terms section of Lesson 4.01."
+
+    REGISTER: HONORS. The default student misreading is that mechanical means
+    old and organic means modern. Three of the six items are deliberately modern
+    situations that are mechanically solidary (a monastery, an immigrant
+    community inside a large city, a village that still exists). Getting those
+    "wrong" is the intended experience, and the closing synthesis names the
+    misreading directly: the two types are forms of cohesion, not eras, and a
+    modern society is full of mechanical pockets.
+
+    Durkheim's law test is offered as the secondary cue, since he ties solidarity
+    type to law type in Division of Labour I.2-3: repressive/expressive law goes
+    with mechanical, restitutive law with organic.
+
+    ARCHITECTURE: same click-to-assign engine as widgets 1 and 2, both already
+    probe-verified. Wrong answers return the item to the pool rather than locking.
+
+    ANSWER SPREAD: M,O,O,M,M,O. Deliberately not alternating and not blocked.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Mechanical or Organic?</title>
+<style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 16px; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; color: #0E1C42; }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 0 auto; max-width: 940px; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 6px; line-height: 1.55; }
+    .widget-help { font-size: 14px; color: #4a5a78; margin-bottom: 14px; line-height: 1.55; }
+
+    .cue { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 11px 15px; margin-bottom: 16px; font-size: 14px; color: #1a2340; line-height: 1.6; }
+    .cue b { color: #0E1C42; }
+
+    .mo-progress { font-size: 13px; color: #1B6A94; margin-bottom: 12px; }
+
+    .mo-items { display: flex; flex-direction: column; gap: 9px; margin-bottom: 18px; }
+    .mo-item { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 15px; cursor: pointer; transition: all 0.15s; font-size: 16px; line-height: 1.55; color: #1a2340; }
+    .mo-item:hover { border-color: #55C8E8; background: #FCFDFF; }
+    .mo-item:focus { outline: 2px solid #2196D0; outline-offset: 2px; }
+    .mo-item.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .mo-item.done { opacity: 0.4; cursor: default; border-left-color: #2A9D5C; }
+
+    .mo-bins { display: flex; gap: 12px; }
+    .mo-bin { flex: 1; background: #FFFFFF; border: 1.5px dashed #D0D9E8; border-radius: 8px; padding: 16px; min-height: 104px; cursor: pointer; transition: all 0.15s; }
+    .mo-bin:hover, .mo-bin.armed { border-color: #2196D0; background: #F7FCFE; }
+    .mo-bin-name { font-size: 17px; color: #0E1C42; margin-bottom: 3px; }
+    .mo-bin-sub { font-size: 12px; color: #6b7a99; line-height: 1.45; margin-bottom: 8px; }
+    .mo-bin-count { font-size: 13px; color: #1A6B3D; }
+
+    .mo-fb { border-radius: 4px; padding: 11px 15px; font-size: 15px; line-height: 1.6; margin-top: 14px; display: none; }
+    .mo-fb.show { display: block; }
+    .mo-fb.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .mo-fb.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .mo-fb.done { background: #FFFFFF; border-left: 3px solid #C7922C; color: #1a2340; }
+
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 14px; }
+    .widget-reset:hover { background: #FDF3E3; }
+</style>
+</head>
+<body>
+
+<div class="optima-widget" id="mo">
+    <div class="widget-kicker">&#9889; TRY IT &middot; MECHANICAL OR ORGANIC?</div>
+    <div class="widget-question">Six situations. Decide which kind of solidarity holds each one together.</div>
+    <div class="widget-help">Tap a situation, then tap a bin. Do not sort by how modern the situation sounds. Sort by what actually does the binding.</div>
+
+    <div class="cue">
+        <b>The question to ask:</b> are these people bound together because they are <b>alike</b>, or because they <b>need each other to do different things</b>?
+        Durkheim gives a second cue in <b>The Division of Labour</b> I.2 and I.3: look at what happens when someone breaks a rule.
+        Mechanical solidarity punishes to reaffirm who we are. Organic solidarity requires compensation to put things back.
+    </div>
+
+    <div class="mo-progress" id="mo-progress">0 of 6 sorted</div>
+
+    <div class="mo-items" id="mo-items">
+        <div class="mo-item" tabindex="0" data-id="m1" data-answer="mech"
+             data-fb="Mechanical. Everyone does the same work, holds the same beliefs, and the response to a rule-breaker is public shaming, which repairs nothing and declares something. That is expressive punishment, Durkheim's signature of solidarity by likeness."
+             data-hint="Look at the punishment. Does the shaming compensate anyone for anything, or does it announce something about the group?">
+            A farming village where nearly everyone does the same work, attends the same church, and deals with a rule-breaker through public shaming.
+        </div>
+
+        <div class="mo-item" tabindex="0" data-id="m2" data-answer="org"
+             data-fb="Organic. Surgeons, nurses, technicians, and cleaners do entirely different work, and the hospital functions only because each depends on the others. The bond is difference, coordinated."
+             data-hint="Are these people similar to one another? If not, what is holding them in the same building?">
+            A hospital where surgeons, nurses, technicians, and cleaners each do work the others cannot do, and none of it functions alone.
+        </div>
+
+        <div class="mo-item" tabindex="0" data-id="m3" data-answer="org"
+             data-fb="Organic. The court is not denouncing anybody. It is restoring a disrupted arrangement so that interdependence can continue. Durkheim calls this restitutive law, and he treats it as the legal fingerprint of organic solidarity."
+             data-hint="Nobody is being denounced here. Ask what the ruling is actually for.">
+            A court settles a contract dispute by requiring one company to compensate another for a missed delivery.
+        </div>
+
+        <div class="mo-item" tabindex="0" data-id="m4" data-answer="mech"
+             data-fb="Mechanical, and monasteries still exist. The members are bound by being alike: same rule, same hours, same dress, same purpose. Nothing about the calendar year makes a community organic."
+             data-hint="This one is contemporary, which is exactly why it is here. Ignore the date and ask what binds these people.">
+            A monastery whose members follow an identical rule, wear the same habit, keep the same hours, and pray the same words daily.
+        </div>
+
+        <div class="mo-item" tabindex="0" data-id="m5" data-answer="mech"
+             data-fb="Mechanical, inside an organic society. This is the most important item here. A large modern city is held together organically at the level of the whole, and it is full of communities held together by likeness. The two forms coexist in the same place at the same time."
+             data-hint="The city around them is organic. That is not the question. What binds this particular community to itself?">
+            A tight immigrant community inside a large city, whose members share a language, a religion, and detailed expectations of one another.
+        </div>
+
+        <div class="mo-item" tabindex="0" data-id="m6" data-answer="org"
+             data-fb="Organic, at maximum extension. Thousands of specialists who will never meet, coordinated into one object. Durkheim's claim is that this dependence is itself a social bond, which is why he thought specialisation creates solidarity instead of destroying it."
+             data-hint="None of these people know each other. Does that mean they are unconnected, or connected in a particular way?">
+            A phone that reaches a buyer only because miners, chemists, engineers, shippers, and retailers who will never meet each did one part.
+        </div>
+    </div>
+
+    <div class="mo-bins" id="mo-bins">
+        <div class="mo-bin" data-bin="mech">
+            <div class="mo-bin-name">Mechanical solidarity</div>
+            <div class="mo-bin-sub">Bound by likeness. Strong shared conscience. Punishment reaffirms who we are.</div>
+            <div class="mo-bin-count" id="count-mech"></div>
+        </div>
+        <div class="mo-bin" data-bin="org">
+            <div class="mo-bin-name">Organic solidarity</div>
+            <div class="mo-bin-sub">Bound by difference. Specialised roles. Law restores what was disrupted.</div>
+            <div class="mo-bin-count" id="count-org"></div>
+        </div>
+    </div>
+
+    <div class="mo-fb" id="mo-fb"></div>
+    <button class="widget-reset" id="mo-reset">Reset</button>
+</div>
+
+<script>
+(function () {
+  var itemsEl = document.getElementById('mo-items');
+  var binsEl  = document.getElementById('mo-bins');
+  var fbEl    = document.getElementById('mo-fb');
+  var progEl  = document.getElementById('mo-progress');
+  var selected = null;
+  var placed = 0;
+  var tally = { mech: 0, org: 0 };
+
+  function items() { return Array.prototype.slice.call(itemsEl.querySelectorAll('.mo-item')); }
+  function bins()  { return Array.prototype.slice.call(binsEl.querySelectorAll('.mo-bin')); }
+  function say(kind, msg) { fbEl.className = 'mo-fb show ' + kind; fbEl.textContent = msg; }
+
+  function clearSelection() {
+    items().forEach(function (i) { i.classList.remove('selected'); });
+    bins().forEach(function (b) { b.classList.remove('armed'); });
+    selected = null;
+  }
+
+  function select(el) {
+    if (el.classList.contains('done')) return;
+    if (selected === el) { clearSelection(); return; }
+    clearSelection();
+    selected = el;
+    el.classList.add('selected');
+    bins().forEach(function (b) { b.classList.add('armed'); });
+    say('done', 'Selected. Now choose a bin.');
+  }
+
+  function attempt(el, bin) {
+    if (!el || !bin) return;
+    if (el.dataset.answer === bin.dataset.bin) {
+      el.classList.remove('selected');
+      el.classList.add('done');
+      placed++;
+      tally[bin.dataset.bin]++;
+      document.getElementById('count-' + bin.dataset.bin).textContent = tally[bin.dataset.bin] + ' sorted';
+      progEl.textContent = placed + ' of 6 sorted';
+      clearSelection();
+      if (placed === 6) {
+        say('correct', 'All six sorted. Now the thing worth taking away: three of these were contemporary and mechanically solidary. Mechanical and organic are not old and new. They are two ways a group can cohere, and a modern society runs on organic solidarity at the level of the whole while being full of mechanical pockets, from monasteries to families to close communities. Durkheim is describing forms, not eras. Any account that reads him as saying tradition died is reading him wrongly.');
+      } else {
+        say('correct', el.dataset.fb);
+      }
+    } else {
+      say('incorrect', el.dataset.hint);
+      clearSelection();
+    }
+  }
+
+  itemsEl.addEventListener('click', function (e) {
+    var el = e.target.closest('.mo-item');
+    if (el) select(el);
+  });
+  itemsEl.addEventListener('keydown', function (e) {
+    var el = e.target.closest('.mo-item');
+    if (el && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); select(el); }
+  });
+  binsEl.addEventListener('click', function (e) {
+    var b = e.target.closest('.mo-bin');
+    if (!b) return;
+    if (!selected) { say('done', 'Select a situation first, then choose a bin.'); return; }
+    attempt(selected, b);
+  });
+
+  document.getElementById('mo-reset').addEventListener('click', function () {
+    placed = 0; tally = { mech: 0, org: 0 };
+    progEl.textContent = '0 of 6 sorted';
+    document.getElementById('count-mech').textContent = '';
+    document.getElementById('count-org').textContent = '';
+    items().forEach(function (i) { i.classList.remove('selected', 'done'); });
+    bins().forEach(function (b) { b.classList.remove('armed'); });
+    fbEl.className = 'mo-fb'; fbEl.textContent = '';
+    selected = null;
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Appendices · Appendix B: M365 Setup and File Organization
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS. Tier 4 reference page, ungraded, GitHub-hosted. Shell (header /
+    metadata strip / footer / base CSS) copied byte-for-byte from
+    03_Development/week-03/module-map-03.html, per the appendix build brief.
+
+    CONTENT SOURCE: manifest.json appendices[2] ("Appendix B: M365 Setup and File
+    Organization Guide"). Substance preserved: the account-access steps, the OneDrive
+    folder structure, the file naming convention, the Canvas submission steps, and the
+    four M365 skills the course develops (Track Changes, Citations and Bibliography,
+    Table of Contents, Manage Styles). File naming pattern (LastName_FirstName_
+    AssignmentName_SOC12[_Draft/_Final]) is the master's own convention and is kept
+    unchanged, since this appendix's job is to state the school's file-handling rules,
+    not to redesign them.
+
+    Reformatted only: removed the master's literal step arrow glyph ("New -> Folder")
+    in favor of plain prose, tightened a few sentences that ran two clauses each ending
+    in a colon, and folded the assignment names into the four projects as this course
+    actually names them (Classical Thinker Profile, Community Institution Study,
+    Sociologist Case Study Reports, Community Flourishing Capstone), which the master's
+    original examples already matched.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Appendix B: M365 Setup</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    .wk { display: flex; gap: 10px; margin: 6px 0 4px 0; }
+    .day { flex: 1; border-radius: 8px; border: 1px solid #D0D9E8; overflow: hidden; }
+    .day-h { background: #0E1C42; color: #fff; font-size: 11px; letter-spacing: 0.6px; padding: 8px 10px; text-align: center; }
+    .day-b { padding: 12px 11px; min-height: 140px; }
+    .day-kind { font-size: 10px; letter-spacing: 0.5px; color: #1B6A94; margin-bottom: 5px; }
+    .day-t { font-size: 14px; color: #0E1C42; line-height: 1.45; margin-bottom: 8px; }
+    .day-due { font-size: 12px; color: #8a6a1d; background: #FDF3E3; border-radius: 4px; padding: 4px 7px; display: inline-block; line-height: 1.35; }
+    .day.rest .day-h { background: #6b7a99; }
+    .day.rest .day-b { color: #6b7a99; font-size: 13px; line-height: 1.5; }
+
+    .turn { width: 100%; border-collapse: collapse; font-size: 15px; margin: 6px 0; }
+    .turn th { background: #0E1C42; color: #fff; text-align: left; padding: 10px 13px; font-size: 12px; letter-spacing: 0.4px; font-weight: normal; }
+    .turn td { border: 1px solid #D0D9E8; padding: 10px 13px; color: #1a2340; line-height: 1.5; vertical-align: top; }
+    .turn tr:nth-child(even) td { background: #F8FAFD; }
+    .pill { display: inline-block; font-size: 11px; border-radius: 12px; padding: 3px 10px; letter-spacing: 0.3px; }
+    .p1 { background: #E8F6FB; color: #1B6A94; border: 1px solid #C5DCE5; }
+    .p2 { background: #FDF3E3; color: #8a6a1d; border: 1px solid #E8D6AE; }
+
+    .crit3 { display: flex; gap: 11px; margin: 12px 0 0 0; }
+    .crit3 div { flex: 1; background: rgba(255,255,255,0.08); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 12px 14px; }
+    .crit3 .c-n { font-size: 15px; color: #ffffff; margin-bottom: 4px; }
+    .crit3 .c-q { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.5; font-style: italic; }
+
+    /* numbered step list, matching the q-list pattern used in source guides */
+    .q-list { counter-reset: qq; list-style: none; padding: 0; margin: 0; }
+    .q-list li { counter-increment: qq; position: relative; padding-left: 40px; margin-bottom: 14px; font-size: 17px; color: #1a2340; line-height: 1.6; }
+    .q-list li::before { content: counter(qq); position: absolute; left: 0; top: 1px; width: 27px; height: 27px; border-radius: 50%; background: #0E1C42; color: #fff; font-family: "Segoe UI", sans-serif; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+
+    /* folder tree */
+    .tree { background: #0E1C42; border-radius: 10px; padding: 22px 28px; font-family: Consolas, "Courier New", monospace; font-size: 15px; color: rgba(255,255,255,0.9); line-height: 1.9; }
+    .tree .lvl1 { padding-left: 0; }
+    .tree .lvl2 { padding-left: 22px; color: #E0B562; }
+    .tree .lvl3 { padding-left: 44px; color: #55C8E8; }
+    .tree .lvl4 { padding-left: 66px; color: rgba(255,255,255,0.65); font-style: italic; }
+
+    .code { font-family: Consolas, "Courier New", monospace; background: #EEF1F8; border-radius: 5px; padding: 2px 7px; color: #0E1C42; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Section</div>
+        <div style="font-size: 17px; color: #0e1c42;">Appendices</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Reference</div>
+        <div style="font-size: 17px; color: #0e1c42;">Appendix B of 5</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Covers</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">File setup and submission</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Status</div>
+        <div style="font-size: 16px; color: #0e1c42;">Ungraded</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">APPENDIX B</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">M365 Setup and File Organization</div>
+        <div style="font-size: 16px; color: #666;">Set this up once, in your first week, and every later submission takes thirty seconds instead of ten minutes. This guide works whether you are starting the course on day one or joining mid-year.</div>
+    </div>
+
+    <!-- Accessing account -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128273; ACCESSING YOUR SCHOOL M365 ACCOUNT</div>
+        <ol class="q-list">
+            <li>Go to <span class="code">portal.office.com</span> and sign in with your Optima Academy school email address, not a personal Microsoft account. Every course file must live in your school OneDrive, because that is the only account Canvas can reach.</li>
+            <li>From the Microsoft 365 home page you can open Word, PowerPoint, Excel, and OneDrive directly in the browser. You may also download the desktop applications if you want the fuller feature set; either one works for this course.</li>
+            <li>If your school account will not sign in, do not switch to a personal account as a workaround. Files saved there cannot be submitted through the Canvas integration, and you will have redone the work for nothing. Go to the technical help section below instead.</li>
+        </ol>
+    </div>
+
+    <!-- Folder structure -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128193; YOUR ONEDRIVE FOLDER STRUCTURE</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">In your school OneDrive, build this structure if it does not already exist. Open OneDrive in the browser, create a new folder, and nest the next one inside it, repeating until you have all three levels.</p>
+        <div class="tree">
+            <div class="lvl1">OneDrive (school account)</div>
+            <div class="lvl2">Optima</div>
+            <div class="lvl3">Sociology</div>
+            <div class="lvl4">Sociology_2025-26 (every file you submit this year goes here)</div>
+        </div>
+    </div>
+
+    <!-- File naming -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128221; FILE NAMING CONVENTION</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Every file you submit in this course follows one pattern:</p>
+        <div style="background: #EEF1F8; border-radius: 8px; padding: 16px 20px; margin-bottom: 14px; text-align: center;">
+            <span class="code" style="font-size: 16px;">LastName_FirstName_AssignmentName_SOC12[_Draft1 / _Final]</span>
+        </div>
+        <p style="font-size: 16px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">For example:</p>
+        <ul style="font-size: 16px; color: #1a2340; line-height: 1.9; margin: 0 0 14px 0; padding-left: 24px;">
+            <li><span class="code">Johnson_Maria_ThinkerProfile_SOC12_Draft1</span></li>
+            <li><span class="code">Johnson_Maria_ThinkerProfile_SOC12_Final</span></li>
+            <li><span class="code">Johnson_Maria_InstitutionStudy_SOC12_Final</span></li>
+            <li><span class="code">Johnson_Maria_CaseStudy_Weber_SOC12_Final</span></li>
+            <li><span class="code">Johnson_Maria_FlourishingCapstone_SOC12_Final</span></li>
+        </ul>
+        <p style="font-size: 16px; color: #1a2340; line-height: 1.65; margin: 0;">Never overwrite a draft. Save each new draft under its own name, <span class="code">_Draft1</span>, then <span class="code">_Draft2</span>, so your revision history stays intact. Your submitted version is always the one and only file labeled <span class="code">_Final</span>. Keep every draft and final in your <span class="code">Sociology_2025-26</span> folder.</p>
+    </div>
+
+    <!-- Submitting through Canvas -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9989; SUBMITTING THROUGH CANVAS</div>
+        <ol class="q-list">
+            <li>Open the assignment in Canvas and select Submit Assignment.</li>
+            <li>Select the Microsoft OneDrive tab if it is available, or upload the file directly.</li>
+            <li>Navigate to <span class="code">Optima &rarr; Sociology &rarr; Sociology_2025-26</span> and select your file.</li>
+            <li>Select Submit, then confirm you see the submission confirmation before you close the tab. A file you never confirmed is a file the gradebook does not know about.</li>
+        </ol>
+    </div>
+
+    <!-- M365 skills -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128187; THE M365 SKILLS THIS COURSE DEVELOPS</div>
+        <p style="font-size: 16px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">The four major projects ask you to use these Word features. Learn each one the first time it comes up and it is a habit by the Capstone.</p>
+        <table class="turn">
+            <tr><th>Skill</th><th>Where to find it</th><th>When you need it</th></tr>
+            <tr><td>Track Changes</td><td>Review tab &rarr; Track Changes</td><td>Revising a draft after facilitator feedback</td></tr>
+            <tr><td>Insert Citations and Bibliography</td><td>References tab &rarr; Insert Citation</td><td>Required for the Community Flourishing Capstone</td></tr>
+            <tr><td>Insert a Table of Contents</td><td>References tab &rarr; Table of Contents</td><td>Required for the Community Institution Study</td></tr>
+            <tr><td>Manage Styles</td><td>Home tab &rarr; Styles gallery</td><td>Use Heading 1 and Heading 2 consistently, so the Table of Contents and document navigation both work correctly</td></tr>
+        </table>
+    </div>
+
+    <!-- Technical help -->
+    <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; TECHNICAL HELP</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">If you have trouble accessing your school M365 account, contact Optima Academy technical support at the email or phone number in your student handbook. Do not switch to a personal Microsoft account as a workaround. Files kept in a personal account cannot be submitted through the Canvas integration, no matter how the file itself looks, so the workaround costs you time rather than saving it.</div>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Appendices</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Appendix B of 5 &middot; M365 Setup and File Organization</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+</body>
+</html>

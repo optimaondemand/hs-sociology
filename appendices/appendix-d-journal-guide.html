@@ -1,0 +1,214 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Appendices · Appendix D: Sociological Journal Guide
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS. Tier 4 reference page, ungraded, GitHub-hosted. Shell (header /
+    metadata strip / footer / base CSS) copied byte-for-byte from
+    03_Development/week-03/module-map-03.html, per the appendix build brief.
+
+    THE CORRECTION THIS APPENDIX MAKES. manifest.json appendices[4] (the master's
+    Appendix D) describes the journal as a single Tier 2 Canvas Discussion, graded
+    with peer response, every week for eighteen weeks. CLAUDE.md's "Tier balance"
+    section explains why that does not survive the 500:1 arithmetic (roughly four
+    teacher-hours per cycle against a Tier 2 budget of two to three) and rebalances
+    it: ODD weeks stay a Tier 2 Discussion with a required peer reply; EVEN weeks
+    become a Tier 1 completion-scored Canvas Assignment with no peer reply. This is
+    already built and live in every week's own module map (see, e.g.,
+    week-03/module-map-03.html's "Journal 2 needed no peer reply. Journal 3 does,"
+    and week-01 through week-18's journal-WW.md files). This appendix's job is to
+    state that alternation plainly in one place, since a student who only reads
+    individual weeks could otherwise conclude the journal is simply inconsistent
+    rather than following a fixed pattern, and might go looking for a discussion
+    board on a week when there is not one.
+
+    Everything else (what the journal is for, how to write a strong entry, length,
+    grading criteria per point value) is preserved from the master's Appendix D text,
+    reformatted, with the peer-response section rewritten to apply only to odd weeks
+    and a matching completion rubric added for even weeks, since the master had none
+    (it assumed every week graded the same way).
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Appendix D: Sociological Journal Guide</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    .wk { display: flex; gap: 10px; margin: 6px 0 4px 0; }
+    .day { flex: 1; border-radius: 8px; border: 1px solid #D0D9E8; overflow: hidden; }
+    .day-h { background: #0E1C42; color: #fff; font-size: 11px; letter-spacing: 0.6px; padding: 8px 10px; text-align: center; }
+    .day-b { padding: 12px 11px; min-height: 140px; }
+    .day-kind { font-size: 10px; letter-spacing: 0.5px; color: #1B6A94; margin-bottom: 5px; }
+    .day-t { font-size: 14px; color: #0E1C42; line-height: 1.45; margin-bottom: 8px; }
+    .day-due { font-size: 12px; color: #8a6a1d; background: #FDF3E3; border-radius: 4px; padding: 4px 7px; display: inline-block; line-height: 1.35; }
+    .day.rest .day-h { background: #6b7a99; }
+    .day.rest .day-b { color: #6b7a99; font-size: 13px; line-height: 1.5; }
+
+    .turn { width: 100%; border-collapse: collapse; font-size: 15px; margin: 6px 0; }
+    .turn th { background: #0E1C42; color: #fff; text-align: left; padding: 10px 13px; font-size: 12px; letter-spacing: 0.4px; font-weight: normal; }
+    .turn td { border: 1px solid #D0D9E8; padding: 10px 13px; color: #1a2340; line-height: 1.5; vertical-align: top; }
+    .turn tr:nth-child(even) td { background: #F8FAFD; }
+    .pill { display: inline-block; font-size: 11px; border-radius: 12px; padding: 3px 10px; letter-spacing: 0.3px; }
+    .p1 { background: #E8F6FB; color: #1B6A94; border: 1px solid #C5DCE5; }
+    .p2 { background: #FDF3E3; color: #8a6a1d; border: 1px solid #E8D6AE; }
+
+    .crit3 { display: flex; gap: 11px; margin: 12px 0 0 0; }
+    .crit3 div { flex: 1; background: rgba(255,255,255,0.08); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 12px 14px; }
+    .crit3 .c-n { font-size: 15px; color: #ffffff; margin-bottom: 4px; }
+    .crit3 .c-q { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.5; font-style: italic; }
+
+    .q-list { counter-reset: qq; list-style: none; padding: 0; margin: 0; }
+    .q-list li { counter-increment: qq; position: relative; padding-left: 40px; margin-bottom: 14px; font-size: 17px; color: #1a2340; line-height: 1.6; }
+    .q-list li::before { content: counter(qq); position: absolute; left: 0; top: 1px; width: 27px; height: 27px; border-radius: 50%; background: #0E1C42; color: #fff; font-family: "Segoe UI", sans-serif; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+
+    /* two-column week comparison */
+    .altcard { flex: 1; border-radius: 8px; padding: 16px 18px; }
+    .alt-odd { background: #E8F6FB; border-top: 4px solid #1B6A94; }
+    .alt-even { background: #FDF3E3; border-top: 4px solid #C7922C; }
+    .alt-h { font-size: 12px; letter-spacing: 0.5px; margin-bottom: 8px; }
+    .alt-odd .alt-h { color: #1B6A94; }
+    .alt-even .alt-h { color: #8a6a1d; }
+    .alt-b { font-size: 15px; color: #1a2340; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Section</div>
+        <div style="font-size: 17px; color: #0e1c42;">Appendices</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Reference</div>
+        <div style="font-size: 17px; color: #0e1c42;">Appendix D of 5</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Covers</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">The Sociological Journal, all 18 weeks</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Status</div>
+        <div style="font-size: 16px; color: #0e1c42;">Ungraded reference</div>
+    </div>
+</div>
+
+<!-- ===== BODY ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">APPENDIX D</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Sociological Journal Guide</div>
+        <div style="font-size: 16px; color: #666;">One journal entry every week, all eighteen weeks. Read this once, in Week 1, and the pattern will make sense for the rest of the course.</div>
+    </div>
+
+    <!-- What it's for -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; WHAT THE JOURNAL IS FOR</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The Sociological Journal trains a specific habit: applying a theoretical framework to something you actually observed, and moving between the personal and the structural, the specific and the general. It is not a diary, and it is not a summary of the week's lesson. It is where you practice sociological thinking about real social life, week after week, until it stops feeling like an assignment and starts feeling like a way of noticing things.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">By Week 18 you will have eighteen entries. Read together, they are a record of how your sociological vision developed across the course, and that record is worth more than any single week's grade.</p>
+    </div>
+
+    <!-- The two kinds of week: THE KEY CORRECTION -->
+    <div style="background: #0E1C42; border-radius: 10px; padding: 22px 26px; margin-bottom: 20px;">
+        <div style="font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px;">THE JOURNAL IS NOT THE SAME ASSIGNMENT EVERY WEEK</div>
+        <div style="font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; font-style: italic; margin-bottom: 16px;">Check which kind of week it is before you look for a discussion board that is not there.</div>
+        <div style="display: flex; gap: 14px;">
+            <div class="altcard alt-odd">
+                <div class="alt-h">ODD WEEKS (1, 3, 5, 7...)</div>
+                <div class="alt-b">A Canvas <strong>Discussion</strong>. Your entry is visible to classmates, and you must reply to one classmate's entry by the following Thursday. This is a graded discussion, not just a posting task.</div>
+            </div>
+            <div class="altcard alt-even">
+                <div class="alt-h">EVEN WEEKS (2, 4, 6, 8...)</div>
+                <div class="alt-b">A Canvas <strong>Assignment</strong>, scored on completion. You submit your entry directly; there is no peer reply this week, and none is expected.</div>
+            </div>
+        </div>
+        <p style="font-size: 14px; color: rgba(255,255,255,0.75); text-align: center; margin: 16px 0 0 0; line-height: 1.6;">Every week's Module Map states which kind that week is, so you never have to guess. The word count and the quality of thinking expected are the same either way; only the discussion and peer-reply requirement changes.</p>
+    </div>
+
+    <!-- How to write a strong entry -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9999;&#65039; HOW TO WRITE A STRONG ENTRY</div>
+        <ol class="q-list">
+            <li><strong>Name a concept.</strong> Identify one or more specific concepts from the week's lesson, along with the thinker who developed it. Do not write about "sociology" in general; write about a specific concept.</li>
+            <li><strong>Identify a specific situation.</strong> Choose something specific from your own observation or experience: not "social media in general" but one platform, one interaction, one moment. The more specific the example, the stronger the entry.</li>
+            <li><strong>Apply the concept.</strong> Show what the concept reveals about the situation that you would not see without it. Name the specific feature it explains.</li>
+            <li><strong>Complicate it.</strong> Say what the concept does not explain, or where it falls short. Acknowledging a framework's limits is more honest, and more useful, than applying it as though it were obviously correct.</li>
+            <li><strong>Conclude.</strong> State what you learned. Has your understanding of the situation, the concept, or your own social experience changed?</li>
+        </ol>
+    </div>
+
+    <!-- Length and format -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; LENGTH AND FORMAT</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Entries run 200 to 350 words, except on any week whose prompt states otherwise. Submit directly to the Canvas Discussion or Assignment for that week, not as a separate Word document. Write in full sentences and paragraphs, not bullet points. Proofread before you submit; your entry is read by your facilitator every week, and by a classmate on odd weeks.</p>
+    </div>
+
+    <!-- Peer response, odd weeks only -->
+    <div style="background: #FFFFFF; border-top: 3px solid #1B6A94; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 14px;">&#128172; PEER RESPONSE (ODD WEEKS ONLY)</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">On odd weeks, reply to one classmate's entry by the following Thursday. A strong reply does at least one of these:</p>
+        <ul style="font-size: 16px; color: #1a2340; line-height: 1.9; margin: 0 0 12px 0; padding-left: 24px;">
+            <li>Identifies a concept your classmate applied well, and explains why it works.</li>
+            <li>Offers an alternative or complementary framework that illuminates the same situation differently.</li>
+            <li>Raises a specific question that complicates the classmate's analysis.</li>
+        </ul>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">A reply that consists only of agreement or a compliment does not earn full credit. On even weeks, there is nothing to reply to, since even-week entries are not posted as discussions.</p>
+    </div>
+
+    <!-- Grading -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9989; GRADING</div>
+
+        <p style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 10px 0;"><strong>Odd weeks (Discussion, three-point scale, plus one point for the peer reply):</strong></p>
+        <table class="turn">
+            <tr><th>Points</th><th>What earns it</th></tr>
+            <tr><td>3 (full credit)</td><td>Submitted by the deadline, meets the word count, names and correctly applies at least one specific concept, and engages a specific situation with real analytical attention.</td></tr>
+            <tr><td>2 (partial credit)</td><td>Submitted, but thin, vague, or not genuinely applying a concept from the course.</td></tr>
+            <tr><td>0</td><td>Not submitted by the deadline, or off-topic.</td></tr>
+            <tr><td>+1 (peer reply)</td><td>Earned when the reply meets the peer-response criteria above.</td></tr>
+        </table>
+
+        <p style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 16px 0 10px 0;"><strong>Even weeks (Assignment, completion-scored, no peer reply):</strong></p>
+        <table class="turn">
+            <tr><th>Result</th><th>What earns it</th></tr>
+            <tr><td>Complete</td><td>Submitted by the deadline, meets the word count, and names and applies at least one specific concept to a specific situation. The bar for a completion score is genuine engagement, not polish; an entry that clearly did the thinking passes even if the prose is rougher than an odd-week discussion post.</td></tr>
+            <tr><td>Incomplete</td><td>Not submitted by the deadline, well under the word count, or does not engage a specific concept at all.</td></tr>
+        </table>
+    </div>
+
+    <!-- Course-long project -->
+    <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; THE JOURNAL AS A COURSE-LONG PROJECT</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Before you write your Week 18 entry, reread your Week 1 entry. Notice what has changed in how you analyze social life. Week 18 will ask you to reflect on that change directly. Across the semester the journal is not eighteen separate assignments; it is one document of your intellectual development, written eighteen weeks at a time.</div>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Appendices</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Appendix D of 5 &middot; Sociological Journal Guide</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+</body>
+</html>

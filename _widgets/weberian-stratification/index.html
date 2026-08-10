@@ -1,0 +1,210 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Widget 4 of 4: "Weberian stratification explorer"
+
+    SPEC SOURCE: Sociology_Course_Master.html, Week 12 widget-note —
+      "an interactive visualization in which students can move a hypothetical
+       individual across the three Weberian dimensions (class, status, party) and
+       observe how the combination changes their social position and life chances.
+       The widget should include at least four pre-built scenarios representing
+       different patterns of alignment and divergence (e.g., a wealthy low-status
+       ethnic minority; a poor high-status professional; a middle-class political
+       organizer). GitHub Pages hosted, iframe embedded in the Week 12 canvas page."
+
+    REGISTER: HONORS. The teaching payoff is not "here are three dimensions." It is
+    that the three can DIVERGE, and that a one-axis model cannot describe a person
+    whose position differs across them. The readout says so explicitly whenever the
+    three separate, and names the agreement when they align. Week 11 gives students
+    Marx; this is where Weber answers him.
+
+    Engine 6 (slider-driven visualiser) from references/widgets.md. Bespoke JS,
+    kept small. Reset restores all three axes and clears the scenario.
+
+    NEUTRALITY: presets are structural patterns, not political positions, per
+    CLAUDE.md. No preset endorses or attacks any group or party.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Class, Status, Party</title>
+<style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 16px; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; color: #0E1C42; }
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 0 auto; max-width: 940px; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 6px; line-height: 1.55; }
+    .widget-help { font-size: 14px; color: #4a5a78; margin-bottom: 16px; line-height: 1.55; }
+
+    .ws-axes { background: #0E1C42; border-radius: 9px; padding: 20px 22px; margin-bottom: 14px; }
+    .ws-axis { margin-bottom: 18px; }
+    .ws-axis:last-child { margin-bottom: 0; }
+    .ws-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px; }
+    .ws-name { font-size: 16px; color: #ffffff; }
+    .ws-val { font-size: 13px; color: #55C8E8; }
+    .ws-def { font-size: 12px; color: rgba(255,255,255,0.6); line-height: 1.45; margin-bottom: 9px; }
+    .ws-axis input[type=range] { width: 100%; accent-color: #55C8E8; }
+    .ws-ends { display: flex; justify-content: space-between; font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 2px; }
+
+    .ws-read { background: #FFFFFF; border: 1px solid #D0D9E8; border-top: 3px solid #C7922C; border-radius: 8px; padding: 16px 20px; margin-bottom: 14px; }
+    .ws-read-l { font-size: 11px; color: #c7922c; letter-spacing: 0.4px; margin-bottom: 8px; }
+    .ws-shape { font-size: 18px; color: #0E1C42; margin-bottom: 8px; }
+    .ws-body { font-size: 16px; color: #1a2340; line-height: 1.6; }
+    .ws-verdict { margin-top: 12px; padding-top: 11px; border-top: 1px solid #EEF1F8; font-size: 15px; line-height: 1.6; }
+    .ws-verdict.align { color: #1A6B3D; }
+    .ws-verdict.diverge { color: #8A1F16; }
+
+    .ws-presets { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 9px; margin-bottom: 6px; }
+    .ws-preset { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 7px; padding: 11px 13px; cursor: pointer; text-align: left; font-family: inherit; transition: all 0.15s; }
+    .ws-preset:hover { border-color: #55C8E8; background: #FCFDFF; }
+    .ws-preset.active { border-color: #0E1C42; background: #EEF1F8; }
+    .ws-preset b { display: block; font-size: 14px; color: #0E1C42; margin-bottom: 3px; font-weight: 600; }
+    .ws-preset span { font-size: 12px; color: #4a5a78; line-height: 1.45; }
+
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 12px; }
+    .widget-reset:hover { background: #FDF3E3; }
+</style>
+</head>
+<body>
+
+<div class="optima-widget" id="ws">
+    <div class="widget-kicker">&#9889; TRY IT &middot; CLASS, STATUS, PARTY</div>
+    <div class="widget-question">Weber says a person's position in society has three separate dimensions. Move each one and watch what happens.</div>
+    <div class="widget-help">Marx measured stratification on a single axis: whether you own the means of production. Weber's claim is that this is one axis of three, and that the three can pull apart. Try to build a person the single-axis model cannot describe.</div>
+
+    <div class="ws-axes">
+        <div class="ws-axis">
+            <div class="ws-head"><span class="ws-name">Class</span><span class="ws-val" id="v-class"></span></div>
+            <div class="ws-def">Your economic position. What you own, what you can sell, and what the market will give you for it. This is the axis Marx measured.</div>
+            <input type="range" id="s-class" min="0" max="4" step="1" value="2" />
+            <div class="ws-ends"><span>Owns nothing but labour</span><span>Owns productive property</span></div>
+        </div>
+        <div class="ws-axis">
+            <div class="ws-head"><span class="ws-name">Status</span><span class="ws-val" id="v-status"></span></div>
+            <div class="ws-def">Social honour. How much esteem your way of life commands from others, and who will associate with you as an equal. Money can buy goods; it cannot directly buy this.</div>
+            <input type="range" id="s-status" min="0" max="4" step="1" value="2" />
+            <div class="ws-ends"><span>Held in low regard</span><span>Highly honoured</span></div>
+        </div>
+        <div class="ws-axis">
+            <div class="ws-head"><span class="ws-name">Party</span><span class="ws-val" id="v-party"></span></div>
+            <div class="ws-def">Organised power. Your capacity to act with others to make things happen: through a union, a party, a lobby, a church body, a professional association.</div>
+            <input type="range" id="s-party" min="0" max="4" step="1" value="2" />
+            <div class="ws-ends"><span>Acts alone</span><span>Commands an organisation</span></div>
+        </div>
+    </div>
+
+    <div class="ws-read">
+        <div class="ws-read-l">&#128269; WHAT THIS COMBINATION MEANS</div>
+        <div class="ws-shape" id="ws-shape"></div>
+        <div class="ws-body" id="ws-body"></div>
+        <div class="ws-verdict" id="ws-verdict"></div>
+    </div>
+
+    <div class="ws-presets" id="ws-presets">
+        <button class="ws-preset" data-c="4" data-s="1" data-p="1">
+            <b>Rich, but not respected</b>
+            <span>A newly wealthy merchant in a society that reserves honour for old families.</span>
+        </button>
+        <button class="ws-preset" data-c="1" data-s="4" data-p="1">
+            <b>Poor, but honoured</b>
+            <span>A scholar or clergyman of modest means whose calling commands deference.</span>
+        </button>
+        <button class="ws-preset" data-c="2" data-s="2" data-p="4">
+            <b>Ordinary means, organised</b>
+            <span>A union officer or ward organiser of middling income and standing.</span>
+        </button>
+        <button class="ws-preset" data-c="4" data-s="4" data-p="4">
+            <b>Aligned at the top</b>
+            <span>An established family with wealth, honour, and political reach together.</span>
+        </button>
+        <button class="ws-preset" data-c="0" data-s="0" data-p="0">
+            <b>Aligned at the bottom</b>
+            <span>Little property, little esteem, and no organisation to act through.</span>
+        </button>
+        <button class="ws-preset" data-c="3" data-s="0" data-p="2">
+            <b>Comfortable, excluded</b>
+            <span>A prosperous household barred from the associations that carry local honour.</span>
+        </button>
+    </div>
+
+    <button class="widget-reset" id="ws-reset">Reset</button>
+</div>
+
+<script>
+(function () {
+  var LABEL = ['very low', 'low', 'middling', 'high', 'very high'];
+  var ids = ['class', 'status', 'party'];
+  var el = {};
+  ids.forEach(function (k) { el[k] = document.getElementById('s-' + k); });
+
+  function readOut(c, s, p) {
+    var vals = [c, s, p];
+    var spread = Math.max.apply(null, vals) - Math.min.apply(null, vals);
+    var avg = (c + s + p) / 3;
+
+    var shape, body, verdict, cls;
+
+    if (spread <= 1) {
+      shape = avg >= 3 ? 'Aligned, near the top' : (avg <= 1 ? 'Aligned, near the bottom' : 'Aligned, in the middle');
+      body = 'All three dimensions sit at roughly the same level. Economic position, social honour, and organised power reinforce one another rather than pulling apart.';
+      verdict = 'When the three align, Marx and Weber describe the same person and a single axis loses very little. This is the case where the simpler model works.';
+      cls = 'align';
+    } else {
+      shape = 'Divergent';
+      var parts = [];
+      if (c - s >= 2) { parts.push('economic position outruns social honour, so the money is real and the respect is withheld'); }
+      if (s - c >= 2) { parts.push('social honour outruns economic position, so the standing is real and the means are thin'); }
+      if (p - Math.max(c, s) >= 2) { parts.push('organised power outruns both wealth and honour, which is how people without either still move outcomes'); }
+      if (Math.min(c, s) - p >= 2) { parts.push('wealth or honour is present without organisation, which limits what either can actually accomplish'); }
+      if (!parts.length) { parts.push('the three dimensions sit at noticeably different levels'); }
+      body = 'The dimensions pull apart: ' + parts.join('; ') + '.';
+      verdict = 'This is the case a one-axis model cannot describe. Asked only "what do they own?", you would place this person on a single rung and lose everything that makes their position what it is. That gap is Weber’s answer to Marx.';
+      cls = 'diverge';
+    }
+
+    document.getElementById('ws-shape').textContent = shape;
+    document.getElementById('ws-body').textContent = body;
+    var v = document.getElementById('ws-verdict');
+    v.textContent = verdict;
+    v.className = 'ws-verdict ' + cls;
+  }
+
+  function render() {
+    var c = +el['class'].value, s = +el.status.value, p = +el.party.value;
+    document.getElementById('v-class').textContent = LABEL[c];
+    document.getElementById('v-status').textContent = LABEL[s];
+    document.getElementById('v-party').textContent = LABEL[p];
+    readOut(c, s, p);
+  }
+
+  ids.forEach(function (k) {
+    el[k].addEventListener('input', function () {
+      Array.prototype.forEach.call(document.querySelectorAll('.ws-preset'), function (b) { b.classList.remove('active'); });
+      render();
+    });
+  });
+
+  document.getElementById('ws-presets').addEventListener('click', function (e) {
+    var b = e.target.closest('.ws-preset');
+    if (!b) return;
+    Array.prototype.forEach.call(document.querySelectorAll('.ws-preset'), function (x) { x.classList.remove('active'); });
+    b.classList.add('active');
+    el['class'].value = b.dataset.c;
+    el.status.value = b.dataset.s;
+    el.party.value = b.dataset.p;
+    render();
+  });
+
+  document.getElementById('ws-reset').addEventListener('click', function () {
+    el['class'].value = 2; el.status.value = 2; el.party.value = 2;
+    Array.prototype.forEach.call(document.querySelectorAll('.ws-preset'), function (x) { x.classList.remove('active'); });
+    render();
+  });
+
+  render();
+})();
+</script>
+
+</body>
+</html>

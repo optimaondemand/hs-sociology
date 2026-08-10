@@ -1,0 +1,409 @@
+<!--
+    Optima Academy Online — Sociology (Florida 2108300)
+    Q1 · Week 7 · Lesson 7.02 — "Tönnies: Gemeinschaft, Gesellschaft, and Community"
+
+    TEACHER-FACING BUILD NOTES (not rendered to students):
+    REGISTER: HONORS (confirmed 2026-08-06). Community and Society cited by book
+    and section ahead of Thursday's reading. The lesson does not merely define
+    the two terms; it asks students to evaluate whether Tonnies's pairing is
+    the same cut as Durkheim's mechanical/organic distinction under new names,
+    or a genuinely different one, which is an analysis-level task, not recall.
+
+      Standard: SS.912.S.2.9, SS.912.S.5.7, SS.912.S.6.2
+      Objective: Students will distinguish Gemeinschaft/natural will from
+                Gesellschaft/rational will and classify an unfamiliar
+                relationship using the pair, compare Tonnies's distinction
+                with Durkheim's mechanical/organic solidarity (Week 4) and
+                evaluate whether the two pairings cut the same way, and
+                evaluate whether Tonnies's account of loss is empirical,
+                normative, or both.
+      Source: Sociology_Course_Master.html, Lesson 7.02 (762 words). Spelling
+              of "Tonnies" restored to "Tönnies" throughout (the master and its
+              JSON extraction dropped the umlaut; CLAUDE.md's own module-map
+              table and the build instructions for this week both use it).
+              This is a diacritic correction, not a content change.
+
+      DASH-AS-COLON REPAIR (plan.md defect 6): checked sentence by sentence.
+      NONE found needing recast. 12 single colons in the master's prose here,
+      each introducing one list, appositive, or definition, left as written.
+
+      CROSS-REFERENCE (explicit, per build instructions): this lesson's core
+      visual puts Tönnies side by side with Durkheim (Week 4) and Tocqueville
+      (Week 3) in one table. The master's own closing section ("Tonnies and
+      the Course") already drew this link in prose; the visual makes it
+      literal, and Part 4's reveal adds the honors-level complication that the
+      two pairings are not perfectly interchangeable (Durkheim treats organic
+      solidarity as a genuine, non-inferior form of cohesion; Tönnies treats
+      Gesellschaft as more straightforwardly a loss). This complication is
+      also the substance of Primary Source Guide 7B's fourth guide question.
+
+      WIDGET ROTATION: 7.01 (this week's other lesson) used reflect +
+      single-select rows. 7.02 uses flip cards (for the four foreign-language
+      key terms, doubling as the Tönnies-to-Durkheim translation drill) plus
+      scale placement. No engine repeats within the week. Flip cards last
+      appeared in 4.02; scale last appeared in 6.01.
+      Scale correct indices in row order: 0, 4, 2, 3, 1. Not ascending.
+      Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sociology &middot; Lesson 7.02</title>
+<style>
+    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+    .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+    /* ===== WIDGET CSS — byte-consistent with references/widgets.md ===== */
+    .optima-widget { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+    .widget-kicker { font-size: 11px; color: #1B6A94; margin-bottom: 10px; letter-spacing: 0.4px; }
+    .widget-question { font-size: 17px; color: #0E1C42; margin-bottom: 14px; line-height: 1.55; }
+    .widget-row { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 6px; padding: 12px 14px; margin-bottom: 10px; }
+    .widget-row-prompt { font-size: 15px; color: #0E1C42; margin-bottom: 8px; line-height: 1.5; font-style: italic; }
+    .widget-options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .widget-options button { background: #FFFFFF; border: 1.5px solid #D0D9E8; border-radius: 8px; padding: 8px 14px; font-size: 14px; color: #0E1C42; cursor: pointer; transition: all 0.15s; font-family: inherit; }
+    .widget-options button:hover { background: #F4F6FA; border-color: #55C8E8; }
+    .widget-options button.selected { background: #0E1C42; color: #FFFFFF; border-color: #0E1C42; }
+    .widget-options button.correct { background: #D8F0DD; border-color: #2A9D5C; color: #1A6B3D; }
+    .widget-options button.incorrect { background: #FDECEC; border-color: #C0392B; color: #8A1F16; }
+    .widget-feedback { background: #FFFFFF; border-left: 3px solid #C7922C; padding: 10px 14px; font-size: 15px; color: #1a2340; line-height: 1.55; margin: 10px 0; display: none; border-radius: 4px; }
+    .widget-feedback.show { display: block; }
+    .row-feedback { padding: 8px 12px; margin-top: 8px; font-size: 14px; border-radius: 4px; line-height: 1.5; }
+    .row-feedback.correct { background: #D8F0DD; border-left: 3px solid #2A9D5C; color: #1A6B3D; }
+    .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
+    .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .widget-reset:hover { background: #FDF3E3; }
+    .ow-scale .widget-options { justify-content: space-between; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; min-width: 120px; }
+    .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
+    .ow-flip .ow-flip-back { display: none; color: #1a2340; }
+    .ow-flip.flipped .ow-flip-front { display: none; }
+    .ow-flip.flipped .ow-flip-back { display: block; }
+
+    /* ===== Core visual: three thinkers, one diagnosis ===== */
+    .tri { background: #0E1C42; border-radius: 10px; padding: 24px 26px 22px 26px; margin: 4px 0 18px 0; }
+    .tri-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .tri-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 18px; font-style: italic; }
+    .tri-table { width: 100%; border-collapse: collapse; }
+    .tri-table th { font-size: 11px; letter-spacing: 0.4px; color: #55C8E8; text-align: left; padding: 8px 10px; border-bottom: 1px solid rgba(255,255,255,0.2); font-weight: normal; }
+    .tri-table td { font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.5; padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); vertical-align: top; }
+    .tri-table td:first-child, .tri-table th:first-child { color: #E0B562; font-size: 11px; letter-spacing: 0.4px; width: 15%; }
+    .tri-note { margin-top: 14px; padding-top: 13px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.6; }
+
+    .kt { background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 13px 17px; margin-bottom: 9px; }
+    .kt-t { font-size: 16px; color: #0E1C42; margin-bottom: 4px; }
+    .kt-d { font-size: 16px; color: #1a2340; line-height: 1.55; }
+</style>
+</head>
+<body>
+<div class="canvas-frame">
+
+<!-- ===== HEADER ===== -->
+<div style="background: #0E1C42; border-bottom: 5px solid #55C8E8; padding: 22px 34px;">
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px;">
+        <div style="width: 52px; height: 52px; border-radius: 50%; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><img src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png" alt="Optima Academy" style="width: 50px; height: 40px; object-fit: contain;" /></div>
+        <div>
+            <div style="font-size: 28px; color: #ffffff; line-height: 1.2;">Optima Academy Online</div>
+            <div style="font-size: 12px; color: #55c8e8;">An Education Experience Company</div>
+        </div>
+    </div>
+    <div style="font-size: 36px; color: #ffffff; margin-bottom: 6px;">SOCIOLOGY</div>
+</div>
+
+<!-- ===== METADATA STRIP ===== -->
+<div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 7</div>
+        <div style="font-size: 12px; color: #666;">Education and T&ouml;nnies on Community</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
+        <div style="font-size: 17px; color: #0e1c42;">Lesson 7.02</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Gemeinschaft, Gesellschaft, and Community</div>
+    </div>
+    <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
+        <div style="font-size: 16px; color: #0e1c42;">Education and T&ouml;nnies on Community</div>
+    </div>
+</div>
+
+<!-- ===== BODY WRAPPER ===== -->
+<div style="padding: 24px 34px;">
+
+    <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 7.02</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">T&ouml;nnies: Gemeinschaft, Gesellschaft, and Community</div>
+        <div style="font-size: 16px; color: #666;">Lesson</div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">A neighbor who owes you a debt neither of you could ever repay, or a stranger who owes you nothing once the invoice clears: which one is your community actually made of?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Ferdinand T&ouml;nnies thought modern life was trading the first for the second on a massive scale, and he was not at all sure it was a good trade. You already have a version of this argument from Durkheim in Week 4. Today gives it a second vocabulary, and asks whether the two are really saying the same thing.</div>
+    </div>
+
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish Gemeinschaft and natural will (<em>Wesenwille</em>) from Gesellschaft and rational will (<em>K&uuml;rwille</em>), and classify an unfamiliar relationship using the pair.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> compare T&ouml;nnies's distinction with Durkheim's mechanical and organic solidarity, and evaluate whether the two pairings cut the same way or diverge.</div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> evaluate whether T&ouml;nnies's account of loss is an empirical claim, a normative one, or both, using his own account of Gemeinschaft's restrictiveness as evidence.</div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 1 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE VILLAGE AND THE CITY</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Ferdinand T&ouml;nnies was born in 1855 in the duchy of Schleswig, in a rural farming community on the border of Germany and Denmark. He studied philosophy and social science in the great German universities, eventually settling in Kiel. He watched, across his career, the transformation of Germany from a predominantly rural, agricultural society into an urban, industrial one, the same transformation that Durkheim observed in France, Simmel in Berlin, and that Tocqueville had anticipated in America. Like all of them, T&ouml;nnies asked what was lost in this transformation and what, if anything, could be preserved or recovered.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">His answer, published in 1887 in a book called <em>Community and Society</em> (<em>Gemeinschaft und Gesellschaft</em>), distinguishes two fundamental forms of social life that he believed were in conflict. Gemeinschaft, the German word for community, refers to forms of social organization based on personal bonds, shared tradition, and organic unity. Gesellschaft, the German word for society or association, refers to forms of social organization based on contract, rational calculation, and impersonal exchange. T&ouml;nnies believed that modernity was systematically replacing the first with the second, and that the costs of this replacement were not being adequately counted.</p>
+    </div>
+
+    <!-- ============================ PART 2: KEY TERMS + FLIP CARDS ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; THE TERMS</div>
+
+        <div class="kt"><div class="kt-t">Gemeinschaft</div><div class="kt-d">German for "community." A form of social life based on personal bonds, shared tradition, mutual obligation, and a sense of organic unity. The paradigm cases are the family, the village, and the religious congregation.</div></div>
+        <div class="kt"><div class="kt-t">Gesellschaft</div><div class="kt-d">German for "society" or "association." A form of social life based on rational calculation, contractual exchange, and impersonal relationships. The paradigm cases are the corporation, the state bureaucracy, and the modern city.</div></div>
+        <div class="kt"><div class="kt-t">Natural Will (<em>Wesenwille</em>)</div><div class="kt-d">T&ouml;nnies's term for the will that operates in Gemeinschaft: intuitive, habitual, oriented toward relationships and shared life as ends in themselves.</div></div>
+        <div class="kt"><div class="kt-t">Rational Will (<em>K&uuml;rwille</em>)</div><div class="kt-d">T&ouml;nnies's term for the will that operates in Gesellschaft: calculating, purposive, treating relationships as means toward individual ends.</div></div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 14px 0 6px 0;">Each of these four terms has a Week 4 counterpart. Tap each card to check your translation, then write all four pairings in your notebook before continuing.</p>
+
+        <div class="optima-widget">
+            <div class="widget-kicker">&#9889; TAP TO TRANSLATE</div>
+            <div class="ow-flip" tabindex="0">
+                <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;">Gemeinschaft</div>
+                <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">Durkheim's <strong>mechanical solidarity</strong>: cohesion built on likeness and a strong collective conscience. T&ouml;nnies is describing a close cousin of the bond Durkheim describes, from a different starting question.</div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget">
+            <div class="widget-kicker">&#9889; TAP TO TRANSLATE</div>
+            <div class="ow-flip" tabindex="0">
+                <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;">Gesellschaft</div>
+                <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">Durkheim's <strong>organic solidarity</strong>: cohesion built on differentiation and interdependence. Watch the difference in tone: Durkheim treats this shift as a genuine, workable form of cohesion with a manageable pathology (anomie). T&ouml;nnies treats it more starkly as a loss.</div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget">
+            <div class="widget-kicker">&#9889; TAP TO TRANSLATE</div>
+            <div class="ow-flip" tabindex="0">
+                <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;">Natural will (<em>Wesenwille</em>)</div>
+                <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">The disposition underneath Gemeinschaft: acting from habit, feeling, and inherited relationship, treating people and place as ends in themselves rather than instruments. Durkheim has no exact equivalent term; this is T&ouml;nnies working at the level of psychology rather than social structure.</div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="optima-widget">
+            <div class="widget-kicker">&#9889; TAP TO TRANSLATE</div>
+            <div class="ow-flip" tabindex="0">
+                <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;">Rational will (<em>K&uuml;rwille</em>)</div>
+                <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">The disposition underneath Gesellschaft: calculating means toward a separately chosen end, evaluating even a relationship by what it is good for. The word's root refers to choosing or selecting, not to reason in the abstract.</div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ============================ PART 3 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; TWO WORLDS</div>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 0 0 8px 0;">Gemeinschaft: the world we came from</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">In a Gemeinschaft, relationships are personal, particular, and total. You do not merely work alongside your neighbor, you know her family, share her festivals, owe her help at harvest time, and receive it in return. Your identity is inseparable from your place in the community: you are someone's child, someone's spouse, someone's neighbor, a member of a particular guild, a parishioner of a particular church. The obligations that come with these identities are not chosen; they are given with the social position itself. To be born in a village is to inherit a set of obligations and a set of claims that were in place before you arrived.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 16px 0;">This is both the strength and the limitation of Gemeinschaft. Its strength is that it provides individuals with a dense web of mutual support, a clear sense of identity, and a moral framework that does not need to be constantly renegotiated. Its limitation is that it is also restrictive: the individual who does not fit the community's expectations faces powerful constraints on her freedom. Gemeinschaft produces solidarity at the cost of individual difference.</p>
+
+        <h3 style="font-size: 20px; color: #0e1c42; margin: 0 0 8px 0;">Gesellschaft: the world we are building</h3>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Gesellschaft is the social form of modernity. In a Gesellschaft, relationships are contractual, impersonal, and partial. You employ a plumber not because he is your cousin or your neighbor but because he has the relevant skill and will perform the work for an agreed price. When the work is done, the relationship is complete. You do not owe him your harvest-time help; he does not owe you his. The relationship is fully specified by the contract and extinguished when the contract is fulfilled.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">The advantage of Gesellschaft is freedom: individuals are not bound by inherited obligations; they can choose their associations, their occupations, their partners, and their beliefs to an unprecedented degree. The disadvantage is the thinness of the bonds it creates. Contractual relationships are by definition instrumental: they exist to serve a purpose, and they do not create the kind of ongoing mutual obligation and shared life that Gemeinschaft produces. The result, T&ouml;nnies feared, is a society of individuals who are technically free but effectively isolated.</p>
+    </div>
+
+    <!-- ============================ PART 4: CORE VISUAL ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; THREE THINKERS, ONE DIAGNOSIS, THREE VOCABULARIES</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">T&ouml;nnies's distinction maps closely onto concepts this course has already examined. Three writers, working in three countries within about sixty years of each other, converged on strikingly similar diagnoses using three different vocabularies.</p>
+
+        <!-- ===== CORE VISUAL ===== -->
+        <div class="tri">
+            <div class="tri-title">THREE VOCABULARIES FOR THE SAME TRANSITION</div>
+            <div class="tri-sub">Read across each row. The convergence is real; so is the disagreement in Part 5.</div>
+            <table class="tri-table">
+                <tr><th>&nbsp;</th><th>T&ouml;nnies (1887)</th><th>Durkheim (1893)</th><th>Tocqueville (1835&ndash;40)</th></tr>
+                <tr>
+                    <td>OLD BOND</td>
+                    <td>Gemeinschaft, bound by natural will</td>
+                    <td>Mechanical solidarity, bound by likeness</td>
+                    <td>Vertical ties to lord, guild, and church</td>
+                </tr>
+                <tr>
+                    <td>NEW BOND</td>
+                    <td>Gesellschaft, bound by rational will</td>
+                    <td>Organic solidarity, bound by interdependence</td>
+                    <td>Individualism, private withdrawal</td>
+                </tr>
+                <tr>
+                    <td>THE WORRY</td>
+                    <td>Genuine community is being replaced by a thinner substitute</td>
+                    <td>The collective conscience thins, and anomie threatens</td>
+                    <td>Withdrawal opens the door to soft despotism</td>
+                </tr>
+            </table>
+            <div class="tri-note">Three thinkers converging this closely, from three different starting questions, is itself evidence worth weighing. Either all three were responding accurately to one real transformation, or European intellectual life in this period shared one very powerful assumption strongly enough to shape three independent inquiries the same way. Both possibilities are worth taking seriously, and the reading on Thursday will not settle which one is correct.</div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">T&ouml;nnies's analysis anticipates the questions Nisbet and Putnam raise in Week 8. The Gemeinschaft and Gesellschaft distinction is one of the most durable analytical tools in sociological thinking, and you will use it again before this course is finished.</p>
+    </div>
+
+    <!-- ============================ PART 5: SCALE WIDGET + HONORS COMPLICATION ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; WHERE DOES THIS RELATIONSHIP SIT?</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Before deciding whether T&ouml;nnies is right to worry, practice the distinction on cases that resist a clean answer. Place each relationship on the spectrum from purely Gemeinschaft to purely Gesellschaft.</p>
+
+        <div class="optima-widget ow-scale">
+            <div class="widget-kicker">&#9889; PLACE IT ON THE SPECTRUM</div>
+            <div class="widget-question">Judge each relationship by what actually binds the parties, not by how the relationship began.</div>
+
+            <div class="widget-row" data-correct="0" data-fb="Purely Gemeinschaft. T&ouml;nnies opens his own account of community with exactly this relationship: a bond rooted in birth and instinct before either party has made a single choice." data-hint="Has either party chosen anything here, or entered into any agreement at all?">
+                <div class="widget-row-prompt">1. A parent's bond with a newborn infant.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Purely Gemeinschaft</button><button data-choice="1">Mostly Gemeinschaft</button><button data-choice="2">Genuinely mixed</button><button data-choice="3">Mostly Gesellschaft</button><button data-choice="4">Purely Gesellschaft</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="4" data-fb="Purely Gesellschaft. A single transaction between strangers, fully specified by the exchange, with no further claim on either party once it closes." data-hint="Once the item ships, does either party owe the other anything at all?">
+                <div class="widget-row-prompt">2. A one-time online purchase from a stranger's storefront.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Purely Gemeinschaft</button><button data-choice="1">Mostly Gemeinschaft</button><button data-choice="2">Genuinely mixed</button><button data-choice="3">Mostly Gesellschaft</button><button data-choice="4">Purely Gesellschaft</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Genuinely mixed, and the hardest of the five. The wage contract is straightforwardly Gesellschaft. The personal mentorship and presence at family events are Gemeinschaft-like obligations that the contract never specified and that neither party is required to keep." data-hint="Separate the wage arrangement from everything the owner does that no contract requires.">
+                <div class="widget-row-prompt">3. Employment at a small, long-tenured family business, where the owner also mentors employees personally and attends their family events.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Purely Gemeinschaft</button><button data-choice="1">Mostly Gemeinschaft</button><button data-choice="2">Genuinely mixed</button><button data-choice="3">Mostly Gesellschaft</button><button data-choice="4">Purely Gesellschaft</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="3" data-fb="Mostly Gesellschaft. Dues, standards, and a service the member would drop the instant a better option appeared are the definition of rational will evaluating a relationship by what it is good for." data-hint="Would this member stay if a competing association offered a better deal tomorrow?">
+                <div class="widget-row-prompt">4. Membership in a national professional association that negotiates standards and dues on your behalf, and that you would leave without a second thought if a better one appeared.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Purely Gemeinschaft</button><button data-choice="1">Mostly Gemeinschaft</button><button data-choice="2">Genuinely mixed</button><button data-choice="3">Mostly Gesellschaft</button><button data-choice="4">Purely Gesellschaft</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Mostly, not purely, Gemeinschaft. The loyalty and forty years of shared life are unmistakably natural will. But the friendship was still originally chosen rather than given at birth, which is a trace of rational will that a lifelong kinship bond does not carry." data-hint="This bond was not given to either party at birth. Does choosing it at the start change anything about its category, even after forty years?">
+                <div class="widget-row-prompt">5. A close friendship formed at church that has lasted forty years, with no formal obligation attached beyond loyalty and affection.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Purely Gemeinschaft</button><button data-choice="1">Mostly Gemeinschaft</button><button data-choice="2">Genuinely mixed</button><button data-choice="3">Mostly Gesellschaft</button><button data-choice="4">Purely Gesellschaft</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 16px 0 0 0;">
+            <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; In your notebook: is T&ouml;nnies making an empirical claim, a normative one, or both? Then open this.
+            </summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
+                Both, and the honors move is to keep them separate rather than let one smuggle in the other. The empirical claim is that Gesellschaft has been genuinely displacing Gemeinschaft across modern history, which is a claim evidence could confirm or refute. The normative claim is that this is a loss rather than a trade, which is a value judgment the evidence alone cannot settle. T&ouml;nnies himself supplies the best objection to his own normative claim without meaning to: he is honest that Gemeinschaft is <em>restrictive</em>, that the person who does not fit the community's expectations faces real constraints on her freedom. A defender of Gesellschaft can take that admission and run with it, arguing that what T&ouml;nnies calls a loss of community is, for anyone who did not fit their village's mold, better described as a gain in freedom. Notice this is exactly the tension Durkheim handles differently: he treats the same historical shift as basically successful, purchased at the price of a manageable pathology, anomie, rather than as a straightforward loss. Thursday's reading and its fourth guide question ask you to decide whose account survives the comparison better.
+            </div>
+        </details>
+    </div>
+
+    <!-- Next -->
+    <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 7B: T&ouml;nnies</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your Thursday reading is in a book you need to obtain: <em>Community and Society</em>, Book One, Sections 1 through 5, and Book Two, Section 1. See this week's Module Map for the edition and how to get it. Get it before Thursday.</div>
+            </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
+            <div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Sociological Journal 7</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Due Thursday, with a peer reply this week. You will sort three relationships from your own life by T&ouml;nnies's vocabulary.</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You now hold a second vocabulary for a diagnosis you first met in Week 4, and you have seen where the two vocabularies line up and where they quietly disagree. Durkheim and T&ouml;nnies are not saying identical things in different languages. One thinks the modern trade was worth making. The other is not sure it was a trade at all, rather than simply a loss. Holding that disagreement open, instead of collapsing it into agreement for the sake of tidiness, is exactly the kind of work this course keeps asking of you.</p>
+    </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 1 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 7.02 &middot; T&ouml;nnies: Gemeinschaft, Gesellschaft, and Community</div>
+    <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
+</div>
+
+</div>
+
+<!-- ===== WIDGET RUNTIME — one delegated listener drives every engine ===== -->
+<script>
+(function () {
+  document.addEventListener('click', function (e) {
+    var reset = e.target.closest('.widget-reset');
+    if (reset) {
+      var w = reset.closest('.optima-widget');
+      w.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      w.querySelectorAll('.widget-feedback').forEach(function (f) { f.classList.remove('show'); f.textContent = ''; });
+      w.querySelectorAll('.row-feedback').forEach(function (f) { f.remove(); });
+      w.querySelectorAll('.ow-flip.flipped').forEach(function (c) { c.classList.remove('flipped'); });
+      return;
+    }
+    var rBtn = e.target.closest('.ow-reflect .widget-options button');
+    if (rBtn) {
+      var rw = rBtn.closest('.optima-widget');
+      rw.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected'); });
+      rBtn.classList.add('selected');
+      var fb = rw.querySelector('.widget-feedback');
+      fb.textContent = rBtn.dataset.response || '';
+      fb.classList.add('show');
+      return;
+    }
+    var sBtn = e.target.closest('.ow-select .widget-row .widget-options button, .ow-scale .widget-row .widget-options button');
+    if (sBtn) {
+      var row = sBtn.closest('.widget-row');
+      var correct = row.dataset.correct;
+      row.querySelectorAll('.widget-options button').forEach(function (b) { b.classList.remove('selected', 'correct', 'incorrect'); });
+      var right = sBtn.dataset.choice === correct;
+      sBtn.classList.add(right ? 'correct' : 'incorrect');
+      var text = right ? (sBtn.dataset.fb || row.dataset.fb || 'Right.') : (sBtn.dataset.fb || row.dataset.hint || 'Not quite. Try again.');
+      var rf = row.querySelector('.row-feedback') || row.appendChild(document.createElement('div'));
+      rf.className = 'row-feedback ' + (right ? 'correct' : 'incorrect');
+      rf.textContent = text;
+      return;
+    }
+    var flip = e.target.closest('.ow-flip');
+    if (flip) { flip.classList.toggle('flipped'); return; }
+  });
+})();
+</script>
+
+</body>
+</html>
