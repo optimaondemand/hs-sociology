@@ -1,58 +1,95 @@
 <!--
     Optima Academy Online — Sociology (Florida 2108300)
-    Q2 · Week 17 · Primary Source Guide 17A (Tuesday)
+    Q2 · Week 17 · Primary Source Guide 17A — THE FINAL READING
 
     TEACHER-FACING BUILD NOTES (not rendered to students):
-    REGISTER: HONORS. Cited by volume/part/chapter throughout.
+    REGISTER: HONORS.
 
-      R1 SUBSTITUTION (Bellah, Habits of the Heart, 1985, in copyright):
-      Text: Tocqueville, Democracy in America, Vol. II, Part III, ch. I,
-            "That Manners Are Softened As Social Conditions Become More Equal."
-      Translator: Henry Reeve (1840). CONFIRMED SAFE public-domain translation
-            (CLAUDE.md, plan.md R3 audit).
+      Text: Auguste Comte, The Positive Philosophy, Introduction, Chapter I
+            ("Character of the Positive Philosophy" through "Secondary aim of
+            this work"), in Harriet Martineau's condensed English rendering,
+            The Positive Philosophy of Auguste Comte (London, 1853), pp. 29-36.
+      Provenance: French original (Cours de philosophie positive, 1830-1842)
+            PUBLIC DOMAIN. Martineau's 1853 translation-condensation PUBLIC
+            DOMAIN (confirmed safe translator per gate.py / CLAUDE.md "Copyright:
+            two kinds of source guide"). PATTERN A: reproduced in full.
       Source file: 01_Analysis/Sociology Primary Source Readings/
-            Reading_Equality and the Softening of Manners.pdf
-      Resolution: plan.md section 2b (confirmed 2026-08-07). The reviewer's
-            original note floated DiA II.2.2 ("Of Individualism") as the ideal
-            match for Bellah, since that is the chapter Bellah's title is drawn
-            from directly. II.2.2 was NOT supplied as a source file and would
-            have required fresh authoring. This build follows the directive to
-            use permissible files already on hand: II.3.1 is the adjacent,
-            actually-sourced chapter in the same equality-driven argument (Vol.
-            II opens Part II with individualism and moves into Part III on
-            manners immediately after). It is NOT the individualism chapter
-            itself, and the guide below does not claim that it is. The bridge
-            card is honest about what this chapter argues (a different but
-            related consequence of equality of conditions: diffusing sympathy
-            across the whole human race) versus what Bellah draws on
-            (withdrawal into private circles). Both a lesson in tracing more
-            than one consequence from a single premise.
+            Reading_1_WhatIsSociology_Comte_SocialPhysics.pdf
+      Extracted with pypdf, 3 pages, verified against the PDF twice (once via a
+      default-encoding dump that garbled non-ASCII punctuation, corrected by a
+      second UTF-8 dump; the excerpt below is transcribed from the corrected pass).
 
-      PATTERN A. Full reproduction, no rights notice needed. Em dashes inside
-      the excerpt are Reeve's own punctuation and are left alone by the gate.
+      SECOND FILE, CHECKED PER BUILDER BRIEF: Reading_2_WhatIsSociology_
+      Comte_LawOfThreeStages.pdf also exists in the same folder (same
+      Martineau 1853 translation, pp. 26-29, the passage immediately BEFORE
+      this one in Comte's Introduction, covering the Law of Three Stages).
+      NOT used here. plan.md section 2 wires only Reading_1 to lesson 17.01,
+      and the brief's own instruction was to check Reading_2 and report, not
+      to use it. Reading_2's extracted text carries a more damaged passage
+      (a doubled colon and a probable dropped comma pair around "each of our
+      leading conceptions each branch of our knowledge") that I did not
+      attempt to repair, since I am not building from it. Flagging it here in
+      case a future session wants a second Comte excerpt for Week 1, where
+      "the Law of Three Stages" would arguably fit better than it does here.
 
-      SOURCE DEFECT FOUND (report per BUILDER_BRIEF section 7): the source PDF's
-      text layer renders at least two instances of what is almost certainly an
-      em dash as the Unicode replacement character; both pypdf and PyMuPDF
-      (fitz) extraction agree independently, which is why they are corrected
-      here to an actual em dash rather than left as a rendering artifact. More
-      seriously, the footnoted French quotation from Madame de Sevigne's
-      letters (which Tocqueville reproduces in French, untranslated, in the
-      Reeve edition) extracts with EVERY accented character silently dropped
-      (e.g. "ecrire" for "ecrire" with an accent, "etait" for "etait" with an
-      accent). This is a PDF text-layer limitation, not a rendering artifact
-      with an obvious fix, so it has NOT been guess-corrected: inserting accent
-      marks without the source page image would risk misquoting Tocqueville's
-      own footnote. The French is reproduced exactly as it extracts. A rights-
-      clearance or copy-editing pass with access to a clean edition should
-      restore the diacritics before this page is considered final. Its content
-      is already given in English by Tocqueville's surrounding narration, so
-      no comprehension is lost for the student.
+      SOURCE-PDF DEFECTS FOUND AND HOW THEY WERE HANDLED (per the Locke-PDF
+      precedent in plan.md section 5: fix only what is mechanically
+      unambiguous, never reconstruct wording from memory, flag everything):
+        - "They arc the most individual" -> "They [are] the most individual"
+          (page 1). "arc" is not a real reading; "are" is grammatically forced.
+        - "Theological and metaphysical methods ... arc as yet exclusively
+          applied" -> "...[are] as yet exclusively applied" (page 2). Same
+          defect, same fix.
+        - "there romaine one science" -> "there [remains] one science"
+          (page 2). "remains" is grammatically forced by the sentence
+          ("there remains one science to fill up the series").
+        - "the i different kinds of our knowledge" -> "the different kinds of
+          our knowledge" (page 1). A single stray character with no plausible
+          reading; removed rather than guessed at, since inventing a
+          replacement word ("several", "various") would not be mechanical.
+        - Two instances of a garbled dash rendering (";-" and ",-") were
+          normalised to an em dash, matching the em dashes that already
+          render correctly elsewhere in the same PDF's extracted text
+          ("Our business is--seeing how vain..."). This is a glyph-rendering
+          fix, not a wording change.
+        - Bracketed material in square brackets above is an editorial
+          insertion marking a correction, per standard scholarly convention,
+          and is disclosed again on the page itself so a student is never
+          misled about what Comte or Martineau actually wrote.
+      NONE of these affect the sense of the passage; all are visible, single-
+      word, grammar-forced repairs to what is very likely OCR damage in
+      the PDF itself, not a defect introduced by this build. Fillable against
+      a clean scan if one turns up.
 
-      Guide questions are newly authored for this substitution (not carried
-      from the master, which built its questions around Bellah's own text).
-      They connect Tocqueville's actual argument here back to Bellah's use of
-      Tocqueville and forward to the Week 3 individualism material.
+      MARGINAL HEADERS: Martineau's 1853 edition prints short marginal
+      headers beside the body text ("Character of the Positive Philosophy.",
+      "History of the Positive Philosophy.", "Social Physics.", "Secondary
+      aim of this work..."). These extracted inline with the body text and
+      are reproduced here as .sect dividers, in the same style this build
+      already uses for Durkheim's chapter in source-03-b.html. One such
+      marginal note extracted wrapped in curly braces mid-sentence
+      ("Nothing was said {New department of Positive philosophy} of Social
+      phenomena") because of where it sat beside a short line of body text;
+      it is pulled out and placed as its own .sect header immediately before
+      that paragraph, braces removed as an artifact of the PDF's line-based
+      extraction, not part of Comte's or Martineau's wording.
+
+      R1 SUBSTITUTION, WHY THIS TEXT: C. Wright Mills's The Sociological
+      Imagination (1959) is the reading the master originally assigned for
+      Lesson 17.01 and is still in copyright. Comte substitutes for it because
+      the substitution closes an argument this whole course has been building
+      rather than merely avoiding a rights problem: Lesson 1.01 told students
+      that Comte coined "sociology" in 1838 after first calling his project
+      "social physics." This excerpt is where he explains, in his own words,
+      why he thought the switch (and the whole positivist program) was
+      necessary. See CLAUDE.md's R1 table and plan.md section 2 for the
+      confirmed provenance record.
+
+      Guide questions are original to this build (there is no master guide for
+      this substituted reading), written to honors level: analysis and
+      evaluation, engaging the strongest objection to Comte rather than only
+      his own account of himself, per CLAUDE.md "Register: honors" point 6.
+      Tier 4, ungraded. GitHub-hosted in-lesson content page.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -69,13 +106,19 @@
     .src p:last-child { margin-bottom: 0; }
     .src .sect { font-family: "Segoe UI", sans-serif; font-size: 11px; letter-spacing: 1px; color: #8a7a55; margin: 24px 0 12px 0; padding-top: 16px; border-top: 1px solid #E3DFD2; }
     .src .ed { font-family: "Segoe UI", sans-serif; font-size: 14px; color: #7a6a45; font-style: italic; background: #F5F2E8; border-radius: 5px; padding: 10px 14px; line-height: 1.55; margin-bottom: 15px; }
-    .src .frn { font-family: Georgia, "Times New Roman", serif; font-style: italic; }
-    .src .final { background: #F5F2E8; border-radius: 6px; padding: 16px 20px; }
-    .src .final p { margin: 0; font-size: 19px; }
+    .src .fix { color: #8a1f16; font-style: normal; }
 
     .q-list { counter-reset: qq; list-style: none; padding: 0; margin: 0; }
     .q-list li { counter-increment: qq; position: relative; padding-left: 40px; margin-bottom: 14px; font-size: 17px; color: #1a2340; line-height: 1.6; }
     .q-list li::before { content: counter(qq); position: absolute; left: 0; top: 1px; width: 27px; height: 27px; border-radius: 50%; background: #0E1C42; color: #fff; font-family: "Segoe UI", sans-serif; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+
+    .arg { background: #0E1C42; border-radius: 9px; padding: 20px 24px; margin: 14px 0; }
+    .arg-t { font-size: 11px; color: #55C8E8; letter-spacing: 0.6px; margin-bottom: 14px; text-align: center; }
+    .arg-s { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 11px; }
+    .arg-s:last-child { margin-bottom: 0; }
+    .arg-n { min-width: 26px; height: 26px; border-radius: 50%; background: rgba(85,200,232,0.22); color: #55C8E8; font-size: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .arg-b { font-size: 14px; color: rgba(255,255,255,0.86); line-height: 1.55; }
+    .arg-b b { color: #ffffff; }
 </style>
 </head>
 <body>
@@ -98,19 +141,19 @@
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
         <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 17</div>
-        <div style="font-size: 12px; color: #666;">Community in Modern America and Capstone Preparation</div>
+        <div style="font-size: 12px; color: #666;">Course Synthesis and Final Examination</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Reading</div>
-        <div style="font-size: 17px; color: #0e1c42;">Primary Source 17A</div>
+        <div style="font-size: 17px; color: #0e1c42;">Primary Source 17A &middot; Final Reading</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Author</div>
-        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Alexis de Tocqueville</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Auguste Comte</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Published</div>
-        <div style="font-size: 16px; color: #0e1c42;">1840</div>
+        <div style="font-size: 16px; color: #0e1c42;">1830 to 1842; this translation 1853</div>
     </div>
 </div>
 
@@ -118,115 +161,112 @@
 <div style="padding: 24px 34px;">
 
     <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">PRIMARY SOURCE 17A</div>
-        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 6px;">Equality and the Softening of Manners</div>
-        <div style="font-size: 16px; color: #444;">Tocqueville, <em>Democracy in America</em>, Vol. II, Part III, ch. I, trans. Henry Reeve.</div>
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">PRIMARY SOURCE 17A &middot; THE LAST READING OF THE COURSE</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 6px;">Social Physics, and the Need for a Science of Society</div>
+        <div style="font-size: 16px; color: #444;">Auguste Comte, <em>The Positive Philosophy</em>, Introduction, Chapter I. Translated and condensed by Harriet Martineau (1853).</div>
     </div>
 
-    <!-- Bridge -->
+    <!-- Bridge: close the circle explicitly -->
     <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; WHERE THIS FITS</div>
-        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Monday's lesson introduced Robert Bellah's <em>Habits of the Heart</em> (1985), whose title and whose central claim about American individualism both come from Tocqueville. The chapter Bellah draws that claim from most directly is <em>Democracy in America</em> II.2.2, &ldquo;Of Individualism in Democratic Countries.&rdquo; That exact chapter is not the reading below, and this guide will not pretend otherwise. What you are reading is the chapter that follows shortly after it in the same volume: Tocqueville tracing a second, related consequence of the same premise, equality of conditions. Where II.2.2 argues that equality makes people withdraw into a small private circle, this chapter argues that equality makes people extend a diffuse, undemanding sympathy across the entire human race. Read them as two branches of one argument. You already met the individualism branch in Week 3; this is the branch that explains why a democratic people can seem, at the same time, both withdrawn from public life and unusually humane to strangers.</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Lesson 1.01 stated that Auguste Comte coined the word <em>sociology</em> in 1838, having first called his project <em>social physics</em>. This reading is that project in Comte's own words, at the point where he explains why the switch mattered to him. Mills's phrase &ldquo;the sociological imagination&rdquo; (Lesson 17.01) names something Comte was reaching for 121 years earlier under a very different method. The question for the whole course: did the discipline he wanted get built?</div>
     </div>
 
     <!-- Why you are reading this -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; WHY YOU ARE READING THIS</div>
-        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Tocqueville asks a question that sounds almost sentimental and turns out to be structural: why have manners grown gentler as ranks have grown more equal? His answer is not that people have become better. It is that equality changes what people are capable of imagining about each other. An aristocrat separated by caste from his serf could feel real loyalty toward him and no real sympathy, because he did not believe they belonged to the same kind of being. Strip away the caste line, Tocqueville argues, and the imaginative barrier goes with it: each person can now picture himself in anyone's place, and that act of imagination, not any improvement in character, is what produces the "humanity" of democratic peoples.</p>
-        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Watch for the evidence he uses to test his own claim. He does not simply assert that Americans are compassionate. He looks for a case where the theory predicts a limit, and he finds one in American slavery. That move, testing a general claim against the hardest case available, is the same discipline you have practised with Durkheim since Week 3.</p>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Comte is not describing a discipline that already exists. He is arguing one into existence, and the passage below is where he stakes the whole claim: that a science of society is not only possible but overdue, that every other domain of knowledge has already made the transition he wants sociology to make, and that resisting the transition amounts to clinging to methods already discredited everywhere else.</p>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Martineau's 1853 translation preserves the short marginal headers Comte's original edition used to mark its own structure. Track them; the argument moves in five clear stages.</p>
+
+        <div class="arg">
+            <div class="arg-t">HOW THE PASSAGE IS BUILT</div>
+            <div class="arg-s"><div class="arg-n">1</div><div class="arg-b"><b>Refuse the question "why."</b> Positive philosophy studies invariable laws of succession and resemblance, and explicitly declines to ask after first or final causes. Gravitation is his example: we know <em>that</em> bodies attract, not <em>why</em>.</div></div>
+            <div class="arg-s"><div class="arg-n">2</div><div class="arg-b"><b>Trace the pattern across the sciences.</b> Astronomy went positive first, then physics, then chemistry, then physiology, each in proportion to how general, simple, and independent it is.</div></div>
+            <div class="arg-s"><div class="arg-n">3</div><div class="arg-b"><b>Name the gap.</b> Every domain has made the transition except one: social phenomena, still governed by "theological and metaphysical methods," meaning appeals to divine right or abstract first principles rather than to observed, law-governed regularities.</div></div>
+            <div class="arg-s"><div class="arg-n">4</div><div class="arg-b"><b>Explain the delay.</b> Social facts are the most individual, the most complicated, and the most dependent on everything else, so they were always going to be the last science formed, not a sign that no science is possible there.</div></div>
+            <div class="arg-s"><div class="arg-n">5</div><div class="arg-b"><b>Name the new science, twice.</b> First "social physics," the name that signals a science modeled directly on the natural sciences. Then the wider ambition: a "Positive Philosophy" that unifies all the sciences into one system once sociology takes its place among them.</div></div>
+        </div>
     </div>
 
     <!-- Read for these -->
     <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; READ FOR THESE FOUR QUESTIONS</div>
         <ol class="q-list">
-            <li>Tocqueville argues equality of conditions, not "civilization and education," is what produces the softening of manners, and he tests that claim against the treatment of American slaves. What is the test, and what does the result show about the limits of equality as a moral force?</li>
-            <li>He argues that aristocratic institutions bound people to each other by close political ties without producing real sympathy across caste lines, since each caste believed it belonged to a different kind of being. Is close obligation without sympathy a form of community at all? Defend an answer using his own distinction between duty and humanity.</li>
-            <li>Bellah's <em>Habits of the Heart</em> (ch. 6, "Individualism") argues that American culture supplies only two languages for describing a moral life: utilitarian self-interest and expressive self-fulfillment, and that neither can articulate a debt owed to strangers. Does the "humanity" Tocqueville describes here count as a third language, a genuine communal bond, or is it exactly the thin, undemanding sympathy Bellah is worried is all that survives? Argue for one reading.</li>
-            <li>Tocqueville closes by extending the argument from individuals to nations: a people that regards itself as "the whole of mankind" wages war with the cruelty of the Romans toward Cicero's barbarians, while nations that grow more alike become "reciprocally more compassionate." What would this predict about how a highly globalized, highly unequal world should treat the people furthest from its own condition?</li>
+            <li>Comte says the job of a science is to discover "invariable natural Laws," not to explain "first or final causes." Pick two thinkers from this course and ask, of each: did they actually keep to that boundary, or did they smuggle in a claim about purpose or value while presenting it as a finding? Defend the charge with a specific claim, not a general impression.</li>
+            <li>Comte places social phenomena last in his sequence of sciences because they are "the most individual, the most complicated, the most dependent on all others." Is that still a fair description of why a science of society is hard, or has this course given you reason to think the real obstacle is something Comte does not mention here, such as the fact that the objects of study can read what is written about them and change their behavior in response?</li>
+            <li>Comte insists that "theological and metaphysical methods" have to be expelled from social inquiry the way they were expelled from physics. Name one moment from this course where a thinker's supposedly scientific account of society seemed to smuggle back in a moral or metaphysical judgment. Is that a failure of nerve, or is it possible that a science of society cannot fully do without one?</li>
+            <li>Comte calls his new science "social physics" before renaming it sociology, built from Latin <em>socius</em> and Greek <em>logos</em>. What is gained, and what is lost, in trading a name built on "physics" for one built on "the study of." Having finished the course, which name better describes what you actually did in it?</li>
         </ol>
+    </div>
+
+    <!-- Editorial note on the two extraction fixes -->
+    <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; ABOUT THIS TEXT</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Three single words below appear in square brackets: <em>[are]</em> twice and <em>[remains]</em> once. The scanned source file this excerpt was drawn from has a small number of damaged words at exactly these three points; the brackets mark a correction forced by grammar, not a guess at Comte's meaning, and the original garbled text is recorded in this page's build notes for anyone who wants to check it against a clean copy.</div>
     </div>
 
     <!-- ===== THE EXCERPT ===== -->
     <div class="src">
-        <div class="sect" style="border-top: none; padding-top: 0; margin-top: 0;">EQUALITY AND THE REACH OF SYMPATHY</div>
+        <div class="sect" style="border-top: none; padding-top: 0; margin-top: 0;">CHARACTER OF THE POSITIVE PHILOSOPHY</div>
 
-        <p>We perceive that for several ages social conditions have tended to equality, and we discover that in the course of the same period the manners of society have been softened. Are these two things merely contemporaneous, or does any secret link exist between them, so that the one cannot go on without making the other advance? Several causes may concur to render the manners of a people less rude; but, of all these causes, the most powerful appears to me to be the equality of conditions. Equality of conditions and growing civility in manners are, then, in my eyes, not only contemporaneous occurrences, but correlative facts. When the fabulists seek to interest us in the actions of beasts, they invest them with human notions and passions; the poets who sing of spirits and angels do the same; there is no wretchedness so deep, nor any happiness so pure, as to fill the human mind and touch the heart, unless we are ourselves held up to our own eyes under other features.</p>
+        <p>As we have seen, the first characteristic of the Positive Philosophy is that it regards all phenomena as subjected to invariable natural Laws. Our business is&mdash;seeing how vain is any research into what are called Causes, whether first or final&mdash;to pursue an accurate discovery of these Laws, with a view to reducing them to the smallest possible number. By speculating upon causes, we could solve no difficulty about origin and purpose. Our real business is to analyse accurately the circumstances of phenomena, and to connect them by the natural relations of succession and resemblance. The best illustration of this is in the case of the doctrine of Gravitation. We say that the general phenomena of the universe are explained by it, because it connects under one head the whole immense variety of astronomical facts, exhibiting the constant tendency of atoms toward each other in direct proportion to their masses, and in inverse proportion to the squares of their distance, while the general fact itself is a mere extension of one which is perfectly familiar to us, and which we therefore say that we know&mdash;the weight of bodies on the surface of the earth. As to what weight and attraction are, we have nothing to do with that, for it is not a matter of knowledge at all. Theologians and metaphysicians may imagine and refine about such questions, but positive philosophy rejects them. When any attempt has been made to explain them, it has ended only in saying that attraction is universal weight, and that weight is terrestrial attraction: that is, that the two orders of phenomena are identical, which is the point from which the question set out. Again, M. Fourier, in his fine series of researches on Heat, has given us all the most important and precise laws of the phenomena of heat, and many large and new truths, without once inquiring into its nature, as his predecessors had done when they disputed about calorific matter and the action of a universal ether. In treating his subject in the Positive method, he finds inexhaustible material for all his activity of research, without betaking himself to insoluble questions.</p>
 
-        <p>This is strictly applicable to the subject upon which we are at present engaged. When all men are irrevocably marshalled in an aristocratic community, according to their professions, their property, and their birth, the members of each class, considering themselves as children of the same family, cherish a constant and lively sympathy towards each other, which can never be felt in an equal degree by the citizens of a democracy. But the same feeling does not exist between the several classes towards each other. Amongst an aristocratic people each caste has its own opinions, feelings, rights, manners, and modes of living. Thus the men of whom each caste is composed do not resemble the mass of their fellow-citizens; they do not think or feel in the same manner, and they scarcely believe that they belong to the same human race. They cannot, therefore, thoroughly understand what others feel, nor judge of others by themselves. Yet they are sometimes eager to lend each other mutual aid; but this is not contrary to my previous observation.</p>
+        <div class="sect">HISTORY OF THE POSITIVE PHILOSOPHY</div>
 
-        <div class="sect">ARISTOCRATIC TIES: NARROW BUT REAL</div>
+        <p>Before ascertaining the stage which the Positive Philosophy has reached, we must bear in mind that the different kinds of our knowledge have passed through the three stages of progress at different rates, and have not therefore arrived at the same time. The rate of advance depends on the nature of the knowledge in question, so distinctly that, as we shall see hereafter, this consideration constitutes an accessary to the fundamental law of progress. Any kind of knowledge reaches the positive stage early in proportion to its generality, simplicity, and independence of other departments. Astronomical science, which is above all made up of facts that are general, simple, and independent of other sciences, arrived first; then terrestrial Physics; then Chemistry; and, at length, Physiology.</p>
 
-        <p>These aristocratic institutions, which made the beings of one and the same race so different, nevertheless bound them to each other by close political ties. Although the serf had no natural interest in the fate of nobles, he did not the less think himself obliged to devote his person to the service of that noble who happened to be his lord; and although the noble held himself to be of a different nature from that of his serfs, he nevertheless held that his duty and his honor constrained him to defend, at the risk of his own life, those who dwelt upon his domains.</p>
+        <p>It is difficult to assign any precise date to this revolution in science. It may be said, like everything else, to have been always going on, and especially since the labors of Aristotle and the school of Alexandria, and then from the introduction of natural science into the West of Europe by the Arabs. But, if we must fix upon some marked period, to serve as a rallying point, it must be that&mdash;about two centuries ago&mdash;when the human mind was astir under the precepts of Bacon, the conceptions of Descartes, and the discoveries of Galileo. Then it was that the spirit of the Positive philosophy rose up in opposition to that of the superstitious and scholastic systems which had hitherto obscured the true character of all science. Since that date, the progress of the Positive philosophy, and the decline of the other two, have been so marked that no rational mind now doubts that the revolution is destined to go on to its completion&mdash;every branch of knowledge being, sooner or later, brought within the operation of Positive philosophy. This is not yet the case. Some are still lying outside, and not till they are brought in will the Positive philosophy possess that character of universality which is necessary to its definitive constitution.</p>
 
-        <p>It is evident that these mutual obligations did not originate in the law of nature, but in the law of society; and that the claim of social duty was more stringent than that of mere humanity. These services were not supposed to be due from man to man, but to the vassal or to the lord. Feudal institutions awakened a lively sympathy for the sufferings of certain men, but none at all for the miseries of mankind. They infused generosity rather than mildness into the manners of the time, and although they prompted men to great acts of self-devotion, they engendered no real sympathies; for real sympathies can only exist between those who are alike; and in aristocratic ages men acknowledge none but the members of their own caste to be like themselves.</p>
+        <p>In mentioning just now the four principal categories of phenomena&mdash;astronomical, physical, chemical, and physiological&mdash;there was an omission which will have been noticed.</p>
 
-        <p>When the chroniclers of the Middle Ages, who all belonged to the aristocracy by birth or education, relate the tragical end of a noble, their grief flows apace; whereas they tell you at a breath, and without wincing, of massacres and tortures inflicted on the common sort of people. Not that these writers felt habitual hatred or systematic disdain for the people; war between the several classes of the community was not yet declared. They were impelled by an instinct rather than by a passion; as they had formed no clear notion of a poor man's sufferings, they cared but little for his fate. The same feelings animated the lower orders whenever the feudal tie was broken. The same ages which witnessed so many heroic acts of self-devotion on the part of vassals for their lords, were stained with atrocious barbarities, exercised from time to time by the lower classes on the higher. It must not be supposed that this mutual insensibility arose solely from the absence of public order and education; for traces of it are to be found in the following centuries, which became tranquil and enlightened whilst they remained aristocratic.</p>
+        <div class="sect">NEW DEPARTMENT OF POSITIVE PHILOSOPHY</div>
 
-        <div class="sect">A CONTEMPORARY WITNESS</div>
+        <p>Nothing was said of Social phenomena. Though involved with the physiological, Social phenomena demand a distinct classification, both on account of their importance and of their difficulty. They <span class="fix">[are]</span> the most individual, the most complicated, the most dependent on all others, and therefore they must be the latest&mdash;even if they had no special obstacle to encounter. This branch of science has not hitherto entered into the domain of Positive philosophy. Theological and metaphysical methods, exploded in other departments, <span class="fix">[are]</span> as yet exclusively applied, both in the way of inquiry and discussion, in all treatment of Social subjects, though the best minds are heartily weary of eternal disputes about divine right and the sovereignty of the people. This is the great, while it is evidently the only gap which has to be filled, to constitute, solid and entire, the Positive Philosophy. Now that the human mind has grasped celestial and terrestrial physics&mdash;mechanical and chemical; organic physics, both vegetable and animal&mdash;there <span class="fix">[remains]</span> one science, to fill up the series of sciences of observation&mdash;Social physics. This is what men have now most need of, and this it is the principal aim of the present work to establish.</p>
 
-        <p>In 1675 the lower classes in Brittany revolted at the imposition of a new tax. These disturbances were put down with unexampled atrocity. Observe the language in which Madame de Sevigne, a witness of these horrors, relates them to her daughter&mdash;</p>
+        <div class="sect">SOCIAL PHYSICS</div>
 
-        <p class="frn">"Aux Rochers, 30 Octobre, 1675.<br />"Mon Dieu, ma fille, que votre lettre d'Aix est plaisante! Au moins relisez vos lettres avant que de les envoyer; laissez-vous surpendre a leur agrement, et consolez-vous par ce plaisir de la peine que vous avez d'en tant ecrire. Vous avez donc baise toute la Provence? il n'y aurait pas satisfaction a baiser toute la Bretagne, a moins qu'on n'aimat a sentir le vin. . . . Voulez-vous savoir des nouvelles de Rennes? On a fait une taxe de cent mille ecus sur le bourgeois; et si on ne trouve point cette somme dans vingt-quatre heures, elle sera doublee et exigible par les soldats. On a chasse et banni toute une grand rue, et defendu de les recueillir sous peine de la vie; de sorte qu'on voyait tous ces miserables, veillards, femmes accouchees, enfans, errer en pleurs au sortir de cette ville sans savoir ou aller. On roua avant-hier un violon, qui avait commence la danse et la pillerie du papier timbre; il a ete ecartele apres sa mort, et ses quatre quartiers exposes aux quatre coins de la ville. On a pris soixante bourgeois, et on commence demain les punitions. Cette province est un bel exemple pour les autres, et surtout de respecter les gouverneurs et les gouvernantes, et de ne point jeter de pierres dans leur jardin."</p>
+        <p>It would be absurd to pretend to offer this new science at once in a complete state. Others, less new, are in very unequal conditions of forwardness. But the same character of positivity which is impressed on all the others will be shown to belong to this. This once done, the philosophical system of the moderns will be in fact complete, as there will then be no phenomenon which does not naturally enter into some one of the five great categories. All our fundamental conceptions having become homogeneous, the Positive state will be fully established. It can never again change its character, though it will be for ever in course of development by additions of new knowledge. Having acquired the character of universality which has hitherto been the only advantage resting with the two preceding systems, it will supersede them by its natural superiority, and leave to them only an historical existence.</p>
 
-        <div class="ed">A footnote in the original explains a play on words in the letter (Madame de Grignan, to whom it was written, was Gouvernante de Provence) and gives a further short passage. Omitted here; it adds nothing to the argument the chapter is making.</div>
+        <div class="sect">SECONDARY AIM OF THIS WORK</div>
 
-        <p>In another letter she adds&mdash;</p>
+        <p>We have stated the special aim of this work. Its secondary and general aim is this&mdash;to review what has been effected in the Sciences, in order to show that they are not radically separate, but all branches from the same trunk. If we had confined ourselves to the first and special object of the work, we should have produced merely a study of Social physics, whereas, in introducing the second and general, we offer a study of Positive philosophy&mdash;passing in review all the positive sciences already formed.</p>
 
-        <p class="frn">"Vous me parlez bien plaisamment de nos miseres; nous ne sommes plus si roues; un en huit jours, pour entretenir la justice. Il est vrai que la penderie me parait maintenant un refraichissement. J'ai une tout autre idee de la justice, depuis que je suis en ce pays. Vos galeriens me paraissent une societe d'honnetes gens qui se sont retires du monde pour mener une vie douce."</p>
+        <p>The purpose of this work is not to give an account of the Natural Sciences. Besides that it would be endless, and that it would require a scientific preparation such as no one man possesses, it would be apart from our object, which is to go through a course of not Positive Science, but Positive Philosophy. We have only to consider each fundamental science in its relation to the whole positive system, and to the spirit which characterizes it, that is, with regard to its methods and its chief results.</p>
 
-        <p>It would be a mistake to suppose that Madame de Sevigne, who wrote these lines, was a selfish or cruel person; she was passionately attached to her children, and very ready to sympathize in the sorrows of her friends; nay, her letters show that she treated her vassals and servants with kindness and indulgence. But Madame de Sevigne had no clear notion of suffering in anyone who was not a person of quality.</p>
-
-        <p>In our time the harshest man writing to the most insensible person of his acquaintance would not venture wantonly to indulge in the cruel jocularity which I have quoted; and even if his own manners allowed him to do so, the manners of society at large would forbid it. Whence does this arise? Have we more sensibility than our forefathers? I know not that we have; but I am sure that our insensibility is extended to a far greater range of objects. When all the ranks of a community are nearly equal, as all men think and feel in nearly the same manner, each of them may judge in a moment of the sensations of all the others; he casts a rapid glance upon himself, and that is enough. There is no wretchedness into which he cannot readily enter, and a secret instinct reveals to him its extent. It signifies not that strangers or foes be the sufferers; imagination puts him in their place; something like a personal feeling is mingled with his pity, and makes himself suffer whilst the body of his fellow-creature is in torture. In democratic ages men rarely sacrifice themselves for one another; but they display general compassion for the members of the human race. They inflict no useless ills; and they are happy to relieve the griefs of others, when they can do so without much hurting themselves; they are not disinterested, but they are humane.</p>
-
-        <div class="sect">AMERICAN MILDNESS, AND ITS LIMIT</div>
-
-        <p>Although the Americans have, in a manner, reduced egotism to a social and philosophical theory, they are nevertheless extremely open to compassion. In no country is criminal justice administered with more mildness than in the United States. Whilst the English seem disposed carefully to retain the bloody traces of the dark ages in their penal legislation, the Americans have almost expunged capital punishment from their codes. North America is, I think, the only one country upon earth in which the life of no one citizen has been taken for a political offence in the course of the last fifty years. The circumstance which conclusively shows that this singular mildness of the Americans arises chiefly from their social condition, is the manner in which they treat their slaves. Perhaps there is not, upon the whole, a single European colony in the New World in which the physical condition of the blacks is less severe than in the United States; yet the slaves still endure horrid sufferings there, and are constantly exposed to barbarous punishments. It is easy to perceive that the lot of these unhappy beings inspires their masters with but little compassion, and that they look upon slavery, not only as an institution which is profitable to them, but as an evil which does not affect them. Thus the same man who is full of humanity towards his fellow-creatures when they are at the same time his equals, becomes insensible to their afflictions as soon as that equality ceases. His mildness should therefore be attributed to the equality of conditions, rather than to civilization and education.</p>
-
-        <div class="sect">NATIONS AS INDIVIDUALS WRIT LARGE</div>
-
-        <p>What I have here remarked of individuals is, to a certain extent, applicable to nations. When each nation has its distinct opinions, belief, laws, and customs, it looks upon itself as the whole of mankind, and is moved by no sorrows but its own. Should war break out between two nations animated by this feeling, it is sure to be waged with great cruelty. At the time of their highest culture, the Romans slaughtered the generals of their enemies, after having dragged them in triumph behind a car; and they flung their prisoners to the beasts of the Circus for the amusement of the people. Cicero, who declaimed so vehemently at the notion of crucifying a Roman citizen, had not a word to say against these horrible abuses of victory. It is evident that in his eyes a barbarian did not belong to the same human race as a Roman. On the contrary, in proportion as nations become more like each other, they become reciprocally more compassionate, and the law of nations is mitigated.</p>
+        <p>The two aims, though distinct, are inseparable, for, on the one hand, there can be no positive philosophy without a basis of social science, without which it could not be all-comprehensive, and, on the other hand, we could not pursue Social science without having been prepared by the study of phenomena less complicated than those of society, and furnished with a knowledge of laws and anterior facts which have a bearing upon social science. Though the fundamental sciences are not all equally interesting to ordinary minds, there is no one of them that can be neglected in an inquiry like the present, and, in the eye of philosophy, all are of equal value to human welfare. Even those which appear the least interesting have their own value, either on account of the perfection of their methods, or as being the necessary basis of all the others.</p>
     </div>
 
     <!-- After you read -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9999;&#65039; AFTER YOU READ</div>
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">Write short answers to the four questions above. You will use question 3 again when you plan your Capstone, since it is exactly the question of whether Tocqueville's "humanity" would satisfy Bellah's standard for genuine community.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">Answer the four questions.</p>
 
         <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0 0 12px 0;">
             <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
-                <span style="color: #C7922C;">&#9654;</span>&nbsp; Decide in your notebook what the slavery evidence proves, and what it does not prove. Then open this.
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; Was Comte's ambition fulfilled by this course's thinkers?
             </summary>
             <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
-                It proves that "civilization and education" is not the operative cause, because the same educated, civilized Americans who show unusual mildness toward each other show almost none toward an enslaved population. That isolates equality of conditions as the variable that matters: extend it, and sympathy follows; withdraw it from a group, and sympathy withdraws with it. What it does not prove is that equality is sufficient on its own to produce justice. Tocqueville's argument predicts humane treatment only among those who are already presumed equal. It offers no mechanism for extending the presumption itself to a group excluded from it, which is precisely the limit the passage exposes rather than resolves.
+                Judged strictly by Comte's own standard, a discipline that discovers invariable laws the way Newton did, the honest answer is probably no. Durkheim came closest, and even he had to concede that suicide rates are a pattern, not a law with predictive force like gravitation. Weber built ideal types explicitly meant as interpretive tools, not natural laws. Marx predicted outcomes history did not deliver on his timetable. What the discipline actually built looks less like social physics and more like what Mills named: a disciplined way of connecting a life to a structure to a history, tested against evidence, but never escaping interpretation the way physics escapes it. Whether that counts as Comte's science under a different name, or as a quiet abandonment of his central wager, is a question this course leaves open on purpose. You are entitled to an opinion about it, and your capstone is a reasonable place to state one.
             </div>
         </details>
 
         <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0;">
             <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
-                <span style="color: #C7922C;">&#9654;</span>&nbsp; Decide whether Tocqueville's "humanity" would satisfy Bellah. Then open this.
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; Which name fits the discipline, social physics or sociology? (Question 4)
             </summary>
             <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
-                A strong case exists on both sides, and the honest answer depends on what Bellah's standard actually requires. If genuine community only requires that people not be indifferent to strangers, Tocqueville's "humanity" clears the bar; it is a real moral achievement of democratic life and not nothing. But if genuine community requires sustained, costly commitment, the kind that shows up as service on a vestry board or years spent on a mutual aid society, Tocqueville's diffuse sympathy fails the test on its own terms: he explicitly calls it undemanding, something people extend "when they can do so without much hurting themselves." That is close to Bellah's diagnosis of expressive individualism, a feeling of connection that asks nothing costly of anyone. The chapters are not describing the same thing, but they may be describing two symptoms of the same underlying condition.
+                "Social physics" claims a kinship with Newton that turned out to be mostly aspirational, for the reasons above. "Sociology," the study (<em>-logy</em>) of association (<em>socius</em>), is a humbler and more accurate name for what the discipline actually became: systematic, evidence-driven, but interpretive rather than law-governed in the way physics is. Comte himself abandoned "social physics" for exactly this kind of reason, once a rival used the term for something narrower than he intended. Having finished the course, "sociology" is very likely the name you would also choose, precisely because it does not promise what this excerpt promises and the discipline could not quite deliver.
             </div>
         </details>
     </div>
 
     <!-- Next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT COMES NEXT</div>
-        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; NEXT</div>
+        <div style="display: flex; align-items: flex-start; gap: 14px;">
             <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
             <div>
                 <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Lesson 17.02</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Capstone preparation, using the frameworks this course has built across two quarters, including the one you just read.</div>
-            </div>
-        </div>
-        <div style="display: flex; align-items: flex-start; gap: 14px;">
-            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
-            <div>
-                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 17B, Thursday</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tocqueville again, closing Volume I with the question of what stands between a citizen and the state.</div>
             </div>
         </div>
     </div>
@@ -236,7 +276,7 @@
 <!-- ===== FOOTER ===== -->
 <div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
     <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Primary Source Reading</div>
-    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Tocqueville, <em>Democracy in America</em> II.3.1, trans. Reeve &middot; 1840 &middot; public domain</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Comte, <em>The Positive Philosophy</em>, Introduction I &middot; trans. Harriet Martineau, 1853 &middot; public domain</div>
     <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
 </div>
 

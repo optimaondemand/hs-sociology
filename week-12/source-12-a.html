@@ -1,79 +1,75 @@
 <!--
-    Optima Academy Online — Sociology (Florida 2108300)
-    Q2 · Week 12 · Primary Source Guide 12A (Tuesday)
+    Optima Academy Online - Sociology (Florida 2108300)
+    Q2 · Week 12 · Text Study 12A
 
     TEACHER-FACING BUILD NOTES (not rendered to students):
     REGISTER: HONORS.
 
-      Text: Adam Smith, An Inquiry into the Nature and Causes of the Wealth of
-            Nations, Book I, Chapter I, "Of the Division of Labour" (1776).
-      Provenance: PUBLIC DOMAIN, English original, no translator involved.
-      Source files: 01_Analysis/.../Q2W12_Reading_1_The Division of Labour.pdf
-                    01_Analysis/.../Q2W12_Reading_2_The Coat of the Day-Labourer.pdf
-      Tier 4, ungraded. GitHub-hosted in-lesson content page.
-
-      *** DEFECT FOUND AND CORRECTED — CITATION MISMATCH ***
-      manifest.json (and the master before it) cites this reading as "Book I,
-      Chapters 1-3." Both supplied PDFs were extracted with pypdf and read in
-      full. They are NOT chapters 1 through 3. Reading 1 is the opening of
-      Book I, Chapter I ("Of the Division of Labour"): the pin-factory
-      example through the sentence introducing the "three different
-      circumstances." Reading 2 picks up the NEXT sentence verbatim ("First,
-      the improvement of the dexterity...") and continues to the chapter's
-      actual final sentence ("...as the accommodation of the latter exceeds
-      that of many an African king, the absolute masters of the lives and
-      liberties of ten thousand naked savages"), which is the well-known
-      close of Chapter I in every standard edition. Together the two files
-      are the complete Chapter I. Neither file contains any material from
-      Chapter II ("Of the Principle which gives Occasion to the Division of
-      Labour") or Chapter III ("That the Division of Labour is Limited by the
-      Extent of the Market"). This guide cites Chapter I only, and reproduces
-      both files as one continuous excerpt since they run on without a gap.
-
-      DOWNSTREAM EFFECT ON GUIDE QUESTIONS: two of the master's four guide
-      questions for this reading depend on material that is not in Chapter I
-      at all. "The propensity to truck, barter, and exchange" is Chapter II.
-      "The extent of the market" is Chapter III's title and argument. Per the
-      R1 authoring rule (CLAUDE.md, "no approval gate," and the precedent set
-      at Week 4's Simmel mislabeling), those two questions are replaced below
-      with two new questions grounded in the text actually supplied. The
-      master's other two questions (the invisible-hand question, which the
-      master itself flags as "not by name in these chapters," and the
-      Durkheim-comparison question) are answerable from the excerpt as
-      supplied and are kept.
-
-      NO EM DASHES IN THIS EXCERPT to normalise: Smith's 1776 prose here uses
-      semicolons and colons, not dashes. The R7 rule and dash-as-colon rule
-      both exempt .src blocks regardless.
-
-      ONE TYPOGRAPHIC CLEANUP: the supplied PDFs render the apostrophe as a
-      broken character (an extraction artifact, not part of Smith's text).
-      Rendered here with a standard apostrophe. No wording was changed.
-
-      ONE BRACKETED EDITORIAL NOTE, carried over from the source PDF as
-      supplied: the parenthetical identifying "fire engines" as the period
-      term for steam engines. Not Smith's own words; present in the file as
-      given to this course.
+      Work: Durkheim, Les Regles de la methode sociologique, ch. III, "Regles relatives a
+            la distinction du normal et du pathologique" (1895). Public domain.
+      2026-10-14 revision: this guide was a Pattern B page (linked to a protected English
+            translation, with three short quotations and a rights notice). It is now a Text
+            Study: Optima's own explanation of the chapter's argument, in order, with an
+            argument diagram. No translator, link, quotation, or rights notice remains.
+      Grounding: 01_Analysis/Sociology Primary Source Readings/Q2W13_Reading_1_The Normal
+            and the Pathological.pdf (a curated excerpt, read for understanding only; no
+            wording copied). Claims on this page were checked against that excerpt: the
+            species/average-type definition of normal, generality as the criterion, the
+            statesman-as-physician point, crime's universality, the shift of moral
+            sensitivity (the monastery illustration), indirect and direct usefulness,
+            [VERIFIED 2026-10-14: the builder had equated indirect usefulness with the
+            monastery's heightened sensitivity; Durkheim's indirect usefulness is that crime
+            presupposes collective feelings plastic enough to evolve. Corrected; 6-word runs
+            shared with the source PDF removed; scare quotes removed.] the
+            Socrates case, the revision of the theory of punishment, and the pain analogy.
+            The excerpt omits Durkheim's comparative crime-rate survey and his second test
+            (explaining a general fact by the species' conditions of existence); the page
+            mentions the second test only in general terms and gives no figures.
+      Left general on purpose: how Durkheim's later work (Division of Labour I) specifies
+            the function of punishment; the page says only where he develops it.
+      Image: Balbi and Guerry, Statistique comparee de l'etat de l'instruction et du nombre
+            des crimes (1829), via Commons, public domain (w12-crime-instruction-map-1829).
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sociology &middot; Primary Source 12A</title>
+<title>Sociology &middot; Text Study 12A</title>
 <style>
     body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
     .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
 
-    .src { background: #FCFCF8; border: 1px solid #E3DFD2; border-left: 5px solid #C7922C; border-radius: 8px; padding: 26px 32px; margin: 18px 0; }
-    .src p { font-family: Georgia, "Times New Roman", serif; font-size: 18px; color: #241f18; line-height: 1.78; margin: 0 0 15px 0; }
-    .src p:last-child { margin-bottom: 0; }
-    .src .sect { font-family: "Segoe UI", sans-serif; font-size: 11px; letter-spacing: 1px; color: #8a7a55; margin: 24px 0 12px 0; padding-top: 16px; border-top: 1px solid #E3DFD2; }
-    .src .ed { font-family: "Segoe UI", sans-serif; font-size: 14px; color: #7a6a45; font-style: italic; background: #F5F2E8; border-radius: 5px; padding: 10px 14px; line-height: 1.55; margin-bottom: 15px; }
-
     .q-list { counter-reset: qq; list-style: none; padding: 0; margin: 0; }
     .q-list li { counter-increment: qq; position: relative; padding-left: 40px; margin-bottom: 14px; font-size: 17px; color: #1a2340; line-height: 1.6; }
     .q-list li::before { content: counter(qq); position: absolute; left: 0; top: 1px; width: 27px; height: 27px; border-radius: 50%; background: #0E1C42; color: #fff; font-family: "Segoe UI", sans-serif; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+
+    .card { background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px; }
+    .lab { font-size: 11px; color: #c7922c; margin-bottom: 14px; }
+    .p { font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0; }
+    .p:last-child { margin-bottom: 0; }
+    .step { display: flex; gap: 14px; align-items: flex-start; margin: 0 0 18px 0; }
+    .step > div:last-child { flex: 1; min-width: 0; }
+    .step-n { min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-h { font-size: 19px; color: #0E1C42; margin: 3px 0 8px 0; }
+    .cr { display: flex; gap: 10px; margin: 0 0 6px 0; font-size: 16px; line-height: 1.55; color: #1a2340; }
+    .cr b { flex: 0 0 96px; color: #1B6A94; font-weight: normal; font-size: 12px; padding-top: 3px; letter-spacing: 0.4px; }
+    .cr span { flex: 1; min-width: 0; }
+
+    .flow { background: #F8FAFD; border: 1px solid #D0D9E8; border-radius: 10px; padding: 18px 18px 14px 18px; margin: 4px 0 4px 0; }
+    .flow-t { font-size: 12px; color: #0E1C42; letter-spacing: 0.5px; text-align: center; margin-bottom: 14px; }
+    .fr { display: flex; align-items: center; gap: 0; flex-wrap: wrap; justify-content: center; }
+    .fb { flex: 1 1 150px; min-width: 150px; background: #0E1C42; color: #fff; border-radius: 8px; padding: 11px 12px; font-size: 14px; line-height: 1.45; }
+    .fb em { display: block; color: #55C8E8; font-style: normal; font-size: 11px; letter-spacing: 0.5px; margin-bottom: 4px; }
+    .fb.gold { background: #C7922C; }
+    .fb.gold em { color: #FFF3D6; }
+    .fb.soft { background: #E8F6FB; color: #0E1C42; border: 1px solid #C5DCE5; }
+    .fb.soft em { color: #1B6A94; }
+    .fa { flex: 0 0 28px; display: flex; align-items: center; justify-content: center; color: #0E1C42; font-size: 20px; }
+    .fsplit { display: flex; flex-direction: column; gap: 8px; flex: 1.4 1 220px; }
+    .fsplit .fb { flex: 0 0 auto; min-width: 0; }
+    .fnote { font-size: 13px; color: #4a5a78; line-height: 1.5; text-align: center; margin-top: 12px; }
+    .dn { text-align: center; color: #0E1C42; font-size: 20px; line-height: 1; margin: 8px 0; }
 </style>
 </head>
 <body>
@@ -96,19 +92,19 @@
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
         <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 12</div>
-        <div style="font-size: 12px; color: #666;">Division of Labor and Social Class</div>
+        <div style="font-size: 12px; color: #666;">Crime, Deviance, and American Institutions</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Reading</div>
-        <div style="font-size: 17px; color: #0e1c42;">Primary Source 12A</div>
+        <div style="font-size: 17px; color: #0e1c42;">Text Study 12A</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Author</div>
-        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Adam Smith</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">&Eacute;mile Durkheim</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Published</div>
-        <div style="font-size: 16px; color: #0e1c42;">1776</div>
+        <div style="font-size: 16px; color: #0e1c42;">1895</div>
     </div>
 </div>
 
@@ -116,101 +112,143 @@
 <div style="padding: 24px 34px;">
 
     <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">PRIMARY SOURCE 12A</div>
-        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 6px;">Of the Division of Labour</div>
-        <div style="font-size: 16px; color: #444;">Adam Smith, <em>An Inquiry into the Nature and Causes of the Wealth of Nations</em>, Book I, Chapter I.</div>
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">TEXT STUDY 12A</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 6px;">Crime as a Normal Social Fact</div>
+        <div style="font-size: 16px; color: #444;">Durkheim, <em>Les R&egrave;gles de la m&eacute;thode sociologique</em> (<em>The Rules of Sociological Method</em>), ch. III, <em>R&egrave;gles relatives &agrave; la distinction du normal et du pathologique</em> (1895)</div>
     </div>
 
-    <!-- Bridge -->
-    <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; WHERE THIS FITS</div>
-        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Monday's lesson gave you Smith's arithmetic secondhand. This is the chapter itself, in full, and it is worth reading slowly for a reason the lesson could only summarise: Smith spends most of the chapter on the celebration of specialization and only a little of it on the worry, and the proportion is itself an argument. Notice where the coat of the day-labourer appears in the chapter's structure, right at the end, as the payoff for everything before it.</div>
+    <!-- Context -->
+    <div class="card" style="border-left: 5px solid #2196D0; background: #E8F6FB;">
+        <div class="lab" style="color: #1B6A94;">&#128161; CONTEXT</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Durkheim&rsquo;s 1895 book argues that social facts can be studied as things, from the outside, like the objects of any science. Chapter III faces the obvious follow-up. If sociology is a science, it needs a way to tell a healthy society from a sick one without smuggling in the writer&rsquo;s preferences. The chapter builds that test, then applies it to the case most likely to break it: crime.</div>
     </div>
 
-    <!-- Why you are reading this -->
-    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; WHY YOU ARE READING THIS</div>
-        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">This is among the most famous chapters in the history of economics. Smith is establishing the intellectual foundation for classical economics: the argument that specialization, carried far enough, produces an increase in output that looks less like improvement and more like a different order of magnitude entirely. Read it with both admiration for the argument's power and critical attention to what it leaves out. He tells you himself, briefly, what it leaves out. Watch for the sentence where he does it.</p>
+    <!-- Structure visual -->
+    <div class="card">
+        <div class="lab">&#128202; THE ARGUMENT AT A GLANCE</div>
+        <div class="flow">
+            <div class="flow-t">HOW THE CHAPTER REACHES ITS CONCLUSION</div>
+            <div class="fr">
+                <div class="fb"><em>1 &middot; DEFINE</em>Normal means general: found across the species or society at its stage</div>
+                <div class="fa">&rarr;</div>
+                <div class="fb"><em>2 &middot; TEST</em>Judge by how widespread a fact is, not by anyone&rsquo;s ideal</div>
+                <div class="fa">&rarr;</div>
+                <div class="fb"><em>3 &middot; APPLY</em>Crime appears in every society, so it is normal</div>
+            </div>
+            <div class="dn">&darr;</div>
+            <div class="fr">
+                <div class="fb gold" style="flex: 1 1 150px;"><em>4 &middot; PUSH FURTHER</em>Crime is also useful</div>
+                <div class="fa">&rarr;</div>
+                <div class="fsplit">
+                    <div class="fb soft"><em>INDIRECT USE</em>Its presence shows collective feeling is flexible enough to change</div>
+                    <div class="fb soft"><em>DIRECT USE</em>Can anticipate a morality that has not yet arrived</div>
+                </div>
+                <div class="fa">&rarr;</div>
+                <div class="fb"><em>5 &middot; CLARIFY</em>Punishment is not a cure, and normal does not mean approved</div>
+            </div>
+            <div class="fnote">Steps 1 to 3 establish that crime is normal. Steps 4 and 5 say what follows from that.</div>
+        </div>
     </div>
 
-    <!-- Read for these -->
-    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; READ FOR THESE FOUR QUESTIONS</div>
+    <!-- Argument -->
+    <div class="card">
+        <div class="lab">&#128214; THE ARGUMENT, SECTION BY SECTION</div>
+
+        <div class="step"><div class="step-n">1</div><div>
+            <div class="step-h">Normal means common to the type, at its stage</div>
+            <div class="cr"><b>CLAIM</b><span>A social fact is normal if it belongs to the most common forms found across a society of a given type at a given phase of development. Facts found in only a few cases, and seldom lasting even there, are exceptions, which Durkheim calls pathological.</span></div>
+            <div class="cr"><b>REASON</b><span>No one can say what health or sickness is in the abstract. Every species has its own average type, and a trait is pathological only measured against that type. The same holds for societies: an institution or moral maxim is not good or bad in itself for every kind of society.</span></div>
+            <div class="cr"><b>EXAMPLE</b><span>A living species. What counts as healthy for one differs from what counts as healthy for another, and no species is healthier by being higher. Durkheim carries this picture over to social types.</span></div>
+        </div></div>
+
+        <div class="step"><div class="step-n">2</div><div>
+            <div class="step-h">Generality is the test, because a science studies what is there</div>
+            <div class="cr"><b>CLAIM</b><span>How widespread a fact is decides whether it is normal. Sociology would not be a science of things if its criterion were what someone wants society to be.</span></div>
+            <div class="cr"><b>REASON</b><span>If the desirable must be worked out by reasoning alone, imagination has no limit and the goal keeps receding. If the desirable is the healthy, and health is a definite state present in things, the task becomes finite: maintain the normal state, restore it when disturbed, and look for its new conditions when circumstances change.</span></div>
+            <div class="cr"><b>CONSEQUENCE</b><span>The statesman&rsquo;s role resembles a physician&rsquo;s more than a visionary&rsquo;s. He prevents illness by good hygiene and treats it when it appears. Durkheim also adds a second check, that a general fact be explained by the conditions of the society&rsquo;s existence, so that mere apparent normality is not mistaken for the real thing.</span></div>
+        </div></div>
+
+        <figure data-pd="w12-crime-instruction-map-1829.jpg" style="margin: 18px 0 22px 0; text-align: center;"><img src="../_media/w12-crime-instruction-map-1829.jpg" alt="Early nineteenth-century French statistical map set: three maps of France shaded by region, one for crimes against persons, one for crimes against property, and one for schooling, with a table of rates" style="max-width: 100%; width: 780px; height: auto; border-radius: 6px;" /><figcaption style="font-size: 14px; color: #4a5a78; line-height: 1.5; margin-top: 8px;">An early statistical map of crime in France: crime counted as a regular feature of a whole society, the kind of general fact Durkheim&rsquo;s test depends on. <span style="font-size: 12px; color: #6b7a99;">Andr&eacute;-Michel Guerry and Adriano Balbi, 1829. Public domain, via Wikimedia Commons.</span></figcaption></figure>
+
+        <div class="step"><div class="step-n">3</div><div>
+            <div class="step-h">Applied to crime: no society is free of it</div>
+            <div class="cr"><b>CLAIM</b><span>Crime is normal because a society without any crime cannot exist.</span></div>
+            <div class="cr"><b>REASON</b><span>Crime is an act that offends strong, sharply defined collective feelings. For such acts to stop, those feelings would have to be present in every individual consciousness, at full strength, without exception. Even if that were achieved, crime would not vanish. It would change form, because the same cause that dried up old sources of crime would open new ones.</span></div>
+            <div class="cr"><b>EXAMPLE</b><span>A community of exemplary people living in a perfect monastery. Crime as ordinary people know it would be unknown there, yet faults that look slight elsewhere would cause the scandal that real crimes cause elsewhere. Given authority to try and sanction its members, that community would treat those faults as crimes. The most scrupulous person judges his own small failings with a severity most people reserve for real offences.</span></div>
+        </div></div>
+
+        <div class="step"><div class="step-n">4</div><div>
+            <div class="step-h">The stronger claim: crime is useful</div>
+            <div class="cr"><b>CLAIM</b><span>Calling crime normal does more than concede that it is an inevitable evil. It places crime among the conditions of a healthy society, one of the things that help hold it together.</span></div>
+            <div class="cr"><b>REASON</b><span>The indirect use follows from step 3. Crime can occur only where collective feelings are not so overwhelming that no one ever departs from them. That same margin is what lets morality and law change at all: feelings strong enough to stamp out every offence would also be too rigid to take a new shape. Crime is the price of that flexibility, and so is bound up with conditions a healthy society needs. The direct use goes further: crime not only keeps the way to necessary change open but sometimes prepares the change itself, so that a deviant act can be an early sign of the morality to come.</span></div>
+            <div class="cr"><b>EXAMPLE</b><span>Socrates. Athenian law made him a criminal, and by that law the verdict stood. His independence of thought nonetheless helped prepare a new morality and faith that Athens needed, because its inherited traditions no longer suited its conditions of life. Durkheim adds that the pattern recurs: a freedom now taken for granted was first won by breaking the rule that forbade it.</span></div>
+        </div></div>
+
+        <div class="step"><div class="step-n">5</div><div>
+            <div class="step-h">What follows for punishment, and what does not follow</div>
+            <div class="cr"><b>CLAIM</b><span>If crime is not a disease, punishment cannot be its cure, so the true function of punishment must be sought elsewhere. Yet calling crime normal does not mean society should stop abhorring it.</span></div>
+            <div class="cr"><b>REASON</b><span>Pain is detested by every living creature, and it is still a normal and irreplaceable function of life. Detesting a thing and finding it a regular, even useful part of the order of things are compatible. The chapter leaves the positive account of punishment unfinished. Durkheim develops it in <em>De la division du travail social</em>, Book I, where repressive law expresses and strengthens the collective conscience.</span></div>
+            <div class="cr"><b>EXAMPLE</b><span>A disease may be a normal part of an ecosystem and still be worth curing in one patient. Facts about a category and facts about a single act sit at different levels.</span></div>
+        </div></div>
+    </div>
+
+    <!-- Distinctions -->
+    <div class="card">
+        <div class="lab">&#9878;&#65039; THE DISTINCTIONS THAT CARRY THE CHAPTER</div>
+        <div class="cr"><b>NORMAL / GOOD</b><span>Normal describes a fact&rsquo;s place in a society&rsquo;s regular pattern. It is not a verdict on whether the fact is admirable.</span></div>
+        <div class="cr"><b>NORMAL / PATHOLOGICAL</b><span>Defined against a type at a stage of development, never in the abstract.</span></div>
+        <div class="cr"><b>CATEGORY / ACT</b><span>The claim concerns crime as a feature of every society, not the moral status of any single crime or the fate of its victims.</span></div>
+        <div class="cr"><b>INDIRECT / DIRECT USE</b><span>Indirect: crime is the sign of collective feelings flexible enough to change. Direct: crime can anticipate a changed morality.</span></div>
+    </div>
+
+    <!-- Objection -->
+    <div class="card" style="border-left: 5px solid #C7922C;">
+        <div class="lab">&#10067; THE STRONGEST OBJECTION</div>
+        <p class="p">The pain analogy has an obvious function behind it: pain warns the body of damage. The function of any single crime is far harder to name. Durkheim&rsquo;s reply is that his claim concerns the category, not the individual act. The objector can press further: a test built on how common a fact is cannot, by itself, condemn a society-wide evil, because the more widespread the evil, the more normal it becomes.</p>
+        <p class="p">A second objection concerns Socrates. He is one famous case, chosen because history vindicated him. For every Socrates there may be many deviants history forgot, whose independence of thought was simply error. Durkheim&rsquo;s argument needs deviance to be forward-looking on average, not every deviant to be admirable.</p>
+    </div>
+
+    <!-- Questions -->
+    <div class="card" style="border-top: 3px solid #0E1C42;">
+        <div class="lab">&#127919; FOUR QUESTIONS</div>
         <ol class="q-list">
-            <li>Smith says the pin factory's ten workers make forty-eight thousand pins a day, "upwards of four thousand eight hundred pins" each, when "certainly" none of them could make even twenty pins working alone. Is that comparison an empirical claim you could go verify, or an illustration meant to make a point vivid? Does the distinction matter to his argument?</li>
-            <li>In the closing passage, Smith traces the "accommodation of the most common artificer or day-labourer" back through shepherds, wool-combers, dyers, miners, ship-builders, and glass-makers. What is he trying to prove by making the chain this long, and does the length of the chain change what he is arguing?</li>
-            <li>Smith describes a general plenty that "diffuses itself through all the different ranks of the society" once each worker can exchange his surplus for the surplus of others. This is close to what later became known as the "invisible hand," though he does not use that phrase in this chapter. What is the mechanism by which individual specialization produces a social benefit nobody planned? Under what conditions would this mechanism fail?</li>
-            <li>Smith's analysis of the division of labor takes the individual worker primarily as a unit of productive capacity, not as a person with a full human life. What does Durkheim's analysis of the division of labor, from Monday's lesson, add to Smith's that Smith's economics cannot see?</li>
+            <li>What does Durkheim mean by <em>normal</em>? Is the sense statistical, functional, or normative?</li>
+            <li>If a society eliminated its worst crimes, lesser faults would become crimes. Is this convincing? What historical evidence could count for or against it?</li>
+            <li>Is Socrates a good example for Durkheim&rsquo;s point? Does it support the argument?</li>
+            <li>Does calling crime normal imply that criminals should not be punished? How do the claim that crime is normal and the claim that punishment serves a social function fit together?</li>
         </ol>
     </div>
 
-    <!-- ===== THE EXCERPT ===== -->
-    <div class="src">
-        <div class="sect" style="border-top: none; padding-top: 0; margin-top: 0;">THE PIN FACTORY</div>
-
-        <p>The greatest improvements in the productive powers of labour, and the greater part of the skill, dexterity, and judgment, with which it is anywhere directed, or applied, seem to have been the effects of the division of labour. The effects of the division of labour, in the general business of society, will be more easily understood, by considering in what manner it operates in some particular manufactures. It is commonly supposed to be carried furthest in some very trifling ones; not perhaps that it really is carried further in them than in others of more importance: but in those trifling manufactures which are destined to supply the small wants of but a small number of people, the whole number of workmen must necessarily be small; and those employed in every different branch of the work can often be collected into the same workhouse, and placed at once under the view of the spectator.</p>
-
-        <p>In those great manufactures, on the contrary, which are destined to supply the great wants of the great body of the people, every different branch of the work employs so great a number of workmen, that it is impossible to collect them all into the same workhouse. We can seldom see more, at one time, than those employed in one single branch. Though in such manufactures, therefore, the work may really be divided into a much greater number of parts, than in those of a more trifling nature, the division is not near so obvious, and has accordingly been much less observed.</p>
-
-        <p>To take an example, therefore, from a very trifling manufacture, but one in which the division of labour has been very often taken notice of, the trade of a pin-maker: a workman not educated to this business (which the division of labour has rendered a distinct trade), nor acquainted with the use of the machinery employed in it (to the invention of which the same division of labour has probably given occasion), could scarce, perhaps, with his utmost industry, make one pin in a day, and certainly could not make twenty. But in the way in which this business is now carried on, not only the whole work is a peculiar trade, but it is divided into a number of branches, of which the greater part are likewise peculiar trades. One man draws out the wire; another straights it; a third cuts it; a fourth points it; a fifth grinds it at the top for receiving the head; to make the head requires two or three distinct operations; to put it on is a peculiar business; to whiten the pins is another; it is even a trade by itself to put them into the paper; and the important business of making a pin is, in this manner, divided into about eighteen distinct operations, which, in some manufactories, are all performed by distinct hands, though in others the same man will sometimes perform two or three of them. I have seen a small manufactory of this kind, where ten men only were employed, and where some of them consequently performed two or three distinct operations. But though they were very poor, and therefore but indifferently accommodated with the necessary machinery, they could, when they exerted themselves, make among them about twelve pounds of pins in a day. There are in a pound upwards of four thousand pins of a middling size. Those ten persons, therefore, could make among them upwards of forty-eight thousand pins in a day. Each person, therefore, making a tenth part of forty-eight thousand pins, might be considered as making four thousand eight hundred pins in a day. But if they had all wrought separately and independently, and without any of them having been educated to this peculiar business, they certainly could not each of them have made twenty, perhaps not one pin in a day; that is, certainly, not the two hundred and fortieth, perhaps not the four thousand eight hundredth, part of what they are at present capable of performing, in consequence of a proper division and combination of their different operations.</p>
-
-        <div class="sect">SPECIALIZATION ACROSS TRADES</div>
-
-        <p>In every other art and manufacture, the effects of the division of labour are similar to what they are in this very trifling one, though, in many of them, the labour can neither be so much subdivided, nor reduced to so great a simplicity of operation. The division of labour, however, so far as it can be introduced, occasions, in every art, a proportionable increase of the productive powers of labour. The separation of different trades and employments from one another, seems to have taken place in consequence of this advantage. This separation, too, is generally carried furthest in those countries which enjoy the highest degree of industry and improvement; what is the work of one man, in a rude state of society, being generally that of several in an improved one. In every improved society, the farmer is generally nothing but a farmer; the manufacturer, nothing but a manufacturer. The labour, too, which is necessary to produce any one complete manufacture, is almost always divided among a great number of hands. How many different trades are employed in each branch of the linen and woollen manufactures, from the growers of the flax and the wool, to the bleachers and smoothers of the linen, or to the dyers and dressers of the cloth! The nature of agriculture, indeed, does not admit of so many subdivisions of labour, nor of so complete a separation of one business from another, as manufactures. It is impossible to separate so entirely the business of the grazier from that of the corn-farmer, as the trade of the carpenter is commonly separated from that of the smith. The spinner is almost always a distinct person from the weaver; but the ploughman, the harrower, the sower of the seed, and the reaper of the corn, are often the same. The occasions for those different sorts of labour returning with the different seasons of the year, it is impossible that one man should be constantly employed in any one of them. This impossibility of making so complete and entire a separation of all the different branches of labour employed in agriculture, is perhaps the reason why the improvement of the productive powers of labour, in this art, does not always keep pace with their improvement in manufactures.</p>
-
-        <p>This great increase in the quantity of work, which, in consequence of the division of labour, the same number of people are capable of performing, is owing to three different circumstances; first, to the increase of dexterity in every particular workman; secondly, to the saving of the time which is commonly lost in passing from one species of work to another; and, lastly, to the invention of a great number of machines which facilitate and abridge labour, and enable one man to do the work of many.</p>
-
-        <div class="sect">THREE CIRCUMSTANCES, EXAMINED</div>
-
-        <p>First, the improvement of the dexterity of the workmen, necessarily increases the quantity of the work he can perform; and the division of labour, by reducing every man's business to some one simple operation, and by making this operation the sole employment of his life, necessarily increases very much the dexterity of the workman. A common smith, who, though accustomed to handle the hammer, has never been used to make nails, if, upon some particular occasion, he is obliged to attempt it, will scarce, I am assured, be able to make above two or three hundred nails in a day, and those, too, very bad ones. A smith who has been accustomed to make nails, but whose sole or principal business has not been that of a nailer, can seldom, with his utmost diligence, make more than eight hundred or a thousand nails in a day. I have seen several boys, under twenty years of age, who had never exercised any other trade but that of making nails, and who, when they exerted themselves, could make, each of them, upwards of two thousand three hundred nails in a day.</p>
-
-        <p>Secondly, the advantage which is gained by saving the time commonly lost in passing from one sort of work to another, is much greater than we should at first view be apt to imagine it. It is impossible to pass very quickly from one kind of work to another, that is carried on in a different place, and with quite different tools. A country weaver, who cultivates a small farm, must lose a good deal of time in passing from his loom to the field, and from the field to his loom. The habit of sauntering, and of indolent careless application, which is naturally, or rather necessarily, acquired by every country workman who is obliged to change his work and his tools every half hour, and to apply his hand in twenty different ways almost every day of his life, renders him almost always slothful and lazy, and incapable of any vigorous application, even on the most pressing occasions.</p>
-
-        <p>Thirdly, and lastly, everybody must be sensible how much labour is facilitated and abridged by the application of proper machinery. In the first fire engines [this was the current designation for steam engines], a boy was constantly employed to open and shut alternately the communication between the boiler and the cylinder, according as the piston either ascended or descended. One of those boys, who loved to play with his companions, observed that, by tying a string from the handle of the valve which opened this communication to another part of the machine, the valve would open and shut without his assistance, and leave him at liberty to divert himself with his play-fellows. One of the greatest improvements that has been made upon this machine, since it was first invented, was in this manner the discovery of a boy who wanted to save his own labour.</p>
-
-        <div class="sect">UNIVERSAL OPULENCE</div>
-
-        <p>It is the great multiplication of the productions of all the different arts, in consequence of the division of labour, which occasions, in a well-governed society, that universal opulence which extends itself to the lowest ranks of the people. Every workman has a great quantity of his own work to dispose of beyond what he himself has occasion for; and every other workman being exactly in the same situation, he is enabled to exchange a great quantity of his own goods for a great quantity or, what comes to the same thing, for the price of a great quantity of theirs. He supplies them abundantly with what they have occasion for, and they accommodate him as amply with what he has occasion for, and a general plenty diffuses itself through all the different ranks of the society.</p>
-
-        <div class="sect">THE COAT OF THE DAY-LABOURER</div>
-
-        <p>Observe the accommodation of the most common artificer or day-labourer in a civilized and thriving country, and you will perceive that the number of people, of whose industry a part, though but a small part, has been employed in procuring him this accommodation, exceeds all computation. The woollen coat, for example, which covers the day-labourer, as coarse and rough as it may appear, is the produce of the joint labour of a great multitude of workmen. The shepherd, the sorter of the wool, the wool-comber or carder, the dyer, the scribbler, the spinner, the weaver, the fuller, the dresser, with many others, must all join their different arts in order to complete even this homely production. How many merchants and carriers, besides, must have been employed in transporting the materials from some of those workmen to others who often live in a very distant part of the country? How much commerce and navigation in particular, how many ship-builders, sailors, sail-makers, rope-makers, must have been employed in order to bring together the different drugs made use of by the dyer, which often come from the remotest corners of the world? What a variety of labour, too, is necessary in order to produce the tools of the meanest of those workmen! Let us consider only what a variety of labour is requisite in order to form that very simple machine, the shears with which the shepherd clips the wool. The miner, the builder of the furnace for smelting the ore, the feller of the timber, the burner of the charcoal to be made use of in the smelting-house, the brickmaker, the bricklayer, the workmen who attend the furnace, the millwright, the forger, the smith, must all of them join their different arts in order to produce them.</p>
-
-        <p>Were we to examine, in the same manner, all the different parts of his dress and household furniture, the coarse linen shirt which he wears next his skin, the shoes which cover his feet, the bed which he lies on, and all the different parts which compose it, the kitchen-grate at which he prepares his victuals, the coals which he makes use of for that purpose, dug from the bowels of the earth, and brought to him, perhaps, by a long sea and a long land-carriage, all the other utensils of his kitchen, all the furniture of his table, the knives and forks, the earthen or pewter plates upon which he serves up and divides his victuals, the different hands employed in preparing his bread and his beer, the glass window which lets in the heat and the light, and keeps out the wind and the rain, with all the knowledge and art requisite for preparing that beautiful and happy invention, without which these northern parts of the world could scarce have afforded a very comfortable habitation, together with the tools of all the different workmen employed in producing those different conveniencies; if we examine, I say, all these things, and consider what a variety of labour is employed about each of them, we shall be sensible that, without the assistance and co-operation of many thousands, the very meanest person in a civilized country could not be provided, even according to, what we very falsely imagine, the easy and simple manner in which he is commonly accommodated. Compared, indeed, with the more extravagant luxury of the great, his accommodation must no doubt appear extremely simple and easy; and yet it may be true, perhaps, that the accommodation of an European prince does not always so much exceed that of an industrious and frugal peasant, as the accommodation of the latter exceeds that of many an African king, the absolute masters of the lives and liberties of ten thousand naked savages.</p>
-    </div>
-
-    <!-- After you read -->
-    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9999;&#65039; AFTER YOU READ</div>
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">Write short answers to the four questions in your Sociological Journal document.</p>
+    <!-- Reveals -->
+    <div class="card">
+        <div class="lab">&#9999;&#65039; AFTER THE QUESTIONS</div>
 
         <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0 0 12px 0;">
             <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
-                <span style="color: #C7922C;">&#9654;</span>&nbsp; Answer question 2 in your notebook first, then open this.
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; Question 3: is Socrates a fair example?
             </summary>
             <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
-                Smith is not merely showing off. The chain matters because he wants you to feel the distance between how simple the day-labourer's life looks and how enormous the cooperative structure standing behind it actually is. If the chain were short, one could imagine a single skilled craftsman supplying the coat alone, and specialization would look like a convenience rather than a necessity. Because the chain runs from a shepherd's shears through a dyer's imported drugs to a ship-builder's trade, Smith is arguing that even the "easy and simple" accommodation of the poorest worker in a commercial society depends on cooperation among thousands of strangers who will never meet him and do not intend to help him in particular. That is the same insight Durkheim will later formalise as organic solidarity, though Smith reaches it as an economist marvelling at complexity, not as a sociologist asking what holds a society together.
+                The example is strong because it does not soften the verdict. Durkheim does not say Athens was wrong by its own laws. He says the existence of people willing to be convicted for their convictions is part of how a society&rsquo;s morality is able to move at all. The fair objection is selection: Socrates was vindicated, and most deviants are not. The argument holds if some deviance is forward-looking on average.
             </div>
         </details>
 
         <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0;">
             <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
-                <span style="color: #C7922C;">&#9654;</span>&nbsp; Write down, in your notebook, one place in this chapter where Smith's economics and Durkheim's sociology would agree, and one place where they would talk past each other. Then open this.
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; Question 4: do the two halves fit together?
             </summary>
             <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
-                They would agree that specialization creates interdependence: Smith's day-labourer literally cannot survive without the shepherd, dyer, and ship-builder, which is Durkheim's organic solidarity in everything but name. They would talk past each other on whether that interdependence is enough by itself. Smith's chapter treats the coat as proof that the system works: everyone gets more than they could alone. Durkheim, reading the same fact, would ask a further question Smith never raises here: do the workers in this chain feel any moral connection to one another, or only a cash relationship, and does the answer to that question change whether the interdependence counts as genuine solidarity or mere mechanical dependence? Chapter I of the <em>Wealth of Nations</em> has no resources to answer that question, because it is not the question Smith is asking.
+                They fit because <em>normal</em> describes a fact&rsquo;s place in the social order, not its moral standing or its treatment. A species-level fact about deviance and an act-level fact about one offender are different levels of description. Durkheim can hold that crime as a category is inevitable, even functional, and that a particular offender should be punished, because punishment does separate work: it reaffirms the collective conscience that the act violated, the boundary maintenance of Lesson 12.01.
             </div>
         </details>
     </div>
 
     <!-- Next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT COMES NEXT</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; NEXT</div>
         <div style="display: flex; align-items: flex-start; gap: 14px;">
             <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
             <div>
-                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Lesson 12.02, Wednesday</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Marx and Weber take the same fact of interdependence you just read and ask who benefits from it and how power is actually distributed.</div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Lesson 12.02</strong></div>
             </div>
         </div>
     </div>
@@ -219,8 +257,8 @@
 
 <!-- ===== FOOTER ===== -->
 <div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
-    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Primary Source Reading</div>
-    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Adam Smith, <em>Wealth of Nations</em> I.1 &middot; 1776 &middot; public domain</div>
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Text Study</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Durkheim, <em>Les R&egrave;gles de la m&eacute;thode sociologique</em> III (1895)</div>
     <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
 </div>
 

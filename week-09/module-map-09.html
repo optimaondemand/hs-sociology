@@ -1,27 +1,15 @@
 <!--
     Optima Academy Online — Sociology (Florida 2108300)
-    Q1 · Week 9 · Module Map (week opener AND quarter closer)
+    Week 9 · Module Map (merged week: Quarter 1 recap, then Quarter 2 opens)
 
     TEACHER-FACING BUILD NOTES (not rendered to students):
-    REGISTER: HONORS.
-      Tier 4 scaffolding, ungraded, GitHub-hosted. Not the module intro wrapper:
-      that is a separate Canvas Quiz in survey mode (module-intro-09.md).
-      Week 9 virtue thread: perseverance (Week 9 alone; the only single-week
-      virtue in the course, matching this being the quarter's own hinge week).
-      Journal 9 is Tier 2 WITH a peer reply this week (odd week).
-
-      PATTERN B WEEK, same treatment as week-04's module map (the template this
-      section follows exactly): Thursday's reading is in a book the student must
-      obtain (Weber, Protestant Ethic, Author's Introduction, trans. Talcott
-      Parsons). The alert sits above the essential question, in the same
-      position as week 4's.
-
-      QUARTER-CLOSE TREATMENT (per BUILDER_BRIEF.md, this week is different): a
-      dedicated "THE QUARTER AT A GLANCE" section recaps all nine weeks, which
-      no other week's module map does. This is deliberate and is the answer to
-      the brief's instruction that the map "look back across the whole quarter."
-      It also flags that the Classical Thinker Profile was due at the end of
-      Week 8 and that the Community Institution Study launches this week.
+    REGISTER: HONORS. REBUILT 2026-10-14 for the merged Week 9 (old Weeks 9 and 10).
+      Tier 4 scaffolding, ungraded, GitHub-hosted. Not the module intro wrapper
+      (module-intro-09.md is a separate Canvas Quiz in survey mode).
+      Item order: Lesson 9.01, Lesson 9.02, Source 9A, Lesson 9.03, Source 9B,
+      Reading Quiz 9, Journal 9 (video discussion with one peer reply).
+      Community Institution Study launches this week and is due end of Week 10.
+      Virtue threads: perseverance (recap) and responsibility (authority).
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -29,27 +17,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Sociology &middot; Week 9 Module Map</title>
-<style>
-    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
+<style>    body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
     .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-
-    .wk { display: flex; gap: 10px; margin: 6px 0 4px 0; }
-    .day { flex: 1; border-radius: 8px; border: 1px solid #D0D9E8; overflow: hidden; }
-    .day-h { background: #0E1C42; color: #fff; font-size: 11px; letter-spacing: 0.6px; padding: 8px 10px; text-align: center; }
-    .day-b { padding: 12px 11px; min-height: 148px; }
-    .day-kind { font-size: 10px; letter-spacing: 0.5px; color: #1B6A94; margin-bottom: 5px; }
-    .day-t { font-size: 14px; color: #0E1C42; line-height: 1.45; margin-bottom: 8px; }
-    .day-due { font-size: 12px; color: #8a6a1d; background: #FDF3E3; border-radius: 4px; padding: 4px 7px; display: inline-block; line-height: 1.35; }
-    .day-book { font-size: 12px; color: #8A1F16; background: #FDECEC; border-radius: 4px; padding: 4px 7px; display: inline-block; line-height: 1.35; }
-    .day.rest .day-h { background: #6b7a99; }
-    .day.rest .day-b { color: #6b7a99; font-size: 13px; line-height: 1.5; }
-
-    .alert { background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 8px; padding: 18px 22px; margin-bottom: 20px; }
-    .alert-l { font-size: 11px; color: #8A1F16; letter-spacing: 0.5px; margin-bottom: 9px; }
-    .alert-h { font-size: 19px; color: #0E1C42; margin-bottom: 8px; }
-    .alert-t { font-size: 17px; color: #1a2340; line-height: 1.6; }
-    .alert-t strong { color: #0E1C42; }
-
     .turn { width: 100%; border-collapse: collapse; font-size: 15px; margin: 6px 0; }
     .turn th { background: #0E1C42; color: #fff; text-align: left; padding: 10px 13px; font-size: 12px; letter-spacing: 0.4px; font-weight: normal; }
     .turn td { border: 1px solid #D0D9E8; padding: 10px 13px; color: #1a2340; line-height: 1.5; vertical-align: top; }
@@ -58,14 +27,15 @@
     .p1 { background: #E8F6FB; color: #1B6A94; border: 1px solid #C5DCE5; }
     .p2 { background: #FDF3E3; color: #8a6a1d; border: 1px solid #E8D6AE; }
 
-    /* Quarter retrospective */
-    .qgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; margin: 4px 0 4px 0; }
-    .qcell { background: #FFFFFF; border: 1px solid #D0D9E8; border-top: 3px solid #55C8E8; border-radius: 7px; padding: 11px 13px; }
-    .qcell.here { border-top-color: #C7922C; background: #FDF3E3; }
-    .qcell-n { font-size: 10px; letter-spacing: 0.5px; color: #1B6A94; margin-bottom: 4px; }
-    .qcell.here .qcell-n { color: #8a6a1d; }
-    .qcell-t { font-size: 13px; color: #0E1C42; line-height: 1.4; }
-    @media (max-width: 700px) { .qgrid { grid-template-columns: repeat(2, 1fr); } }
+    .seq { list-style: none; margin: 0; padding: 0; }
+    .seq li { display: flex; align-items: center; gap: 14px; border: 1px solid #D0D9E8; border-left: 5px solid #55C8E8; border-radius: 8px; padding: 12px 16px; margin-bottom: 9px; background: #FFFFFF; }
+    .seq li.proj { border-left-color: #C7922C; background: #FDF9EF; }
+    .seq-n { min-width: 32px; height: 32px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 15px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .seq-body { flex: 1; }
+    .seq-kind { font-size: 10px; letter-spacing: 0.5px; color: #1B6A94; margin-bottom: 3px; }
+    .seq-t { font-size: 16px; color: #0E1C42; line-height: 1.4; }
+    .seq-tag { flex-shrink: 0; }
+    @media (max-width: 700px) { .seq li { flex-wrap: wrap; } }
 </style>
 </head>
 <body>
@@ -86,20 +56,20 @@
 <!-- ===== METADATA STRIP ===== -->
 <div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
-        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
-        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 9</div>
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module</div>
+        <div style="font-size: 17px; color: #0e1c42;">Module 9</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">This Week</div>
-        <div style="font-size: 17px; color: #0e1c42;">Week 9 of 18 &middot; last week of Quarter 1</div>
+        <div style="font-size: 17px; color: #0e1c42;">Week 9 of 17</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Theme</div>
-        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Quarter 1 Review and Synthesis</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Quarter 1 Recap and the Origins of Political Authority</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Virtue</div>
-        <div style="font-size: 16px; color: #0e1c42;">Perseverance</div>
+        <div style="font-size: 16px; color: #0e1c42;">Perseverance, Responsibility</div>
     </div>
 </div>
 
@@ -108,170 +78,72 @@
 
     <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">MODULE MAP</div>
-        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Week 9: Quarter 1 Review and Synthesis</div>
-        <div style="font-size: 16px; color: #666;">Start here. This page shows you everything the week contains, and looks back across the whole quarter.</div>
-    </div>
-
-    <!-- ===== BOOK ALERT: deliberately above everything else ===== -->
-    <div class="alert">
-        <div class="alert-l">&#9888;&#65039; DO THIS FIRST, TODAY</div>
-        <div class="alert-h">Thursday's reading is in a book you need to get hold of.</div>
-        <div class="alert-t">
-            Most readings in this course are on the page in front of you. This one is not. Thursday you
-            read <strong>Weber, <em>The Protestant Ethic and the Spirit of Capitalism</em>, Author's
-            Introduction</strong>, in the translation by <strong>Talcott Parsons</strong>.
-            <br><br>
-            Your school library link is posted in this module. Check that you can reach a copy
-            <strong>today</strong>, not on Thursday morning. If you cannot find one, tell your facilitator
-            straight away. That is a five-minute problem on Monday and an impossible one on Thursday.
-            The Primary Source 9B page tells you exactly where to start reading.
-        </div>
-        <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(192,57,43,0.3); font-size: 14px; color: #4a5a78; line-height: 1.6;">
-            Students must obtain lawful access to the assigned literary work separately. Optima course materials are original instructional materials designed to support analysis, discussion, and assessment of the work. Copyrighted text, images, illustrations, panels, audio, or other protected materials are not reproduced in Canvas, VR, videos, downloadable files, or teacher resources except where expressly licensed, in the public domain, or approved as a limited fair-use excerpt for instructional analysis.
-        </div>
+        <div style="font-size: 22px; color: #0e1c42;">Week 9: Quarter 1 Recap and the Origins of Political Authority</div>
     </div>
 
     <!-- Essential question -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#10067; THE QUESTION THIS WEEK IS ABOUT</div>
-        <div style="font-size: 21px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">What have you learned to see that you could not see nine weeks ago?</div>
-        <div style="font-size: 17px; color: #1a2340; line-height: 1.65;">This week does not add a new thinker. It asks you to hold the whole quarter together as one argument: what binds a person to the people around her, and what happens when that bond weakens. You will also step back from any single thinker's conclusions to ask a harder question underneath all of them, namely how any of them knew what they claimed to know.</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#10067; ESSENTIAL QUESTION</div>
+        <div style="font-size: 21px; color: #0e1c42; font-style: italic;">What holds a person to society, and what makes obedience legitimate rather than merely coerced?</div>
     </div>
 
-    <!-- Week at a glance -->
+    <!-- Sequence -->
     <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128197; THE WEEK AT A GLANCE</div>
-        <div class="wk">
-            <div class="day">
-                <div class="day-h">MONDAY</div>
-                <div class="day-b">
-                    <div class="day-kind">LESSON 9.01</div>
-                    <div class="day-t">A synthesis of Quarter 1, with a retrieval-practice widget on all eleven thinkers</div>
-                    <div class="day-due">Reading Quiz 9 opens</div>
-                </div>
-            </div>
-            <div class="day">
-                <div class="day-h">TUESDAY</div>
-                <div class="day-b">
-                    <div class="day-kind">PRIMARY SOURCE 9A</div>
-                    <div class="day-t">No new text. Choose one source from Weeks 1&ndash;8 and read it again.</div>
-                </div>
-            </div>
-            <div class="day">
-                <div class="day-h">WEDNESDAY</div>
-                <div class="day-b">
-                    <div class="day-kind">LESSON 9.02</div>
-                    <div class="day-t">How sociology knows what it knows: the four methods, and fact versus interpretation</div>
-                </div>
-            </div>
-            <div class="day">
-                <div class="day-h">THURSDAY</div>
-                <div class="day-b">
-                    <div class="day-kind">PRIMARY SOURCE 9B</div>
-                    <div class="day-t">Weber, <em>Protestant Ethic</em>, Author's Introduction</div>
-                    <div class="day-book">In a book. Get it Monday.</div>
-                    <div class="day-due">Journal 9 due, with a peer reply</div>
-                </div>
-            </div>
-            <div class="day rest">
-                <div class="day-h">FRIDAY</div>
-                <div class="day-b">Catch up, finish your VR activities, or come to office hours. Quarter 1 closes today.</div>
-            </div>
-        </div>
-        <p style="font-size: 15px; color: #4a5a78; line-height: 1.6; margin: 14px 0 0 0;">This week is a consolidation, not new material. If you fell behind earlier in the quarter, this is the week to close the gap before Quarter 2 begins building on top of everything Quarter 1 established.</p>
-    </div>
-
-    <!-- Quarter retrospective -->
-    <div style="background: #0E1C42; border-radius: 10px; padding: 22px 26px; margin-bottom: 20px;">
-        <div style="font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px;">THE QUARTER AT A GLANCE</div>
-        <div style="font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 16px; font-style: italic;">Nine weeks, one running argument. This is what you are synthesizing this week.</div>
-        <div class="qgrid">
-            <div class="qcell"><div class="qcell-n">WEEK 1</div><div class="qcell-t">The birth of sociology; Aristotle, Hobbes, Locke, Rousseau on human nature</div></div>
-            <div class="qcell"><div class="qcell-n">WEEK 2</div><div class="qcell-t">Culture, tradition, and how a self is socialized into a society</div></div>
-            <div class="qcell"><div class="qcell-n">WEEK 3</div><div class="qcell-t">Tocqueville on democracy and equality; Durkheim proves social facts are real</div></div>
-            <div class="qcell"><div class="qcell-n">WEEK 4</div><div class="qcell-t">Durkheim on solidarity; Simmel on the modern, monetized, metropolitan mind</div></div>
-            <div class="qcell"><div class="qcell-n">WEEK 5</div><div class="qcell-t">Sociological seeing; the historical development of family and kinship</div></div>
-            <div class="qcell"><div class="qcell-n">WEEK 6</div><div class="qcell-t">Marriage and household organization; religion through Durkheim and Weber</div></div>
-            <div class="qcell"><div class="qcell-n">WEEK 7</div><div class="qcell-t">Education from apprenticeship to public schooling; Tonnies on community</div></div>
-            <div class="qcell"><div class="qcell-n">WEEK 8</div><div class="qcell-t">Nisbet and Putnam on institutions, association, and social capital</div></div>
-            <div class="qcell here"><div class="qcell-n">WEEK 9 &middot; NOW</div><div class="qcell-t">Synthesis, and the method underneath every claim you have studied</div></div>
-        </div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128197; THE WEEK IN ORDER</div>
+        <ol class="seq">
+            <li><div class="seq-n">1</div><div class="seq-body"><div class="seq-kind">LESSON 9.01</div><div class="seq-t">Quarter 1 recap: from social bonds to social institutions</div></div></li>
+            <li><div class="seq-n">2</div><div class="seq-body"><div class="seq-kind">LESSON 9.02</div><div class="seq-t">Origins of government and law</div></div></li>
+            <li><div class="seq-n">3</div><div class="seq-body"><div class="seq-kind">PRIMARY SOURCE 9A</div><div class="seq-t">Aristotle, <em>Politics</em> III.7 and III.11</div></div></li>
+            <li><div class="seq-n">4</div><div class="seq-body"><div class="seq-kind">LESSON 9.03</div><div class="seq-t">Weber: three types of legitimate authority</div></div></li>
+            <li><div class="seq-n">5</div><div class="seq-body"><div class="seq-kind">PRIMARY SOURCE 9B</div><div class="seq-t">Weber, <em>Economy and Society</em> III.1&ndash;4</div></div></li>
+            <li><div class="seq-n">6</div><div class="seq-body"><div class="seq-kind">READING QUIZ 9</div><div class="seq-t">Eight multiple choice questions</div></div><div class="seq-tag"><span class="pill p1">Auto-graded</span></div></li>
+            <li><div class="seq-n">7</div><div class="seq-body"><div class="seq-kind">SOCIOLOGICAL JOURNAL 9 &middot; VIDEO DISCUSSION</div><div class="seq-t">Weber in your life</div></div><div class="seq-tag"><span class="pill p2">Graded &middot; 20 points</span></div></li>
+        </ol>
     </div>
 
     <!-- What you turn in -->
     <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU TURN IN THIS WEEK</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU TURN IN</div>
         <table class="turn">
             <tr><th>Item</th><th>What it is</th><th>Counts as</th></tr>
             <tr>
                 <td>Module 9 intro survey</td>
-                <td>A few questions before you start, including the book-access check for Thursday.</td>
+                <td>Opening questions, including the first answer to the essential question.</td>
                 <td><span class="pill p1">Completion</span></td>
             </tr>
             <tr>
                 <td>Reading Quiz 9</td>
-                <td>Eight multiple choice questions drawn from across the quarter, not only this week.</td>
+                <td>Eight multiple choice questions on the week&rsquo;s lessons and sources.</td>
                 <td><span class="pill p1">Auto-graded</span></td>
             </tr>
             <tr>
                 <td>Sociological Journal 9</td>
-                <td>300 to 400 words synthesizing what it means to be a social being, using at least three thinkers. <strong>A discussion this week, and a peer reply is required.</strong></td>
+                <td>A 2 to 4 minute video applying Weber&rsquo;s three types to two authorities in your life, plus one peer reply.</td>
                 <td><span class="pill p2">Graded discussion</span></td>
             </tr>
             <tr>
-                <td>VR Activity 9.1</td>
-                <td>Build a gallery representing eight Quarter 1 thinkers and their connections to one another.</td>
-                <td><span class="pill p1">Completion</span></td>
-            </tr>
-            <tr>
-                <td>VR Activity 9.2</td>
-                <td>Revisit a space from earlier in the quarter with the full toolkit; the final Quarter 1 VR submission.</td>
-                <td><span class="pill p1">Completion</span></td>
-            </tr>
-            <tr>
                 <td>Module 9 wrap-up survey</td>
-                <td>Your second answer to the essential question, a quarter-long retrospective, and a look ahead to Quarter 2.</td>
+                <td>Second answer to the essential question, and a look ahead to Quarter 2.</td>
                 <td><span class="pill p1">Completion</span></td>
             </tr>
         </table>
-        <p style="font-size: 15px; color: #4a5a78; line-height: 1.6; margin: 12px 0 0 0;">Journal 8 needed no peer reply. Journal 9 does. The cadence alternates, and the module map will always tell you which kind of week it is.</p>
     </div>
 
-    <!-- Ongoing work -->
+    <!-- Projects -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128260; WORK THAT RUNS ACROSS THE QUARTER BOUNDARY</div>
-        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px;">
-            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
-            <div style="font-size: 17px; color: #1a2340; line-height: 1.6;"><strong>Classical Thinker Profile.</strong> Due at the end of Week 8. If you have not yet submitted it, do that before anything else this week: it is now late, and Week 9's synthesis work assumes it is behind you.</div>
-        </div>
-        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px;">
-            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
-            <div style="font-size: 17px; color: #1a2340; line-height: 1.6;"><strong>Community Institution Study, launching this week.</strong> Your next major project, running Weeks 9 through 11: an observation report on a real public institution, using at least four sociological concepts and at least two primary sources. Wednesday's methods lesson and Tuesday's re-reading are both direct preparation for it. Your facilitator will post the full assignment this week.</div>
-        </div>
-        <div style="display: flex; align-items: flex-start; gap: 12px;">
-            <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
-            <div style="font-size: 17px; color: #1a2340; line-height: 1.6;"><strong>Your Sociological Journal.</strong> By Thursday this document should hold nine entries. Reread all nine before you write this week's, since the prompt asks you to synthesize the whole quarter, and your own earlier entries are evidence of your own thinking developing.</div>
-        </div>
-    </div>
-
-    <!-- Virtue -->
-    <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; THE VIRTUE THIS WEEK IS PERSEVERANCE</div>
-        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Perseverance is not only finishing a hard book. It is the discipline of holding nine weeks of difficult material together long enough to see the shape of it, instead of letting each week close and disappear the moment its quiz is submitted. Synthesis is harder than learning something new, because there is no fresh material to carry you forward. It is entirely your own effort to connect what you already have. This week asks for exactly that effort, and the Community Institution Study will ask for it again.</div>
-    </div>
-
-    <!-- Start here -->
-    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#9654; WHERE TO START</div>
-        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Sort out the Weber book first. Then confirm your Classical Thinker Profile is actually submitted. Then take the Module 9 intro survey, and open Lesson 9.01.</p>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128260; PROJECTS</div>
+        <ol class="seq">
+            <li><div class="seq-n">1</div><div class="seq-body"><div class="seq-kind">CLASSICAL THINKER PROFILE</div><div class="seq-t">Due at the end of Week 8. Submit now if it is outstanding.</div></div></li>
+            <li class="proj"><div class="seq-n">2</div><div class="seq-body"><div class="seq-kind">COMMUNITY INSTITUTION STUDY</div><div class="seq-t">Launches this week. Observation report on a public institution: at least four sociological concepts, at least two primary sources. Due end of Week 10.</div></div></li>
+        </ol>
     </div>
 
 </div>
 
 <!-- ===== FOOTER ===== -->
 <div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
-    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 1 &middot; Module Map</div>
-    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Week 9 of 18 &middot; Quarter 1 Review and Synthesis</div>
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Module Map</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Week 9 of 17 &middot; Quarter 1 Recap and the Origins of Political Authority</div>
     <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
 </div>
 

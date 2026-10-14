@@ -1,47 +1,33 @@
 <!--
     Optima Academy Online — Sociology (Florida 2108300)
-    Q2 · Week 16 · Lesson 16.01 — "Hunter: Culture Wars and Moral Conflict"
+    Q2 · Week 16 · Lesson 16.01 — "Bellah, Berger, Nisbet: Community and the Search for Meaning"
 
     TEACHER-FACING BUILD NOTES (not rendered to students):
-    REGISTER: HONORS.
+    REGISTER: HONORS. Bellah cited by chapter, Berger and Neuhaus by book title
+    and year, Nisbet by chapter, Tocqueville by volume/part/chapter.
 
-      Standard: SS.912.S.5.4, SS.912.S.2.6
-      Objective: Students will reconstruct Hunter's orthodox/progressive distinction as a
-                claim about the SOURCE of moral authority, explain what makes a dispute
-                "symbolic politics" rather than ordinary distributive politics, and state
-                the strongest standing objection to his thesis.
-      Source: Sociology_Course_Master.html, Lesson 16.01. Prose preserved from the master
-              (the "Two Americas" hook, the Key Terms block, and "The Social Sociology of
-              Moral Conflict" section are the master's own words, lightly reformatted).
-              Revisions: R5 (Hook label dropped, section kept), R7 (no em dashes checked,
-              none found), standards codes moved to this comment.
+      Standard: SS.912.S.5.2, SS.912.S.4.9 (kept out of student-facing text)
+      Objective (from manifest): Students will synthesize the community
+      theorists studied throughout the course, evaluate their diagnoses of
+      modernity's social costs, and articulate a coherent account of what
+      genuine community requires in contemporary society.
+      Source: _build/manifest.json weeks[16].lessons[0]. Prose preserved and
+      extended; the master's version did not yet make the Tocqueville lineage
+      or the Week 3 connection explicit, which is the point of this pass (see
+      task brief: "make the lineage explicit").
 
-      DASH-AS-COLON CHECK (plan.md defect 6): scanned the master's Week 16 body_html
-      sentence by sentence. No sentence carries two mid-sentence colons. The single
-      colons present ("characterized by symbolic politics: the fight over a flag...",
-      "the moral cement of society: the shared values...") each introduce a definition
-      or list and are legitimate. Nothing recast. Zero repairs made in this lesson.
+      R1 (unchanged from master's own framing): Bellah, Berger and Neuhaus, and
+      Nisbet remain fully discussed BY NAME in this lesson's prose. Only the
+      ASSIGNED READING changes, to Tocqueville (source-16-a.html). See R1
+      authoring rule, CLAUDE.md.
 
-      NEUTRALITY (directive, this build): Hunter's thesis is presented as a claim about
-      the STRUCTURE of moral disagreement, not as an argument for either the orthodox or
-      the progressive position. No contemporary hot-button policy fight (abortion, gun
-      control, and so on, all named in the master's own unbuilt primary-source guide) is
-      used as an example anywhere on this page or in the widget. Examples are deliberately
-      generic institutional sites (a curriculum sentence, a monument inscription, a budget
-      line) so that working the concept does not require the student to take a side on a
-      live controversy. This matches CLAUDE.md's "no presentism... neutral, factual framing
-      on contested questions" rule and the explicit instruction for this build.
+      REVISIONS: R5 (no "Hook" label), R7 (no em dashes), standards codes kept
+      out of student text.
 
-      R1 NOTE: this lesson keeps Hunter in the prose in full, per the R1 authoring rule
-      ("keep the modern thinker; only the assigned reading changes"). Tuesday's reading is
-      Durkheim, not Hunter; see source-16-a.html. Hunter's name is kept clear of the
-      "Primary Source" pointer at the bottom of this page so a copyright-context scan does
-      not mistake teaching-about-Hunter for assigning Hunter's text.
-
-      WIDGET ROTATION: reflect + single-select, a new visual (".cw", the structure of the
-      disagreement) and a new select framing (symbolic vs. material politics). Lesson 16.02
-      uses scale + flip cards, so no engine combination repeats within the week.
-      Select-row correct indices in order: 2, 1, 1, 2, 2. Not ascending, no 0-1-2-3 run.
+      WIDGET ROTATION (rule: the two lessons in this week must not share an
+      engine combination): 16.01 uses single-select evaluative rows (ow-select)
+      only. 16.02 uses reflect + flip cards. No shared combination.
+      Select-row correct indices in order: 2, 0, 3, 1. Not ascending.
       Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
 -->
 <!DOCTYPE html>
@@ -80,31 +66,20 @@
     .ow-flip.flipped .ow-flip-front { display: none; }
     .ow-flip.flipped .ow-flip-back { display: block; }
 
-    /* ===== Core visual: the structure of the disagreement ===== */
-    .cw { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
-    .cw-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
-    .cw-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
-    .cw-axis { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
-    .cw-pole { flex: 0 0 168px; text-align: center; }
-    .cw-pole-l { font-size: 10px; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
-    .cw-pole-t { font-size: 14px; color: #ffffff; line-height: 1.4; }
-    .cw-line { flex: 1; height: 5px; border-radius: 3px; background: linear-gradient(90deg, #55C8E8, rgba(255,255,255,0.15) 50%, #C7922C); position: relative; }
-    .cw-sites { display: flex; gap: 10px; }
-    .cw-site { flex: 1; background: rgba(255,255,255,0.07); border-top: 3px solid #C7922C; border-radius: 7px; padding: 12px 12px; text-align: center; }
-    .cw-site-h { font-size: 13px; color: #ffffff; margin-bottom: 5px; }
-    .cw-site-b { font-size: 11px; color: rgba(255,255,255,0.7); line-height: 1.4; }
-    .cw-note { margin-top: 16px; padding-top: 13px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 14px; color: rgba(255,255,255,0.82); line-height: 1.6; }
-
-    .two { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 15px; }
-    .two th { background: #0E1C42; color: #fff; text-align: left; padding: 10px 13px; font-size: 12px; letter-spacing: 0.4px; font-weight: normal; }
-    .two td { border: 1px solid #D0D9E8; padding: 10px 13px; color: #1a2340; line-height: 1.5; vertical-align: top; }
-    .two tr:nth-child(even) td { background: #F8FAFD; }
-    .two td:first-child { color: #0E1C42; width: 26%; }
-
-    .key-terms { background: #FCFCF8; border: 1px solid #E3DFD2; border-left: 5px solid #C7922C; border-radius: 8px; padding: 18px 22px; margin: 14px 0; }
-    .key-terms dt { font-size: 16px; color: #0E1C42; margin-top: 10px; }
-    .key-terms dt:first-child { margin-top: 0; }
-    .key-terms dd { font-size: 16px; color: #1a2340; line-height: 1.6; margin: 4px 0 0 0; }
+    /* ===== Core visual: the lineage chain ===== */
+    .ln { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
+    .ln-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .ln-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 20px; font-style: italic; }
+    .ln-row { display: flex; align-items: stretch; gap: 8px; flex-wrap: wrap; }
+    .ln-box { flex: 1; min-width: 130px; background: rgba(255,255,255,0.07); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 12px 13px; }
+    .ln-box.origin { border-top-color: #C7922C; background: rgba(199,146,44,0.14); }
+    .ln-y { font-size: 10px; letter-spacing: 0.4px; color: rgba(255,255,255,0.45); margin-bottom: 4px; }
+    .ln-h { font-size: 14px; color: #ffffff; margin-bottom: 5px; }
+    .ln-b { font-size: 12px; color: rgba(255,255,255,0.78); line-height: 1.45; }
+    .ln-arrow { color: rgba(255,255,255,0.35); font-size: 18px; display: flex; align-items: center; }
+    .ln-out { margin-top: 16px; background: rgba(85,200,232,0.10); border-radius: 8px; padding: 14px 18px; text-align: center; }
+    .ln-out-t { font-size: 11px; color: #55C8E8; letter-spacing: 0.4px; margin-bottom: 6px; }
+    .ln-out-b { font-size: 16px; color: #ffffff; line-height: 1.5; }
 </style>
 </head>
 <body>
@@ -127,7 +102,7 @@
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
         <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 16</div>
-        <div style="font-size: 12px; color: #666;">Culture Wars, Character, and Moral Formation</div>
+        <div style="font-size: 12px; color: #666;">Community in Modern America and Capstone Preparation</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
@@ -135,11 +110,11 @@
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
-        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Culture Wars and Moral Conflict</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Bellah, Berger, Nisbet: Community and the Search for Meaning</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
-        <div style="font-size: 16px; color: #0e1c42;">Culture Wars, Character, and Moral Formation</div>
+        <div style="font-size: 16px; color: #0e1c42;">Community in Modern America</div>
     </div>
 </div>
 
@@ -148,199 +123,196 @@
 
     <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 16.01</div>
-        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Hunter: Culture Wars and Moral Conflict</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Bellah, Berger, Nisbet: Community and the Search for Meaning</div>
         <div style="font-size: 16px; color: #666;">Lesson</div>
     </div>
 
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
-        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Can two people disagree about what makes something right at all, not just about policy, and still belong to one society?</div>
-        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">A sociologist studying this question is not asking who is correct. He is asking what kind of disagreement this is, structurally, and why it behaves so differently from an ordinary argument about taxes or roads. That is the question today's lesson takes on.</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">If Tocqueville named the danger in 1840, why did four more books need to be written about it?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Each thinker in this lesson retraces a path Tocqueville marked out first. The diagnosis has held up, decade after decade, under different conditions, which is the strongest kind of evidence a social theory can get.</div>
     </div>
 
     <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
         <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> reconstruct Hunter's orthodox and progressive impulses as two answers to the question of where moral authority comes from, not as a split between religious and secular people.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> trace Bellah's diagnosis of American individualism to the specific chapter of Tocqueville it reworks, and state what, if anything, Bellah adds.</div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish symbolic politics from ordinary distributive politics, and explain why the two produce very different kinds of conflict.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish utilitarian individualism, expressive individualism, and the civic language Tocqueville describes, and classify a case correctly under each.</div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> state the strongest standing objection to Hunter's thesis and say what would have to be true of the evidence for the objection to replace his account rather than merely qualify it.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> state where Bellah, Berger and Neuhaus, and Nisbet converge and where they genuinely disagree, rather than treating them as one undifferentiated argument.</div>
         </div>
     </div>
 
     <!-- ============================ PART 1 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; TWO AMERICAS</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; HABITS OF THE HEART</div>
 
-        <div class="optima-widget ow-reflect">
-            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
-            <div class="widget-question">Predict: when a committee spends a whole year arguing over one sentence in a document, while nobody objects to what the document costs to print, what is actually being fought over? (No wrong answer.)</div>
-            <div class="widget-options">
-                <button data-response="A reasonable first guess, and sometimes true. But notice that money was not the sticking point here. The fight went on long after the budget question was settled, which is itself a clue about what the fight was really about.">&#128176; It is really about money, dressed up as principle</button>
-                <button data-response="This is close to where the lesson is headed. The document is not just information. It states, on behalf of an institution, what that institution stands for. Fighting over the sentence is fighting over that.">&#128220; Who gets to say what the institution stands for</button>
-                <button data-response="Plausible, and it is one real objection to Hunter's framework that you will meet later in the lesson: some sociologists think apparent mass conflict is really a small number of organized actors amplified by media and politics.">&#128227; A small number of organized people making noise</button>
-                <button data-response="It might feel that way from outside, but committees do not spend a year on nothing. Something is at stake for the people arguing, even if it is hard to name in material terms.">&#128564; Nothing real; it will blow over</button>
-            </div>
-            <div class="widget-feedback"></div>
-            <button class="widget-reset">Reset</button>
-        </div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">In 1985 the sociologist Robert Bellah and four colleagues published <em>Habits of the Heart: Individualism and Commitment in American Life</em>. The title, borrowed directly from Tocqueville's language for the mores that made American democracy workable, announced the book's argument: American individualism had developed in ways that threatened the very habits, of commitment, of civic engagement, of loyalty to communities larger than the self, that the original Tocquevillean analysis had identified as democracy's moral precondition. The book was a bestseller. It remains one of the most cited works in American sociology.</p>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">In 1991, James Davison Hunter, a sociologist at the University of Virginia, published a book called <em>Culture Wars: The Struggle to Define America</em>. Hunter argued that American society was undergoing a fundamental moral restructuring. The old divisions in American public life had been primarily religious (Protestant versus Catholic, Christian versus Jewish) and ethnic. The new divisions cut across these older lines in a different way. They were not between different religious communities but between different moral visions inside every religious community, and indeed in every sector of American life.</p>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Hunter identified two broad impulses. The "orthodox" is characterized by commitment to a transcendent, external, and definitive moral authority: God's law, the natural law, the inherited tradition. The "progressive" is characterized by moral authority understood as evolving, internal, and subject to revision in light of new experience and understanding. These two impulses, Hunter argued, were producing a conflict over the definition of American social institutions that had all the features of a cultural war: organized, ideologically coherent, deeply felt, and not easily settled by ordinary political compromise.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Bellah and his colleagues conducted extensive interviews with ordinary Americans about their values, their commitments, and their understanding of the good life. What they found was a troubling uniformity. Most Americans, asked to articulate their deepest commitments, fell back on one of two languages. The first was <em>utilitarian individualism</em>, the vocabulary of costs, benefits, and self-interest. The second was <em>expressive individualism</em>, the vocabulary of authenticity, self-realization, and feeling. Both are individualistic to the core, and neither has the conceptual resources to articulate a commitment to something larger than the self that is not reducible to self-interest or self-expression (<em>Habits of the Heart</em>, ch. 6).</p>
     </div>
 
     <!-- ============================ PART 2 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; THE SHAPE OF THE DISAGREEMENT</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; ONE DIAGNOSIS, RETRACED FOUR TIMES</div>
 
         <!-- ===== CORE VISUAL ===== -->
-        <div class="cw">
-            <div class="cw-title">WHERE THE AXIS RUNS</div>
-            <div class="cw-sub">Hunter's claim is about the source of authority, and it cuts through every institution below, not between them.</div>
-            <div class="cw-axis">
-                <div class="cw-pole">
-                    <div class="cw-pole-l">ORTHODOX IMPULSE</div>
-                    <div class="cw-pole-t">A fixed, external, inherited authority</div>
+        <div class="ln">
+            <div class="ln-title">THE LINEAGE</div>
+            <div class="ln-sub">Four modern books, one nineteenth-century premise. The origin point is Tocqueville in Week 3.</div>
+            <div class="ln-row">
+                <div class="ln-box origin">
+                    <div class="ln-y">1840</div>
+                    <div class="ln-h">Tocqueville</div>
+                    <div class="ln-b">Equality dissolves vertical bonds. Individuals withdraw into a private circle. He calls it <em>individualism</em> and treats voluntary association as the remedy. <em>DiA</em> II.2.2.</div>
                 </div>
-                <div class="cw-line"></div>
-                <div class="cw-pole">
-                    <div class="cw-pole-l">PROGRESSIVE IMPULSE</div>
-                    <div class="cw-pole-t">An evolving, revisable, internally derived authority</div>
+                <div class="ln-arrow">&#8594;</div>
+                <div class="ln-box">
+                    <div class="ln-y">1953</div>
+                    <div class="ln-h">Nisbet</div>
+                    <div class="ln-b">Modern anomie and mass politics come from the destruction of intermediary institutions, family, church, guild, without replacement.</div>
+                </div>
+                <div class="ln-arrow">&#8594;</div>
+                <div class="ln-box">
+                    <div class="ln-y">1977</div>
+                    <div class="ln-h">Berger &amp; Neuhaus</div>
+                    <div class="ln-b"><em>To Empower People</em> names the same institutions "mediating structures" standing between the person and the state or corporation.</div>
+                </div>
+                <div class="ln-arrow">&#8594;</div>
+                <div class="ln-box">
+                    <div class="ln-y">1985</div>
+                    <div class="ln-h">Bellah</div>
+                    <div class="ln-b">The languages available to describe communal commitment have themselves weakened. A cultural, not just structural, version of the same loss.</div>
+                </div>
+                <div class="ln-arrow">&#8594;</div>
+                <div class="ln-box">
+                    <div class="ln-y">2000</div>
+                    <div class="ln-h">Putnam</div>
+                    <div class="ln-b">Measures the decline directly: association membership, trust, and civic participation, falling across fifty years of data (Week 8).</div>
                 </div>
             </div>
-            <div class="cw-sites">
-                <div class="cw-site"><div class="cw-site-h">A curriculum</div><div class="cw-site-b">What grounds the claim it teaches?</div></div>
-                <div class="cw-site"><div class="cw-site-h">A monument</div><div class="cw-site-b">What does it say the community honors?</div></div>
-                <div class="cw-site"><div class="cw-site-h">A law</div><div class="cw-site-b">Where does its authority come from?</div></div>
-                <div class="cw-site"><div class="cw-site-h">A broadcast</div><div class="cw-site-b">Whose account of the good does it assume?</div></div>
+            <div class="ln-out">
+                <div class="ln-out-t">THE QUESTION RUNNING THROUGH ALL FIVE</div>
+                <div class="ln-out-b">What stands between the individual and the state, and what happens when it thins out? This is the question your Capstone will ask about one real community, not a whole nation.</div>
             </div>
-            <div class="cw-note">Notice what is not on this diagram: which side is right. Hunter's sociological claim is about the structure of the disagreement, the fact that it recurs across unrelated institutions and resists ordinary compromise. That claim can be true whether you find the orthodox or the progressive account of moral authority more persuasive.</div>
         </div>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Hunter's analysis has been debated and criticized in the three decades since he published it. Some social scientists argue that the actual distribution of opinion on contested moral questions is less polarized than his framework suggests: that most Americans hold moderate views and are divided primarily by elite-level political conflict that has been amplified by media and political organizations. Others argue that Hunter was right about the structure of the conflict but identified the wrong dividing line, that the real divide runs between connected cosmopolitanism and disconnected traditionalism, or between class positions in the new knowledge economy.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Berger and Neuhaus call the institutions in the middle, family, church, neighborhood, and voluntary association, <em>mediating structures</em>; this course calls them <em>intermediary institutions</em>: the structures through which meaning, value, and identity are formed, and which stand between an isolated individual and the impersonal scale of the modern state, the market, and the mass media. This is Tocqueville's remedy given a name: his voluntary associations are one species of the same genus.</p>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">But few serious observers of American life have been able to ignore the phenomenon Hunter was describing, and his framework continues to shape debate about American cultural and political conflict. Notice that engaging the objection does not require deciding who wins it. It requires being able to state what evidence would settle it, which is exactly what a sociologist, as opposed to a partisan, is trained to ask.</p>
+        <figure data-pd="w16-barn-raising.jpg" style="margin: 22px 0; text-align: center;"><img src="../_media/w16-barn-raising.jpg" alt="Black-and-white photograph of a large crowd of men, women, and children gathered at a barn raising: men stand on the new timber floor and women and children stand on the rock in front of the stone foundation." style="max-width: 100%; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: 50% 78%; border-radius: 6px;" /><figcaption style="font-size: 14px; color: #4a5a78; line-height: 1.5; margin-top: 8px;">Neighbors gathered at a barn raising, the new floor laid on its stone foundation: cooperative work of the kind Tocqueville and Berger and Neuhaus place between the person and larger powers. <span style="font-size: 12px; color: #6b7a99;">Unknown photographer, Ontario, early 1900s (Archives of Ontario). Public domain, via Wikimedia Commons.</span></figcaption></figure>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Bellah's contribution is not a new structural claim. It is a linguistic one. Even a person who wants to act on behalf of something larger than himself may lack the words to describe why, because the culture's two dominant vocabularies were built for something else entirely. This is the linguistic dimension of the problem Putnam later documents empirically and Nisbet analyzes structurally: a culture in which the vocabulary of genuine community has weakened even where the desire for it has not.</p>
+        <!-- CASE IN POINT id=17-01-softening-of-manners | Tocqueville, Democracy in America II.3.1 -->
+        <div class="case-in-point" style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 18px 0 4px 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128205; CASE IN POINT &middot; TWO KINDS OF SYMPATHY: TOCQUEVILLE&rsquo;S MEDIEVAL CHRONICLERS AND HIS AMERICANS</div>
+            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">Tocqueville measures individualism against an older form of attachment. Of the chroniclers of the Middle Ages, who belonged to the aristocracy, he writes that when they &ldquo;relate the tragical end of a noble, their grief flows apace; whereas they tell you at a breath, and without wincing, of massacres and tortures inflicted on the common sort of people.&rdquo; Feudal ties produced intense loyalty within a rank and none across ranks. Of the Americans he writes the reverse: &ldquo;Although the Americans have, in a manner, reduced egotism to a social and philosophical theory, they are nevertheless extremely open to compassion,&rdquo; and &ldquo;In no country is criminal justice administered with more mildness than in the United States.&rdquo;</p>
+            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">This is the diagnosis the lesson retraces: equality loosens the particular bonds that once tied a person to a few others, and widens a thinner sympathy to everyone. Tocqueville presents both halves as gains and losses at once, and his evidence is the chroniclers&rsquo; tone on one side and American penal codes on the other.</p>
+            <div style="font-size: 12px; color: #1B6A94; margin-top: 10px; line-height: 1.5;">Source: Tocqueville, <em>Democracy in America</em> II.3.1 (1840), trans. Henry Reeve (public domain).</div>
+        </div>
+        <!-- /CASE IN POINT id=17-01-softening-of-manners -->
     </div>
 
     <!-- ============================ PART 3 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; KEY TERMS</div>
-        <div class="key-terms">
-            <dl>
-                <dt>Culture Wars</dt>
-                <dd>Hunter's term for organized conflict over the definition of American social institutions, arising from deep disagreement about the source of moral authority. Not primarily a conflict between different religious groups but between different moral visions that cut across religious and ethnic lines.</dd>
-                <dt>Moral Authority</dt>
-                <dd>The source from which a community derives its standards of right and wrong. Hunter distinguishes transcendent moral authority, rooted in a definitive, external source such as God's law, natural law, or inherited tradition, from immanent moral authority, rooted in evolving human understanding and open to revision.</dd>
-                <dt>Symbolic Politics</dt>
-                <dd>Political conflict conducted primarily over the symbolic meaning of an institution, what it belongs to and what it represents, rather than over material arrangements. A fight over a flag, a curriculum, a monument, or a single term is often more heated than a fight over a material outcome, because it is a fight over meaning rather than resources.</dd>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; SORT THE LANGUAGE</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Judge each statement by the reasoning it offers, not by whether the speaker sounds admirable.</p>
+
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; WHICH LANGUAGE IS THIS?</div>
+            <div class="widget-question">Decide which moral language is doing the work in each statement.</div>
+
+            <div class="widget-row" data-correct="2" data-fb="Civic language, in Tocqueville's sense. She names an obligation to people she did not choose, on a matter of common concern, with no reference to her own advantage or her own feelings. That is closer to his voluntary association than to either of Bellah's two languages." data-hint="Check whether she is talking about her own benefit, her own feelings, or an obligation to other people as such.">
+                <div class="widget-row-prompt">1. "I serve on the volunteer fire company's board because these are my neighbors, and somebody has to do it, whether or not I ever need them myself."</div>
+                <div class="widget-options">
+                    <button data-choice="0">Utilitarian individualism</button><button data-choice="1">Expressive individualism</button><button data-choice="2">Civic language</button><button data-choice="3">None of the above</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Utilitarian individualism. The entire justification is a cost-benefit calculation about her own advantage. Nothing here references an obligation to anyone else." data-hint="Ask what the reason given actually is. Is it a calculation about her own outcomes?">
+                <div class="widget-row-prompt">2. "I stayed at the firm because the exit package was worth more than what I'd earn starting over somewhere else."</div>
+                <div class="widget-options">
+                    <button data-choice="0">Utilitarian individualism</button><button data-choice="1">Expressive individualism</button><button data-choice="2">Civic language</button><button data-choice="3">None of the above</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="3" data-fb="None of the above, and this is the case Tocqueville himself analyzes: real duty, owed to a specific person by name, but confined inside a private relationship and never generalized into anything public. It is neither of Bellah's languages and not civic language either, since it never reaches beyond the household." data-hint="This is loyalty, but ask whether it is public or entirely private, and whether it is grounded in self-interest, self-expression, or something else again.">
+                <div class="widget-row-prompt">3. "I would do anything for my own family, but what happens in the next town over isn't really my concern."</div>
+                <div class="widget-options">
+                    <button data-choice="0">Utilitarian individualism</button><button data-choice="1">Expressive individualism</button><button data-choice="2">Civic language</button><button data-choice="3">None of the above</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Expressive individualism. The justification is entirely about her own growth and feeling. This is not a criticism of the choice, only a description of the vocabulary she reaches for to explain it." data-hint="Listen for words about feeling, authenticity, and personal growth rather than obligation or advantage.">
+                <div class="widget-row-prompt">4. "I left the job because it wasn't fulfilling anymore, and I owe it to myself to find work that actually feels authentic."</div>
+                <div class="widget-options">
+                    <button data-choice="0">Utilitarian individualism</button><button data-choice="1">Expressive individualism</button><button data-choice="2">Civic language</button><button data-choice="3">None of the above</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="key-terms" style="background: #FCFCF8; border: 1px solid #E3DFD2; border-left: 5px solid #C7922C; border-radius: 8px; padding: 18px 22px; margin: 18px 0 0 0;">
+            <div style="font-size: 11px; color: #8a7a55; letter-spacing: 0.6px; margin-bottom: 10px;">KEY TERMS</div>
+            <dl style="margin: 0;">
+                <dt style="font-size: 17px; color: #0e1c42; margin-bottom: 3px;">Utilitarian Individualism</dt>
+                <dd style="font-size: 16px; color: #1a2340; line-height: 1.55; margin: 0 0 12px 0;">One of Bellah's two dominant moral languages: rational self-interest, cost-benefit calculation, and personal advantage. Associated with figures like Benjamin Franklin and with the market economy.</dd>
+                <dt style="font-size: 17px; color: #0e1c42; margin-bottom: 3px;">Expressive Individualism</dt>
+                <dd style="font-size: 16px; color: #1a2340; line-height: 1.55; margin: 0 0 12px 0;">Bellah's second language: authentic self-expression, personal growth, emotional fulfillment. Associated with the Romantic tradition and the twentieth-century therapeutic culture.</dd>
+                <dt style="font-size: 17px; color: #0e1c42; margin-bottom: 3px;">Intermediary Institutions</dt>
+                <dd style="font-size: 16px; color: #1a2340; line-height: 1.55; margin: 0;">The course's term for what Berger and Neuhaus call mediating structures (<em>To Empower People</em>, 1977): family, church, neighborhood, and voluntary association: the institutions standing between the individual and the mega-structures of modern life, through which meaning and identity are formed.</dd>
             </dl>
         </div>
     </div>
 
     <!-- ============================ PART 4 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; THE SOCIOLOGY OF MORAL CONFLICT</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; WHERE THEY ACTUALLY DISAGREE</div>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Hunter's analysis has real sociological roots. Durkheim argued that the collective conscience is the moral cement of society: the shared values that make genuine social life possible. What happens when the collective conscience divides, not merely over specific policy questions, but over the very source of moral authority, over whose shared values should govern a community's public life? Hunter argues this is precisely what is happening in contemporary America, and the result is not merely political gridlock but a kind of moral disorder that goes deeper than ordinary political disagreement.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">It is tempting to treat Nisbet, Berger and Neuhaus, Bellah, and Putnam as four versions of one argument, and the convergence is real: all four locate the problem in the thinning of intermediary institutions, and all four trace the lineage back to Tocqueville. But they do not agree on the remedy. Nisbet's diagnosis is structural and somewhat pessimistic: once destroyed, these communities are not easily rebuilt by policy, because they depend on habits and beliefs a society cannot simply legislate back into existence. Berger and Neuhaus are more hopeful, and more policy-minded: they argue government can deliberately empower mediating structures rather than bypass them. Putnam's own later work is the most optimistic of the four, proposing specific civic reforms to rebuild social capital. Bellah is, in a sense, the most radical, because his diagnosis is linguistic rather than institutional: rebuilding an institution does no good if the people in it lack the words to describe why it matters, so his remedy is closer to recovering a moral vocabulary than to founding a new organization.</p>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">From a Weberian perspective, the culture wars can also be understood as a conflict between status groups: communities differentiated not merely by economic position but by lifestyle, cultural taste, educational attainment, and geography. The orthodox and progressive impulses correlate with, though they are not reducible to, different status positions in the knowledge economy, and some sociologists argue the culture wars are as much about status competition as about moral disagreement itself.</p>
-
-        <table class="two">
-            <tr><th></th><th>Symbolic politics</th><th>Ordinary distributive politics</th></tr>
-            <tr><td>What is contested</td><td>What an institution means and whom it speaks for</td><td>How a fixed resource gets divided</td></tr>
-            <tr><td>How it is settled</td><td>Rarely by a tidy compromise</td><td>Usually by negotiation or a formula</td></tr>
-            <tr><td>Intensity vs. stakes</td><td>Can be disproportionate to the material cost</td><td>Roughly tracks the material cost</td></tr>
-            <tr><td>Example site</td><td>A monument's wording</td><td>A budget line item</td></tr>
-        </table>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">These four thinkers share a diagnosis and disagree, sometimes sharply, about the cure. A serious reader takes each disagreement on its merits rather than treating dissent as disloyalty to the shared cause. That habit, disagreeing about the remedy without contempt for the person proposing it, is itself a small instance of the associational life all four writers are trying to defend.</p>
 
         <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 14px 0 0 0;">
             <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
-                <span style="color: #C7922C;">&#9654;</span>&nbsp; In your notebook, name one recurring disagreement you have observed that felt bigger than its material stakes. Then open this.
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; Which of the four is most convincing, and why do the others fall short?
             </summary>
             <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
-                There is no fixed answer here, but check your example against Hunter's own test: is the intensity of the disagreement out of proportion to what is materially at stake, and does it keep recurring in a similar shape across otherwise unrelated situations? If both are true, you have found a plausible instance of symbolic politics. If the disagreement tracks the material stakes closely and resolves once those stakes are settled, it is more likely an instance of ordinary distributive politics wearing symbolic language, which people do sometimes use to make an ordinary interest sound more important than it is. Telling the two apart is the actual analytical skill this lesson is built to give you.
+                A common objection to Nisbet is that his pessimism assumes traditional communities were healthier than they actually were, and that new forms of association (online communities, hybrid workplaces, chosen family) may be replacing rather than merely losing the old ones. A common objection to Bellah is that ordinary people may act communally even while describing their actions in individualist language, so the linguistic evidence may understate the reality. Neither objection is decisive. Both are worth weighing before choosing the frameworks for the Capstone.
             </div>
         </details>
     </div>
 
-    <!-- ============================ PART 5 ============================ -->
-    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; TEST IT: SYMBOLIC OR MATERIAL?</div>
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Five situations, deliberately free of any real-world hot-button issue, so you can practice the sociological distinction itself rather than rehearsing an opinion you already hold.</p>
-
-        <div class="optima-widget ow-select">
-            <div class="widget-kicker">&#9889; TRY IT &middot; CLASSIFY THE CONFLICT</div>
-            <div class="widget-question">For each situation, decide whether the conflict is mainly symbolic, mainly material, a genuine mix of both, or not really a conflict at all.</div>
-
-            <div class="widget-row" data-correct="2" data-fb="Symbolic. The construction cost was settled without a fight months earlier. The entire year of argument was over what the wording says about who the community is and what it honors, which is Hunter's signature case." data-hint="Notice which question was easy and which one dragged on for a year. That gap is the clue.">
-                <div class="widget-row-prompt">1. A committee spends a year arguing over one word in a monument's inscription, while the monument's construction cost was approved without objection months earlier.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Not really a conflict</button><button data-choice="1">A genuine mix of both</button><button data-choice="2">Mainly symbolic</button><button data-choice="3">Mainly material</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="1" data-fb="Material. The funding pool is genuinely fixed and scarce, and nobody disputes what any given repair means. This is ordinary distributive politics, real and contested, but not the phenomenon Hunter is describing." data-hint="Is anyone arguing about what a road repair represents, or only about who gets one first?">
-                <div class="widget-row-prompt">2. A city council spends a year dividing a fixed pool of infrastructure funding between two neighborhoods, with no disagreement about what any repair would mean.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Mainly symbolic</button><button data-choice="1">Mainly material</button><button data-choice="2">Not really a conflict</button><button data-choice="3">A genuine mix of both</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="1" data-fb="Symbolic. Renaming a building costs almost nothing. Both sides are arguing about what the school stands for and whom it represents, which is exactly the disproportion between material cost and emotional stakes that marks symbolic politics." data-hint="Compare what the change would actually cost to how hard people are fighting over it.">
-                <div class="widget-row-prompt">3. A school district debates renaming a building. The change itself costs almost nothing, but each side treats the decision as a referendum on what the school stands for.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Not really a conflict</button><button data-choice="1">Mainly symbolic</button><button data-choice="2">A genuine mix of both</button><button data-choice="3">Mainly material</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="2" data-fb="Material. Both departments agree on every relevant fact and simply want more of a scarce budget. There is no dispute over meaning anywhere in this scenario." data-hint="Is there any disagreement here about what the money represents, or only about who should have more of it?">
-                <div class="widget-row-prompt">4. Two departments in one company argue over which gets a larger budget next year. Both agree on every fact about what the money would buy.</div>
-                <div class="widget-options">
-                    <button data-choice="0">A genuine mix of both</button><button data-choice="1">Not really a conflict</button><button data-choice="2">Mainly material</button><button data-choice="3">Mainly symbolic</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="2" data-fb="A genuine mix of both, and the harder, more realistic case. The dispute starts over real material questions (noise, cost) and gradually becomes a stand-in for a larger disagreement about whose neighborhood the hall belongs to. Most long-running real conflicts look more like this than like the clean cases above." data-hint="Track how the argument's content changes over the decade. Does it stay about noise and cost, or does it become about something else?">
-                <div class="widget-row-prompt">5. A neighborhood argues for a decade over a shared hall's closing time. The fight starts over noise and cost, then gradually becomes a stand-in for whose neighborhood the hall really belongs to.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Mainly symbolic</button><button data-choice="1">Mainly material</button><button data-choice="2">A genuine mix of both</button><button data-choice="3">Not really a conflict</button>
-                </div>
-            </div>
-
-            <button class="widget-reset">Reset</button>
-        </div>
-    </div>
-
     <!-- What You'll Do Next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; NEXT</div>
         <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
             <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
             <div>
-                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 16A: Durkheim</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your Tuesday reading is in a book, not on a page. A sociologist asked the same structural question a century before Monday's lesson: what happens to the moral authority of school and law once a shared religious consensus can no longer be assumed?</div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 16A: Tocqueville</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tocqueville, <em>Democracy in America</em> II.3.1</div>
             </div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 14px;">
             <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
             <div>
                 <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Reading Quiz 16</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Eight questions covering both lessons this week.</div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Eight questions</div>
             </div>
         </div>
     </div>
 
     <!-- Wrap-up -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
-        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">A sociological account of moral conflict does not tell you which side is right. It tells you what kind of disagreement you are in, and why some disagreements resist the compromises that settle ordinary politics. That distinction, between a fight over resources and a fight over what an institution means, is a tool you can use on any community you study, including the one you will evaluate for the Community Flourishing Capstone. On Wednesday you meet a sociologist asking a related but different question: not how societies fight over moral authority, but how any person comes to have character at all.</p>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; SUMMARY</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">One line of argument runs across a century and a half: Tocqueville names it, Nisbet extends it structurally, Berger and Neuhaus give it a policy vocabulary, Bellah gives it a linguistic diagnosis, and Putnam gives it numbers. A mature intellectual tradition looks like this from the inside: not one book settling a question, but successive thinkers testing, refining, and disagreeing about a premise that keeps proving worth arguing over.</p>
     </div>
 
 </div>
@@ -348,7 +320,7 @@
 <!-- ===== FOOTER ===== -->
 <div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
     <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Student Lesson Page</div>
-    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 16.01 &middot; Culture Wars and Moral Conflict</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 16.01 &middot; Bellah, Berger, Nisbet: Community and the Search for Meaning</div>
     <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
 </div>
 

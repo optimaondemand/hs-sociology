@@ -1,40 +1,54 @@
 <!--
     Optima Academy Online — Sociology (Florida 2108300)
-    Q2 · Week 14 · Lesson 14.01 — "Urbanization and Modern Society"
+    Q2 · Week 14 · Lesson 14.01 — "Media, Culture, and Identity"
 
     TEACHER-FACING BUILD NOTES (not rendered to students):
-    REGISTER: HONORS (confirmed 2026-08-06). Simmel, Wirth, Park, and Jacobs cited
-    by name and argument, not just as a list of terms. The critique-and-revision
-    structure (Wirth challenged by Jacobs) is preserved from the master because it
-    is exactly the honors move: presenting a thinker's strongest objection rather
-    than only the tidy version.
+    REGISTER: HONORS. Frankfurt School, Gramsci, Bourdieu, and Hall cited by
+    concept and, where a specific text is named, by title. No reading substitution
+    needed for this lesson; the thinkers here are taught about, not assigned as
+    the primary source (Plato is Primary Source 14A; see source-14-a.html).
 
-      Standard: SS.912.S.6.1, SS.912.S.6.4, SS.912.S.2.3
-      Objective: Students will explain how urbanization transformed social life in
-                the modern period, apply Simmel's account of metropolitan life,
-                and evaluate the relationship between urban environments and
-                social solidarity.
-      Source: Sociology_Course_Master.html via _build/manifest.json, weeks[13],
-              lessons[0]. Prose preserved; section "Hook: The Stranger" retitled
-              per R5 (label dropped, descriptive title kept).
-      Revisions applied: R5 (no "Hook" label), R7 (no em dashes — none were
-                present in the master text for this lesson), standards codes kept
-                out of student-facing text (SS.912.S.x.x moved here only).
+      Standard: SS.912.S.6.3, SS.912.S.5.6, SS.912.S.2.9
+      Objective: Students will distinguish the Frankfurt School's culture-industry
+                critique from Stuart Hall's active-audience response and judge
+                which better explains a case of their choosing; apply Gramsci's
+                hegemony to identify what a cultural product naturalizes and what
+                would count as evidence against that reading; and evaluate
+                Bourdieu's claim that cultural capital reproduces inequality
+                against the strongest objection to it.
+      Source: Sociology_Course_Master.html, Lesson 14.01. Prose preserved except
+              where noted below.
+      Revisions 2026-10-14: PD figure (Kinetoscope parlor, 1895) added in Part 1; weekdays and coaching
+                voice removed; Frankfurt School's Frankfurt/interwar origin stated (Reading Quiz 14 Q8).
+      Revisions: R5 (opening section not labelled "Hook"), R7 (no em dashes),
+                standards codes kept out of student-facing text.
 
-      DASH-AS-COLON CHECK (plan.md defect 6): scanned this lesson's manifest
-      prose programmatically for sentences carrying two or more mid-sentence
-      colons. None found. No recasting was needed for this lesson.
+      DASH-AS-COLON CHECK (plan.md defect 6): the master's Week 14 prose was
+      checked sentence by sentence against the two-colon pattern. No sentence in
+      either lesson carries two mid-sentence colons; the single colons present
+      (e.g. "the stories are now told largely by commercial media organizations")
+      are legitimate and left alone. Zero repairs were needed in this lesson.
 
-      VIRTUE THREAD: self-government (Weeks 14-15). Woven into the "Critique and
-      Revision" close: reading a theory's strongest counter-argument before
-      accepting it is itself a form of self-government applied to one's own mind.
+      NEW MATERIAL ADDED (not in the master, factual and broad-stroke per the
+      no-fabrication rule): the thinker-in-context paragraph in Part 2, giving
+      one or two well-established biographical facts for each of the four names
+      the master's prose already uses (Frankfurt School exile, Gramsci's
+      imprisonment, Bourdieu, Hall and the Birmingham Centre). The master itself
+      supplies no biography for this lesson, and the house lesson format calls
+      for one. Facts checked: Institute for Social Research founded in Frankfurt,
+      1923; Adorno and Horkheimer wrote Dialectic of Enlightenment (1944) in
+      American exile from Nazi Germany; Gramsci imprisoned by the Fascist
+      government from 1926 until shortly before his death in 1937, during which
+      he wrote the Prison Notebooks; Hall was a Jamaican-born British cultural
+      theorist at the Centre for Contemporary Cultural Studies, Birmingham.
 
-      WIDGET ROTATION: this week has no pre-built iframe widget assigned (Widget
-      4 belongs to Week 12). 14.01 uses TWO in-page engines: reflective check-in
-      (Part 1) and single-select rows (Part 3, after Critique and Revision).
-      14.02 uses scale placement + flip cards, so the two lessons this week do
-      not repeat an engine combination. Select-row correct indices, in order:
-      2, 0, 3, 1. Not ascending.
+      WIDGET ROTATION: this is the first lesson in the course to pair reflect
+      with the flip-card engine. Recent lessons (Weeks 6, 9, 12) paired
+      reflect+scale or reflect+select or flip+select. 14.01 uses reflect + flip
+      cards; 14.02 uses scale + select. No combination repeats within the week.
+      Flip-card fronts are scenarios, not term names, so the check tests applying
+      a concept to a case rather than recalling a definition.
+      Select-row / flip correct indices are not sequential; see each widget.
       Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
 -->
 <!DOCTYPE html>
@@ -72,23 +86,26 @@
     .ow-flip .ow-flip-back { display: none; color: #1a2340; }
     .ow-flip.flipped .ow-flip-front { display: none; }
     .ow-flip.flipped .ow-flip-back { display: block; }
+    .flipgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 14px 0; }
+    .ow-flip .fcard-front { font-size: 16px; color: #0E1C42; }
+    .ow-flip .fcard-back { font-size: 14px; color: #1a2340; line-height: 1.55; }
 
-    /* ===== Core visual: village vs. metropolis ===== */
-    .vm { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
-    .vm-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
-    .vm-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
-    .vm-row { display: flex; align-items: stretch; gap: 14px; }
-    .vm-col { flex: 1; background: rgba(255,255,255,0.06); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 16px 18px; }
-    .vm-col.city { border-top-color: #C7922C; background: rgba(199,146,44,0.12); }
-    .vm-h { font-size: 15px; color: #ffffff; margin-bottom: 10px; text-align: center; }
-    .vm-b { font-size: 13px; color: rgba(255,255,255,0.82); line-height: 1.6; margin-bottom: 8px; }
-    .vm-vs { display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.35); font-size: 13px; letter-spacing: 0.4px; width: 30px; flex-shrink: 0; }
-    .vm-note { margin-top: 16px; padding-top: 13px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.6; text-align: center; font-style: italic; }
+    /* ===== Core visual: two mechanisms of cultural transmission ===== */
+    .xmit { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
+    .xmit-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .xmit-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
+    .xmit-row { display: flex; align-items: stretch; gap: 14px; }
+    .xmit-box { flex: 1; background: rgba(255,255,255,0.07); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 15px 17px; }
+    .xmit-h { font-size: 15px; color: #ffffff; margin-bottom: 10px; }
+    .xmit-row2 { margin-bottom: 9px; }
+    .xmit-l { font-size: 10px; letter-spacing: 0.4px; color: rgba(255,255,255,0.45); margin-bottom: 2px; }
+    .xmit-b { font-size: 13px; color: rgba(255,255,255,0.82); line-height: 1.5; }
+    .xmit-note { margin-top: 16px; padding-top: 13px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.6; text-align: center; font-style: italic; }
 
-    .exg { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 11px; margin: 14px 0; }
-    .exc { background: #FFFFFF; border: 1px solid #D0D9E8; border-top: 3px solid #55C8E8; border-radius: 7px; padding: 14px 16px; }
-    .exc-h { font-size: 16px; color: #0E1C42; margin-bottom: 6px; }
-    .exc-b { font-size: 15px; color: #1a2340; line-height: 1.55; }
+    .key-terms { background: #FCFCF8; border: 1px solid #E3DFD2; border-left: 5px solid #C7922C; border-radius: 8px; padding: 18px 22px; margin: 14px 0; }
+    .key-terms dt { font-size: 16px; color: #0E1C42; margin-top: 10px; }
+    .key-terms dt:first-child { margin-top: 0; }
+    .key-terms dd { font-size: 16px; color: #1a2340; line-height: 1.6; margin: 4px 0 0 0; }
 </style>
 </head>
 <body>
@@ -111,7 +128,7 @@
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
         <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 14</div>
-        <div style="font-size: 12px; color: #666;">Urbanization, Technology, and Social Relationships</div>
+        <div style="font-size: 12px; color: #666;">Media, Culture, Globalization, and Identity</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
@@ -119,11 +136,11 @@
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
-        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Urbanization and Modern Society</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Media, Culture, and Identity</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
-        <div style="font-size: 16px; color: #0e1c42;">Urbanization, Technology, and Social Relationships</div>
+        <div style="font-size: 16px; color: #0e1c42;">Media, Culture, Globalization, and Identity</div>
     </div>
 </div>
 
@@ -132,179 +149,161 @@
 
     <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 14.01</div>
-        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Urbanization and Modern Society</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Media, Culture, and Identity</div>
         <div style="font-size: 16px; color: #666;">Lesson</div>
     </div>
 
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
-        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Does living among strangers change the kind of mind you have?</div>
-        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Simmel thought it must. A city asks something of its residents that a village never does: it asks them to be surrounded by people they will never know and to keep functioning anyway. Today's lesson follows that claim from Simmel through the Chicago School and into its sharpest challenge.</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">If the person telling most of your stories has never met you and is paid by how long you keep watching, what happens to the stories?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Every society has always transmitted its values through stories. What changed is who tells them and why. Four thinkers, writing across nearly a century, each found a different answer to what that change does to culture and to the people formed by it.</div>
     </div>
 
     <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
         <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain Simmel's account of the metropolitan blas&eacute; attitude as an adaptation, not a character flaw, and apply it to an unfamiliar case.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish the Frankfurt School's culture-industry critique from Stuart Hall's active-audience response, and judge which one better explains a case I choose.</div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> reconstruct Wirth's argument that urbanism weakens primary group ties, and state precisely what evidence would have counted against it.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> apply Gramsci's concept of hegemony to identify what a specific cultural product makes seem natural, and state what evidence would count against that reading.</div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> evaluate Jane Jacobs's objection to Wirth and decide, with reasons, whether density destroys community or produces a different form of it.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> evaluate Bourdieu's claim that cultural capital reproduces inequality against the strongest objection to it.</div>
         </div>
     </div>
 
     <!-- ============================ PART 1 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE STRANGER</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; WHO TELLS YOUR STORY</div>
 
         <!-- ===== CORE VISUAL ===== -->
-        <div class="vm">
-            <div class="vm-title">TWO WAYS OF KNOWING THE PEOPLE AROUND YOU</div>
-            <div class="vm-sub">Simmel's starting contrast. The city does not simply have more people in it; it changes what "knowing someone" means.</div>
-            <div class="vm-row">
-                <div class="vm-col">
-                    <div class="vm-h">THE VILLAGE</div>
-                    <div class="vm-b">You know nearly everyone you meet, often for your whole life.</div>
-                    <div class="vm-b">Your emotional attention is spent on a small, stable set of people.</div>
-                    <div class="vm-b">Behavior is predictable because it is personally known, not because it is regulated.</div>
+        <div class="xmit">
+            <div class="xmit-title">TWO MECHANISMS OF CULTURAL TRANSMISSION</div>
+            <div class="xmit-sub">The stories change less than the machinery that produces them.</div>
+            <div class="xmit-row">
+                <div class="xmit-box">
+                    <div class="xmit-h">TRADITIONAL SOCIETIES</div>
+                    <div class="xmit-row2"><div class="xmit-l">WHO TELLS THE STORY</div><div class="xmit-b">Parents, elders, priests, community bards</div></div>
+                    <div class="xmit-row2"><div class="xmit-l">THEIR RELATION TO YOU</div><div class="xmit-b">Embedded in the same community you belong to</div></div>
+                    <div class="xmit-row2"><div class="xmit-l">WHAT SHAPES THE CONTENT</div><div class="xmit-b">The community's own values, reflected and reinforced</div></div>
                 </div>
-                <div class="vm-vs">VS</div>
-                <div class="vm-col city">
-                    <div class="vm-h">THE METROPOLIS</div>
-                    <div class="vm-b">You are surrounded by strangers whose behavior you cannot predict from personal knowledge.</div>
-                    <div class="vm-b">Stimulation arrives constantly, from every direction, all day.</div>
-                    <div class="vm-b">The mind adapts by cultivating a protective reserve: the blas&eacute; attitude.</div>
+                <div class="xmit-box">
+                    <div class="xmit-h">MODERN INDUSTRIAL SOCIETIES</div>
+                    <div class="xmit-row2"><div class="xmit-l">WHO TELLS THE STORY</div><div class="xmit-b">Commercial media organizations, studios, platforms</div></div>
+                    <div class="xmit-row2"><div class="xmit-l">THEIR RELATION TO YOU</div><div class="xmit-b">Producing for a mass market they are not part of</div></div>
+                    <div class="xmit-row2"><div class="xmit-l">WHAT SHAPES THE CONTENT</div><div class="xmit-b">Commercial logic, not necessarily the audience's own values</div></div>
                 </div>
             </div>
-            <div class="vm-note">Simmel's claim: the blas&eacute; attitude is not indifference to people. It is what a mind does so it does not have to feel the full weight of every stranger it passes.</div>
+            <div class="xmit-note">The mechanism changed, and the change is not neutral.</div>
         </div>
 
         <div class="optima-widget ow-reflect">
             <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
-            <div class="widget-question">Picture moving from a town of six hundred people to a city of six million. Predict: what would surprise you most in the first week? (No wrong answer.)</div>
+            <div class="widget-question">If the storyteller has never met you and is paid according to how long you keep watching, what do you predict changes about the stories themselves? (No wrong answer.)</div>
             <div class="widget-options">
-                <button data-response="A common first reaction, and Simmel would agree it is real. But he thinks the deeper adjustment is not to the noise itself but to how much of it you have to learn to ignore just to function.">&#128266; How loud and constant everything is</button>
-                <button data-response="This is close to Simmel's own diagnosis. He argues city dwellers develop a cultivated reserve specifically because greeting or attending to every person they pass would be impossible to sustain.">&#128101; How few strangers greet you or make eye contact</button>
-                <button data-response="A fair prediction, and true in Simmel's account, though he is careful to say the specialization is a byproduct of competition for customers, not simply a benefit of city size.">&#127970; How specialized every shop and service is</button>
-                <button data-response="Also true, and it connects directly to today's lesson: Simmel argues the money economy and the intellectualized, calculating metropolitan mind grow up together, each reinforcing the other.">&#128181; How much everything seems to run on money and price</button>
+                <button data-response="This is close to the Frankfurt School's worry: content optimized for attention and mass appeal tends toward the formulaic, because formula is what reliably holds an audience.">&#128253; They get more repetitive and formulaic</button>
+                <button data-response="A reasonable guess, and Stuart Hall's answer complicates it below: audiences are not simply told what to feel, they interpret, and sometimes push back. Whether that pushback is enough to offset the first three answers is the live question in this lesson.">&#129504; Nothing changes. A good story is a good story regardless of who tells it</button>
+                <button data-response="This is Gramsci's territory. A story produced by people with a stake in things staying a certain way can make that arrangement feel natural rather than argued for, without anyone involved intending propaganda.">&#127919; They start to favor certain values without saying so</button>
+                <button data-response="This names something real. A viewer can feel genuine attachment to a media figure who does not know they exist.">&#128172; Viewers start to feel like they personally know the storyteller</button>
             </div>
             <div class="widget-feedback"></div>
             <button class="widget-reset">Reset</button>
         </div>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 10px 0 10px 0;">In 1903, the German sociologist Georg Simmel published a short essay titled &ldquo;The Metropolis and Mental Life.&rdquo; It is one of the most brilliant brief diagnoses of modernity ever written, and it begins with an observation that felt startling at the time and now seems obvious: city life requires a different kind of mind than village life. The village dweller knows everyone; her emotional and intellectual resources can be devoted to the full particulars of relationships with a small number of people she has known for years. The city dweller knows almost no one; she is surrounded by strangers whose behavior she cannot predict from personal knowledge. The city is stimulating beyond all prior human experience, and the mind's response to that over-stimulation is not breakdown but adaptation: the development of what Simmel calls a &ldquo;blas&eacute; attitude,&rdquo; a cultivated emotional reserve that protects the metropolitan individual from the overwhelming demands of urban life. He does not feel less; he protects himself from feeling too much.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">In every known human society, stories have been one of the primary mechanisms by which communities transmit values, construct identities, and make sense of the world. In traditional societies, stories were told by parents, elders, priests, and community bards, people embedded in the community whose stories reflected, and reinforced, the community's values. In modern industrial societies, the mechanisms of cultural transmission have been transformed. The stories are now told largely by commercial media organizations, publishing houses, film studios, and social media platforms. The people who produce these stories are not embedded in the communities that consume them; they produce for mass markets, according to commercial logic, and the values their stories transmit are not necessarily the values of the communities that receive them.</p>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">This is sociology as literary insight: a careful observation about a pattern of individual behavior that is actually a social fact in Durkheim's sense, produced by the social conditions of city life and distributed across all metropolitan individuals regardless of their personal psychology. Simmel's essay raises questions that are as live now as they were in 1903: what does the city do to community? What does it do to the self? And what do we lose, as well as gain, when we trade the village for the metropolis?</p>
-    </div>
+        <figure data-pd="w14-kinetoscope-parlor.jpg" style="margin: 28px 0; text-align: center;"><img src="../_media/w14-kinetoscope-parlor.jpg" alt="A row of Edison Kinetoscope cabinets in a 1895 parlor, with attendants standing behind them. Each cabinet shows a film to one paying viewer at a time." style="max-width: 100%; height: auto; border-radius: 6px;" /><figcaption style="font-size: 14px; color: #4a5a78; line-height: 1.5; margin-top: 8px;">A Kinetoscope parlor, 1895. Films made by a company for anonymous paying viewers: the producer is outside the audience's community and paid per viewing. <span style="font-size: 12px; color: #6b7a99;">San Francisco, c. 1894&ndash;95. Unknown photographer. Public domain, via Wikimedia Commons.</span></figcaption></figure>
 
-    <!-- ============================ KEY TERMS ============================ -->
-    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; KEY TERMS</div>
-        <div class="exg">
-            <div class="exc">
-                <div class="exc-h">Urbanization</div>
-                <div class="exc-b">The process by which an increasing share of a population comes to live in cities. Modern urbanization is tied to industrialization: the factory system drew rural populations into cities, transforming both the cities and the rural communities they drew from.</div>
-            </div>
-            <div class="exc">
-                <div class="exc-h">Metropolitan Blas&eacute; Attitude</div>
-                <div class="exc-b">Simmel's term for the cultivated emotional reserve city life produces: responding to unfamiliar stimuli with intellectualized detachment rather than emotional engagement. A protective adaptation to overstimulation, not a character flaw.</div>
-            </div>
-            <div class="exc">
-                <div class="exc-h">Urbanism as a Way of Life</div>
-                <div class="exc-b">Louis Wirth's concept (1938): the urban environment does not merely house social life but actively shapes it, producing anonymity, secondary relationships, heterogeneity, and loose social bonds as characteristic features of city life.</div>
-            </div>
-        </div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">This is not a counsel of despair. The mass media have also democratized access to stories, made possible the global circulation of extraordinary art and music and literature, and enabled communities that were previously isolated to connect with each other. But it is a sociological observation that matters. The mechanisms by which a culture reproduces itself have changed, and changed in ways that are not neutral.</p>
     </div>
 
     <!-- ============================ PART 2 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; THE SOCIOLOGY OF URBAN SPACE</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; FOUR THINKERS, NEARLY A CENTURY</div>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The Chicago School of Sociology, active in the early twentieth century, pioneered the systematic empirical study of urban social life. Its leading figures, Robert Park, Ernest Burgess, and Louis Wirth, argued that the city was not merely a larger version of the village but a qualitatively different social environment. Its scale and density produced a different kind of social organization: anonymous, specialized, functionally differentiated. Park argued that the city sorted its inhabitants into &ldquo;natural areas&rdquo; characterized by distinctive social types: the bohemian quarter, the slum, the business district, the suburb. This spatial organization was not accidental. It reflected the social forces produced by urban competition and differentiation.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The four names below span the study of culture and media from the interwar period to the present. The Frankfurt School grew out of the Institute for Social Research, founded in Frankfurt, Germany, in 1923. Theodor Adorno and Max Horkheimer, its two best-known figures, wrote much of their work on the culture industry in American exile during the Second World War after fleeing Nazi Germany, publishing <em>Dialectic of Enlightenment</em> in 1944. Antonio Gramsci, an Italian Marxist theorist, developed the concept of hegemony largely in the notebooks he was permitted to keep during his imprisonment by the Fascist government from 1926 until shortly before his death in 1937. Pierre Bourdieu, writing in France in the second half of the twentieth century, built a sociology of taste and education around the concept of cultural capital. Stuart Hall, a Jamaican-born British cultural theorist associated with the Centre for Contemporary Cultural Studies at the University of Birmingham, argued against a purely passive model of the media audience.</p>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Wirth's &ldquo;Urbanism as a Way of Life&rdquo; (1938) argued that the distinctive features of urban life, size, density, heterogeneity, systematically weakened the primary group ties (family, neighborhood, church) that had provided social solidarity in pre-urban communities. The city produced secondary relationships, shallow, functionally specific, easily dissolved, in place of primary ones: deep, multifaceted, enduring. The result was social disorganization: not chaos, but a weakening of the normative bonds that had regulated social life in smaller communities.</p>
-        <!-- CASE IN POINT id=14-01-booth-east-london | Charles Booth, Life and Labour of the People in London, &ldquo -->
-        <div class="case-in-point" style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 18px 0 4px 0;">
-            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128205; CASE IN POINT &middot; EAST LONDON, 1861 TO 1881, COUNTED BY CHARLES BOOTH</div>
-            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">Charles Booth studied a city by counting it. Working from the census returns and his own inquiry, he found that in East London and Hackney &ldquo;the whole population of the district increased in the 20 years from 654,000 to 879,000.&rdquo; Compared with England as a whole, the district was &ldquo;strong in manufacture, transport, dealing, and industrial service,&rdquo; and within manufacture the surplus came from &ldquo;tailoring, bootmaking, and cabinet-making.&rdquo; The same tables recorded loss: shipbuilders &ldquo;decreased from 4877 to 3684,&rdquo; their share of the employed population &ldquo;falling from 1.63 to .94.&rdquo;</p>
-            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">This is urbanization observed as a population rather than as an impression. Booth&rsquo;s categories are his own, drawn up in 1889, and the figures tell the story of waning as well as prospering trades, which is his phrase. Set his method beside Simmel&rsquo;s: one asks what the metropolis does to a mind, the other asks who lives there and what they do for a living.</p>
-            <div style="font-size: 12px; color: #1B6A94; margin-top: 10px; line-height: 1.5;">Source: Charles Booth, <em>Life and Labour of the People in London</em>, &ldquo;The Trades of East London,&rdquo; ch. I (1889), English original (public domain).</div>
-        </div>
-        <!-- /CASE IN POINT id=14-01-booth-east-london -->
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Notice the shared question underneath four different answers: what does a culture, transmitted through a given set of mechanisms, do to the people formed inside it? Plato asked an older version of the same question (Primary Source 14A).</p>
     </div>
 
-    <!-- ============================ PART 3 ============================ -->
+    <!-- ============================ PART 3: KEY TERMS ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; CRITIQUE AND REVISION</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; KEY TERMS</div>
+        <div class="key-terms">
+            <dl style="margin: 0;">
+                <dt style="font-size: 17px; color: #0E1C42; margin-bottom: 4px;">Culture Industry</dt>
+                <dd style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 14px 0;">A term from the Frankfurt School, especially Adorno and Horkheimer, for the mass production of culture under capitalism: films, music, radio, and later television and digital media. The culture industry standardizes cultural products for mass consumption, producing what appears to be diversity while actually homogenizing taste and suppressing genuine individual expression.</dd>
+                <dt style="font-size: 17px; color: #0E1C42; margin-bottom: 4px;">Hegemony</dt>
+                <dd style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 14px 0;">Antonio Gramsci's term, from the Greek <em>hegemonia</em> ("leadership"), for the cultural domination of a society by the ruling class, not through force but through the promotion of values, ideas, and ways of seeing the world that make the existing power structure appear natural and legitimate. Hegemony operates through media, education, religion, and other cultural institutions.</dd>
+                <dt style="font-size: 17px; color: #0E1C42; margin-bottom: 4px;">Parasocial Relationship</dt>
+                <dd style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0;">A one-sided relationship in which one party knows a great deal about the other, and feels genuine emotional connection, while the other party, a media figure, an influencer, a celebrity, knows nothing about the first. Parasocial relationships have the emotional texture of genuine relationships without their reciprocity or moral substance.</dd>
+            </dl>
+        </div>
+    </div>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Wirth's account was important but also somewhat overdrawn. Subsequent empirical research showed that urban communities do maintain primary group ties, that neighborhoods do develop genuine solidarity, and that the city is not simply a machine for dissolving community. Jane Jacobs, in <em>The Death and Life of Great American Cities</em> (1961), offered a powerful counter-argument: well-designed city streets, with their mixed uses and active sidewalks, produce their own distinctive form of social life, not less than rural community life but differently constituted. The city street, at its best, creates what Jacobs calls &ldquo;sidewalk ballet&rdquo;: a complex, spontaneous social choreography that generates safety, public trust, and genuine community among people who do not know each other as personal friends.</p>
+    <!-- ============================ PART 4 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; THE SOCIOLOGY OF CULTURAL PRODUCTION</div>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">Notice what just happened to the lesson's own argument. It did not end with Wirth's conclusion; it ended with Wirth's strongest critic. Holding a theory at arm's length long enough to test it against a real counter-example, rather than accepting the version you read first, is a small act of intellectual self-government, and it is exactly the skill this pair of weeks is built around.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Pierre Bourdieu developed one of the most powerful frameworks for analyzing cultural production. His concept of cultural capital, analogous to economic capital but composed of knowledge, skills, aesthetic sensibilities, and familiarity with high-status cultural forms, helps explain how culture reproduces social inequality. Families with high cultural capital transmit it to their children through socialization, giving those children advantages in educational systems that reward exactly those forms of cultural capital. The culture industry, in Bourdieu's analysis, is not merely a mechanism of entertainment but a field within which different classes compete for cultural prestige, and in which the dominant class maintains its dominance partly by defining what counts as culture worth having.</p>
 
-        <div class="optima-widget ow-select">
-            <div class="widget-kicker">&#9889; TRY IT &middot; WHOSE ACCOUNT FITS?</div>
-            <div class="widget-question">For each observation, decide which theorist's framework it best supports. Judge by the mechanism each theorist proposes, not just the vocabulary.</div>
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; THE OBJECTION WORTH TAKING SERIOUSLY</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">If cultural capital explains educational advantage, does anyone ever actually choose their own taste? A student who works hard, reads widely, and earns unfamiliar cultural fluency on her own seems to be a counterexample. Bourdieu's answer is that individual effort is real but statistically swamped by inherited advantage across a whole population, the same move Durkheim made with suicide rates in Week 3. The objection does not refute the theory. It does mean the theory describes a population, not a guaranteed outcome for any one person, and honesty requires saying so.</div>
+        </div>
+    </div>
 
-            <div class="widget-row" data-correct="2" data-fb="Jacobs. A resident stepping outside to keep half an eye on the block, without any personal relationship to most of the people on it, is exactly her &ldquo;sidewalk ballet&rdquo;: informal, unplanned coordination that produces real safety and trust among strangers." data-hint="Nobody here withdraws, and nobody is a stranger being screened out. Something informal is being coordinated. Whose theory is built around that?">
-                <div class="widget-row-prompt">1. On a busy residential street, shopkeepers, stoop-sitters, and dog walkers keep an informal watch on the block all day without ever organizing to do so.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Simmel</button><button data-choice="1">Wirth</button><button data-choice="2">Jacobs</button><button data-choice="3">Park</button>
+    <!-- ============================ PART 5 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; MEDIA AND IDENTITY FORMATION</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">One of the most important contemporary questions in the sociology of culture is the relationship between media consumption and identity formation. Stuart Hall argued that media do not simply transmit meanings that audiences passively receive; audiences actively decode media messages, sometimes accepting the preferred reading encoded in the text, sometimes negotiating with it, sometimes rejecting it in favor of an oppositional reading. This active audience model complicates the Frankfurt School's somewhat pessimistic account of media as straightforwardly ideological. But it does not dissolve the question. Audiences are still exposed to the same narrow range of representations, and the conditions under which they can resist those representations are not unlimited.</p>
+
+        
+
+        <div class="optima-widget ow-flip-group">
+            <div class="widget-kicker">&#9889; APPLY THE FRAMEWORK &middot; TAP EACH CARD</div>
+            <div class="widget-question">Tap a card to see which concept fits, and why the near neighbors do not.</div>
+            <div class="flipgrid">
+                <div class="ow-flip">
+                    <div class="ow-flip-front fcard-front">A viewer feels genuinely grieved when a podcast host she has never met announces they are ending the show.</div>
+                    <div class="ow-flip-back fcard-back">Parasocial relationship. The emotional connection is real to her; the reciprocity is not. This is not hegemony, because nothing about the show's content is being naturalized here, only a one-sided bond.</div>
+                </div>
+                <div class="ow-flip">
+                    <div class="ow-flip-front fcard-front">A film about a workplace never questions why success requires constant availability; it simply presents that world as normal.</div>
+                    <div class="ow-flip-back fcard-back">Hegemony. Nothing is argued for. An arrangement that benefits some more than others is simply shown as the unremarkable way things are, which is exactly how Gramsci says hegemony usually works.</div>
+                </div>
+                <div class="ow-flip">
+                    <div class="ow-flip-front fcard-front">Three unrelated streaming platforms release strikingly similar competition shows within the same year.</div>
+                    <div class="ow-flip-back fcard-back">Culture industry. A format that reliably holds attention gets standardized and repeated across producers, which is Adorno and Horkheimer's central claim about mass cultural production under commercial pressure.</div>
+                </div>
+                <div class="ow-flip">
+                    <div class="ow-flip-front fcard-front">A student from a home full of museum visits and classical recordings recognizes an allusion in a college seminar that her classmates miss.</div>
+                    <div class="ow-flip-back fcard-back">Cultural capital. The advantage did not come from higher intelligence or harder work in that moment; it came from prior exposure, transmitted at home, that the institution happens to reward.</div>
                 </div>
             </div>
-
-            <div class="widget-row" data-correct="0" data-fb="Simmel. Ignoring a strong emotional cue on purpose, in order to keep functioning amid constant stimulation, is precisely the cultivated reserve he calls the blas&eacute; attitude." data-hint="This is not about neighborhood ties at all. It is about one person managing their own emotional exposure to overstimulation. Whose concept is that?">
-                <div class="widget-row-prompt">2. A commuter steps around a loud argument on the platform without breaking stride or changing expression, having seen dozens like it that month.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Simmel</button><button data-choice="1">Wirth</button><button data-choice="2">Jacobs</button><button data-choice="3">Park</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="3" data-fb="Park. Sorting the city into zones with distinctive social types, an arts district here, a warehouse district there, is his &ldquo;natural areas&rdquo; argument: the city organizes itself spatially by function and social type." data-hint="Nobody's inner state is at issue here. This is about where in the city certain kinds of people and activity cluster. Whose framework is spatial sorting?">
-                <div class="widget-row-prompt">3. A city's arts scene, its immigrant groceries, and its finance firms each cluster in a different, recognizable district.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Simmel</button><button data-choice="1">Wirth</button><button data-choice="2">Jacobs</button><button data-choice="3">Park</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="1" data-fb="Wirth. Living beside the same family for a decade while knowing only their name is the &ldquo;secondary relationship&rdquo; he argues replaces deep primary ties in dense, heterogeneous cities." data-hint="This is a relationship, but a thin, functionally limited one that has lasted without deepening. Whose term is built for exactly that kind of tie?">
-                <div class="widget-row-prompt">4. A resident has lived beside the same family for ten years and knows only their names and that they keep to themselves.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Simmel</button><button data-choice="1">Wirth</button><button data-choice="2">Jacobs</button><button data-choice="3">Park</button>
-                </div>
-            </div>
-
             <button class="widget-reset">Reset</button>
         </div>
     </div>
 
     <!-- What You'll Do Next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; NEXT</div>
         <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
             <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
             <div>
-                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 14A: Simmel</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your Tuesday reading finishes the essay you started in Week 4, this time on individual freedom and what the city does to it.</div>
-            </div>
-        </div>
-        <div style="display: flex; align-items: flex-start; gap: 14px;">
-            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
-            <div>
-                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Reading Quiz 14</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Eight questions covering both lessons this week.</div>
-            </div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 14A: Plato</strong></div>
+                            </div>
         </div>
     </div>
 
     <!-- Wrap-up -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
-        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">A city changes the terms of social life rather than simply removing community from it. Simmel located the change in the individual mind, Wirth located it in the weakening of primary bonds, and Jacobs showed that dense, well-designed urban space can generate its own real form of solidarity among strangers. None of the three is simply wrong. Each is describing a genuine mechanism, and the honest position is to ask, of any particular street or city, which mechanism is doing the most work there. Wednesday turns from the physical city to a newer kind of density: the crowded, mediated space of communications technology.</p>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">None of these four thinkers is arguing that media are simply bad. Each is arguing that the mechanism by which culture is now transmitted has consequences that are easy to miss precisely because the content still looks and feels like ordinary storytelling. Hall's active audience is a genuine complication, not a refutation: a person who decodes critically is still choosing among the representations actually on offer.</p>
     </div>
 
 </div>
@@ -312,7 +311,7 @@
 <!-- ===== FOOTER ===== -->
 <div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
     <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Student Lesson Page</div>
-    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 14.01 &middot; Urbanization and Modern Society</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 14.01 &middot; Media, Culture, and Identity</div>
     <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
 </div>
 

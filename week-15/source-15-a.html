@@ -1,62 +1,59 @@
 <!--
-    Optima Academy Online — Sociology (Florida 2108300)
-    Q2 · Week 15 · Primary Source Guide 15A (Tuesday)
+    Optima Academy Online - Sociology (Florida 2108300)
+    Q2 - Week 15 - Text Study 15A
 
     TEACHER-FACING BUILD NOTES (not rendered to students):
-    REGISTER: HONORS. Cited by Stephanus number, the standard scholarly locator
-    for Plato, edition-independent.
-
-      Text: Plato, Republic, Book III, Stephanus 394d-398b, "On Poetry and
-            Imitation" (c. 375 BCE).
-      Provenance: PUBLIC DOMAIN, text and translation. Benjamin Jowett, 1871
-            (rev. 1892), confirmed safe per CLAUDE.md, "Copyright: two kinds of
-            source guide."
-      Source file: 01_Analysis/.../Q2W15_Reading_1_The Two Styles of Narration.pdf
-      Extracted verbatim with pypdf. Reproduced in full per Pattern A. Nothing
-      cut, nothing paraphrased, nothing supplied from memory.
-      Guide questions adapted from the master's Primary Source 15A block
-      (Sociology_Course_Master.html), which supplied four questions already
-      built around the Hall/Frankfurt School comparison; preserved with light
-      editing for the honors register and to make the Weber bridge explicit.
-      Tier 4, ungraded. GitHub-hosted in-lesson content page.
-
-      PAGE BREAK NOTE: the source PDF splits mid-sentence across its four pages
-      ("...and human nature, Adeimantus, appears to have been coined into yet
-      smaller pieces...", "...may imitate a woman, whether young or old..." and
-      so on). The excerpt below rejoins those page breaks into continuous prose;
-      no words were added, removed, or reordered to do this.
-
-      THE PLATO/WEBER LINK (see also module-map-15.html and source-15-b.html):
-      this guide's closing bridge draws the connection the task specifically
-      asked for, between Plato on imitation and Weber on rationalization, both
-      being arguments about what a system does to the people formed inside it.
+    REGISTER: HONORS.
+    REVISION 2026-10-14: converted from a linked Pattern B guide (protected translation, three .qshort
+    quotations, NOT FINISHED placeholder, rights notice, "what to read" card) to a Text Study page that
+    explains, in Optima's own words, the argument of Durkheim, L'education morale, ch. 1 (lectures of
+    1902-03, published 1925).
+    Grounding: 01_Analysis/Sociology Primary Source Readings/Reading_Secularizing Moral Education.pdf
+    (protected wording, read for understanding only; no run of 6+ words reproduced; no quotation marks
+    around any phrase from it). The PDF covers the middle of the chapter: the danger of subtraction,
+    the sacred character of moral rules, the hypothesis of a rational foundation, the call to replace
+    and not only cut, and the promise of a second set of problems. Left general on purpose: the
+    chapter's opening and closing pages (not in the PDF), the details of the lecture course's audience
+    (stated only as Sorbonne lectures on moral education), the French school laws (stated only as
+    religious instruction having given way to civic and moral instruction), and the identification of
+    the observable reality with society (flagged as drawn from elsewhere in his work and Week 6).
+    Figure: w15-paris-classroom-1912 (French classroom, 1912, Agence Rol), PD via Commons.
+    Guide questions 1-4 kept (reworded to work without the book); both reveals kept.
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sociology &middot; Primary Source 15A</title>
+<title>Sociology &middot; Text Study 15A</title>
 <style>
     body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
     .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-
-    .src { background: #FCFCF8; border: 1px solid #E3DFD2; border-left: 5px solid #C7922C; border-radius: 8px; padding: 26px 32px; margin: 18px 0; }
-    .src p { font-family: Georgia, "Times New Roman", serif; font-size: 18px; color: #241f18; line-height: 1.78; margin: 0 0 15px 0; }
-    .src p:last-child { margin-bottom: 0; }
-    .src .sect { font-family: "Segoe UI", sans-serif; font-size: 11px; letter-spacing: 1px; color: #8a7a55; margin: 24px 0 12px 0; padding-top: 16px; border-top: 1px solid #E3DFD2; }
 
     .q-list { counter-reset: qq; list-style: none; padding: 0; margin: 0; }
     .q-list li { counter-increment: qq; position: relative; padding-left: 40px; margin-bottom: 14px; font-size: 17px; color: #1a2340; line-height: 1.6; }
     .q-list li::before { content: counter(qq); position: absolute; left: 0; top: 1px; width: 27px; height: 27px; border-radius: 50%; background: #0E1C42; color: #fff; font-family: "Segoe UI", sans-serif; font-size: 13px; display: flex; align-items: center; justify-content: center; }
 
-    .arg { background: #0E1C42; border-radius: 9px; padding: 20px 24px; margin: 14px 0; }
-    .arg-t { font-size: 11px; color: #55C8E8; letter-spacing: 0.6px; margin-bottom: 14px; text-align: center; }
-    .arg-s { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 11px; }
-    .arg-s:last-child { margin-bottom: 0; }
-    .arg-n { min-width: 26px; height: 26px; border-radius: 50%; background: rgba(85,200,232,0.22); color: #55C8E8; font-size: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .arg-b { font-size: 14px; color: rgba(255,255,255,0.86); line-height: 1.55; }
-    .arg-b b { color: #ffffff; }
+    /* Structure visual: the fork */
+    .fk { background: #0E1C42; border-radius: 10px; padding: 24px 26px; margin: 4px 0 18px 0; }
+    .fk-t { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 14px; }
+    .fk-top { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.25); border-radius: 8px; padding: 12px 14px; text-align: center; color: #ffffff; font-size: 16px; margin: 0 auto; max-width: 520px; }
+    .fk-split { text-align: center; color: #E0B562; font-size: 22px; margin: 6px 0; }
+    .fk-row { display: flex; gap: 12px; }
+    .fk-box { flex: 1; border-radius: 8px; padding: 14px 16px; }
+    .fk-bad { background: rgba(224,181,98,0.14); border: 1px dashed rgba(224,181,98,0.6); }
+    .fk-good { background: rgba(85,200,232,0.12); border: 1px solid rgba(85,200,232,0.5); }
+    .fk-l { font-size: 11px; letter-spacing: 0.5px; margin-bottom: 5px; }
+    .fk-bad .fk-l { color: #E0B562; }
+    .fk-good .fk-l { color: #55C8E8; }
+    .fk-h { font-size: 16px; color: #ffffff; margin-bottom: 5px; }
+    .fk-b { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.5; }
+    @media (max-width: 720px) { .fk-row { flex-direction: column; } }
+
+    .dist { width: 100%; border-collapse: collapse; font-size: 15px; margin: 6px 0; }
+    .dist th { background: #0E1C42; color: #fff; text-align: left; padding: 9px 13px; font-size: 12px; letter-spacing: 0.4px; font-weight: normal; }
+    .dist td { border: 1px solid #D0D9E8; padding: 10px 13px; color: #1a2340; line-height: 1.5; vertical-align: top; }
+    .dist tr:nth-child(even) td { background: #F8FAFD; }
 </style>
 </head>
 <body>
@@ -79,19 +76,19 @@
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
         <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 15</div>
-        <div style="font-size: 12px; color: #666;">Media, Culture, Globalization, and Identity</div>
+        <div style="font-size: 12px; color: #666;">Culture Wars, Character, and Moral Formation</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Reading</div>
-        <div style="font-size: 17px; color: #0e1c42;">Primary Source 15A</div>
+        <div style="font-size: 17px; color: #0e1c42;">Text Study 15A</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
-        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Plato</div>
-        <div style="font-size: 11px; color: #6b7a99; margin-top: 2px;">Author</div>
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Author</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">&Eacute;mile Durkheim</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
-        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Written</div>
-        <div style="font-size: 16px; color: #0e1c42;">c. 375 BCE</div>
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Delivered / Published</div>
+        <div style="font-size: 16px; color: #0e1c42;">1902&ndash;03 lectures &middot; 1925</div>
     </div>
 </div>
 
@@ -99,140 +96,116 @@
 <div style="padding: 24px 34px;">
 
     <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">PRIMARY SOURCE 15A</div>
-        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 6px;">On Poetry and Imitation</div>
-        <div style="font-size: 16px; color: #444;">Plato, <em>Republic</em>, Book III, Stephanus 394d&ndash;398b. Translated by Benjamin Jowett.</div>
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">TEXT STUDY 15A</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 6px;">Secular Morality</div>
+        <div style="font-size: 16px; color: #444;">Durkheim, <em>L&rsquo;&eacute;ducation morale</em>, ch. 1, <em>Introduction: la morale la&iuml;que</em> (lectures of 1902&ndash;03; published 1925)</div>
     </div>
 
-    <!-- Bridge -->
+    <!-- Context -->
     <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; WHERE THIS FITS</div>
-        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Monday's lesson gave you the sociology of mass media: the culture industry, hegemony, cultural capital, and Stuart Hall's active audience. This dialogue is roughly twenty-three centuries older than any of them, and it is arguing about the same thing. Plato's Socrates is not talking about film or streaming. He is talking about poetic recitation and drama, which was, for classical Athens, close to what mass media is for you: the primary way a city's stories reached its citizens. Read it as an argument about media before the word existed.</div>
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; CONTEXT</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Durkheim gave these lectures on moral education at the Sorbonne in 1902&ndash;03. Religious instruction had by then given way to civic and moral instruction in French public schools, so the question was practical: what can a secular school teach as morality, and with what force? The lectures were published in 1925, after his death in 1917. The first chapter frames the whole problem. It is a century-old version of the question Lesson 15.01 raised: what grounds moral authority when a shared religious consensus can no longer be assumed?</div>
     </div>
 
-    <!-- Why you are reading this -->
-    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; WHY YOU ARE READING THIS</div>
-        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Socrates and Adeimantus are designing the education of the guardians, the class that will govern and defend Plato's ideal city. This excerpt is his argument about which kind of storytelling that education should allow, and it is perhaps the earliest sustained argument in Western thought about the social effects of a medium on the moral formation of the people exposed to it.</p>
-        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">The passage moves in four steps. Track them and the argument holds together.</p>
-
-        <div class="arg">
-            <div class="arg-t">HOW THE ARGUMENT IS BUILT</div>
-            <div class="arg-s"><div class="arg-n">1</div><div class="arg-b"><b>One person, one craft.</b> Socrates has already established that a person does one thing well, not many. He now applies this to imitation itself: no one imitates many things as well as he imitates one.</div></div>
-            <div class="arg-s"><div class="arg-n">2</div><div class="arg-b"><b>Name the two styles.</b> A speaker can narrate in his own voice, or he can imitate the voice and manner of the character he describes. Most storytelling mixes both in different proportions.</div></div>
-            <div class="arg-s"><div class="arg-n">3</div><div class="arg-b"><b>Explain why the proportion matters.</b> A good man imitates good models readily and bad ones reluctantly; a habitual imitator of anything, including bad or base characters, is training himself into what he imitates. Habit, repeated from youth, becomes a second nature.</div></div>
-            <div class="arg-s"><div class="arg-n">4</div><div class="arg-b"><b>Draw the civic conclusion.</b> Since the guardians must become courageous, temperate, and free, they should imitate only those characters and refuse the rest, however entertaining the pantomimic performer who can imitate anything may be.</div></div>
+    <!-- Structure visual -->
+    <div class="fk">
+        <div class="fk-t">THE CHAPTER&rsquo;S CENTRAL CHOICE</div>
+        <div class="fk-top">Make moral education secular</div>
+        <div class="fk-split">&#9660;</div>
+        <div class="fk-row">
+            <div class="fk-box fk-bad"><div class="fk-l">SUBTRACT ONLY</div><div class="fk-h">Remove the religion, add nothing</div><div class="fk-b">The moral content leaves with the religious form. Rules remain, thin and colorless; the teacher loses the sense of speaking for something greater.</div></div>
+            <div class="fk-box fk-good"><div class="fk-l">SUBTRACT AND REPLACE</div><div class="fk-h">Find the moral reality inside the religious idea</div><div class="fk-b">Restate it in rational terms so the child can still feel its weight. Done well, moral education gains new elements.</div></div>
         </div>
     </div>
 
-    <!-- Read for these -->
+    <!-- 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9888;&#65039; 1 &middot; THE DANGER OF SUBTRACTION</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 8px 0;"><strong>Claim.</strong> Removing religion from moral education, with nothing put in its place, risks removing the moral element along with it.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Durkheim does not argue for keeping religion in the classroom, and he does not argue for removing it. His target is the method. Morality had long been taught in religious form. If a school simply cuts away everything religious and stops there, what remains is a thin, colorless set of rules, and he treats the loss as likely rather than merely possible. The chapter therefore insists on more than a surface separation of morals from religion.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Optima&rsquo;s illustration: a school drops a prayer-based lesson on honesty and replaces it with a rule against cheating and a penalty. Pupils learn the penalty. Whether they learn why dishonesty is a wrong, and feel it as one, is the thing Durkheim fears has been lost.</p>
+    </div>
+
+    <!-- 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#10024; 2 &middot; WHY MORAL RULES FEEL DIFFERENT</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 8px 0;"><strong>Claim.</strong> Moral rules carry a special dignity that other kinds of rules and claims do not.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Durkheim starts from an everyday observation. Opinions about the physical world, or about how animals and people are constituted, are open to free discussion, and a scientific heresy provokes argument. Deny in someone&rsquo;s hearing that a child owes duties to a parent, or that human life deserves respect, and the response is protest, closer to the believer&rsquo;s reaction to blasphemy. The reaction to breaking a moral rule also differs from the reaction to a lapse of practical prudence or professional technique.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">He concludes that the moral domain is treated as set apart, protected as if by a barrier that keeps violators at a distance. In the vocabulary he uses throughout his sociology of religion, the moral domain counts as sacred: its contents carry a dignity that lifts them above ordinary individual preference. Everyday talk of the human person as sacred expresses the same thing.</p>
+    </div>
+
+    <!-- 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128269; 3 &middot; WHERE THE SACREDNESS COMES FROM</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 8px 0;"><strong>Claim.</strong> The sacred quality of morality does not require a religious explanation, though it has always had one.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">When morality and religion were joined, the sacred character of moral rules was easy to explain: morality was understood as an emanation of the divine, the source of everything sacred. Remove that explanation without supplying another, Durkheim warns, and the special standing of moral rules loses its foundation. People then drift toward denying morality, or lose the ability to feel its reality at all.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">His way out is a hypothesis, offered as one. The dignity of moral rules may rest on a real, observable foundation, with the idea of God serving as its symbolic expression. If so, the dignity could be explained and taught without appeal to a transcendent being. Elsewhere in his work, and in this course&rsquo;s Week 6, the observable reality he has in mind is society itself; this chapter sets the question up and leaves the answer for later in the book.</p>
+    </div>
+
+    <!-- 4 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127979; 4 &middot; THE TASK, AND WHAT IS AT STAKE FOR THE TEACHER</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 8px 0;"><strong>Claim.</strong> The job is to find the moral realities inside religious ideas and restate them rationally, keeping their force.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Durkheim calls for discovering the rational equivalents of the religious notions that have carried the most important moral ideas. The realities have to be disengaged from their symbols, shown plainly, and made felt by the child without any mythological go-between. Cutting away is not sufficient; something must be put in its place.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 4px 0;">The stakes include the teacher. A teacher who feels they speak for something larger than themselves has extra energy and a warmth that moves pupils. If secularization leaves that sense of mission without a new foundation, the result is moral instruction that has lost its standing and its vitality. The chapter closes its first set of problems here and promises a second: secularization must preserve everything essential and also enrich morality with elements it lacked.</p>
+        <figure data-pd="w15-paris-classroom-1912.jpg" style="margin: 28px 0; text-align: center;"><img src="../_media/w15-paris-classroom-1912.jpg" alt="Pupils in dark smocks bend over their desks writing in a French schoolroom while a teacher leans over one child's work; wall maps hang behind them and lamps hang from the ceiling." style="max-width: 100%; height: auto; border-radius: 6px;" /><figcaption style="font-size: 14px; color: #4a5a78; line-height: 1.5; margin-top: 8px;">A French primary classroom, 1912. Moral instruction in French public schools of the period was secular, the setting Durkheim&rsquo;s lectures address: the teacher&rsquo;s authority and the pupils&rsquo; sense of obligation must rest on something other than religious teaching. <span style="font-size: 12px; color: #6b7a99;">Agence Rol, 1912. Public domain, via Wikimedia Commons.</span></figcaption></figure>
+    </div>
+
+    <!-- Distinctions -->
     <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; READ FOR THESE FOUR QUESTIONS</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128206; KEY DISTINCTIONS</div>
+        <table class="dist">
+            <tr><th>Distinction</th><th>One side</th><th>The other</th></tr>
+            <tr><td>Removing or replacing</td><td>Subtract the religious form and stop.</td><td>Subtract it and restate its moral content rationally.</td></tr>
+            <tr><td>Moral or merely practical</td><td>Moral rules: breaches provoke a reaction like the believer&rsquo;s to blasphemy.</td><td>Prudence and technique: breaches provoke criticism, not reverence.</td></tr>
+            <tr><td>Source or weight</td><td>Where moral authority comes from: divine or empirical.</td><td>How heavily it binds: the sacred quality either way.</td></tr>
+        </table>
+    </div>
+
+    <!-- Objection -->
+    <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; THE OBJECTION WORTH TAKING SERIOUSLY</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Critics press from two directions. From the religious side: a rational substitute may reproduce the vocabulary of the sacred without its binding force, and the feeling of sacredness may need the transcendent source to survive. From the secular side: the feeling that moral rules are set apart may be inherited conditioning, and a rational education might do better to drop it than to rebuild it. Durkheim answers neither fully in this chapter. He states a hypothesis that a rational account is possible and treats it as a task. Whether he succeeds is an open question for the rest of the book.</div>
+    </div>
+
+    <!-- Questions -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; FOUR QUESTIONS</div>
         <ol class="q-list">
-            <li>Plato argues that poetry, his term for what we might broadly call media, shapes character because it presents models of thought, feeling, and action that audiences internalize through imitation. Does this argument apply to contemporary media? What would Plato say about a social media influencer?</li>
-            <li>Plato proposes excluding certain kinds of imitation from his ideal city. Is this an obviously wrong position, or does it contain a point that contemporary critics of media might share? What is the strongest Platonic argument for some form of cultural regulation?</li>
-            <li>Stuart Hall's active audience model might look like the modern answer to Plato: audiences are not passive imitators but active decoders. Does this fully answer Plato's concern, or does Plato's argument survive Hall's response? Be specific about what each thinker would say to the other.</li>
-            <li>Plato's concern is specifically the formation of character, what he elsewhere calls the soul. Is the formation of character a legitimate object of cultural criticism, or is that question too private to be subject to social analysis?</li>
+            <li>Durkheim warns that removing religion from moral education without replacing it risks removing moral content as well. What, precisely, does he think religion supplied that a purely rational moral education might fail to supply?</li>
+            <li>He describes moral rules as protected by a kind of barrier that makes them feel different from ordinary claims about the world. Is that feeling evidence that morality has a transcendent source, or something a purely rational morality could also produce? Defend your reading from the argument above.</li>
+            <li>He proposes disengaging the moral realities from inside religious ideas rather than discarding the religious form. What would count as success at that task, and what would count as failure?</li>
+            <li>Apply Durkheim&rsquo;s problem to Hunter&rsquo;s framework from Lesson 15.01. Is Durkheim on the orthodox side, the progressive side, or attempting something that does not sit on either pole? Support your answer with the chapter&rsquo;s moves, not with a guess about Durkheim&rsquo;s politics.</li>
         </ol>
     </div>
 
-    <!-- ===== THE EXCERPT ===== -->
-    <div class="src">
-        <div class="sect" style="border-top: none; padding-top: 0; margin-top: 0;">THE DIALOGUE</div>
-
-        <p>Then, Adeimantus, let me ask you whether our guardians ought to be imitators; or rather, has not this question been decided by the rule already laid down that one man can only do one thing well, and not many; and that if he attempt many, he will altogether fail of gaining much reputation in any?</p>
-        <p>Certainly.</p>
-        <p>And this is equally true of imitation; no one man can imitate many things as well as he would imitate a single one?</p>
-        <p>He cannot.</p>
-        <p>Then the same person will hardly be able to play a serious part in life, and at the same time to be an imitator and imitate many other parts as well; for even when two species of imitation are nearly allied, the same persons cannot succeed in both, as, for example, the writers of tragedy and comedy&mdash;did you not just now call them imitations?</p>
-        <p>Yes, I did; and you are right in thinking that the same persons cannot succeed in both.</p>
-        <p>Any more than they can be rhapsodists and actors at once?</p>
-        <p>True.</p>
-        <p>Neither are comic and tragic actors the same; yet all these things are but imitations.</p>
-        <p>They are so.</p>
-        <p>And human nature, Adeimantus, appears to have been coined into yet smaller pieces, and to be as incapable of imitating many things well, as of performing well the actions of which the imitations are copies.</p>
-        <p>Quite true, he replied.</p>
-        <p>If then we adhere to our original notion and bear in mind that our guardians, setting aside every other business, are to dedicate themselves wholly to the maintenance of freedom in the State, making this their craft, and engaging in no work which does not bear on this end, they ought not to practise or imitate anything else; if they imitate at all, they should imitate from youth upward only those characters which are suitable to their profession&mdash;the courageous, temperate, holy, free, and the like; but they should not depict or be skilful at imitating any kind of illiberality or baseness, lest from imitation they should come to be what they imitate. Did you never observe how imitations, beginning in early youth and continuing far into life, at length grow into habits and become a second nature, affecting body, voice, and mind?</p>
-        <p>Yes, certainly, he said.</p>
-        <p>Then, I said, we will not allow those for whom we profess a care and of whom we say that they ought to be good men, to imitate a woman, whether young or old, quarrelling with her husband, or striving and vaunting against the gods in conceit of her happiness, or when she is in affliction, or sorrow, or weeping; and certainly not one who is in sickness, love, or labour.</p>
-        <p>Very right, he said.</p>
-        <p>Neither must they represent slaves, male or female, performing the offices of slaves?</p>
-        <p>They must not.</p>
-        <p>And surely not bad men, whether cowards or any others, who do the reverse of what we have just been prescribing, who scold or mock or revile one another in drink or out of drink, or who in any other manner sin against themselves and their neighbours in word or deed, as the manner of such is. Neither should they be trained to imitate the action or speech of men or women who are mad or bad; for madness, like vice, is to be known but not to be practised or imitated.</p>
-        <p>Very true, he replied.</p>
-        <p>Neither may they imitate smiths or other artificers, or oarsmen, or boatswains, or the like?</p>
-        <p>How can they, he said, when they are not allowed to apply their minds to the callings of any of these?</p>
-        <p>Nor may they imitate the neighing of horses, the bellowing of bulls, the murmur of rivers and roll of the ocean, thunder, and all that sort of thing?</p>
-        <p>Nay, he said, if madness be forbidden, neither may they copy the behaviour of madmen.</p>
-        <p>You mean, I said, if I understand you aright, that there is one sort of narrative style which may be employed by a truly good man when he has anything to say, and that another sort will be used by a man of an opposite character and education.</p>
-        <p>And which are these two sorts? he asked.</p>
-        <p>Suppose, I answered, that a just and good man in the course of a narration comes on some saying or action of another good man&mdash;I should imagine that he will like to personate him, and will not be ashamed of this sort of imitation: he will be most ready to play the part of the good man when he is acting firmly and wisely; in a less degree when he is overtaken by illness or love or drink, or has met with any other disaster. But when he comes to a character which is unworthy of him, he will not make a study of that; he will disdain such a person, and will assume his likeness, if at all, for a moment only when he is performing some good action; at other times he will be ashamed to play a part which he has never practised, nor will he like to fashion and frame himself after the baser models; he feels the employment of such an art, unless in jest, to be beneath him, and his mind revolts at it.</p>
-        <p>So I should expect, he replied.</p>
-        <p>Then he will adopt a mode of narration such as we have illustrated out of Homer, that is to say, his style will be both imitative and narrative; but there will be very little of the former, and a great deal of the latter. Do you agree?</p>
-        <p>Certainly, he said; that is the model which such a speaker must necessarily take.</p>
-        <p>But there is another sort of character who will narrate anything, and, the worse he is, the more unscrupulous he will be; nothing will be too bad for him: and he will be ready to imitate anything, not as a joke, but in right good earnest, and before a large company. As I was just now saying, he will attempt to represent the roll of thunder, the noise of wind and hail, or the creaking of wheels, and pulleys, and the various sounds of flutes, pipes, trumpets, and all sorts of instruments: he will bark like a dog, bleat like a sheep, or crow like a cock; his entire art will consist in imitation of voice and gesture, and there will be very little narration.</p>
-        <p>That, he said, will be his mode of speaking.</p>
-        <p>These, then, are the two kinds of style?</p>
-        <p>Yes.</p>
-        <p>And you would agree with me in saying that one of them is simple and has but slight changes; and if the harmony and rhythm are also chosen for their simplicity, the result is that the speaker, if he speaks correctly, is always pretty much the same in style, and he will keep within the limits of a single harmony (for the changes are not great), and in like manner he will make use of nearly the same rhythm?</p>
-        <p>That is quite true, he said.</p>
-        <p>Whereas the other requires all sorts of harmonies and all sorts of rhythms, if the music and the style are to correspond, because the style has all sorts of changes.</p>
-        <p>That is also perfectly true, he replied.</p>
-        <p>And do not the two styles, or the mixture of the two, comprehend all poetry, and every form of expression in words? No one can say anything except in one or other of them or in both together.</p>
-        <p>They include all, he said.</p>
-        <p>And shall we receive into our State all the three styles, or one only of the two unmixed styles? or would you include the mixed?</p>
-        <p>I should prefer only to admit the pure imitator of virtue.</p>
-        <p>Yes, I said, Adeimantus, but the mixed style is also very charming: and indeed the pantomimic, which is the opposite of the one chosen by you, is the most popular style with children and their attendants, and with the world in general.</p>
-        <p>I do not deny it.</p>
-        <p>But I suppose you would argue that such a style is unsuitable to our State, in which human nature is not twofold or manifold, for one man plays one part only?</p>
-        <p>Yes; quite unsuitable.</p>
-        <p>And this is the reason why in our State, and in our State only, we shall find a shoemaker to be a shoemaker and not a pilot also, and a husbandman to be a husbandman and not a dicast also, and a soldier a soldier and not a trader also, and the same throughout?</p>
-        <p>True, he said.</p>
-        <p>And therefore when any one of these pantomimic gentlemen, who are so clever that they can imitate anything, comes to us, and makes a proposal to exhibit himself and his poetry, we will fall down and worship him as a sweet and holy and wonderful being; but we must also inform him that in our State such as he are not permitted to exist; the law will not allow them. And so when we have anointed him with myrrh, and set a garland of wool upon his head, we shall send him away to another city. For we mean to employ for our souls' health the rougher and severer poet or story-teller, who will imitate the style of the virtuous only, and will follow those models which we prescribed at first when we began the education of our soldiers.</p>
-        <p>We certainly will, he said, if we have the power.</p>
-        <p>Then now, my friend, I said, that part of music or literary education which relates to the story or myth may be considered to be finished; for the matter and manner have both been discussed.</p>
-        <p>I think so too, he said.</p>
-    </div>
-
-    <!-- After you read -->
+    <!-- Reveals -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9999;&#65039; AFTER YOU READ</div>
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">Write short answers to the four questions in your Sociological Journal document.</p>
-
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9999;&#65039; CHECK YOUR REASONING</div>
         <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0 0 12px 0;">
             <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
-                <span style="color: #C7922C;">&#9654;</span>&nbsp; Answer question 3 in your notebook first, then open this.
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; After question 4
             </summary>
             <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
-                Hall's response does real work but does not fully dissolve Plato's worry. Hall is right that a viewer can decode critically, reject a preferred reading, and refuse to simply become what she watches. But Plato's claim is narrower and harder to escape than "audiences believe whatever they see." His claim is about habituated practice, not belief: repeated imitation, he says, becomes a second nature affecting body, voice, and mind, whether or not the imitator consciously endorses what he is imitating. A critical viewer who still spends years of attention rehearsing certain patterns of feeling and reaction is, on Plato's account, still being shaped by the rehearsal, independent of what she consciously believes about it. Hall would likely answer that decoding is itself a practice, and a critical habit can be built the same way an uncritical one can. That is a real reply. Whether it fully answers Plato, or only relocates his worry to a different kind of habit, is worth deciding for yourself.
+                He resists sitting neatly on either pole, and that resistance is itself the interesting fact. He rejects the orthodox move of keeping morality tied to a transcendent, unrevisable source. But he also rejects the progressive move Hunter&rsquo;s critics sometimes attribute to secular reformers, simply subtracting the old authority and calling whatever remains sufficient. His actual project, finding within the old religious ideas a moral reality that can be restated rationally without losing its force, is an attempt to keep the sacred weight of morality while changing its source. Whether that is a stable position, or an unstable way station between the two poles, is the open question.
             </div>
         </details>
-
         <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0;">
             <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
-                <span style="color: #C7922C;">&#9654;</span>&nbsp; Write down the strongest objection you can to Plato's argument, then open this.
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; After question 1
             </summary>
             <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
-                The strongest objection is usually one of these two. First, Plato's argument proves too much: if imitating any character shapes the imitator, then acting, novel-writing, and even careful historical narration of villainy would all be suspect, which would eliminate most of literature, including works Plato himself uses approvingly elsewhere. Second, his remedy, restricting citizens to imitating only virtuous characters, assumes a central authority competent and trustworthy enough to make that judgment for everyone, which is a much larger assumption than the psychological claim about habituation. Notice that these two objections attack different parts of the argument: the first challenges the premise that imitation reliably shapes character, and the second grants the premise but challenges the political conclusion Plato draws from it. A strong answer names which one you are making and does not conflate them.
+                Durkheim&rsquo;s own answer is the sacred quality itself: the sense that moral rules command a respect and carry a weight that ordinary factual claims do not. Religion supplied that weight by attaching morality to divine authority. His worry is that a moral education which drops the religious form but forgets to ask what supplied the weight will produce rules that are merely stated, not felt as binding, which he predicts will not function as moral rules in practice. Whether a secular source can supply the same weight is the open question the rest of the chapter, and arguably the rest of the book, is trying to answer.
             </div>
         </details>
-    </div>
-
-    <!-- The Weber link -->
-    <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; A THREAD TO HOLD ONTO UNTIL THURSDAY</div>
-        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Plato's guardians are shaped by what they are permitted to imitate. Thursday you will read Weber's account of people shaped by an economic discipline that has outlived the religious belief that originally built it. Both arguments deny that a person stands wholly outside the system that formed him. Neither thinker is optimistic that the shaping is easy to see from inside it. Keep that question open across both readings: can a person raised inside a system ever fully judge what that system has made of him, or only from partly inside it?</div>
     </div>
 
     <!-- Next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT COMES NEXT</div>
-        <div style="display: flex; align-items: flex-start; gap: 14px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; NEXT</div>
+        <div style="display: flex; align-items: center; gap: 14px;">
             <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
-            <div>
-                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Lesson 15.02, Wednesday</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">The same question about formation, at global scale: does culture converge, mix, or adapt when it crosses borders?</div>
-            </div>
+            <div style="font-size: 18px; color: #0e1c42;"><strong>Lesson 15.02</strong></div>
         </div>
     </div>
 
@@ -240,8 +213,8 @@
 
 <!-- ===== FOOTER ===== -->
 <div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
-    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Primary Source Reading</div>
-    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Plato, <em>Republic</em> III, Stephanus 394d&ndash;398b &middot; trans. Benjamin Jowett &middot; public domain</div>
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Text Study</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Durkheim, <em>L&rsquo;&eacute;ducation morale</em>, ch. 1 (lectures of 1902&ndash;03; published 1925)</div>
     <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
 </div>
 

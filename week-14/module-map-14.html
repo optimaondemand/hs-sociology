@@ -1,20 +1,14 @@
 <!--
-    Optima Academy Online — Sociology (Florida 2108300)
-    Q2 · Week 14 · Module Map (week opener)
+    Optima Academy Online - Sociology (Florida 2108300)
+    Q2 - Week 14 - Module Map (week opener)
 
     TEACHER-FACING BUILD NOTES (not rendered to students):
-    REGISTER: HONORS (confirmed 2026-08-06).
-      Tier 4 scaffolding, ungraded, GitHub-hosted. Not the intro wrapper: that is
-      a separate Canvas Quiz in survey mode (module-intro-14.md).
-      Week 14 virtue thread: self-government (Weeks 14-15).
-      Journal 14 is Tier 1, an assignment, no peer reply (EVEN week).
-
-      PATTERN B WEEK. Unlike Week 4, the Pattern B reading falls on THURSDAY
-      (Primary Source 14B), not Tuesday, because Tuesday's reading (14A) is the
-      Pattern A conclusion of the Simmel essay begun in Week 4. The "get the
-      book" alert is copied from week-04's treatment and repositioned to warn
-      about Thursday from the top of the week, since a student who learns about
-      it on Thursday morning has already lost the week.
+    REGISTER: HONORS.
+      Ungraded, GitHub-hosted. Not the module intro wrapper (module-intro-14.md).
+      Week 14 virtue thread: self-government.
+      REVISION 2026-10-14: rebuilt as an ordered list of items (no weekday columns, no VR rows, no
+      book alert: 14B is now a Text Study page). Journal 14 is a graded video discussion with one
+      peer reply. Case Study Reports due end of Week 14; Capstone runs Weeks 15 to 17.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -26,30 +20,17 @@
     body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
     .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
 
-    .wk { display: flex; gap: 10px; margin: 6px 0 4px 0; }
-    .day { flex: 1; border-radius: 8px; border: 1px solid #D0D9E8; overflow: hidden; }
-    .day-h { background: #0E1C42; color: #fff; font-size: 11px; letter-spacing: 0.6px; padding: 8px 10px; text-align: center; }
-    .day-b { padding: 12px 11px; min-height: 148px; }
-    .day-kind { font-size: 10px; letter-spacing: 0.5px; color: #1B6A94; margin-bottom: 5px; }
-    .day-t { font-size: 14px; color: #0E1C42; line-height: 1.45; margin-bottom: 8px; }
-    .day-due { font-size: 12px; color: #8a6a1d; background: #FDF3E3; border-radius: 4px; padding: 4px 7px; display: inline-block; line-height: 1.35; }
-    .day-book { font-size: 12px; color: #8A1F16; background: #FDECEC; border-radius: 4px; padding: 4px 7px; display: inline-block; line-height: 1.35; }
-    .day.rest .day-h { background: #6b7a99; }
-    .day.rest .day-b { color: #6b7a99; font-size: 13px; line-height: 1.5; }
-
-    .alert { background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 8px; padding: 18px 22px; margin-bottom: 20px; }
-    .alert-l { font-size: 11px; color: #8A1F16; letter-spacing: 0.5px; margin-bottom: 9px; }
-    .alert-h { font-size: 19px; color: #0E1C42; margin-bottom: 8px; }
-    .alert-t { font-size: 17px; color: #1a2340; line-height: 1.6; }
-    .alert-t strong { color: #0E1C42; }
-
-    .turn { width: 100%; border-collapse: collapse; font-size: 15px; margin: 6px 0; }
-    .turn th { background: #0E1C42; color: #fff; text-align: left; padding: 10px 13px; font-size: 12px; letter-spacing: 0.4px; font-weight: normal; }
-    .turn td { border: 1px solid #D0D9E8; padding: 10px 13px; color: #1a2340; line-height: 1.5; vertical-align: top; }
-    .turn tr:nth-child(even) td { background: #F8FAFD; }
-    .pill { display: inline-block; font-size: 11px; border-radius: 12px; padding: 3px 10px; letter-spacing: 0.3px; }
+    .seq { list-style: none; margin: 0; padding: 0; }
+    .seq li { display: flex; align-items: center; gap: 14px; padding: 12px 14px; border: 1px solid #D0D9E8; border-radius: 8px; margin-bottom: 8px; background: #FFFFFF; }
+    .seq li:nth-child(even) { background: #F8FAFD; }
+    .seq-n { min-width: 32px; height: 32px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 15px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .seq-b { flex: 1; }
+    .seq-k { font-size: 10px; letter-spacing: 0.6px; color: #1B6A94; margin-bottom: 2px; }
+    .seq-t { font-size: 16px; color: #0E1C42; line-height: 1.4; }
+    .pill { display: inline-block; font-size: 11px; border-radius: 12px; padding: 3px 10px; letter-spacing: 0.3px; white-space: nowrap; }
     .p1 { background: #E8F6FB; color: #1B6A94; border: 1px solid #C5DCE5; }
     .p2 { background: #FDF3E3; color: #8a6a1d; border: 1px solid #E8D6AE; }
+    @media (max-width: 640px) { .seq li { flex-wrap: wrap; } }
 </style>
 </head>
 <body>
@@ -75,11 +56,11 @@
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">This Week</div>
-        <div style="font-size: 17px; color: #0e1c42;">Week 14 of 18</div>
+        <div style="font-size: 17px; color: #0e1c42;">Week 14 of 17</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Theme</div>
-        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Urbanization, Technology, and Social Relationships</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Media, Culture, Globalization, and Identity</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Virtue</div>
@@ -92,144 +73,42 @@
 
     <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">MODULE MAP</div>
-        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Week 14: Urbanization, Technology, and Social Relationships</div>
-        <div style="font-size: 16px; color: #666;">Start here. This page shows you everything the week contains.</div>
+        <div style="font-size: 22px; color: #0e1c42;">Week 14: Media, Culture, Globalization, and Identity</div>
     </div>
 
-    <!-- ===== BOOK ALERT: deliberately above everything else ===== -->
-    <div class="alert">
-        <div class="alert-l">&#9888;&#65039; DO THIS FIRST, TODAY</div>
-        <div class="alert-h">Thursday's reading is in a book you need to get hold of.</div>
-        <div class="alert-t">
-            Most readings in this course are on the page in front of you. This week's Thursday reading is not.
-            You will read <strong>Simmel, &ldquo;The Sociology of the Senses,&rdquo;</strong> in the translation by
-            <strong>Mark Ritter and David Frisby</strong>, from <em>Simmel on Culture: Selected Writings</em>
-            (Sage, 1997).
-            <br><br>
-            Your school library link is posted in this module. Check that you can reach a copy
-            <strong>today</strong>, not on Thursday morning. If you cannot find one, tell your facilitator
-            straight away. That is a five-minute problem on Monday and an impossible one on Thursday.
-            The Primary Source 14B page tells you exactly where the essay sits in the collection and how
-            to find the right spot.
-        </div>
-        <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(192,57,43,0.3); font-size: 14px; color: #4a5a78; line-height: 1.6;">
-            Students must obtain lawful access to the assigned literary work separately. Optima course materials are original instructional materials designed to support analysis, discussion, and assessment of the work. Copyrighted text, images, illustrations, panels, audio, or other protected materials are not reproduced in Canvas, VR, videos, downloadable files, or teacher resources except where expressly licensed, in the public domain, or approved as a limited fair-use excerpt for instructional analysis.
-        </div>
-    </div>
-
-    <!-- Essential question -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#10067; THE QUESTION THIS WEEK IS ABOUT</div>
-        <div style="font-size: 21px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Does the thing that connects you to other people also change what "connected" means?</div>
-        <div style="font-size: 17px; color: #1a2340; line-height: 1.65;">The city was the first technology to put strangers permanently within reach of one another, and Simmel spent a career asking what that did to the mind. This week the course applies the same question to the newest such technology: the screen. You finish Simmel's essay on the metropolis, then turn his method loose on communications technology, then read Simmel again on the senses themselves, a century before anyone had a reason to ask what a video call does to a face.</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#10067; ESSENTIAL QUESTION</div>
+        <div style="font-size: 21px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">What does the system you are formed inside of do to you?</div>
+        <div style="font-size: 17px; color: #1a2340; line-height: 1.65;">Two lessons on media and globalization, and two readings twenty-three centuries apart, ask the same question in different vocabularies: not what a culture teaches, but what it makes of the people raised inside it.</div>
     </div>
 
-    <!-- Week at a glance -->
     <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128197; THE WEEK AT A GLANCE</div>
-        <div class="wk">
-            <div class="day">
-                <div class="day-h">MONDAY</div>
-                <div class="day-b">
-                    <div class="day-kind">LESSON 14.01</div>
-                    <div class="day-t">Urbanization and modern society: Simmel, Wirth, and Jacobs</div>
-                    <div class="day-due">Reading Quiz 14 opens</div>
-                </div>
-            </div>
-            <div class="day">
-                <div class="day-h">TUESDAY</div>
-                <div class="day-b">
-                    <div class="day-kind">PRIMARY SOURCE 14A</div>
-                    <div class="day-t">Simmel, &ldquo;The Metropolis and Mental Life,&rdquo; concluding sections</div>
-                    <div class="day-due">On a course page, as usual</div>
-                </div>
-            </div>
-            <div class="day">
-                <div class="day-h">WEDNESDAY</div>
-                <div class="day-b">
-                    <div class="day-kind">LESSON 14.02</div>
-                    <div class="day-t">Technology and social relationships</div>
-                </div>
-            </div>
-            <div class="day">
-                <div class="day-h">THURSDAY</div>
-                <div class="day-b">
-                    <div class="day-kind">PRIMARY SOURCE 14B</div>
-                    <div class="day-t">Simmel, &ldquo;The Sociology of the Senses&rdquo;</div>
-                    <div class="day-book">In a book. Get it Monday.</div>
-                    <div class="day-due">Journal 14 due</div>
-                </div>
-            </div>
-            <div class="day rest">
-                <div class="day-h">FRIDAY</div>
-                <div class="day-b">Catch up, finish your VR activities, or come to office hours.</div>
-            </div>
-        </div>
-        <p style="font-size: 15px; color: #4a5a78; line-height: 1.6; margin: 14px 0 0 0;">Tuesday finishes the Simmel essay you started reading in Week 4. If you do not remember the opening half well, a two-line reminder is at the top of Tuesday's guide, but it is worth skimming Week 4's Primary Source 4B first if you have time.</p>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; THIS WEEK, IN ORDER</div>
+        <ol class="seq">
+            <li><div class="seq-n">1</div><div class="seq-b"><div class="seq-k">LESSON 14.01</div><div class="seq-t">Media, culture industry, hegemony, cultural capital, and the active audience</div></div></li>
+            <li><div class="seq-n">2</div><div class="seq-b"><div class="seq-k">PRIMARY SOURCE 14A</div><div class="seq-t">Plato, <em>Republic</em> III, on poetry and imitation</div></div></li>
+            <li><div class="seq-n">3</div><div class="seq-b"><div class="seq-k">LESSON 14.02</div><div class="seq-t">Homogenization, hybridization, and glocalization, with two sorting activities</div></div></li>
+            <li><div class="seq-n">4</div><div class="seq-b"><div class="seq-k">TEXT STUDY 14B</div><div class="seq-t">Weber, <em>Die protestantische Ethik</em>, ch. V: rationalization and the iron cage</div></div></li>
+            <li><div class="seq-n">5</div><div class="seq-b"><div class="seq-k">QUIZ</div><div class="seq-t">Reading Quiz 14</div></div><span class="pill p1">Auto-graded</span></li>
+            <li><div class="seq-n">6</div><div class="seq-b"><div class="seq-k">DISCUSSION</div><div class="seq-t">Sociological Journal 14 &middot; video discussion: 2 to 4 minute video post and one peer reply, due end of Week 14</div></div><span class="pill p2">Graded &middot; 20 points</span></li>
+        </ol>
     </div>
 
-    <!-- What you turn in -->
-    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128203; WHAT YOU TURN IN THIS WEEK</div>
-        <table class="turn">
-            <tr><th>Item</th><th>What it is</th><th>Counts as</th></tr>
-            <tr>
-                <td>Module 14 intro survey</td>
-                <td>A few questions before you start, including a check that you can reach Thursday's book.</td>
-                <td><span class="pill p1">Completion</span></td>
-            </tr>
-            <tr>
-                <td>Reading Quiz 14</td>
-                <td>Eight multiple choice questions on both lessons.</td>
-                <td><span class="pill p1">Auto-graded</span></td>
-            </tr>
-            <tr>
-                <td>Sociological Journal 14</td>
-                <td>250 to 400 words applying at least three course frameworks to one use of technology in your own life. <strong>An assignment this week. No peer reply required.</strong></td>
-                <td><span class="pill p1">Completion</span></td>
-            </tr>
-            <tr>
-                <td>VR Activity 14.1</td>
-                <td>Compare two zones of an urban space using Simmel, Wirth, and Jacobs.</td>
-                <td><span class="pill p1">Completion</span></td>
-            </tr>
-            <tr>
-                <td>VR Activity 14.2</td>
-                <td>Map how one technology affects bridging and bonding social capital.</td>
-                <td><span class="pill p1">Completion</span></td>
-            </tr>
-            <tr>
-                <td>Module 14 wrap-up survey</td>
-                <td>Your second answer to the essential question, a confidence check, and how the book went.</td>
-                <td><span class="pill p1">Completion</span></td>
-            </tr>
-        </table>
-        <p style="font-size: 15px; color: #4a5a78; line-height: 1.6; margin: 12px 0 0 0;">Journal 13 required a peer reply and Journal 14 does not. The cadence alternates, and this page will always tell you which kind of week it is.</p>
-    </div>
-
-    <!-- Ongoing work -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128260; WORK THAT RUNS ALL SEMESTER</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128260; ALSO RUNNING</div>
         <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
-            <div style="font-size: 17px; color: #1a2340; line-height: 1.6;"><strong>Your Sociological Journal.</strong> This entry asks you to combine several frameworks on one example rather than apply them one at a time, which is exactly the move the Sociologist Case Study Reports ask for beginning this week's project window.</div>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6;"><strong>Sociologist Case Study Reports, due end of Week 14.</strong> Four reports across Weeks 11 to 14, each applying one thinker to one historical case. Journal 14 asks which concept from those thinkers you find most useful.</div>
         </div>
-        <div style="display: flex; align-items: flex-start; gap: 12px;">
+        <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
-            <div style="font-size: 17px; color: #1a2340; line-height: 1.6;"><strong>Sociologist Case Study Reports, due across Weeks 12 to 15.</strong> Four short reports, each applying one classical thinker to one historical case. Simmel on the metropolis, or Simmel on the senses, is a strong candidate for one of the four if you have not chosen him yet.</div>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6;"><strong>Community Flourishing Capstone, Weeks 15 to 17.</strong> This week&rsquo;s material on culture, media, and globalization bears on it: institutions do not operate apart from the media environment and global forces around them.</div>
         </div>
     </div>
 
-    <!-- Virtue -->
     <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; THE VIRTUE THIS WEEK IS SELF-GOVERNMENT</div>
-        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Self-government here means governing your own attention in an environment engineered to capture it. Simmel's blas&eacute; attitude is one kind of self-government: a deliberate, chosen filter rather than an involuntary breakdown. Choosing whether a technology is building Gemeinschaft or Gesellschaft in your own life, rather than simply accepting whatever it makes easiest, is another. The wrap-up survey will ask where you noticed yourself doing this, or failing to.</div>
-    </div>
-
-    <!-- Start here -->
-    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#9654; WHERE TO START</div>
-        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Sort out Thursday's book first. Then take the Module 14 intro survey, then open Lesson 14.01. Everything else follows in the order above.</p>
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; VIRTUE &middot; SELF-GOVERNMENT</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Plato&rsquo;s answer is that a person becomes what he practices imitating. Weber&rsquo;s is that a discipline can outlive the belief that built it and keep shaping people who never held that belief. Self-government gets harder, not easier, when the constraint no longer announces itself as anyone&rsquo;s choice.</div>
     </div>
 
 </div>
@@ -237,7 +116,7 @@
 <!-- ===== FOOTER ===== -->
 <div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
     <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Module Map</div>
-    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Week 14 of 18 &middot; Urbanization, Technology, and Social Relationships</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Week 14 of 17 &middot; Media, Culture, Globalization, and Identity</div>
     <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
 </div>
 

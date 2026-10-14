@@ -1,117 +1,57 @@
 <!--
-    Optima Academy Online — Sociology (Florida 2108300)
-    Q2 · Week 14 · Primary Source Guide 14B (Thursday)
-
-    *** PATTERN B (LINKED READING). Template: 03_Development/week-04/source-04-a.html. ***
-    See CLAUDE.md, "Copyright: two kinds of source guide", and plan.md section 2b.
+    Optima Academy Online - Sociology (Florida 2108300)
+    Q2 - Week 14 - Text Study 14B
 
     TEACHER-FACING BUILD NOTES (not rendered to students):
-    REGISTER: HONORS (confirmed 2026-08-06).
-
-      R1 SUBSTITUTION: Lesson 14.02 was built around Sherry Turkle, Alone Together
-      (2011), still in copyright. Turkle stays in the lesson's own prose (that is
-      permitted; teaching ABOUT a modern thinker is not the same as reproducing
-      her words). The ASSIGNED READING is replaced.
-
-      SUBSTITUTE CHOSEN: Georg Simmel, "The Sociology of the Senses" (1907), on
-      how proximity, sight, and hearing structure social relations. This sets up
-      technologically mediated interaction without anachronism: money and the
-      screen are both ways of stripping reciprocity out of contact between
-      people, and Simmel gives the vocabulary for describing what a technology
-      does to a relationship before technology in the modern sense existed.
-
-      WHY NOT THE APPROVED FALLBACK (Philosophy of Money): considered, and the
-      primary substitute was usable, so the fallback was not needed. Reported per
-      the brief's instruction regardless: I checked whether a public-domain
-      English translation of "Sociology of the Senses" exists (there is a modern
-      open-coursepack rendering circulating online with no named translator or
-      verifiable date, which is exactly the kind of unverifiable text CLAUDE.md's
-      "no fabricated content" rule rules out using) and could not confirm one, so
-      this is built as PATTERN B against a real, verifiable named edition instead
-      of either fabricating a PD status or silently reproducing an uncertain text.
-
-      Underlying work: PUBLIC DOMAIN (German, 1907; incorporated into Simmel's
-      Soziologie, 1908; Simmel died 1918).
-      Named edition: Georg Simmel, "The Sociology of the Senses," trans. Mark
-      Ritter and David Frisby, in Simmel on Culture: Selected Writings, ed. David
-      Frisby and Mike Featherstone (London: Sage Publications, 1997), pp. 109-120.
-      STILL IN COPYRIGHT (Sage Publications, 1997). Therefore PATTERN B.
-
-      VERIFICATION: the translator names, editors, publisher, year, and page
-      range above were checked against a published bibliography of Simmel's
-      writings in English translation (Simmel Studies) and against a secondary
-      scholarly source that quotes this exact edition with page numbers. Not
-      guessed. The two .qshort quotations below (pp. 111 and 115) are quoted
-      exactly as a secondary source quotes them from this edition, with page
-      numbers; I do not have the physical book and have not verified surrounding
-      sentences, which is why only two short, independently verified fragments
-      are used rather than three, and why the "what to read" card below flags
-      the first/last-word anchors as UNVERIFIED rather than inventing them. This
-      is the same practice as the KNOWN GAP in source-04-a.html for Chapter III:
-      flag it, do not invent it.
-
-      GATE NOTE: gate.py's BANNED_TRANSLATORS list (Gerth, Parsons, Talcott,
-      Solovay, Mueller, Wolff, Simpson, Loomis, Halls, Schnurer, Everett K.
-      Wilson) does NOT currently include "Ritter" or "Frisby", so the gate's
-      automatic copyright-reproduction / missing-rights-notice checks will not
-      fire on this page even though it names a protected translation. This page
-      is built to full Pattern B compliance by hand regardless. Flagging for the
-      harness owner: consider adding Ritter and Frisby to BANNED_TRANSLATORS so
-      future pages citing this edition are still caught mechanically. Not
-      changed here because touching the shared gate is outside a single week's
-      scope.
-
-      ALL COPYRIGHT DATES ARE STATED TO THE BEST OF MY KNOWLEDGE AND ARE NOT
-      LEGAL ADVICE. Rights clearance must confirm before publication.
-
-      Never send a student to the German original. They do not read German.
+    REGISTER: HONORS.
+    REVISION 2026-10-14: converted from a linked Pattern B guide (protected translation, NOT FINISHED
+    placeholder, rights notice, "what to read" card) to a Text Study page. The page now explains in
+    Optima's own words the closing pages of Weber, Die protestantische Ethik und der Geist des
+    Kapitalismus, ch. V (1904-05; revised 1920): the reversal from calling to compulsion, the
+    self-sustaining machine order, the stahlhartes Gehaeuse image, and the hedged prophecy.
+    Grounding: no ch. V PDF exists in 01_Analysis. Content rests on the previous guide's commentary,
+    Lesson 14.02, and only well-established features of the closing pages. No quotations; single
+    German terms only (Beruf, stahlhartes Gehaeuse, Fachmenschen, Genussmenschen). Left general on
+    purpose: exact wording and page locations, the precise wording of Baxter's cloak image, and the
+    section title of the chapter.
+    VERIFIED 2026-10-14: header now gives the German structural location (Part II, sec. 2)
+    alongside the conventional English ch. V; scare quotes removed.
+    Figure: w14-ford-assembly-line (Ford assembly line, 1913), PD via Commons, evidence sidecar in _media.
+    Guide questions kept (reworded to work without the book); both reveals kept.
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sociology &middot; Primary Source 14B</title>
+<title>Sociology &middot; Text Study 14B</title>
 <style>
     body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
     .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-
-    /* Short analytical quotation. NOT .src: this page reproduces nothing. */
-    .qshort { background: #FCFCF8; border: 1px solid #E3DFD2; border-left: 5px solid #C7922C; border-radius: 7px; padding: 16px 22px; margin: 14px 0; }
-    .qshort p { font-family: Georgia, "Times New Roman", serif; font-size: 18px; color: #241f18; line-height: 1.7; margin: 0; }
-    .qshort cite { display: block; font-family: "Segoe UI", sans-serif; font-size: 12px; color: #8a7a55; font-style: normal; margin-top: 9px; letter-spacing: 0.3px; }
-
-    /* What to read */
-    .wtr { background: #0E1C42; border-radius: 10px; padding: 24px 28px; margin: 4px 0 18px 0; }
-    .wtr-t { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 4px; }
-    .wtr-s { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 20px; font-style: italic; }
-    .wtr-row { display: flex; gap: 12px; margin-bottom: 10px; }
-    .wtr-row:last-child { margin-bottom: 0; }
-    .wtr-k { flex: 0 0 132px; font-size: 11px; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); padding-top: 3px; }
-    .wtr-v { flex: 1; font-size: 15px; color: rgba(255,255,255,0.92); line-height: 1.6; }
-    .wtr-v em { color: #E0B562; font-style: italic; }
-    .wtr-note { margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 14px; color: rgba(255,255,255,0.78); line-height: 1.6; }
-
-    .rights { background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 18px 0; }
-    .rights-l { font-size: 11px; color: #8A1F16; margin-bottom: 8px; letter-spacing: 0.4px; }
-    .rights-t { font-size: 15px; color: #0E1C42; line-height: 1.6; }
-
-    .get { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 15px; }
-    .get th { background: #0E1C42; color: #fff; text-align: left; padding: 9px 13px; font-size: 12px; letter-spacing: 0.4px; font-weight: normal; }
-    .get td { border: 1px solid #D0D9E8; padding: 10px 13px; color: #1a2340; line-height: 1.5; vertical-align: top; }
-    .get tr:nth-child(even) td { background: #F8FAFD; }
-    .get td:first-child { color: #0E1C42; width: 22%; }
 
     .q-list { counter-reset: qq; list-style: none; padding: 0; margin: 0; }
     .q-list li { counter-increment: qq; position: relative; padding-left: 40px; margin-bottom: 14px; font-size: 17px; color: #1a2340; line-height: 1.6; }
     .q-list li::before { content: counter(qq); position: absolute; left: 0; top: 1px; width: 27px; height: 27px; border-radius: 50%; background: #0E1C42; color: #fff; font-family: "Segoe UI", sans-serif; font-size: 13px; display: flex; align-items: center; justify-content: center; }
 
-    .arg { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 6px 0; margin: 14px 0; }
-    .arg-s { display: flex; align-items: flex-start; gap: 13px; padding: 11px 18px; border-bottom: 1px solid #EEF1F8; }
-    .arg-s:last-child { border-bottom: none; }
-    .arg-n { min-width: 26px; height: 26px; border-radius: 50%; background: #EEF1F8; color: #0E1C42; font-size: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .arg-b { font-size: 16px; color: #1a2340; line-height: 1.55; }
-    .arg-b b { color: #0E1C42; }
+    /* Structure visual */
+    .cage { background: #0E1C42; border-radius: 10px; padding: 24px 26px; margin: 4px 0 18px 0; }
+    .cage-t { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 18px; }
+    .cage-row { display: flex; align-items: stretch; gap: 8px; }
+    .cage-box { flex: 1; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.18); border-radius: 8px; padding: 12px 12px; }
+    .cage-n { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; margin-bottom: 5px; }
+    .cage-h { font-size: 16px; color: #ffffff; margin-bottom: 5px; }
+    .cage-b { font-size: 13px; color: rgba(255,255,255,0.78); line-height: 1.5; }
+    .cage-arrow { align-self: center; font-size: 22px; color: #E0B562; }
+    .cage-fade { margin-top: 14px; display: flex; gap: 10px; }
+    .cage-fade div { flex: 1; font-size: 13px; line-height: 1.5; border-radius: 6px; padding: 10px 12px; }
+    .cage-f1 { background: rgba(224,181,98,0.14); color: #E0B562; border: 1px dashed rgba(224,181,98,0.6); }
+    .cage-f2 { background: rgba(85,200,232,0.12); color: #CFEFF8; border: 1px solid rgba(85,200,232,0.5); }
+    @media (max-width: 720px) { .cage-row, .cage-fade { flex-direction: column; } .cage-arrow { transform: rotate(90deg); } }
+
+    .dist { width: 100%; border-collapse: collapse; font-size: 15px; margin: 6px 0; }
+    .dist th { background: #0E1C42; color: #fff; text-align: left; padding: 9px 13px; font-size: 12px; letter-spacing: 0.4px; font-weight: normal; }
+    .dist td { border: 1px solid #D0D9E8; padding: 10px 13px; color: #1a2340; line-height: 1.5; vertical-align: top; }
+    .dist tr:nth-child(even) td { background: #F8FAFD; }
 </style>
 </head>
 <body>
@@ -134,18 +74,19 @@
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
         <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 14</div>
-        <div style="font-size: 12px; color: #666;">Urbanization, Technology, and Social Relationships</div>
+        <div style="font-size: 12px; color: #666;">Media, Culture, Globalization, and Identity</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
-        <div style="font-size: 17px; color: #0e1c42;">Primary Source 14B</div>
+        <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Reading</div>
+        <div style="font-size: 17px; color: #0e1c42;">Text Study 14B</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Author</div>
-        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Georg Simmel</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Max Weber</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Published</div>
-        <div style="font-size: 16px; color: #0e1c42;">1907</div>
+        <div style="font-size: 16px; color: #0e1c42;">1904&ndash;1905</div>
     </div>
 </div>
 
@@ -153,162 +94,123 @@
 <div style="padding: 24px 34px;">
 
     <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">PRIMARY SOURCE 14B</div>
-        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 6px;">Sight, Hearing, and the Architecture of Contact</div>
-        <div style="font-size: 16px; color: #444;">Simmel, <em>The Sociology of the Senses</em> (1907).</div>
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">TEXT STUDY 14B</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 6px;">Rationalization and the Iron Cage</div>
+        <div style="font-size: 16px; color: #444;">Weber, <em>Die protestantische Ethik und der Geist des Kapitalismus</em>, Part II, section 2, <em>Askese und kapitalistischer Geist</em> (ch. V in the usual English numbering), closing pages (1904&ndash;05)</div>
     </div>
 
-    <!-- OPTIMA-TEXT-PLACEHOLDER
-         Category: MISSING SOURCE
-         Inserted by _build/placeholders.py. Audit with: python _build/placeholders.py --audit
-         Remove this block only when the gap below is actually closed.
-    -->
-    <div style="background: #FFF8E7; border: 2px dashed #C7922C; border-radius: 8px; padding: 16px 20px; margin: 18px 0;">
-        <div style="font-size: 11px; color: #8a6a1d; letter-spacing: 0.5px; margin-bottom: 8px;">&#9888;&#65039; PLACEHOLDER &middot; MISSING SOURCE &middot; NOT FINISHED COPY</div>
-        <div style="font-size: 16px; color: #1a2340; line-height: 1.6; margin-bottom: 10px;"><strong>What is missing:</strong> No PDF of Simmel's "Sociology of the Senses" exists in 01_Analysis. The edition is identified but the essay's opening and closing words could not be verified.</div>
-        <div style="font-size: 16px; color: #1a2340; line-height: 1.6;"><strong>To close this gap:</strong> Obtain the Ritter and Frisby translation in Simmel on Culture and check every anchor and quotation on the page word for word against the printed text. Treat the anchors already there as unverified rather than as a starting point.</div>
-        <div style="font-size: 14px; color: #8a6a1d; line-height: 1.55; margin-top: 10px; padding-top: 9px; border-top: 1px solid #E8D6AE;">This block is an internal marker, not part of the lesson. It must be resolved or removed before the course is published. Everything else on this page is finished.</div>
-    </div>
-<!-- ===== WHAT TO READ ===== -->
-    <div class="wtr">
-        <div class="wtr-t">WHAT TO READ</div>
-        <div class="wtr-s">This reading is in a book, not on this page. Here is exactly where to find it.</div>
-
-        <div class="wtr-row">
-            <div class="wtr-k">THE BOOK</div>
-            <div class="wtr-v">Georg Simmel, &ldquo;The Sociology of the Senses,&rdquo; translated by Mark Ritter and David Frisby, in <em>Simmel on Culture: Selected Writings</em>, edited by David Frisby and Mike Featherstone (London: Sage Publications, 1997), pages 109 to 120.</div>
-            </div>
-        <div class="wtr-row">
-            <div class="wtr-k">START AT</div>
-            <div class="wtr-v">The essay titled <strong>&ldquo;The Sociology of the Senses&rdquo;</strong>, page 109 of this edition. It is a complete, self-contained essay, not an excerpt from a longer chapter, so the essay's own title is where you begin.</div>
-        </div>
-        <div class="wtr-row">
-            <div class="wtr-k">STOP AT</div>
-            <div class="wtr-v">The end of the same essay, page 120, immediately before the next essay in the collection begins.</div>
-        </div>
-        <div class="wtr-row">
-            <div class="wtr-k">HOW LONG</div>
-            <div class="wtr-v">About eleven pages. Set aside thirty to forty minutes.</div>
-        </div>
-        <div class="wtr-row">
-            <div class="wtr-k">WHAT TO SKIP</div>
-            <div class="wtr-v">Nothing. It is short, and each sense (sight, then hearing, then smell) gets a distinct, compact treatment. Do not skip ahead to a "conclusion"; Simmel simply stops when he has treated the senses he means to treat.</div>
-        </div>
-
-        <div class="wtr-note">A note on precision: this guide can confirm the essay's title, its edition, and its page range, and can quote two sentences from partway through it with their exact page numbers (below). It cannot confirm the essay's exact opening and closing sentences, because that requires the physical book, which was not available while building this page. Use the title and page range as your boundary, not a first-words match. If you reach the passage about the eye and mutual glance (roughly page 111) and the passage contrasting the ear with the eye (roughly page 115), you are in the right essay.</div>
-    </div>
-
-    <!-- ===== HOW TO GET IT ===== -->
-    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; HOW TO GET THE BOOK</div>
-        <table class="get">
-            <tr><th>Try this</th><th>What to do</th></tr>
-            <tr><td>Your school library</td><td>Start here. Your facilitator posts the direct access link for our library in this week's Canvas module. <em>Simmel on Culture</em> is an edited essay collection widely held by academic library systems and often reachable through interlibrary loan or a library database even where the physical book is not on the shelf.</td></tr>
-            <tr><td>Your public library</td><td>A university-press-style essay collection like this one is less likely to be on a public library's open shelf than a novel, but most systems can request it through interlibrary loan. Ask a librarian; this is a normal, unremarkable request for them.</td></tr>
-            <tr><td>A bookshop or publisher</td><td>The collection is published by Sage Publications and can be ordered new or found secondhand. You do not need to buy it to do this course.</td></tr>
-        </table>
-        <p style="font-size: 16px; color: #4a5a78; line-height: 1.6; margin: 12px 0 0 0;">If you cannot reach a copy by Thursday, tell your facilitator early rather than late. There is a way to keep you moving, and it works much better before the reading is due than after.</p>
-    </div>
-
-    <!-- ===== REQUIRED LANGUAGE (verbatim, policy) ===== -->
-    <div class="rights">
-        <div class="rights-l">&#9888;&#65039; ABOUT THIS READING</div>
-        <div class="rights-t">Students must obtain lawful access to the assigned literary work separately. Optima course materials are original instructional materials designed to support analysis, discussion, and assessment of the work. Copyrighted text, images, illustrations, panels, audio, or other protected materials are not reproduced in Canvas, VR, videos, downloadable files, or teacher resources except where expressly licensed, in the public domain, or approved as a limited fair-use excerpt for instructional analysis.</div>
-    </div>
-
-    <!-- Bridge -->
+    <!-- Context -->
     <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; WHERE THIS FITS</div>
-        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Wednesday's lesson discussed Sherry Turkle's argument that communications technology has changed human connection in ways we have not fully reckoned with. Turkle's own book stays out of this page because it is still in copyright, but the question she is asking is not new. A full century before the smartphone, Simmel was asking what property of a sense, sight especially, makes a contact between two people genuinely reciprocal, and what happens when that property is removed. Money, which you met in Week 4, was already one of history's most effective devices for stripping reciprocity out of a relationship. A screen may be doing something related, or something different. That is the question to carry into this reading.</div>
+        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; CONTEXT</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Weber published the two essays that became this book in a German social-science journal in 1904 and 1905, and revised them in 1920, the year he died. The book argues that the Puritan idea of the calling (<em>Beruf</em>), disciplined work in an occupation as a religious duty, helped form the habits modern capitalism depends on. The closing pages of chapter V ask what happens to that discipline after the belief behind it fades. They are also the source Ritzer&rsquo;s McDonaldization thesis (Lesson 14.02) builds on.</div>
     </div>
 
-    <!-- Why -->
-    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; WHY YOU ARE READING THIS</div>
-        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Simmel treats the senses as sociological instruments, not just biological ones. Sight, he argues, does something no other sense can do: it makes a relationship automatically mutual. Hearing, smell, and touch do not share that property, and the differences matter enormously for what kind of social bond each one can support.</p>
-        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">The essay moves sense by sense. Track the property Simmel assigns to each one, because the whole argument depends on comparing them.</p>
-
-        <div class="arg">
-            <div class="arg-s"><div class="arg-n">1</div><div class="arg-b"><b>Start with the eye.</b> The mutual glance is, for Simmel, the most direct and purest interaction that exists, because it cannot be one-sided: to look is automatically to be looked at.</div></div>
-            <div class="arg-s"><div class="arg-n">2</div><div class="arg-b"><b>Name the reciprocity.</b> This built-in mutuality is what makes visual contact different in kind from other forms of contact, not just different in degree.</div></div>
-            <div class="arg-s"><div class="arg-n">3</div><div class="arg-b"><b>Turn to the face.</b> If the eye is the organ of reciprocity, the face is what makes a person's inner life legible to another at all. Watch what Simmel thinks is lost when a relationship has no face to read.</div></div>
-            <div class="arg-s"><div class="arg-n">4</div><div class="arg-b"><b>Contrast the ear.</b> Hearing lacks the eye's built-in mutuality. You can be heard without hearing back, and you can hear without being heard. Ask what kind of social bond that asymmetry permits or forecloses.</div></div>
-            <div class="arg-s"><div class="arg-n">5</div><div class="arg-b"><b>Watch for smell.</b> Simmel goes on to treat the sense of smell in the same comparative spirit, asking what it contributes that sight and hearing cannot. Notice which of the three senses is hardest to imagine a technology replacing.</div></div>
+    <!-- Structure visual -->
+    <div class="cage">
+        <div class="cage-t">THE ARGUMENT IN FOUR MOVES</div>
+        <div class="cage-row">
+            <div class="cage-box"><div class="cage-n">1 &middot; CALLING</div><div class="cage-h">Chosen duty</div><div class="cage-b">Disciplined work taken up as a religious obligation.</div></div>
+            <div class="cage-arrow">&rarr;</div>
+            <div class="cage-box"><div class="cage-n">2 &middot; ORDER</div><div class="cage-h">Self-running economy</div><div class="cage-b">The discipline helps build a machine-driven economic order.</div></div>
+            <div class="cage-arrow">&rarr;</div>
+            <div class="cage-box"><div class="cage-n">3 &middot; GEH&Auml;USE</div><div class="cage-h">Imposed necessity</div><div class="cage-b">The order demands the discipline of everyone born into it.</div></div>
+            <div class="cage-arrow">&rarr;</div>
+            <div class="cage-box"><div class="cage-n">4 &middot; PROPHECY</div><div class="cage-h">Open question</div><div class="cage-b">New purpose, or hollow routine?</div></div>
+        </div>
+        <div class="cage-fade">
+            <div class="cage-f1">What fades between moves 1 and 3: the religious belief that justified the work.</div>
+            <div class="cage-f2">What stays: the discipline, now enforced by the economic system itself.</div>
         </div>
     </div>
 
-    <!-- Read for these -->
+    <!-- 1 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; 1 &middot; THE REVERSAL</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 8px 0;"><strong>Claim.</strong> What the Puritan chose as a duty, modern people meet as a necessity.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">For the Puritan, work in a worldly occupation was the place where a person served God and showed seriousness of faith. Richard Baxter, the Puritan writer Weber leans on throughout the chapter, pictured concern for outward goods as a light cloak: worn for a purpose, and able to be dropped at any moment. The Puritan took up methodical work, and held his possessions lightly, because he believed he owed it.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Weber&rsquo;s turn is that the condition has reversed. Whoever is born into a modern economy works methodically whether or not they hold any belief about a calling, because rent, wages, and competition supply the reason. Optima&rsquo;s illustration: a shop that keeps careless accounts loses customers to one that keeps exact ones, and its owner does not need a theology to learn the lesson.</p>
+    </div>
+
+    <!-- 2 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127981; 2 &middot; HOW THE ORDER BECAME SELF-SUSTAINING</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 8px 0;"><strong>Claim.</strong> A religious discipline helped build an economic order that now runs on its own logic.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Weber observes that asceticism, once confined to the monastery, was carried into everyday occupations and came to shape ordinary worldly conduct. The disciplined habits it encouraged, saving, steady labor, rational calculation, helped build the wealth and the machine production of modern capitalism. That order, he says, is now bound to the technical and economic conditions of machine production, and these press on every individual born into it, not only on those who directly earn a profit.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 4px 0;">The mechanism is competition. Firms and workers who act rationally survive; those who do not are pushed out. The pattern therefore reproduces itself without anyone needing to believe in it, which is why the religious support could fall away while the discipline remained. Weber suggests the pressure may last as long as the fuel driving the machinery does.</p>
+        <figure data-pd="w14-ford-assembly-line.jpg" style="margin: 28px 0; text-align: center;"><img src="../_media/w14-ford-assembly-line.jpg" alt="Workers in caps and aprons stand along a moving assembly line, each assembling parts on flywheel-like rings, with belts and shafting overhead in a large factory hall." style="max-width: 100%; height: auto; border-radius: 6px;" /><figcaption style="font-size: 14px; color: #4a5a78; line-height: 1.5; margin-top: 8px;">Workers on a Ford assembly line, 1913. The pace and the sequence of each task are set by the line, not by the worker: an order built on machine production that every person inside it must keep up with. <span style="font-size: 12px; color: #6b7a99;">Unknown photographer, 1913. Public domain, via Wikimedia Commons.</span></figcaption></figure>
+    </div>
+
+    <!-- 3 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128274; 3 &middot; THE IMAGE</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 8px 0;"><strong>Claim.</strong> The result is best pictured as a casing a person lives inside, not a garment a person wears.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Weber sets the Puritan&rsquo;s light cloak against the condition that followed, and names it <em>stahlhartes Geh&auml;use</em>, a casing hard as steel. <em>Iron cage</em> is the familiar English phrasing; the German word suggests a housing or shell, something one inhabits, and that nuance matters. A cloak is put on and taken off by choice. A casing closes around people without anyone deciding to lock it, which is why Weber describes an unintended outcome, not a design: the Puritans did not set out to build it.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">He adds two observations about life inside. The sense of occupational duty lingers after the beliefs that gave it meaning have died. And where work cannot be tied to higher cultural or spiritual values, people either stop trying to justify it or let the pursuit of gain become something close to a contest for its own sake. Weber saw the clearest case of this in the United States.</p>
+    </div>
+
+    <!-- 4 -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128302; 4 &middot; THE PROPHECY, MARKED AS A RISK</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 8px 0;"><strong>Claim.</strong> Nobody knows who will live in the cage, and Weber presents possibilities, not a law.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">He sketches the possibilities. New prophets or a renewal of old ideals might give the order a purpose beyond itself. If neither comes, the likely outcome is a mechanized routine dressed up in self-importance. In that case he describes a human type with two halves: <em>Fachmenschen</em>, experts narrowed to a fragment of what their work could mean, with no larger purpose attached, and <em>Genussmenschen</em>, pleasure-seekers who retain the appetite and have lost whatever gave pleasure its depth. His harshest judgment falls on the self-satisfaction of a civilization that mistakes this condition for an achievement.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">The chapter then closes cautiously. Weber says he does not mean to replace a one-sided materialist explanation of history with an equally one-sided spiritual one. The argument is one thread in a larger causal story, and he offers it that way.</p>
+    </div>
+
+    <!-- Distinctions -->
     <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; READ FOR THESE FOUR QUESTIONS</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128206; KEY DISTINCTIONS</div>
+        <table class="dist">
+            <tr><th>Distinction</th><th>One side</th><th>The other</th></tr>
+            <tr><td>Cloak or casing</td><td>A garment worn by choice and removable.</td><td>A structure that encloses and cannot be removed at will.</td></tr>
+            <tr><td>Chosen or imposed</td><td>The Puritan takes up disciplined work as a duty.</td><td>The modern worker meets it as an economic requirement.</td></tr>
+            <tr><td>Designed or unintended</td><td>A fast-food restaurant is built on purpose by named firms.</td><td>Weber&rsquo;s order was nobody&rsquo;s plan.</td></tr>
+        </table>
+    </div>
+
+    <!-- Objection -->
+    <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; THE OBJECTION WORTH TAKING SERIOUSLY</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Two objections press on the argument. The historical one: later historians have disputed whether Puritan belief caused capitalist habits at all, since trade and finance flourished in places and periods with no such belief. Weber&rsquo;s reply is to claim a narrower thing, an elective fit between a religious ethic and an economic spirit, which is harder to test. The structural one: the image of a cage may overstate how closed the order is, since people do reshape institutions and workers do bargain over the terms of work. What evidence would show the casing to be less rigid than Weber says?</div>
+    </div>
+
+    <!-- Questions -->
+    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; FOUR QUESTIONS</div>
         <ol class="q-list">
-            <li>Simmel calls the mutual glance the most direct and purest interaction that exists, because seeing another person's eyes and being seen by them happen in the same act. What does he mean by calling this "purest," and what changes in a relationship when that built-in reciprocity is removed?</li>
-            <li>He distinguishes the ear from the eye by the ear's lack of this reciprocity: hearing does not require being heard in return. Apply this distinction to a technology of your choice, a phone call, a video call, a text thread, a livestream. Does it preserve the eye's reciprocity, the ear's asymmetry, or something Simmel has no category for?</li>
-            <li>Simmel treats the face as the essential object of one person reading another. Why might a species that also has language still need a face-reading capacity this developed? What is lost when a technology substitutes text, or even a voice with no visible face, for it?</li>
-            <li>Compare this essay's account of unmediated sensory contact to Simmel's account of the money economy from Week 4, where relationships become calculable and impersonal. Is a screen-mediated relationship closer to a face-to-face relationship, or closer to a monetary exchange? Defend your answer with evidence from both readings.</li>
+            <li>Ritzer&rsquo;s four dimensions of McDonaldization are efficiency, calculability, predictability, and control. Which move of Weber&rsquo;s argument comes closest to describing control? Is Ritzer&rsquo;s application a fair extension of Weber&rsquo;s idea, or a different claim wearing Weber&rsquo;s vocabulary?</li>
+            <li>The Puritan chose the discipline of work; the modern worker is forced into it. What exactly changed between those two conditions? Is choice the right word for what the Puritan had, given how strongly his religious anxiety pressed on him?</li>
+            <li>What is the casing actually made of: laws, institutions, habits, or something else? Be precise; the argument supports a more specific answer than capitalism in general.</li>
+            <li>Weber&rsquo;s closing image describes a possible future, not a certainty. What would have to be true for his prediction to turn out wrong? Name a real, observable kind of evidence that would count against it.</li>
         </ol>
     </div>
 
-    <!-- Two short quotations with analysis -->
+    <!-- Reveals -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128269; TWO SENTENCES TO FIND AND MARK</div>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Two phrases carry the comparison the whole essay is built on. Find each one in your copy and mark it, then read the note underneath.</p>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 16px 0 0 0;"><strong>1. The reciprocity of the eye.</strong> Simmel names what makes visual contact unlike any other kind:</p>
-        <div class="qshort">
-            <p>&ldquo;&hellip;the connection and interaction of individuals that lies in the act of individuals looking at one another&hellip;&rdquo;</p>
-            <cite>Simmel, &ldquo;The Sociology of the Senses,&rdquo; trans. Ritter and Frisby, p. 111</cite>
-        </div>
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The phrase is doing more work than it looks like. Simmel is not merely saying people communicate with their eyes. He is saying the act itself is structurally different from speech or gesture, because it is impossible to look at someone without the possibility of being looked back at settling the relationship into a mutual one automatically, before either party decides anything.</p>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 16px 0 0 0;"><strong>2. The asymmetry of the ear.</strong> Having established what sight does, Simmel states plainly what hearing does not do:</p>
-        <div class="qshort">
-            <p>&ldquo;&hellip;the ear is distinguished from the eye by the absence of that reciprocity which the look produces between one eye and another.&rdquo;</p>
-            <cite>Simmel, &ldquo;The Sociology of the Senses,&rdquo; trans. Ritter and Frisby, p. 115</cite>
-        </div>
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Sit with what this rules out. A voice can reach you without your voice reaching back; a broadcast, a recording, and (Simmel could not have known, but the case fits his own category) a video a stranger posts and never sees you watch, are all instances of hearing without the structural mutuality that seeing supplies. If Simmel is right that reciprocity is what makes visual contact "the purest" interaction, then a technology built entirely on the ear's asymmetry, or on a sight that is recorded rather than exchanged, is not a lesser version of face-to-face contact. It is a different kind of contact, with a missing property rather than a reduced amount of the same one.</p>
-    </div>
-
-    <!-- After you read -->
-    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9999;&#65039; AFTER YOU READ</div>
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">Write short answers to the four questions in your Sociological Journal document. Question 2 will help directly with tonight's journal entry.</p>
-
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9999;&#65039; CHECK YOUR REASONING</div>
         <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0 0 12px 0;">
             <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
-                <span style="color: #C7922C;">&#9654;</span>&nbsp; Sort a video call, a text thread, and a livestream by Simmel's categories before you open this.
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; After question 1
             </summary>
             <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
-                A video call is the closest of the three to the eye's reciprocity: both parties can see and be seen at once, even if a screen mediates it, which is probably why most people report it feels least alienating of the three. A text thread has neither the eye's reciprocity nor the ear's asymmetry in a pure form; it substitutes a written trace for both, which is part of why tone is so easy to misread in one. A livestream is close to pure asymmetry: the audience sees without being seen, which is structurally the ear's condition applied to sight. That last case is the interesting one, because it shows reciprocity is a property of the arrangement, not of the sense being used. Sight can be made one-sided too, once the technology allows it.
+                Weber&rsquo;s closest image to Ritzer&rsquo;s <em>control</em> is the casing itself: a structure that constrains behavior regardless of what any individual inside it wants. But there is a real gap worth naming. Weber is describing an economic order that shapes an entire civilization across generations, largely through impersonal market and institutional pressure. Ritzer is describing a specific, designed business model, the fast-food restaurant, deliberately engineered by named organizations for calculability and control. Ritzer&rsquo;s application is defensible as an extension of Weber&rsquo;s logic to a smaller and more intentional case, but it is an extension, not a restatement. A student who treats them as the same idea has missed the difference between a structure nobody designed and one somebody built on purpose.
             </div>
         </details>
-
         <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0;">
             <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
-                <span style="color: #C7922C;">&#9654;</span>&nbsp; Decide whether a screen-mediated relationship is more like a face or more like money, then open this.
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; After question 4
             </summary>
             <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
-                There is a real case for both answers, and the strongest response holds them together rather than picking one. Toward money: a feed or a message thread reduces a person to what is "objectively perceivable," in the same phrase Simmel used of the money economy in Week 4, and it does this by removing the involuntary mutuality of the glance. Toward the face: unlike a coin, a screen can still carry a face, a voice, and real information about another person's inner state, which a banknote never could. The honest answer is probably that communications technology is not one thing sociologically. Some of what it carries behaves like money, matter-of-fact and calculable; some of it behaves like a face, however degraded. Turkle's worry, and the one worth carrying into tonight's journal, is that people may not always notice which one they are getting.
+                Weber hedges this passage more than readers usually remember; he is imagining one possible future, not announcing a law of history. Evidence against it would include any large-scale return of a genuinely animating purpose attached to work, whether religious or otherwise, that is not simply purpose invented after the fact to justify labor already being performed. Evidence for it would include the widespread modern experience of work as instrumentally necessary but not meaningfully chosen, which is close to what Weber predicts. Either way, treat this as an empirical question with a real answer, not a mood to agree or disagree with. That is exactly the discipline Durkheim asked for in Week 3.
             </div>
         </details>
     </div>
 
     <!-- Next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT COMES NEXT</div>
-        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; NEXT</div>
+        <div style="display: flex; align-items: center; gap: 14px;">
             <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
-            <div>
-                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Sociological Journal 14</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Due today, as an assignment. Apply at least three of the course's frameworks to one use of technology in your own life.</div>
-            </div>
-        </div>
-        <div style="display: flex; align-items: flex-start; gap: 14px;">
-            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
-            <div>
-                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Week 15</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Media, culture, and globalization, where the same question about mediated contact widens to a whole society.</div>
-            </div>
+            <div style="font-size: 18px; color: #0e1c42;"><strong>Sociological Journal 14</strong></div>
         </div>
     </div>
 
@@ -316,8 +218,8 @@
 
 <!-- ===== FOOTER ===== -->
 <div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
-    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Primary Source Reading</div>
-    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Simmel, <em>The Sociology of the Senses</em> &middot; trans. Ritter and Frisby</div>
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Text Study</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Weber, <em>Die protestantische Ethik und der Geist des Kapitalismus</em>, ch. V (1904&ndash;05)</div>
     <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
 </div>
 

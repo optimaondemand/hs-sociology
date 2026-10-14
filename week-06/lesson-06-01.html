@@ -25,17 +25,30 @@
       and was left alone. This is the first week in the build with zero repairs
       needed; earlier weeks (3, 4) each carried a double-digit count.
 
-      HONORS ADDITION: Part 5 engages the standard objection to functionalist
+      HONORS ADDITION: Part 6 (Part 5 before 2026-09-22) engages the standard objection to functionalist
       accounts of marriage (that explaining an institution by its social
       function can look like an excuse for whatever inequality the institution
       has carried) and gives Durkheim's kind of functionalist reply. This is an
       addition within the R1 authoring rule, not a rewrite of preserved prose.
 
       WIDGET ROTATION: 4.02 used flip cards + single-select rows, the most
-      recent lesson built. 6.01 does not repeat that combination: it uses
-      reflect (quick check-in) + scale placement. Scale last appeared in 2.02.
-      Scale correct indices in row order: 0, 4, 1, 3, 2. Not ascending.
+      recent lesson built. 6.01 originally used reflect (quick check-in) +
+      scale placement ("How universal is this?", 5 rows, indices 0,4,1,3,2).
+      The scale widget was REMOVED 2026-09-23 at her direction (its row 3
+      rested on the "polygyny is dominant" claim; she chose to drop the whole
+      activity rather than keep a revised row). One widget remains, as in
+      several other lessons.
       Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
+
+      REVISION 2026-09-22 (reviewer note on marriage forms): the master's flat
+      claim that polygyny "has been the most common historical form worldwide"
+      was replaced with the permitted-versus-practiced distinction. New Part 4
+      (Ethnographic Atlas tally; Henrich, Boyd and Richerson 2012 on practice
+      rates, the unmarried-men consequence, and enforced monogamy). Key Terms,
+      objective 2 revised to match; old Parts 4 and 5 are now
+      5 and 6. Reading Quiz 6 Q3 and Q8 revised in step. Sources were read in
+      session (Wikipedia "Monogamy" for the Atlas tally; D-PLACE for the Atlas
+      citation; the 2012 paper's own text), not recalled from memory.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -66,8 +79,6 @@
     .row-feedback.incorrect { background: #FDECEC; border-left: 3px solid #C0392B; color: #8A1F16; }
     .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
     .widget-reset:hover { background: #FDF3E3; }
-    .ow-scale .widget-options { justify-content: space-between; }
-    .ow-scale .widget-options button { flex: 1; text-align: center; min-width: 120px; }
     .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
     .ow-flip .ow-flip-back { display: none; color: #1a2340; }
     .ow-flip.flipped .ow-flip-front { display: none; }
@@ -83,6 +94,20 @@
     .fam-h { font-size: 15px; color: #ffffff; margin-bottom: 6px; }
     .fam-b { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.5; }
     .fam-note { margin-top: 16px; padding-top: 13px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.6; text-align: center; font-style: italic; }
+
+    /* ===== Visual: permitted versus practiced (Part 4) ===== */
+    .pp-grid { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; max-width: 600px; margin: 6px auto 14px auto; }
+    .pp-man { width: 54px; height: 54px; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(255,255,255,0.07); border-top: 3px solid rgba(255,255,255,0.3); }
+    .pp-man.one { border-top-color: #C7922C; }
+    .pp-man.many { border-top-color: #55C8E8; }
+    .pp-num { font-size: 20px; color: #ffffff; line-height: 1; }
+    .pp-lab { font-size: 9px; color: rgba(255,255,255,0.55); letter-spacing: 0.4px; margin-top: 4px; }
+    .pp-legend { display: flex; justify-content: center; gap: 22px; flex-wrap: wrap; font-size: 13px; color: rgba(255,255,255,0.8); margin-bottom: 14px; }
+    .pp-sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -1px; margin-right: 6px; }
+    .pp-stats { display: flex; gap: 10px; flex-wrap: wrap; }
+    .pp-stat { flex: 1; min-width: 150px; background: rgba(255,255,255,0.07); border-radius: 7px; padding: 12px 14px; text-align: center; }
+    .pp-stat-n { font-size: 26px; color: #ffffff; line-height: 1.1; }
+    .pp-stat-t { font-size: 12px; color: rgba(255,255,255,0.7); line-height: 1.45; margin-top: 4px; }
 
     .two { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 15px; }
     .two th { background: #0E1C42; color: #fff; text-align: left; padding: 10px 13px; font-size: 12px; letter-spacing: 0.4px; font-weight: normal; }
@@ -150,7 +175,7 @@
         </div>
         <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish patrilineal from matrilineal descent and endogamy from exogamy, and state what each rule actually determines.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish patrilineal from matrilineal descent and endogamy from exogamy, and distinguish what a society's marriage rules permit from what most of its members practice.</div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
@@ -188,9 +213,9 @@
                 <dt style="font-size: 17px; color: #0E1C42; margin-bottom: 4px;">Marriage</dt>
                 <dd style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 14px 0;">A socially recognized and legally or ritually sanctioned union between persons that establishes rights and obligations regarding sexual access, reproduction, domestic labor, property, and the parentage of children. Every known society has some form of marriage institution.</dd>
                 <dt style="font-size: 17px; color: #0E1C42; margin-bottom: 4px;">Monogamy</dt>
-                <dd style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 14px 0;">From the Greek <em>monos</em> (one) and <em>gamos</em> (marriage). Marriage between one man and one woman at a time. The norm in most modern Western societies.</dd>
+                <dd style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 14px 0;">From the Greek <em>monos</em> (one) and <em>gamos</em> (marriage). Marriage between one man and one woman at a time. Required by law in most modern states, and the most common form of marriage in practice even in most societies whose rules permit other forms.</dd>
                 <dt style="font-size: 17px; color: #0E1C42; margin-bottom: 4px;">Polygamy</dt>
-                <dd style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 14px 0;">From the Greek <em>polys</em> (many) and <em>gamos</em>. Marriage to multiple spouses. Polygyny (one husband, multiple wives) has been the most common historical form worldwide. Polyandry (one wife, multiple husbands) is rare but documented.</dd>
+                <dd style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 14px 0;">From the Greek <em>polys</em> (many) and <em>gamos</em>. Marriage to more than one spouse at a time. Polygyny (one husband, multiple wives) is permitted by the rules of most societies in the anthropological record, though practiced by a minority of men even where it is allowed (Part 4). Polyandry (one wife, multiple husbands) is rare but documented, and often involves brothers marrying the same wife.</dd>
                 <dt style="font-size: 17px; color: #0E1C42; margin-bottom: 4px;">Endogamy / Exogamy</dt>
                 <dd style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 14px 0;">Endogamy requires marriage within a defined group (clan, caste, religion, ethnicity); exogamy requires marriage outside the group. Both serve to regulate social boundaries and manage alliances between groups.</dd>
                 <dt style="font-size: 17px; color: #0E1C42; margin-bottom: 4px;">Patrilineal / Matrilineal</dt>
@@ -239,53 +264,63 @@
 
     <!-- ============================ PART 4 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; KINSHIP BEYOND THE HOUSEHOLD</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; WHICH FORM IS MOST COMMON?</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Ask which form of marriage has been most common across human history and a quick answer offers itself: polygyny. The anthropological record supports that answer up to a point. George Murdock's <em>Ethnographic Atlas</em>, a coded record of more than 1,200 societies (Murdock et al., <em>World Cultures</em> 10, 1999), is the standard reference. A widely cited tally of it counts 186 societies as monogamous, 453 as permitting occasional polygyny, 588 as practicing polygyny more frequently, and 4 as polyandrous. Roughly 85 percent of the societies on record allow a man more than one wife.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">That tally answers a narrower question than it first appears to. It records what each society's rules permit, not what most of its members do. A rule allowing several wives does not supply them. Men and women are born in roughly equal numbers, so every man with two wives leaves another man with none, and polygyny in practice is confined to men of unusual wealth or standing. Henrich, Boyd, and Richerson report that among tropical African foraging peoples whose rules permit polygyny, the share of polygynous marriages runs from 3 to 20 percent (<em>The Puzzle of Monogamous Marriage</em>, 2012, section 3). Even where polygyny is allowed, most marriages are between one husband and one wife. "Most societies permit polygyny" and "most marriages are polygynous" are different claims, and the record supports only the first.</p>
+
+        <!-- ===== VISUAL: permitted versus practiced ===== -->
+        <div class="fam">
+            <div class="fam-title">A SOCIETY OF 20 MEN AND 20 WOMEN</div>
+            <div class="fam-sub">The worked example in Henrich, Boyd, and Richerson (2012, section 3). Polygyny is permitted; the highest-status men use it. Each tile is one man, showing his number of wives.</div>
+            <div class="pp-grid">
+                <div class="pp-man many"><div class="pp-num">4</div><div class="pp-lab">WIVES</div></div>
+                <div class="pp-man many"><div class="pp-num">3</div><div class="pp-lab">WIVES</div></div>
+                <div class="pp-man many"><div class="pp-num">2</div><div class="pp-lab">WIVES</div></div>
+                <div class="pp-man many"><div class="pp-num">2</div><div class="pp-lab">WIVES</div></div>
+                <div class="pp-man many"><div class="pp-num">2</div><div class="pp-lab">WIVES</div></div>
+                <div class="pp-man one"><div class="pp-num">1</div><div class="pp-lab">WIFE</div></div>
+                <div class="pp-man one"><div class="pp-num">1</div><div class="pp-lab">WIFE</div></div>
+                <div class="pp-man one"><div class="pp-num">1</div><div class="pp-lab">WIFE</div></div>
+                <div class="pp-man one"><div class="pp-num">1</div><div class="pp-lab">WIFE</div></div>
+                <div class="pp-man one"><div class="pp-num">1</div><div class="pp-lab">WIFE</div></div>
+                <div class="pp-man one"><div class="pp-num">1</div><div class="pp-lab">WIFE</div></div>
+                <div class="pp-man one"><div class="pp-num">1</div><div class="pp-lab">WIFE</div></div>
+                <div class="pp-man"><div class="pp-num">0</div><div class="pp-lab">NONE</div></div>
+                <div class="pp-man"><div class="pp-num">0</div><div class="pp-lab">NONE</div></div>
+                <div class="pp-man"><div class="pp-num">0</div><div class="pp-lab">NONE</div></div>
+                <div class="pp-man"><div class="pp-num">0</div><div class="pp-lab">NONE</div></div>
+                <div class="pp-man"><div class="pp-num">0</div><div class="pp-lab">NONE</div></div>
+                <div class="pp-man"><div class="pp-num">0</div><div class="pp-lab">NONE</div></div>
+                <div class="pp-man"><div class="pp-num">0</div><div class="pp-lab">NONE</div></div>
+                <div class="pp-man"><div class="pp-num">0</div><div class="pp-lab">NONE</div></div>
+            </div>
+            <div class="pp-legend">
+                <span><span class="pp-sw" style="background: #55C8E8;"></span>Two or more wives: 5 men</span>
+                <span><span class="pp-sw" style="background: #C7922C;"></span>One wife: 7 men</span>
+                <span><span class="pp-sw" style="background: rgba(255,255,255,0.3);"></span>No wife: 8 men</span>
+            </div>
+            <div class="pp-stats">
+                <div class="pp-stat"><div class="pp-stat-n">20 of 20</div><div class="pp-stat-t">women are married</div></div>
+                <div class="pp-stat"><div class="pp-stat-n">7 of 12</div><div class="pp-stat-t">husbands have one wife<br>(58 percent of marriages)</div></div>
+                <div class="pp-stat"><div class="pp-stat-n">8 of 20</div><div class="pp-stat-t">men cannot marry at all<br>(40 percent of men)</div></div>
+            </div>
+            <div class="fam-note">Counted by marriages, monogamy is still the most common form in this society. Counted by men, two in five are excluded. Both counts describe the same rules.</div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The distinction matters for more than accuracy. In the example above, most marriages remain monogamous, yet a moderate degree of polygyny leaves two men in five with no possibility of marrying. Henrich, Boyd, and Richerson review cross-national, historical, and longitudinal evidence that large pools of unmarried low-status men are associated with higher rates of crime and violence, and they concede that the cross-sectional data alone cannot prove that being unmarried causes crime, since men who are less likely to commit crimes may also be more likely to marry. The longitudinal studies they cite, which follow the same men through married and unmarried periods of their lives, are what carry the causal claim.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Their conclusion is that societies enforcing monogamy by norm or law keep that pool small, and that this group-level advantage explains why monogamous marriage, rare in the record, spread with the growth of large and complex societies. They trace the roots of the modern form to classical Greece and Rome and note that laws prohibiting polygyny arrived in Japan in 1880, China in 1953, India in 1955, and Nepal in 1963. The 15 percent of societies with monogamous marriage fall into two groups: small societies in marginal environments with little difference in status among men, and some of the largest and most successful ancient states, which imposed monogamy by law. A reader who wants to test the argument should ask what it would predict about a society that permits polygyny but in which almost no one practices it, and whether the evidence reviewed can tell that case apart from a strictly monogamous one.</p>
+    </div>
+
+    <!-- ============================ PART 5 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; KINSHIP BEYOND THE HOUSEHOLD</div>
 
         <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Marriage creates not just a new household but a new web of kinship: in-laws, extended family, and the network of obligations and privileges that come with them. Kinship systems vary enormously in their scope, their obligations, and their rules. In societies organized around clans or lineages, kinship extends to hundreds or thousands of people who share a common ancestor and owe each other significant mutual obligations. In modern individualistic societies, kinship obligations are largely confined to the nuclear family and close relatives.</p>
 
         <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">The sociological significance of kinship extends beyond personal obligation. Kinship systems are, among other things, systems for organizing economic life (who inherits, who works together, who can claim support in times of need), political life (who can hold office, who speaks for the group), and religious life (who participates in ancestor rituals, who is spiritually connected to whom). To study kinship is to study the infrastructure of social life in all of its dimensions.</p>
-
-        <div class="optima-widget ow-scale">
-            <div class="widget-kicker">&#9889; HOW UNIVERSAL IS THIS?</div>
-            <div class="widget-question">Place each pattern on the spectrum, from found in essentially every society to specific to particular cultures or eras. This is a different question from whether a pattern is common; some very common patterns are still, on close comparison, culturally specific rather than universal.</div>
-
-            <div class="widget-row" data-correct="0" data-fb="Nearly universal. No documented human society lacks some institution regulating who may marry whom; only the shape of the regulation varies." data-hint="Is there any known human society with no marriage institution of any kind, however different its rules?">
-                <div class="widget-row-prompt">1. Some socially recognized marriage institution exists in the society at all</div>
-                <div class="widget-options">
-                    <button data-choice="0">Found in essentially every society</button><button data-choice="1">Found in most, with real exceptions</button><button data-choice="2">Splits roughly evenly</button><button data-choice="3">A minority pattern, well documented</button><button data-choice="4">Specific to particular cultures or eras</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="4" data-fb="Culturally and historically specific. Companionate marriage, in which emotional compatibility is the primary criterion for choosing a spouse, is largely a nineteenth-century Western development. Most marriages across history and across the world today were arranged for other reasons." data-hint="How recently, and where, did marrying primarily for love become the expected norm rather than a fortunate exception?">
-                <div class="widget-row-prompt">2. Marriage is treated as primarily a union of romantic love</div>
-                <div class="widget-options">
-                    <button data-choice="0">Found in essentially every society</button><button data-choice="1">Found in most, with real exceptions</button><button data-choice="2">Splits roughly evenly</button><button data-choice="3">A minority pattern, well documented</button><button data-choice="4">Specific to particular cultures or eras</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="1" data-fb="Found in most documented societies, with real exceptions. Polygyny has been the most common historical marital form worldwide, but plenty of societies, including nearly all modern industrial ones, are strictly monogamous." data-hint="The key term entry already tells you which plural form anthropologists count as historically dominant.">
-                <div class="widget-row-prompt">3. Polygyny outnumbers strict monogamy as the world's historically dominant marital form</div>
-                <div class="widget-options">
-                    <button data-choice="0">Found in essentially every society</button><button data-choice="1">Found in most, with real exceptions</button><button data-choice="2">Splits roughly evenly</button><button data-choice="3">A minority pattern, well documented</button><button data-choice="4">Specific to particular cultures or eras</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="3" data-fb="A minority pattern, but genuinely documented rather than a curiosity invented for the lesson. Polyandry, one wife with multiple husbands, is real and studied, just far rarer than polygyny." data-hint="Reread the Key Terms entry on polygamy. It says exactly how this form compares to polygyny in frequency.">
-                <div class="widget-row-prompt">4. Polyandry, one wife with multiple husbands</div>
-                <div class="widget-options">
-                    <button data-choice="0">Found in essentially every society</button><button data-choice="1">Found in most, with real exceptions</button><button data-choice="2">Splits roughly evenly</button><button data-choice="3">A minority pattern, well documented</button><button data-choice="4">Specific to particular cultures or eras</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="2" data-fb="Roughly evenly split, and often present in the same society at once for different boundaries. A group can require exogamy across its clans while requiring endogamy across its castes or its religion." data-hint="Endogamy and exogamy are not rival systems competing for the same territory. Can a single society use both, for different purposes?">
-                <div class="widget-row-prompt">5. Whether a society requires endogamy or exogamy</div>
-                <div class="widget-options">
-                    <button data-choice="0">Found in essentially every society</button><button data-choice="1">Found in most, with real exceptions</button><button data-choice="2">Splits roughly evenly</button><button data-choice="3">A minority pattern, well documented</button><button data-choice="4">Specific to particular cultures or eras</button>
-                </div>
-            </div>
-
-            <button class="widget-reset">Reset</button>
-        </div>
         <!-- CASE IN POINT id=6-01-american-family | Tocqueville, Democracy in America II.3.8 to 10 -->
         <div class="case-in-point" style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 18px 0 4px 0;">
             <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128205; CASE IN POINT &middot; THE AMERICAN FAMILY OF THE 1830s</div>
@@ -296,9 +331,9 @@
         <!-- /CASE IN POINT id=6-01-american-family -->
     </div>
 
-    <!-- ============================ PART 5 ============================ -->
+    <!-- ============================ PART 6 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; WHAT THIS EXPLANATION LEAVES OUT</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 6 &middot; WHAT THIS EXPLANATION LEAVES OUT</div>
 
         <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Explaining marriage by the functions it performs is useful, and it is also vulnerable to a real objection. If you explain an arrangement by the social function it serves, you can end up sounding as though you have justified it, including the parts of it that were unjust. Ancient property law that treated a wife as her husband's dependent performed a function too, in the narrow sense that it organized inheritance predictably. A functional explanation on its own cannot tell you whether an arrangement was fair to the people living inside it.</p>
 

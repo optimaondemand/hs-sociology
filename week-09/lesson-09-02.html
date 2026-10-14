@@ -1,40 +1,44 @@
 <!--
     Optima Academy Online — Sociology (Florida 2108300)
-    Q1 · Week 9 · Lesson 9.02 — "The Sociological Method: What We Know and How We Know It"
+    Q2 · Week 9 · Lesson 9.02 — "Origins of Government and Law"
 
     TEACHER-FACING BUILD NOTES (not rendered to students):
-    REGISTER: HONORS. Closes Quarter 1 by turning from what the course has argued
-    to how sociology argues at all: the four major methods, and the distinction
-    between what data shows and what a sociologist claims it means. This lesson
-    is also the methodological foundation for the Community Institution Study,
-    which is an ethnographic observation report.
+    REVISED 2026-10-14: Weeks 9 and 10 merged; this lesson was old 10.01. Day-of-week and
+    'last/this week' references removed; public-domain figure added (Rigaud, Louis XIV, 1701).
+    REGISTER: HONORS (confirmed 2026-08-06). Aristotle and the social contract
+    tradition cited by book and chapter; Durkheim's law typology cross-cited to
+    the Division of Labour citation already established in Week 4 (I.2-3).
 
-      Standard: not specified in the master for this lesson.
-      Objective: Students will distinguish the major sociological research
-                methods, explain the difference between fact and interpretation
-                in sociological data, and evaluate evidence for sociological
-                claims.
-      Source: _build/manifest.json, weeks[8].lessons[1]. Prose preserved from the
-              master. No content invented; the "Four Ways of Knowing" visual and
-              the fact/interpretation scale widget both restate claims already
-              made in the master's own prose, in a different format, and add no
-              new factual claims.
+      Standard: not supplied. manifest.json weeks[9].lessons[0].standard is an
+                empty string for this lesson; no SS.912.S code exists to strip.
+      Objective: Students will explain why sociologists distinguish authority
+                from mere power, reconstruct Aristotle's account of the state
+                as natural against the social contract tradition's account of
+                it as artificial, and apply Durkheim's repressive/restitutive
+                distinction to a case outside the lesson.
+      Source: manifest.json weeks[9].lessons[0] (= Sociology_Course_Master.html,
+              Lesson 9.02). Prose preserved verbatim from body_text/body_html
+              except for the changes noted below.
+      Revisions: R5 (the section titled "Hook: Why Do We Obey?" keeps only
+                "Why Do We Obey?"), R7 (no em dashes introduced), standards
+                codes kept out of student-facing text (none existed to strip).
 
-      DASH-AS-COLON REPAIR: none required. Checked sentence by sentence against
-      the two-colon test; every colon in this lesson's prose is a single,
-      legitimate one (a definition or a list), and none were touched.
+      DASH-AS-COLON CHECK: this lesson's master prose was scanned sentence by
+      sentence for the two-colon damage pattern described in plan.md defect 6.
+      None found. Every colon in the source text is a single, legitimate one
+      (introducing a definition, a list, or a quoted claim), so nothing needed
+      recasting. Reported honestly rather than assumed.
 
-      COPYRIGHT NOTE: this lesson names Peter Berger and Robert Putnam in
-      ordinary narrative prose (what they argued and how they argued it), never
-      in a reading-attribution context and never quoting their words. That is
-      permitted under R1/R3: teaching about a modern thinker is always allowed;
-      reproducing their words is not, and nothing of theirs is reproduced here.
-
-      WIDGET ROTATION: 9.01 (this week's other lesson) used flip cards +
-      single-select rows. 9.02 therefore uses reflect (quick check-in) + scale
-      placement, so neither engine repeats within the week. Scale correct
-      indices in row order: 3, 0, 4, 2, 1. Not ascending.
+      WIDGET ROTATION: 9.02 uses reflect (quick check-in) + scale placement
+      (evaluative, "Force or Legitimacy?"). 9.03 uses flip cards + single-select
+      classification. No engine repeats within the week.
+      Scale-row correct indices in order: 4, 0, 3, 1, 2. Not ascending.
       Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
+
+      CONTINUITY: cross-references Week 1 (Aristotle, Politics I.2, "man is a
+      political animal," built in source-01-a.html), Week 4 (Durkheim's
+      mechanical/organic solidarity and Widget 3, lesson-04-01.html), and
+      previews Lesson 9.03 (rational-legal authority) and Week 10 (bureaucracy).
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -66,20 +70,33 @@
     .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
     .widget-reset:hover { background: #FDF3E3; }
     .ow-scale .widget-options { justify-content: space-between; }
-    .ow-scale .widget-options button { flex: 1; text-align: center; min-width: 110px; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
     .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
     .ow-flip .ow-flip-back { display: none; color: #1a2340; }
     .ow-flip.flipped .ow-flip-front { display: none; }
     .ow-flip.flipped .ow-flip-back { display: block; }
 
-    /* ===== Core visual: the four methods ===== */
-    .mgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 11px; margin: 4px 0 18px 0; }
-    .mcard { background: #0E1C42; border-top: 3px solid #55C8E8; border-radius: 8px; padding: 15px 17px; }
-    .mcard-h { font-size: 16px; color: #ffffff; margin-bottom: 8px; }
-    .mcard-row { font-size: 13px; line-height: 1.5; margin-bottom: 6px; }
-    .mcard-row b { color: #55C8E8; font-size: 11px; letter-spacing: 0.3px; display: block; margin-bottom: 2px; }
-    .mcard-row span { color: rgba(255,255,255,0.85); }
-    .mcard-ex { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.15); font-style: italic; }
+    /* ===== Core visual: the ladder of legitimation ===== */
+    .ladder { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
+    .ladder-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .ladder-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
+    .ladder-row { display: flex; align-items: center; gap: 8px; }
+    .ladder-box { flex: 1; background: rgba(255,255,255,0.07); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 12px 11px; text-align: center; }
+    .ladder-n { font-size: 10px; letter-spacing: 0.5px; color: rgba(255,255,255,0.45); margin-bottom: 5px; }
+    .ladder-h { font-size: 14px; color: #ffffff; line-height: 1.4; }
+    .ladder-arrow { color: rgba(255,255,255,0.35); font-size: 18px; flex-shrink: 0; }
+    .ladder-note { margin-top: 18px; padding-top: 13px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 15px; color: rgba(255,255,255,0.85); line-height: 1.6; text-align: center; font-style: italic; }
+
+    .two { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 15px; }
+    .two th { background: #0E1C42; color: #fff; text-align: left; padding: 10px 13px; font-size: 12px; letter-spacing: 0.4px; font-weight: normal; }
+    .two td { border: 1px solid #D0D9E8; padding: 10px 13px; color: #1a2340; line-height: 1.5; vertical-align: top; }
+    .two tr:nth-child(even) td { background: #F8FAFD; }
+    .two td:first-child { color: #0E1C42; width: 22%; }
+
+    .key-terms { background: #FCFCF8; border: 1px solid #E3DFD2; border-left: 5px solid #C7922C; border-radius: 8px; padding: 18px 22px; margin: 14px 0; }
+    .key-terms dt { font-size: 16px; color: #0E1C42; margin-top: 10px; }
+    .key-terms dt:first-child { margin-top: 0; }
+    .key-terms dd { font-size: 16px; color: #1a2340; line-height: 1.6; margin: 4px 0 0 0; }
 </style>
 </head>
 <body>
@@ -101,8 +118,8 @@
 <div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
-        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 9</div>
-        <div style="font-size: 12px; color: #666;">Quarter 1 Review and Synthesis</div>
+        <div style="font-size: 17px; color: #0e1c42;">Module 9</div>
+        <div style="font-size: 12px; color: #666;">Quarter 1 Recap and the Origins of Political Authority</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
@@ -110,11 +127,11 @@
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
-        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">The Sociological Method: What We Know and How We Know It</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Origins of Government and Law</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
-        <div style="font-size: 16px; color: #0e1c42;">Quarter 1 Review and Synthesis</div>
+        <div style="font-size: 16px; color: #0e1c42;">Quarter 1 Recap and the Origins of Political Authority</div>
     </div>
 </div>
 
@@ -123,164 +140,202 @@
 
     <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 9.02</div>
-        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">The Sociological Method: What We Know and How We Know It</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Origins of Government and Law</div>
         <div style="font-size: 16px; color: #666;">Lesson</div>
     </div>
 
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
-        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">You have read what nine sociologists concluded. How did any of them know?</div>
-        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Every claim you have studied this quarter rests on a method: a way of gathering evidence and a way of arguing from it. Before you carry these tools into your own observation of a real institution, you need to know what each method can and cannot show, and, just as important, where a claim stops being a fact and starts being an interpretation.</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">If a government rules by force alone, how long can it last, and why?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Every society that has ever existed has had some form of government, some arrangement for making binding decisions and some authority for enforcing them. That much is close to a sociological universal. Why people go along with it is not.</div>
     </div>
 
     <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
         <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish the major sociological research methods and state a genuine strength and a genuine limitation of each.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why sociologists distinguish authority from mere power, and why that distinction predicts which governments last.</div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain the difference between what a body of data shows and what a sociologist claims it means.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> reconstruct Aristotle's account of the state as natural against the social contract tradition's account of it as artificial, and say what is actually at stake in the disagreement.</div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> evaluate a sociological claim by identifying what evidence would count against it.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> apply Durkheim's distinction between repressive and restitutive law to a case outside the lesson, and explain what the case reveals about the kind of solidarity behind it.</div>
         </div>
     </div>
 
     <!-- ============================ PART 1 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; HOW SOCIOLOGY KNOWS WHAT IT KNOWS</div>
-
-        <!-- ===== CORE VISUAL ===== -->
-        <div class="mgrid">
-            <div class="mcard">
-                <div class="mcard-h">Survey</div>
-                <div class="mcard-row"><b>STRENGTH</b><span>Generalizes across large populations from a representative sample.</span></div>
-                <div class="mcard-row"><b>LIMIT</b><span>Misses the texture of lived experience behind the numbers.</span></div>
-                <div class="mcard-ex">Durkheim, mortality records in Suicide</div>
-            </div>
-            <div class="mcard">
-                <div class="mcard-h">Ethnography</div>
-                <div class="mcard-row"><b>STRENGTH</b><span>Sustained observation captures rich, qualitative detail.</span></div>
-                <div class="mcard-row"><b>LIMIT</b><span>Cannot generalize beyond the group actually observed.</span></div>
-                <div class="mcard-ex">Berger's habit of seeing through appearances</div>
-            </div>
-            <div class="mcard">
-                <div class="mcard-h">Historical Comparative</div>
-                <div class="mcard-row"><b>STRENGTH</b><span>Identifies patterns across different periods or societies.</span></div>
-                <div class="mcard-row"><b>LIMIT</b><span>Depends on how comparable the chosen cases really are.</span></div>
-                <div class="mcard-ex">Tocqueville, Democracy in America</div>
-            </div>
-            <div class="mcard">
-                <div class="mcard-h">Experiment</div>
-                <div class="mcard-row"><b>STRENGTH</b><span>Can establish causation directly, by manipulating conditions.</span></div>
-                <div class="mcard-row"><b>LIMIT</b><span>Rare in sociology, and the artificial setting may not hold outside the lab.</span></div>
-                <div class="mcard-ex">Uncommon in the readings this quarter</div>
-            </div>
-        </div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; WHY DO WE OBEY?</div>
 
         <div class="optima-widget ow-reflect">
             <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
-            <div class="widget-question">A sociologist wants to show that a decline in trust between neighbors is a real, patterned social phenomenon, not just a vivid impression drawn from a few loud examples. Predict: which approach would you reach for first? (No wrong answer.)</div>
+            <div class="widget-question">A new law is passed that almost nobody likes. Predict: what actually makes most people follow it day to day, once the news coverage fades? (No wrong answer.)</div>
             <div class="widget-options">
-                <button data-response="A reasonable first instinct, and it gives you depth. But a dozen conversations cannot tell you whether what you are hearing is a general pattern or the particular experience of the twelve people you happened to talk to.">Interview a dozen people at length about their experience of trust</button>
-                <button data-response="This is the survey method, and it is the strongest choice for the specific claim being tested here: whether a pattern holds across a whole population. What it will not tell you is what the decline actually feels like to live through.">Find survey data tracking trust over decades across a representative sample</button>
-                <button data-response="This is the historical comparative method, and it is a strong second move once you already suspect a trend: comparing countries or eras can show whether the pattern is general or local to one place and time.">Compare trust levels across several different countries or historical periods</button>
-                <button data-response="Rare in sociology for exactly this kind of question, and for good reason: trust between neighbors is not easily created and measured inside a laboratory without losing the very thing you are trying to study.">Design an experiment manipulating conditions and measuring trust in a lab</button>
+                <button data-response="A real force, and not to be dismissed. But governments that rely on it alone are expensive to run and fragile, because the machinery of constant enforcement has to work everywhere, all the time, without a single failure.">&#9878;&#65039; Fear of fines or jail</button>
+                <button data-response="Closer than it looks. Weber's typology (Lesson 9.03) exists to explain exactly this: obedience that survives without anyone standing over you, because you accept the process that produced the rule.">&#127963;&#65039; Belief the lawmaking process was fair</button>
+                <button data-response="Also real, and this is precisely what Durkheim would call a social fact: a pressure that constrains you even though no single person is enforcing it. You met this exact structure in Week 3.">&#128101; Seeing that everyone else follows it</button>
+                <button data-response="Habit is doing real work here, but notice what it is standing in for. A habit of obedience usually started as a belief about legitimacy that has since gone quiet, not disappeared.">&#128337; Just being used to obeying laws</button>
             </div>
             <div class="widget-feedback"></div>
             <button class="widget-reset">Reset</button>
         </div>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Sociology is a science, not in the sense that it achieves the mathematical certainty of physics, but in the sense that it subjects claims about social life to systematic empirical testing. This means that sociological knowledge is not merely opinion, not merely ideology, and not merely common sense. It means that sociological claims can be examined, challenged, and refined in the light of evidence. It means that a sociologist who wishes to claim that social capital is declining must produce evidence for the claim, not merely assert it.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Why do people obey? Why does the citizen pay her taxes, the soldier follow his orders, the subject bow before the king? The obvious answer is force, because if she does not, something bad will happen to her. That answer is not wrong, but it is incomplete. Governments that rule entirely by force are expensive, fragile, and exhausting. The most durable and effective political arrangements are those in which most people obey most of the time not merely because they fear punishment but because they believe in the legitimacy of the authority they are obeying.</p>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The major methods of sociological research include surveys, structured questionnaires administered to representative samples, allowing generalization to populations; ethnography, sustained participant observation of a social group in its natural setting, producing rich qualitative description; historical comparative analysis, the systematic comparison of social patterns across different historical periods or societies; and experiment, rare in sociology, but used in laboratory and field settings to test causal claims. Each method has a characteristic strength and a characteristic limitation, as the cards above show.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">The concept of legitimacy is one of the central preoccupations of political sociology. Legitimate authority is authority that those subject to it believe is rightfully exercised, a claim that has a valid hold on obedience and not merely the power to demand it. Understanding what makes authority legitimate, and what undermines that legitimacy, is essential to understanding political order and political collapse alike.</p>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Durkheim's study of suicide is the paradigmatic example of the survey method. Berger's ethnographic sensibility represents the qualitative tradition, learned through the readings substituted in his place this quarter. Tocqueville's <em>Democracy in America</em> is a masterpiece of historical comparative analysis. The best sociological work typically combines methods, using quantitative patterns to identify what needs to be explained, and qualitative depth to explain it.</p>
+        <div class="key-terms">
+            <div style="font-size: 11px; color: #c7922c; margin-bottom: 10px;">KEY TERMS</div>
+            <dl>
+                <dt>Authority</dt>
+                <dd>From the Latin <em>auctoritas</em>, power derived from one's standing or expertise. Power regarded as rightful and legitimate by those subject to it. Authority differs from mere power in that it commands compliance through recognized right, not only through force.</dd>
+                <dt>Legitimacy</dt>
+                <dd>The quality of being recognized as rightful and proper. Political legitimacy is the belief, on the part of those governed, that the governing authority has a valid claim to their compliance.</dd>
+                <dt>Law</dt>
+                <dd>A system of rules enforced by a political authority with the power to impose sanctions on violators. Law differs from more informal norms in its formal codification, its systematic enforcement, and its explicit connection to political power.</dd>
+                <dt>State</dt>
+                <dd>Weber's definition: a political organization that claims a monopoly on the legitimate use of physical force within a given territory. Modern states are distinguished from earlier political arrangements by their degree of bureaucratic organization and their claim to territorial sovereignty.</dd>
+            </dl>
+        </div>
     </div>
 
     <!-- ============================ PART 2 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; FACT AND INTERPRETATION IN SOCIOLOGICAL DATA</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; THE HISTORICAL DEVELOPMENT OF GOVERNMENT</div>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">One of the most important intellectual skills a sociology student can develop is the ability to distinguish between what the data shows and what a sociologist claims it means. Putnam's data on declining bowling league membership is a fact: the numbers come from documented records. His claim that this decline represents declining social capital is an interpretation, a theoretical framing that other sociologists have contested. His further claim that declining social capital threatens democratic health draws on Tocqueville and Nisbet and requires its own evidence. Reading sociology critically means tracking the movement from data to interpretation and asking, at each step, whether the inference is warranted, what alternative interpretations are possible, and what evidence would change your mind.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Aristotle argued that government is natural. The polis emerges from the household and the village as naturally as a mature plant emerges from a seed. Humans are political animals, and the state is not an external imposition on human nature but its fullest expression. Aristotle states the claim at <em>Politics</em> I.2 (Week 1): the state is a creation of nature, and man is by nature a political animal. This view stands in direct contrast to the social contract tradition of Hobbes, Locke, and Rousseau, all of whom treated the state as an artificial construction, a device created by rational, or at least calculating, individuals to solve the coordination problems that would otherwise make life miserable.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">From a sociological standpoint, neither of these accounts is primarily an empirical claim about how governments actually originated in history. Both are normative accounts. Each is attempting to explain what justifies political authority, not how it historically emerged. The historical record itself suggests early states emerged through a combination of conquest, coordination, and gradually legitimized tradition.</p>
+
+        <!-- ===== CORE VISUAL ===== -->
+        <div class="ladder">
+            <div class="ladder-title">THE LADDER OF LEGITIMATION</div>
+            <div class="ladder-sub">The content of the claim keeps changing. Something always has to be doing the claiming.</div>
+            <div class="ladder-row">
+                <div class="ladder-box"><div class="ladder-n">STEP 1</div><div class="ladder-h">Chieftain</div></div>
+                <div class="ladder-arrow">&#8594;</div>
+                <div class="ladder-box"><div class="ladder-n">STEP 2</div><div class="ladder-h">King</div></div>
+                <div class="ladder-arrow">&#8594;</div>
+                <div class="ladder-box"><div class="ladder-n">STEP 3</div><div class="ladder-h">Dynasty, divine sanction</div></div>
+                <div class="ladder-arrow">&#8594;</div>
+                <div class="ladder-box"><div class="ladder-n">STEP 4</div><div class="ladder-h">Constitutional authority</div></div>
+                <div class="ladder-arrow">&#8594;</div>
+                <div class="ladder-box"><div class="ladder-n">STEP 5</div><div class="ladder-h">Democratic legitimacy</div></div>
+            </div>
+            <div class="ladder-note">The content of legitimating claims changes. The need for legitimacy persists.</div>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Chieftains became kings; kings became dynasties; dynasties claimed divine sanction; divine sanction became constitutional authority; constitutional authority became democratic legitimacy. Notice what does not change across five very different eras. Every single arrangement on that ladder still had to answer the same question Aristotle and the social contract theorists were both asking from opposite directions: on what ground does this power have a right to be obeyed?</p>
+        <figure data-pd="w09-louis-xiv-rigaud.jpg" style="margin: 22px 0; text-align: center;"><img src="../_media/w09-louis-xiv-rigaud.jpg" alt="Full-length painted portrait of Louis XIV standing in a fleur-de-lis coronation robe lined with ermine, a scepter in his raised hand, a sword at his hip, and a crown on a cushion beside him." style="max-width: 100%; width: 360px; height: auto; border-radius: 6px;" /><figcaption style="font-size: 14px; color: #4a5a78; line-height: 1.5; margin-top: 8px;">Louis XIV in coronation robes, 1701. Robe, scepter, and crown present rule as inherited and sacred: step 3 of the ladder. The sword is present, but it is not the ground the portrait claims. <span style="font-size: 12px; color: #6b7a99;">Hyacinthe Rigaud, 1701. Public domain, via Wikimedia Commons.</span></figcaption></figure>
+        <!-- CASE IN POINT id=10-01-hellenic-kingship | Aristotle, Politics I.2 -->
+        <div class="case-in-point" style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 18px 0 4px 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128205; CASE IN POINT &middot; THE EARLY GREEKS IN ARISTOTLE&rsquo;S ACCOUNT OF KINGSHIP</div>
+            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">Aristotle&rsquo;s account of how government arises is anchored in a claim about his own people&rsquo;s past. &ldquo;Hellenic states were originally governed by kings; because the Hellenes were under royal rule before they came together, as the barbarians still are. Every family is ruled by the eldest, and therefore in the colonies of the family the kingly form of government prevailed because they were of the same blood.&rdquo; Kingship, on this account, is the household&rsquo;s rule by the eldest carried over into the village, and the village into the city.</p>
+            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">Two things about the evidence. His witness for the earliest stage is Homer, whom he quotes: &ldquo;Each one gives law to his children and to his wives.&rdquo; And the word rendered &ldquo;barbarians&rdquo; is Aristotle&rsquo;s term for all non-Greek-speaking peoples, used here to mark a stage he believes the Greeks had passed through, not a description of any one society he had studied. Which parts of the sequence are argument, and which are observation?</p>
+            <div style="font-size: 12px; color: #1B6A94; margin-top: 10px; line-height: 1.5;">Source: Aristotle, <em>Politics</em> I.2 (c. 350 B.C.), trans. Benjamin Jowett (public domain).</div>
+        </div>
+        <!-- /CASE IN POINT id=10-01-hellenic-kingship -->
+    </div>
+
+    <!-- ============================ PART 3 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; LAW AS A SOCIAL INSTITUTION</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Durkheim argued that the form of law in any society reflects its form of social solidarity. The distinction is mechanical against organic solidarity (Week 4); here it drives two very different kinds of legal system.</p>
+
+        <table class="two">
+            <tr><th></th><th>Repressive law</th><th>Restitutive law</th></tr>
+            <tr><td>What it does</td><td>Punishes harshly, to reaffirm the collective conscience.</td><td>Compensates and repairs, to restore a disrupted relationship.</td></tr>
+            <tr><td>Solidarity type</td><td>Mechanical. The collective conscience is strong and shared.</td><td>Organic. Individuals depend on each other through specialised roles.</td></tr>
+            <tr><td>What a violation means</td><td>An offense against the whole community's shared beliefs.</td><td>A broken arrangement between specific, interdependent parties.</td></tr>
+            <tr><td>Citation</td><td><em>Division of Labour</em> I.2</td><td><em>Division of Labour</em> I.3</td></tr>
+        </table>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">As societies modernize, their legal systems tend to become more elaborate, more specialized, and more oriented toward restitution than toward collective moral expression. This does not mean modern law has nothing to do with morality. It means the moral dimension of law in modern societies is more complex and more contested than it was in traditional ones, precisely because organic solidarity depends on interdependence between people who no longer share one collective conscience in the way a small traditional society did.</p>
+    </div>
+
+    <!-- ============================ PART 4 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; TEST IT: FORCE OR LEGITIMACY?</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Place each case on the spectrum.</p>
 
         <div class="optima-widget ow-scale">
-            <div class="widget-kicker">&#9889; PLACE IT ON THE SCALE</div>
-            <div class="widget-question">For each statement, decide how far it sits from documented fact toward interpretive claim. Some genuinely belong in the middle.</div>
+            <div class="widget-kicker">&#9889; TRY IT &middot; PLACE EACH CASE</div>
+            <div class="widget-question">The question is not whether force is present at all, since it almost always is somewhere in the background. The question is what is actually doing the work of producing obedience in this particular case.</div>
 
-            <div class="widget-row" data-correct="3" data-fb="Mostly interpretation. The membership decline itself is documented, but the claim about the health of democracy pulls in a whole theory, drawn from Tocqueville and Nisbet, about what associations do for a political system. That theory could be wrong even if the membership numbers are exactly right." data-hint="Separate the two halves of the claim. One half is a number in a record book. The other half is a theory about what that number means for something much larger.">
-                <div class="widget-row-prompt">1. Putnam's claim that a decline in associational membership threatens the health of American democracy</div>
+            <div class="widget-row" data-correct="4" data-fb="Almost entirely legitimacy. Nobody is watching and nothing would happen if she ran it. This is the case that shows Durkheim's constraint operating with no enforcer present at all, purely through an internalized belief in the rule's rightness." data-hint="Is anyone in a position to punish her if she runs the light? If not, where is the pressure coming from?">
+                <div class="widget-row-prompt">1. A driver stops at a red light on an empty road at two in the morning, with no camera or officer anywhere near, simply because running it feels wrong.</div>
                 <div class="widget-options">
-                    <button data-choice="0">Definitely fact</button><button data-choice="1">Mostly fact</button><button data-choice="2">Mixed</button><button data-choice="3">Mostly interpretation</button><button data-choice="4">Definitely interpretation</button>
+                    <button data-choice="0">Almost entirely force</button><button data-choice="1">Mostly force</button><button data-choice="2">Both, about equally</button><button data-choice="3">Mostly legitimacy</button><button data-choice="4">Almost entirely legitimacy</button>
                 </div>
             </div>
 
-            <div class="widget-row" data-correct="0" data-fb="Definitely fact. This is a documented pattern in mortality and religious-affiliation records: measured, not argued for. What Durkheim does with the pattern afterward is a separate matter." data-hint="Ask whether this sentence describes a measured record or an explanation of why the record looks the way it does.">
-                <div class="widget-row-prompt">2. Durkheim's finding that recorded suicide rates were higher in Protestant regions of Europe than in Catholic regions during the period he studied</div>
+            <div class="widget-row" data-correct="0" data-fb="Almost entirely force. There is no claim of rightful rule here for the villagers to believe in, only a credible threat, which is the kind of arrangement this lesson calls expensive and fragile to maintain." data-hint="Does anyone here believe the soldiers have a right to the harvest, or are they complying only because refusal has a cost?">
+                <div class="widget-row-prompt">2. Villagers hand over half their harvest to an occupying warlord's soldiers, who have already burned the last house that refused.</div>
                 <div class="widget-options">
-                    <button data-choice="0">Definitely fact</button><button data-choice="1">Mostly fact</button><button data-choice="2">Mixed</button><button data-choice="3">Mostly interpretation</button><button data-choice="4">Definitely interpretation</button>
+                    <button data-choice="0">Almost entirely force</button><button data-choice="1">Mostly force</button><button data-choice="2">Both, about equally</button><button data-choice="3">Mostly legitimacy</button><button data-choice="4">Almost entirely legitimacy</button>
                 </div>
             </div>
 
-            <div class="widget-row" data-correct="4" data-fb="Definitely interpretation, and a weak one. The word proves is doing far more work than the evidence supports: a rate difference across large populations cannot establish that any individual's isolation was psychologically caused by a specific religious belief. This is the fact/interpretation gap at its widest." data-hint="Watch the verb. What would it actually take to prove that a belief causes an individual psychological state, as opposed to showing that a rate correlates with a religion?">
-                <div class="widget-row-prompt">3. The claim that the higher Protestant rate proves that Protestant individualism causes psychological isolation</div>
+            <div class="widget-row" data-correct="3" data-fb="Mostly legitimacy. She dislikes the outcome but accepts the process, which Weber (Lesson 9.03) calls rational-legal authority: obedience owed to a properly constituted procedure rather than to any person or any particular result she happens to like." data-hint="She hates the tax itself. What is she actually deferring to, if not the result?">
+                <div class="widget-row-prompt">3. A citizen pays a newly legislated tax she strongly opposes but does not attempt to evade, because the legislature that passed it was elected fairly.</div>
                 <div class="widget-options">
-                    <button data-choice="0">Definitely fact</button><button data-choice="1">Mostly fact</button><button data-choice="2">Mixed</button><button data-choice="3">Mostly interpretation</button><button data-choice="4">Definitely interpretation</button>
+                    <button data-choice="0">Almost entirely force</button><button data-choice="1">Mostly force</button><button data-choice="2">Both, about equally</button><button data-choice="3">Mostly legitimacy</button><button data-choice="4">Almost entirely legitimacy</button>
                 </div>
             </div>
 
-            <div class="widget-row" data-correct="2" data-fb="Mixed, and defensibly so. The premise is real: Durkheim did find that pattern in the societies he studied. The problem is the word always. Extending a historical finding into a universal law is exactly the overreach a careful reader has to catch, even when the underlying data is solid." data-hint="The first half of this claim is grounded in real data. The second half makes that data do something a single study cannot do. Find the word that oversteps.">
-                <div class="widget-row-prompt">4. A student's conclusion that modern, less religious societies must always have higher suicide rates than traditional ones</div>
+            <div class="widget-row" data-correct="1" data-fb="Mostly force. She thinks the rule is pointless and follows it only because of the fine, which is a sanction rather than a belief. There is a trace of legitimacy in accepting the inspector's authority to fine her at all, which is why this does not sit at the far end." data-hint="She thinks the rule itself is pointless. What is actually changing her behaviour, the rule or the fine?">
+                <div class="widget-row-prompt">4. A factory worker follows a safety rule she considers pointless, mainly because inspectors fine the plant heavily whenever a violation is found.</div>
                 <div class="widget-options">
-                    <button data-choice="0">Definitely fact</button><button data-choice="1">Mostly fact</button><button data-choice="2">Mixed</button><button data-choice="3">Mostly interpretation</button><button data-choice="4">Definitely interpretation</button>
+                    <button data-choice="0">Almost entirely force</button><button data-choice="1">Mostly force</button><button data-choice="2">Both, about equally</button><button data-choice="3">Mostly legitimacy</button><button data-choice="4">Almost entirely legitimacy</button>
                 </div>
             </div>
 
-            <div class="widget-row" data-correct="1" data-fb="Mostly fact. Tocqueville really did travel, observe, and record dozens of specific associations. It counts as mostly rather than definitely factual because any traveler's selection of what to record and describe carries a small amount of interpretive judgment built in, even when the underlying observations are accurate." data-hint="This is close to a pure record of observation, but ask whether choosing which associations to describe, out of everything he saw, involves any judgment at all.">
-                <div class="widget-row-prompt">5. Tocqueville's observation that Americans in the 1830s formed voluntary associations for almost any purpose</div>
+            <div class="widget-row" data-correct="2" data-fb="Both, about equally, and this is the genuinely hard case. There is no enforcer and no articulated belief in anyone's right to assign seats. There is only custom with no author, which is not quite force and not quite a considered claim to legitimacy either." data-hint="Nobody is threatening anyone, but nobody can justify the arrangement either. Is that closer to legitimacy or to something else entirely?">
+                <div class="widget-row-prompt">5. An office keeps a decades-old seating chart nobody can explain, because that is simply where people sit.</div>
                 <div class="widget-options">
-                    <button data-choice="0">Definitely fact</button><button data-choice="1">Mostly fact</button><button data-choice="2">Mixed</button><button data-choice="3">Mostly interpretation</button><button data-choice="4">Definitely interpretation</button>
+                    <button data-choice="0">Almost entirely force</button><button data-choice="1">Mostly force</button><button data-choice="2">Both, about equally</button><button data-choice="3">Mostly legitimacy</button><button data-choice="4">Almost entirely legitimacy</button>
                 </div>
             </div>
 
             <button class="widget-reset">Reset</button>
         </div>
+
+        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 14px 0 0 0;">
+            <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; Could a government survive on force alone for a long stretch of time?
+            </summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
+                The lesson's claim is not that force never works, but that it is expensive to sustain. A government that relies on force alone has to fund and staff enforcement everywhere, all the time, with no failures, because the moment enforcement lapses anywhere, compliance there has no other reason to continue. A government most people obey because they believe it has a right to rule needs far less machinery, because belief does the enforcing work that soldiers would otherwise have to do. That is an empirical claim about cost and durability, not a moral claim about which governments deserve to survive.
+            </div>
+        </details>
     </div>
 
     <!-- What You'll Do Next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
-        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
-            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
-            <div>
-                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 9B: Weber</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Thursday's reading is in a book. Weber uses the historical comparative method on the biggest possible question: why modern capitalism arose in the West at all.</div>
-            </div>
-        </div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; NEXT</div>
         <div style="display: flex; align-items: flex-start; gap: 14px;">
-            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
-            <div>
-                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Sociological Journal 9</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Due Thursday, with a peer reply this week. A synthesis entry answering what it means to be a social being, using at least three thinkers from the quarter.</div>
-            </div>
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #0e1c42; padding-top: 4px;"><strong>Primary Source 9A: Aristotle</strong></div>
         </div>
     </div>
 
     <!-- Wrap-up -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
-        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Every argument you have studied this quarter rests on a method, and every method has a place where fact ends and interpretation begins. Knowing where that seam runs is not a technicality. It is the difference between using a thinker's framework and simply repeating his conclusions. When you observe a real institution for the Community Institution Study, you will be doing what Berger and Tocqueville did before you: recording what you actually saw, and then arguing, carefully, for what it means.</p>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Government is old, and the question of what makes it legitimate is older than any particular answer to it. Aristotle located legitimacy in whether rule serves the common good; the social contract tradition located it in consent; Durkheim showed that even something as procedural as law carries the fingerprint of the kind of solidarity that produced it. What all three share is the assumption this lesson opened with: force can compel a body, but only a belief in legitimacy can produce the kind of steady, low-cost obedience that lets a political order actually last.</p>
     </div>
 
 </div>
 
 <!-- ===== FOOTER ===== -->
 <div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
-    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 1 &middot; Student Lesson Page</div>
-    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 9.02 &middot; The Sociological Method: What We Know and How We Know It</div>
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 9.02 &middot; Origins of Government and Law</div>
     <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
 </div>
 

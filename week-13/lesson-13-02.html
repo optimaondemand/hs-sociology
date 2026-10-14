@@ -1,41 +1,49 @@
 <!--
     Optima Academy Online — Sociology (Florida 2108300)
-    Q2 · Week 13 · Lesson 13.02 — "American Institutions through Tocqueville"
+    Q2 · Week 13 · Lesson 13.02 — "Technology and Social Relationships"
 
     TEACHER-FACING BUILD NOTES (not rendered to students):
-    REGISTER: HONORS (confirmed 2026-08-06). Democracy in America cited by volume,
-    part, and chapter. Legal and social tyranny are presented as a technical
-    distinction to be applied, not as two synonyms for "oppression."
+    REGISTER: HONORS (confirmed 2026-08-06).
 
-      Standard: (withheld from student-facing text per Hard Rules)
-      Objective: Students will apply Tocqueville's framework to analyze the
-                strengths and vulnerabilities of American democratic
-                institutions, and evaluate the contemporary relevance of his
-                analysis.
-      Source: Sociology_Course_Master.html, Lesson 13.02 (593 words). Prose
-              preserved; "Hook:" label removed per R5.
+      R1 SUBSTITUTION (see CLAUDE.md and plan.md section 2b, row 14): the master
+      built this lesson's ASSIGNED READING around Sherry Turkle, Alone Together
+      (2011), still in copyright. Per the reviewer's note, Turkle STAYS in this
+      lesson's own prose below, unchanged from the master: students should still
+      learn who she is and what she argues. Only the assigned reading changes,
+      to Simmel, "The Sociology of the Senses" (1907), on source-13-b.html
+      (PATTERN B). Nothing in this file quotes or reproduces Turkle's words; the
+      references below are biographical and argumentative summary only, which is
+      permitted (CLAUDE.md: "Teaching ABOUT a modern thinker is always
+      permitted; reproducing their words is not").
 
-      DASH-AS-COLON CHECK (plan.md defect 6): checked against the two-colons-
-      in-one-sentence pattern. Zero instances in this lesson's master prose.
-      Single colons introducing a definition or a list were kept as written.
+      Standard: SS.912.S.6.5, SS.912.S.6.6, SS.912.S.2.7
+      Objective: Students will apply sociological frameworks to analyze the
+                effects of communications technology on social relationships,
+                evaluate competing claims about technology and community, and
+                draw on classical concepts to frame a contemporary question.
+      Source: Sociology_Course_Master.html via _build/manifest.json, weeks[13],
+              lessons[1]. Prose preserved; section "Hook: Connection and
+              Disconnection" retitled per R5 (label dropped, descriptive title
+              kept). "ENGAGE" does not appear in this file; not applicable here.
 
-      DIVERGENCE FLAG (recorded, not silently resolved): the master's own
-      paragraph below states this lesson "marks... the due date of the
-      Community Institution Study." CLAUDE.md's rebalanced project ledger
-      instead places that project at Weeks 9-11 and the Sociologist Case Study
-      Reports at Weeks 12-15, which would make the Community Institution Study
-      already submitted by Week 13. The master's paragraph is preserved
-      verbatim below per the instruction to preserve master prose; the
-      discrepancy is NOT corrected here because resolving a due-date conflict
-      is a scheduling decision, not a copy edit. See the matching flag in
-      module-map-13.html. Escalate before this goes live to students.
+      DASH-AS-COLON CHECK (plan.md defect 6): scanned this lesson's manifest
+      prose programmatically for sentences carrying two or more mid-sentence
+      colons. None found. No recasting was needed for this lesson.
 
-      WIDGET ROTATION: 13.01 used reflect + select (Durkheim/Merton/labeling
-      classification). 13.02 uses reflect + a different select classification
-      (legal tyranny / social tyranny / voluntary association / not tyranny),
-      so no engine repeats its exact case type within the week.
-      Select-row correct indices in order: 2, 0, 3, 1, 1. Not ascending.
+      VIRTUE THREAD: self-government (Weeks 13-14). The closing paragraph names
+      it directly: choosing how a technology is used, rather than only reacting
+      to what it makes easy, is the week's clearest application of the virtue.
+
+      WIDGET ROTATION: 13.01 used reflective check-in + single-select rows.
+      13.02 uses scale placement (Part "Technology and Tonnies") + flip cards
+      (Part "Technology and Putnam"), so the two lessons this week do not repeat
+      an engine combination. Scale-row correct indices, in order: 1, 0, 3, 2.
+      Not ascending. Flip cards carry no correct/incorrect state by design.
       Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
+
+      2026-10-14 revision: 13B is now a Text Study (Simmel, sociology of the senses; no
+      translation linked). Weekday and book references removed; coaching voice cut;
+      What-next card is names only; PD figure added (telephone operators, Part 1).
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -72,30 +80,26 @@
     .ow-flip .ow-flip-back { display: none; color: #1a2340; }
     .ow-flip.flipped .ow-flip-front { display: none; }
     .ow-flip.flipped .ow-flip-back { display: block; }
+    .flipgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 14px 0; }
+    .ow-flip .fcard-front { font-size: 16px; color: #0E1C42; }
+    .ow-flip .fcard-back { font-size: 14px; color: #1a2340; line-height: 1.55; }
 
-    /* ===== Core visual: legal vs social tyranny ===== */
-    .tyr { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
-    .tyr-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
-    .tyr-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
-    .tyr-cols { display: flex; gap: 14px; }
-    .tyr-c { flex: 1; border-radius: 8px; padding: 16px 18px; }
-    .tyr-l { background: rgba(199,146,44,0.16); border-top: 3px solid #C7922C; }
-    .tyr-s { background: rgba(192,57,43,0.16); border-top: 3px solid #C0392B; }
-    .tyr-h { font-size: 17px; color: #ffffff; margin-bottom: 3px; }
-    .tyr-tag { font-size: 11px; letter-spacing: 0.5px; margin-bottom: 12px; }
-    .tyr-l .tyr-tag { color: #E0B562; }
-    .tyr-s .tyr-tag { color: #f0a49a; }
-    .tyr-r { margin-bottom: 10px; }
-    .tyr-r:last-child { margin-bottom: 0; }
-    .tyr-rl { font-size: 10px; letter-spacing: 0.5px; color: rgba(255,255,255,0.45); margin-bottom: 2px; }
-    .tyr-rv { font-size: 14px; color: rgba(255,255,255,0.88); line-height: 1.5; }
-    .tyr-fix { margin-top: 16px; background: rgba(85,200,232,0.14); border: 1px solid rgba(85,200,232,0.4); border-radius: 8px; padding: 14px 18px; }
-    .tyr-fix-l { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; margin-bottom: 6px; }
-    .tyr-fix-t { font-size: 15px; color: #ffffff; line-height: 1.55; }
+    /* ===== Core visual: the mediation gap ===== */
+    .med { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
+    .med-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .med-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
+    .med-row { display: flex; align-items: center; gap: 10px; }
+    .med-box { flex: 1; background: rgba(255,255,255,0.07); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 13px 14px; text-align: center; }
+    .med-n { font-size: 10px; letter-spacing: 0.5px; color: rgba(255,255,255,0.45); margin-bottom: 5px; }
+    .med-h { font-size: 15px; color: #ffffff; margin-bottom: 5px; }
+    .med-b { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.5; }
+    .med-arrow { color: rgba(255,255,255,0.35); font-size: 20px; flex-shrink: 0; }
+    .med-note { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.6; text-align: center; font-style: italic; }
 
-    .kt { background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 13px 17px; margin-bottom: 9px; }
-    .kt-t { font-size: 16px; color: #0E1C42; margin-bottom: 4px; }
-    .kt-d { font-size: 16px; color: #1a2340; line-height: 1.55; }
+    .exg { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 11px; margin: 14px 0; }
+    .exc { background: #FFFFFF; border: 1px solid #D0D9E8; border-top: 3px solid #55C8E8; border-radius: 7px; padding: 14px 16px; }
+    .exc-h { font-size: 16px; color: #0E1C42; margin-bottom: 6px; }
+    .exc-b { font-size: 15px; color: #1a2340; line-height: 1.55; }
 </style>
 </head>
 <body>
@@ -118,7 +122,7 @@
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
         <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 13</div>
-        <div style="font-size: 12px; color: #666;">Crime, Deviance, and American Institutions</div>
+        <div style="font-size: 12px; color: #666;">Urbanization, Technology, and Social Relationships</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
@@ -126,11 +130,11 @@
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
-        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">American Institutions through Tocqueville</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Technology and Social Relationships</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
-        <div style="font-size: 16px; color: #0e1c42;">Crime, Deviance, and American Institutions</div>
+        <div style="font-size: 16px; color: #0e1c42;">Urbanization, Technology, and Social Relationships</div>
     </div>
 </div>
 
@@ -139,193 +143,178 @@
 
     <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 13.02</div>
-        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">American Institutions through Tocqueville</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Technology and Social Relationships</div>
         <div style="font-size: 16px; color: #666;">Lesson</div>
     </div>
 
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
-        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Can a free country punish disagreement without ever passing a law against it?</div>
-        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Tocqueville thought yes, and he thought America's own strengths were the mechanism. The same associational habits that make American democracy work are also, on his account, what gives majority opinion a kind of reach no European king ever had.</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Can a person be surrounded by connection and still be alone?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Sherry Turkle, a sociologist and psychologist at MIT, named the paradox in the title of a 2011 book.</div>
     </div>
 
     <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
         <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish legal tyranny of the majority from social tyranny of the majority, and say which one Tocqueville considers more dangerous and why.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> apply T&ouml;nnies's Gemeinschaft/Gesellschaft distinction to a specific communications technology, and defend the classification against an obvious objection.</div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> identify the three features Tocqueville credits for American democracy's success, and apply his framework to a real institution.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish bridging from bonding social capital in Putnam's sense, and evaluate whether a given technology builds one, the other, both, or neither.</div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> evaluate whether Tocqueville's warning about conformity still applies to a contemporary case of your choosing.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why the sociologist's question about any new technology is not "is it good or bad" but what specific relationships it enables and discourages.</div>
         </div>
     </div>
 
     <!-- ============================ PART 1 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE FOREIGNER WHO UNDERSTOOD AMERICA</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; CONNECTION AND DISCONNECTION</div>
 
-        <div class="optima-widget ow-reflect">
-            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
-            <div class="widget-question">Predict: of the threats below to honest disagreement in a democracy, which would Tocqueville consider the most dangerous? (No wrong answer.)</div>
-            <div class="widget-options">
-                <button data-response="A real danger, and the one most people name first. Tocqueville's twist is that he thinks America's law is unusually safe from this, which is exactly why he looks elsewhere.">&#9878;&#65039; A legislature passing an unjust law against a minority</button>
-                <button data-response="This is close to his actual answer, though he does not call it censorship, because no official is doing the silencing. Hold onto the distinction: nobody has to give an order for this to work.">&#128683; A government agency censoring unpopular speech</button>
-                <button data-response="This is Tocqueville's answer, and it is the harder one to see, because nobody in this scenario breaks any law. Today's lesson is largely about why he thought this mattered more than the other options.">&#128101; Ordinary neighbors quietly freezing out someone who says the wrong thing</button>
-                <button data-response="A fair worry in his own century, though he thought America's constitutional design specifically guarded against this one. See if the lesson changes your mind about which threat is hardest to guard against.">&#128081; A single powerful leader seizing control</button>
+        <!-- ===== CORE VISUAL ===== -->
+        <div class="med">
+            <div class="med-title">WHAT A TECHNOLOGY DOES TO A RELATIONSHIP</div>
+            <div class="med-sub">Not "good or bad." A sociologist asks what a specific technology makes easy, and what it makes hard.</div>
+            <div class="med-row">
+                <div class="med-box">
+                    <div class="med-n">STEP 1</div>
+                    <div class="med-h">A technology arrives</div>
+                    <div class="med-b">The telephone, radio, television, the smartphone. Each one changes how contact happens.</div>
+                </div>
+                <div class="med-arrow">&#8594;</div>
+                <div class="med-box">
+                    <div class="med-n">STEP 2</div>
+                    <div class="med-h">It has affordances</div>
+                    <div class="med-b">What it makes easy (reaching many people at once) and what it makes hard (reading a face, waiting for a reply).</div>
+                </div>
+                <div class="med-arrow">&#8594;</div>
+                <div class="med-box">
+                    <div class="med-n">STEP 3</div>
+                    <div class="med-h">Relationships adapt</div>
+                    <div class="med-b">Some bonds grow easier to maintain across distance. Some habits of attention and patience atrophy from disuse.</div>
+                </div>
             </div>
-            <div class="widget-feedback"></div>
-            <button class="widget-reset">Reset</button>
+            <div class="med-note">Every communications technology in history has triggered this same worry, and been partly right and partly wrong about it. The task is finding out which parts, for this technology.</div>
         </div>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">In 1831, a 26-year-old French aristocrat named Alexis de Tocqueville arrived in New York harbor. He had been sent, officially, to study the American prison system. In fact, he was there to understand democracy, to see, on its own soil, whether the great democratic experiment could work and what it would produce if it did. He spent nine months traveling through the United States, talking to politicians, lawyers, clergy, ordinary citizens, and enslaved people. He returned to France and wrote the two volumes of <em>Democracy in America</em> (1835 and 1840), which remain, nearly two centuries later, the most penetrating analysis of American democratic society ever written.</p>
+        <figure data-pd="w13-telephone-operators-switchboard.jpg" style="margin: 18px 0 18px 0; text-align: center;"><img src="../_media/w13-telephone-operators-switchboard.jpg" alt="Row of women telephone operators wearing earpieces and connecting calls at a long switchboard with cords" style="max-width: 100%; height: auto; border-radius: 6px;" /><figcaption style="font-size: 14px; color: #4a5a78; line-height: 1.5; margin-top: 8px;">Telephone operators at a switchboard, about 1914 to 1917: voices joined across distance by equipment and intermediaries, with no faces in view. <span style="font-size: 12px; color: #6b7a99;">Harris &amp; Ewing, 1914&ndash;1917. Public domain, via Wikimedia Commons.</span></figcaption></figure>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Tocqueville was not a simple admirer of American democracy, nor a simple critic. He was a rigorous analyst who saw both the extraordinary achievements and the structural vulnerabilities of the American experiment. The achievements included voluntary associations, local self-government, a culture of civic participation, the Protestant ethic, the jury system, and religious vitality. The vulnerabilities included the tyranny of the majority, democratic individualism, and the tendency toward soft despotism that individualism tends to produce. He was right about the achievements. He was also right about the vulnerabilities, as the subsequent two centuries of American history have demonstrated.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 10px 0 10px 0;">Turkle&rsquo;s title, <em>Alone Together</em>, captures one of the central paradoxes of contemporary social life. The title names a condition many people have experienced: being surrounded by other people while feeling, in some meaningful sense, alone; or, conversely, being technically connected to hundreds or thousands of people while being, in some equally meaningful sense, together with none of them. The smartphone, Turkle argues, has not destroyed human connection. It has transformed it, in ways not yet fully understood, and some of what has been transformed may have mattered more than we realized when we gave it up.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">The question is not new: every major communications technology in history, the printing press, the telegraph, the telephone, radio, television, has prompted anxiety about its effects on social life, and those anxieties have been both vindicated and refuted in various respects. The task for the sociologist is not to take a side but to ask the right questions: what kind of social relationships does this technology enable? What kind does it discourage? How does it change the conditions of social solidarity, social capital, and community?</p>
     </div>
 
-    <!-- ============================ PART 2: KEY TERMS ============================ -->
+    <!-- ============================ KEY TERMS ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; THE TERMS</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; KEY TERMS</div>
+        <div class="exg">
+            <div class="exc">
+                <div class="exc-h">Social Technology</div>
+                <div class="exc-b">Any technology that mediates social relationships: the telephone, the printing press, the internet, the social media platform. Social technologies are not neutral; they encode affordances, what they make easy or difficult, that shape the relationships they mediate.</div>
+            </div>
+            <div class="exc">
+                <div class="exc-h">Disembedding</div>
+                <div class="exc-b">Anthony Giddens's term for the process by which modern institutions lift social relations out of local contexts of interaction and restructure them across indefinite spans of time and space. Communications technology is the primary mechanism of disembedding in the modern world.</div>
+            </div>
+            <div class="exc">
+                <div class="exc-h">Network Society</div>
+                <div class="exc-b">Manuel Castells's term for the social structure of the information age: a society organized around networks of information and communication rather than territorial communities or hierarchical institutions. The network is the organizational form; information is the raw material.</div>
+            </div>
+        </div>
+    </div>
 
-        <div class="kt"><div class="kt-t">Tyranny of the majority</div><div class="kt-d">Tocqueville's term for the danger in democratic societies that the majority's opinions become so powerful that minority dissent is suppressed, not primarily by legal coercion but by the overwhelming social pressure of majoritarian conformity.</div></div>
-        <div class="kt"><div class="kt-t">Democratic individualism</div><div class="kt-d">The tendency, produced by democratic conditions of equality, for individuals to withdraw from public life into private concerns, losing their connection to the civic institutions and voluntary associations that sustain democratic health. You met this term in Week 3.</div></div>
-        <div class="kt"><div class="kt-t">Mores (<em>moeurs</em>)</div><div class="kt-d">Tocqueville's term for the habits, customs, beliefs, and dispositions of a people that shape their political life. He argues that mores matter more than laws or physical circumstances in determining whether democracy succeeds.</div></div>
+    <!-- ============================ PART 2 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; TECHNOLOGY AND T&Ouml;NNIES</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Ferdinand T&ouml;nnies distinguished Gemeinschaft, the personal, warm, and direct bonds of community, from Gesellschaft, the impersonal, contractual, and mediated bonds of society. One way to analyze communications technology sociologically is to ask whether it enables Gemeinschaft-type relationships, Gesellschaft-type relationships, or something new that neither concept quite captures. The telephone enables direct, personal, voice-mediated communication across distance; it seems to support Gemeinschaft even while disembedding it from place. Social media platforms enable broad, thin, largely impersonal connection across large networks; they seem to extend Gesellschaft into social life. But neither description is fully adequate. People form genuine deep attachments online, and social media can support local communities as well as dissolve them.</p>
+
+        <div class="optima-widget ow-scale">
+            <div class="widget-kicker">&#9889; TRY IT &middot; PLACE IT ON THE SPECTRUM</div>
+            <div class="widget-question">For each use of technology, decide where it falls between T&ouml;nnies's two poles. Judge by what the relationship actually does, not by which device is involved.</div>
+
+            <div class="widget-row" data-correct="1" data-fb="Leans Gemeinschaft. The call is mediated by a screen, but the content, a grandmother and grandchildren, a recurring personal ritual, is exactly the kind of warm, particular, non-substitutable bond T&ouml;nnies calls Gemeinschaft. The technology disembeds it from place without converting it into something impersonal." data-hint="Ask what the call is actually carrying: a recurring personal bond between specific people who matter to each other individually, or an anonymous, replaceable transaction?">
+                <div class="widget-row-prompt">1. A grandmother video-calls her grandchildren at the same time every week. They have never lived in the same city.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Strongly Gemeinschaft</button><button data-choice="1">Leans Gemeinschaft</button><button data-choice="2">Leans Gesellschaft</button><button data-choice="3">Strongly Gesellschaft</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Strongly Gemeinschaft. Six lifelong friends texting daily is about as close as a mediated relationship gets to T&ouml;nnies's community pole: durable, particular, and valued for its own sake rather than for any function it performs." data-hint="These are pre-existing, deep, personal bonds. The technology here is just the channel; it did not create the tie or make it impersonal.">
+                <div class="widget-row-prompt">2. Six lifelong friends from childhood keep a group chat going, texting almost every day.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Strongly Gemeinschaft</button><button data-choice="1">Leans Gemeinschaft</button><button data-choice="2">Leans Gesellschaft</button><button data-choice="3">Strongly Gesellschaft</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="3" data-fb="Strongly Gesellschaft. A loyalty app is a contractual, transactional relationship by design: the retailer does not know or care who the shopper is as a person, only what the purchase history predicts about future spending. This is T&ouml;nnies's Gesellschaft in close to pure form." data-hint="Ask whether either party in this exchange is treated as a particular, irreplaceable person, or purely as a source of predictable, calculable behavior.">
+                <div class="widget-row-prompt">3. A shopper joins a retailer's loyalty app, which sends personalized coupons based on purchase history.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Strongly Gemeinschaft</button><button data-choice="1">Leans Gemeinschaft</button><button data-choice="2">Leans Gesellschaft</button><button data-choice="3">Strongly Gesellschaft</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Leans Gesellschaft, at least at the start. An anonymous forum of strangers connected by a shared interest, not by personal history, is close to Gesellschaft's associational logic. This case is chosen because it is a genuine mixed case: T&ouml;nnies's categories describe where a relationship begins, not necessarily where it stays, and this one visibly migrated toward Gemeinschaft over years." data-hint="This one starts as strangers connected only by a shared interest, which is Gesellschaft's own logic of voluntary association among people who do not know one another personally, even though it changes later.">
+                <div class="widget-row-prompt">4. A student joins an online forum of strangers who share a rare hobby, and after years of posting, becomes real-life friends with two of them.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Strongly Gemeinschaft</button><button data-choice="1">Leans Gemeinschaft</button><button data-choice="2">Leans Gesellschaft</button><button data-choice="3">Strongly Gesellschaft</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
     </div>
 
     <!-- ============================ PART 3 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; TWO WAYS TO ENFORCE CONFORMITY</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; TECHNOLOGY AND PUTNAM</div>
 
-        <!-- ===== CORE VISUAL ===== -->
-        <div class="tyr">
-            <div class="tyr-title">LEGAL TYRANNY VERSUS SOCIAL TYRANNY</div>
-            <div class="tyr-sub">Tocqueville argues the second is harder to see and, in America, harder to escape.</div>
-            <div class="tyr-cols">
-                <div class="tyr-c tyr-l">
-                    <div class="tyr-h">Legal tyranny</div>
-                    <div class="tyr-tag">THE MAJORITY USES THE LAW</div>
-                    <div class="tyr-r"><div class="tyr-rl">MECHANISM</div><div class="tyr-rv">The majority controls the legislature, the executive, and often the jury, so an unjust law can be passed and enforced.</div></div>
-                    <div class="tyr-r"><div class="tyr-rl">WHAT IT ATTACKS</div><div class="tyr-rv">Your actions and your property.</div></div>
-                    <div class="tyr-r"><div class="tyr-rl">HOW YOU KNOW IT IS HAPPENING</div><div class="tyr-rv">There is a law, a ruling, or an official act you can point to.</div></div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Robert Putnam, in <em>Bowling Alone</em>, was writing in 2000, at the dawn of the social media era. He identified television as one of the major culprits in the decline of social capital: it privatized leisure time, replacing civic participation with passive consumption in the home. His analysis of television provides a template for analyzing subsequent technologies. The question for each one is not "is it good or bad?" but "does it build bridging and bonding social capital, or does it replace the activities that build them?" The smartphone and social media present a more complex picture than television: they can organize political action, maintain distant relationships, build communities of shared interest, and facilitate local coordination; they can also displace face-to-face interaction, substitute a parasocial relationship for a genuine community, and create the appearance of connection without its substance.</p>
+
+        <div class="optima-widget ow-flip-group">
+            <div class="widget-kicker">&#9889; FLIP EACH CARD</div>
+            <div class="widget-question">One technology, read through Putnam's two kinds of social capital. The two readings are not opposites competing for the right answer; often both are true of the same platform at once.</div>
+            <div class="flipgrid">
+                <div class="ow-flip">
+                    <div class="ow-flip-front fcard-front">A neighborhood social media group organizes an annual block party among people who otherwise only wave from their porches.</div>
+                    <div class="ow-flip-back fcard-back"><strong>Bridging capital.</strong> This connects people who share geography but not necessarily background, class, or existing friendship. Putnam values bridging capital precisely because it crosses lines that bonding capital does not, though it usually stays thinner than a bonded tie.</div>
                 </div>
-                <div class="tyr-c tyr-s">
-                    <div class="tyr-h">Social tyranny</div>
-                    <div class="tyr-tag">THE MAJORITY USES OPINION</div>
-                    <div class="tyr-r"><div class="tyr-rl">MECHANISM</div><div class="tyr-rv">Public opinion withdraws esteem, custom, and career from anyone who steps outside it. No official has to act.</div></div>
-                    <div class="tyr-r"><div class="tyr-rl">WHAT IT ATTACKS</div><div class="tyr-rv">Tocqueville's own claim: the body is left free, and the soul is enslaved.</div></div>
-                    <div class="tyr-r"><div class="tyr-rl">HOW YOU KNOW IT IS HAPPENING</div><div class="tyr-rv">There is no law or ruling to point to at all, only silence, distance, and a career that quietly stalls.</div></div>
+                <div class="ow-flip">
+                    <div class="ow-flip-front fcard-front">A tight friend group keeps a private streak of daily messages that visibly excludes anyone outside the group.</div>
+                    <div class="ow-flip-back fcard-back"><strong>Bonding capital.</strong> This reinforces an already-existing close tie and the trust that comes with it. Valuable for support in a crisis, but by design it does not connect anyone to people unlike their existing circle,.</div>
                 </div>
-            </div>
-            <div class="tyr-fix">
-                <div class="tyr-fix-l">WHY HE CONSIDERS THE SECOND WORSE</div>
-                <div class="tyr-fix-t">A legal tyranny can be challenged in court, repealed by a later legislature, or struck down by a judge. A social tyranny leaves no one to sue and no ruling to appeal. Tocqueville's counterweights (an independent judiciary, the legal profession, and voluntary associations) are aimed mainly at the second kind, precisely because it has no formal target to strike back at.</div>
-            </div>
-        </div>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Tocqueville identifies several features of American society that make its democracy functional. The first is the habit of association. Americans, he observes, form voluntary associations for every purpose, from the political to the trivial, and through this associational life they develop the practical skills of self-governance, the experience of cooperative action, and the sense of civic responsibility that democratic institutions require. The second is local self-government. In the New England townships, Tocqueville sees the school of democratic citizenship, where ordinary citizens learn to manage their own affairs and develop the competencies needed for participation at higher levels of governance. The third is religious vitality. Tocqueville argues that religion, though legally separated from the state, is socially and politically essential in America. It provides the moral framework within which democratic freedom is exercised and the associational infrastructure that sustains civic life.</p>
-        <!-- CASE IN POINT id=13-02-american-majority | Tocqueville, Democracy in America I.2.7 -->
-        <div class="case-in-point" style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 18px 0 4px 0;">
-            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128205; CASE IN POINT &middot; THE AMERICAN MAJORITY AS TOCQUEVILLE FOUND IT</div>
-            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">Tocqueville&rsquo;s sharpest sentence about the people he admired is this one: &ldquo;I know no country in which there is so little true independence of mind and freedom of discussion as in America.&rdquo; The mechanism he describes is not the law. &ldquo;As long as the majority is still undecided, discussion is carried on; but as soon as its decision is irrevocably pronounced, a submissive silence is observed.&rdquo; A king&rsquo;s power, he says, is merely physical; the majority&rsquo;s is &ldquo;physical and moral at the same time.&rdquo; An author &ldquo;may write whatever he pleases, but he will repent it if he ever step beyond&rdquo; the barriers of opinion.</p>
-            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">Read the balancing clause as carefully as the accusation. &ldquo;I do not say that tyrannical abuses frequently occur in America at the present day,&rdquo; he writes; his claim is that nothing in the institutions prevents them, and that manners rather than laws do the restraining. This is the lesson&rsquo;s second way of enforcing conformity, observed in the field in 1831 and 1832.</p>
-            <div style="font-size: 12px; color: #1B6A94; margin-top: 10px; line-height: 1.5;">Source: Tocqueville, <em>Democracy in America</em> I.2.7 (1835), trans. Henry Reeve, rev. Francis Bowen (public domain).</div>
-        </div>
-        <!-- /CASE IN POINT id=13-02-american-majority -->
-    </div>
-
-    <!-- ============================ PART 4: WIDGET ============================ -->
-    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; SORT THE CASE</div>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Five cases. Decide which category fits each one: legal tyranny, social tyranny, a voluntary association of the kind Tocqueville praises, or not a form of tyranny at all.</p>
-
-        <div class="optima-widget ow-select">
-            <div class="widget-kicker">&#9889; TRY IT &middot; LEGAL, SOCIAL, REMEDY, OR NEITHER?</div>
-            <div class="widget-question">Read each case and choose the category Tocqueville's framework assigns to it.</div>
-
-            <div class="widget-row" data-correct="2" data-fb="Voluntary association, and exactly the kind Tocqueville praises. A dozen people who disagree about most things cooperate on a shared civic project, which is precisely the habit he credits with keeping American democracy functional." data-hint="Is anyone being pressured or silenced here, or is something constructive being built by people acting together?">
-                <div class="widget-row-prompt">1. A dozen neighbors who disagree about almost everything else band together to petition the town council for a new school, meeting monthly to plan and divide the work.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Legal tyranny</button><button data-choice="1">Social tyranny</button><button data-choice="2">Voluntary association</button><button data-choice="3">Not tyranny</button>
+                <div class="ow-flip">
+                    <div class="ow-flip-front fcard-front">An algorithm quietly shows a user more of what people who already agree with them post, and less of everything else.</div>
+                    <div class="ow-flip-back fcard-back"><strong>Neither, by design.</strong> This is the case Putnam's worry about &ldquo;cyberbalkanization&rdquo; anticipates. It can feel like bonding, since the user's existing circle looks affirmed, while quietly destroying the bridging capital that comes from unplanned contact with people unlike oneself. The two effects can happen in the same feed at the same time.</div>
                 </div>
             </div>
-
-            <div class="widget-row" data-correct="0" data-fb="Legal tyranny. A majority-controlled legislature has used the actual machinery of law to strip a minority of a right. This is the kind Tocqueville considers easier to fight, because there is a statute a court can eventually strike down." data-hint="Is there an actual law or official act here that a court could someday review?">
-                <div class="widget-row-prompt">2. A state legislature, controlled by the majority party, passes a law stripping a minority religious group of the right to build a house of worship.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Legal tyranny</button><button data-choice="1">Social tyranny</button><button data-choice="2">Voluntary association</button><button data-choice="3">Not tyranny</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="3" data-fb="Not tyranny. This is Tocqueville's counterweight working as designed: a judge insulated from electoral pressure by a lifetime term can rule against a popular measure precisely because the majority cannot touch her position." data-hint="Ask whether this person is protected from majority pressure or exposed to it. His whole point about the judiciary is that it is built to be the first kind.">
-                <div class="widget-row-prompt">3. A judge, appointed for a lifetime term specifically to insulate her from electoral pressure, rules against a popular measure she believes is unconstitutional.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Legal tyranny</button><button data-choice="1">Social tyranny</button><button data-choice="2">Voluntary association</button><button data-choice="3">Not tyranny</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="1" data-fb="Social tyranny. No law was broken and no official acted, yet the editor's livelihood and reputation are being dismantled by withdrawn esteem alone. This is exactly the mechanism Tocqueville describes: the body is left free, the soul is enslaved." data-hint="Look for an official act or a law. If there is none, and the pressure is coming from opinion itself, what category is left?">
-                <div class="widget-row-prompt">4. A newspaper editor who criticizes a popular policy finds his subscribers quietly cancelling, his advertisers pulling out, and his old friends crossing the street to avoid him, though he broke no law.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Legal tyranny</button><button data-choice="1">Social tyranny</button><button data-choice="2">Voluntary association</button><button data-choice="3">Not tyranny</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="1" data-fb="Social tyranny again, and worth noticing that it worked without a single person ever finding out what he actually believed. Tocqueville's point is that the mere anticipation of this pressure is often enough to produce the silence, which makes it harder to detect than the newspaper editor's case." data-hint="Has any government action occurred? If the pressure is purely anticipated rather than applied, which category still fits?">
-                <div class="widget-row-prompt">5. A citizen who privately disagrees with a popular policy says nothing in public for fear of being frozen out of local social life, though the government has taken no action against him at all.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Legal tyranny</button><button data-choice="1">Social tyranny</button><button data-choice="2">Voluntary association</button><button data-choice="3">Not tyranny</button>
-                </div>
-            </div>
-
             <button class="widget-reset">Reset</button>
         </div>
     </div>
 
-    <!-- ============================ PART 5 ============================ -->
-    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; TOCQUEVILLE AND THIS COURSE</div>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">This lesson falls near the midpoint of Quarter 2, and it also falls, in the master version of this course, at the stated midpoint of the Sociologist Case Study Reports. That claim is under review and may not match your actual project calendar; check your course announcements rather than this sentence for the exact due date. What does not need review is the framework itself. Tocqueville's questions apply directly to any real institution you might observe: does it develop civic skills, habits of association, or moral formation in its participants? Does it represent the kind of voluntary association Tocqueville identified as essential to democratic health?</p>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">A student who visits a church, a school, a local government meeting, or a voluntary association and observes it through Tocqueville's eyes is asking a specific, answerable question rather than a vague one. Answering it seriously, with specific evidence from careful observation, is the skill both the Community Institution Study and the Sociologist Case Study Reports ask you to practice.</p>
-
-        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 16px 0 0 0;">
-            <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
-                <span style="color: #C7922C;">&#9654;</span>&nbsp; In your notebook: is social media a force that fights the tyranny of the majority, or a new engine for it? Then open this.
-            </summary>
-            <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
-                A genuinely contested question, and honest sociologists disagree. The case for "fights it" is that a dissenter no longer needs the approval of everyone in physical reach; she can find a minority audience anywhere in the world instantly, which Tocqueville's isolated dissenter could not. The case for "new engine" is that public shaming can now travel further and faster than any small town's gossip network ever could, and it never fully fades the way local memory eventually does. Tocqueville could not have anticipated either technology, which is exactly why applying his framework to a case he never saw is a genuine test of whether you understand the framework or only the examples he happened to use.
-            </div>
-        </details>
-    </div>
-
-    <!-- Wrap-up + next -->
+    <!-- What You'll Do Next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; NEXT</div>
         <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
             <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
             <div>
-                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 13B: Tocqueville</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your Thursday reading is Tocqueville's own fullest treatment of the tyranny of the majority, from <em>Democracy in America</em>, Volume I, Part 2, Chapter VII. It is on its own course page as usual.</div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Text Study 13B: Simmel</strong></div>
             </div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 14px;">
             <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
             <div>
-                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Sociological Journal 13</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Due Thursday, with a peer reply this week. You will apply Tocqueville's framework to an institution you have observed.</div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Reading Quiz 13</strong></div>
             </div>
         </div>
     </div>
 
+    <!-- Wrap-up -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
-        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">American democracy's own strengths, the habit of association, local self-government, and religious vitality, are on Tocqueville's account the same conditions that give majority opinion an unusually wide reach into private life. Legal tyranny is the kind you can point to and eventually challenge in court. Social tyranny is the kind that leaves no ruling to appeal, because nothing official ever happened. Holding both halves of that assessment, the achievement and the vulnerability together, is the harder and more honest reading of the book, and it is the reading this course asks of you.</p>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">No technology is simply good or bad for social life; each one has to be examined for what specific relationships it enables and what it discourages, using the frameworks this course has already built. That examination is itself an exercise in self-government. A person who only reacts to whatever a platform makes easiest is being governed by its design. A person who asks, of any given use of technology, whether it is building Gemeinschaft or Gesellschaft, bridging capital or bonding capital, or neither, has taken back some of the choosing.</p>
     </div>
 
 </div>
@@ -333,7 +322,7 @@
 <!-- ===== FOOTER ===== -->
 <div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
     <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Student Lesson Page</div>
-    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 13.02 &middot; American Institutions through Tocqueville</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 13.02 &middot; Technology and Social Relationships</div>
     <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
 </div>
 

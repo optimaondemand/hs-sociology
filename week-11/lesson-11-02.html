@@ -1,31 +1,51 @@
 <!--
     Optima Academy Online — Sociology (Florida 2108300)
-    Q2 · Week 11 · Lesson 11.02 — "The Industrial Revolution and Marx: Society Transformed"
+    Q2 · Week 11 · Lesson 11.02 — "Social Class: Marx and Weber Compared"
 
     TEACHER-FACING BUILD NOTES (not rendered to students):
-    REGISTER: HONORS (confirmed 2026-08-06).
-      Standard: SS.912.S.2.8, SS.912.S.6.1, SS.912.S.7.1
-      Objective: Students will explain how industrialisation reorganised social
-                relations, reconstruct Marx's account of capitalism and alienation,
-                and set it against Weber's account from Monday.
-      Source: Sociology_Course_Master.html, Lesson 11.02 (750 words).
-      Built by the lead session. The original Week 11 builder agent was terminated
-      by a content filter while handling the Marx material, so both Marx-bearing
-      files in this week (this lesson and source-11-b.html) were authored here.
+    REGISTER: HONORS.
 
-      NEUTRALITY IS A HARD REQUIREMENT HERE. CLAUDE.md: the course teaches
-      sociology and does not advocate a faction. This lesson presents Marx's
-      argument in its strongest form, names precisely what it explains well, and
-      names precisely where it is contested, without endorsing or attacking it.
-      The master's own closing sentence already models the right move ("its force
-      does not depend on accepting all of Marx's political conclusions") and is
-      preserved. Do not add editorial framing in either direction.
+      *** R2 REBUILD (reviewer instruction) ***
+      The reviewer's revision note reads: "Rewrite lesson 11.02 around Weber's
+      essay 'Class, Status, Party' instead of 'Status Groups and Classes.'"
+      This lesson and the paired text study (source-11-b.html) were
+      both rewritten around "Class, Status, Party" accordingly. The master's
+      original prose already described class/status/party in general terms and
+      needed only an inline citation naming the actual assigned essay, not a
+      conceptual rewrite; Weber's three-dimensional argument is the same
+      argument whether cited to "Status Groups and Classes" (Economy and
+      Society II.IV) or to "Class, Status, Party".
+      See source-11-b.html's build comment for the full citation note.
 
-      DASH-AS-COLON REPAIR (plan.md defect 6): recast, not re-punctuated.
+      Standard: SS.912.S.6.4, SS.912.S.6.5
+      Objective: Students will distinguish Marx's economic account of class
+                from Weber's multi-dimensional account, identify the
+                limitations of each, and apply both to contemporary social
+                stratification.
+      Source: Sociology_Course_Master.html, Lesson 11.02. Prose preserved
+              verbatim except for the R5 label strip, an inline citation to
+              "Class, Status, Party" where the master said "Weber" generically,
+              and the flip-card exercise replacing what would otherwise be a
+              bare list of examples.
 
-      WIDGET ROTATION: 11.01 used reflective check-in + single-select rows.
-      11.02 uses commit-then-reveal + scale placement. No repeat within the week.
-      Scale correct indices in row order: 3, 0, 2, 4, 1. Not ascending.
+      DASH-AS-COLON REPAIR: none required. Checked by hand; no two-colon
+      sentences in the master's Week 11 lesson prose for 11.02.
+
+      *** NO WIDGET BUILT THIS WEEK, BY INSTRUCTION ***
+      The master specifies a fourth course widget for Week 11, the Weberian
+      stratification explorer (manifest.json weeks[11].widget_notes[0]): move
+      a hypothetical individual across class/status/party and observe life-
+      chance effects, with at least four pre-built scenarios. That widget is
+      being built separately and is NOT part of this pass. A marked HTML
+      comment below shows exactly where its iframe belongs. Until it exists,
+      a flip-card exercise below covers similar ground by hand so the lesson
+      is not left with a hole in it.
+
+      WIDGET ROTATION: 11.01 used single-select rows. 11.02 uses flip cards.
+      No engine repeats within the week. Flip cards are non-evaluative by
+      design (this engine has no data-correct), so the "vary correct-answer
+      indices" rule does not apply to it.
+      Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -57,33 +77,31 @@
     .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
     .widget-reset:hover { background: #FDF3E3; }
     .ow-scale .widget-options { justify-content: space-between; }
-    .ow-scale .widget-options button { flex: 1; text-align: center; min-width: 116px; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
     .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
     .ow-flip .ow-flip-back { display: none; color: #1a2340; }
     .ow-flip.flipped .ow-flip-front { display: none; }
     .ow-flip.flipped .ow-flip-back { display: block; }
 
-    /* ===== Core visual: the four separations ===== */
-    .al { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
-    .al-t { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
-    .al-s { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
-    .al-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(228px, 1fr)); gap: 10px; }
-    .al-c { background: rgba(199,146,44,0.13); border-top: 3px solid #C7922C; border-radius: 7px; padding: 13px 15px; }
-    .al-n { font-size: 10px; letter-spacing: 0.5px; color: rgba(255,255,255,0.45); margin-bottom: 4px; }
-    .al-h { font-size: 15px; color: #ffffff; margin-bottom: 5px; }
-    .al-b { font-size: 13px; color: rgba(255,255,255,0.82); line-height: 1.5; }
-    .al-before { margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.16); display: flex; gap: 14px; }
-    .al-col { flex: 1; }
-    .al-col-l { font-size: 11px; letter-spacing: 0.5px; margin-bottom: 5px; }
-    .al-was .al-col-l { color: #55C8E8; }
-    .al-now .al-col-l { color: #E0B562; }
-    .al-col-t { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.55; }
+    /* ===== Core visual: three independent dimensions ===== */
+    .dim { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
+    .dim-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .dim-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
+    .dim-row { display: flex; gap: 12px; }
+    .dim-col { flex: 1; background: rgba(255,255,255,0.07); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 15px 16px; }
+    .dim-n { font-size: 11px; letter-spacing: 0.5px; color: #55C8E8; margin-bottom: 6px; }
+    .dim-h { font-size: 16px; color: #ffffff; margin-bottom: 7px; }
+    .dim-b { font-size: 13px; color: rgba(255,255,255,0.78); line-height: 1.5; }
+    .dim-note { margin-top: 16px; padding-top: 13px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.6; text-align: center; font-style: italic; }
 
-    .cmp { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 15px; }
-    .cmp th { background: #0E1C42; color: #fff; text-align: left; padding: 10px 13px; font-size: 12px; letter-spacing: 0.4px; font-weight: normal; }
-    .cmp td { border: 1px solid #D0D9E8; padding: 10px 13px; color: #1a2340; line-height: 1.5; vertical-align: top; }
-    .cmp tr:nth-child(even) td { background: #F8FAFD; }
-    .cmp td:first-child { color: #0E1C42; width: 22%; }
+    .kt { background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 13px 17px; margin-bottom: 9px; }
+    .kt-t { font-size: 16px; color: #0E1C42; margin-bottom: 4px; }
+    .kt-d { font-size: 16px; color: #1a2340; line-height: 1.55; }
+
+    .flipgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; margin-top: 4px; }
+    .ow-flip-front { font-size: 15px; color: #0E1C42; line-height: 1.5; }
+    .ow-flip-back { font-size: 14px; line-height: 1.55; text-align: left; }
+    .ow-flip-tag { font-size: 10px; letter-spacing: 0.4px; color: #8a7a55; margin-bottom: 6px; }
 </style>
 </head>
 <body>
@@ -106,7 +124,7 @@
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
         <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 11</div>
-        <div style="font-size: 12px; color: #666;">Weber on Bureaucracy and Marx on Industrial Society</div>
+        <div style="font-size: 12px; color: #666;">Division of Labor and Social Class</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
@@ -114,11 +132,11 @@
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
-        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">The Industrial Revolution and Marx</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Social Class: Marx and Weber Compared</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
-        <div style="font-size: 16px; color: #0e1c42;">Weber on Bureaucracy and Marx on Industrial Society</div>
+        <div style="font-size: 16px; color: #0e1c42;">Division of Labor and Social Class</div>
     </div>
 </div>
 
@@ -127,161 +145,142 @@
 
     <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 11.02</div>
-        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">The Industrial Revolution and Marx: Society Transformed</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Social Class: Marx and Weber Compared</div>
         <div style="font-size: 16px; color: #666;">Lesson</div>
     </div>
 
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
-        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">When the way people work changes, what else changes with it?</div>
-        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">On Monday you met a thinker who found a process nobody chose and nobody profits from. Today you meet one who says the outcome has beneficiaries and can be named. They are describing the same decades. Deciding which account explains more is your work, not theirs.</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Where Do You Fit?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Every known human society has been stratified, organized into layers or ranks that differ in their access to resources, prestige, and power. The sociological study of stratification asks how these hierarchies are organized, how they reproduce themselves across generations, how they shape individual experience, and whether and how they can be changed. Marx and Weber are the two towering figures in the sociology of stratification, and their differences are as instructive as their points of agreement.</div>
     </div>
 
     <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
         <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why industrialisation matters sociologically for how it reorganised relationships rather than for how much it produced.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish Marx's single-axis account of class from the three-dimensional account Weber sets out in "Class, Status, Party."</div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> assign a described experience to the right one of Marx's four separations, and defend the assignment.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> identify a case where class, status, and party diverge, and explain what a purely class-based account would miss about it.</div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> state where Marx's diagnosis and his political conclusions come apart, and why a sociologist can accept one without the other.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> evaluate which account better explains a case of your own choosing, and defend the criterion you used to judge "better."</div>
         </div>
     </div>
 
-    <!-- ============================ PART 1 ============================ -->
+    <!-- ============================ PART 1: KEY TERMS ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE WORLD TURNED UPSIDE DOWN</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; KEY TERMS</div>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Between roughly 1760 and 1840 a series of technological and organisational innovations transformed the way human beings produced goods. The factory system replaced the cottage industry and the guild. The steam engine made available a source of power that dwarfed human and animal muscle. The railway connected markets that had been effectively isolated from one another. The result was a transformation of social life so rapid and so total that people who lived through it often felt they ended their lives in a different world from the one they were born into.</p>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">From a sociological standpoint the Industrial Revolution matters not primarily because it increased output, though it did so dramatically, but because it reorganised the social relationships within which production happens. That distinction is the whole reason this belongs in a sociology course rather than only in an economic history.</p>
-
-        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0;">
-            <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
-                <span style="color: #C7922C;">&#9654;</span>&nbsp; In your notebook, list what changes for a weaver who moves from working at home to working in a factory. Then open this.
-            </summary>
-            <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
-                Most lists start with pay and hours, which are real and are the least interesting items on it. The sociologically loaded changes are these. She no longer owns her tools, so she cannot work without permission. She no longer sets her own pace, so the rhythm of her day is decided elsewhere. She no longer sells a finished cloth to a person, so she never meets whoever ends up with her work. She now works alongside people she did not choose, doing a fragment of a process whose whole she may never see. Notice that every one of those is a change in a <em>relationship</em>, not in a wage. That is the shift this lesson is about, and it is what Marx builds his account on.
-            </div>
-        </details>
+        <div class="kt"><div class="kt-t">Class (Marx)</div><div class="kt-d">A group of people who share the same relationship to the means of production. Marx identifies two primary classes in capitalist society: the bourgeoisie, who own the means of production, and the proletariat, who own only their labor power. Class is an objective, economic category.</div></div>
+        <div class="kt"><div class="kt-t">Class (Weber)</div><div class="kt-d">A group of people who share the same "life chances" in the market, the same probability of obtaining desired goods and achieving desired life outcomes through economic exchange. Weber's class is a market category, not a production category.</div></div>
+        <div class="kt"><div class="kt-t">Status Group</div><div class="kt-d">Weber's term for a group defined by shared social honor or prestige rather than economic position. Status groups may or may not correspond to economic classes.</div></div>
+        <div class="kt"><div class="kt-t">Party</div><div class="kt-d">Weber's term for a group organized around the acquisition of power. Parties are distinct from both classes (economic) and status groups (prestige), oriented instead toward influence and decision-making in a community.</div></div>
+        <div class="kt"><div class="kt-t">Social Mobility</div><div class="kt-d">Movement between strata in a stratification system. Upward mobility means moving to a higher stratum, downward mobility means moving to a lower one. Open stratification systems permit relatively free mobility; closed systems, castes and estates, restrict it.</div></div>
     </div>
 
     <!-- ============================ PART 2 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; THE TERMS, AND THE ARGUMENT</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; MARX: CLASS AS THE ENGINE OF HISTORY</div>
 
-        <table class="cmp">
-            <tr><th>Term</th><th>What it means in Marx's usage</th></tr>
-            <tr><td>Mode of production</td><td>The combination of the forces of production, meaning technology, raw materials, and human labour, with the relations of production, meaning the social arrangements within which production is organised and particularly who owns what. Each epoch of history has a distinctive one.</td></tr>
-            <tr><td>Bourgeoisie</td><td>Those who own the means of production: factories, raw materials, capital.</td></tr>
-            <tr><td>Proletariat</td><td>Those who own only their labour power, which they must sell in order to live.</td></tr>
-            <tr><td>Surplus value</td><td>The difference between the value a worker produces and the wage the worker is paid. Marx argues this difference is the source of profit, and that the wage relation makes the appropriation look like a fair exchange.</td></tr>
-            <tr><td>Alienation (<em>Entfremdung</em>)</td><td>The condition of a worker separated from the product of her labour, from the process of her labour, from her fellow workers, and from her own nature as a creative being. Four separations, treated below.</td></tr>
-        </table>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">For Marx, class is the fundamental social division and the engine of historical change. Every society organized around private ownership of the means of production will divide into those who own, the ruling class, and those who do not, the exploited class. The specific form this division takes varies across epochs: masters and slaves in the ancient world, lords and serfs in feudalism, bourgeoisie and proletariat in capitalism, the argument you read last week in the <em>Manifesto</em>, Part I. But the structural logic is always the same. Those who control the means of production extract surplus from those who do not, and the cultural, legal, and political institutions of each epoch serve primarily to legitimize and maintain this extraction.</p>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 14px 0 10px 0;">Karl Marx was born in Trier, in what is now Germany, in 1818. He studied philosophy in Berlin, was radicalised by his encounter with Hegelian philosophy and with the conditions of early industrial capitalism, and spent most of his adult life in exile in London, writing and organising. <em>The Communist Manifesto</em> (1848), written with Friedrich Engels, and the first volume of <em>Capital</em> (1867) are among the most influential texts in modern history, and you read part of the first of them tomorrow.</p>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">His central argument is that capitalism is a historically specific mode of production, characterised by private ownership of the means of production and by the exploitation of wage labour. The capitalist owns the factory. The worker owns only her labour power and sells it for a wage. Marx argues that the wage is systematically less than the value she produces, and that the difference is taken as profit.</p>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">The part worth slowing down for is his claim about how the arrangement holds. Feudalism was maintained by force, and everybody could see the force. Capitalism, on his account, is maintained by the wage relation itself, which presents as a free contract between equals while functioning as structural coercion, because the worker must sell her labour or go without. Whether you find that persuasive, notice what kind of claim it is. He is not saying anyone is lying. He is saying a relationship can be voluntary in form and compelled in substance.</p>
-        <!-- CASE IN POINT id=11-02-burghers-to-bourgeoisie | Marx and Engels, Manifesto of the Communist Party, ch. I -->
-        <div class="case-in-point" style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 18px 0 4px 0;">
-            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128205; CASE IN POINT &middot; FROM THE MEDIEVAL BURGHERS TO THE BOURGEOISIE</div>
-            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">Marx and Engels treat the bourgeoisie as a people with a history, and they sketch it in a paragraph. Earlier societies had many ranks: &ldquo;In ancient Rome we have patricians, knights, plebeians, slaves; in the Middle Ages, feudal lords, vassals, guild-masters, journeymen, apprentices, serfs.&rdquo; The new class grew out of the old towns: &ldquo;From the serfs of the Middle Ages sprang the chartered burghers of the earliest towns. From these burgesses the first elements of the bourgeoisie were developed.&rdquo; Its political form varied by country: in their words, an independent urban republic in Italy and Germany, a taxable third estate of the monarchy in France.</p>
-            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">The argument needs this history: if class is the engine, the ruling class of 1848 must itself have been produced by earlier struggles. Note the form of the evidence. The <em>Manifesto</em> is a political pamphlet, and its history carries no dates and cites no sources. Which of its claims could a historian check, and against what?</p>
-            <div style="font-size: 12px; color: #1B6A94; margin-top: 10px; line-height: 1.5;">Source: Marx and Engels, <em>Manifesto of the Communist Party</em>, ch. I (1848), trans. Samuel Moore (1888, public domain).</div>
-        </div>
-        <!-- /CASE IN POINT id=11-02-burghers-to-bourgeoisie -->
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">For Marx, class is not primarily about income or lifestyle but about structural position in the production process. A bourgeois who lost all her money would still be a member of the bourgeoisie if she owned productive property, and a proletarian who won the lottery would still be a proletarian if she then had to return to selling her labor. Class is about ownership, not wealth per se.</p>
     </div>
 
     <!-- ============================ PART 3 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; FOUR SEPARATIONS</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; WEBER: THREE DIMENSIONS OF STRATIFICATION</div>
 
-        <!-- ===== CORE VISUAL ===== -->
-        <div class="al">
-            <div class="al-t">ALIENATION, IN FOUR PARTS</div>
-            <div class="al-s">Marx is describing separations, not moods. Each one is a link that used to exist and no longer does.</div>
-            <div class="al-grid">
-                <div class="al-c">
-                    <div class="al-n">SEPARATION 1</div>
-                    <div class="al-h">From the product</div>
-                    <div class="al-b">She does not own what she makes and has no relationship to it once it leaves the building. It goes to someone she will never meet.</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Weber accepts much of Marx's analysis but argues, in his essay "Class, Status, Party," that it is incomplete. Social stratification, he contends, has three distinct dimensions that do not always align: class, one's economic position in the market; status, one's social honor and prestige; and party, one's organized political power and influence. These dimensions can reinforce each other. A wealthy banker might have high status and political influence. But they can also diverge. A Catholic priest might have high status but no market-defined class. An ethnic minority might have wealth but low status.</p>
+
+        <div class="dim">
+            <div class="dim-title">THREE INDEPENDENT AXES</div>
+            <div class="dim-sub">Weber, "Class, Status, Party." A person's position can be high on one and low on another.</div>
+            <div class="dim-row">
+                <div class="dim-col">
+                    <div class="dim-n">DIMENSION 1</div>
+                    <div class="dim-h">Class</div>
+                    <div class="dim-b">Market situation. Your life chances in the economy: what you can obtain, and how reliably.</div>
                 </div>
-                <div class="al-c">
-                    <div class="al-n">SEPARATION 2</div>
-                    <div class="al-h">From the process</div>
-                    <div class="al-b">She does not decide how the work is done, only whether she does it. The pace, the sequence, and the method are set elsewhere.</div>
+                <div class="dim-col">
+                    <div class="dim-n">DIMENSION 2</div>
+                    <div class="dim-h">Status</div>
+                    <div class="dim-b">Social honor. How you are esteemed or scorned by others, independent of what you own.</div>
                 </div>
-                <div class="al-c">
-                    <div class="al-n">SEPARATION 3</div>
-                    <div class="al-h">From other workers</div>
-                    <div class="al-b">The labour market places her in competition with the people beside her for the job she holds, so the people nearest her are structurally her rivals.</div>
-                </div>
-                <div class="al-c">
-                    <div class="al-n">SEPARATION 4</div>
-                    <div class="al-h">From her own nature</div>
-                    <div class="al-b">Marx holds that human beings are creative, self-directing, productive creatures by nature. Work that expresses none of that separates a person from what she is.</div>
+                <div class="dim-col">
+                    <div class="dim-n">DIMENSION 3</div>
+                    <div class="dim-h">Party</div>
+                    <div class="dim-b">Organized power. Your capacity to act with others toward a shared goal, a cause or a following.</div>
                 </div>
             </div>
-            <div class="al-before">
-                <div class="al-col al-was">
-                    <div class="al-col-l">THE CRAFTSMAN MARX CONTRASTS</div>
-                    <div class="al-col-t">Owned his tools. Set his own hours. Made a whole object. Sold it to a person he knew. The work carried his name.</div>
-                </div>
-                <div class="al-col al-now">
-                    <div class="al-col-l">THE INDUSTRIAL WORKER</div>
-                    <div class="al-col-t">Owns nothing. Keeps hours set by others. Makes a fragment. Sells time rather than goods. The work is anonymous.</div>
-                </div>
-            </div>
+            <div class="dim-note">Marx collapses all three into the first. Weber's claim is that the other two have lives of their own.</div>
         </div>
 
-        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 14px 0;">
-            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; A FAIR OBJECTION</div>
-            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">The craftsman on the left is doing a lot of work in this argument, and historians have questioned him. Guild craftsmen were often poor, constrained by guild rules, and not obviously freer than a factory worker with a wage. If the contrast is romanticised, the sense of loss may be too. Marx's defenders reply that the comparison is structural rather than nostalgic: the point is not that the craftsman was happier but that his relationship to his work had features the wage relation removes. Decide for yourself whether that reply holds.</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">This multi-dimensional account has important practical implications. A purely economic class analysis would predict that a wealthy immigrant who is socially discriminated against would join forces with poor workers of the dominant ethnicity, since they share the same economic interests as non-owners. But in practice, this rarely happens: status group solidarity, ethnic, religious, racial, often overrides class solidarity. Weber's three-dimensional analysis can explain this. Marx's cannot easily.</p>
+        <figure data-pd="w11-bradley-martin-ball.jpg" style="margin: 22px 0 18px 0; text-align: center;"><img src="../_media/w11-bradley-martin-ball.jpg" alt="Newspaper pen drawing of a man and a woman in sixteenth-century court costume, plumed hat and cape, lace gown and pearls, leading a stately dance." style="max-width: 100%; width: 380px; height: auto; border-radius: 6px;" /><figcaption style="font-size: 14px; color: #4a5a78; line-height: 1.5; margin-top: 8px;">Status is honor displayed and claimed: leaders of the opening dance at a costume ball for New York&rsquo;s wealthy, 1897. Wealth paid for the display; the display was a claim to esteem. <span style="font-size: 12px; color: #6b7a99;">Carl Kleinschmidt, 1897. Public domain, via Wikimedia Commons.</span></figcaption></figure>
+
+        <!-- CASE IN POINT id=11-02-weber-american-gentlemen | Weber, Wirtschaft und Gesellschaft, &ldquo -->
+        <div class="case-in-point" style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 18px 0 4px 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128205; CASE IN POINT &middot; WEBER&rsquo;S AMERICAN EXAMPLE OF STATUS HONOR</div>
+            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">To show that status is not the same thing as class, Weber reaches for the United States. Among American men who counted as gentlemen, he reports, the old tradition held that once the working day ended, the richest head of a firm was expected to treat his own clerk as an equal at cards or billiards in the club. Outside the subordination that business itself required, any other behaviour would have been thought repugnant. Property divided them; status did not.</p>
+            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">He pairs this with a second American type, the political boss and the big speculator, who in his description hold real economic power while deliberately giving up social honor. The two cases carry the lesson&rsquo;s distinction: a class situation is about goods and market chances, a status situation is about esteem, and the two can run in opposite directions in the same city. Weber gives the example without citing a source, so it records what he took to be common knowledge about American life in the early 1900s.</p>
+            <div style="font-size: 12px; color: #1B6A94; margin-top: 10px; line-height: 1.5;">Source: Weber, <em>Wirtschaft und Gesellschaft</em> (1922), the section <em>Klassen, St&auml;nde, Parteien</em> (&ldquo;Class, Status, Party&rdquo;), written before 1914. Paraphrased.</div>
         </div>
+        <!-- /CASE IN POINT id=11-02-weber-american-gentlemen -->
+    </div>
 
-        <div class="optima-widget ow-scale">
-            <div class="widget-kicker">&#9889; WHICH SEPARATION?</div>
-            <div class="widget-question">Each description below is one of the four separations, or none of them. Judge by which link has been broken, not by how unpleasant the situation sounds.</div>
+    <!-- ============================ PART 4: FUTURE WIDGET SLOT + INTERIM FLIP CARDS ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; MAP FIVE PEOPLE ACROSS THREE DIMENSIONS</div>
 
-            <div class="widget-row" data-correct="3" data-fb="From her own nature. The complaint is not about ownership, control, or colleagues. It is that the work engages none of what she can do, which is Marx's fourth and most philosophical separation." data-hint="Nothing here is about who owns the output or who sets the pace. What is going unused?">
-                <div class="widget-row-prompt">1. A skilled worker spends her shift on one repeated motion that uses almost nothing she is capable of.</div>
-                <div class="widget-options">
-                    <button data-choice="0">From the product</button><button data-choice="1">From the process</button><button data-choice="2">From other workers</button><button data-choice="3">From her own nature</button><button data-choice="4">None of the four</button>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Weber's three questions: what is the market position, what is the social honor, and is there organized power?</p>
+
+        <!--
+            WIDGET 4 ACTIVATED 2026-08-07 by the lead session. The placeholder that stood here
+            has been replaced by the live iframe below. Spec: manifest.json
+            weeks[11].widget_notes[0]. Built with six preset scenarios rather than the four the
+            brief asked for, covering aligned-top, aligned-bottom, aligned-middle, and three
+            distinct patterns of divergence.
+
+            The flip-card exercise that follows is KEPT deliberately. The builder wrote it as an
+            interim stand-in, but the two do different work and the order matters: the widget
+            lets a student build any combination and read what it means, and the cards then ask
+            them to predict alignment before checking. Explore first, commit second.
+        -->
+
+        <iframe class="wframe" src="../_widgets/weberian-stratification/index.html"
+                height="1120" title="Weberian stratification explorer" loading="lazy"></iframe>
+
+        <p style="font-size: 15px; color: #4a5a78; line-height: 1.6; margin: 10px 0 18px 0;">Build a person the single-axis model cannot describe.</p>
+
+        <div class="optima-widget">
+            <div class="widget-kicker">&#9889; TRY IT &middot; ALIGNED OR DIVERGENT?</div>
+            <div class="widget-question">Click each card. Predict whether this person's three dimensions line up or pull apart, then flip it.</div>
+
+            <div class="flipgrid">
+                <div class="ow-flip">
+                    <div class="ow-flip-front"><div class="ow-flip-tag">CARD 1</div>A tenured professor, modest salary, widely respected, whose opinion pieces shape public debate.</div>
+                    <div class="ow-flip-back"><div class="ow-flip-tag">ANALYSIS</div><strong>Class:</strong> middling, salaried, not propertied. <strong>Status:</strong> high, honored as an expert. <strong>Party:</strong> real but indirect, through shaping opinion rather than organized following. Class and status diverge here, which income alone would miss.</div>
                 </div>
-            </div>
-
-            <div class="widget-row" data-correct="0" data-fb="From the product. She made it and has no claim on it or connection to where it goes. That is the first separation exactly." data-hint="Ask what she has lost her relationship TO. It is the object itself.">
-                <div class="widget-row-prompt">2. A worker assembles components that ship to a customer she will never meet, and owns none of them.</div>
-                <div class="widget-options">
-                    <button data-choice="0">From the product</button><button data-choice="1">From the process</button><button data-choice="2">From other workers</button><button data-choice="3">From her own nature</button><button data-choice="4">None of the four</button>
+                <div class="ow-flip">
+                    <div class="ow-flip-front"><div class="ow-flip-tag">CARD 2</div>A wealthy but widely distrusted moneylender, feared rather than respected, with no political organization behind him.</div>
+                    <div class="ow-flip-back"><div class="ow-flip-tag">ANALYSIS</div><strong>Class:</strong> high, strong market position. <strong>Status:</strong> low, wealth gained this way earns no honor and may cost it. <strong>Party:</strong> essentially none. A textbook case of class and status pulling in opposite directions.</div>
                 </div>
-            </div>
-
-            <div class="widget-row" data-correct="2" data-fb="From other workers. The structure makes the people beside her competitors for the thing she needs, which is Marx's third separation and the one students most often miss." data-hint="Look at what the arrangement does to her relationship with the people next to her.">
-                <div class="widget-row-prompt">3. Several workers know that only some of them will keep their posts after the review, and all of them know it.</div>
-                <div class="widget-options">
-                    <button data-choice="0">From the product</button><button data-choice="1">From the process</button><button data-choice="2">From other workers</button><button data-choice="3">From her own nature</button><button data-choice="4">None of the four</button>
+                <div class="ow-flip">
+                    <div class="ow-flip-front"><div class="ow-flip-tag">CARD 3</div>A labor organizer, modest personal income, well liked in her neighborhood, elected to the city council.</div>
+                    <div class="ow-flip-back"><div class="ow-flip-tag">ANALYSIS</div><strong>Class:</strong> modest, similar to the workers she represents. <strong>Status:</strong> solidly respected locally. <strong>Party:</strong> high, organized political power that her income alone would never predict.</div>
                 </div>
-            </div>
-
-            <div class="widget-row" data-correct="4" data-fb="None of the four, and this is the case worth pausing on. Long hours are hard, and hardship is not what alienation names. Marx is describing broken relationships, not discomfort. A well-paid, gruelling job a person controls entirely would be exhausting and not alienated." data-hint="Is a link broken here, or is this simply difficult? Those are different claims.">
-                <div class="widget-row-prompt">4. A self-employed carpenter works punishing hours to finish a commission she chose, using her own tools, for a client she knows.</div>
-                <div class="widget-options">
-                    <button data-choice="0">From the product</button><button data-choice="1">From the process</button><button data-choice="2">From other workers</button><button data-choice="3">From her own nature</button><button data-choice="4">None of the four</button>
+                <div class="ow-flip">
+                    <div class="ow-flip-front"><div class="ow-flip-tag">CARD 4</div>A recently arrived immigrant physician, high income, respected by colleagues, excluded from certain social clubs, without full political standing yet.</div>
+                    <div class="ow-flip-back"><div class="ow-flip-tag">ANALYSIS</div><strong>Class:</strong> high. <strong>Status:</strong> mixed, professional respect alongside social exclusion on other grounds. <strong>Party:</strong> low, no full political voice. This is close to Weber's own example of why one axis cannot capture what is happening to her.</div>
                 </div>
-            </div>
-
-            <div class="widget-row" data-correct="1" data-fb="From the process. She has no say in how the work is done, only in whether she does it, which is precisely Marx's second separation." data-hint="She is not complaining about the output or her colleagues. What has been decided for her?">
-                <div class="widget-row-prompt">5. A worker follows a sequence and a pace fixed by a system she had no part in designing and cannot change.</div>
-                <div class="widget-options">
-                    <button data-choice="0">From the product</button><button data-choice="1">From the process</button><button data-choice="2">From other workers</button><button data-choice="3">From her own nature</button><button data-choice="4">None of the four</button>
+                <div class="ow-flip">
+                    <div class="ow-flip-front"><div class="ow-flip-tag">CARD 5</div>A member of an old aristocratic family whose fortune was lost two generations ago.</div>
+                    <div class="ow-flip-back"><div class="ow-flip-tag">ANALYSIS</div><strong>Class:</strong> low by current market position. <strong>Status:</strong> still elevated, inherited honor can outlast the property that once justified it. <strong>Party:</strong> variable, sometimes retained through old networks. Status is lagging class here, a case Marx's single axis has trouble predicting.</div>
                 </div>
             </div>
 
@@ -289,54 +288,43 @@
         </div>
     </div>
 
-    <!-- ============================ PART 4 ============================ -->
+    <!-- ============================ PART 5 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; WEBER AND MARX ON THE SAME DECADES</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; WHICH ACCOUNT IS RIGHT?</div>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Put Monday's lesson beside today's. Both thinkers are looking at industrial Europe and both conclude that something has gone wrong with modern work. They disagree about what kind of thing it is.</p>
-
-        <table class="cmp">
-            <tr><th></th><th>Weber</th><th>Marx</th></tr>
-            <tr><td>What went wrong</td><td>Rationalisation. Efficiency became an end, and other values found no purchase in the institutions.</td><td>Exploitation and alienation. Ownership of the means of production separates a worker from her work.</td></tr>
-            <tr><td>Who is responsible</td><td>Nobody in particular. Every step was a reasonable decision to do something better.</td><td>A class with an interest in the arrangement continuing.</td></tr>
-            <tr><td>Where the problem lives</td><td>In the form of organisation itself.</td><td>In who owns what.</td></tr>
-            <tr><td>What would fix it</td><td>He does not say. He appears not to have known.</td><td>Changing the ownership of the means of production.</td></tr>
-        </table>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 14px 0 14px 0;">The last row is the sharpest difference and the most useful one for you. A diagnosis that names a beneficiary implies an action. A diagnosis that names a process may not. Which of those is a strength depends on whether the beneficiary is really there, and that is an empirical question rather than a matter of taste.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Neither, entirely. Marx captures the importance of ownership and structural position in shaping life chances; he is right that economic power is a major determinant of social position. But his reduction of all stratification to class obscures the independent influence of prestige and political power. Weber captures the multi-dimensionality of stratification and explains many phenomena that class analysis alone cannot, but his account is less powerful at explaining systematic, long-run patterns of exploitation and structural inequality. The most adequate account of stratification uses both frameworks: Marxian analysis to understand structural economic power, Weberian analysis to understand the full complexity of social position in all its dimensions.</p>
 
         <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0;">
             <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
-                <span style="color: #C7922C;">&#9654;</span>&nbsp; Write down whether you can accept Marx's account of alienation without accepting his politics. Then open this.
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; In your notebook, name a real case where class, status, and party diverge for someone you know of.
             </summary>
             <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
-                Many sociologists do exactly that, and it is worth understanding why it is coherent rather than evasive. Alienation is a claim about what a particular arrangement of work does to the people inside it, and it can be investigated: you can ask workers, compare arrangements, and look for the separations. Whether the remedy is to change who owns the factories is a further claim, and it does not follow automatically, because a separation might be reduced by other means, or might turn out to persist under different ownership. Holding the diagnosis while contesting the prescription is ordinary practice in social science. It is the same move available with Weber, whose account of the iron cage many accept without accepting his pessimism about remedies. Whichever way you come down, the discipline asks you to say which part you are accepting and on what evidence.
+                Test the case against Marx's likely reply: he would say that an apparent divergence is usually temporary or superficial, and that status and party eventually realign with underlying economic position given enough time. Weber would say some divergences are stable for generations, as with the aristocratic family in Card 5 above. The genuinely hard question is not whether divergence exists momentarily, everyone agrees it does, but whether it can persist indefinitely without economic position eventually reshaping it. That is close to the actual disagreement between a Marxian and a Weberian sociologist,.
             </div>
         </details>
     </div>
 
-    <!-- Next -->
+    <!-- What You'll Do Next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; NEXT</div>
         <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
             <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
             <div>
-                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 11B</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your Thursday reading is Marx and Engels in their own words, on a course page. Read it as a social analysis and argue with it.</div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Text Study 11B: Weber, Class, Status, Party</strong></div>
             </div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 14px;">
             <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
             <div>
-                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Sociological Journal 11</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Due Thursday with a peer reply. You will apply one concept from Weber and one from Marx to the same situation, and show that both illuminate it.</div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Reading Quiz 11</strong></div>
             </div>
         </div>
     </div>
 
+    <!-- Wrap-up -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
-        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Marx's diagnosis of alienation is powerful, and its force does not depend on accepting all of his political conclusions. Whether or not the remedy he proposed is the right one, the alienation itself is a real phenomenon that sociology has to take seriously, and every thinker you meet in the remaining weeks is working somewhere in the space he and Weber opened between them. Your journal this week asks you to hold both accounts at once on a single case. That is harder than choosing, and it is the point.</p>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; ONE AXIS OR THREE</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Marx gives you one axis and a theory of history to go with it. Weber gives you three axes and no single story about which one wins in the end. Neither choice is free. Marx buys explanatory power for large-scale historical change at the cost of flattening cases like the ones you just sorted. Weber buys accuracy about individual cases at the cost of a tidy master narrative. Facing inequality honestly, this week's virtue, means resisting the temptation to pick whichever account makes the world simpler rather than whichever account fits the case in front of you.</p>
     </div>
 
 </div>
@@ -344,7 +332,7 @@
 <!-- ===== FOOTER ===== -->
 <div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
     <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Student Lesson Page</div>
-    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 11.02 &middot; The Industrial Revolution and Marx</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 11.02 &middot; Social Class: Marx and Weber Compared</div>
     <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
 </div>
 

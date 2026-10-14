@@ -1,32 +1,33 @@
 <!--
     Optima Academy Online — Sociology (Florida 2108300)
-    Q2 · Week 16 · Lesson 16.02 — "Christian Smith: Character, Moral Formation, and Religious Community"
+    Q2 · Week 16 · Lesson 16.02 — "Capstone Preparation: The Sociology of Community Flourishing"
 
     TEACHER-FACING BUILD NOTES (not rendered to students):
     REGISTER: HONORS.
 
-      Standard: SS.912.S.5.4, SS.912.S.1.9
-      Objective: Students will reconstruct Smith's empirical account of "moralistic
-                therapeutic deism," explain Aristotle's habituation account of virtue in
-                the terms he actually gives it, and evaluate whether Smith's diagnosis is
-                a prediction Aristotle's framework makes or a surprise to it.
-      Source: Sociology_Course_Master.html, Lesson 16.02. The "Formation Question" hook,
-              Key Terms, and "Smith, Aristotle, and Virtue Formation" section are the
-              master's own prose, lightly reformatted. Revisions: R5 (Hook label dropped),
-              R7 (no em dashes found), standards codes moved to this comment.
-      NOTE (per builder brief): this lesson needs NO reading substitution. It already
-              assigns Aristotle's Nicomachean Ethics, which is public domain (Ross, 1925).
-              Smith himself is a living author; nothing of his is reproduced anywhere in
-              this build. See source-16-b.html for the full Aristotle excerpt.
+      Standard: SS.912.S.5.2, SS.912.S.5.9 (kept out of student-facing text)
+      Objective (from manifest, retained): Students will synthesize the major
+      theoretical frameworks of the course in preparation for the Community
+      Flourishing Capstone, develop their thesis, and organize their evidence.
 
-      DASH-AS-COLON CHECK: scanned sentence by sentence. No sentence carries two
-      mid-sentence colons. Single colons ("what he calls moralistic therapeutic deism...",
-      "not malicious, but without the formed dispositions...") each introduce a
-      parenthetical or a list and are legitimate. Zero repairs made in this lesson.
+      ALIGNMENT NOTE (resolves a discrepancy between the manifest draft and the
+      authoritative brief): the manifest's draft prose said "at least four
+      theoretical frameworks." The governing brief,
+      02_Design/Sociology Major Assignments/Community Flourishing Capstone.txt,
+      says "at least three institutions," "at least three classical
+      sociologists," and "at least three primary source texts." This lesson,
+      the module map, and the module outro all use the BRIEF's numbers (three,
+      three, three), not the manifest's draft number (four). Flagged as a
+      judgment call in the build report; the .txt is the assignment's
+      authoritative source per CLAUDE.md and should win over a manifest
+      summary sentence.
 
-      WIDGET ROTATION: scale placement + flip cards, distinct from Lesson 16.01's
-      reflect + select. No engine combination repeats within the week.
-      Scale-row correct indices in order: 0, 3, 2, 0, 1. Not ascending, no 0-1-2-3 run.
+      CLOSES THE SEMESTER'S ARGUMENT per task brief: the individual/state
+      question running Tocqueville to Durkheim to Tonnies to Nisbet to Putnam
+      is named explicitly and pointed at the Capstone.
+
+      WIDGET ROTATION: 16.01 used single-select rows only. 16.02 therefore uses
+      reflect (no wrong answer) + flip cards. No shared combination.
       Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
 -->
 <!DOCTYPE html>
@@ -59,39 +60,28 @@
     .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
     .widget-reset:hover { background: #FDF3E3; }
     .ow-scale .widget-options { justify-content: space-between; }
-    .ow-scale .widget-options button { flex: 1; text-align: center; min-width: 110px; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; }
     .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
     .ow-flip .ow-flip-back { display: none; color: #1a2340; }
     .ow-flip.flipped .ow-flip-front { display: none; }
     .ow-flip.flipped .ow-flip-back { display: block; }
+    .flipgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 6px 0; }
+    .flipgrid .ow-flip { min-height: 120px; display: flex; align-items: center; justify-content: center; }
+    .ow-flip-front, .ow-flip-back { font-size: 15px; line-height: 1.5; }
+    .ow-flip-front b, .ow-flip-back b { display: block; font-size: 12px; color: #c7922c; letter-spacing: 0.4px; margin-bottom: 6px; }
 
-    /* ===== Core visual: the habituation loop ===== */
-    .hab { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
-    .hab-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
-    .hab-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
-    .hab-row { display: flex; align-items: center; gap: 10px; }
-    .hab-box { flex: 1; background: rgba(255,255,255,0.07); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 13px 14px; }
-    .hab-n { font-size: 10px; letter-spacing: 0.5px; color: rgba(255,255,255,0.45); margin-bottom: 5px; }
-    .hab-h { font-size: 15px; color: #ffffff; margin-bottom: 5px; }
-    .hab-b { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.5; }
-    .hab-arrow { color: rgba(255,255,255,0.35); font-size: 20px; flex-shrink: 0; }
-    .hab-fork { display: flex; gap: 10px; margin-top: 10px; }
-    .hab-fork-box { flex: 1; border-radius: 7px; padding: 12px 14px; }
-    .hab-fork-box.good { background: rgba(85,200,232,0.14); border-top: 3px solid #55C8E8; }
-    .hab-fork-box.bad { background: rgba(192,57,43,0.16); border-top: 3px solid #C0392B; }
-    .hab-fork-h { font-size: 14px; color: #ffffff; margin-bottom: 4px; }
-    .hab-fork-b { font-size: 12px; color: rgba(255,255,255,0.78); line-height: 1.45; }
-    .hab-loop { text-align: center; color: rgba(199,146,44,0.85); font-size: 20px; margin: 8px 0; }
-    .hab-note { margin-top: 6px; padding-top: 13px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 14px; color: rgba(255,255,255,0.82); line-height: 1.6; }
-
-    .flipgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 14px 0; }
-    .ow-flip .fcard-front { font-size: 16px; color: #0E1C42; }
-    .ow-flip .fcard-back { font-size: 14px; color: #1a2340; line-height: 1.55; }
-
-    .key-terms { background: #FCFCF8; border: 1px solid #E3DFD2; border-left: 5px solid #C7922C; border-radius: 8px; padding: 18px 22px; margin: 14px 0; }
-    .key-terms dt { font-size: 16px; color: #0E1C42; margin-top: 10px; }
-    .key-terms dt:first-child { margin-top: 0; }
-    .key-terms dd { font-size: 16px; color: #1a2340; line-height: 1.6; margin: 4px 0 0 0; }
+    /* ===== Core visual: the capstone pipeline ===== */
+    .pipe { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
+    .pipe-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .pipe-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 20px; font-style: italic; }
+    .pipe-row { display: flex; align-items: stretch; gap: 8px; flex-wrap: wrap; }
+    .pipe-box { flex: 1; min-width: 140px; background: rgba(255,255,255,0.07); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 13px 14px; }
+    .pipe-n { font-size: 10px; letter-spacing: 0.5px; color: rgba(255,255,255,0.45); margin-bottom: 5px; }
+    .pipe-h { font-size: 15px; color: #ffffff; margin-bottom: 5px; }
+    .pipe-b { font-size: 12px; color: rgba(255,255,255,0.8); line-height: 1.45; }
+    .pipe-arrow { color: rgba(255,255,255,0.35); font-size: 18px; display: flex; align-items: center; }
+    .pipe-req { margin-top: 16px; text-align: center; }
+    .pipe-req-box { display: inline-block; background: #ffffff; border-radius: 8px; padding: 12px 22px; font-size: 15px; color: #0E1C42; line-height: 1.6; }
 </style>
 </head>
 <body>
@@ -114,7 +104,7 @@
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
         <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 16</div>
-        <div style="font-size: 12px; color: #666;">Culture Wars, Character, and Moral Formation</div>
+        <div style="font-size: 12px; color: #666;">Community in Modern America and Capstone Preparation</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
@@ -122,11 +112,11 @@
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
-        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Character, Moral Formation, and Religious Community</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Capstone Preparation: The Sociology of Community Flourishing</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
-        <div style="font-size: 16px; color: #0e1c42;">Culture Wars, Character, and Moral Formation</div>
+        <div style="font-size: 16px; color: #0e1c42;">Community in Modern America</div>
     </div>
 </div>
 
@@ -135,209 +125,180 @@
 
     <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 16.02</div>
-        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Christian Smith: Character, Moral Formation, and Religious Community</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Capstone Preparation: The Sociology of Community Flourishing</div>
         <div style="font-size: 16px; color: #666;">Lesson</div>
     </div>
 
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
-        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">If virtue is not innate, where does it actually come from, and what happens to it when the institutions that used to supply it weaken?</div>
-        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Yesterday's lesson asked what happens when a society disagrees about the source of moral authority. Today's asks a related but different question: however that disagreement gets settled, how does any single person come to have character at all?</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Two quarters of training in how to see, pointed at one real place.</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">The Community Flourishing Capstone runs Weeks 15 to 17 and is due at the end of Week 17. It is the course's culminating assignment, and it asks for the same work done on a real community that the course has done on a text: read it carefully, apply a framework honestly, and reach a conclusion you can defend.</div>
     </div>
 
     <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
         <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> reconstruct the empirical finding behind "moralistic therapeutic deism" and explain why it counts as a symptom of weak moral formation rather than a competing creed.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> state the Capstone's exact requirements and select a community and at least three of its institutions to evaluate.</div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain Aristotle's claim that moral virtue is "formed by a slight variation" from habit, and say why he insists the virtues are neither natural nor contrary to nature.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> write a specific, arguable thesis about what my chosen community's condition reveals about the sociology of flourishing.</div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> evaluate whether the account of moral formation is a finding Aristotle's framework predicts or one that would surprise it, with a reason.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> match at least four frameworks from the course and at least three primary sources from this course to the specific institutions I plan to evaluate.</div>
         </div>
     </div>
 
     <!-- ============================ PART 1 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE FORMATION QUESTION</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; WHAT THE CAPSTONE ACTUALLY REQUIRES</div>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">One of the deepest questions in social theory is what we might call the formation question: how do human beings develop the character, values, and moral sensibilities that guide their social lives? Where do virtues come from? What produces, in actual flesh-and-blood human beings, the dispositions that Aristotle identified as the material of the good life and the good society? This question was central to ancient philosophy, where Plato and Aristotle's answer runs through habituation, practice, and a well-ordered community, and it has remained central ever since. A sociologist of religion, Christian Smith, spent much of his career asking this question about American adolescents in the early twenty-first century, and his answers are both empirically grounded and theoretically important.</p>
+        <!-- ===== CORE VISUAL ===== -->
+        <div class="pipe">
+            <div class="pipe-title">THE CAPSTONE, IN FIVE STEPS</div>
+            <div class="pipe-sub">Five checkable requirements.</div>
+            <div class="pipe-row">
+                <div class="pipe-box">
+                    <div class="pipe-n">STEP 1</div>
+                    <div class="pipe-h">Choose a community</div>
+                    <div class="pipe-b">A neighborhood, town, religious community, school, online community, or any recognizable social group. May be the same community as your Institution Study.</div>
+                </div>
+                <div class="pipe-arrow">&#8594;</div>
+                <div class="pipe-box">
+                    <div class="pipe-h">Evaluate 3+ institutions</div>
+                    <div class="pipe-n">STEP 2</div>
+                    <div class="pipe-b">Family structure, authority, economic life, education, religion, or how it handles change. Assess strengths and weaknesses in each.</div>
+                </div>
+                <div class="pipe-arrow">&#8594;</div>
+                <div class="pipe-box">
+                    <div class="pipe-n">STEP 3</div>
+                    <div class="pipe-h">Apply 4+ frameworks</div>
+                    <div class="pipe-b">Apply at least four frameworks from the course, each doing distinct work on those institutions.</div>
+                </div>
+                <div class="pipe-arrow">&#8594;</div>
+                <div class="pipe-box">
+                    <div class="pipe-n">STEP 4</div>
+                    <div class="pipe-h">Cite 3+ primary sources</div>
+                    <div class="pipe-b">Integrate quotations or paraphrases from at least three Primary Source Guide pages meaningfully, not as decoration.</div>
+                </div>
+                <div class="pipe-arrow">&#8594;</div>
+                <div class="pipe-box">
+                    <div class="pipe-n">STEP 5</div>
+                    <div class="pipe-h">Recommend</div>
+                    <div class="pipe-b">Close with concrete, well-reasoned recommendations grounded in sociological theory, not personal opinion alone.</div>
+                </div>
+            </div>
+            <div class="pipe-req">
+                <div class="pipe-req-box">1,200&ndash;1,800 words &nbsp;&middot;&nbsp; due end of Week 17</div>
+            </div>
+        </div>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Smith's work, particularly his 2009 book <em>Souls in Transition</em> and his 2011 book <em>Lost in Transition</em>, documents through extensive interview research the moral and spiritual lives of young Americans. What he finds is sobering: widespread moral confusion, the prevalence of what he calls moralistic therapeutic deism (a vague sense that a God exists who wants people to be nice and to feel good about themselves) rather than robust religious commitment or serious moral formation, and the disconnection of many young people from the communities, practices, and traditions that have historically provided the conditions for genuine moral development.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Research comes first. Gather information about the community's key institutions: how families are structured, how authority is organized, how economic life functions, how education and religion operate, and how the community handles social change. Watch for patterns, tensions, and strengths rather than settling for a first impression.</p>
     </div>
 
     <!-- ============================ PART 2 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; KEY TERMS</div>
-        <div class="key-terms">
-            <dl>
-                <dt>Moralistic Therapeutic Deism</dt>
-                <dd>A term for the dominant de facto religious worldview a sociologist of religion found among American teenagers in the 2000s: that a God exists who created the world, wants people to be nice and to be happy, that the central goal of life is to feel good about yourself, that God is not involved in daily life except when needed, and that good people go to heaven. A functional replacement for traditional religious commitment that lacks its demands and its formative power.</dd>
-                <dt>Moral Formation</dt>
-                <dd>The process by which a person's character, values, and moral dispositions are developed through practice, habituation, and participation in formative communities and traditions. The classical account (Aristotle, later Aquinas) is that virtues are formed through repeated virtuous action within a community that models and rewards those virtues.</dd>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; PICK A COMMUNITY, HONESTLY</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Test a candidate community against the requirement before investing in research.</p>
+
+        <figure data-pd="w16-main-street-1905.jpg" style="margin: 22px 0; text-align: center;"><img src="../_media/w16-main-street-1905.jpg" alt="Black-and-white photograph of Main Street in Springfield, Massachusetts, in 1905: a cobbled street with a streetcar, a horse-drawn wagon, shops, a printer, a dentist, an insurance office, and pedestrians on the sidewalks." style="max-width: 100%; height: auto; border-radius: 6px;" /><figcaption style="font-size: 14px; color: #4a5a78; line-height: 1.5; margin-top: 8px;">A city&rsquo;s main street, Springfield, Massachusetts, 1905: shops, a printer, an insurer, a streetcar. A community study names the institutions a place holds in common before choosing a framework. <span style="font-size: 12px; color: #6b7a99;">Detroit Publishing Company, 1905. Public domain, via Wikimedia Commons.</span></figcaption></figure>
+
+        <p style="display:none"></p>
+
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; THINK IT THROUGH</div>
+            <div class="widget-question">Which description best matches the community you are currently considering?</div>
+            <div class="widget-options">
+                <button data-response="Good sign. A place you already know has three or more visible institutions is exactly what this assignment needs, and your existing familiarity will save you real research time.">&#127968; A place I know well, with visible family, economic, and civic life</button>
+                <button data-response="Workable, but check the institution count before you commit. An online community can absolutely have real institutions (moderation and authority, an economy of reputation or currency, norms of belonging), but you have to be able to name and evaluate at least three of them specifically, not describe the community in general terms.">&#128421;&#65039; An online or digital community I belong to</button>
+                <button data-response="Strong choice if you can get real access. A religious community typically has clear institutions to evaluate: authority structure, education of the young, economic support of members, and its handling of social change. The risk is writing about doctrine instead of sociology; keep your frameworks doing the analytical work.">&#9962; A religious community I am part of</button>
+                <button data-response="This can work well, since a school is a dense cluster of institutions in miniature: authority (administration and faculty), education, a rudimentary economy, and rituals for handling change (new students, graduation). Make sure you are evaluating the school as a community, not writing a review of it.">&#127891; My own school</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <div class="key-terms" style="background: #FCFCF8; border: 1px solid #E3DFD2; border-left: 5px solid #C7922C; border-radius: 8px; padding: 18px 22px; margin: 18px 0 0 0;">
+            <div style="font-size: 11px; color: #8a7a55; letter-spacing: 0.6px; margin-bottom: 10px;">KEY TERMS FOR THE CAPSTONE</div>
+            <dl style="margin: 0;">
+                <dt style="font-size: 17px; color: #0e1c42; margin-bottom: 3px;">Social Flourishing</dt>
+                <dd style="font-size: 16px; color: #1a2340; line-height: 1.55; margin: 0 0 12px 0;">A condition in which a community's members are equipped to live well: human dignity, meaningful work, genuine relationship, moral formation, and civic participation are present and accessible. Not merely the absence of problems, but the positive presence of the goods that make life worth living.</dd>
+                <dt style="font-size: 17px; color: #0e1c42; margin-bottom: 3px;">Indicators of Flourishing</dt>
+                <dd style="font-size: 16px; color: #1a2340; line-height: 1.55; margin: 0;">Observable features that serve as evidence of a community's health: civic participation, trust, associational density, family stability, economic participation, cultural vitality, intergenerational continuity. Which indicators you choose reflects a theoretical commitment about what flourishing consists in, so choose deliberately, not by default.</dd>
             </dl>
         </div>
     </div>
 
     <!-- ============================ PART 3 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; HOW A CHARACTER GETS BUILT</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; MATCH INSTITUTION TO FRAMEWORK</div>
 
-        <!-- ===== CORE VISUAL ===== -->
-        <div class="hab">
-            <div class="hab-title">ARISTOTLE'S MECHANISM</div>
-            <div class="hab-sub">The same loop produces virtue or vice. Nothing about the mechanism decides which.</div>
-            <div class="hab-row">
-                <div class="hab-box">
-                    <div class="hab-n">STEP 1</div>
-                    <div class="hab-h">Repeated acts</div>
-                    <div class="hab-b">We become just by doing just acts, brave by doing brave acts. Not by being taught what justice is.</div>
-                </div>
-                <div class="hab-arrow">&#8594;</div>
-                <div class="hab-box">
-                    <div class="hab-n">STEP 2</div>
-                    <div class="hab-h">Habit</div>
-                    <div class="hab-b">The acts, repeated, become a settled disposition. This is what "ethike" (moral virtue) means: formed by a variation on "ethos," habit.</div>
-                </div>
-                <div class="hab-arrow">&#8594;</div>
-                <div class="hab-box">
-                    <div class="hab-n">STEP 3</div>
-                    <div class="hab-h">State of character</div>
-                    <div class="hab-b">A stable disposition that now governs future action, and is felt as pleasure or pain when tested.</div>
-                </div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Flip each card for one strong pairing. Other matches are possible.</p>
+
+        <div class="flipgrid">
+            <div class="optima-widget" style="margin: 0;">
+                <div class="ow-flip" tabindex="0"><div class="ow-flip-front"><b>INSTITUTION</b>Family and kinship</div><div class="ow-flip-back"><b>APPLY</b>Durkheim's solidarity: does this family generate mechanical or organic bonds, and what happens under strain?</div></div>
+                <button class="widget-reset">Reset</button>
             </div>
-            <div class="hab-loop">&#8635;</div>
-            <div class="hab-fork">
-                <div class="hab-fork-box good">
-                    <div class="hab-fork-h">Practice virtuous acts</div>
-                    <div class="hab-fork-b">Produces a virtuous state of character, which produces more virtuous acts.</div>
-                </div>
-                <div class="hab-fork-box bad">
-                    <div class="hab-fork-h">Practice vicious acts</div>
-                    <div class="hab-fork-b">Produces a vicious state of character, which produces more vicious acts. Same mechanism, opposite direction.</div>
-                </div>
+            <div class="optima-widget" style="margin: 0;">
+                <div class="ow-flip" tabindex="0"><div class="ow-flip-front"><b>INSTITUTION</b>Local economy or marketplace</div><div class="ow-flip-back"><b>APPLY</b>Weber's rationalization, or Marx's alienation: does work here connect people to each other, or process them?</div></div>
+                <button class="widget-reset">Reset</button>
             </div>
-            <div class="hab-note">Aristotle's own line for this: "it is from the same causes and by the same means that every virtue is both produced and destroyed." A community that rewards vice will form vicious people. This is the empirical question a sociologist of religion went looking for.</div>
+            <div class="optima-widget" style="margin: 0;">
+                <div class="ow-flip" tabindex="0"><div class="ow-flip-front"><b>INSTITUTION</b>Religious or civic association</div><div class="ow-flip-back"><b>APPLY</b>Tocqueville's voluntary associations, or Durkheim on religion: what does membership actually bind people to?</div></div>
+                <button class="widget-reset">Reset</button>
+            </div>
+            <div class="optima-widget" style="margin: 0;">
+                <div class="ow-flip" tabindex="0"><div class="ow-flip-front"><b>INSTITUTION</b>How the community handles change</div><div class="ow-flip-back"><b>APPLY</b>T&ouml;nnies's Gemeinschaft/Gesellschaft, or Putnam's social capital: is change absorbed by existing bonds, or does it erode them?</div></div>
+                <button class="widget-reset">Reset</button>
+            </div>
         </div>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Smith's account of moral formation is deeply consonant with Aristotle's. Aristotle argued, in the <em>Nicomachean Ethics</em> (Book II), that virtues are not innate: they are formed through habituation. We become just by doing just acts; we become courageous by practicing courage. The character of the community in which this habituation occurs matters enormously. Aristotle's account requires a particular kind of community: not merely an aggregation of individuals with compatible interests but a genuine polis with shared commitments to the good life, shared practices of civic and personal virtue, and shared institutions that transmit those commitments across generations.</p>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Smith's empirical research suggests that the communities capable of providing this kind of formation are increasingly rare in contemporary American life. The institutions that historically performed this function, churches, families, schools, civic organizations, are under pressure from the same forces of rationalization, individualism, and consumerism that Weber, Durkheim, and Putnam each analyzed from a different angle. The result, on this account, is a generation of young people who are, by and large, morally adrift: not malicious, but without the formed dispositions, the shared vocabulary of virtue, or the communal supports that serious moral agency requires.</p>
-        <!-- CASE IN POINT id=16-02-legislators-sparta-crete | Aristotle, Nicomachean Ethics II.1 -->
-        <div class="case-in-point" style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 18px 0 4px 0;">
-            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128205; CASE IN POINT &middot; SPARTA AND CRETE: LAWGIVERS WHO BUILT HABITS</div>
-            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">Aristotle&rsquo;s claim that character is built by habit is not only about individuals. &ldquo;This is confirmed by what happens in states; for legislators make the citizens good by forming habits in them, and this is the wish of every legislator, and those who do not effect it miss their mark.&rdquo; In the <em>Politics</em> he names the cities he has in mind. Sparta and Crete kept &ldquo;common meals, whereby the legislator has made property common,&rdquo; and he holds that &ldquo;the special business of the legislator is to create in men this benevolent disposition.&rdquo;</p>
-            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">The common meal is a habit-forming institution in the lesson&rsquo;s sense: a daily practice, required by law, that trains a disposition toward shared use without abolishing private ownership. Aristotle reports the two cities as a comparative observer and does not say the arrangement succeeded; elsewhere in the same book he criticizes both. The question the mechanism raises is his own: which habits does a community&rsquo;s ordinary routine actually form?</p>
-            <div style="font-size: 12px; color: #1B6A94; margin-top: 10px; line-height: 1.5;">Source: Aristotle, <em>Nicomachean Ethics</em> II.1 (trans. W. D. Ross, 1925) and <em>Politics</em> II.5 (trans. Benjamin Jowett); both public domain.</div>
-        </div>
-        <!-- /CASE IN POINT id=16-02-legislators-sparta-crete -->
     </div>
 
     <!-- ============================ PART 4 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; TEST IT: HOW FORMATIVE IS THIS COMMUNITY?</div>
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Aristotle's own criteria: sustained practice, an explicit standard, and accountability to it over time. Place each community on that spectrum, and notice that the honest answer for the last one is genuinely contested.</p>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; THE QUESTION THIS COURSE HAS BEEN ASKING ALL ALONG</div>
 
-        <div class="optima-widget ow-scale">
-            <div class="widget-kicker">&#9889; PLACE IT ON THE SPECTRUM</div>
-            <div class="widget-question">How much capacity does each community have to form virtue by Aristotle's own criteria: sustained practice, a shared standard, and real accountability to it?</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Tocqueville named the problem: what stands between the individual and the state, and what happens to a democratic people when the space in between goes empty. Durkheim gave the mechanism a name, anomie, the condition of a person unmoored from the regulating group. T&ouml;nnies gave the transition a structure, Gemeinschaft giving way to Gesellschaft. Nisbet made the political stakes explicit: a person deprived of real community does not simply become isolated, he becomes available to whatever fills the vacuum, a mass movement or an unchecked state. Putnam supplied the evidence that the erosion is not theoretical but measured, in declining trust and declining membership across fifty years. This week's readings are the bookends: Tocqueville on the softening of manners under equality, and Tocqueville closing Volume I on the American principle of "unguided exertion" against the Russian, who "centres all the authority of society in a single arm."</p>
 
-            <div class="widget-row" data-correct="0" data-fb="Strong. Daily practice, an explicit standard of excellence, and years of accountability to teammates and coaches are exactly the three conditions Aristotle names." data-hint="Check it against the three conditions: practice, a shared standard, and accountability over time. All three are present here.">
-                <div class="widget-row-prompt">1. A team that practices together daily, shares an explicit standard of excellence, and holds members accountable to it for years.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Strong formative capacity</button><button data-choice="1">Moderate, mixed</button><button data-choice="2">Weak formative capacity</button><button data-choice="3">Not formative at all</button>
-                </div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">The Capstone is not a review of these thinkers. It is the moment the question stops being about nations and traditions in general and becomes a question about one particular, real place you can actually observe. What stands between the people in your chosen community and the impersonal forces (the state, the market, the algorithm) that would otherwise organize their lives for them? Is it strong, thin, or gone? That is the question your thesis should answer.</p>
+
+        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 14px 0 0 0;">
+            <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; Draft one sentence of the thesis.
+            </summary>
+            <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
+                A strong thesis names the community, makes a specific and arguable claim (not merely "this community has strengths and weaknesses"), and points at the evidence that will carry it. A workable template: "In [community], [specific institution or condition] shows that [claim about flourishing], because [specific evidence], which [named sociologist]'s framework explains." If the claim clause holds nothing a reasonable person could disagree with, the thesis is not yet specific enough.
             </div>
-
-            <div class="widget-row" data-correct="3" data-fb="Not formative at all, on Aristotle's terms. There is no sustained relationship, no shared standard being enforced, and no accountability across time. A single interaction cannot habituate anyone to anything." data-hint="Ask whether there is any repetition here at all. Habituation requires doing the same kind of act more than once, with someone noticing.">
-                <div class="widget-row-prompt">2. An anonymous online forum where members interact once and never again.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Moderate, mixed</button><button data-choice="1">Strong formative capacity</button><button data-choice="2">Weak formative capacity</button><button data-choice="3">Not formative at all</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="2" data-fb="Weak. There is sustained contact, but no explicit shared standard beyond the legal minimum, and high turnover undercuts the accountability Aristotle's account requires. People pass through without anyone's habits being shaped by anyone else's example." data-hint="High turnover breaks one of the three conditions even where the other two are partly present. Which one?">
-                <div class="widget-row-prompt">3. A workplace with high turnover, no shared standard of conduct beyond legal compliance, and little continuity of relationships.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Strong formative capacity</button><button data-choice="1">Not formative at all</button><button data-choice="2">Weak formative capacity</button><button data-choice="3">Moderate, mixed</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="0" data-fb="Strong. Multigenerational continuity, explicit teaching on conduct, and shared practices sustained over decades satisfy all three of Aristotle's conditions about as fully as a modern institution can." data-hint="This one checks every box: practice, an explicit standard, and long-term mutual accountability across generations.">
-                <div class="widget-row-prompt">4. A multigenerational congregation with shared practices, explicit teaching on conduct, and long-term relationships of mutual accountability.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Strong formative capacity</button><button data-choice="1">Weak formative capacity</button><button data-choice="2">Not formative at all</button><button data-choice="3">Moderate, mixed</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="1" data-fb="Moderate, mixed, and this is the honest answer, not a hedge. Formal instruction supplies an explicit standard, which is one of Aristotle's three conditions. But without sustained relationship between a given adult and a given student, the habituation his account actually requires (practiced acts, noticed and corrected by someone over time) is thin. Scale can supply the teaching and still fail to supply the formation." data-hint="Two of the three conditions are present in some form here. Which one is hardest to deliver at this scale, and does that make the case clearly strong, clearly weak, or genuinely mixed?">
-                <div class="widget-row-prompt">5. A large public high school with thousands of students, formal character-education lessons, but little sustained relationship between any given adult and student.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Not formative at all</button><button data-choice="1">Moderate, mixed</button><button data-choice="2">Strong formative capacity</button><button data-choice="3">Weak formative capacity</button>
-                </div>
-            </div>
-
-            <button class="widget-reset">Reset</button>
-        </div>
-    </div>
-
-    <!-- ============================ PART 5 ============================ -->
-    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; MEET THE MECHANISM, ONE PIECE AT A TIME</div>
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Four questions Aristotle's own text raises about itself. Predict an answer before you flip each card.</p>
-
-        <div class="optima-widget ow-flip-group">
-            <div class="widget-kicker">&#9889; TAP EACH CARD</div>
-            <div class="widget-question">Read the front, commit to a guess, then tap to check it against Aristotle's own resolution.</div>
-            <div class="flipgrid">
-                <div class="ow-flip">
-                    <div class="ow-flip-front fcard-front">Why doesn't Aristotle think virtue is natural, the way sight is?</div>
-                    <div class="ow-flip-back fcard-back">A thing that acts one way by nature cannot be trained to act another way. A stone thrown upward ten thousand times still falls. So if virtue could arise by nature alone, no amount of bad habituation could ever destroy it, and experience shows that it can. His answer: we are adapted by nature to receive virtue, but made perfect by habit.</div>
-                </div>
-                <div class="ow-flip">
-                    <div class="ow-flip-front fcard-front">How can you become just by doing just acts, if doing an act justly seems to already require being just?</div>
-                    <div class="ow-flip-back fcard-back">Aristotle grants the puzzle and answers with three conditions: the agent must have knowledge, must choose the act for its own sake, and must act from a firm and settled character. Early on, a person can do a just act without meeting all three (a child obeying a rule, say). Repetition under guidance is how the act comes to be done from the settled character that finally makes the person, and not just the act, just.</div>
-                </div>
-                <div class="ow-flip">
-                    <div class="ow-flip-front fcard-front">What does he mean by using pleasure and pain as a "sign" of character?</div>
-                    <div class="ow-flip-back fcard-back">Someone who abstains from excess and is annoyed by the abstinence is not yet temperate, only compliant. Someone who abstains and takes no pain in it, or even delights in it, has the settled disposition. The feeling that accompanies an act, not just the act, is the evidence of what has actually been formed.</div>
-                </div>
-                <div class="ow-flip">
-                    <div class="ow-flip-front fcard-front">If virtue is formed by habitual action inside a community, what should that predict about a generation raised largely outside such communities?</div>
-                    <div class="ow-flip-back fcard-back">Roughly what a sociologist of religion later reported finding: moral confusion rather than settled vice, since confusion is what an unformed disposition looks like from outside. That is a real point in favor of Aristotle's framework, though it is worth naming the objection: young people still form habits somewhere, in teams, jobs, and friend groups, so the finding may say less about whether formation happens and more about which institutions are doing it now.</div>
-                </div>
-            </div>
-            <button class="widget-reset">Reset</button>
-        </div>
+        </details>
     </div>
 
     <!-- What You'll Do Next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; NEXT</div>
         <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
             <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
             <div>
-                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 16B: Aristotle</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your Thursday reading is <em>Nicomachean Ethics</em>, Book II, chapters 1 to 4, in full, on the page. It is the passage this lesson's core visual is built from.</div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 16B: Tocqueville</strong></div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Tocqueville, <em>Democracy in America</em> Vol. I, Conclusion</div>
             </div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 14px;">
             <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
             <div>
                 <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Sociological Journal 16</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Due Thursday. An assignment this week; no peer reply required.</div>
+                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Video post and one peer reply</div>
             </div>
         </div>
     </div>
 
     <!-- Wrap-up -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
-        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Character is not a possession a person is born with or without. On this account it is built, act by repeated act, inside communities that supply a standard and enforce it long enough for the standard to become a disposition. That mechanism does not depend on any one society's settling its disagreement about where moral authority ultimately comes from, which is the question yesterday's lesson raised. It only requires that some community, somewhere, keeps doing the patient work of habituation. Whether enough communities still do is an empirical question, and it is the one this week leaves you holding.</p>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; SUMMARY</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">The Capstone needs a community, a working thesis, and a map from institution to framework to evidence. The remaining work is research and writing, not theory. The course supplies the tools: a tradition of thinkers, Tocqueville, Durkheim, T&ouml;nnies, Nisbet, and Putnam among them, who tested these frameworks against evidence for a century and a half.</p>
     </div>
 
 </div>
@@ -345,7 +306,7 @@
 <!-- ===== FOOTER ===== -->
 <div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
     <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Student Lesson Page</div>
-    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 16.02 &middot; Character, Moral Formation, and Religious Community</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 16.02 &middot; Capstone Preparation: The Sociology of Community Flourishing</div>
     <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
 </div>
 

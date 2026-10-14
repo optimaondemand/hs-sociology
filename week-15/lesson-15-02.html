@@ -1,42 +1,32 @@
 <!--
     Optima Academy Online — Sociology (Florida 2108300)
-    Q2 · Week 15 · Lesson 15.02 — "Globalization and Cultural Change"
+    Q2 · Week 15 · Lesson 15.02 — "Christian Smith: Character, Moral Formation, and Religious Community"
 
     TEACHER-FACING BUILD NOTES (not rendered to students):
     REGISTER: HONORS.
 
-      Standard: SS.912.S.6.4, SS.912.S.6.5, SS.912.S.3.7
-      Objective: Students will distinguish cultural homogenization from
-                hybridization from glocalization and correctly classify an
-                unfamiliar case; evaluate whether Ritzer's McDonaldization
-                thesis survives the hybridization critique; and apply Durkheim's
-                account of organic solidarity to say what globalization
-                threatens and what it does not.
-      Source: Sociology_Course_Master.html, Lesson 15.02. Prose preserved except
-              where noted below.
-      Revisions: R5 (opening section not labelled "Hook"), R7 (no em dashes),
-                standards codes kept out of student-facing text.
+      Standard: SS.912.S.5.4, SS.912.S.1.9
+      Objective: Students will reconstruct Smith's empirical account of "moralistic
+                therapeutic deism," explain Aristotle's habituation account of virtue in
+                the terms he actually gives it, and evaluate whether Smith's diagnosis is
+                a prediction Aristotle's framework makes or a surprise to it.
+      Source: Sociology_Course_Master.html, Lesson 15.02. The "Formation Question" hook,
+              Key Terms, and "Smith, Aristotle, and Virtue Formation" section are the
+              master's own prose, lightly reformatted. Revisions: R5 (Hook label dropped),
+              R7 (no em dashes found), standards codes moved to this comment.
+      NOTE (per builder brief): this lesson needs NO reading substitution. It already
+              assigns Aristotle's Nicomachean Ethics, which is public domain (Ross, 1925).
+              Smith himself is a living author; nothing of his is reproduced anywhere in
+              this build. See source-15-b.html for the full Aristotle excerpt.
 
-      *** R1 SUBSTITUTION (Ritzer, lesson 15.02 / reading 15B) ***
-      Per CLAUDE.md R1 and plan.md section 2b: Ritzer's McDonaldization of
-      Society (1993) is in copyright and was never assigned in full; the
-      master's own primary-source guide for 15B already only assigned a single
-      chapter. Per the reviewer's instruction, RITZER STAYS IN THIS LESSON'S
-      PROSE UNCHANGED (master text preserved below almost verbatim). Only the
-      Thursday PRIMARY SOURCE changes, to Weber, whose concept of rationalization
-      Ritzer explicitly built McDonaldization from. See source-15-b.html for the
-      substituted reading and its full provenance note. The "What You'll Do
-      Next" block below was rewritten to point to Weber, since the master's
-      original pointer named Ritzer's own book as Thursday's reading, which is
-      no longer accurate.
+      DASH-AS-COLON CHECK: scanned sentence by sentence. No sentence carries two
+      mid-sentence colons. Single colons ("what he calls moralistic therapeutic deism...",
+      "not malicious, but without the formed dispositions...") each introduce a
+      parenthetical or a list and are legitimate. Zero repairs made in this lesson.
 
-      DASH-AS-COLON CHECK (plan.md defect 6): checked sentence by sentence
-      against the two-colon pattern. No sentence in this lesson carries two
-      mid-sentence colons. Zero repairs were needed.
-
-      WIDGET ROTATION: 15.01 used reflect + flip cards. 15.02 uses scale +
-      single-select, a combination not yet used together elsewhere in the
-      course. No engine combination repeats within the week.
+      WIDGET ROTATION: scale placement + flip cards, distinct from Lesson 15.01's
+      reflect + select. No engine combination repeats within the week.
+      Scale-row correct indices in order: 0, 3, 2, 0, 1. Not ascending, no 0-1-2-3 run.
       Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
 -->
 <!DOCTYPE html>
@@ -69,23 +59,34 @@
     .widget-reset { background: transparent; border: 1px solid #C7922C; color: #C7922C; border-radius: 6px; padding: 6px 12px; font-size: 12px; cursor: pointer; font-family: inherit; margin-top: 6px; }
     .widget-reset:hover { background: #FDF3E3; }
     .ow-scale .widget-options { justify-content: space-between; }
-    .ow-scale .widget-options button { flex: 1; text-align: center; }
+    .ow-scale .widget-options button { flex: 1; text-align: center; min-width: 110px; }
     .ow-flip { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 18px 20px; cursor: pointer; text-align: center; }
     .ow-flip .ow-flip-back { display: none; color: #1a2340; }
     .ow-flip.flipped .ow-flip-front { display: none; }
     .ow-flip.flipped .ow-flip-back { display: block; }
 
-    /* ===== Core visual: three lenses on cultural globalization ===== */
-    .lens { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
-    .lens-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
-    .lens-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
-    .lens-row { display: flex; align-items: stretch; gap: 12px; }
-    .lens-box { flex: 1; background: rgba(255,255,255,0.07); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 14px 15px; }
-    .lens-n { font-size: 10px; letter-spacing: 0.5px; color: rgba(255,255,255,0.45); margin-bottom: 6px; }
-    .lens-h { font-size: 16px; color: #ffffff; margin-bottom: 8px; }
-    .lens-q { font-size: 13px; color: #55C8E8; line-height: 1.5; font-style: italic; margin-bottom: 8px; }
-    .lens-b { font-size: 13px; color: rgba(255,255,255,0.78); line-height: 1.5; }
-    .lens-note { margin-top: 18px; padding-top: 13px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 15px; color: rgba(255,255,255,0.85); line-height: 1.6; text-align: center; font-style: italic; }
+    /* ===== Core visual: the habituation loop ===== */
+    .hab { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
+    .hab-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .hab-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
+    .hab-row { display: flex; align-items: center; gap: 10px; }
+    .hab-box { flex: 1; background: rgba(255,255,255,0.07); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 13px 14px; }
+    .hab-n { font-size: 10px; letter-spacing: 0.5px; color: rgba(255,255,255,0.45); margin-bottom: 5px; }
+    .hab-h { font-size: 15px; color: #ffffff; margin-bottom: 5px; }
+    .hab-b { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.5; }
+    .hab-arrow { color: rgba(255,255,255,0.35); font-size: 20px; flex-shrink: 0; }
+    .hab-fork { display: flex; gap: 10px; margin-top: 10px; }
+    .hab-fork-box { flex: 1; border-radius: 7px; padding: 12px 14px; }
+    .hab-fork-box.good { background: rgba(85,200,232,0.14); border-top: 3px solid #55C8E8; }
+    .hab-fork-box.bad { background: rgba(192,57,43,0.16); border-top: 3px solid #C0392B; }
+    .hab-fork-h { font-size: 14px; color: #ffffff; margin-bottom: 4px; }
+    .hab-fork-b { font-size: 12px; color: rgba(255,255,255,0.78); line-height: 1.45; }
+    .hab-loop { text-align: center; color: rgba(199,146,44,0.85); font-size: 20px; margin: 8px 0; }
+    .hab-note { margin-top: 6px; padding-top: 13px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 14px; color: rgba(255,255,255,0.82); line-height: 1.6; }
+
+    .flipgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: 14px 0; }
+    .ow-flip .fcard-front { font-size: 16px; color: #0E1C42; }
+    .ow-flip .fcard-back { font-size: 14px; color: #1a2340; line-height: 1.55; }
 
     .key-terms { background: #FCFCF8; border: 1px solid #E3DFD2; border-left: 5px solid #C7922C; border-radius: 8px; padding: 18px 22px; margin: 14px 0; }
     .key-terms dt { font-size: 16px; color: #0E1C42; margin-top: 10px; }
@@ -113,7 +114,7 @@
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
         <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 15</div>
-        <div style="font-size: 12px; color: #666;">Media, Culture, Globalization, and Identity</div>
+        <div style="font-size: 12px; color: #666;">Culture Wars, Character, and Moral Formation</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
@@ -121,11 +122,11 @@
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
-        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Globalization and Cultural Change</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Character, Moral Formation, and Religious Community</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
-        <div style="font-size: 16px; color: #0e1c42;">Media, Culture, Globalization, and Identity</div>
+        <div style="font-size: 16px; color: #0e1c42;">Culture Wars, Character, and Moral Formation</div>
     </div>
 </div>
 
@@ -134,211 +135,209 @@
 
     <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 15.02</div>
-        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Globalization and Cultural Change</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Christian Smith: Character, Moral Formation, and Religious Community</div>
         <div style="font-size: 16px; color: #666;">Lesson</div>
     </div>
 
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
-        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Is the world becoming one culture, or a great many new ones?</div>
-        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">The same brands and formats now appear on every inhabited continent. That observation supports two opposite-sounding theories at once, and today's lesson asks which one, if either, is doing the real explanatory work.</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">If virtue is not innate, where does it actually come from, and what happens to it when the institutions that used to supply it weaken?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">However a society settles its disagreement about the source of moral authority, how does any single person come to have character at all?</div>
     </div>
 
     <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
         <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish cultural homogenization from hybridization from glocalization, and correctly classify a case I have not seen before.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> reconstruct the empirical finding behind "moralistic therapeutic deism" and explain why it counts as a symptom of weak moral formation rather than a competing creed.</div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> evaluate whether Ritzer's McDonaldization thesis survives the hybridization critique, and say what would settle the question.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain Aristotle's claim that moral virtue is "formed by a slight variation" from habit, and say why he insists the virtues are neither natural nor contrary to nature.</div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> apply Durkheim's account of organic solidarity to explain what globalization genuinely threatens, and what it does not.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> evaluate whether the account of moral formation is a finding Aristotle's framework predicts or one that would surprise it, with a reason.</div>
         </div>
     </div>
 
     <!-- ============================ PART 1 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE SAME EVERYWHERE</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE FORMATION QUESTION</div>
 
-        <!-- ===== CORE VISUAL ===== -->
-        <div class="lens">
-            <div class="lens-title">THREE LENSES ON GLOBAL CULTURAL CHANGE</div>
-            <div class="lens-sub">Three answers to what happens when a global form meets a local culture.</div>
-            <div class="lens-row">
-                <div class="lens-box">
-                    <div class="lens-n">LENS 1</div>
-                    <div class="lens-h">Homogenization</div>
-                    <div class="lens-q">Does the local form disappear?</div>
-                    <div class="lens-b">The global form replaces it. Distinct local cultures converge toward one dominant pattern, often associated with American cultural exports.</div>
-                </div>
-                <div class="lens-box">
-                    <div class="lens-n">LENS 2</div>
-                    <div class="lens-h">Hybridization</div>
-                    <div class="lens-q">Does something new appear?</div>
-                    <div class="lens-b">Global and local combine into a form that is neither. Bhabha and Garcia Canclini are the names most associated with this account.</div>
-                </div>
-                <div class="lens-box">
-                    <div class="lens-n">LENS 3</div>
-                    <div class="lens-h">Glocalization</div>
-                    <div class="lens-q">Is the global form deliberately adapted?</div>
-                    <div class="lens-b">Roland Robertson's term for a global form consciously reshaped to fit local conditions and expectations, neither pure export nor pure invention.</div>
-                </div>
-            </div>
-            <div class="lens-note">The same case can look like all three depending on which feature you examine. That is not a flaw in the framework. It is the reason the framework needs three lenses rather than one.</div>
-        </div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">One of the deepest questions in social theory is what we might call the formation question: how do human beings develop the character, values, and moral sensibilities that guide their social lives? Where do virtues come from? What produces, in actual flesh-and-blood human beings, the dispositions that Aristotle identified as the material of the good life and the good society? This question was central to ancient philosophy, where Plato and Aristotle's answer runs through habituation, practice, and a well-ordered community, and it has remained central ever since. A sociologist of religion, Christian Smith, spent much of his career asking this question about American adolescents in the early twenty-first century, and his answers are both empirically grounded and theoretically important.</p>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The sociologist George Ritzer, in a book published in 1993 and now in its ninth edition, used the term McDonaldization to describe the process by which the principles of the fast-food restaurant, efficiency, calculability, predictability, and control, have come to dominate ever more sectors of American and global social life. The title is deliberately provocative, and its provocation was successful. The term has entered the sociological vocabulary as a shorthand for the homogenizing effects of the global spread of American corporate culture. Whether or not Ritzer's analysis is fully persuasive, the phenomenon he describes is real. The same brands, the same entertainment, the same architectural forms, and increasingly the same social practices appear in cities on every inhabited continent. Whatever local color remains is often a tourist-facing performance of authenticity rather than the genuine article.</p>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">But the picture is more complex than simple homogenization. Cultural globalization is not a one-way street. American culture influences global culture, but global cultures influence American culture, and all cultures change through their encounters with each other in ways that produce not simply homogenization but hybridization. The Chinese city that builds a McDonald's also produces a distinctive Chinese McDonald's culture that is not quite the same as the American original. The music that emerges from the encounter between American hip-hop and West African musical traditions is not simply American or African but something new that belongs to both.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Smith's work, particularly his 2009 book <em>Souls in Transition</em> and his 2011 book <em>Lost in Transition</em>, documents through extensive interview research the moral and spiritual lives of young Americans. What he finds is sobering: widespread moral confusion, the prevalence of what he calls moralistic therapeutic deism (a vague sense that a God exists who wants people to be nice and to feel good about themselves) rather than robust religious commitment or serious moral formation, and the disconnection of many young people from the communities, practices, and traditions that have historically provided the conditions for genuine moral development.</p>
     </div>
 
-    <!-- ============================ PART 2: KEY TERMS ============================ -->
+    <!-- ============================ PART 2 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; KEY TERMS</div>
         <div class="key-terms">
-            <dl style="margin: 0;">
-                <dt style="font-size: 17px; color: #0E1C42; margin-bottom: 4px;">Globalization</dt>
-                <dd style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 14px 0;">The process by which economic, political, and cultural activity increasingly operates at a global rather than a national or local scale. Contemporary globalization is driven by communications technology, international trade, and the mobility of capital and people.</dd>
-                <dt style="font-size: 17px; color: #0E1C42; margin-bottom: 4px;">Cultural Homogenization</dt>
-                <dd style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 14px 0;">The argument that globalization produces convergence of cultural forms, values, and practices across the world, reducing the diversity of distinct local cultures. Often associated with concerns about American cultural imperialism.</dd>
-                <dt style="font-size: 17px; color: #0E1C42; margin-bottom: 4px;">Cultural Hybridization</dt>
-                <dd style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 14px 0;">The argument that cultural contact between global and local does not simply displace local culture but produces new, hybrid cultural forms that combine elements of both. Associated with theorists such as Homi Bhabha and Nestor Garcia Canclini.</dd>
-                <dt style="font-size: 17px; color: #0E1C42; margin-bottom: 4px;">Glocalization</dt>
-                <dd style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0;">Sociologist Roland Robertson's term, blending "global" and "local," for the simultaneous globalization and localization of social life: global forms are adopted but adapted to local conditions, producing outcomes that are neither purely global nor purely local.</dd>
+            <dl>
+                <dt>Moralistic Therapeutic Deism</dt>
+                <dd>A term for the dominant de facto religious worldview a sociologist of religion found among American teenagers in the 2000s: that a God exists who created the world, wants people to be nice and to be happy, that the central goal of life is to feel good about yourself, that God is not involved in daily life except when needed, and that good people go to heaven. A functional replacement for traditional religious commitment that lacks its demands and its formative power.</dd>
+                <dt>Moral Formation</dt>
+                <dd>The process by which a person's character, values, and moral dispositions are developed through practice, habituation, and participation in formative communities and traditions. The classical account (Aristotle, later Aquinas) is that virtues are formed through repeated virtuous action within a community that models and rewards those virtues.</dd>
             </dl>
-        </div>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 12px 0 6px 0;">Now sort six real cases along the spectrum, then classify four more by which term fits best.</p>
-
-        <div class="optima-widget ow-scale">
-            <div class="widget-kicker">&#9889; PLACE IT ON THE SPECTRUM</div>
-            <div class="widget-question">For each case, decide how far it sits from pure homogenization toward pure local persistence, before deciding in the next activity which term names it exactly.</div>
-
-            <div class="widget-row" data-correct="0" data-fb="Close to pure homogenization. A single global chain replacing local competitors with an identical product and format is the clearest case the lens was built to describe." data-hint="Ask whether anything distinctly local survives in the case, or whether one dominant form has simply replaced what was there before.">
-                <div class="widget-row-prompt">1. A single international coffee chain replaces dozens of independent local cafes across a city, offering the identical menu everywhere.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Near pure homogenization</button><button data-choice="1">Mostly homogenization</button><button data-choice="2">A genuine mix</button><button data-choice="3">Mostly local persistence</button><button data-choice="4">Near pure local persistence</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="2" data-fb="A genuine mix. The global instrument and the local musical tradition each remain recognizable inside something that did not exist before either arrived. That is hybridization, not homogenization with local decoration." data-hint="Ask whether the result sounds like the global original with minor local flavoring, or like a third thing neither side would have produced alone.">
-                <div class="widget-row-prompt">2. Musicians combine an electric guitar, a global instrument, with a centuries-old regional scale and rhythm to create a new genre.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Near pure homogenization</button><button data-choice="1">Mostly homogenization</button><button data-choice="2">A genuine mix</button><button data-choice="3">Mostly local persistence</button><button data-choice="4">Near pure local persistence</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="4" data-fb="Near pure local persistence. A community that changes its practice not at all despite global contact is the limiting case at the far end of the spectrum, useful for showing what the other cases are cases of." data-hint="Ask what changed. If the answer is genuinely nothing, the case sits at the far end from homogenization.">
-                <div class="widget-row-prompt">3. An isolated community continues a centuries-old ritual completely unchanged, despite the arrival of satellite television in the region.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Near pure homogenization</button><button data-choice="1">Mostly homogenization</button><button data-choice="2">A genuine mix</button><button data-choice="3">Mostly local persistence</button><button data-choice="4">Near pure local persistence</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="1" data-fb="Mostly homogenization, with a thin local layer. Franchise adaptation of this kind is real, but it is a decoration on an otherwise standardized product and format, which is short of the genuine two-way mixing hybridization describes." data-hint="Ask how much of the underlying product actually changed. Menu items are not the same thing as the format, the branding, or the business model.">
-                <div class="widget-row-prompt">4. A global fast-food chain adds a handful of regionally popular menu items while keeping its format, branding, and business model identical worldwide.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Near pure homogenization</button><button data-choice="1">Mostly homogenization</button><button data-choice="2">A genuine mix</button><button data-choice="3">Mostly local persistence</button><button data-choice="4">Near pure local persistence</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="3" data-fb="Mostly local persistence, with global tools in service of it. The technology travels; the content and purpose stay local. That is closer to preservation than to any of the mixing categories." data-hint="Ask what the technology is actually doing here: replacing a local practice, or simply carrying it further than it used to reach.">
-                <div class="widget-row-prompt">5. A regional language, spoken by a shrinking population, gains new young speakers because a streaming platform lets elders record lessons for a global diaspora.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Near pure homogenization</button><button data-choice="1">Mostly homogenization</button><button data-choice="2">A genuine mix</button><button data-choice="3">Mostly local persistence</button><button data-choice="4">Near pure local persistence</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="2" data-fb="A genuine mix, and specifically the glocalization case: a global company deliberately redesigning its product for a local market rather than exporting it unchanged or simply franchising it with garnish." data-hint="Ask whether the redesign was deliberate and structural, or a small addition on top of an otherwise unchanged product.">
-                <div class="widget-row-prompt">6. A global automaker redesigns an entire vehicle line specifically for a national market's roads, climate, and family size, selling that version nowhere else.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Near pure homogenization</button><button data-choice="1">Mostly homogenization</button><button data-choice="2">A genuine mix</button><button data-choice="3">Mostly local persistence</button><button data-choice="4">Near pure local persistence</button>
-                </div>
-            </div>
-
-            <button class="widget-reset">Reset</button>
-        </div>
-
-        <div class="optima-widget ow-select">
-            <div class="widget-kicker">&#9889; NOW NAME THE EXACT TERM</div>
-            <div class="widget-question">Using the same three lenses, name the term that fits each case precisely. Cases 2 and 3 below are drawn from your own century, not the ones above.</div>
-
-            <div class="widget-row" data-correct="2" data-fb="Glocalization. Robertson's term names exactly this: a global company deliberately reshaping its offering to fit local expectations, which is neither straightforward export nor a spontaneous local invention." data-hint="Was the change deliberate and made by the global company itself, or did it emerge unplanned from ordinary contact between cultures?">
-                <div class="widget-row-prompt">1. A streaming service commissions entirely separate original series for different national markets rather than dubbing one global slate.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Cultural homogenization</button><button data-choice="1">Cultural hybridization</button><button data-choice="2">Glocalization</button><button data-choice="3">None of these; unrelated to globalization</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="1" data-fb="Cultural hybridization. Neither the imported cuisine nor the local one is simply replaced; a new dish results that belongs authentically to both traditions at once." data-hint="Did one cuisine simply replace the other, or did contact between them produce something that is genuinely both at once?">
-                <div class="widget-row-prompt">2. Immigrant home cooks adapt a traditional recipe using locally available ingredients, and the result becomes a distinct dish claimed by both the origin and the destination culture.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Cultural homogenization</button><button data-choice="1">Cultural hybridization</button><button data-choice="2">Glocalization</button><button data-choice="3">None of these; unrelated to globalization</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="0" data-fb="Cultural homogenization. A shrinking pool of independently owned local outlets, replaced by one recurring global pattern, is the paradigm case this term was built to name." data-hint="Ask what happened to the diversity that used to exist in this sector. Did it increase, stay the same, or shrink toward one dominant pattern?">
-                <div class="widget-row-prompt">3. Independent bookshops in a historic city district steadily close as a single international chain opens branch after branch with an identical layout and inventory.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Cultural homogenization</button><button data-choice="1">Cultural hybridization</button><button data-choice="2">Glocalization</button><button data-choice="3">None of these; unrelated to globalization</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="3" data-fb="None of these. A town's own architecture committee updating a decades-old local zoning rule is an entirely domestic administrative decision. Treating every change anywhere as a globalization case would make the concept explain everything, which means it would explain nothing." data-hint="Does this case involve any contact at all between a global form and a local one, or is it a purely internal, local decision?">
-                <div class="widget-row-prompt">4. A town council updates its historic-district building code after a local preservation debate that involved no outside country, company, or culture.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Cultural homogenization</button><button data-choice="1">Cultural hybridization</button><button data-choice="2">Glocalization</button><button data-choice="3">None of these; unrelated to globalization</button>
-                </div>
-            </div>
-
-            <button class="widget-reset">Reset</button>
         </div>
     </div>
 
     <!-- ============================ PART 3 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; GLOBALIZATION AND SOLIDARITY</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; HOW A CHARACTER GETS BUILT</div>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">From the perspective of Durkheim's sociology, cultural globalization raises a profound question about solidarity. Organic solidarity, Durkheim argued, depends on a shared normative framework: widely held values about what work is for, what people owe each other, and what the social whole is that individuals are part of. Globalization puts pressure on all three of these. It disrupts traditional normative frameworks without necessarily replacing them with equally robust alternatives, it extends economic interdependence to a global scale that outstrips any existing normative community, and it brings people into contact with alternative ways of life that challenge the taken-for-granted character of their own norms. This is not simply threatening. The encounter with genuine difference is one of the conditions of moral development. But it also creates genuine anomic risk, the normlessness that Durkheim identified as modernity's characteristic pathology.</p>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">The contemporary relevance of this analysis is clear. Whether global capitalism can be regulated by global institutions with genuine normative authority, whether democratic governance can operate at a scale larger than the nation-state, whether a global culture can provide the moral framework that national and local cultures once provided: these are among the most pressing political and social questions of the contemporary world. Sociology does not answer them, but it provides the vocabulary for asking them clearly.</p>
-        <!-- CASE IN POINT id=15-02-weber-comparative | Weber, The Protestant Ethic and the Spirit of Capitalism, Author&rsquo -->
-        <div class="case-in-point" style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 18px 0 4px 0;">
-            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128205; CASE IN POINT &middot; CHINA, INDIA, BABYLON, EGYPT: WEBER&rsquo;S COMPARATIVE SURVEY</div>
-            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">Before Weber argues that one form of economic life is peculiar to the modern West, he surveys the rest of the world and grants it a great deal. Capitalistic enterprises, in his definition, existed in China, India, Babylon, Egypt, and the Mediterranean world of antiquity, and not as isolated ventures. Knowledge and observation of great refinement existed above all in India, China, Babylonia, and Egypt. China had printing. China and the Islamic world had academies. Money-lenders financed wars, building, and tax-farming in Babylon, Hellas, India, China, and Rome.</p>
-            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">His question is narrower than it is often remembered. Why did one particular bundle appear together in the West: experimental science, a systematic jurisprudence, the trained official as the pillar of the state, and the rational organization of formally free labour? The survey is what makes the question sharp, and it is also where a reader should press. Ask what Weber counts as rational, and whether the definition settles the comparison before the evidence does.</p>
-            <div style="font-size: 12px; color: #1B6A94; margin-top: 10px; line-height: 1.5;">Source: Weber, <em>The Protestant Ethic and the Spirit of Capitalism</em>, Author&rsquo;s Introduction (1920). Paraphrased; the assigned translation is linked from the source guide.</div>
+        <!-- ===== CORE VISUAL ===== -->
+        <div class="hab">
+            <div class="hab-title">ARISTOTLE'S MECHANISM</div>
+            <div class="hab-sub">The same loop produces virtue or vice. Nothing about the mechanism decides which.</div>
+            <div class="hab-row">
+                <div class="hab-box">
+                    <div class="hab-n">STEP 1</div>
+                    <div class="hab-h">Repeated acts</div>
+                    <div class="hab-b">We become just by doing just acts, brave by doing brave acts. Not by being taught what justice is.</div>
+                </div>
+                <div class="hab-arrow">&#8594;</div>
+                <div class="hab-box">
+                    <div class="hab-n">STEP 2</div>
+                    <div class="hab-h">Habit</div>
+                    <div class="hab-b">The acts, repeated, become a settled disposition. This is what "ethike" (moral virtue) means: formed by a variation on "ethos," habit.</div>
+                </div>
+                <div class="hab-arrow">&#8594;</div>
+                <div class="hab-box">
+                    <div class="hab-n">STEP 3</div>
+                    <div class="hab-h">State of character</div>
+                    <div class="hab-b">A stable disposition that now governs future action, and is felt as pleasure or pain when tested.</div>
+                </div>
+            </div>
+            <div class="hab-loop">&#8635;</div>
+            <div class="hab-fork">
+                <div class="hab-fork-box good">
+                    <div class="hab-fork-h">Practice virtuous acts</div>
+                    <div class="hab-fork-b">Produces a virtuous state of character, which produces more virtuous acts.</div>
+                </div>
+                <div class="hab-fork-box bad">
+                    <div class="hab-fork-h">Practice vicious acts</div>
+                    <div class="hab-fork-b">Produces a vicious state of character, which produces more vicious acts. Same mechanism, opposite direction.</div>
+                </div>
+            </div>
+            <div class="hab-note">Aristotle's own line for this: "it is from the same causes and by the same means that every virtue is both produced and destroyed." A community that rewards vice will form vicious people. This is the empirical question a sociologist of religion went looking for.</div>
         </div>
-        <!-- /CASE IN POINT id=15-02-weber-comparative -->
+
+        <figure data-pd="w15-franklin-virtues.jpg" style="margin: 28px 0; text-align: center;"><img src="../_media/w15-franklin-virtues.jpg" alt="A printed grid headed Examination of Virtues, with a motto above it. Rows are labeled with abbreviated virtues, such as Tem., Sil., Ord., Res., and columns with the days of the week; every cell is empty." style="max-width: 440px; height: auto; border-radius: 6px;" /><figcaption style="font-size: 14px; color: #4a5a78; line-height: 1.5; margin-top: 8px;">Benjamin Franklin&rsquo;s chart for training thirteen virtues, as printed in his <em>Autobiography</em>: one virtue practiced at a time, each lapse marked in a daily square. The habit-forming loop, sustained practice with a record of accountability, in a single page. <span style="font-size: 12px; color: #6b7a99;">Benjamin Franklin, chart from his <em>Autobiography</em>, Part Two (written 1784). Public domain (CC0), via Wikimedia Commons.</span></figcaption></figure>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Smith's account of moral formation is deeply consonant with Aristotle's. Aristotle argued, in the <em>Nicomachean Ethics</em> (Book II), that virtues are not innate: they are formed through habituation. We become just by doing just acts; we become courageous by practicing courage. The character of the community in which this habituation occurs matters enormously. Aristotle's account requires a particular kind of community: not merely an aggregation of individuals with compatible interests but a genuine polis with shared commitments to the good life, shared practices of civic and personal virtue, and shared institutions that transmit those commitments across generations.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Smith's empirical research suggests that the communities capable of providing this kind of formation are increasingly rare in contemporary American life. The institutions that historically performed this function, churches, families, schools, civic organizations, are under pressure from the same forces of rationalization, individualism, and consumerism that Weber, Durkheim, and Putnam each analyzed from a different angle. The result, on this account, is a generation of young people who are, by and large, morally adrift: not malicious, but without the formed dispositions, the shared vocabulary of virtue, or the communal supports that serious moral agency requires.</p>
+        <!-- CASE IN POINT id=16-02-legislators-sparta-crete | Aristotle, Nicomachean Ethics II.1 -->
+        <div class="case-in-point" style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 18px 0 4px 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128205; CASE IN POINT &middot; SPARTA AND CRETE: LAWGIVERS WHO BUILT HABITS</div>
+            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">Aristotle&rsquo;s claim that character is built by habit is not only about individuals. &ldquo;This is confirmed by what happens in states; for legislators make the citizens good by forming habits in them, and this is the wish of every legislator, and those who do not effect it miss their mark.&rdquo; In the <em>Politics</em> he names the cities he has in mind. Sparta and Crete kept &ldquo;common meals, whereby the legislator has made property common,&rdquo; and he holds that &ldquo;the special business of the legislator is to create in men this benevolent disposition.&rdquo;</p>
+            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">The common meal is a habit-forming institution in the lesson&rsquo;s sense: a daily practice, required by law, that trains a disposition toward shared use without abolishing private ownership. Aristotle reports the two cities as a comparative observer and does not say the arrangement succeeded; elsewhere in the same book he criticizes both. The question the mechanism raises is his own: which habits does a community&rsquo;s ordinary routine actually form?</p>
+            <div style="font-size: 12px; color: #1B6A94; margin-top: 10px; line-height: 1.5;">Source: Aristotle, <em>Nicomachean Ethics</em> II.1 (trans. W. D. Ross, 1925) and <em>Politics</em> II.5 (trans. Benjamin Jowett); both public domain.</div>
+        </div>
+        <!-- /CASE IN POINT id=16-02-legislators-sparta-crete -->
+    </div>
+
+    <!-- ============================ PART 4 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; TEST IT: HOW FORMATIVE IS THIS COMMUNITY?</div>
+        
+
+        <div class="optima-widget ow-scale">
+            <div class="widget-kicker">&#9889; PLACE IT ON THE SPECTRUM</div>
+            <div class="widget-question">How much capacity does each community have to form virtue by Aristotle's own criteria: sustained practice, a shared standard, and real accountability to it?</div>
+
+            <div class="widget-row" data-correct="0" data-fb="Strong. Daily practice, an explicit standard of excellence, and years of accountability to teammates and coaches are exactly the three conditions Aristotle names." data-hint="Check it against the three conditions: practice, a shared standard, and accountability over time. All three are present here.">
+                <div class="widget-row-prompt">1. A team that practices together daily, shares an explicit standard of excellence, and holds members accountable to it for years.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Strong formative capacity</button><button data-choice="1">Moderate, mixed</button><button data-choice="2">Weak formative capacity</button><button data-choice="3">Not formative at all</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="3" data-fb="Not formative at all, on Aristotle's terms. There is no sustained relationship, no shared standard being enforced, and no accountability across time. A single interaction cannot habituate anyone to anything." data-hint="Ask whether there is any repetition here at all. Habituation requires doing the same kind of act more than once, with someone noticing.">
+                <div class="widget-row-prompt">2. An anonymous online forum where members interact once and never again.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Moderate, mixed</button><button data-choice="1">Strong formative capacity</button><button data-choice="2">Weak formative capacity</button><button data-choice="3">Not formative at all</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Weak. There is sustained contact, but no explicit shared standard beyond the legal minimum, and high turnover undercuts the accountability Aristotle's account requires. People pass through without anyone's habits being shaped by anyone else's example." data-hint="High turnover breaks one of the three conditions even where the other two are partly present. Which one?">
+                <div class="widget-row-prompt">3. A workplace with high turnover, no shared standard of conduct beyond legal compliance, and little continuity of relationships.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Strong formative capacity</button><button data-choice="1">Not formative at all</button><button data-choice="2">Weak formative capacity</button><button data-choice="3">Moderate, mixed</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Strong. Multigenerational continuity, explicit teaching on conduct, and shared practices sustained over decades satisfy all three of Aristotle's conditions about as fully as a modern institution can." data-hint="This one checks every box: practice, an explicit standard, and long-term mutual accountability across generations.">
+                <div class="widget-row-prompt">4. A multigenerational congregation with shared practices, explicit teaching on conduct, and long-term relationships of mutual accountability.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Strong formative capacity</button><button data-choice="1">Weak formative capacity</button><button data-choice="2">Not formative at all</button><button data-choice="3">Moderate, mixed</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Moderate, mixed, and this is the honest answer, not a hedge. Formal instruction supplies an explicit standard, which is one of Aristotle's three conditions. But without sustained relationship between a given adult and a given student, the habituation his account actually requires (practiced acts, noticed and corrected by someone over time) is thin. Scale can supply the teaching and still fail to supply the formation." data-hint="Two of the three conditions are present in some form here. Which one is hardest to deliver at this scale, and does that make the case clearly strong, clearly weak, or genuinely mixed?">
+                <div class="widget-row-prompt">5. A large public high school with thousands of students, formal character-education lessons, but little sustained relationship between any given adult and student.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Not formative at all</button><button data-choice="1">Moderate, mixed</button><button data-choice="2">Strong formative capacity</button><button data-choice="3">Weak formative capacity</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+    </div>
+
+    <!-- ============================ PART 5 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; MEET THE MECHANISM, ONE PIECE AT A TIME</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Four questions Aristotle's own text raises about itself.</p>
+
+        <div class="optima-widget ow-flip-group">
+            <div class="widget-kicker">&#9889; TAP EACH CARD</div>
+            <div class="widget-question">Guess from the front, then tap to check against Aristotle's own resolution.</div>
+            <div class="flipgrid">
+                <div class="ow-flip">
+                    <div class="ow-flip-front fcard-front">Why doesn't Aristotle think virtue is natural, the way sight is?</div>
+                    <div class="ow-flip-back fcard-back">A thing that acts one way by nature cannot be trained to act another way. A stone thrown upward ten thousand times still falls. So if virtue could arise by nature alone, no amount of bad habituation could ever destroy it, and experience shows that it can. His answer: we are adapted by nature to receive virtue, but made perfect by habit.</div>
+                </div>
+                <div class="ow-flip">
+                    <div class="ow-flip-front fcard-front">How can you become just by doing just acts, if doing an act justly seems to already require being just?</div>
+                    <div class="ow-flip-back fcard-back">Aristotle grants the puzzle and answers with three conditions: the agent must have knowledge, must choose the act for its own sake, and must act from a firm and settled character. Early on, a person can do a just act without meeting all three (a child obeying a rule, say). Repetition under guidance is how the act comes to be done from the settled character that finally makes the person, and not just the act, just.</div>
+                </div>
+                <div class="ow-flip">
+                    <div class="ow-flip-front fcard-front">What does he mean by using pleasure and pain as a "sign" of character?</div>
+                    <div class="ow-flip-back fcard-back">Someone who abstains from excess and is annoyed by the abstinence is not yet temperate, only compliant. Someone who abstains and takes no pain in it, or even delights in it, has the settled disposition. The feeling that accompanies an act, not just the act, is the evidence of what has actually been formed.</div>
+                </div>
+                <div class="ow-flip">
+                    <div class="ow-flip-front fcard-front">If virtue is formed by habitual action inside a community, what should that predict about a generation raised largely outside such communities?</div>
+                    <div class="ow-flip-back fcard-back">Roughly what a sociologist of religion later reported finding: moral confusion rather than settled vice, since confusion is what an unformed disposition looks like from outside. That is a real point in favor of Aristotle's framework, though it is worth naming the objection: young people still form habits somewhere, in teams, jobs, and friend groups, so the finding may say less about whether formation happens and more about which institutions are doing it now.</div>
+                </div>
+            </div>
+            <button class="widget-reset">Reset</button>
+        </div>
     </div>
 
     <!-- What You'll Do Next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; NEXT</div>
         <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
             <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
             <div>
-                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 15B: Weber</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Thursday's reading is not Ritzer's own book. It is the text Ritzer built McDonaldization from: Weber's own account of rationalization, closing with the image he called the iron cage. Read it and decide for yourself whether Ritzer's application of it holds up.</div>
-            </div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 15B: Aristotle</strong></div>
+                            </div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 14px;">
             <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
             <div>
                 <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Sociological Journal 15</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Due Thursday, with a peer reply this week. You will connect this quarter's Sociologist Case Study Reports to your own social world.</div>
-            </div>
+                            </div>
         </div>
     </div>
 
     <!-- Wrap-up -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
-        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Homogenization, hybridization, and glocalization are not three theories competing to win. They are three lenses that catch different features of the same set of events, and a mature answer usually names which lens fits which part of a given case rather than picking one lens for everything. Ritzer's McDonaldization is a homogenization argument built on a rationalization argument, Weber's, that is a full century older than the fast-food restaurant it eventually got applied to. Thursday you meet that argument at its source, not through Ritzer's application of it.</p>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Character is not a possession a person is born with or without. On this account it is built, act by repeated act, inside communities that supply a standard and enforce it long enough for the standard to become a disposition. That mechanism does not depend on any one society's settling its disagreement about where moral authority ultimately comes from, which is the question Lesson 15.01 raised. It only requires that some community, somewhere, keeps doing the patient work of habituation. Whether enough communities still do is an empirical question.</p>
     </div>
 
 </div>
@@ -346,7 +345,7 @@
 <!-- ===== FOOTER ===== -->
 <div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
     <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Student Lesson Page</div>
-    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 15.02 &middot; Globalization and Cultural Change</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 15.02 &middot; Character, Moral Formation, and Religious Community</div>
     <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
 </div>
 

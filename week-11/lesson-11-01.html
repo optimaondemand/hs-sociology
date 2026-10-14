@@ -1,24 +1,33 @@
 <!--
     Optima Academy Online — Sociology (Florida 2108300)
-    Q2 · Week 11 · Lesson 11.01 — "Weber: Bureaucracy, Rationalization, and the Iron Cage"
+    Q2 · Week 11 · Lesson 11.01 — "Division of Labor: Durkheim and Adam Smith"
 
     TEACHER-FACING BUILD NOTES (not rendered to students):
-    REGISTER: HONORS (confirmed 2026-08-06).
-      Standard: SS.912.S.4.9, SS.912.S.5.2, SS.912.S.6.4
-      Objective: Students will describe bureaucracy as the characteristic
-                organisational form of modernity, explain rationalisation, and
-                evaluate Weber's ambivalence about it.
-      Source: Sociology_Course_Master.html, Lesson 11.01 (723 words).
-      Built by the lead session, not a builder agent: the Week 11 builder was
-      terminated by a content filter while handling the Marx material.
+    REGISTER: HONORS. Smith cited by book and chapter (Wealth of Nations I.1);
+    Durkheim's forced/anomic distinction used without re-glossing solidarity,
+    which the course already taught in Week 4.
 
-      DASH-AS-COLON REPAIR (plan.md defect 6): master Week 11 carried 13
-      suspicious colons. Repaired by recasting, not re-punctuating. Legitimate
-      single colons introducing a list or definition were kept.
+      Standard: SS.912.S.6.3, SS.912.S.4.10
+      Objective: Students will compare Durkheim's sociological account of the
+                division of labor with Adam Smith's economic account, and
+                evaluate their different assessments of specialization's
+                effects on individuals and communities.
+      Source: Sociology_Course_Master.html, Lesson 11.01. Prose preserved
+              verbatim except for the R5 label strip, minor connective framing
+              (TODAY'S FOCUS, objectives, ENGAGE THE OBJECTION box), and the
+              closing bridge to 11.02.
+      Revisions: R5 (opening section not labelled "Hook"), R7 (no em dashes),
+                standards codes kept out of student-facing text.
 
-      WIDGET ROTATION: 11.01 uses reflective check-in + single-select rows.
-      11.02 uses commit-then-reveal + scale placement. No repeat within the week.
-      Select-row correct indices in order: 1, 3, 0, 2, 3. Not ascending.
+      DASH-AS-COLON REPAIR: none required. The master's Week 11 lesson prose
+      for 11.01 contains no two-colon sentences; checked by hand against
+      plan.md defect 6's list of worst-affected weeks (W3, W4, W7, W9, W14),
+      which does not include Week 11, and confirmed by inspection.
+
+      WIDGET ROTATION: 11.01 uses single-select rows ("Whose Account?").
+      11.02 uses flip cards. No engine repeats within the week.
+      Select-row correct indices in order: 0, 1, 0, 2, 1. Not ascending.
+      Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -56,18 +65,29 @@
     .ow-flip.flipped .ow-flip-front { display: none; }
     .ow-flip.flipped .ow-flip-back { display: block; }
 
-    /* ===== Core visual: the six features, and what they cost ===== */
-    .bu { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
-    .bu-t { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
-    .bu-s { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
-    .bu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(212px, 1fr)); gap: 10px; }
-    .bu-c { background: rgba(85,200,232,0.10); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 12px 14px; }
-    .bu-n { font-size: 10px; letter-spacing: 0.5px; color: rgba(255,255,255,0.45); margin-bottom: 4px; }
-    .bu-h { font-size: 15px; color: #ffffff; margin-bottom: 5px; }
-    .bu-b { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.5; }
-    .bu-cost { margin-top: 16px; background: rgba(199,146,44,0.18); border: 1px solid rgba(199,146,44,0.45); border-radius: 8px; padding: 14px 18px; }
-    .bu-cost-l { font-size: 11px; color: #E0B562; letter-spacing: 0.5px; margin-bottom: 6px; }
-    .bu-cost-t { font-size: 15px; color: rgba(255,255,255,0.9); line-height: 1.55; }
+    /* ===== Core visual: the arithmetic of specialization ===== */
+    .pin { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
+    .pin-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .pin-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 20px; font-style: italic; }
+    .pin-row { display: flex; align-items: flex-end; gap: 22px; justify-content: center; }
+    .pin-box { flex: 0 0 200px; text-align: center; }
+    .pin-n { font-size: 11px; letter-spacing: 0.5px; color: rgba(255,255,255,0.55); margin-bottom: 8px; }
+    .pin-bar { background: rgba(85,200,232,0.35); border-top: 3px solid #55C8E8; border-radius: 4px 4px 0 0; margin: 0 auto; width: 70px; }
+    .pin-box.good .pin-bar { background: rgba(199,146,44,0.45); border-top-color: #C7922C; }
+    .pin-v { font-size: 18px; color: #ffffff; margin: 10px 0 6px 0; }
+    .pin-b { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.45; }
+    .pin-arrow { color: rgba(255,255,255,0.35); font-size: 22px; padding-bottom: 40px; }
+    .pin-note { margin-top: 18px; padding-top: 13px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.6; text-align: center; font-style: italic; }
+
+    .kt { background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 13px 17px; margin-bottom: 9px; }
+    .kt-t { font-size: 16px; color: #0E1C42; margin-bottom: 4px; }
+    .kt-d { font-size: 16px; color: #1a2340; line-height: 1.55; }
+
+    .two { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 15px; }
+    .two th { background: #0E1C42; color: #fff; text-align: left; padding: 10px 13px; font-size: 12px; letter-spacing: 0.4px; font-weight: normal; }
+    .two td { border: 1px solid #D0D9E8; padding: 10px 13px; color: #1a2340; line-height: 1.5; vertical-align: top; }
+    .two tr:nth-child(even) td { background: #F8FAFD; }
+    .two td:first-child { color: #0E1C42; width: 22%; }
 </style>
 </head>
 <body>
@@ -90,7 +110,7 @@
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
         <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 11</div>
-        <div style="font-size: 12px; color: #666;">Weber on Bureaucracy and Marx on Industrial Society</div>
+        <div style="font-size: 12px; color: #666;">Division of Labor and Social Class</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
@@ -98,11 +118,11 @@
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
-        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Bureaucracy, Rationalization, and the Iron Cage</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Division of Labor: Durkheim and Adam Smith</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
-        <div style="font-size: 16px; color: #0e1c42;">Weber on Bureaucracy and Marx on Industrial Society</div>
+        <div style="font-size: 16px; color: #0e1c42;">Division of Labor and Social Class</div>
     </div>
 </div>
 
@@ -111,165 +131,187 @@
 
     <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 11.01</div>
-        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Weber: Bureaucracy, Rationalization, and the Iron Cage</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Division of Labor: Durkheim and Adam Smith</div>
         <div style="font-size: 16px; color: #666;">Lesson</div>
     </div>
 
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
-        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">What if the most efficient way of organising human beings is also the most dangerous?</div>
-        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Weber's argument about bureaucracy is not the complaint you expect. He does not think it is wasteful or absurd. He thinks it works, better than anything else we have devised, and that this is precisely the problem.</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Can the very same process that makes a society rich also make it fall apart?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Adam Smith and Emile Durkheim both looked at the specialization of labor and saw something enormous. Smith saw the engine of a nation's wealth. Durkheim saw the structure holding, or failing to hold, a society together. They are not disagreeing about the facts. They are asking different questions of the same phenomenon.</div>
     </div>
 
     <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
         <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> test an organisation against Weber's ideal type and say which features it has and which it lacks.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> compare Smith's economic account of the division of labor with Durkheim's sociological account, and state what each treats as the relevant unit of analysis.</div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why the same features that make bureaucracy efficient also make it frustrating, and show that this is one fact rather than two.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish the forced from the anomic division of labor, and explain why Durkheim treats both as pathologies rather than as mere inefficiencies.</div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> state what Weber means by disenchantment, and say why he offers no solution to it.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> evaluate whether Smith's own worry about the pin-maker's mind is closer to Durkheim's diagnosis than a purely economic account would predict.</div>
         </div>
     </div>
 
     <!-- ============================ PART 1 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE OFFICE</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE PIN FACTORY</div>
 
-        <div class="optima-widget ow-reflect">
-            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
-            <div class="widget-question">Before you read: when you hear the word <em>bureaucracy</em>, what comes to mind? (No wrong answer. Notice your reaction, because Weber's argument depends on you having it.)</div>
-            <div class="widget-options">
-                <button data-response="The ordinary association, and Weber knew it. He is going to argue the opposite: that bureaucracy is technically superior to every alternative. Hold your irritation and see whether he changes it.">&#128203; Forms, delays, red tape</button>
-                <button data-response="A fair reading of the word's use, though not of Weber's. He treats impersonality as a feature rather than a fault, because the alternative is being judged on who you know.">&#129335; Faceless people who cannot help you</button>
-                <button data-response="Closer to Weber than most first answers. He is describing an organisational form, not a mood, and the form is genuinely an achievement.">&#127970; A way of running something large</button>
-                <button data-response="Worth holding on to. Weber's claim is that bureaucracy has spread into places we no longer notice it, which is part of why it is hard to think about clearly.">&#129300; Something I have never really examined</button>
+        <div class="pin">
+            <div class="pin-title">THE ARITHMETIC OF SPECIALIZATION</div>
+            <div class="pin-sub">Smith's own numbers, Wealth of Nations I.1, 1776</div>
+            <div class="pin-row">
+                <div class="pin-box">
+                    <div class="pin-n">WORKING ALONE</div>
+                    <div class="pin-bar" style="height: 10px;"></div>
+                    <div class="pin-v">at most 20 / day</div>
+                    <div class="pin-b">One untrained worker performing all eighteen operations of pin-making by himself.</div>
+                </div>
+                <div class="pin-arrow">&#8594;</div>
+                <div class="pin-box good">
+                    <div class="pin-n">DIVIDED AMONG TEN</div>
+                    <div class="pin-bar" style="height: 130px;"></div>
+                    <div class="pin-v">48,000 / day</div>
+                    <div class="pin-b">Ten workers, each specializing in one or two of the eighteen operations.</div>
+                </div>
             </div>
-            <div class="widget-feedback"></div>
-            <button class="widget-reset">Reset</button>
+            <div class="pin-note">Per worker, roughly 4,800 pins a day against at most 20 alone. This is the observation classical economics is built on.</div>
         </div>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Max Weber spent much of his career analysing what he considered the defining feature of modern Western civilisation, which is the tendency to organise every domain of life according to principles of rationality, efficiency, and calculability. He called this tendency <em>rationalisation</em>, and he saw its most characteristic institutional expression in the bureaucracy: an administrative organisation built on formal rules, hierarchical authority, specialised expertise, impersonal procedures, and written records.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">In the first chapter of <em>The Wealth of Nations</em> (1776), Adam Smith describes a pin factory. A single untrained worker, working alone, could not make twenty pins a day, perhaps not one. But with the division of labor, ten workers each specializing in one of the eighteen distinct operations required to produce a pin can produce 48,000 pins per day. Smith's arithmetic is famous: specialization produces an almost unimaginable increase in productive output. This observation forms the foundation of classical economics and, through it, of the modern industrial economy.</p>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Bureaucracy in Weber's account is not a symptom of dysfunction, whatever the word has come to mean in ordinary speech. It is the most efficient form of large-scale organisation human beings have yet devised. That is exactly what makes it dangerous, and the sentence is not a paradox. A form of organisation that did not work would not spread.</p>
+        <figure data-pd="w11-pin-makers-plate.jpg" style="margin: 22px 0; text-align: center;"><img src="../_media/w11-pin-makers-plate.jpg" alt="Engraved plate titled Epinglier from Diderot's Encyclopedie: a workshop where several men and boys each tend a separate operation, a wheel, a heated vessel, a bench, with diagrams of the tools below." style="max-width: 100%; width: 760px; height: auto; border-radius: 6px;" /><figcaption style="font-size: 14px; color: #4a5a78; line-height: 1.5; margin-top: 8px;">Pin-making as a sequence of separate operations, each tended by a different worker: the division of labor Smith describes, pictured in the French <em>Encyclop&eacute;die</em>, 1762. <span style="font-size: 12px; color: #6b7a99;">Goussier and Defehrt, plate for the <em>Encyclop&eacute;die</em>, 1762. Public domain, via Wikimedia Commons.</span></figcaption></figure>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Writing in the early twentieth century, he watched bureaucratic organisation spread out of the Prussian military and state administration into every sector of modern life: corporations, universities, hospitals, political parties, churches. He predicted the spread would continue until it produced what he called an <em>iron cage</em>, a social order in which instrumental rationality had crowded out every other human value, efficiency had become an end rather than a means, and the fully bureaucratised human being was, in his phrase, a specialist without spirit and a sensualist without heart.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">But Smith himself was troubled by one implication of his observation. The worker who spends her entire working life performing one of eighteen pin operations becomes, he acknowledged elsewhere in the same book, "as stupid and ignorant as it is possible for a human creature to become." Her cognitive and moral faculties atrophy from disuse. The social benefit of specialization is bought at a real cost to the individual workers whose specialization makes it possible. This tension between social efficiency and individual flourishing runs through every serious treatment of the division of labor, from Smith and Durkheim to the present.</p>
     </div>
 
-    <!-- ============================ PART 2 ============================ -->
+    <!-- ============================ PART 2: KEY TERMS ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; THE IDEAL TYPE, FEATURE BY FEATURE</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; KEY TERMS</div>
 
-        <!-- ===== CORE VISUAL ===== -->
-        <div class="bu">
-            <div class="bu-t">WEBER'S IDEAL-TYPICAL BUREAUCRACY</div>
-            <div class="bu-s">An ideal type is not an ideal. It is a deliberately pure model, used to measure how far a real case departs from it.</div>
-            <div class="bu-grid">
-                <div class="bu-c"><div class="bu-n">FEATURE 1</div><div class="bu-h">Formal rules</div><div class="bu-b">Officials act on rules that are explicitly stated and can be learned, rather than on discretion or custom.</div></div>
-                <div class="bu-c"><div class="bu-n">FEATURE 2</div><div class="bu-h">Hierarchy</div><div class="bu-b">Each official answers to a superior and has authority over subordinates. The chain is defined, not personal.</div></div>
-                <div class="bu-c"><div class="bu-n">FEATURE 3</div><div class="bu-h">Technical qualification</div><div class="bu-b">Appointment rests on certified expertise, not on family, patronage, or inherited rank.</div></div>
-                <div class="bu-c"><div class="bu-n">FEATURE 4</div><div class="bu-h">The office outlasts the person</div><div class="bu-b">Duties belong to the office rather than the holder. When she leaves, the office remains and someone else fills it.</div></div>
-                <div class="bu-c"><div class="bu-n">FEATURE 5</div><div class="bu-h">Written record</div><div class="bu-b">Conduct is governed by written rules and decisions are documented, so they can be reviewed and repeated.</div></div>
-                <div class="bu-c"><div class="bu-n">FEATURE 6</div><div class="bu-h">Salary, not ownership</div><div class="bu-b">Officials are paid a wage and do not own the means of administration. They cannot sell or inherit the office.</div></div>
-            </div>
-            <div class="bu-cost">
-                <div class="bu-cost-l">THE POINT MOST READERS MISS</div>
-                <div class="bu-cost-t">These are not six virtues with six separate drawbacks. Standardisation, hierarchy, and impersonality are what make bureaucracy efficient <strong>and</strong> what make it inflexible, frustrating, and blind to the unusual case. You cannot keep one and discard the other, because they are the same property described from two sides.</div>
-            </div>
-        </div>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Those characteristics make bureaucracy extraordinarily good at certain tasks: large-scale coordination, consistent application of rules, and the processing of many standardised cases. They also make it inflexible, impersonal, and resistant to change. The very features that produce the efficiency are the ones that frustrate anyone who needs unusual treatment, and they tend to produce officials whose first loyalty is to the rules and to their position rather than to the human purposes the organisation exists to serve.</p>
-
-        <div class="optima-widget ow-select">
-            <div class="widget-kicker">&#9889; TRY IT &middot; WHICH FEATURE IS MISSING?</div>
-            <div class="widget-question">Each organisation below departs from the ideal type in one specific way. Name the feature it lacks. Weber's point is that real organisations are always partial cases; the ideal type is a measuring stick, not a description.</div>
-
-            <div class="widget-row" data-correct="1" data-fb="Hierarchy. Without a defined chain of authority, nobody can be answerable to anybody, and a dispute has nowhere to go. Weber treats this as the feature that makes the others enforceable." data-hint="Two people give contradictory instructions and neither outranks the other. Which of the six is absent?">
-                <div class="widget-row-prompt">1. A charity where several long-serving volunteers each give instructions and nobody can say who overrules whom.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Formal rules</button><button data-choice="1">Hierarchy</button><button data-choice="2">Technical qualification</button><button data-choice="3">Office outlasts the person</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="3" data-fb="The office does not outlast the person. When the role is really the individual, the organisation cannot survive her departure, which is exactly what bureaucratic structure is designed to prevent." data-hint="Ask what happens the day she leaves. Does the role continue?">
-                <div class="widget-row-prompt">2. A firm where one manager's job is defined entirely by what she personally is good at, and would not exist if she left.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Formal rules</button><button data-choice="1">Hierarchy</button><button data-choice="2">Technical qualification</button><button data-choice="3">Office outlasts the person</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="0" data-fb="Formal rules. Decisions made case by case on the judgment of whoever is present are the opposite of rule-governed administration, however wise each individual decision may be." data-hint="Nothing here is written down or repeatable. Which feature covers that?">
-                <div class="widget-row-prompt">3. A club that decides each membership application on the feeling of whoever happens to be at the meeting.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Formal rules</button><button data-choice="1">Hierarchy</button><button data-choice="2">Technical qualification</button><button data-choice="3">Office outlasts the person</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="2" data-fb="Technical qualification. Appointment by kinship is precisely the pre-bureaucratic pattern Weber contrasts with the modern office, and he treats certified competence as the decisive break." data-hint="How did this person get the job? Weber cares a great deal about that question.">
-                <div class="widget-row-prompt">4. A family business where the senior posts go to relatives regardless of training or record.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Formal rules</button><button data-choice="1">Hierarchy</button><button data-choice="2">Technical qualification</button><button data-choice="3">Office outlasts the person</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="3" data-fb="The office outlasts the person, and it fails here in a different way from case 2: the post is treated as property to be handed on. Weber notes that a bureaucratic official cannot sell or inherit an office." data-hint="This is not about competence. Ask what the holder thinks the office IS.">
-                <div class="widget-row-prompt">5. A guild position that its holder expects to pass to a chosen successor, as though it were owned.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Formal rules</button><button data-choice="1">Hierarchy</button><button data-choice="2">Technical qualification</button><button data-choice="3">Office outlasts the person</button>
-                </div>
-            </div>
-
-            <button class="widget-reset">Reset</button>
-        </div>
+        <div class="kt"><div class="kt-t">Division of Labor</div><div class="kt-d">The specialization of economic and social tasks across a population. A feature of all complex societies, though its scope and organization vary enormously.</div></div>
+        <div class="kt"><div class="kt-t">Forced Division of Labor</div><div class="kt-d">Durkheim's term for a division of labor that is not genuinely organic, in which the specialization of roles does not reflect the actual talents and capacities of the individuals filling those roles but reflects inherited social position, class, or other non-meritocratic factors. Durkheim saw this as a source of social pathology.</div></div>
+        <div class="kt"><div class="kt-t">Anomic Division of Labor</div><div class="kt-d">Durkheim's term for a division of labor in which specialization has outrun the normative framework that should regulate it, a condition in which workers have no sense of the larger social function their work serves and no normative orientation toward it beyond immediate self-interest.</div></div>
     </div>
 
     <!-- ============================ PART 3 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; THE IRON CAGE, AND WHAT IT COSTS</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; SMITH'S ECONOMIC ACCOUNT</div>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Weber's deepest concern about bureaucratisation was never its inefficiency. It was the possibility of its crowding out everything that is not efficient. Rationalisation carried to its conclusion produces a world in which every action is a means to a measurable end, in which tradition and spirit and beauty register as obstacles to efficiency rather than as dimensions of a fully human life, and in which the question <em>what is good?</em> has quietly been replaced by the question <em>what works?</em></p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Smith's account of the division of labor is primarily economic. Specialization increases productivity because workers become more skilled at their narrow task through repetition, time is saved by not switching between tasks, and specialized workers more readily develop or adopt specialized tools for their particular task. The market mechanism coordinates the specialized activities of millions of individuals without any central planner, through the price system. The result is an unintended order, what Smith calls in a famous phrase the "invisible hand," that serves the general welfare even though each individual is pursuing only his own interest.</p>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">This is what he means by <em>disenchantment</em>. He is not claiming that people stop holding religious beliefs. He is claiming that the categories of rational calculation become so dominant that the magical and spiritual dimensions of existence can find no purchase in the institutions organising modern life. A person may believe whatever she likes on Sunday; the hospital, the ministry, and the firm will still run on Monday as though she did not.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Smith is deeply aware, however, that this economic efficiency comes with social costs. The division of mental labor between those who plan and design and those who execute produces a class of workers whose intellectual capacities are systematically underdeveloped. Smith's remedy was public education, on the model of the Scottish parish schools he cites (Wealth of Nations V.1). The state should counteract the intellectual effects of the division of labor by providing the general education that the market does not incentivize.</p>
+        <!-- CASE IN POINT id=11-01-pin-makers | Adam Smith, An Inquiry into the Nature and Causes of the Wealth of Nations I.1 -->
+        <div class="case-in-point" style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 18px 0 4px 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128205; CASE IN POINT &middot; TEN PIN-MAKERS SMITH WATCHED</div>
+            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">The pin factory is not a parable. Smith says he saw one. &ldquo;I have seen a small manufactory of this kind, where ten men only were employed, and where some of them consequently performed two or three distinct operations. But though they were very poor, and therefore but indifferently accommodated with the necessary machinery, they could, when they exerted themselves, make among them about twelve pounds of pins in a day.&rdquo; At upwards of four thousand pins to the pound, that is &ldquo;upwards of forty-eight thousand pins in a day,&rdquo; or about 4,800 per man, against the &ldquo;twenty, perhaps not one pin in a day&rdquo; he thinks an untrained worker could manage alone.</p>
+            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">The ten men are the only people in the chapter Smith claims to have observed directly, and he does not say where or when. Everything else in the argument is inference from this one workshop and from the general fact of separated trades. Durkheim will ask a different question of the same ten men: what did the arrangement do to them?</p>
+            <div style="font-size: 12px; color: #1B6A94; margin-top: 10px; line-height: 1.5;">Source: Adam Smith, <em>An Inquiry into the Nature and Causes of the Wealth of Nations</em> I.1 (1776), English original (public domain).</div>
+        </div>
+        <!-- /CASE IN POINT id=11-01-pin-makers -->
+    </div>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">Weber feared this as a genuine human loss, and he had no confident solution to offer. That is one of the features that makes him so unsettling a thinker, and it is worth pausing on rather than hurrying past. He is not withholding an answer for effect. He appears not to have had one.</p>
+    <!-- ============================ PART 4 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; DURKHEIM'S SOCIOLOGICAL ACCOUNT</div>
 
-        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0;">
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Durkheim's account of the division of labor, as this course has already noted in connection with organic solidarity in Week 4, is primarily sociological. He is not primarily interested in its effects on productivity but in its effects on social cohesion. A well-functioning division of labor, in which each worker understands the social function her work serves and feels morally connected to the larger social whole of which it is a part, is a source of social solidarity. A pathological division of labor, either anomic or forced, is a source of social fragmentation and alienation. The goal of social policy, in Durkheim's view, is not simply to maximize economic output but to ensure that the division of labor produces genuine organic solidarity rather than mere mechanical interdependence without normative content.</p>
+
+        <table class="two">
+            <tr><th></th><th>Smith</th><th>Durkheim</th></tr>
+            <tr><td>Unit of analysis</td><td>The individual worker's output.</td><td>The structure of the whole society.</td></tr>
+            <tr><td>What can go wrong</td><td>Intellectual and moral atrophy in the worker.</td><td>Anomic or forced division of labor.</td></tr>
+            <tr><td>Proposed remedy</td><td>Public education, funded by the state.</td><td>Roles assigned by genuine talent, with each worker holding a normative sense of function.</td></tr>
+            <tr><td>What counts as success</td><td>Rising output per worker.</td><td>Genuine organic solidarity, not merely interdependence.</td></tr>
+        </table>
+
+        <div style="background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 14px 0 0 0;">
+            <div style="font-size: 11px; color: #8A1F16; margin-bottom: 8px;">&#9888;&#65039; A FAIR OBJECTION</div>
+            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Notice that Smith's own worry about the pin-maker's stultified mind is not, on its face, a Durkheimian worry. Smith is concerned with what specialization does to a single mind. Durkheim is concerned with what it does to the bonds between minds. But a critic could press Smith here: if the division of labor produces workers "as stupid and ignorant as it is possible for a human creature to become," has it also severed those workers from any sense of the larger purpose their narrow task serves, which is exactly Durkheim's anomic condition? Smith may have glimpsed Durkheim's problem without having Durkheim's vocabulary for it. Decide for yourself whether that is a fair reading or an anachronistic one.</div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 5: WIDGET ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; WHOSE ACCOUNT?</div>
+
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; WHOSE ACCOUNT?</div>
+            <div class="widget-question">Sort each claim by the framework it comes from. Judge by what the claim is actually measuring.</div>
+
+            <div class="widget-row" data-correct="0" data-fb="Smith. This is pure output arithmetic, the pin factory itself, and it says nothing about whether the workers feel connected to one another." data-hint="Is this claim about how much gets produced, or about whether the group holds together?">
+                <div class="widget-row-prompt">1. Ten specialized workers can produce forty-eight thousand pins a day; one working alone could not produce twenty.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Smith</button><button data-choice="1">Durkheim</button><button data-choice="2">Both</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Durkheim. This is exactly organic solidarity from Week 4: cohesion built from understood, felt interdependence rather than from likeness." data-hint="This claim is about a feeling of connection to a larger whole, not about output.">
+                <div class="widget-row-prompt">2. When workers understand the social function their specialized role serves and feel morally connected to the whole, the division of labor produces solidarity rather than isolation.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Smith</button><button data-choice="1">Durkheim</button><button data-choice="2">Both</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="0" data-fb="Smith. The diagnosis (intellectual atrophy) and the remedy (state-funded public education) are both his, from the same chapters that describe the pin factory." data-hint="Whose remedy is public education, funded by the state?">
+                <div class="widget-row-prompt">3. A worker who spends a lifetime on one repetitive task risks becoming intellectually and morally diminished, and the state should offset this with public education.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Smith</button><button data-choice="1">Durkheim</button><button data-choice="2">Both</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="2" data-fb="Both, in the sense that this is the whole lesson's synthesis: Smith supplies the productivity half, Durkheim the meaning half, and neither is complete alone." data-hint="Does this statement mention only output, or only cohesion, or does it require both thinkers to make sense of?">
+                <div class="widget-row-prompt">4. Whether specialization helps or harms a society depends not only on how much wealth it produces but on whether workers grasp the larger purpose their work serves.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Smith</button><button data-choice="1">Durkheim</button><button data-choice="2">Both</button>
+                </div>
+            </div>
+
+            <div class="widget-row" data-correct="1" data-fb="Durkheim. This is the forced division of labor, a pathology of who gets assigned which role, which has no equivalent concept in Smith's economics." data-hint="This is about how roles get assigned, by talent or by inherited position, not about how much gets produced.">
+                <div class="widget-row-prompt">5. A division of labor assigned by inherited social position rather than by talent and capacity is a source of social pathology, whatever it does to output.</div>
+                <div class="widget-options">
+                    <button data-choice="0">Smith</button><button data-choice="1">Durkheim</button><button data-choice="2">Both</button>
+                </div>
+            </div>
+
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 14px 0 0 0;">
             <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
-                <span style="color: #C7922C;">&#9654;</span>&nbsp; In your notebook: is Weber's refusal to offer a remedy a weakness in his account? Decide, then open this.
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; In your notebook, name one thing a purely economic measure of a society's division of labor could never tell you. 
             </summary>
             <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
-                Both answers are defensible and you should be able to argue either. Against him: a diagnosis with no prescription can look like sophisticated resignation, and every other thinker in this course does propose something. Tocqueville has associations, Durkheim has occupational groups, Marx has revolution. For him: Weber's whole method separates the question of what is the case from the question of what ought to be done, and he is consistent in refusing to smuggle a preference into an analysis. Notice too that his diagnosis makes an easy remedy unlikely by its own logic. If rationalisation is the growth of the most effective way of organising things, then any solution efficient enough to be adopted will itself be an instance of the problem. That is not despair; it is a claim about the shape of the difficulty.
+                It could not tell you whether the people doing the work feel any tie to one another or to a shared purpose beyond their paycheck. Output per worker can rise while the collective conscience that Durkheim described in Week 4 thins out to nothing. That gap, between a society that is producing more and a society that is holding together, is the entire reason Durkheim thought economics needed a sociology standing next to it rather than instead of it.
             </div>
         </details>
     </div>
 
-    <!-- Next -->
+    <!-- What You'll Do Next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; NEXT</div>
         <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
             <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
             <div>
-                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 11A: Weber on bureaucracy</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your Tuesday reading is in a book you need to obtain. Check the module now, not on Tuesday.</div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 11A: Adam Smith, <em>Wealth of Nations</em> I.1</strong></div>
             </div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 14px;">
             <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
             <div>
-                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Reading Quiz 11</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Eight questions covering both lessons this week.</div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Lesson 11.02: Social Class, Marx and Weber Compared</strong></div>
             </div>
         </div>
     </div>
 
+    <!-- Wrap-up -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
-        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You have met an argument with no villain in it. Nobody designed the iron cage, nobody profits from it as such, and every individual step toward it was a reasonable decision to do something more effectively. That shape should be familiar by now: it is the same shape as Tocqueville's chain in Week 3 and Durkheim's anomie in Week 4. Modern social theory keeps arriving at outcomes nobody chose. On Wednesday you meet a thinker who disagrees sharply about that, and who says the outcome has beneficiaries and can be named.</p>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; TWO STORIES, ONE FACT</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Specialization is not one story but two, told by two different disciplines about the same fact. Smith's story is about wealth: what a society can produce once individuals stop trying to do everything themselves. Durkheim's story is about solidarity: what holds a society of specialists together once nobody does the same work as anyone else. Neither story cancels the other. The same question, who is bound to whom and on what terms, divides Marx from Weber on social class.</p>
     </div>
 
 </div>
@@ -277,7 +319,7 @@
 <!-- ===== FOOTER ===== -->
 <div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
     <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Student Lesson Page</div>
-    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 11.01 &middot; Bureaucracy, Rationalization, and the Iron Cage</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 11.01 &middot; Division of Labor: Durkheim and Adam Smith</div>
     <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
 </div>
 

@@ -1,95 +1,79 @@
 <!--
-    Optima Academy Online — Sociology (Florida 2108300)
-    Q1 · Week 4 · Primary Source Guide 4A (Tuesday)
-
-    *** THIS IS THE FIRST PATTERN B (LINKED READING) GUIDE. IT IS THE TEMPLATE. ***
-    See CLAUDE.md, "Copyright: two kinds of source guide". Roughly 11 guides across
-    Weeks 4, 7, 9, 11, 13, and 16 follow this shape.
+    Optima Academy Online - Sociology (Florida 2108300)
+    Q1 · Week 4 · Text Study 4A
 
     TEACHER-FACING BUILD NOTES (not rendered to students):
-    REGISTER: HONORS (confirmed 2026-08-06).
+    REGISTER: HONORS.
 
-      Text: Durkheim, The Division of Labour in Society, Book I, Chapters II-III.
-      Underlying work: PUBLIC DOMAIN (French, 1893).
-      Translation: George Simpson, 1933. STILL IN COPYRIGHT (to approx. 2029).
-      Therefore PATTERN B: linked, not reproduced.
-
-      WHY NOT A FRESH RENDERING: considered and declined by the user 2026-08-07.
-      WHY NOT THE ORIGINAL: students do not read French. Never send them to it.
-
-      WHAT THIS PAGE DOES INSTEAD:
-        - names the edition exactly, including translator, so they get the right book
-        - says precisely where to start and stop, by structure and by first/last words,
-          because page numbers differ between printings
-        - renders three SHORT analytical quotations in .qshort containers, each one
-          carrying commentary that analyses that specific wording
-        - carries the Required Language notice verbatim
-        - reproduces nothing: no .src block anywhere on this page
-
-      QUOTATION BUDGET: 3 quotes, roughly 64 words total, against a gate ceiling of
-      75 per quote and 200 per page. Those ceilings are a conservative heuristic and
-      NOT a safe harbour; the policy states there is no safe word count.
-
-      KNOWN GAP — NEEDS THE BOOK IN HAND. First/last-word anchors below are verified
-      for Chapter II, taken from the excerpt supplied in 01_Analysis. Chapter III
-      anchors are NOT given because that text was never supplied and must not be
-      invented. Chapter III is located structurally and by title only. Add its
-      anchors when someone has the volume.
-
-      CITATION DISCREPANCY: the master cites "Book I, Chapters 2-3" but the supplied
-      PDF holds Chapter II only. Lesson 4.01 teaches both mechanical and organic
-      solidarity, and organic solidarity is Chapter III, so both chapters are
-      assigned here, following the master.
-
-      ALL COPYRIGHT DATES ARE STATED TO THE BEST OF MY KNOWLEDGE AND ARE NOT LEGAL
-      ADVICE. Rights clearance must confirm before publication.
+      Work: Durkheim, De la division du travail social (1893), Book I, ch. II (La solidarite
+            mecanique ou par similitudes) and ch. III (La solidarite due a la division du
+            travail ou organique). Public domain.
+      2026-10-14 revision (Q1 ruling: no page may ask students to source a book): this
+            guide was a linked-reading page (a protected English translation, three
+            short quotations, a rights notice, a how-to-get-the-book card, and a
+            placeholder for missing ch. III anchors). It is now a Text Study: Optima's own
+            explanation of both chapters, in order, with a structure diagram. No translator,
+            link, quotation, placeholder, or rights notice remains.
+      Grounding: 01_Analysis/Sociology Primary Source Readings/Q1W4_Reading_1 (ch. II,
+            curated excerpt) and Q1W4_Reading_2 (the Introduction, used for the context
+            card), read for understanding only. Checked by script: no run of 6+ words
+            shared with either PDF. Ch. II claims (crime defined by punishment, unity of
+            effect, strong AND definite sentiments, filial piety/egoist case, the
+            collective conscience and its limit, punishment's function, expiation vs
+            defence, chapter conclusion) come from the excerpt.
+      Left general on purpose: ch. III has no source file. The page states only its
+            well-established content (restitutive sanction restores the prior state;
+            specialized organs; negative real-rights relations vs positive cooperative
+            relations; organism analogy; inverse relation of the two solidarities to
+            individuality). The molecules analogy for mechanical solidarity and the
+            non-contractual element of contract are stated in broad strokes. The first
+            objection (restitution in simple societies) is a standard later criticism and
+            names no scholar. Book III and anomie are mentioned only by name and gloss so
+            that Reading Quiz 4 Q3 is answerable here as well as in Lesson 4.01.
+      Images: Rowlandson and Pugin, Microcosm of London: Pillory, Charing Cross (1809)
+            and Court of Chancery (1808), via Commons, public domain
+            (w04-pillory-charing-cross, w04-court-of-chancery): repressive vs restitutive.
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sociology &middot; Primary Source 4A</title>
+<title>Sociology &middot; Text Study 4A</title>
 <style>
     body { margin: 0; padding: 0; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f6fa; }
     .canvas-frame { max-width: 1100px; margin: 0 auto; background: #ffffff; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-
-    /* Short analytical quotation. NOT .src: this page reproduces nothing. */
-    .qshort { background: #FCFCF8; border: 1px solid #E3DFD2; border-left: 5px solid #C7922C; border-radius: 7px; padding: 16px 22px; margin: 14px 0; }
-    .qshort p { font-family: Georgia, "Times New Roman", serif; font-size: 18px; color: #241f18; line-height: 1.7; margin: 0; }
-    .qshort cite { display: block; font-family: "Segoe UI", sans-serif; font-size: 12px; color: #8a7a55; font-style: normal; margin-top: 9px; letter-spacing: 0.3px; }
-
-    /* What to read */
-    .wtr { background: #0E1C42; border-radius: 10px; padding: 24px 28px; margin: 4px 0 18px 0; }
-    .wtr-t { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 4px; }
-    .wtr-s { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 20px; font-style: italic; }
-    .wtr-row { display: flex; gap: 12px; margin-bottom: 10px; }
-    .wtr-row:last-child { margin-bottom: 0; }
-    .wtr-k { flex: 0 0 132px; font-size: 11px; letter-spacing: 0.5px; color: rgba(255,255,255,0.5); padding-top: 3px; }
-    .wtr-v { flex: 1; font-size: 15px; color: rgba(255,255,255,0.92); line-height: 1.6; }
-    .wtr-v em { color: #E0B562; font-style: italic; }
-    .wtr-note { margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 14px; color: rgba(255,255,255,0.78); line-height: 1.6; }
-
-    .rights { background: #FDECEC; border-left: 5px solid #C0392B; border-top: 3px solid #E74C3C; border-radius: 6px; padding: 14px 20px; margin: 18px 0; }
-    .rights-l { font-size: 11px; color: #8A1F16; margin-bottom: 8px; letter-spacing: 0.4px; }
-    .rights-t { font-size: 15px; color: #0E1C42; line-height: 1.6; }
-
-    .get { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 15px; }
-    .get th { background: #0E1C42; color: #fff; text-align: left; padding: 9px 13px; font-size: 12px; letter-spacing: 0.4px; font-weight: normal; }
-    .get td { border: 1px solid #D0D9E8; padding: 10px 13px; color: #1a2340; line-height: 1.5; vertical-align: top; }
-    .get tr:nth-child(even) td { background: #F8FAFD; }
-    .get td:first-child { color: #0E1C42; width: 22%; }
 
     .q-list { counter-reset: qq; list-style: none; padding: 0; margin: 0; }
     .q-list li { counter-increment: qq; position: relative; padding-left: 40px; margin-bottom: 14px; font-size: 17px; color: #1a2340; line-height: 1.6; }
     .q-list li::before { content: counter(qq); position: absolute; left: 0; top: 1px; width: 27px; height: 27px; border-radius: 50%; background: #0E1C42; color: #fff; font-family: "Segoe UI", sans-serif; font-size: 13px; display: flex; align-items: center; justify-content: center; }
 
-    .arg { background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 6px 0; margin: 14px 0; }
-    .arg-s { display: flex; align-items: flex-start; gap: 13px; padding: 11px 18px; border-bottom: 1px solid #EEF1F8; }
-    .arg-s:last-child { border-bottom: none; }
-    .arg-n { min-width: 26px; height: 26px; border-radius: 50%; background: #EEF1F8; color: #0E1C42; font-size: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-    .arg-b { font-size: 16px; color: #1a2340; line-height: 1.55; }
-    .arg-b b { color: #0E1C42; }
+    .card { background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px; }
+    .lab { font-size: 11px; color: #c7922c; margin-bottom: 14px; }
+    .p { font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0; }
+    .p:last-child { margin-bottom: 0; }
+    .step { display: flex; gap: 14px; align-items: flex-start; margin: 0 0 18px 0; }
+    .step > div:last-child { flex: 1; min-width: 0; }
+    .step-n { min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-h { font-size: 19px; color: #0E1C42; margin: 3px 0 8px 0; }
+    .cr { display: flex; gap: 10px; margin: 0 0 6px 0; font-size: 16px; line-height: 1.55; color: #1a2340; }
+    .cr b { flex: 0 0 96px; color: #1B6A94; font-weight: normal; font-size: 12px; padding-top: 3px; letter-spacing: 0.4px; }
+    .cr span { flex: 1; min-width: 0; }
+
+    .flow { background: #F8FAFD; border: 1px solid #D0D9E8; border-radius: 10px; padding: 18px 18px 14px 18px; margin: 4px 0 4px 0; }
+    .flow-t { font-size: 12px; color: #0E1C42; letter-spacing: 0.5px; text-align: center; margin-bottom: 14px; }
+    .fr { display: flex; align-items: center; gap: 0; flex-wrap: wrap; justify-content: center; }
+    .fb { flex: 1 1 150px; min-width: 150px; background: #0E1C42; color: #fff; border-radius: 8px; padding: 11px 12px; font-size: 14px; line-height: 1.45; }
+    .fb em { display: block; color: #55C8E8; font-style: normal; font-size: 11px; letter-spacing: 0.5px; margin-bottom: 4px; }
+    .fb.gold { background: #C7922C; }
+    .fb.gold em { color: #FFF3D6; }
+    .fb.soft { background: #E8F6FB; color: #0E1C42; border: 1px solid #C5DCE5; }
+    .fb.soft em { color: #1B6A94; }
+    .fa { flex: 0 0 28px; display: flex; align-items: center; justify-content: center; color: #0E1C42; font-size: 20px; }
+    .fsplit { display: flex; flex-direction: column; gap: 8px; flex: 1.4 1 220px; }
+    .fsplit .fb { flex: 0 0 auto; min-width: 0; }
+    .fnote { font-size: 13px; color: #4a5a78; line-height: 1.5; text-align: center; margin-top: 12px; }
+    .dn { text-align: center; color: #0E1C42; font-size: 20px; line-height: 1; margin: 8px 0; }
 </style>
 </head>
 <body>
@@ -116,11 +100,11 @@
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Reading</div>
-        <div style="font-size: 17px; color: #0e1c42;">Primary Source 4A</div>
+        <div style="font-size: 17px; color: #0e1c42;">Text Study 4A</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Author</div>
-        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Emile Durkheim</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">&Eacute;mile Durkheim</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Published</div>
@@ -129,166 +113,159 @@
 </div>
 
 <!-- ===== BODY ===== -->
+<!-- ===== BODY ===== -->
 <div style="padding: 24px 34px;">
 
     <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">PRIMARY SOURCE 4A</div>
-        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 6px;">The Collective Conscience and Repressive Law</div>
-        <div style="font-size: 16px; color: #444;">Durkheim, <em>The Division of Labour in Society</em>, Book I, Chapters II and III.</div>
+        <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">TEXT STUDY 4A</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 6px;">Two Kinds of Law, Two Kinds of Solidarity</div>
+        <div style="font-size: 16px; color: #444;">Durkheim, <em>De la division du travail social</em> (<em>The Division of Labour</em>), Book I, ch. II, <em>La solidarit&eacute; m&eacute;canique ou par similitudes</em>, and ch. III, <em>La solidarit&eacute; due &agrave; la division du travail ou organique</em> (1893)</div>
     </div>
 
-    <!-- OPTIMA-TEXT-PLACEHOLDER
-         Category: PARTIAL SOURCE
-         Inserted by _build/placeholders.py. Audit with: python _build/placeholders.py --audit
-         Remove this block only when the gap below is actually closed.
-    -->
-    <div style="background: #FFF8E7; border: 2px dashed #C7922C; border-radius: 8px; padding: 16px 20px; margin: 18px 0;">
-        <div style="font-size: 11px; color: #8a6a1d; letter-spacing: 0.5px; margin-bottom: 8px;">&#9888;&#65039; PLACEHOLDER &middot; PARTIAL SOURCE &middot; NOT FINISHED COPY</div>
-        <div style="font-size: 16px; color: #1a2340; line-height: 1.6; margin-bottom: 10px;"><strong>What is missing:</strong> Chapter III of the Simpson translation was never supplied, so this guide gives Chapter III by title and structure only. Chapter II's first and last words are verified.</div>
-        <div style="font-size: 16px; color: #1a2340; line-height: 1.6;"><strong>To close this gap:</strong> Open the Simpson translation at Book I, Chapter III and add its opening and closing words to the What to read card, so students can see where the assigned span ends.</div>
-        <div style="font-size: 14px; color: #8a6a1d; line-height: 1.55; margin-top: 10px; padding-top: 9px; border-top: 1px solid #E8D6AE;">This block is an internal marker, not part of the lesson. It must be resolved or removed before the course is published. Everything else on this page is finished.</div>
+    <!-- Context -->
+    <div class="card" style="border-left: 5px solid #2196D0; background: #E8F6FB;">
+        <div class="lab" style="color: #1B6A94;">&#128161; CONTEXT</div>
+        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Durkheim&rsquo;s doctoral thesis opens with a moral puzzle. Public opinion in the 1890s praised the specialist and distrusted the dilettante, yet it also feared that narrow work shrinks a person. Durkheim refuses to settle the puzzle by appeal to a moralist&rsquo;s first principle. He first asks what the division of labour actually does for a society. Solidarity, the bond he is after, is an inner state that cannot be observed directly, so he looks for an outward sign of it that can be: law. Chapters II and III read two families of law as evidence for two kinds of bond.</div>
     </div>
 
-
-    <!-- ===== WHAT TO READ ===== -->
-    <div class="wtr">
-        <div class="wtr-t">WHAT TO READ</div>
-        <div class="wtr-s">This reading is in a book, not on this page. Here is exactly where to start and stop.</div>
-
-        <div class="wtr-row">
-            <div class="wtr-k">THE BOOK</div>
-            <div class="wtr-v">Emile Durkheim, <em>The Division of Labour in Society</em>. Translated by George Simpson. Any printing of the Simpson translation works. If your library holds a different translation, that is fine too, but the chapter titles below are the Simpson ones.</div>
-        </div>
-        <div class="wtr-row">
-            <div class="wtr-k">START AT</div>
-            <div class="wtr-v"><strong>Book I, Chapter II</strong>, titled <em>Mechanical Solidarity Through Likeness</em>. The chapter opens: <em>&ldquo;The link of social solidarity to which repressive law corresponds&hellip;&rdquo;</em></div>
-        </div>
-        <div class="wtr-row">
-            <div class="wtr-k">STOP AT</div>
-            <div class="wtr-v">The end of <strong>Book I, Chapter III</strong>, titled <em>Solidarity Arising from the Division of Labour, or Organic Solidarity</em>. Chapter II ends with the words <em>&ldquo;&hellip;bears its mark&rdquo;</em>; continue straight on through Chapter III to its end.</div>
-        </div>
-        <div class="wtr-row">
-            <div class="wtr-k">HOW LONG</div>
-            <div class="wtr-v">Two chapters, roughly forty to fifty pages depending on your printing. Set aside about ninety minutes and read it in two sittings if that suits you better.</div>
-        </div>
-        <div class="wtr-row">
-            <div class="wtr-k">WHAT TO SKIP</div>
-            <div class="wtr-v">Nothing, but do not slow down for Durkheim's long surveys of crime across different legal systems. Those are evidence for a claim you will already have understood. Read them quickly and keep moving.</div>
-        </div>
-
-        <div class="wtr-note">Page numbers are useless here because they differ between printings, which is why the boundaries above are given by chapter and by the words themselves. If the first words you find do not match, you are in the wrong chapter.</div>
-    </div>
-
-    <!-- ===== HOW TO GET IT ===== -->
-    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; HOW TO GET THE BOOK</div>
-        <table class="get">
-            <tr><th>Try this</th><th>What to do</th></tr>
-            <tr><td>Your school library</td><td>Start here. Your facilitator posts the direct access link for our library in this week's Canvas module. Check there first, because it is the fastest route and it costs you nothing.</td></tr>
-            <tr><td>Your public library</td><td>Most public library systems hold this title in print, and many offer it as a loanable ebook. A library card is usually all you need.</td></tr>
-            <tr><td>A bookshop or publisher</td><td>The Simpson translation is widely in print in paperback if you would rather own a copy. You do not need to buy it to do this course.</td></tr>
-        </table>
-        <p style="font-size: 16px; color: #4a5a78; line-height: 1.6; margin: 12px 0 0 0;">If you cannot reach a copy by Tuesday, tell your facilitator early rather than late. There is a way to keep you moving, and it works much better before the reading is due than after.</p>
-    </div>
-
-    <!-- ===== REQUIRED LANGUAGE (verbatim, policy) ===== -->
-    <div class="rights">
-        <div class="rights-l">&#9888;&#65039; ABOUT THIS READING</div>
-        <div class="rights-t">Students must obtain lawful access to the assigned literary work separately. Optima course materials are original instructional materials designed to support analysis, discussion, and assessment of the work. Copyrighted text, images, illustrations, panels, audio, or other protected materials are not reproduced in Canvas, VR, videos, downloadable files, or teacher resources except where expressly licensed, in the public domain, or approved as a limited fair-use excerpt for instructional analysis.</div>
-    </div>
-
-    <!-- Bridge -->
-    <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; WHERE THIS FITS</div>
-        <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Monday's lesson gave you mechanical and organic solidarity as a finished distinction. These two chapters are where Durkheim builds it, and the order matters: he does not start from society at all. He starts from punishment, works backward to what punishment protects, and only then names the kind of solidarity that must exist for punishment to make sense. Watch the direction of the reasoning.</div>
-    </div>
-
-    <!-- Why -->
-    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; WHY YOU ARE READING THIS</div>
-        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">This is the text where the mechanical and organic distinction is introduced. Durkheim is arguing something counterintuitive: that specialisation <em>creates</em> solidarity rather than dissolving it. Most people, then and now, assume the opposite, which is why he spends two chapters on it.</p>
-        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0 0 12px 0;">Chapter II moves in five steps. Track them as you read and the argument holds together.</p>
-
-        <div class="arg">
-            <div class="arg-s"><div class="arg-n">1</div><div class="arg-b"><b>Start from crime, not from society.</b> A crime is whatever provokes punishment. So asking what crime is means asking what punishment is for.</div></div>
-            <div class="arg-s"><div class="arg-n">2</div><div class="arg-b"><b>Note that the reaction is always the same.</b> Across wildly different societies and legal systems, crimes differ but the response does not. Unity of effect points to unity of cause.</div></div>
-            <div class="arg-s"><div class="arg-n">3</div><div class="arg-b"><b>Ask what is being offended.</b> Not every strong sentiment is protected by penal law. Filial piety is strong and vague; penal rules are strong <em>and precise</em>. Precision is the distinguishing mark.</div></div>
-            <div class="arg-s"><div class="arg-n">4</div><div class="arg-b"><b>Name the thing.</b> The shared, precise, common beliefs form a system with a life of its own, and Durkheim gives it a name.</div></div>
-            <div class="arg-s"><div class="arg-n">5</div><div class="arg-b"><b>Reverse the usual view of punishment.</b> Punishment is not mainly for the criminal at all. Watch for who Durkheim says it is really aimed at. This is the surprise of the chapter.</div></div>
+    <!-- Structure visual -->
+    <div class="card">
+        <div class="lab">&#128202; THE ARGUMENT AT A GLANCE</div>
+        <div class="flow">
+            <div class="flow-t">FROM THE KIND OF SANCTION TO THE KIND OF BOND</div>
+            <div class="fr">
+                <div class="fb soft" style="flex: 1 1 100%;"><em>THE METHOD</em>Solidarity is invisible. Law is its visible index. Sort laws by their sanction.</div>
+            </div>
+            <div class="dn">&darr;</div>
+            <div class="fr" style="align-items: stretch; gap: 12px;">
+                <div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 8px;">
+                    <div class="fb" style="flex: 0 0 auto; min-width: 0;"><em>CH. II &middot; REPRESSIVE LAW</em>Penal law. The sanction makes the offender suffer.</div>
+                    <div class="dn" style="margin: 0;">&darr;</div>
+                    <div class="fb" style="flex: 0 0 auto; min-width: 0;"><em>WHAT IT PROTECTS</em>Strong and precise states of the collective conscience</div>
+                    <div class="dn" style="margin: 0;">&darr;</div>
+                    <div class="fb gold" style="flex: 0 0 auto; min-width: 0;"><em>MECHANICAL SOLIDARITY</em>A bond of likeness. Strongest where individuality is smallest.</div>
+                </div>
+                <div style="flex: 1 1 260px; display: flex; flex-direction: column; gap: 8px;">
+                    <div class="fb" style="flex: 0 0 auto; min-width: 0;"><em>CH. III &middot; RESTITUTIVE LAW</em>Civil, commercial, procedural, administrative law. The sanction restores what was disturbed.</div>
+                    <div class="dn" style="margin: 0;">&darr;</div>
+                    <div class="fb" style="flex: 0 0 auto; min-width: 0;"><em>WHAT IT PROTECTS</em>Relations of cooperation between people with different functions</div>
+                    <div class="dn" style="margin: 0;">&darr;</div>
+                    <div class="fb gold" style="flex: 0 0 auto; min-width: 0;"><em>ORGANIC SOLIDARITY</em>A bond of interdependence. Grows as individuality grows.</div>
+                </div>
+            </div>
+            <div class="fnote">The share of each kind of law in a legal system indicates which bond predominates in that society.</div>
         </div>
     </div>
 
-    <!-- Read for these -->
-    <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; READ FOR THESE FOUR QUESTIONS</div>
+    <!-- Argument -->
+    <div class="card">
+        <div class="lab">&#128214; THE ARGUMENT, SECTION BY SECTION</div>
+
+        <div class="step"><div class="step-n">1</div><div>
+            <div class="step-h">Crime is defined by the reaction it provokes</div>
+            <div class="cr"><b>CLAIM</b><span>The bond that penal law guards is the one whose breach counts as a crime, and a crime is any act that draws punishment upon its author. To learn what crime is, ask what punishment answers to.</span></div>
+            <div class="cr"><b>REASON</b><span>Offences differ enormously between societies, yet the response to them is everywhere of one kind, varying only in degree. One effect points to one cause. The essential property of a thing is what is present wherever the thing is found, so crimes across all legal systems must share some common element.</span></div>
+            <div class="cr"><b>EXAMPLE</b><span>Durkheim surveys offences across many legal systems to show the range of acts that have been punished. The variety of the acts makes the sameness of the reaction stand out.</span></div>
+        </div></div>
+
+        <div class="step"><div class="step-n">2</div><div>
+            <div class="step-h">The common element: strong and definite shared sentiments</div>
+            <div class="cr"><b>CLAIM</b><span>A crime is an act that offends shared states of feeling that are both strong and definite. Strength alone is not enough.</span></div>
+            <div class="cr"><b>REASON</b><span>Some deeply felt duties are never prosecuted. Penal rules name a precise act to perform or avoid: do not kill, perform this rite. Duties such as charity or love of one&rsquo;s parents are general aspirations that cannot be stated as one exact rule, so they vary from person to person and lack the uniformity penal law requires.</span></div>
+            <div class="cr"><b>EXAMPLE</b><span>A neglectful son and a thoroughgoing egoist offend real moral feeling, yet neither is treated as a criminal.</span></div>
+        </div></div>
+
+        <div class="step"><div class="step-n">3</div><div>
+            <div class="step-h">Naming the thing: the collective conscience</div>
+            <div class="cr"><b>CLAIM</b><span>The beliefs and sentiments shared by the average members of a society form a system with a life of its own. Durkheim names this system the collective conscience (<em>conscience collective</em>).</span></div>
+            <div class="cr"><b>REASON</b><span>It has no single organ; it is spread through the whole society. Yet it is a distinct reality. Individuals die and it continues. It is the same in north and south, in large towns and small, across occupations, and it links one generation to the next. It exists only through individual minds, but it is not the sum of any of them.</span></div>
+            <div class="cr"><b>LIMIT</b><span>It is not the whole mental life of a society. Specialized functions such as judging, governing, science, and industry are mental activities too, but they lie outside the common conscience. Durkheim keeps the term for the shared core only.</span></div>
+        </div></div>
+
+        <figure data-pd="w04-pillory-charing-cross.jpg" style="margin: 18px 0 22px 0; text-align: center;"><img src="../_media/w04-pillory-charing-cross.jpg" alt="Hand-coloured print of a London street around 1808: two men locked in a raised pillory at the centre, surrounded by a dense crowd that fills the square, with spectators watching from windows and rooftops" style="max-width: 100%; width: 780px; height: auto; border-radius: 6px;" /><figcaption style="font-size: 14px; color: #4a5a78; line-height: 1.5; margin-top: 8px;">Punishment as a public event: the whole crowd, not just the injured party, turns out to answer the offence. This is the collective reaction Durkheim places at the heart of repressive law. <span style="font-size: 12px; color: #6b7a99;">Thomas Rowlandson and Augustus Charles Pugin, 1809. Public domain, via Wikimedia Commons.</span></figcaption></figure>
+
+        <div class="step"><div class="step-n">4</div><div>
+            <div class="step-h">What punishment is for</div>
+            <div class="cr"><b>CLAIM</b><span>Punishment does little to reform the offender or to frighten imitators. Its real work is expressive: it reaffirms the collective conscience at the moment a crime has contradicted it, and so keeps social cohesion intact.</span></div>
+            <div class="cr"><b>REASON</b><span>A shared belief that is openly violated and met with silence loses force. The community&rsquo;s reaction shows that the belief still holds. So punishment is aimed chiefly at the law-abiding, whose sentiments it repairs, not at the criminal. This reconciles the two old theories: punishment does defend society, but it defends society precisely by being an expiation.</span></div>
+            <div class="cr"><b>CONCLUSION</b><span>There is a solidarity that comes from states of conscience common to all members of a society, and repressive law is its outward form. Its force depends on how much of social life the common conscience regulates. This is mechanical solidarity: members cohere by resembling one another, the way the molecules of an inorganic body cohere, with no movement of their own.</span></div>
+        </div></div>
+
+        <div class="step"><div class="step-n">5</div><div>
+            <div class="step-h">Restitutive law: a different sanction, a different bond</div>
+            <div class="cr"><b>CLAIM</b><span>Most modern law does not punish. Its sanction puts things back as they were: a debt is paid, damages are awarded, a void contract is set aside. Such law protects relations between individuals rather than sentiments everyone shares.</span></div>
+            <div class="cr"><b>REASON</b><span>Breaking these rules provokes no public outrage, and the community at large does not respond. Specialized bodies do: courts, magistrates, administrators. Some of these rules only keep people apart, as property rights do by forbidding interference with what is another&rsquo;s. Others express positive cooperation: the law of contract, of commerce, of procedure, of administration. These arise from the division of labour.</span></div>
+            <div class="cr"><b>EXAMPLE</b><span>A contract binds two parties who need each other because each does what the other does not. Even this private agreement depends on rules neither party wrote, which the law supplies and enforces.</span></div>
+        </div></div>
+
+        <figure data-pd="w04-court-of-chancery.jpg" style="margin: 18px 0 22px 0; text-align: center;"><img src="../_media/w04-court-of-chancery.jpg" alt="Hand-coloured print of a vaulted court hall with stained-glass windows: rows of wigged lawyers at desks, a judge seated on a raised bench, and a few members of the public at the side" style="max-width: 100%; width: 780px; height: auto; border-radius: 6px;" /><figcaption style="font-size: 14px; color: #4a5a78; line-height: 1.5; margin-top: 8px;">A civil court: specialists handling disputes over property, wills, and contracts, with no crowd. This is restitutive law, administered by specialized organs instead of the whole community. <span style="font-size: 12px; color: #6b7a99;">Thomas Rowlandson and Augustus Charles Pugin, 1808. Public domain, via Wikimedia Commons.</span></figcaption></figure>
+
+        <div class="step"><div class="step-n">6</div><div>
+            <div class="step-h">Organic solidarity grows with individuality</div>
+            <div class="cr"><b>CLAIM</b><span>The division of labour produces its own bond, which Durkheim calls organic solidarity. It resembles the unity of a higher organism, where each organ has its own function and the whole lives only because they differ and depend on each other.</span></div>
+            <div class="cr"><b>REASON</b><span>Mechanical solidarity is strongest where the individual personality is absorbed into the collective type. Organic solidarity requires the opposite: each person needs a sphere of action of his own. So the two bonds vary in opposite directions. The more specialized a society, the more distinct each member becomes, and the more each depends on all the others.</span></div>
+            <div class="cr"><b>EXAMPLE</b><span>The surgeon and the farmer of Lesson 4.01. Neither can supply what the other does, and the gap between their skills is the source of the bond.</span></div>
+        </div></div>
+    </div>
+
+    <!-- Distinctions -->
+    <div class="card">
+        <div class="lab">&#9878;&#65039; THE DISTINCTIONS THAT CARRY THE ARGUMENT</div>
+        <div class="cr"><b>REPRESSIVE / RESTITUTIVE</b><span>A sanction that inflicts suffering, versus one that restores the prior state of affairs.</span></div>
+        <div class="cr"><b>STRONG / DEFINITE</b><span>Intensity of feeling, versus precision of the rule. Penal law requires both.</span></div>
+        <div class="cr"><b>COMMON / WHOLE</b><span>The collective conscience is the shared core of a society&rsquo;s mental life, not all of it.</span></div>
+        <div class="cr"><b>EXPIATION / DEFENCE</b><span>Rival theories of punishment that Durkheim joins: it protects society because it expiates.</span></div>
+        <div class="cr"><b>MECHANICAL / ORGANIC</b><span>Cohesion by likeness, versus cohesion by complementary difference. Forms of bond, not historical eras: a modern society contains both.</span></div>
+    </div>
+
+    <!-- Objection -->
+    <div class="card" style="border-left: 5px solid #C7922C;">
+        <div class="lab">&#10067; THE STRONGEST OBJECTION</div>
+        <p class="p">The argument stands on its index. If law reliably mirrors solidarity, then simple societies should have mostly penal law. Later anthropologists and legal historians found that many small societies settled serious wrongs through compensation paid to the injured family, which is restitution, not repression. If that evidence holds, the neat match between kind of law and kind of society weakens, and the claim that history moves from repressive to restitutive law needs more support than Book I gives it.</p>
+        <p class="p">A second objection asks whether dependence is a moral bond at all. People who need one another through a market may feel nothing for one another. Durkheim saw the danger himself. Book III of the same work treats abnormal forms of the division of labour, among them the anomic form (<em>anomie</em>, from the Greek for without law or norm), in which specialized functions lose the rules that coordinate them. Interdependence alone, he concedes, does not guarantee solidarity.</p>
+    </div>
+
+    <!-- Questions -->
+    <div class="card" style="border-top: 3px solid #0E1C42;">
+        <div class="lab">&#127919; FOUR QUESTIONS</div>
         <ol class="q-list">
-            <li>Durkheim argues that the division of labour produces solidarity. What is the mechanism by which specialisation creates social bonds rather than dissolving them?</li>
+            <li>Durkheim argues that the division of labour produces solidarity. By what mechanism does specialization create social bonds rather than dissolve them?</li>
             <li>What is the collective conscience, and how does its strength vary between simple and complex societies? What does that change imply for law and punishment?</li>
-            <li>Durkheim distinguishes normal from abnormal forms of the division of labour. What makes a division of labour abnormal, and what conditions produce anomie?</li>
-            <li>He wrote this as a doctoral thesis, arguing against a liberalism which held that modern industrial societies could run on contract alone without shared moral norms. How does his argument challenge that view?</li>
+            <li>Why does a crime require a sentiment that is definite as well as strong? Test the answer on a duty that is widely felt but never prosecuted.</li>
+            <li>Durkheim wrote against the view that a modern industrial society could run on contract alone, without shared moral norms. How does his account of restitutive law challenge that view?</li>
         </ol>
     </div>
 
-    <!-- Three short quotations with analysis -->
-    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128269; THREE SENTENCES TO FIND AND MARK</div>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Three sentences carry Chapter II. Find each one in your copy and mark it, then read the note underneath. Everything else in the chapter is argument in support of these.</p>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 16px 0 0 0;"><strong>1. The definition.</strong> After ruling out the alternatives, Durkheim names his central concept:</p>
-        <div class="qshort">
-            <p>&ldquo;The totality of beliefs and sentiments common to average citizens of the same society forms a determinate system which has its own life; one may call it the collective or common conscience.&rdquo;</p>
-            <cite>Book I, Chapter II</cite>
-        </div>
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Read <em>has its own life</em> slowly. That phrase is doing the work of an entire chapter of <em>The Rules of Sociological Method</em>, which you read last week. He is claiming the collective conscience is a real thing with its own properties, not a convenient way of summarising what individuals happen to believe. Notice also <em>average citizens</em>, which is how he keeps the concept measurable rather than mystical.</p>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 16px 0 0 0;"><strong>2. The conclusion it supports.</strong> Having defined the term, he can finally answer the question the chapter opened with:</p>
-        <div class="qshort">
-            <p>&ldquo;An act is criminal when it offends strong and defined states of the collective conscience.&rdquo;</p>
-            <cite>Book I, Chapter II</cite>
-        </div>
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Both adjectives are load-bearing and neither is decoration. <em>Strong</em> rules out trivial preferences. <em>Defined</em> rules out vague aspirations like charity or filial love, which are deeply felt and never prosecuted. Test the definition against a case: why is being a bad son not a crime, while damaging a fence is? Durkheim's answer is precision, not intensity.</p>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 16px 0 0 0;"><strong>3. The reversal.</strong> Late in the chapter he says what punishment is actually for, and it is not what most readers expect:</p>
-        <div class="qshort">
-            <p>&ldquo;Its true function is to maintain social cohesion intact, while maintaining all its vitality in the common conscience.&rdquo;</p>
-            <cite>Book I, Chapter II</cite>
-        </div>
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Durkheim has already conceded that punishment works poorly at reforming offenders and poorly at deterring others. He is not being cynical. He is saying we have misunderstood the target. Read on a few lines and you will find him state directly who punishment is designed to act upon, and the answer is not the criminal. When you find that sentence, write it in your journal. It is the single most surprising claim in the chapter.</p>
-    </div>
-
-    <!-- After you read -->
-    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#9999;&#65039; AFTER YOU READ</div>
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">Write short answers to the four questions in your Sociological Journal document.</p>
+    <!-- Reveals -->
+    <div class="card">
+        <div class="lab">&#9999;&#65039; AFTER THE QUESTIONS</div>
 
         <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0 0 12px 0;">
             <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
-                <span style="color: #C7922C;">&#9654;</span>&nbsp; Write down who you think punishment is really aimed at, then open this.
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; Question 1: the mechanism
             </summary>
             <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
-                Durkheim says punishment is above all designed to act upon upright people, meaning the ones who did nothing wrong. His reasoning is that a shared moral belief which is publicly violated and then met with nothing would quietly lose its force. Punishment is the community's way of saying, at the moment of contradiction, that the belief still holds. On this account the criminal is almost incidental to the ceremony. That is a genuinely strange idea, and you should decide whether you accept it. One test: does it explain why people who will never be victims still want to see wrongdoers punished, and why a punishment that seems too lenient upsets bystanders who lost nothing?
+                The mechanism is dependence. Specializing means giving up the ability to meet one&rsquo;s own needs, and whatever one gives up, someone else must supply. Multiplied across a population, that produces a society whose members cannot live apart, a bond whether or not anyone feels it as one. The bond needs no shared belief, which makes the claim strong and also exposes it: if interdependence were enough on its own, Book III would not need its account of anomie.
             </div>
         </details>
 
         <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0;">
             <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
-                <span style="color: #C7922C;">&#9654;</span>&nbsp; Answer question 1 in your notebook first, then open this.
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; Who is punishment really aimed at?
             </summary>
             <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
-                The mechanism is dependence. Specialising means giving up the ability to meet your own needs, and what you give up, someone else must supply. Multiply that across a whole population and you have a society whose members cannot survive apart, which is a bond whether or not anyone experiences it as one. Notice that this bond needs no shared belief at all, which is exactly what makes the claim strong and also what makes it vulnerable. If interdependence alone were enough, Durkheim would not need the collective conscience, and Chapter III would not spend so long worrying about what happens when the division of labour goes wrong. He is arguing against people who thought contract alone could do it. He is not saying structure alone can either.
+                At the upright, the people who did nothing wrong. A shared belief that is openly violated and then met with nothing would quietly lose its force. Punishment is the community declaring, at the moment of contradiction, that the belief still holds. On this account the criminal is almost incidental. One test of the idea: does it explain why people who will never be victims still want to see wrongdoers punished?
             </div>
         </details>
     </div>
 
     <!-- Next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT COMES NEXT</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; NEXT</div>
         <div style="display: flex; align-items: flex-start; gap: 14px;">
             <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
             <div>
-                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Lesson 4.02, Wednesday</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Simmel, born the same year as Durkheim, asking a much smaller and stranger question about the same modern world.</div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Lesson 4.02</strong></div>
             </div>
         </div>
     </div>
@@ -297,8 +274,8 @@
 
 <!-- ===== FOOTER ===== -->
 <div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
-    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 1 &middot; Primary Source Reading</div>
-    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Durkheim, <em>The Division of Labour in Society</em> I.2 to I.3 &middot; trans. George Simpson</div>
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 1 &middot; Text Study</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Durkheim, <em>De la division du travail social</em> I.2 to I.3 (1893)</div>
     <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
 </div>
 

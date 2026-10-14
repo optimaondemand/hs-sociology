@@ -1,33 +1,53 @@
 <!--
     Optima Academy Online — Sociology (Florida 2108300)
-    Q2 · Week 17 · Lesson 17.01 — "Bellah, Berger, Nisbet: Community and the Search for Meaning"
+    Q2 · Week 17 · Lesson 17.01 — "The Sociological Imagination: A Return to the Beginning"
 
     TEACHER-FACING BUILD NOTES (not rendered to students):
-    REGISTER: HONORS. Bellah cited by chapter, Berger and Neuhaus by book title
-    and year, Nisbet by chapter, Tocqueville by volume/part/chapter.
+    REGISTER: HONORS. This is the course's closing retrospective lesson of a
+    17-week, one-semester course. Revised 2026-10-14 (rev1014): renumbered from old Lesson 18.01; no
+    weekdays; coaching voice cut; PD figure added (Chicago breadline, 1931, personal trouble vs public
+    issue); the six flip-card claims are paraphrases, so the quotation marks were removed (not quotations).
 
-      Standard: SS.912.S.5.2, SS.912.S.4.9 (kept out of student-facing text)
-      Objective (from manifest): Students will synthesize the community
-      theorists studied throughout the course, evaluate their diagnoses of
-      modernity's social costs, and articulate a coherent account of what
-      genuine community requires in contemporary society.
-      Source: _build/manifest.json weeks[16].lessons[0]. Prose preserved and
-      extended; the master's version did not yet make the Tocqueville lineage
-      or the Week 3 connection explicit, which is the point of this pass (see
-      task brief: "make the lineage explicit").
+      Standard: none supplied in the master for this lesson (standard field is
+                empty in manifest.json weeks[17].lessons[0]).
+      Objective: Students will articulate the central claims of sociological
+                theory studied across the course, evaluate their personal
+                development of the sociological imagination, and prepare to
+                compose the Community Flourishing Capstone.
+      Source: Sociology_Course_Master.html, Lesson 17.01. Prose preserved
+              (Hook section retitled per R5, Key Terms block reproduced verbatim,
+              "The Course in Retrospect" and "After the Capstone" preserved with
+              added structure). No content invented beyond ordinary lesson
+              scaffolding (visual, widgets, transitions).
+      Revisions: R5 (opening section not labelled "Hook"), R7 (no em dashes),
+                standards codes kept out of student-facing text.
 
-      R1 (unchanged from master's own framing): Bellah, Berger and Neuhaus, and
-      Nisbet remain fully discussed BY NAME in this lesson's prose. Only the
-      ASSIGNED READING changes, to Tocqueville (source-17-a.html). See R1
-      authoring rule, CLAUDE.md.
+      R1 SUBSTITUTION (confirmed, see plan.md section 2 and CLAUDE.md R1 table):
+      C. Wright Mills, The Sociological Imagination (1959), is still in
+      copyright. Per the R1 authoring rule, Mills stays IN this lesson's prose
+      as the thinker under discussion (his term, his distinction, his book are
+      all named and taught) but the assigned READING (Source 17A) is substituted with
+      Auguste Comte, trans. Harriet Martineau, 1853, public domain. See
+      source-17-a.html for the reading itself and its provenance note. The gate
+      script's copyright-reading check only fires when a banned author's name
+      sits inside reading-attribution context ("Primary Source", "Reading:",
+      etc.); this file keeps Mills mentions structurally distant from the
+      Primary Source 17A pointer in "What You'll Do Next" to avoid a false
+      positive as well as an actual one.
 
-      REVISIONS: R5 (no "Hook" label), R7 (no em dashes), standards codes kept
-      out of student text.
+      DASH-AS-COLON CHECK: none found in this lesson's master prose. The two
+      places with a colon ("society but a way of seeing: a discipline...",
+      "sociologist's task is to see these processes clearly, to name them
+      accurately, and to think carefully about what can be done within them")
+      each carry only one colon and are correct as written.
 
-      WIDGET ROTATION (rule: the two lessons in this week must not share an
-      engine combination): 17.01 uses single-select evaluative rows (ow-select)
-      only. 17.02 uses reflect + flip cards. No shared combination.
-      Select-row correct indices in order: 2, 0, 3, 1. Not ascending.
+      WIDGET ROTATION: Week 16 used select+scale (per that week's own build).
+      This lesson uses reflect + flip, a combination not used anywhere else in
+      the course, and a deliberate choice for a retrospective lesson: no wrong
+      answer to a personal question, then a self-test of recall across the
+      whole roster of thinkers. No evaluative (data-correct) rows appear in this
+      lesson, so the 0-1-2-3 answer-run rule has nothing to check here; the
+      correct-index concern applies to Lesson 17.02 instead.
       Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
 -->
 <!DOCTYPE html>
@@ -66,20 +86,34 @@
     .ow-flip.flipped .ow-flip-front { display: none; }
     .ow-flip.flipped .ow-flip-back { display: block; }
 
-    /* ===== Core visual: the lineage chain ===== */
-    .ln { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
-    .ln-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
-    .ln-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 20px; font-style: italic; }
-    .ln-row { display: flex; align-items: stretch; gap: 8px; flex-wrap: wrap; }
-    .ln-box { flex: 1; min-width: 130px; background: rgba(255,255,255,0.07); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 12px 13px; }
-    .ln-box.origin { border-top-color: #C7922C; background: rgba(199,146,44,0.14); }
-    .ln-y { font-size: 10px; letter-spacing: 0.4px; color: rgba(255,255,255,0.45); margin-bottom: 4px; }
-    .ln-h { font-size: 14px; color: #ffffff; margin-bottom: 5px; }
-    .ln-b { font-size: 12px; color: rgba(255,255,255,0.78); line-height: 1.45; }
-    .ln-arrow { color: rgba(255,255,255,0.35); font-size: 18px; display: flex; align-items: center; }
-    .ln-out { margin-top: 16px; background: rgba(85,200,232,0.10); border-radius: 8px; padding: 14px 18px; text-align: center; }
-    .ln-out-t { font-size: 11px; color: #55C8E8; letter-spacing: 0.4px; margin-bottom: 6px; }
-    .ln-out-b { font-size: 16px; color: #ffffff; line-height: 1.5; }
+    /* ===== Core visual: the sociological imagination, as a movement between levels ===== */
+    .im { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
+    .im-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .im-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
+    .im-row { display: flex; align-items: center; gap: 10px; }
+    .im-box { flex: 1; background: rgba(255,255,255,0.07); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 14px 15px; }
+    .im-n { font-size: 10px; letter-spacing: 0.5px; color: rgba(255,255,255,0.45); margin-bottom: 5px; }
+    .im-h { font-size: 15px; color: #ffffff; margin-bottom: 6px; }
+    .im-b { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.5; }
+    .im-arrow { color: rgba(255,255,255,0.35); font-size: 20px; flex-shrink: 0; }
+    .im-ex { margin-top: 18px; background: rgba(199,146,44,0.18); border: 1px solid rgba(199,146,44,0.45); border-radius: 8px; padding: 14px 18px; }
+    .im-ex-l { font-size: 11px; color: #E0B562; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .im-ex-t { font-size: 15px; color: #ffffff; line-height: 1.55; }
+
+    /* ===== Two-column retrospective table ===== */
+    .two { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 15px; }
+    .two th { background: #0E1C42; color: #fff; text-align: left; padding: 10px 13px; font-size: 12px; letter-spacing: 0.4px; font-weight: normal; }
+    .two td { border: 1px solid #D0D9E8; padding: 10px 13px; color: #1a2340; line-height: 1.5; vertical-align: top; }
+    .two tr:nth-child(even) td { background: #F8FAFD; }
+    .two td:first-child { color: #0E1C42; width: 20%; }
+
+    /* ===== Flip card grid: each cell is its own optima-widget with its own Reset ===== */
+    .fgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 14px 0; }
+    .fgrid .optima-widget { margin: 0; }
+    .fgrid .ow-flip { min-height: 76px; display: flex; align-items: center; justify-content: center; }
+    .ffront { font-size: 15px; color: #0E1C42; line-height: 1.5; }
+    .fback { font-size: 14px; color: #1a2340; line-height: 1.5; }
+    .fback b { color: #0E1C42; }
 </style>
 </head>
 <body>
@@ -102,7 +136,7 @@
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
         <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 17</div>
-        <div style="font-size: 12px; color: #666;">Community in Modern America and Capstone Preparation</div>
+        <div style="font-size: 12px; color: #666;">Course Synthesis and Final Examination</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
@@ -110,11 +144,11 @@
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
-        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Bellah, Berger, Nisbet: Community and the Search for Meaning</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">A Return to the Beginning</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
-        <div style="font-size: 16px; color: #0e1c42;">Community in Modern America</div>
+        <div style="font-size: 16px; color: #0e1c42;">Course Synthesis and Final Examination</div>
     </div>
 </div>
 
@@ -123,194 +157,205 @@
 
     <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 17.01</div>
-        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Bellah, Berger, Nisbet: Community and the Search for Meaning</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">The Sociological Imagination: A Return to the Beginning</div>
         <div style="font-size: 16px; color: #666;">Lesson</div>
     </div>
 
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
-        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">If Tocqueville named the danger in 1840, why did four more books need to be written about it?</div>
-        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Every thinker you meet today is retracing a path Tocqueville marked out first. That is not a criticism of them. It means the diagnosis has held up, decade after decade, under different conditions, which is the strongest kind of evidence a social theory can get.</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; FOCUS</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">At the start of the course you were told what sociology was for. Has it delivered?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">The lesson names what the course has been training: moving between your own life and the structures around it without losing hold of either one.</div>
     </div>
 
     <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
         <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> trace Bellah's diagnosis of American individualism to the specific chapter of Tocqueville it reworks, and state what, if anything, Bellah adds.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> state Mills's distinction between a personal trouble and a public issue, and apply it correctly to a case that is not one of his own examples.</div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish utilitarian individualism, expressive individualism, and the civic language Tocqueville describes, and classify a case correctly under each.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> place at least four thinkers from this course on the solidarity question or the anomie question, and explain which one they were really answering.</div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> state where Bellah, Berger and Neuhaus, and Nisbet converge and where they genuinely disagree, rather than treating them as one undifferentiated argument.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> give an honest, evidence-based answer to whether I have personally developed the sociological imagination, rather than a polite one.</div>
         </div>
     </div>
 
-    <!-- ============================ PART 1 ============================ -->
+    <!-- ============================ PART 1: THE EXAMINED LIFE ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; HABITS OF THE HEART</div>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">In 1985 the sociologist Robert Bellah and four colleagues published <em>Habits of the Heart: Individualism and Commitment in American Life</em>. The title, borrowed directly from Tocqueville's language for the mores that made American democracy workable, announced the book's argument: American individualism had developed in ways that threatened the very habits, of commitment, of civic engagement, of loyalty to communities larger than the self, that the original Tocquevillean analysis had identified as democracy's moral precondition. The book was a bestseller. It remains one of the most cited works in American sociology.</p>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Bellah and his colleagues conducted extensive interviews with ordinary Americans about their values, their commitments, and their understanding of the good life. What they found was a troubling uniformity. Most Americans, asked to articulate their deepest commitments, fell back on one of two languages. The first was <em>utilitarian individualism</em>, the vocabulary of costs, benefits, and self-interest. The second was <em>expressive individualism</em>, the vocabulary of authenticity, self-realization, and feeling. Both are individualistic to the core, and neither has the conceptual resources to articulate a commitment to something larger than the self that is not reducible to self-interest or self-expression (<em>Habits of the Heart</em>, ch. 6).</p>
-    </div>
-
-    <!-- ============================ PART 2 ============================ -->
-    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; ONE DIAGNOSIS, RETRACED FOUR TIMES</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE EXAMINED LIFE</div>
 
         <!-- ===== CORE VISUAL ===== -->
-        <div class="ln">
-            <div class="ln-title">THE LINEAGE</div>
-            <div class="ln-sub">Four modern books, one nineteenth-century premise. You met the origin point in Week 3.</div>
-            <div class="ln-row">
-                <div class="ln-box origin">
-                    <div class="ln-y">1840</div>
-                    <div class="ln-h">Tocqueville</div>
-                    <div class="ln-b">Equality dissolves vertical bonds. Individuals withdraw into a private circle. He calls it <em>individualism</em> and treats voluntary association as the remedy. <em>DiA</em> II.2.2.</div>
+        <div class="im">
+            <div class="im-title">THE SOCIOLOGICAL IMAGINATION, MILLS'S DEFINITION</div>
+            <div class="im-sub">The capacity to move between these three levels without losing your grip on any of them.</div>
+            <div class="im-row">
+                <div class="im-box">
+                    <div class="im-n">LEVEL 1</div>
+                    <div class="im-h">Biography</div>
+                    <div class="im-b">Your own life, as it feels from inside. "I cannot find steady work."</div>
                 </div>
-                <div class="ln-arrow">&#8594;</div>
-                <div class="ln-box">
-                    <div class="ln-y">1953</div>
-                    <div class="ln-h">Nisbet</div>
-                    <div class="ln-b">Modern anomie and mass politics come from the destruction of intermediary institutions, family, church, guild, without replacement.</div>
+                <div class="im-arrow">&#8594;</div>
+                <div class="im-box">
+                    <div class="im-n">LEVEL 2</div>
+                    <div class="im-h">Structure</div>
+                    <div class="im-b">The social arrangement your biography sits inside. An economic sector shedding jobs faster than any one person's effort can offset.</div>
                 </div>
-                <div class="ln-arrow">&#8594;</div>
-                <div class="ln-box">
-                    <div class="ln-y">1977</div>
-                    <div class="ln-h">Berger &amp; Neuhaus</div>
-                    <div class="ln-b"><em>To Empower People</em> names the same institutions "mediating structures" standing between the person and the state or corporation.</div>
-                </div>
-                <div class="ln-arrow">&#8594;</div>
-                <div class="ln-box">
-                    <div class="ln-y">1985</div>
-                    <div class="ln-h">Bellah</div>
-                    <div class="ln-b">The languages available to describe communal commitment have themselves weakened. A cultural, not just structural, version of the same loss.</div>
-                </div>
-                <div class="ln-arrow">&#8594;</div>
-                <div class="ln-box">
-                    <div class="ln-y">2000</div>
-                    <div class="ln-h">Putnam</div>
-                    <div class="ln-b">Measures the decline directly: association membership, trust, and civic participation, falling across fifty years of data (Week 8).</div>
+                <div class="im-arrow">&#8594;</div>
+                <div class="im-box">
+                    <div class="im-n">LEVEL 3</div>
+                    <div class="im-h">History</div>
+                    <div class="im-b">The moment that produced the structure. A shift from manufacturing to services, decades in the making, that no single worker chose.</div>
                 </div>
             </div>
-            <div class="ln-out">
-                <div class="ln-out-t">THE QUESTION RUNNING THROUGH ALL FIVE</div>
-                <div class="ln-out-b">What stands between the individual and the state, and what happens when it thins out? This is the question your Capstone will ask about one real community, not a whole nation.</div>
+            <div class="im-ex">
+                <div class="im-ex-l">MILLS'S OWN TEST</div>
+                <div class="im-ex-t">If it happens to one person, it may be a personal trouble. If it happens to a large share of a population at once, and the cause traces back through structure to history, it has become a public issue, whatever it still feels like from inside.</div>
             </div>
         </div>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Berger and Neuhaus's phrase for the institutions in the middle, family, church, neighborhood, and voluntary association, is <em>intermediary institutions</em>: the structures through which meaning, value, and identity are formed, and which stand between an isolated individual and the impersonal scale of the modern state, the market, and the mass media. Notice that this is Tocqueville's remedy given a name. His voluntary associations are one species of the same genus.</p>
+        <figure data-pd="w17-chicago-breadline-1931.jpg" style="margin: 22px 0; text-align: center;"><img src="../_media/w17-chicago-breadline-1931.jpg" alt="Black-and-white photograph of a long line of unemployed men in overcoats and caps waiting outside a Chicago storefront under a sign reading Free Soup, Coffee and Doughnuts for the Unemployed." style="max-width: 100%; height: auto; border-radius: 6px;" /><figcaption style="font-size: 14px; color: #4a5a78; line-height: 1.5; margin-top: 8px;">Unemployed men outside a Chicago soup kitchen, February 1931. When the same personal trouble reaches this many people at once, and traces to the structure of the economy, it is a public issue. <span style="font-size: 12px; color: #6b7a99;">Unknown photographer, 1931. Public domain, via Wikimedia Commons.</span></figcaption></figure>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Bellah's contribution is not a new structural claim. It is a linguistic one. Even a person who wants to act on behalf of something larger than himself may lack the words to describe why, because the culture's two dominant vocabularies were built for something else entirely. This is the linguistic dimension of the problem Putnam later documents empirically and Nisbet analyzes structurally: a culture in which the vocabulary of genuine community has weakened even where the desire for it has not.</p>
-        <!-- CASE IN POINT id=17-01-softening-of-manners | Tocqueville, Democracy in America II.3.1 -->
-        <div class="case-in-point" style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 18px 0 4px 0;">
-            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128205; CASE IN POINT &middot; TWO KINDS OF SYMPATHY: TOCQUEVILLE&rsquo;S MEDIEVAL CHRONICLERS AND HIS AMERICANS</div>
-            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">Tocqueville measures individualism against an older form of attachment. Of the chroniclers of the Middle Ages, who belonged to the aristocracy, he writes that when they &ldquo;relate the tragical end of a noble, their grief flows apace; whereas they tell you at a breath, and without wincing, of massacres and tortures inflicted on the common sort of people.&rdquo; Feudal ties produced intense loyalty within a rank and none across ranks. Of the Americans he writes the reverse: &ldquo;Although the Americans have, in a manner, reduced egotism to a social and philosophical theory, they are nevertheless extremely open to compassion,&rdquo; and &ldquo;In no country is criminal justice administered with more mildness than in the United States.&rdquo;</p>
-            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">This is the diagnosis the lesson retraces: equality loosens the particular bonds that once tied a person to a few others, and widens a thinner sympathy to everyone. Tocqueville presents both halves as gains and losses at once, and his evidence is the chroniclers&rsquo; tone on one side and American penal codes on the other.</p>
-            <div style="font-size: 12px; color: #1B6A94; margin-top: 10px; line-height: 1.5;">Source: Tocqueville, <em>Democracy in America</em> II.3.1 (1840), trans. Henry Reeve (public domain).</div>
-        </div>
-        <!-- /CASE IN POINT id=17-01-softening-of-manners -->
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Socrates was reported to have said, at his trial, that the unexamined life is not worth living. The remark was characteristically provocative: it implied that most Athenians, who were not philosophers, were not living lives worth living. But its deeper point is one this course has been developing throughout. The examined life is not only the life of the philosopher in the study. It is the life of the citizen who understands, at some depth, the social world she inhabits. To examine a life sociologically is to understand that it is shaped by forces larger than the person living it: by social facts, by institutions, by the historical moment one happens to occupy, by the communities that form character and the ones that fail to. What seems most private (a mood, a loneliness, an ambition, a faith) has social dimensions a purely psychological account will always miss.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">C. Wright Mills, in his 1959 book <em>The Sociological Imagination</em>, put the point precisely: this imagination is the capacity to understand the intersection of individual biography and social history. It moves from the personal ("I am having trouble finding a job") to the social ("there is structural unemployment in my sector") to the historical ("this is what happens when an economy shifts from manufacturing to services"). This capacity, Mills argued, is not a luxury reserved for professional sociologists. It is a human necessity for anyone who wants to understand her own situation and act intelligently within it.</p>
     </div>
 
-    <!-- ============================ PART 3 ============================ -->
-    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; SORT THE LANGUAGE</div>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Bellah's categories are easy to state and harder to apply. Judge each statement by the reasoning it actually offers, not by whether the person sounds nice.</p>
-
-        <div class="optima-widget ow-select">
-            <div class="widget-kicker">&#9889; TRY IT &middot; WHICH LANGUAGE IS THIS?</div>
-            <div class="widget-question">Decide which moral language is doing the work in each statement.</div>
-
-            <div class="widget-row" data-correct="2" data-fb="Civic language, in Tocqueville's sense. She names an obligation to people she did not choose, on a matter of common concern, with no reference to her own advantage or her own feelings. That is closer to his voluntary association than to either of Bellah's two languages." data-hint="Check whether she is talking about her own benefit, her own feelings, or an obligation to other people as such.">
-                <div class="widget-row-prompt">1. "I serve on the volunteer fire company's board because these are my neighbors, and somebody has to do it, whether or not I ever need them myself."</div>
-                <div class="widget-options">
-                    <button data-choice="0">Utilitarian individualism</button><button data-choice="1">Expressive individualism</button><button data-choice="2">Civic language</button><button data-choice="3">None of the above</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="0" data-fb="Utilitarian individualism. The entire justification is a cost-benefit calculation about her own advantage. Nothing here references an obligation to anyone else." data-hint="Ask what the reason given actually is. Is it a calculation about her own outcomes?">
-                <div class="widget-row-prompt">2. "I stayed at the firm because the exit package was worth more than what I'd earn starting over somewhere else."</div>
-                <div class="widget-options">
-                    <button data-choice="0">Utilitarian individualism</button><button data-choice="1">Expressive individualism</button><button data-choice="2">Civic language</button><button data-choice="3">None of the above</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="3" data-fb="None of the above, and this is the case Tocqueville himself analyzes: real duty, owed to a specific person by name, but confined inside a private relationship and never generalized into anything public. It is neither of Bellah's languages and not civic language either, since it never reaches beyond the household." data-hint="This is loyalty, but ask whether it is public or entirely private, and whether it is grounded in self-interest, self-expression, or something else again.">
-                <div class="widget-row-prompt">3. "I would do anything for my own family, but what happens in the next town over isn't really my concern."</div>
-                <div class="widget-options">
-                    <button data-choice="0">Utilitarian individualism</button><button data-choice="1">Expressive individualism</button><button data-choice="2">Civic language</button><button data-choice="3">None of the above</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="1" data-fb="Expressive individualism. The justification is entirely about her own growth and feeling. This is not a criticism of the choice, only a description of the vocabulary she reaches for to explain it." data-hint="Listen for words about feeling, authenticity, and personal growth rather than obligation or advantage.">
-                <div class="widget-row-prompt">4. "I left the job because it wasn't fulfilling anymore, and I owe it to myself to find work that actually feels authentic."</div>
-                <div class="widget-options">
-                    <button data-choice="0">Utilitarian individualism</button><button data-choice="1">Expressive individualism</button><button data-choice="2">Civic language</button><button data-choice="3">None of the above</button>
-                </div>
-            </div>
-
-            <button class="widget-reset">Reset</button>
-        </div>
-
-        <div class="key-terms" style="background: #FCFCF8; border: 1px solid #E3DFD2; border-left: 5px solid #C7922C; border-radius: 8px; padding: 18px 22px; margin: 18px 0 0 0;">
-            <div style="font-size: 11px; color: #8a7a55; letter-spacing: 0.6px; margin-bottom: 10px;">KEY TERMS</div>
-            <dl style="margin: 0;">
-                <dt style="font-size: 17px; color: #0e1c42; margin-bottom: 3px;">Utilitarian Individualism</dt>
-                <dd style="font-size: 16px; color: #1a2340; line-height: 1.55; margin: 0 0 12px 0;">One of Bellah's two dominant moral languages: rational self-interest, cost-benefit calculation, and personal advantage. Associated with figures like Benjamin Franklin and with the market economy.</dd>
-                <dt style="font-size: 17px; color: #0e1c42; margin-bottom: 3px;">Expressive Individualism</dt>
-                <dd style="font-size: 16px; color: #1a2340; line-height: 1.55; margin: 0 0 12px 0;">Bellah's second language: authentic self-expression, personal growth, emotional fulfillment. Associated with the Romantic tradition and the twentieth-century therapeutic culture.</dd>
-                <dt style="font-size: 17px; color: #0e1c42; margin-bottom: 3px;">Intermediary Institutions</dt>
-                <dd style="font-size: 16px; color: #1a2340; line-height: 1.55; margin: 0;">Berger and Neuhaus's term (<em>To Empower People</em>, 1977) for family, church, neighborhood, and voluntary association: the institutions standing between the individual and the mega-structures of modern life, through which meaning and identity are formed.</dd>
-            </dl>
-        </div>
+    <div class="key-terms" style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128214; KEY TERMS</div>
+        <dl style="margin: 0;">
+            <dt style="font-size: 17px; color: #0E1C42; margin-bottom: 4px;">Sociological Imagination</dt>
+            <dd style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 14px 24px;">C. Wright Mills's term for the capacity to understand the relationship between individual biography and social history: to see personal troubles as expressions of public issues, and to move between the individual and the structural levels of analysis.</dd>
+            <dt style="font-size: 17px; color: #0E1C42; margin-bottom: 4px;">Public Issue vs. Personal Trouble</dt>
+            <dd style="font-size: 16px; color: #1a2340; line-height: 1.6; margin: 0 0 0 24px;">Mills's distinction: a personal trouble (unemployment, loneliness, anxiety) becomes a public issue when it is experienced by a significant portion of the population and is structurally produced. The personal/public distinction is one of sociology's most important analytical tools.</dd>
+        </dl>
     </div>
 
-    <!-- ============================ PART 4 ============================ -->
+    <!-- ============================ PART 2: MILLS IN CONTEXT ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; WHERE THEY ACTUALLY DISAGREE</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; MILLS IN CONTEXT</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">C. Wright Mills (1916 to 1962) taught sociology at Columbia University and wrote against the grain of his own discipline. American sociology in the 1950s had grown heavily quantitative and, in Mills's judgment, timid: piling up survey data about small questions while declining to ask what any of it meant for how people actually lived under the conditions of the Cold War, mass organization, and a newly bureaucratized society. <em>The Sociological Imagination</em> was his argument for a different kind of discipline, one willing to connect the "grand concerns" (the structure of modern society, the role of reason in human affairs, the threats to individual freedom) to the private discomforts of ordinary people.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Mills redirects a project that already had a history by 1959. Comte, writing in the 1830s, wanted to found a science that would treat social facts the way Newton treated falling bodies: an objective, law-governed study of society modeled on the natural sciences. Mills is not rejecting that ambition outright, but he is redirecting it. His sociological imagination is a habit of mind more than a method of measurement, and it belongs to the citizen as much as to the researcher. Whether that redirection rescues Comte's project or quietly abandons it is a question to hold for Source 17A.</p>
+    </div>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">It is tempting to treat Nisbet, Berger and Neuhaus, Bellah, and Putnam as four versions of one argument, and the convergence is real: all four locate the problem in the thinning of intermediary institutions, and all four trace the lineage back to Tocqueville. But they do not agree on the remedy. Nisbet's diagnosis is structural and somewhat pessimistic: once destroyed, these communities are not easily rebuilt by policy, because they depend on habits and beliefs a society cannot simply legislate back into existence. Berger and Neuhaus are more hopeful, and more policy-minded: they argue government can deliberately empower mediating structures rather than bypass them. Putnam's own later work is the most optimistic of the four, proposing specific civic reforms to rebuild social capital. Bellah is, in a sense, the most radical, because his diagnosis is linguistic rather than institutional: rebuilding an institution does no good if the people in it lack the words to describe why it matters, so his remedy is closer to recovering a moral vocabulary than to founding a new organization.</p>
+    <!-- ============================ PART 3: THE COURSE IN RETROSPECT ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; THE COURSE IN RETROSPECT</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">This course began by asking why sociology emerged when it did and what it was for. It moved through the great classical theorists (Durkheim, Weber, Marx, Simmel, T&ouml;nnies), the community theory tradition (Nisbet, Putnam, Tocqueville, Bellah), and the debates about culture, technology, and globalization that this course brought into contact with those classical frameworks. Across all of it, two questions have been recurring.</p>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">This week's virtue is courtesy, and this is where it belongs. These four thinkers share a diagnosis and disagree, sometimes sharply, about the cure. A serious reader takes each disagreement on its merits rather than treating dissent as disloyalty to the shared cause. That habit, disagreeing about the remedy without contempt for the person proposing it, is itself a small instance of the associational life all four writers are trying to defend.</p>
+        <table class="two">
+            <tr><th></th><th>What it asks</th><th>Who answered it most directly</th></tr>
+            <tr><td>The solidarity question</td><td>What holds a society together, when it works?</td><td>Durkheim on mechanical and organic solidarity, Tocqueville on voluntary association, T&ouml;nnies on Gemeinschaft, Putnam's ancestor argument in Week 8</td></tr>
+            <tr><td>The anomie question</td><td>What dissolves it, when it fails?</td><td>Durkheim on anomie, Marx on alienation, Weber on the iron cage of rationalization, the culture-conflict readings of Weeks 14 and 15</td></tr>
+        </table>
 
-        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 14px 0 0 0;">
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 14px 0 10px 0;">Societies are held together by solidarity, by social capital, by intermediary institutions, by shared moral languages, and by the communities of practice in which character is formed. They are dissolved by anomie, by alienation, by the rationalization of value into instrumental calculation, by the destruction of intermediary institutions, and by the failure of cultural renewal. The sociologist's task is to see these processes clearly, to name them accurately, and to think carefully about what can be done within them.</p>
+
+        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0;">
             <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
-                <span style="color: #C7922C;">&#9654;</span>&nbsp; Decide in your notebook which of the four you find most convincing, and why the others fall short. Then open this.
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; Name the one concept from this course you have caught yourself using outside of class, unprompted.
             </summary>
             <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
-                There is no single right answer, and a strong response will engage the objection to whichever thinker it picks. A common objection to Nisbet is that his pessimism assumes traditional communities were healthier than they actually were, and that new forms of association (online communities, hybrid workplaces, chosen family) may be replacing rather than merely losing the old ones. A common objection to Bellah is that ordinary people may act communally even while describing their actions in individualist language, so the linguistic evidence may understate the reality. Neither objection is decisive. Both are worth taking seriously before you settle on the frameworks you will use in your Capstone.
+                A concept that only appears when you are being tested on it has not yet become part of how you see. A concept you reach for on your own, to make sense of something ordinary, has.
             </div>
         </details>
     </div>
 
+    <!-- ============================ PART 4: TRY IT ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; TRY IT</div>
+
+        <div class="optima-widget ow-reflect">
+            <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
+            <div class="widget-question">Which thinker's lens have you actually caught yourself applying to your own life, outside of an assignment? (No wrong answer.)</div>
+            <div class="widget-options">
+                <button data-response="A common answer, and a good sign. Noticing an unwritten rule you had never named before is exactly the move Durkheim was training you to make, and it tends to stick because it changes how ordinary moments feel.">Durkheim, on social facts</button>
+                <button data-response="Also common, and a slightly uncomfortable one to admit. Once you have Weber's iron cage in your head, it is hard not to notice how much of your own day runs on procedures nobody chose and everybody follows anyway.">Weber, on rationalization</button>
+                <button data-response="This one tends to show up around groups you did not choose: a team, a family gathering, an online community that only holds together because everyone quietly agrees not to test it too hard.">T&ouml;nnies, on Gemeinschaft and Gesellschaft</button>
+                <button data-response="An honest answer, and worth taking seriously rather than treating as a failure. Not every framework fits every mind equally well. The exam and the capstone both let you lead with whichever thinker actually did the most work for you this term.">Honestly, none of them yet</button>
+            </div>
+            <div class="widget-feedback"></div>
+            <button class="widget-reset">Reset</button>
+        </div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 14px 0 10px 0;">Name the thinker for each claim, then flip the card.</p>
+
+        <div class="fgrid">
+            <div class="optima-widget">
+                <div class="widget-kicker">&#9889; TAP TO CHECK</div>
+                <div class="ow-flip" tabindex="0">
+                    <div class="ow-flip-front ffront"><em>Suicide rates rise in booms and in slumps alike.</em></div>
+                    <div class="ow-flip-back fback"><b>Durkheim.</b> Anomie is not deprivation. It is the absence of moral regulation, and sudden prosperity deregulates just as sudden collapse does.</div>
+                </div>
+                <button class="widget-reset">Reset</button>
+            </div>
+            <div class="optima-widget">
+                <div class="widget-kicker">&#9889; TAP TO CHECK</div>
+                <div class="ow-flip" tabindex="0">
+                    <div class="ow-flip-front ffront"><em>Democracy's characteristic danger is an equality that ends in a soft, comfortable despotism.</em></div>
+                    <div class="ow-flip-back fback"><b>Tocqueville.</b> Equality dissolves the old vertical bonds. Voluntary association is the remedy, not a pleasant extra.</div>
+                </div>
+                <button class="widget-reset">Reset</button>
+            </div>
+            <div class="optima-widget">
+                <div class="widget-kicker">&#9889; TAP TO CHECK</div>
+                <div class="ow-flip" tabindex="0">
+                    <div class="ow-flip-front ffront"><em>The specialist is trapped in an iron cage of his own making.</em></div>
+                    <div class="ow-flip-back fback"><b>Weber.</b> Rational bureaucratic order delivers efficiency and disenchants the world at the same time.</div>
+                </div>
+                <button class="widget-reset">Reset</button>
+            </div>
+            <div class="optima-widget">
+                <div class="widget-kicker">&#9889; TAP TO CHECK</div>
+                <div class="ow-flip" tabindex="0">
+                    <div class="ow-flip-front ffront"><em>The worker becomes estranged from the product of his own labor.</em></div>
+                    <div class="ow-flip-back fback"><b>Marx.</b> Alienation under industrial capitalism, distinct from Durkheim's anomie though the two are often confused.</div>
+                </div>
+                <button class="widget-reset">Reset</button>
+            </div>
+            <div class="optima-widget">
+                <div class="widget-kicker">&#9889; TAP TO CHECK</div>
+                <div class="ow-flip" tabindex="0">
+                    <div class="ow-flip-front ffront"><em>The blas&eacute; attitude is a protective organ, not a character flaw.</em></div>
+                    <div class="ow-flip-back fback"><b>Simmel.</b> The metropolitan mind screens out stimulus to survive it, at a real cost.</div>
+                </div>
+                <button class="widget-reset">Reset</button>
+            </div>
+            <div class="optima-widget">
+                <div class="widget-kicker">&#9889; TAP TO CHECK</div>
+                <div class="ow-flip" tabindex="0">
+                    <div class="ow-flip-front ffront"><em>Man is by nature a political animal, and the city is prior to the individual.</em></div>
+                    <div class="ow-flip-back fback"><b>Aristotle.</b> The oldest claim in the course, and the one every social-contract thinker after him had to answer.</div>
+                </div>
+                <button class="widget-reset">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================ PART 5: AFTER THE CAPSTONE ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; AFTER THE CAPSTONE</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">The Community Flourishing Capstone is this course's final test of whether you have developed the sociological imagination. It asks you to take everything you have learned and apply it to a specific, observed community: to move from the theoretical to the empirical and back to the theoretical.</p>
+    </div>
+
     <!-- What You'll Do Next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; NEXT</div>
         <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
             <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
             <div>
-                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 17A: Tocqueville</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your Tuesday reading is Tocqueville's own text, on a related consequence of the same premise that produces the individualism Bellah draws on: equality of conditions.</div>
-            </div>
-        </div>
-        <div style="display: flex; align-items: flex-start; gap: 14px;">
-            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
-            <div>
-                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Reading Quiz 17</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Eight questions covering both lessons this week.</div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 17A: Auguste Comte</strong></div>
+                
             </div>
         </div>
     </div>
 
     <!-- Wrap-up -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
-        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You can now trace a single line of argument across a century and a half: Tocqueville names it, Nisbet extends it structurally, Berger and Neuhaus give it a policy vocabulary, Bellah gives it a linguistic diagnosis, and Putnam gives it numbers. This is what a mature intellectual tradition looks like from the inside: not one book settling a question, but successive thinkers testing, refining, and disagreeing about a premise that keeps proving itself worth arguing over. Wednesday turns from tracing that line to using it, on a community you choose.</p>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; SUMMARY</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">The sociological imagination is the habit of holding a private fact and a public structure in view at once, and refusing to collapse one into the other. Whether it is a habit and not just a vocabulary is a question the Capstone and the Final Examination test. Comte thought a science of society was possible. Mills thought it needed a name for the citizen, not only the researcher. Source 17A gives Comte in his own words.</p>
     </div>
 
 </div>
@@ -318,7 +363,7 @@
 <!-- ===== FOOTER ===== -->
 <div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
     <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Student Lesson Page</div>
-    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 17.01 &middot; Bellah, Berger, Nisbet: Community and the Search for Meaning</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 17.01 &middot; The Sociological Imagination: A Return to the Beginning</div>
     <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
 </div>
 

@@ -1,30 +1,45 @@
 <!--
     Optima Academy Online — Sociology (Florida 2108300)
-    Q2 · Week 13 · Lesson 13.01 — "Crime, Deviance, and Social Order"
+    Q2 · Week 13 · Lesson 13.01 — "Urbanization and Modern Society"
 
     TEACHER-FACING BUILD NOTES (not rendered to students):
-    REGISTER: HONORS (confirmed 2026-08-06). Rules of Sociological Method cited by
-    chapter throughout. Durkheim's and Merton's claims are presented as rival
-    frameworks to be applied to unfamiliar cases, not as vocabulary to memorise.
+    REGISTER: HONORS (confirmed 2026-08-06). Simmel, Wirth, Park, and Jacobs cited
+    by name and argument, not just as a list of terms. The critique-and-revision
+    structure (Wirth challenged by Jacobs) is preserved from the master because it
+    is exactly the honors move: presenting a thinker's strongest objection rather
+    than only the tidy version.
 
-      Standard: (withheld from student-facing text per Hard Rules)
-      Objective: Students will distinguish crime from deviance, explain Durkheim's
-                and Merton's sociological accounts of deviance, and analyze the
-                functions that deviance and punishment serve in social life.
-      Source: Sociology_Course_Master.html, Lesson 13.01 (631 words). Prose
-              preserved; "Hook:" label removed per R5.
+      Standard: SS.912.S.6.1, SS.912.S.6.4, SS.912.S.2.3
+      Objective: Students will explain how urbanization transformed social life in
+                the modern period, apply Simmel's account of metropolitan life,
+                and evaluate the relationship between urban environments and
+                social solidarity.
+      Source: Sociology_Course_Master.html via _build/manifest.json, weeks[13],
+              lessons[0]. Prose preserved; section "Hook: The Stranger" retitled
+              per R5 (label dropped, descriptive title kept).
+      Revisions applied: R5 (no "Hook" label), R7 (no em dashes — none were
+                present in the master text for this lesson), standards codes kept
+                out of student-facing text (SS.912.S.x.x moved here only).
 
-      DASH-AS-COLON CHECK (plan.md defect 6): every sentence in this lesson's
-      master prose was checked against the two-colons-in-one-sentence pattern
-      that damaged Weeks 3, 4, 7, 9, and 14. Week 13 carries ZERO instances.
-      Every colon here is a single, legitimate one (introducing a definition,
-      a list, or a restatement) and was left alone.
+      DASH-AS-COLON CHECK (plan.md defect 6): scanned this lesson's manifest
+      prose programmatically for sentences carrying two or more mid-sentence
+      colons. None found. No recasting was needed for this lesson.
 
-      WIDGET ROTATION: this is the first lesson of Week 13, so no in-week
-      predecessor to avoid repeating. Uses reflect (opening) + select
-      (classification of cases against Durkheim/Merton/labeling theory).
-      Select-row correct indices in order: 2, 0, 3, 1, 0. Not ascending.
+      VIRTUE THREAD: self-government (Weeks 13-14). Woven into the "Critique and
+      Revision" close: reading a theory's strongest counter-argument before
+      accepting it is itself a form of self-government applied to one's own mind.
+
+      WIDGET ROTATION: this week has no pre-built iframe widget assigned (Widget
+      4 belongs to Week 11). 13.01 uses TWO in-page engines: reflective check-in
+      (Part 1) and single-select rows (Part 3, after Critique and Revision).
+      13.02 uses scale placement + flip cards, so the two lessons this week do
+      not repeat an engine combination. Select-row correct indices, in order:
+      2, 0, 3, 1. Not ascending.
       Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
+
+      2026-10-14 revision: weekday and next-lesson references removed; coaching voice and
+      meta paragraph cut; What-next card is names only; PD figure added (Booth poverty
+      map, Part 2, beside the Chicago School's natural areas and the Booth case).
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -62,23 +77,22 @@
     .ow-flip.flipped .ow-flip-front { display: none; }
     .ow-flip.flipped .ow-flip-back { display: block; }
 
-    /* ===== Core visual: Merton's typology grid ===== */
-    .mer { background: #0E1C42; border-radius: 10px; padding: 24px 26px 20px 26px; margin: 4px 0 18px 0; }
-    .mer-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
-    .mer-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 18px; font-style: italic; }
-    .mer-grid { display: grid; grid-template-columns: 110px repeat(2, 1fr); gap: 8px; }
-    .mer-hd { font-size: 11px; color: rgba(255,255,255,0.55); text-align: center; padding: 6px; letter-spacing: 0.3px; }
-    .mer-rl { font-size: 11px; color: rgba(255,255,255,0.55); display: flex; align-items: center; justify-content: center; text-align: center; letter-spacing: 0.3px; padding: 6px; }
-    .mer-cell { border-radius: 7px; padding: 12px 13px; }
-    .mer-cell.yes { background: rgba(85,200,232,0.14); border-top: 3px solid #55C8E8; }
-    .mer-cell.no { background: rgba(192,57,43,0.14); border-top: 3px solid #C0392B; }
-    .mer-cn { font-size: 15px; color: #ffffff; margin-bottom: 4px; }
-    .mer-cd { font-size: 12px; color: rgba(255,255,255,0.75); line-height: 1.45; }
-    .mer-note { margin-top: 16px; padding-top: 13px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.6; }
+    /* ===== Core visual: village vs. metropolis ===== */
+    .vm { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
+    .vm-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .vm-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
+    .vm-row { display: flex; align-items: stretch; gap: 14px; }
+    .vm-col { flex: 1; background: rgba(255,255,255,0.06); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 16px 18px; }
+    .vm-col.city { border-top-color: #C7922C; background: rgba(199,146,44,0.12); }
+    .vm-h { font-size: 15px; color: #ffffff; margin-bottom: 10px; text-align: center; }
+    .vm-b { font-size: 13px; color: rgba(255,255,255,0.82); line-height: 1.6; margin-bottom: 8px; }
+    .vm-vs { display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.35); font-size: 13px; letter-spacing: 0.4px; width: 30px; flex-shrink: 0; }
+    .vm-note { margin-top: 16px; padding-top: 13px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.6; text-align: center; font-style: italic; }
 
-    .kt { background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 13px 17px; margin-bottom: 9px; }
-    .kt-t { font-size: 16px; color: #0E1C42; margin-bottom: 4px; }
-    .kt-d { font-size: 16px; color: #1a2340; line-height: 1.55; }
+    .exg { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 11px; margin: 14px 0; }
+    .exc { background: #FFFFFF; border: 1px solid #D0D9E8; border-top: 3px solid #55C8E8; border-radius: 7px; padding: 14px 16px; }
+    .exc-h { font-size: 16px; color: #0E1C42; margin-bottom: 6px; }
+    .exc-b { font-size: 15px; color: #1a2340; line-height: 1.55; }
 </style>
 </head>
 <body>
@@ -101,7 +115,7 @@
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
         <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 13</div>
-        <div style="font-size: 12px; color: #666;">Crime, Deviance, and American Institutions</div>
+        <div style="font-size: 12px; color: #666;">Urbanization, Technology, and Social Relationships</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
@@ -109,11 +123,11 @@
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
-        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Crime, Deviance, and Social Order</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Urbanization and Modern Society</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
-        <div style="font-size: 16px; color: #0e1c42;">Crime, Deviance, and American Institutions</div>
+        <div style="font-size: 16px; color: #0e1c42;">Urbanization, Technology, and Social Relationships</div>
     </div>
 </div>
 
@@ -122,155 +136,148 @@
 
     <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 13.01</div>
-        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Crime, Deviance, and Social Order</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Urbanization and Modern Society</div>
         <div style="font-size: 16px; color: #666;">Lesson</div>
     </div>
 
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
-        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Could a society ever eliminate crime, and would that be good news?</div>
-        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Durkheim's answer is no on both counts, and he meant it as a serious scientific claim rather than a provocation. Today you meet two rival explanations of why deviance exists at all, and you will need both by the end of the week.</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Does living among strangers change the kind of mind you have?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Simmel thought it must. A city asks something of its residents that a village never does: it asks them to be surrounded by people they will never know and to keep functioning anyway.</div>
     </div>
 
     <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
         <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> distinguish deviance from crime, and explain why the two categories are not the same size.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain Simmel's account of the metropolitan blas&eacute; attitude as an adaptation, not a character flaw, and apply it to an unfamiliar case.</div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> reconstruct Durkheim's argument that crime is normal, and state what evidence would have counted against it.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> reconstruct Wirth's argument that urbanism weakens primary group ties, and state precisely what evidence would have counted against it.</div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> apply Merton's strain typology and labeling theory to an unfamiliar case and defend the classification.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> evaluate Jane Jacobs's objection to Wirth and decide, with reasons, whether density destroys community or produces a different form of it.</div>
         </div>
     </div>
 
     <!-- ============================ PART 1 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; WHY DURKHEIM NEEDED CRIME</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE STRANGER</div>
+
+        <!-- ===== CORE VISUAL ===== -->
+        <div class="vm">
+            <div class="vm-title">TWO WAYS OF KNOWING THE PEOPLE AROUND YOU</div>
+            <div class="vm-sub">Simmel's starting contrast. The city does not simply have more people in it; it changes what "knowing someone" means.</div>
+            <div class="vm-row">
+                <div class="vm-col">
+                    <div class="vm-h">THE VILLAGE</div>
+                    <div class="vm-b">You know nearly everyone you meet, often for your whole life.</div>
+                    <div class="vm-b">Your emotional attention is spent on a small, stable set of people.</div>
+                    <div class="vm-b">Behavior is predictable because it is personally known, not because it is regulated.</div>
+                </div>
+                <div class="vm-vs">VS</div>
+                <div class="vm-col city">
+                    <div class="vm-h">THE METROPOLIS</div>
+                    <div class="vm-b">You are surrounded by strangers whose behavior you cannot predict from personal knowledge.</div>
+                    <div class="vm-b">Stimulation arrives constantly, from every direction, all day.</div>
+                    <div class="vm-b">The mind adapts by cultivating a protective reserve: the blas&eacute; attitude.</div>
+                </div>
+            </div>
+            <div class="vm-note">Simmel's claim: the blas&eacute; attitude is not indifference to people. It is what a mind does so it does not have to feel the full weight of every stranger it passes.</div>
+        </div>
 
         <div class="optima-widget ow-reflect">
             <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
-            <div class="widget-question">Before you read: imagine a society that succeeded in eliminating crime completely, forever. Is that good news for that society? (No wrong answer.)</div>
+            <div class="widget-question">Picture moving from a town of six hundred people to a city of six million. What would surprise you most in the first week?</div>
             <div class="widget-options">
-                <button data-response="The natural answer, and the one Durkheim spends this chapter arguing against. Hold onto your reasoning and see whether his argument changes it.">&#9989; Obviously. A crime-free society is a healthier one.</button>
-                <button data-response="Closer to Durkheim's own view than you might expect, though not for the reason most people guess. He is not worried about enforcement. He is worried about what a total absence of crime would actually mean.">&#129300; Suspicious. That sounds too good to be achievable.</button>
-                <button data-response="This is nearly Durkheim's own position, stated as a prediction rather than an argument. Today's lesson tries to make you believe it, not just repeat it.">&#128260; It is impossible, and if it happened the community would just start treating smaller things as crimes instead.</button>
-                <button data-response="A fair worry. Durkheim is explicit that calling crime normal is not the same as excusing it, and the lesson returns to that distinction directly.">&#9888;&#65039; It depends on whether "normal" means "good."</button>
+                <button data-response="A common first reaction, and Simmel would agree it is real. But he thinks the deeper adjustment is not to the noise itself but to how much of it you have to learn to ignore just to function.">&#128266; How loud and constant everything is</button>
+                <button data-response="This is close to Simmel's own diagnosis. He argues city dwellers develop a cultivated reserve specifically because greeting or attending to every person they pass would be impossible to sustain.">&#128101; How few strangers greet you or make eye contact</button>
+                <button data-response="A fair prediction, and true in Simmel's account, though he is careful to say the specialization is a byproduct of competition for customers, not simply a benefit of city size.">&#127970; How specialized every shop and service is</button>
+                <button data-response="Also true, and it connects directly to today's lesson: Simmel argues the money economy and the intellectualized, calculating metropolitan mind grow up together, each reinforcing the other.">&#128181; How much everything seems to run on money and price</button>
             </div>
             <div class="widget-feedback"></div>
             <button class="widget-reset">Reset</button>
         </div>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">In 1895, Emile Durkheim made an argument that seemed, to most of his contemporaries, obviously absurd. Crime, he argued, is not merely an unfortunate feature of social life that well-organized societies should aspire to eliminate. Crime is a normal feature of social life. Its presence is necessary for the maintenance of social order, and a society entirely without crime is both impossible and undesirable. The argument is one of the most counterintuitive in the history of social thought, and engaging with it seriously is one of the marks of genuine sociological thinking.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 10px 0 10px 0;">In 1903, the German sociologist Georg Simmel published a short essay titled &ldquo;The Metropolis and Mental Life.&rdquo; It begins with an observation that felt startling at the time and now seems obvious: city life requires a different kind of mind than village life. The village dweller knows everyone; her emotional and intellectual resources can be devoted to the full particulars of relationships with a small number of people she has known for years. The city dweller knows almost no one; she is surrounded by strangers whose behavior she cannot predict from personal knowledge. The city is stimulating beyond all prior human experience, and the mind's response to that over-stimulation is not breakdown but adaptation: the development of what Simmel calls a &ldquo;blas&eacute; attitude,&rdquo; a cultivated emotional reserve that protects the metropolitan individual from the overwhelming demands of urban life. He does not feel less; he protects himself from feeling too much.</p>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">What could Durkheim possibly mean? His argument turns on his earlier distinction between acts that violate the collective conscience and acts that merely violate individual interests. Acts that societies define as crimes are acts that provoke the collective moral response, the shared outrage that reaffirms the community's values. When a crime is committed and punished, the community's response is not merely the deterrence of future offenders; it is a ritual reaffirmation of the values that the crime violated. Without crime, there would be nothing to reaffirm. Moreover, what counts as criminal is not fixed. As the most serious violations become rarer, acts that were previously merely undesirable become crimes, because the community's sensitivity to moral violation increases as serious offense becomes less frequent.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">This is sociology as literary insight: a careful observation about a pattern of individual behavior that is actually a social fact in Durkheim's sense, produced by the social conditions of city life and distributed across all metropolitan individuals regardless of their personal psychology. Simmel's essay raises questions that are as live now as they were in 1903: what does the city do to community? What does it do to the self? And what do we lose, as well as gain, when we trade the village for the metropolis?</p>
     </div>
 
-    <!-- ============================ PART 2: KEY TERMS ============================ -->
+    <!-- ============================ KEY TERMS ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; THE TERMS</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; KEY TERMS</div>
+        <div class="exg">
+            <div class="exc">
+                <div class="exc-h">Urbanization</div>
+                <div class="exc-b">The process by which an increasing share of a population comes to live in cities. Modern urbanization is tied to industrialization: the factory system drew rural populations into cities, transforming both the cities and the rural communities they drew from.</div>
+            </div>
+            <div class="exc">
+                <div class="exc-h">Metropolitan Blas&eacute; Attitude</div>
+                <div class="exc-b">Simmel's term for the cultivated emotional reserve city life produces: responding to unfamiliar stimuli with intellectualized detachment rather than emotional engagement. A protective adaptation to overstimulation, not a character flaw.</div>
+            </div>
+            <div class="exc">
+                <div class="exc-h">Urbanism as a Way of Life</div>
+                <div class="exc-b">Louis Wirth's concept (1938): the urban environment does not merely house social life but actively shapes it, producing anonymity, secondary relationships, heterogeneity, and loose social bonds as characteristic features of city life.</div>
+            </div>
+        </div>
+    </div>
 
-        <div class="kt"><div class="kt-t">Deviance</div><div class="kt-d">Any behavior, belief, or condition that violates the norms of a group or society and provokes a negative social response. Not all deviance is criminal. It includes behavior that is merely unconventional, embarrassing, or morally disapproved.</div></div>
-        <div class="kt"><div class="kt-t">Social control</div><div class="kt-d">The mechanisms by which a society maintains conformity to its norms and discourages deviance. Includes formal controls (law, courts, police) and informal controls (gossip, ostracism, shaming, social pressure).</div></div>
-        <div class="kt"><div class="kt-t">Labeling theory</div><div class="kt-d">The sociological perspective, associated particularly with Howard Becker, that deviance is not an intrinsic property of an act but a label applied by those with the power to define and enforce norms. What counts as deviant depends on who is doing the labeling and from what position of social power.</div></div>
-        <div class="kt"><div class="kt-t">Strain theory</div><div class="kt-d">Robert Merton's account of deviance as a response to the gap between culturally approved goals (success, wealth, status) and the socially approved means for achieving them. When legitimate means are blocked, individuals may adopt illegitimate means to achieve approved goals.</div></div>
+    <!-- ============================ PART 2 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; THE SOCIOLOGY OF URBAN SPACE</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The Chicago School of Sociology, active in the early twentieth century, pioneered the systematic empirical study of urban social life. Its leading figures, Robert Park, Ernest Burgess, and Louis Wirth, argued that the city was not merely a larger version of the village but a qualitatively different social environment. Its scale and density produced a different kind of social organization: anonymous, specialized, functionally differentiated. Park argued that the city sorted its inhabitants into &ldquo;natural areas&rdquo; characterized by distinctive social types: the bohemian quarter, the slum, the business district, the suburb. This spatial organization was not accidental. It reflected the social forces produced by urban competition and differentiation.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Wirth's &ldquo;Urbanism as a Way of Life&rdquo; (1938) argued that the distinctive features of urban life, size, density, heterogeneity, systematically weakened the primary group ties (family, neighborhood, church) that had provided social solidarity in pre-urban communities. The city produced secondary relationships, shallow, functionally specific, easily dissolved, in place of primary ones: deep, multifaceted, enduring. The result was social disorganization: not chaos, but a weakening of the normative bonds that had regulated social life in smaller communities.</p>
+        <figure data-pd="w13-booth-poverty-map-ne-sheet-1889.jpg" style="margin: 22px 0 18px 0; text-align: center;"><img src="../_media/w13-booth-poverty-map-ne-sheet-1889.jpg" alt="Colour-coded street map of East London in 1889, each street shaded from gold and red through purple and blue to black by the poverty of its residents" style="max-width: 100%; height: auto; border-radius: 6px;" /><figcaption style="font-size: 14px; color: #4a5a78; line-height: 1.5; margin-top: 8px;">The city sorted into districts of different social character, street by street: the spatial pattern the Chicago School called natural areas. <span style="font-size: 12px; color: #6b7a99;">Charles Booth, 1889. Public domain, via Wikimedia Commons.</span></figcaption></figure>
+        <!-- CASE IN POINT id=14-01-booth-east-london | Charles Booth, Life and Labour of the People in London, &ldquo -->
+        <div class="case-in-point" style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 18px 0 4px 0;">
+            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128205; CASE IN POINT &middot; EAST LONDON, 1861 TO 1881, COUNTED BY CHARLES BOOTH</div>
+            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">Charles Booth studied a city by counting it. Working from the census returns and his own inquiry, he found that in East London and Hackney &ldquo;the whole population of the district increased in the 20 years from 654,000 to 879,000.&rdquo; Compared with England as a whole, the district was &ldquo;strong in manufacture, transport, dealing, and industrial service,&rdquo; and within manufacture the surplus came from &ldquo;tailoring, bootmaking, and cabinet-making.&rdquo; The same tables recorded loss: shipbuilders &ldquo;decreased from 4877 to 3684,&rdquo; their share of the employed population &ldquo;falling from 1.63 to .94.&rdquo;</p>
+            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">This is urbanization observed as a population rather than as an impression. Booth&rsquo;s categories are his own, drawn up in 1889, and the figures tell the story of waning as well as prospering trades, which is his phrase. Set his method beside Simmel&rsquo;s: one asks what the metropolis does to a mind, the other asks who lives there and what they do for a living.</p>
+            <div style="font-size: 12px; color: #1B6A94; margin-top: 10px; line-height: 1.5;">Source: Charles Booth, <em>Life and Labour of the People in London</em>, &ldquo;The Trades of East London,&rdquo; ch. I (1889), English original (public domain).</div>
+        </div>
+        <!-- /CASE IN POINT id=14-01-booth-east-london -->
     </div>
 
     <!-- ============================ PART 3 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; DURKHEIM: THE FUNCTIONS OF DEVIANCE</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; CRITIQUE AND REVISION</div>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Durkheim identifies two positive functions that crime and deviance perform. The first is boundary maintenance. The collective response to deviance, punishment, condemnation, exclusion, reaffirms the community's shared values and clarifies the moral boundaries that define the community's identity. The second is social change. Today's heretics are sometimes tomorrow's saints. Acts that are deviant in one era may become normative in the next, as the moral framework of the community evolves. The deviant who challenges established norms plays an important role in that evolution. Without deviants, there is no social learning about what values should actually govern social life.</p>
-
-        <div style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 0;">
-            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128161; WHAT THE ARGUMENT DOES NOT CLAIM</div>
-            <div style="font-size: 17px; color: #0E1C42; line-height: 1.6;">Durkheim is not saying that any particular crime is good, or that victims of crime should be consoled by its social usefulness. His claim is about crime as a category across a whole society, not about the moral status of any individual act. Reading him as excusing wrongdoing is exactly the misreading he anticipated and tried to head off, and you will meet his own defense against it on Tuesday.</div>
-        </div>
-        <!-- CASE IN POINT id=13-01-socrates-athens | Durkheim, The Rules of Sociological Method, ch. III -->
-        <div class="case-in-point" style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 18px 0 4px 0;">
-            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128205; CASE IN POINT &middot; SOCRATES BEFORE THE ATHENIAN COURT, IN DURKHEIM&rsquo;S ARGUMENT</div>
-            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">Durkheim&rsquo;s hardest case for the claim that crime is normal is Athens in 399 B.C. By Athenian law, he says, Socrates was a criminal, and his condemnation was entirely just under that law. Yet the crime, his independence of thought, served not only humanity but his own city: it prepared the way for a new morality and a new faith that the Athenians needed, because the traditions they had lived by no longer fitted the conditions they lived in.</p>
-            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">The example does two jobs in the argument. It shows that a society&rsquo;s legal verdict and its long-run interest can point in opposite directions, and it shows deviance functioning as a rehearsal for a morality that has not yet arrived. Durkheim is not defending every deviant; he is making a claim about the structure of collective sentiment. What, on his account, distinguishes a Socrates from an ordinary offender at the moment of the trial, when no one yet knows which morality will win?</p>
-            <div style="font-size: 12px; color: #1B6A94; margin-top: 10px; line-height: 1.5;">Source: Durkheim, <em>The Rules of Sociological Method</em>, ch. III (1895). Paraphrased; the assigned translation is linked from the source guide.</div>
-        </div>
-        <!-- /CASE IN POINT id=13-01-socrates-athens -->
-    </div>
-
-    <!-- ============================ PART 4 ============================ -->
-    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; MERTON: STRAIN AND ITS ADAPTATIONS</div>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Robert Merton, writing in 1938, offered a different account of deviance focused on the structural conditions that produce it. American culture, Merton argued, places enormous emphasis on the goal of material success, while the legitimate means for achieving that success (education, career, hard work) are not equally available to all members of society. This gap between culturally approved goals and structurally available means produces strain, which individuals respond to in different ways.</p>
-
-        <!-- ===== CORE VISUAL ===== -->
-        <div class="mer">
-            <div class="mer-title">MERTON'S FIVE ADAPTATIONS</div>
-            <div class="mer-sub">Two independent questions: do you still accept the culturally approved goal, and do you still use the approved means to get there?</div>
-            <div class="mer-grid">
-                <div></div>
-                <div class="mer-hd">ACCEPTS THE GOAL</div>
-                <div class="mer-hd">REJECTS THE GOAL</div>
-
-                <div class="mer-rl">ACCEPTS THE MEANS</div>
-                <div class="mer-cell yes"><div class="mer-cn">Conformity</div><div class="mer-cd">Pursues approved goals through approved means. Most people, most of the time.</div></div>
-                <div class="mer-cell no"><div class="mer-cn">Ritualism</div><div class="mer-cd">Abandons the goal but continues the means, going through the motions for their own sake.</div></div>
-
-                <div class="mer-rl">REJECTS THE MEANS</div>
-                <div class="mer-cell no"><div class="mer-cn">Innovation</div><div class="mer-cd">Pursues the approved goal through disapproved means. Most crime aimed at material success fits here.</div></div>
-                <div class="mer-cell no"><div class="mer-cn">Retreatism</div><div class="mer-cd">Abandons both goal and means, and drops out of the pursuit entirely.</div></div>
-            </div>
-            <div class="mer-note">A fifth adaptation, <strong>rebellion</strong>, does not fit the grid, because the rebel rejects the existing goal-means framework altogether and tries to replace it with new values rather than opting out of the old ones.</div>
-        </div>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">This typology has proven enormously influential in the sociology of crime and deviance, partly because it separates two questions people usually collapse into one: what someone wants, and how they are willing to get it. Notice that only innovation and rebellion are guaranteed to look like crime from the outside. Ritualism and retreatism can be entirely legal and still count, on Merton's account, as adaptations to the same structural strain.</p>
-    </div>
-
-    <!-- ============================ PART 5: WIDGET ============================ -->
-    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 5 &middot; APPLY THE FRAMEWORK</div>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Five cases. For each, decide which framework fits best: Durkheim's boundary maintenance, one of Merton's adaptations, or labeling theory. Judge by the mechanism described, not by whether the behavior sounds bad.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Wirth's account was important but also somewhat overdrawn. Subsequent empirical research showed that urban communities do maintain primary group ties, that neighborhoods do develop genuine solidarity, and that the city is not simply a machine for dissolving community. Jane Jacobs, in <em>The Death and Life of Great American Cities</em> (1961), offered a powerful counter-argument: well-designed city streets, with their mixed uses and active sidewalks, produce their own distinctive form of social life, not less than rural community life but differently constituted. The city street, at its best, creates what Jacobs calls &ldquo;sidewalk ballet&rdquo;: a complex, spontaneous social choreography that generates safety, public trust, and genuine community among people who do not know each other as personal friends.</p>
 
         <div class="optima-widget ow-select">
-            <div class="widget-kicker">&#9889; TRY IT &middot; WHICH FRAMEWORK FITS?</div>
-            <div class="widget-question">Read each case and choose the sociological account that explains it best.</div>
+            <div class="widget-kicker">&#9889; TRY IT &middot; WHOSE ACCOUNT FITS?</div>
+            <div class="widget-question">For each observation, decide which theorist's framework it best supports. Judge by the mechanism each theorist proposes, not just the vocabulary.</div>
 
-            <div class="widget-row" data-correct="2" data-fb="Ritualism. She has quietly abandoned the goal the procedure was meant to serve, but the means, the paperwork itself, has become the whole of her conduct. Ask this question separately for goal and for means, and the case sorts itself." data-hint="Ask two separate questions: has she given up on the goal, on the means, both, or neither? Ritualists give up exactly one of the two.">
-                <div class="widget-row-prompt">1. A permit clerk stopped believing years ago that the paperwork accomplishes anything useful, but she still stamps every form in the exact prescribed order without exception.</div>
+            <div class="widget-row" data-correct="2" data-fb="Jacobs. A resident stepping outside to keep half an eye on the block, without any personal relationship to most of the people on it, is exactly her &ldquo;sidewalk ballet&rdquo;: informal, unplanned coordination that produces real safety and trust among strangers." data-hint="Nobody here withdraws, and nobody is a stranger being screened out. Something informal is being coordinated. Whose theory is built around that?">
+                <div class="widget-row-prompt">1. On a busy residential street, shopkeepers, stoop-sitters, and dog walkers keep an informal watch on the block all day without ever organizing to do so.</div>
                 <div class="widget-options">
-                    <button data-choice="0">Durkheim (boundary maintenance)</button><button data-choice="1">Merton (innovation)</button><button data-choice="2">Merton (ritualism)</button><button data-choice="3">Labeling theory</button>
+                    <button data-choice="0">Simmel</button><button data-choice="1">Wirth</button><button data-choice="2">Jacobs</button><button data-choice="3">Park</button>
                 </div>
             </div>
 
-            <div class="widget-row" data-correct="0" data-fb="Boundary maintenance. Notice who the public announcement is really for. The effect is not concentrated on the athlete; it is spread across the whole team, which is Durkheim's whole argument about why a community needs to see wrongdoing addressed openly." data-hint="Ask who the punishment seems designed to affect. Is it mainly the offender, or is it the group watching?">
-                <div class="widget-row-prompt">2. A coach suspends a star athlete for breaking curfew and announces the suspension at a full team meeting. Afterward, the other players report feeling clearer about the team's expectations.</div>
+            <div class="widget-row" data-correct="0" data-fb="Simmel. Ignoring a strong emotional cue on purpose, in order to keep functioning amid constant stimulation, is precisely the cultivated reserve he calls the blas&eacute; attitude." data-hint="This is not about neighborhood ties at all. It is about one person managing their own emotional exposure to overstimulation. Whose concept is that?">
+                <div class="widget-row-prompt">2. A commuter steps around a loud argument on the platform without breaking stride or changing expression, having seen dozens like it that month.</div>
                 <div class="widget-options">
-                    <button data-choice="0">Durkheim (boundary maintenance)</button><button data-choice="1">Merton (innovation)</button><button data-choice="2">Merton (ritualism)</button><button data-choice="3">Labeling theory</button>
+                    <button data-choice="0">Simmel</button><button data-choice="1">Wirth</button><button data-choice="2">Jacobs</button><button data-choice="3">Park</button>
                 </div>
             </div>
 
-            <div class="widget-row" data-correct="3" data-fb="Labeling theory. The behavior itself, an ordinary gathering, has not changed. What changed is who is doing the defining and enforcing, which is exactly Becker's point: deviance is a status conferred by power, not a property built into the act." data-hint="Ask what actually changed: the behavior in question, or who gets to decide what that behavior means?">
-                <div class="widget-row-prompt">3. A town that has never minded loud gatherings suddenly treats one ethnic group's ordinary block parties as a public nuisance requiring a police response, while a similar gathering held by longtime residents draws no complaints at all.</div>
+            <div class="widget-row" data-correct="3" data-fb="Park. Sorting the city into zones with distinctive social types, an arts district here, a warehouse district there, is his &ldquo;natural areas&rdquo; argument: the city organizes itself spatially by function and social type." data-hint="Nobody's inner state is at issue here. This is about where in the city certain kinds of people and activity cluster. Whose framework is spatial sorting?">
+                <div class="widget-row-prompt">3. A city's arts scene, its immigrant groceries, and its finance firms each cluster in a different, recognizable district.</div>
                 <div class="widget-options">
-                    <button data-choice="0">Durkheim (boundary maintenance)</button><button data-choice="1">Merton (innovation)</button><button data-choice="2">Merton (ritualism)</button><button data-choice="3">Labeling theory</button>
+                    <button data-choice="0">Simmel</button><button data-choice="1">Wirth</button><button data-choice="2">Jacobs</button><button data-choice="3">Park</button>
                 </div>
             </div>
 
-            <div class="widget-row" data-correct="1" data-fb="Innovation. He still wants exactly what everyone around him is taught to want, material success, and he is reaching it through a disapproved means. That combination, approved goal plus disapproved means, is Merton's definition of the innovator." data-hint="Ask whether he still wants what his culture tells him to want. Then ask whether his route to it is an approved one.">
-                <div class="widget-row-prompt">4. A young man with little access to the schooling his wealthier peers take for granted wants the same financial success his culture prizes, and starts selling counterfeit merchandise to get it.</div>
+            <div class="widget-row" data-correct="1" data-fb="Wirth. Living beside the same family for a decade while knowing only their name is the &ldquo;secondary relationship&rdquo; he argues replaces deep primary ties in dense, heterogeneous cities." data-hint="This is a relationship, but a thin, functionally limited one that has lasted without deepening. Whose term is built for exactly that kind of tie?">
+                <div class="widget-row-prompt">4. A resident has lived beside the same family for ten years and knows only their names and that they keep to themselves.</div>
                 <div class="widget-options">
-                    <button data-choice="0">Durkheim (boundary maintenance)</button><button data-choice="1">Merton (innovation)</button><button data-choice="2">Merton (ritualism)</button><button data-choice="3">Labeling theory</button>
-                </div>
-            </div>
-
-            <div class="widget-row" data-correct="0" data-fb="Boundary maintenance, and a specific version of it. Durkheim predicts exactly this: as the worst offenses become rare, the community's moral sensitivity rises, and behavior that once drew a shrug starts drawing genuine condemnation. Nothing about the behavior changed. The community's baseline did." data-hint="This is not about who is doing the labeling. Ask instead what happened to the community's general level of moral sensitivity once serious wrongdoing became rare.">
-                <div class="widget-row-prompt">5. A close-knit community that has nearly eliminated serious theft over several generations begins treating small breaches of table manners, ones that would draw no comment elsewhere, as real moral failures.</div>
-                <div class="widget-options">
-                    <button data-choice="0">Durkheim (boundary maintenance)</button><button data-choice="1">Merton (innovation)</button><button data-choice="2">Merton (ritualism)</button><button data-choice="3">Labeling theory</button>
+                    <button data-choice="0">Simmel</button><button data-choice="1">Wirth</button><button data-choice="2">Jacobs</button><button data-choice="3">Park</button>
                 </div>
             </div>
 
@@ -278,28 +285,27 @@
         </div>
     </div>
 
-    <!-- Wrap-up + next -->
+    <!-- What You'll Do Next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; NEXT</div>
         <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
             <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
             <div>
-                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 13A: Durkheim</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your Tuesday reading is Durkheim's own defense of the argument this lesson only summarized, from <em>The Rules of Sociological Method</em>, Chapter III. It is in a book. See the module map.</div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Text Study 13A: Simmel</strong></div>
             </div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 14px;">
             <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
             <div>
-                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Reading Quiz 13</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Eight questions covering both lessons this week.</div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Lesson 13.02: Technology and Social Relationships</strong></div>
             </div>
         </div>
     </div>
 
+    <!-- Wrap-up -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
-        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Deviance is a broader category than crime, and three frameworks explain why it persists for very different reasons: Durkheim's account of what a community's response to wrongdoing accomplishes, Merton's account of what happens when a culture's goals outrun its available means, and labeling theory's account of who holds the power to call an act deviant in the first place. None of the three requires assuming that deviants are broken people. All three treat deviance as something social life produces, structurally, again and again. On Wednesday you will meet a thinker worried about the opposite failure: a society that polices agreement so thoroughly that almost no one is left willing to be a heretic at all.</p>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">A city changes the terms of social life rather than simply removing community from it. Simmel located the change in the individual mind, Wirth located it in the weakening of primary bonds, and Jacobs showed that dense, well-designed urban space can generate its own real form of solidarity among strangers. None of the three is simply wrong. Each is describing a genuine mechanism, and the honest position is to ask, of any particular street or city, which mechanism is doing the most work there.</p>
     </div>
 
 </div>
@@ -307,7 +313,7 @@
 <!-- ===== FOOTER ===== -->
 <div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
     <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Student Lesson Page</div>
-    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 13.01 &middot; Crime, Deviance, and Social Order</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 13.01 &middot; Urbanization and Modern Society</div>
     <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
 </div>
 

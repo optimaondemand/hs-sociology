@@ -1,39 +1,21 @@
 <!--
     Optima Academy Online — Sociology (Florida 2108300)
-    Q1 · Week 9 · Lesson 9.01 — "How Individuals Become Social Beings: A Synthesis of Quarter 1"
+    Week 9 · Lesson 9.01 — "Quarter 1 Recap: From Social Bonds to Social Institutions"
 
     TEACHER-FACING BUILD NOTES (not rendered to students):
-    REGISTER: HONORS. This is the Quarter 1 synthesis lesson, not new content. It
-    closes the quarter by asking students to hold eleven thinkers together as one
-    argument rather than a list, and it prepares them for the Classical Thinker
-    Profile (due end of Week 8, already submitted) and the Community Institution
-    Study (launching this week, Weeks 9-11).
-
-      Standard: not specified in the master for this lesson.
-      Objective: Students will synthesize the major arguments of Quarter 1 into a
-                coherent narrative about the relationship between the individual
-                and society.
-      Source: _build/manifest.json, weeks[8].lessons[0]. Prose preserved from the
-              master except where restructured into this week's visual/widget
-              scaffolding. No content invented; the six-thinker characterizations
-              in the flip-card widget are drawn directly from the master's own
-              "Arc of the Argument" paragraph, recast out of its original
-              colon-heavy construction into ordinary sentences.
-
-      DASH-AS-COLON REPAIR: none required. The master's body prose for this
-      lesson (both the "Question that Connects" and "Arc of the Argument"
-      sections) was checked sentence by sentence against the two-colon test and
-      carries zero instances of the damage pattern. All of this lesson's single
-      colons are legitimate (definitions, "not X, but Y" constructions read as
-      one clause each) and were left alone.
-
-      WIDGET ROTATION: most recently built lesson is 6.02 (single-select rows +
-      commit-then-reveal). 9.01 uses flip cards (six thinkers, retrieval practice
-      that does NOT repeat the printed Key Terms list) + single-select rows
-      (apply the concepts to new scenarios, distinguishing near-neighbors like
-      Putnam's bridging capital vs. Tonnies's Gemeinschaft). Neither widget
-      repeats within this lesson. Select-row correct indices in order: 2, 3, 0, 1.
-      Not ascending.
+    REGISTER: HONORS. REVISED 2026-10-14 (Weeks 9 and 10 merged). This lesson was the
+    Quarter 1 synthesis; it is now a tight recap that ends by turning into Quarter 2.
+      Kept: the Quarter 1 arc visual, the six thinker flip cards, the four-row
+            classification widget (data-correct 2, 3, 0, 1 unchanged).
+      Cut: the printed key-terms list and the two summary paragraphs (restated the arc),
+           the prediction reveal, the wrap-up card, and every reference to items removed in
+           the merge (method lesson, the re-reading source, the Q1-wide quiz and journal).
+      Added: Quarter 1 to Quarter 2 bridge visual (what Q1 established, what Q2 asks)
+             and one public-domain figure (Storming of the Bastille, Houel, 1789).
+      Objective: Students reconstruct the single question running through Quarter 1,
+                apply a Quarter 1 concept to a new case, and state what Quarter 2 adds.
+      Widgets: flip cards + single-select rows. Select-row correct indices in order:
+               2, 3, 0, 1. Not ascending.
       Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
 -->
 <!DOCTYPE html>
@@ -90,6 +72,26 @@
     .kterms dt { font-size: 15px; color: #0E1C42; margin-bottom: 3px; }
     .kterms dd { font-size: 14px; color: #4a4030; line-height: 1.5; margin: 0; }
     @media (max-width: 640px) { .kterms dl { grid-template-columns: 1fr; } }
+
+    .flipgrid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 4px 0 0 0; }
+    .flipgrid2 .optima-widget { margin: 0; padding: 14px 16px; }
+    @media (max-width: 700px) { .flipgrid2 { grid-template-columns: 1fr; } }
+    .qlist { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .qlist li { background: #F4F6FA; border-left: 4px solid #55C8E8; border-radius: 6px; padding: 10px 14px; font-size: 16px; color: #0E1C42; line-height: 1.5; }
+    @media (max-width: 700px) { .qlist { grid-template-columns: 1fr; } }
+
+    /* ===== Bridge visual: Quarter 1 to Quarter 2 ===== */
+    .bridge { background: #0E1C42; border-radius: 10px; padding: 24px 26px 20px 26px; margin: 4px 0 18px 0; }
+    .bridge-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 18px; }
+    .bridge-head { display: grid; grid-template-columns: 1fr 40px 1fr; gap: 8px; margin-bottom: 8px; }
+    .bridge-head div { font-size: 11px; letter-spacing: 0.5px; text-align: center; }
+    .bridge-row { display: grid; grid-template-columns: 1fr 40px 1fr; gap: 8px; align-items: stretch; margin-bottom: 10px; }
+    .bridge-l { background: rgba(255,255,255,0.07); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 12px 14px; font-size: 14px; color: rgba(255,255,255,0.88); line-height: 1.5; }
+    .bridge-r { background: rgba(199,146,44,0.14); border-top: 3px solid #C7922C; border-radius: 7px; padding: 12px 14px; font-size: 14px; color: #ffffff; line-height: 1.5; }
+    .bridge-a { color: rgba(255,255,255,0.45); font-size: 22px; display: flex; align-items: center; justify-content: center; }
+    .bridge-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 16px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.16); }
+    .bridge-pill { border: 1.5px solid #C7922C; color: #ffffff; border-radius: 20px; padding: 6px 18px; font-size: 13px; letter-spacing: 0.6px; }
+    @media (max-width: 700px) { .bridge-head { display: none; } .bridge-row { grid-template-columns: 1fr; } .bridge-a { transform: rotate(90deg); height: 20px; } }
 </style>
 </head>
 <body>
@@ -111,8 +113,8 @@
 <div style="background: #FFFFFF; border-bottom: 2px solid #D0D9E8; display: flex; flex-wrap: wrap;">
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
-        <div style="font-size: 17px; color: #0e1c42;">Q1 &middot; Module 9</div>
-        <div style="font-size: 12px; color: #666;">Quarter 1 Review and Synthesis</div>
+        <div style="font-size: 17px; color: #0e1c42;">Module 9</div>
+        <div style="font-size: 12px; color: #666;">Quarter 1 Recap and the Origins of Political Authority</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
@@ -120,11 +122,11 @@
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
-        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">How Individuals Become Social Beings: A Synthesis of Quarter 1</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Quarter 1 Recap: From Social Bonds to Social Institutions</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
-        <div style="font-size: 16px; color: #0e1c42;">Quarter 1 Review and Synthesis</div>
+        <div style="font-size: 16px; color: #0e1c42;">Quarter 1 Recap and the Origins of Political Authority</div>
     </div>
 </div>
 
@@ -133,14 +135,14 @@
 
     <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 9.01</div>
-        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">How Individuals Become Social Beings: A Synthesis of Quarter 1</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Quarter 1 Recap: From Social Bonds to Social Institutions</div>
         <div style="font-size: 16px; color: #666;">Lesson</div>
     </div>
 
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
-        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Nine weeks, eleven thinkers. What is the one question they were all actually asking?</div>
-        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">You have read Aristotle, Hobbes, Locke, Rousseau, Tocqueville, Durkheim, Simmel, Tonnies, Nisbet, and Putnam, plus the reading substitutes standing in for Berger. That looks like a list. It is not. Today's task is to see it as one argument, conducted across two and a half centuries, about what holds a person to the people around her and what happens when that hold weakens.</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">Eleven thinkers, one question. What did Quarter 1 establish, and what does it leave open?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Aristotle through Putnam, across twenty-three centuries, argued about what holds a person to the people around her and what happens when that hold weakens. Quarter 2 asks who governs the bonds that remain.</div>
     </div>
 
     <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
@@ -159,14 +161,12 @@
         </div>
     </div>
 
-    <!-- ============================ PART 1 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE QUESTION THAT CONNECTS</div>
-
         <!-- ===== CORE VISUAL ===== -->
         <div class="qarc">
             <div class="qarc-title">THE QUARTER 1 ARC</div>
-            <div class="qarc-sub">Five stages, one argument. Find the thread running through all of them.</div>
+            <div class="qarc-sub">Four stages, one argument. Quarter 2 opens at the last arrow.</div>
             <div class="qarc-row">
                 <div class="qarc-box">
                     <div class="qarc-n">WKS 1&ndash;2</div>
@@ -197,107 +197,83 @@
                 </div>
                 <div class="qarc-arrow">&#8594;</div>
                 <div class="qarc-box" style="border-top-color:#C7922C;">
-                    <div class="qarc-n">WK 9</div>
-                    <div class="qarc-h">What holds, and what is still open?</div>
-                    <div class="qarc-b">Today. You put the pieces together and decide which links in the chain you find most and least convincing.</div>
-                    <div class="qarc-t">You are here</div>
+                    <div class="qarc-n">QUARTER 2</div>
+                    <div class="qarc-h">Who holds authority over the bonds that remain?</div>
+                    <div class="qarc-b">Government, law, and legitimate authority, then the institutions of modern life.</div>
+                    <div class="qarc-t">Institutions, authority, modernity</div>
                 </div>
             </div>
-            <div class="qarc-note">Notice that almost nobody in this arc is disagreeing about facts. They are disagreeing about what the facts mean, which is exactly the distinction Wednesday's lesson takes up directly.</div>
+            <div class="qarc-note">Almost nobody in this arc disagrees about the facts. They disagree about what the facts mean.</div>
         </div>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Quarter 1 has covered nine weeks and more than ten thinkers: Aristotle, Hobbes, Locke, Rousseau, Tocqueville, Durkheim, Simmel, Tonnies, Nisbet, and Putnam, alongside Berger, whose ideas you met even though the assigned reading in his place came from Simmel. It can appear, surveying this list, that they are simply a gallery of thinkers who share only the broad label of "sociology." A closer look reveals that they are all addressing a single family of questions. What is the relationship between the individual and the society that formed her? How do social bonds originate, and what are they made of? What happens to individuals and communities when those bonds weaken? And what can sociology, as a discipline, contribute to understanding these questions?</p>
+        <ul class="qlist">
+            <li>What is the relationship between the individual and the society that formed her?</li>
+            <li>How do social bonds originate, and what are they made of?</li>
+            <li>What happens to individuals and communities when those bonds weaken?</li>
+            <li>What can sociology, as a discipline, contribute to these questions?</li>
+        </ul>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">These are not merely academic questions. They are the questions that arise naturally for anyone living in a modern society and paying attention. Why do I feel the way I feel about certain obligations? Why do some communities hold together and others dissolve? Why do some forms of social change feel like liberation and others feel like loss? Sociology does not answer these questions definitively, but it provides the vocabulary, the analytical tools, and the empirical evidence to engage them more honestly and more precisely than common sense alone allows.</p>
     </div>
 
-    <!-- ============================ PART 2 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; KEY TERMS FOR REVIEW</div>
-
-        <div class="kterms">
-            <dl>
-                <dt>Social Fact</dt><dd>Durkheim: external, general, constraining. The basic object of sociological analysis.</dd>
-                <dt>Socialization</dt><dd>The process by which individuals internalize social norms, values, and roles. Primary and secondary.</dd>
-                <dt>Mechanical / Organic Solidarity</dt><dd>Durkheim's two types: sameness versus interdependence.</dd>
-                <dt>Anomie</dt><dd>The condition of normlessness in modern societies when the collective conscience weakens.</dd>
-                <dt>Gemeinschaft / Gesellschaft</dt><dd>Tonnies: community based on personal bonds versus association based on contract.</dd>
-                <dt>Social Capital</dt><dd>Putnam: networks of trust and reciprocity. Bonding versus bridging.</dd>
-                <dt>Intermediate Institution</dt><dd>Nisbet: the voluntary associations between individual and state that human freedom requires.</dd>
-                <dt>Sociological Consciousness</dt><dd>Berger: the capacity to see through social appearances to underlying structures.</dd>
-            </dl>
-        </div>
-
-        <p style="font-size: 16px; color: #4a5a78; line-height: 1.6; margin: 0 0 14px 0;">You have already read a full definition of each of these. The activity below tests something different: not whether you can define a term, but whether you can remember which thinker it belongs to without the term sitting right next to the name.</p>
-
-        <div class="optima-widget">
-            <div class="widget-kicker">&#9889; TAP TO REVEAL</div>
-            <div class="ow-flip" tabindex="0">
-                <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;">Aristotle</div>
-                <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">Gave the quarter its foundational claim, that human beings are social animals who cannot fully flourish outside a political community.</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; WHO ARGUED WHAT</div>
+        <div class="flipgrid2">
+            <div class="optima-widget">
+                <div class="widget-kicker">&#9889; TAP TO REVEAL</div>
+                <div class="ow-flip" tabindex="0">
+                    <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;">Aristotle</div>
+                    <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">Gave the quarter its foundational claim, that human beings are social animals who cannot fully flourish outside a political community.</div>
+                </div>
+                <button class="widget-reset">Reset</button>
             </div>
-            <button class="widget-reset">Reset</button>
-        </div>
-
-        <div class="optima-widget">
-            <div class="widget-kicker">&#9889; TAP TO REVEAL</div>
-            <div class="ow-flip" tabindex="0">
-                <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;">Hobbes</div>
-                <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">Challenged Aristotle directly: without an external constraint, he argued, social life dissolves into a war of every man against every man.</div>
+            <div class="optima-widget">
+                <div class="widget-kicker">&#9889; TAP TO REVEAL</div>
+                <div class="ow-flip" tabindex="0">
+                    <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;">Hobbes</div>
+                    <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">Challenged Aristotle directly: without an external constraint, he argued, social life dissolves into a war of every man against every man.</div>
+                </div>
+                <button class="widget-reset">Reset</button>
             </div>
-            <button class="widget-reset">Reset</button>
-        </div>
-
-        <div class="optima-widget">
-            <div class="widget-kicker">&#9889; TAP TO REVEAL</div>
-            <div class="ow-flip" tabindex="0">
-                <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;">Tocqueville</div>
-                <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">Traced equality of conditions forward to individualism and then to soft despotism, and located the remedy in voluntary association.</div>
+            <div class="optima-widget">
+                <div class="widget-kicker">&#9889; TAP TO REVEAL</div>
+                <div class="ow-flip" tabindex="0">
+                    <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;">Tocqueville</div>
+                    <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">Traced equality of conditions forward to individualism and then to soft despotism, and located the remedy in voluntary association.</div>
+                </div>
+                <button class="widget-reset">Reset</button>
             </div>
-            <button class="widget-reset">Reset</button>
-        </div>
-
-        <div class="optima-widget">
-            <div class="widget-kicker">&#9889; TAP TO REVEAL</div>
-            <div class="ow-flip" tabindex="0">
-                <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;">Durkheim</div>
-                <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">Established, against every intuition, that society is a reality with its own forces and its own forms of solidarity, not just an agreement among individuals.</div>
+            <div class="optima-widget">
+                <div class="widget-kicker">&#9889; TAP TO REVEAL</div>
+                <div class="ow-flip" tabindex="0">
+                    <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;">Durkheim</div>
+                    <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">Established, against every intuition, that society is a reality with its own forces and its own forms of solidarity, not just an agreement among individuals.</div>
+                </div>
+                <button class="widget-reset">Reset</button>
             </div>
-            <button class="widget-reset">Reset</button>
-        </div>
-
-        <div class="optima-widget">
-            <div class="widget-kicker">&#9889; TAP TO REVEAL</div>
-            <div class="ow-flip" tabindex="0">
-                <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;">Simmel</div>
-                <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">Explored the texture of modern life rather than its structure: the blase attitude, the money economy, the figure of the stranger.</div>
+            <div class="optima-widget">
+                <div class="widget-kicker">&#9889; TAP TO REVEAL</div>
+                <div class="ow-flip" tabindex="0">
+                    <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;">Simmel</div>
+                    <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">Explored the texture of modern life rather than its structure: the blase attitude, the money economy, the figure of the stranger.</div>
+                </div>
+                <button class="widget-reset">Reset</button>
             </div>
-            <button class="widget-reset">Reset</button>
-        </div>
-
-        <div class="optima-widget">
-            <div class="widget-kicker">&#9889; TAP TO REVEAL</div>
-            <div class="ow-flip" tabindex="0">
-                <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;">Nisbet and Putnam</div>
-                <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">Writing a century apart, both documented the decline of the intermediate institutions between individual and state, and the costs of that decline for democracy and personal meaning.</div>
+            <div class="optima-widget">
+                <div class="widget-kicker">&#9889; TAP TO REVEAL</div>
+                <div class="ow-flip" tabindex="0">
+                    <div class="ow-flip-front" style="font-size:18px;color:#0E1C42;">Nisbet and Putnam</div>
+                    <div class="ow-flip-back" style="font-size:16px;line-height:1.55;">Writing a half-century apart, both documented the decline of the intermediate institutions between individual and state, and the costs of that decline for democracy and personal meaning.</div>
+                </div>
+                <button class="widget-reset">Reset</button>
             </div>
-            <button class="widget-reset">Reset</button>
         </div>
     </div>
 
-    <!-- ============================ PART 3 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; THE ARC OF THE ARGUMENT</div>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">The course began with two disruptions: the French Revolution and the Industrial Revolution. These events did not merely change political arrangements or economic production. They dissolved the social bonds, the community structures, and the shared meanings that had organized European life for centuries. Sociology was born as the attempt to understand what had been lost, what had been gained, and what new forms of social life might be possible.</p>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Aristotle provided the foundational claim that humans are social animals who cannot fully flourish outside political community. Hobbes challenged it, arguing that without external constraint, social life is war. Locke and Rousseau offered alternatives: rational contract and natural goodness, respectively. These pre-sociological debates established the terms of argument that sociology would inherit.</p>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">Durkheim then showed, with empirical rigor, that society is a reality, not merely an agreement among individuals but a structure with its own forces (social facts) and its own forms of solidarity. Simmel explored the texture of modern social life: the blase attitude, the money economy, the stranger. Berger's approach, which you met through the reading substitute, taught the same lesson in a different key: to see sociologically is to look through appearances to the structures beneath. Tonnies named what was being lost, Gemeinschaft giving way to Gesellschaft. Nisbet and Putnam documented, across a century, the costs of that loss for democracy, human flourishing, and individual meaning.</p>
-
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; APPLY THE CONCEPTS</div>
         <div class="optima-widget ow-select">
             <div class="widget-kicker">&#9889; TRY IT &middot; WHICH CONCEPT IS THIS?</div>
-            <div class="widget-question">Each scenario is new. Decide which Quarter 1 concept it illustrates, and watch for the near-neighbor that would also seem plausible.</div>
+            <div class="widget-question">Each scenario is new. Decide which Quarter 1 concept it illustrates.</div>
 
             <div class="widget-row" data-correct="2" data-fb="Bridging social capital, in Putnam's sense. It connects people across lines of difference rather than reinforcing bonds among people who already resemble one another, which is what bonding capital does." data-hint="Ask whether the tie connects people who are alike or people who are different from one another. That distinction is exactly what separates Putnam's two kinds of capital.">
                 <div class="widget-row-prompt">1. A neighborhood association brings together people of different ethnic backgrounds, income levels, and religions to run a shared community garden. Members say the garden connects them to people they would otherwise never meet.</div>
@@ -331,53 +307,46 @@
         </div>
     </div>
 
-    <!-- ============================ PART 4 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; WHAT QUARTER 2 WILL BUILD</div>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">Quarter 2 turns from the foundational questions of sociological theory to the specific institutions through which societies organize power, production, and community: government, law, bureaucracy, the economy, and the cultural institutions of modern life. The thinkers of Quarter 1 will return as interlocutors. Weber will join on bureaucracy and authority, Marx on capitalism and class, Durkheim again on crime and deviance, Tocqueville again on American institutions. The question of how individuals become social beings, which has occupied Quarter 1, gives way to the question of how societies organize themselves.</p>
-
-        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0;">
-            <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
-                <span style="color: #C7922C;">&#9654;</span>&nbsp; Predict in your notebook one Quarter 1 thinker whose ideas you expect to see argued with, not just repeated, in Quarter 2. Then open this.
-            </summary>
-            <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
-                A strong candidate is Durkheim. He returns in Weeks 12 and 13 on the division of labor and on crime and deviance, but Marx enters Quarter 2 as a direct rival, arguing that the divisions Durkheim treats as functional interdependence are, in fact, a structure of exploitation. Watch for the pattern: Quarter 2 rarely introduces a thinker in isolation. It sets one against another and asks you to judge the contest, which is a harder and more honest kind of learning than adding names to a list.
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; QUARTER 2 BEGINS</div>
+        <div class="bridge">
+            <div class="bridge-title">FROM QUARTER 1 TO QUARTER 2</div>
+            <div class="bridge-head"><div style="color:#55C8E8;">QUARTER 1 ESTABLISHED</div><div></div><div style="color:#C7922C;">QUARTER 2 ASKS</div></div>
+            <div class="bridge-row">
+                <div class="bridge-l">Society is a real force that constrains the individual through social facts (Durkheim).</div>
+                <div class="bridge-a">&#8594;</div>
+                <div class="bridge-r">Which constraints are authority, power regarded as rightful, and why does that recognition decide whether a government lasts?</div>
             </div>
-        </details>
+            <div class="bridge-row">
+                <div class="bridge-l">Solidarity shifted from likeness to interdependence, and modern life strains the individual (Durkheim, Simmel, Tonnies).</div>
+                <div class="bridge-a">&#8594;</div>
+                <div class="bridge-r">How do bureaucracy, the division of labor, and class organize life among strangers?</div>
+            </div>
+            <div class="bridge-row">
+                <div class="bridge-l">The intermediate institutions between person and state are weakening (Tocqueville, Nisbet, Putnam).</div>
+                <div class="bridge-a">&#8594;</div>
+                <div class="bridge-r">What do the state, the economy, the city, and the media do to community, and what holds it together now?</div>
+            </div>
+            <div class="bridge-pills"><span class="bridge-pill">INSTITUTIONS</span><span class="bridge-pill">AUTHORITY</span><span class="bridge-pill">MODERNITY</span></div>
+        </div>
+<figure data-pd="w09-bastille-houel.jpg" style="margin: 18px 0 20px 0; text-align: center;"><img src="../_media/w09-bastille-houel.jpg" alt="Watercolor of the Bastille in Paris on 14 July 1789, its two round towers wreathed in smoke, with a crowd and soldiers in the courtyard below and a building burning at right." style="max-width: 100%; width: 760px; height: auto; border-radius: 6px;" /><figcaption style="font-size: 14px; color: #4a5a78; line-height: 1.5; margin-top: 8px;">The storming of the Bastille, 14 July 1789: a claim to rightful rule collapses in a day. Sociology was born in the aftermath of this revolution; Quarter 2 asks what makes such a claim hold. <span style="font-size: 12px; color: #6b7a99;">Jean-Pierre Hou&euml;l, 1789. Public domain, via Wikimedia Commons.</span></figcaption></figure>
     </div>
 
     <!-- What You'll Do Next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
-        <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
-            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
-            <div>
-                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 9A: Choose Your Own Re-Reading</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your Tuesday task is not a new reading. It is a return to one source from Weeks 1 through 8, read a second time with everything you know now.</div>
-            </div>
-        </div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; NEXT</div>
         <div style="display: flex; align-items: flex-start; gap: 14px;">
-            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
-            <div>
-                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Reading Quiz 9</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Eight questions drawn from across the quarter, not only from this week.</div>
-            </div>
+            <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
+            <div style="font-size: 18px; color: #0e1c42; padding-top: 4px;"><strong>Lesson 9.02: Origins of Government and Law</strong></div>
         </div>
-    </div>
-
-    <!-- Wrap-up -->
-    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
-        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">You now hold a whole quarter as one argument rather than a stack of separate readings. That is the actual skill this week is teaching, and it is the same skill the Community Institution Study will ask you to use starting this week: not naming a concept you recognize, but choosing the right concept from several plausible ones and defending the choice. Perseverance, this week's virtue, is not only finishing a hard reading. It is the discipline of holding nine weeks of material together long enough to see the shape of it.</p>
     </div>
 
 </div>
 
 <!-- ===== FOOTER ===== -->
 <div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
-    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 1 &middot; Student Lesson Page</div>
-    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 9.01 &middot; How Individuals Become Social Beings: A Synthesis of Quarter 1</div>
+    <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Module 9 &middot; Student Lesson Page</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 9.01 &middot; Quarter 1 Recap: From Social Bonds to Social Institutions</div>
     <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
 </div>
 

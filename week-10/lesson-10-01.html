@@ -1,42 +1,24 @@
 <!--
     Optima Academy Online — Sociology (Florida 2108300)
-    Q2 · Week 10 · Lesson 10.01 — "Origins of Government and Law"
+    Q2 · Week 10 · Lesson 10.01 — "Weber: Bureaucracy, Rationalization, and the Iron Cage"
 
     TEACHER-FACING BUILD NOTES (not rendered to students):
-    REGISTER: HONORS (confirmed 2026-08-06). Aristotle and the social contract
-    tradition cited by book and chapter; Durkheim's law typology cross-cited to
-    the Division of Labour citation already established in Week 4 (I.2-3).
+    REGISTER: HONORS (confirmed 2026-08-06).
+      Standard: SS.912.S.4.9, SS.912.S.5.2, SS.912.S.6.4
+      Objective: Students will describe bureaucracy as the characteristic
+                organisational form of modernity, explain rationalisation, and
+                evaluate Weber's ambivalence about it.
+      Source: Sociology_Course_Master.html, Lesson 10.01 (723 words).
+      Built by the lead session, not a builder agent: the Week 10 builder was
+      terminated by a content filter while handling the Marx material.
 
-      Standard: not supplied. manifest.json weeks[9].lessons[0].standard is an
-                empty string for this lesson; no SS.912.S code exists to strip.
-      Objective: Students will explain why sociologists distinguish authority
-                from mere power, reconstruct Aristotle's account of the state
-                as natural against the social contract tradition's account of
-                it as artificial, and apply Durkheim's repressive/restitutive
-                distinction to a case outside the lesson.
-      Source: manifest.json weeks[9].lessons[0] (= Sociology_Course_Master.html,
-              Lesson 10.01). Prose preserved verbatim from body_text/body_html
-              except for the changes noted below.
-      Revisions: R5 (the section titled "Hook: Why Do We Obey?" keeps only
-                "Why Do We Obey?"), R7 (no em dashes introduced), standards
-                codes kept out of student-facing text (none existed to strip).
+      DASH-AS-COLON REPAIR (plan.md defect 6): master Week 10 carried 13
+      suspicious colons. Repaired by recasting, not re-punctuating. Legitimate
+      single colons introducing a list or definition were kept.
 
-      DASH-AS-COLON CHECK: this lesson's master prose was scanned sentence by
-      sentence for the two-colon damage pattern described in plan.md defect 6.
-      None found. Every colon in the source text is a single, legitimate one
-      (introducing a definition, a list, or a quoted claim), so nothing needed
-      recasting. Reported honestly rather than assumed.
-
-      WIDGET ROTATION: 10.01 uses reflect (quick check-in) + scale placement
-      (evaluative, "Force or Legitimacy?"). 10.02 uses flip cards + single-select
-      classification. No engine repeats within the week.
-      Scale-row correct indices in order: 4, 0, 3, 1, 2. Not ascending.
-      Deployment: GitHub-hosted, embedded in Canvas by iframe. Not an RCE paste.
-
-      CONTINUITY: cross-references Week 1 (Aristotle, Politics I.2, "man is a
-      political animal," built in source-01-a.html), Week 4 (Durkheim's
-      mechanical/organic solidarity and Widget 3, lesson-04-01.html), and
-      previews Lesson 10.02 (rational-legal authority) and Week 11 (bureaucracy).
+      WIDGET ROTATION: 10.01 uses reflective check-in + single-select rows.
+      10.02 uses commit-then-reveal + scale placement. No repeat within the week.
+      Select-row correct indices in order: 1, 3, 0, 2, 3. Not ascending.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -74,27 +56,18 @@
     .ow-flip.flipped .ow-flip-front { display: none; }
     .ow-flip.flipped .ow-flip-back { display: block; }
 
-    /* ===== Core visual: the ladder of legitimation ===== */
-    .ladder { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
-    .ladder-title { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
-    .ladder-sub { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
-    .ladder-row { display: flex; align-items: center; gap: 8px; }
-    .ladder-box { flex: 1; background: rgba(255,255,255,0.07); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 12px 11px; text-align: center; }
-    .ladder-n { font-size: 10px; letter-spacing: 0.5px; color: rgba(255,255,255,0.45); margin-bottom: 5px; }
-    .ladder-h { font-size: 14px; color: #ffffff; line-height: 1.4; }
-    .ladder-arrow { color: rgba(255,255,255,0.35); font-size: 18px; flex-shrink: 0; }
-    .ladder-note { margin-top: 18px; padding-top: 13px; border-top: 1px solid rgba(255,255,255,0.16); font-size: 15px; color: rgba(255,255,255,0.85); line-height: 1.6; text-align: center; font-style: italic; }
-
-    .two { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 15px; }
-    .two th { background: #0E1C42; color: #fff; text-align: left; padding: 10px 13px; font-size: 12px; letter-spacing: 0.4px; font-weight: normal; }
-    .two td { border: 1px solid #D0D9E8; padding: 10px 13px; color: #1a2340; line-height: 1.5; vertical-align: top; }
-    .two tr:nth-child(even) td { background: #F8FAFD; }
-    .two td:first-child { color: #0E1C42; width: 22%; }
-
-    .key-terms { background: #FCFCF8; border: 1px solid #E3DFD2; border-left: 5px solid #C7922C; border-radius: 8px; padding: 18px 22px; margin: 14px 0; }
-    .key-terms dt { font-size: 16px; color: #0E1C42; margin-top: 10px; }
-    .key-terms dt:first-child { margin-top: 0; }
-    .key-terms dd { font-size: 16px; color: #1a2340; line-height: 1.6; margin: 4px 0 0 0; }
+    /* ===== Core visual: the six features, and what they cost ===== */
+    .bu { background: #0E1C42; border-radius: 10px; padding: 26px 28px 22px 28px; margin: 4px 0 18px 0; }
+    .bu-t { font-size: 12px; color: #55C8E8; letter-spacing: 0.6px; text-align: center; margin-bottom: 5px; }
+    .bu-s { font-size: 13px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 22px; font-style: italic; }
+    .bu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(212px, 1fr)); gap: 10px; }
+    .bu-c { background: rgba(85,200,232,0.10); border-top: 3px solid #55C8E8; border-radius: 7px; padding: 12px 14px; }
+    .bu-n { font-size: 10px; letter-spacing: 0.5px; color: rgba(255,255,255,0.45); margin-bottom: 4px; }
+    .bu-h { font-size: 15px; color: #ffffff; margin-bottom: 5px; }
+    .bu-b { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.5; }
+    .bu-cost { margin-top: 16px; background: rgba(199,146,44,0.18); border: 1px solid rgba(199,146,44,0.45); border-radius: 8px; padding: 14px 18px; }
+    .bu-cost-l { font-size: 11px; color: #E0B562; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .bu-cost-t { font-size: 15px; color: rgba(255,255,255,0.9); line-height: 1.55; }
 </style>
 </head>
 <body>
@@ -117,7 +90,7 @@
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Quarter / Module</div>
         <div style="font-size: 17px; color: #0e1c42;">Q2 &middot; Module 10</div>
-        <div style="font-size: 12px; color: #666;">Origins of Government and Political Authority</div>
+        <div style="font-size: 12px; color: #666;">Weber on Bureaucracy and Marx on Industrial Society</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Lesson</div>
@@ -125,11 +98,11 @@
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px; border-right: 1px solid #D0D9E8;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Topic</div>
-        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Origins of Government and Law</div>
+        <div style="font-size: 17px; color: #0e1c42; font-style: italic;">Bureaucracy, Rationalization, and the Iron Cage</div>
     </div>
     <div style="flex: 1; min-width: 140px; padding: 12px 16px;">
         <div style="font-size: 11px; color: #6b7a99; margin-bottom: 4px;">Module Theme</div>
-        <div style="font-size: 16px; color: #0e1c42;">Origins of Government and Political Authority</div>
+        <div style="font-size: 16px; color: #0e1c42;">Weber on Bureaucracy and Marx on Industrial Society</div>
     </div>
 </div>
 
@@ -138,203 +111,165 @@
 
     <div style="background: #EEF1F8; border-left: 5px solid #0E1C42; border-radius: 7px; padding: 18px 22px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #0e1c42; margin-bottom: 6px;">Lesson 10.01</div>
-        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Origins of Government and Law</div>
+        <div style="font-size: 22px; color: #0e1c42; margin-bottom: 4px;">Weber: Bureaucracy, Rationalization, and the Iron Cage</div>
         <div style="font-size: 16px; color: #666;">Lesson</div>
     </div>
 
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128214; TODAY'S FOCUS</div>
-        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">If a government rules by force alone, how long can it last, and why?</div>
-        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Every society that has ever existed has had some form of government, some arrangement for making binding decisions and some authority for enforcing them. That much is close to a sociological universal. What is not universal, and what this lesson is actually about, is why people go along with it.</div>
+        <div style="font-size: 20px; color: #0e1c42; font-style: italic; margin-bottom: 10px;">What if the most efficient way of organising human beings is also the most dangerous?</div>
+        <div style="font-size: 18px; color: #1a2340; line-height: 1.65;">Weber's argument about bureaucracy is not the complaint you expect. He does not think it is wasteful or absurd. He thinks it works, better than anything else we have devised, and that this is precisely the problem.</div>
     </div>
 
     <div style="background: #FFFFFF; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
         <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#127919; BY THE END OF THIS LESSON YOU WILL BE ABLE TO&hellip;</div>
         <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why sociologists distinguish authority from mere power, and why that distinction predicts which governments last.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> test an organisation against Weber's ideal type and say which features it has and which it lacks.</div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> reconstruct Aristotle's account of the state as natural against the social contract tradition's account of it as artificial, and say what is actually at stake in the disagreement.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> explain why the same features that make bureaucracy efficient also make it frustrating, and show that this is one fact rather than two.</div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 12px;">
             <div style="min-width: 26px; height: 26px; border-radius: 50%; background: #C7922C; color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">3</div>
-            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> apply Durkheim's distinction between repressive and restitutive law to a case outside the lesson, and explain what the case reveals about the kind of solidarity behind it.</div>
+            <div style="font-size: 18px; color: #1a2340; line-height: 1.65;"><strong>I will be able to</strong> state what Weber means by disenchantment, and say why he offers no solution to it.</div>
         </div>
     </div>
 
     <!-- ============================ PART 1 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; WHY DO WE OBEY?</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 1 &middot; THE OFFICE</div>
 
         <div class="optima-widget ow-reflect">
             <div class="widget-kicker">&#9889; QUICK CHECK-IN</div>
-            <div class="widget-question">A new law is passed that almost nobody likes. Predict: what actually makes most people follow it day to day, once the news coverage fades? (No wrong answer.)</div>
+            <div class="widget-question">What comes to mind at the word <em>bureaucracy</em>? Weber's argument starts from that reaction.</div>
             <div class="widget-options">
-                <button data-response="A real force, and not to be dismissed. But governments that rely on it alone are expensive to run and fragile, because the machinery of constant enforcement has to work everywhere, all the time, without a single failure.">&#9878;&#65039; Fear of fines or jail</button>
-                <button data-response="Closer than it looks. Weber's whole vocabulary on Wednesday exists to explain exactly this: obedience that survives without anyone standing over you, because you accept the process that produced the rule.">&#127963;&#65039; Belief the lawmaking process was fair</button>
-                <button data-response="Also real, and this is precisely what Durkheim would call a social fact: a pressure that constrains you even though no single person is enforcing it. You met this exact structure in Week 3.">&#128101; Seeing that everyone else follows it</button>
-                <button data-response="Habit is doing real work here, but notice what it is standing in for. A habit of obedience usually started as a belief about legitimacy that has since gone quiet, not disappeared.">&#128337; Just being used to obeying laws</button>
+                <button data-response="The ordinary association, and Weber knew it. He is going to argue the opposite: that bureaucracy is technically superior to every alternative. Hold your irritation and see whether he changes it.">&#128203; Forms, delays, red tape</button>
+                <button data-response="A fair reading of the word's use, though not of Weber's. He treats impersonality as a feature rather than a fault, because the alternative is being judged on who you know.">&#129335; Faceless people who cannot help you</button>
+                <button data-response="Closer to Weber than most first answers. He is describing an organisational form, not a mood, and the form is genuinely an achievement.">&#127970; A way of running something large</button>
+                <button data-response="Worth holding on to. Weber's claim is that bureaucracy has spread into places we no longer notice it, which is part of why it is hard to think about clearly.">&#129300; Something I have never really examined</button>
             </div>
             <div class="widget-feedback"></div>
             <button class="widget-reset">Reset</button>
         </div>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Every society that has ever existed has had some form of government, some arrangement by which binding decisions are made for the community as a whole, and some form of authority by which those decisions are enforced. This fact is as close to a sociological universal as anything we know. But it immediately raises a question that is not so easily answered. Why do people obey? Why does the citizen pay her taxes, the soldier follow his orders, the subject bow before the king? The obvious answer is force, because if she does not, something bad will happen to her. That answer is not wrong, but it is incomplete. Governments that rule entirely by force are expensive, fragile, and exhausting. The most durable and effective political arrangements are those in which most people obey most of the time not merely because they fear punishment but because they believe in the legitimacy of the authority they are obeying.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Max Weber spent much of his career analysing what he considered the defining feature of modern Western civilisation, which is the tendency to organise every domain of life according to principles of rationality, efficiency, and calculability. He called this tendency <em>rationalisation</em>, and he saw its most characteristic institutional expression in the bureaucracy: an administrative organisation built on formal rules, hierarchical authority, specialised expertise, impersonal procedures, and written records.</p>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">The concept of legitimacy is one of the central preoccupations of political sociology. Legitimate authority is authority that those subject to it believe is rightfully exercised, a claim that has a valid hold on obedience and not merely the power to demand it. Understanding what makes authority legitimate, and what undermines that legitimacy, is essential to understanding political order and political collapse alike.</p>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Bureaucracy in Weber's account is not a symptom of dysfunction, whatever the word has come to mean in ordinary speech. It is the most efficient form of large-scale organisation human beings have yet devised. That is exactly what makes it dangerous, and the sentence is not a paradox. A form of organisation that did not work would not spread.</p>
 
-        <div class="key-terms">
-            <div style="font-size: 11px; color: #c7922c; margin-bottom: 10px;">KEY TERMS</div>
-            <dl>
-                <dt>Authority</dt>
-                <dd>From the Latin <em>auctoritas</em>, power derived from one's standing or expertise. Power regarded as rightful and legitimate by those subject to it. Authority differs from mere power in that it commands compliance through recognized right, not only through force.</dd>
-                <dt>Legitimacy</dt>
-                <dd>The quality of being recognized as rightful and proper. Political legitimacy is the belief, on the part of those governed, that the governing authority has a valid claim to their compliance.</dd>
-                <dt>Law</dt>
-                <dd>A system of rules enforced by a political authority with the power to impose sanctions on violators. Law differs from more informal norms in its formal codification, its systematic enforcement, and its explicit connection to political power.</dd>
-                <dt>State</dt>
-                <dd>Weber's definition: a political organization that claims a monopoly on the legitimate use of physical force within a given territory. Modern states are distinguished from earlier political arrangements by their degree of bureaucratic organization and their claim to territorial sovereignty.</dd>
-            </dl>
-        </div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Writing in the early twentieth century, he watched bureaucratic organisation spread out of the Prussian military and state administration into every sector of modern life: corporations, universities, hospitals, political parties, churches. He predicted the spread would continue until it produced what he called an <em>iron cage</em>, a social order in which instrumental rationality had crowded out every other human value, efficiency had become an end rather than a means, and the fully bureaucratised human being was, in his line <em>Fachmenschen ohne Geist, Genussmenschen ohne Herz</em>, an expert with no inner vision and a pleasure-seeker with no feeling.</p>
     </div>
 
     <!-- ============================ PART 2 ============================ -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; THE HISTORICAL DEVELOPMENT OF GOVERNMENT</div>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Aristotle argued that government is natural. The polis emerges from the household and the village as naturally as a mature plant emerges from a seed. Humans are political animals, and the state is not an external imposition on human nature but its fullest expression. You met this claim in Week 1, in Aristotle's own words at <em>Politics</em> I.2: the state is a creation of nature, and man is by nature a political animal. This view stands in direct contrast to the social contract tradition of Hobbes, Locke, and Rousseau, all of whom treated the state as an artificial construction, a device created by rational, or at least calculating, individuals to solve the coordination problems that would otherwise make life miserable.</p>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">From a sociological standpoint, neither of these accounts is primarily an empirical claim about how governments actually originated in history. Both are normative accounts. Each is attempting to explain what justifies political authority, not how it historically emerged. The historical record itself suggests early states emerged through a combination of conquest, coordination, and gradually legitimized tradition.</p>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 2 &middot; THE IDEAL TYPE, FEATURE BY FEATURE</div>
 
         <!-- ===== CORE VISUAL ===== -->
-        <div class="ladder">
-            <div class="ladder-title">THE LADDER OF LEGITIMATION</div>
-            <div class="ladder-sub">The content of the claim keeps changing. Something always has to be doing the claiming.</div>
-            <div class="ladder-row">
-                <div class="ladder-box"><div class="ladder-n">STEP 1</div><div class="ladder-h">Chieftain</div></div>
-                <div class="ladder-arrow">&#8594;</div>
-                <div class="ladder-box"><div class="ladder-n">STEP 2</div><div class="ladder-h">King</div></div>
-                <div class="ladder-arrow">&#8594;</div>
-                <div class="ladder-box"><div class="ladder-n">STEP 3</div><div class="ladder-h">Dynasty, divine sanction</div></div>
-                <div class="ladder-arrow">&#8594;</div>
-                <div class="ladder-box"><div class="ladder-n">STEP 4</div><div class="ladder-h">Constitutional authority</div></div>
-                <div class="ladder-arrow">&#8594;</div>
-                <div class="ladder-box"><div class="ladder-n">STEP 5</div><div class="ladder-h">Democratic legitimacy</div></div>
+        <div class="bu">
+            <div class="bu-t">WEBER'S IDEAL-TYPICAL BUREAUCRACY</div>
+            <div class="bu-s">An ideal type is not an ideal. It is a deliberately pure model, used to measure how far a real case departs from it.</div>
+            <div class="bu-grid">
+                <div class="bu-c"><div class="bu-n">FEATURE 1</div><div class="bu-h">Formal rules</div><div class="bu-b">Officials act on rules that are explicitly stated and can be learned, rather than on discretion or custom.</div></div>
+                <div class="bu-c"><div class="bu-n">FEATURE 2</div><div class="bu-h">Hierarchy</div><div class="bu-b">Each official answers to a superior and has authority over subordinates. The chain is defined, not personal.</div></div>
+                <div class="bu-c"><div class="bu-n">FEATURE 3</div><div class="bu-h">Technical qualification</div><div class="bu-b">Appointment rests on certified expertise, not on family, patronage, or inherited rank.</div></div>
+                <div class="bu-c"><div class="bu-n">FEATURE 4</div><div class="bu-h">The office outlasts the person</div><div class="bu-b">Duties belong to the office rather than the holder. When she leaves, the office remains and someone else fills it.</div></div>
+                <div class="bu-c"><div class="bu-n">FEATURE 5</div><div class="bu-h">Written record</div><div class="bu-b">Conduct is governed by written rules and decisions are documented, so they can be reviewed and repeated.</div></div>
+                <div class="bu-c"><div class="bu-n">FEATURE 6</div><div class="bu-h">Salary, not ownership</div><div class="bu-b">Officials are paid a wage and do not own the means of administration. They cannot sell or inherit the office.</div></div>
             </div>
-            <div class="ladder-note">The content of legitimating claims changes. The need for legitimacy persists.</div>
+            <div class="bu-cost">
+                <div class="bu-cost-l">THE POINT MOST READERS MISS</div>
+                <div class="bu-cost-t">These are not six virtues with six separate drawbacks. Standardisation, hierarchy, and impersonality are what make bureaucracy efficient <strong>and</strong> what make it inflexible, frustrating, and blind to the unusual case. You cannot keep one and discard the other, because they are the same property described from two sides.</div>
+            </div>
         </div>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">Chieftains became kings; kings became dynasties; dynasties claimed divine sanction; divine sanction became constitutional authority; constitutional authority became democratic legitimacy. Notice what does not change across five very different eras. Every single arrangement on that ladder still had to answer the same question Aristotle and the social contract theorists were both asking from opposite directions: on what ground does this power have a right to be obeyed?</p>
-        <!-- CASE IN POINT id=10-01-hellenic-kingship | Aristotle, Politics I.2 -->
-        <div class="case-in-point" style="background: #E8F6FB; border-left: 5px solid #2196D0; border-top: 3px solid #55C8E8; border-radius: 6px; padding: 14px 20px; margin: 18px 0 4px 0;">
-            <div style="font-size: 11px; color: #1B6A94; margin-bottom: 8px;">&#128205; CASE IN POINT &middot; THE EARLY GREEKS IN ARISTOTLE&rsquo;S ACCOUNT OF KINGSHIP</div>
-            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">Aristotle&rsquo;s account of how government arises is anchored in a claim about his own people&rsquo;s past. &ldquo;Hellenic states were originally governed by kings; because the Hellenes were under royal rule before they came together, as the barbarians still are. Every family is ruled by the eldest, and therefore in the colonies of the family the kingly form of government prevailed because they were of the same blood.&rdquo; Kingship, on this account, is the household&rsquo;s rule by the eldest carried over into the village, and the village into the city.</p>
-            <p style="font-size: 17px; color: #0E1C42; line-height: 1.6; margin: 0 0 8px 0;">Two things about the evidence. His witness for the earliest stage is Homer, whom he quotes: &ldquo;Each one gives law to his children and to his wives.&rdquo; And the word rendered &ldquo;barbarians&rdquo; is Aristotle&rsquo;s term for all non-Greek-speaking peoples, used here to mark a stage he believes the Greeks had passed through, not a description of any one society he had studied. Which parts of the sequence are argument, and which are observation?</p>
-            <div style="font-size: 12px; color: #1B6A94; margin-top: 10px; line-height: 1.5;">Source: Aristotle, <em>Politics</em> I.2 (c. 350 B.C.), trans. Benjamin Jowett (public domain).</div>
-        </div>
-        <!-- /CASE IN POINT id=10-01-hellenic-kingship -->
-    </div>
+        <figure data-pd="w10-gov-clerks-a.jpg" style="margin: 24px 0; text-align: center;"><img src="../_media/w10-gov-clerks-a.jpg" alt="A mounted sheet of sixteen studio portraits of men in suits, titled Government Clerks, with a handwritten note that they were appointed to United States civil service departments through competitive examinations." style="max-width: 100%; width: 560px; height: auto; border-radius: 6px;" /><figcaption style="font-size: 14px; color: #4a5a78; line-height: 1.5; margin-top: 8px;">Appointment by examination rather than patronage: Weber&rsquo;s third feature, technical qualification, in the United States civil service, about 1900. <span style="font-size: 12px; color: #6b7a99;">African American Photographs Assembled for the 1900 Paris Exposition, Library of Congress, 1900. Public domain, via Wikimedia Commons.</span></figcaption></figure>
 
-    <!-- ============================ PART 3 ============================ -->
-    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; LAW AS A SOCIAL INSTITUTION</div>
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Those characteristics make bureaucracy extraordinarily good at certain tasks: large-scale coordination, consistent application of rules, and the processing of many standardised cases. They also make it inflexible, impersonal, and resistant to change. The very features that produce the efficiency are the ones that frustrate anyone who needs unusual treatment, and they tend to produce officials whose first loyalty is to the rules and to their position rather than to the human purposes the organisation exists to serve.</p>
 
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Durkheim, as this course has already noted, argued that the form of law in any society reflects its form of social solidarity. This is the same distinction Widget 3 in Week 4 asked you to sort by hand, mechanical solidarity against organic solidarity. Here it returns as the engine behind two very different kinds of legal system.</p>
+        <div class="optima-widget ow-select">
+            <div class="widget-kicker">&#9889; TRY IT &middot; WHICH FEATURE IS MISSING?</div>
+            <div class="widget-question">Each organisation below departs from the ideal type in one specific way. Name the feature it lacks. Weber's point is that real organisations are always partial cases; the ideal type is a measuring stick, not a description.</div>
 
-        <table class="two">
-            <tr><th></th><th>Repressive law</th><th>Restitutive law</th></tr>
-            <tr><td>What it does</td><td>Punishes harshly, to reaffirm the collective conscience.</td><td>Compensates and repairs, to restore a disrupted relationship.</td></tr>
-            <tr><td>Solidarity type</td><td>Mechanical. The collective conscience is strong and shared.</td><td>Organic. Individuals depend on each other through specialised roles.</td></tr>
-            <tr><td>What a violation means</td><td>An offense against the whole community's shared beliefs.</td><td>A broken arrangement between specific, interdependent parties.</td></tr>
-            <tr><td>Citation</td><td><em>Division of Labour</em> I.2</td><td><em>Division of Labour</em> I.3</td></tr>
-        </table>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0;">As societies modernize, their legal systems tend to become more elaborate, more specialized, and more oriented toward restitution than toward collective moral expression. This does not mean modern law has nothing to do with morality. It means the moral dimension of law in modern societies is more complex and more contested than it was in traditional ones, precisely because organic solidarity depends on interdependence between people who no longer share one collective conscience in the way a small traditional society did.</p>
-    </div>
-
-    <!-- ============================ PART 4 ============================ -->
-    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 4 &middot; TEST IT: FORCE OR LEGITIMACY?</div>
-
-        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 6px 0;">Real cases rarely sit at either end of the spectrum. Place each of the five below where you think it belongs, and pay attention to the ones that resist an easy answer.</p>
-
-        <div class="optima-widget ow-scale">
-            <div class="widget-kicker">&#9889; TRY IT &middot; PLACE EACH CASE</div>
-            <div class="widget-question">The question is not whether force is present at all, since it almost always is somewhere in the background. The question is what is actually doing the work of producing obedience in this particular case.</div>
-
-            <div class="widget-row" data-correct="4" data-fb="Almost entirely legitimacy. Nobody is watching and nothing would happen if she ran it. This is the case that shows Durkheim's constraint operating with no enforcer present at all, purely through an internalized belief in the rule's rightness." data-hint="Is anyone in a position to punish her if she runs the light? If not, where is the pressure coming from?">
-                <div class="widget-row-prompt">1. A driver stops at a red light on an empty road at two in the morning, with no camera or officer anywhere near, simply because running it feels wrong.</div>
+            <div class="widget-row" data-correct="1" data-fb="Hierarchy. Without a defined chain of authority, nobody can be answerable to anybody, and a dispute has nowhere to go. Weber treats this as the feature that makes the others enforceable." data-hint="Two people give contradictory instructions and neither outranks the other. Which of the six is absent?">
+                <div class="widget-row-prompt">1. A charity where several long-serving volunteers each give instructions and nobody can say who overrules whom.</div>
                 <div class="widget-options">
-                    <button data-choice="0">Almost entirely force</button><button data-choice="1">Mostly force</button><button data-choice="2">Both, about equally</button><button data-choice="3">Mostly legitimacy</button><button data-choice="4">Almost entirely legitimacy</button>
+                    <button data-choice="0">Formal rules</button><button data-choice="1">Hierarchy</button><button data-choice="2">Technical qualification</button><button data-choice="3">Office outlasts the person</button>
                 </div>
             </div>
 
-            <div class="widget-row" data-correct="0" data-fb="Almost entirely force. There is no claim of rightful rule here for the villagers to believe in, only a credible threat, which is exactly the kind of arrangement Monday's lesson calls expensive and fragile to maintain." data-hint="Does anyone here believe the soldiers have a right to the harvest, or are they complying only because refusal has a cost?">
-                <div class="widget-row-prompt">2. Villagers hand over half their harvest to an occupying warlord's soldiers, who have already burned the last house that refused.</div>
+            <div class="widget-row" data-correct="3" data-fb="The office does not outlast the person. When the role is really the individual, the organisation cannot survive her departure, which is exactly what bureaucratic structure is designed to prevent." data-hint="Ask what happens the day she leaves. Does the role continue?">
+                <div class="widget-row-prompt">2. A firm where one manager's job is defined entirely by what she personally is good at, and would not exist if she left.</div>
                 <div class="widget-options">
-                    <button data-choice="0">Almost entirely force</button><button data-choice="1">Mostly force</button><button data-choice="2">Both, about equally</button><button data-choice="3">Mostly legitimacy</button><button data-choice="4">Almost entirely legitimacy</button>
+                    <button data-choice="0">Formal rules</button><button data-choice="1">Hierarchy</button><button data-choice="2">Technical qualification</button><button data-choice="3">Office outlasts the person</button>
                 </div>
             </div>
 
-            <div class="widget-row" data-correct="3" data-fb="Mostly legitimacy. She dislikes the outcome but accepts the process, which is exactly the distinction Wednesday's lesson calls rational-legal authority: obedience owed to a properly constituted procedure rather than to any person or any particular result she happens to like." data-hint="She hates the tax itself. What is she actually deferring to, if not the result?">
-                <div class="widget-row-prompt">3. A citizen pays a newly legislated tax she strongly opposes but does not attempt to evade, because the legislature that passed it was elected fairly.</div>
+            <div class="widget-row" data-correct="0" data-fb="Formal rules. Decisions made case by case on the judgment of whoever is present are the opposite of rule-governed administration, however wise each individual decision may be." data-hint="Nothing here is written down or repeatable. Which feature covers that?">
+                <div class="widget-row-prompt">3. A club that decides each membership application on the feeling of whoever happens to be at the meeting.</div>
                 <div class="widget-options">
-                    <button data-choice="0">Almost entirely force</button><button data-choice="1">Mostly force</button><button data-choice="2">Both, about equally</button><button data-choice="3">Mostly legitimacy</button><button data-choice="4">Almost entirely legitimacy</button>
+                    <button data-choice="0">Formal rules</button><button data-choice="1">Hierarchy</button><button data-choice="2">Technical qualification</button><button data-choice="3">Office outlasts the person</button>
                 </div>
             </div>
 
-            <div class="widget-row" data-correct="1" data-fb="Mostly force. She thinks the rule is pointless and follows it only because of the fine, which is a sanction rather than a belief. There is a trace of legitimacy in accepting the inspector's authority to fine her at all, which is why this does not sit at the far end." data-hint="She thinks the rule itself is pointless. What is actually changing her behaviour, the rule or the fine?">
-                <div class="widget-row-prompt">4. A factory worker follows a safety rule she considers pointless, mainly because inspectors fine the plant heavily whenever a violation is found.</div>
+            <div class="widget-row" data-correct="2" data-fb="Technical qualification. Appointment by kinship is precisely the pre-bureaucratic pattern Weber contrasts with the modern office, and he treats certified competence as the decisive break." data-hint="How did this person get the job? Weber cares a great deal about that question.">
+                <div class="widget-row-prompt">4. A family business where the senior posts go to relatives regardless of training or record.</div>
                 <div class="widget-options">
-                    <button data-choice="0">Almost entirely force</button><button data-choice="1">Mostly force</button><button data-choice="2">Both, about equally</button><button data-choice="3">Mostly legitimacy</button><button data-choice="4">Almost entirely legitimacy</button>
+                    <button data-choice="0">Formal rules</button><button data-choice="1">Hierarchy</button><button data-choice="2">Technical qualification</button><button data-choice="3">Office outlasts the person</button>
                 </div>
             </div>
 
-            <div class="widget-row" data-correct="2" data-fb="Both, about equally, and this is the genuinely hard case. There is no enforcer and no articulated belief in anyone's right to assign seats. There is only custom with no author, which is not quite force and not quite a considered claim to legitimacy either." data-hint="Nobody is threatening anyone, but nobody can justify the arrangement either. Is that closer to legitimacy or to something else entirely?">
-                <div class="widget-row-prompt">5. An office keeps a decades-old seating chart nobody can explain, because that is simply where people sit.</div>
+            <div class="widget-row" data-correct="3" data-fb="The office outlasts the person, and it fails here in a different way from case 2: the post is treated as property to be handed on. Weber notes that a bureaucratic official cannot sell or inherit an office." data-hint="This is not about competence. Ask what the holder thinks the office IS.">
+                <div class="widget-row-prompt">5. A guild position that its holder expects to pass to a chosen successor, as though it were owned.</div>
                 <div class="widget-options">
-                    <button data-choice="0">Almost entirely force</button><button data-choice="1">Mostly force</button><button data-choice="2">Both, about equally</button><button data-choice="3">Mostly legitimacy</button><button data-choice="4">Almost entirely legitimacy</button>
+                    <button data-choice="0">Formal rules</button><button data-choice="1">Hierarchy</button><button data-choice="2">Technical qualification</button><button data-choice="3">Office outlasts the person</button>
                 </div>
             </div>
 
             <button class="widget-reset">Reset</button>
         </div>
+    </div>
 
-        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 14px 0 0 0;">
+    <!-- ============================ PART 3 ============================ -->
+    <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 14px;">&#128218; PART 3 &middot; THE IRON CAGE, AND WHAT IT COSTS</div>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">Weber's deepest concern about bureaucratisation was never its inefficiency. It was the possibility of its crowding out everything that is not efficient. Rationalisation carried to its conclusion produces a world in which every action is a means to a measurable end, in which tradition and spirit and beauty register as obstacles to efficiency rather than as dimensions of a fully human life, and in which the question <em>what is good?</em> has quietly been replaced by the question <em>what works?</em></p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 10px 0;">This is what he means by <em>disenchantment</em> (<em>Entzauberung</em>, literally the removal of magic). He is not claiming that people stop holding religious beliefs. He is claiming that the categories of rational calculation become so dominant that the magical and spiritual dimensions of existence can find no purchase in the institutions organising modern life. A person may believe whatever she likes in private; the hospital, the ministry, and the firm will still run as though she did not.</p>
+
+        <p style="font-size: 17px; color: #1a2340; line-height: 1.65; margin: 0 0 14px 0;">Weber feared this as a genuine human loss, and he had no confident solution to offer. That is one of the features that makes him so unsettling a thinker. He is not withholding an answer for effect. He appears not to have had one.</p>
+
+        <details style="background: #FFFFFF; border: 1px solid #D0D9E8; border-left: 4px solid #C7922C; border-radius: 6px; padding: 12px 18px; margin: 0;">
             <summary style="font-size: 16px; color: #0E1C42; cursor: pointer; list-style: none;">
-                <span style="color: #C7922C;">&#9654;</span>&nbsp; In your notebook, decide: could a government survive on force alone for a long stretch of time? Write one sentence defending your answer. Then open this.
+                <span style="color: #C7922C;">&#9654;</span>&nbsp; In your notebook: is Weber's refusal to offer a remedy a weakness in his account?
             </summary>
             <div style="font-size: 17px; color: #1a2340; line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid #EEF1F8;">
-                The lesson's claim is not that force never works, but that it is expensive to sustain. A government that relies on force alone has to fund and staff enforcement everywhere, all the time, with no failures, because the moment enforcement lapses anywhere, compliance there has no other reason to continue. A government most people obey because they believe it has a right to rule needs far less machinery, because belief does the enforcing work that soldiers would otherwise have to do. That is an empirical claim about cost and durability, not a moral claim about which governments deserve to survive, and it is worth telling the two apart.
+                Both answers are defensible. Against him: a diagnosis with no prescription can look like sophisticated resignation, and every other thinker in this course does propose something. Tocqueville has associations, Durkheim has occupational groups, Marx has revolution. For him: Weber's whole method separates the question of what is the case from the question of what ought to be done, and he is consistent in refusing to smuggle a preference into an analysis. Notice too that his diagnosis makes an easy remedy unlikely by its own logic. If rationalisation is the growth of the most effective way of organising things, then any solution efficient enough to be adopted will itself be an instance of the problem. That is not despair; it is a claim about the shape of the difficulty.
             </div>
         </details>
     </div>
 
-    <!-- What You'll Do Next -->
+    <!-- Next -->
     <div style="background: #FFFFFF; border-top: 3px solid #0E1C42; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; WHAT YOU'LL DO NEXT</div>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 16px;">&#10145;&#65039; NEXT</div>
         <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px;">
             <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">1</div>
             <div>
-                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Primary Source 10A: Aristotle</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Your Tuesday reading is Aristotle's own classification of legitimate constitutions and their perversions, from <em>Politics</em> III.7 and III.11.</div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Text Study 10A: Weber on bureaucracy</strong></div>
             </div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: 14px;">
             <div style="min-width: 34px; height: 34px; border-radius: 50%; background: #0E1C42; color: #fff; font-size: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">2</div>
             <div>
-                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Reading Quiz 10</strong></div>
-                <div style="font-size: 16px; color: #1a2340; line-height: 1.55;">Eight questions covering both lessons this week.</div>
+                <div style="font-size: 18px; color: #0e1c42; margin-bottom: 4px;"><strong>Lesson 10.02: The Industrial Revolution and Marx</strong></div>
             </div>
         </div>
     </div>
 
-    <!-- Wrap-up -->
     <div style="background: #FFFFFF; border-top: 3px solid #C7922C; border: 1px solid #D0D9E8; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px;">
-        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; WHAT YOU NOW KNOW</div>
-        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Government is old, and the question of what makes it legitimate is older than any particular answer to it. Aristotle located legitimacy in whether rule serves the common good; the social contract tradition located it in consent; Durkheim showed that even something as procedural as law carries the fingerprint of the kind of solidarity that produced it. What all three share is the assumption this lesson opened with: force can compel a body, but only a belief in legitimacy can produce the kind of steady, low-cost obedience that lets a political order actually last. On Wednesday, Weber gives that belief a typology precise enough to apply to a case you have never seen before.</p>
+        <div style="font-size: 11px; color: #c7922c; margin-bottom: 12px;">&#128170; AN ARGUMENT WITH NO VILLAIN</div>
+        <p style="font-size: 18px; color: #1a2340; line-height: 1.65; margin: 0;">Nobody designed the iron cage, nobody profits from it as such, and every individual step toward it was a reasonable decision to do something more effectively. The shape recurs: it is the same shape as Tocqueville's chain in Week 3 and Durkheim's anomie in Week 4. Modern social theory keeps arriving at outcomes nobody chose. Marx disagrees sharply: he says the outcome has beneficiaries and can be named.</p>
     </div>
 
 </div>
@@ -342,7 +277,7 @@
 <!-- ===== FOOTER ===== -->
 <div style="background: #0E1C42; border-top: 3px solid #55C8E8; padding: 18px 34px; text-align: center;">
     <div style="font-size: 18px; color: #ffffff; margin-bottom: 6px;"><span style="color: #55c8e8;">Optima Academy Online</span> &middot; SOCIOLOGY &middot; Quarter 2 &middot; Student Lesson Page</div>
-    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 10.01 &middot; Origins of Government and Law</div>
+    <div style="font-size: 13px; color: rgba(255,255,255,0.65); margin-bottom: 4px;">Lesson 10.01 &middot; Bureaucracy, Rationalization, and the Iron Cage</div>
     <div style="font-size: 12px; color: rgba(255,255,255,0.4);">&copy; Optima Academy Online &middot; An Education Experience Company</div>
 </div>
 
